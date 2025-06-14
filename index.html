@@ -1,144 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Remastered Bibles</title>
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Remastered Evangelistic Bibles</title>
+<style>
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f5f5f5;
+    overflow-x: hidden;
+    background: #000;
+  }
+  /* Fundo com imagem e movimento lento */
+  .background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2017/08/10/20/33/cross-2619362_1280.jpg') no-repeat center center/cover;
+    animation: slowZoom 60s linear infinite alternate;
+    z-index: -1;
+    filter: brightness(0.3);
+  }
+  @keyframes slowZoom {
+    0% {transform: scale(1) translate(0,0);}
+    100% {transform: scale(1.05) translate(10px, 10px);}
+  }
 
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #e0e6f1;
-      background: url('https://your-image-url-here.jpg') no-repeat center center fixed;
-      background-size: cover;
-      background-blend-mode: multiply;
-      background-color: rgba(10, 15, 30, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 2rem;
-    }
+  /* Conteúdo principal */
+  .container {
+    max-width: 900px;
+    margin: 5% auto 3em auto;
+    padding: 1em 2em;
+    background: rgba(0,0,0,0.5);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  p.description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 2em;
+  }
 
-    .container {
-      max-width: 960px;
-      background: rgba(15, 25, 45, 0.85);
-      border-radius: 12px;
-      padding: 2rem 3rem;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
-      width: 100%;
-    }
+  /* Seção idiomas */
+  .languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .lang-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 1.2em 2em;
+    flex: 1 1 220px;
+    max-width: 260px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .lang-card:hover {
+    background: rgba(255,255,255,0.25);
+  }
+  .lang-card a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: block;
+  }
 
-    h1 {
-      font-size: 2.8rem;
-      color: #74c0fc;
-      margin-bottom: 1rem;
-      text-align: center;
-      letter-spacing: 1.2px;
-    }
+  /* Footer simples */
+  footer {
+    text-align: center;
+    padding: 1em;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
 
-    p.description {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      color: #a9b8d9;
-      text-align: center;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .section {
-      margin-bottom: 2.5rem;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      color: #5aa0ff;
-      border-bottom: 2px solid #5aa0ff;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .btn {
-      background-color: #3a5ca8;
-      color: #e0e6f1;
-      border: none;
-      border-radius: 6px;
-      padding: 0.75rem 1.6rem;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(58, 92, 168, 0.5);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
-    }
-
-    .btn:hover {
-      background-color: #5086e0;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(80, 134, 224, 0.7);
-    }
-
-    .btn:active {
-      transform: translateY(0);
-      box-shadow: 0 4px 8px rgba(58, 92, 168, 0.5);
-    }
-
-    @media (max-width: 600px) {
-      .button-group {
-        flex-direction: column;
-      }
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
+  /* Responsividade */
+  @media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .lang-card { max-width: 100%; }
+  }
+</style>
 </head>
 <body>
-  <main class="container">
-    <h1>📖 Remastered Bibles</h1>
-    <p class="description">
-      This project is dedicated to providing high-quality audio versions of the Holy Bible, free from censorship and available worldwide. Our mission is to expand access for all nations, promoting the Word with clarity and respect.
-    </p>
 
-    <section class="section">
-      <h2>📜 Old Testament</h2>
-      <div class="button-group">
-        <a href="old-testament-korean.html" class="btn" role="button">Korean Bible</a>
-        <a href="old-testament-russian.html" class="btn" role="button">Russian Bible</a>
-        <a href="old-testament-chinese.html" class="btn" role="button">Chinese Bible</a>
-        <!-- Adicione outras versões do Antigo Testamento aqui -->
-      </div>
-    </section>
+<div class="background" aria-hidden="true"></div>
 
-    <section class="section">
-      <h2>✝️ New Testament</h2>
-      <div class="button-group">
-        <a href="new-testament-korean.html" class="btn" role="button">Korean Bible</a>
-        <a href="new-testament-russian.html" class="btn" role="button">Russian Bible</a>
-        <a href="new-testament-chinese.html" class="btn" role="button">Chinese Bible</a>
-        <!-- Adicione outras versões do Novo Testamento aqui -->
-      </div>
-    </section>
-  </main>
+<div class="container" role="main">
+  <h1>Remastered Evangelistic Bibles</h1>
+  <p class="description">
+    This project aims to expand the reach of narrated Bibles in various languages, making the Word of God accessible worldwide. 
+    We combat overpriced and censored versions by providing clear, human-like narration, free from noise or quality loss. 
+    Independent and dedicated to dignity and access, we invite you to explore our available languages.
+  </p>
+
+  <section class="languages" aria-label="Available Languages">
+    <div class="lang-card"><a href="korean.html">Korean (한국어)</a></div>
+    <div class="lang-card"><a href="russian.html">Russian (Русский)</a></div>
+    <div class="lang-card"><a href="chinese.html">Chinese (中文)</a></div>
+    <div class="lang-card"><a href="french.html">French (Français)</a></div>
+    <div class="lang-card"><a href="german.html">German (Deutsch)</a></div>
+    <div class="lang-card"><a href="english.html">English (English)</a></div>
+    <div class="lang-card"><a href="spanish.html">Spanish (Español)</a></div>
+    <div class="lang-card"><a href="arabic.html">Arabic (العربية)</a></div>
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
+</footer>
+
 </body>
 </html>
