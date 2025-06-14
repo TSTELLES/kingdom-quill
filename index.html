@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Holy Bible Audiobooks</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .background {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      top: 40%;
+      transform: translateY(-50%);
+    }
+    .languages {
+      margin-top: 30px;
+    }
+    .languages a {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .languages a:hover {
+      background: rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+  <video class="background" autoplay muted loop>
+    <source src="https://cdn.coverr.co/videos/coverr-cross-on-a-hill-0523/1080p.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="content">
+    <h1>Holy Bible Audiobooks</h1>
+    <p>Select your language:</p>
+    <div class="languages">
+      <a href="korean.html">Korean</a>
+      <a href="russian.html">Russian</a>
+      <a href="chinese.html">Chinese</a>
+      <a href="french.html">French</a>
+      <a href="german.html">German</a>
+      <a href="english-nt.html">English NT</a>
+      <a href="english-ot.html">English OT</a>
+      <a href="arabic.html">Arabic</a>
+      <a href="spanish.html">Spanish</a>
+    </div>
+  </div>
+</body>
+</html>
