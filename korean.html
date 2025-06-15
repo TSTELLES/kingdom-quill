@@ -87,6 +87,8 @@ footer {
   text-align: center;
   gap: 2rem; /* espaço entre linha de bandeiras e info-box */
   box-sizing: border-box;
+
+  margin-top: 2em; /* <<< Ajuste para afastar do header */
 }
 
 /* Linha de bandeiras */
@@ -141,30 +143,29 @@ footer {
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
 .buttons a {
   display: inline-block;
+  padding: 0.6em 1.5em;
+  background: #00bfff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.6);
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
   white-space: nowrap;
-  transition: transform 0.2s ease;
 }
 
 .buttons a:hover {
-  transform: scale(1.1);
-}
-
-/* Logos das lojas (PNG) */
-.buttons img {
-  width: 120px;
-  height: auto;
-  filter: drop-shadow(0 0 3px #00bfff);
-  border-radius: 8px;
-  background: #000;
-  padding: 5px 10px;
-  box-sizing: border-box;
+  background: #0099cc;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 153, 204, 0.9);
 }
 
 @media (max-width: 480px) {
@@ -184,8 +185,9 @@ footer {
   .buttons {
     gap: 1rem;
   }
-  .buttons img {
-    width: 90px;
+  .buttons a {
+    font-size: 1rem;
+    padding: 0.8em 1.5em;
   }
 }
 </style>
@@ -203,15 +205,9 @@ footer {
   <div class="info-box" role="main">
     Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the Korean Bible is ready for you anytime, anywhere.
     <div class="buttons" aria-label="Audio listening options">
-      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer" aria-label="Listen on Kobo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Kobo_logo.svg/320px-Kobo_logo.svg.png" alt="Kobo logo" />
-      </a>
-      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer" aria-label="Listen on Google Play">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_Play_2016_logo.svg/320px-Google_Play_2016_logo.svg.png" alt="Google Play logo" />
-      </a>
-      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer" aria-label="Listen on Spotify">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/320px-Spotify_icon.svg.png" alt="Spotify logo" />
-      </a>
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">Listen on Kobo</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">Listen on Google Play</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
     </div>
   </div>
 </div>
