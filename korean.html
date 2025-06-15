@@ -86,7 +86,7 @@ footer {
   text-align: center;
   gap: 2rem;
   box-sizing: border-box;
-  margin-top: 4em; /* aumentei aqui para afastar mais do header */
+  margin-top: 4em;
 }
 
 .flags-row {
@@ -135,11 +135,38 @@ footer {
   user-select: none;
 }
 
+.info-box h1 {
+  margin-bottom: 1rem;
+  color: #f9f871;
+  text-shadow:
+    0 0 5px #f9f871,
+    0 0 15px #f9f871;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem 0;
+  font-size: 1.3rem;
+}
+
+.info-box ul li {
+  margin: 0.6rem 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.info-box ul li::before {
+  content: "📖";
+  position: absolute;
+  left: 0;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 3rem; /* aqui aumentei para abaixar os botões */
+  margin-top: 3rem;
 }
 
 .buttons a {
@@ -195,12 +222,19 @@ footer {
     <div class="flag north"></div>
   </div>
 
-  <div class="info-box" role="main">
-    Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the Korean Bible is ready for you anytime, anywhere.
-    <div class="buttons" aria-label="Audio listening options">
-      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">Listen on Kobo</a>
-      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">Listen on Google Play</a>
-      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
+  <div class="info-box" role="main" aria-label="오디오 성경 설명 및 듣기 옵션">
+    <h1>언제 어디서나 들을 수 있는 한국어 성경 오디오</h1>
+    <p>맑고 존엄한 목소리와 현대적인 편집으로, 바쁜 일상 속에서도 성경의 말씀을 생생하게 느껴보세요.</p>
+    <ul>
+      <li>전문 내레이터의 정성 어린 낭독</li>
+      <li>잡음 없는 깨끗한 음질, 현대적인 편집</li>
+      <li>코보, 구글 플레이, 스포티파이에서 쉽게 청취 가능</li>
+    </ul>
+    <p><strong>지금 바로 들으시고, 당신의 삶에 변화를 가져오세요.</strong></p>
+    <div class="buttons" aria-label="오디오 듣기 옵션">
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
     </div>
   </div>
 </div>
