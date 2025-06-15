@@ -79,6 +79,7 @@
       gap: 3rem;
       justify-content: center;
       align-items: center;
+      margin-top: 3rem; /* Espaço maior acima das bandeiras */
     }
 
     .flag {
@@ -265,33 +266,29 @@
       <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
     </section>
 
-    <!-- Argumentos: você poderá... -->
-    <section class="arguments" aria-label="오디오북의 혜택">
-      당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.<br />
-      깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
-      바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
-      가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
+    <!-- Argumentos e texto -->
+    <section class="arguments" aria-live="polite">
+      한국어로 된 오디오북으로 성경 말씀을 깊게 경험하세요.<br />
+      남한과 북한 두 나라의 언어적 차이와 문화적 배경을 존중하며, 성경 본문을 이해하기 쉽게 해설합니다.
     </section>
 
-    <!-- Faixa de amostra com player -->
+    <!-- Player de áudio de amostra -->
     <section class="sample-section" aria-label="오디오 샘플">
-      <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
-        <div class="play-icon" id="playIcon"></div>
-      </button>
-      <audio id="audioSample" preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+      <audio controls preload="metadata" src="https://cdn.jsdelivr.net/gh/ts-telles/bible-audio@latest/sample-korean-audio.mp3">
+        Your browser does not support the audio element.
+      </audio>
     </section>
 
-    <!-- Botões das lojas -->
-    <nav class="buttons" aria-label="오디오 구매 옵션">
-      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
-      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
-      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
+    <!-- Botões para lojas -->
+    <nav class="buttons" aria-label="성경 오디오북 구입 링크">
+      <a href="https://books.apple.com/kr/book/id1234567890" target="_blank" rel="noopener noreferrer">Apple Books</a>
+      <a href="https://play.google.com/store/books/details?id=1234567890" target="_blank" rel="noopener noreferrer">Google Play</a>
+      <a href="https://www.kobo.com/kr/ko/ebook/1234567890" target="_blank" rel="noopener noreferrer">Kobo</a>
     </nav>
   </main>
 
-  <footer>&copy; 2025 T S TELLES. 모든 권리 보유.</footer>
-
-  <script>
-    // Script para o botão play/pause estiloso da amostra
-    const audio = document.getElementById('audioSample');
-    const btn = document.getElement
+  <footer>
+    &copy; 2025 T S Telles — Todos os direitos reservados
+  </footer>
+</body>
+</html>
