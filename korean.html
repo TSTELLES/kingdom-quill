@@ -9,7 +9,7 @@
       background:
         url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg') no-repeat left center fixed,
         url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat right center fixed;
-      background-size: 30% auto, 30% auto;
+      background-size: 40% auto, 40% auto; /* maior bandeira para ficar visível */
       color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -35,19 +35,50 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding: 4em 1em 6em; /* mais espaço embaixo */
+      padding: 4em 1em 6em;
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1em;
+      color: #0ff;
+      text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+      animation: neonPulse 2s infinite alternate;
+    }
+
+    @keyframes neonPulse {
+      from {
+        text-shadow:
+          0 0 5px #0ff,
+          0 0 10px #0ff,
+          0 0 20px #0ff,
+          0 0 40px #0ff;
+      }
+      to {
+        text-shadow:
+          0 0 10px #0ff,
+          0 0 20px #0ff,
+          0 0 40px #0ff,
+          0 0 80px #0ff;
+      }
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 2em;
-      max-width: 600px;
+      max-width: 700px;
+      text-shadow: 0 0 10px #fff;
+      animation: fadeIn 3s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .buttons a {
@@ -59,11 +90,12 @@
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .buttons a:hover {
       background: #ddd;
+      transform: scale(1.05);
     }
 
     footer {
@@ -83,7 +115,10 @@
 <body>
   <main>
     <h1>성경 (Korean Remastered Bible)</h1>
-    <p>Listen to the remastered Korean Bible — crystal clear, human-like narration, no noise, and dignified delivery. Available on your favorite platforms.</p>
+    <p>
+      Discover the remastered Korean Bible: carefully edited, crystal-clear narration with a human touch, free from background noise.
+      Immerse yourself in the sacred text with a dignified, warm voice. Available on your favorite platforms to listen anytime, anywhere.
+    </p>
 
     <div class="buttons">
       <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
