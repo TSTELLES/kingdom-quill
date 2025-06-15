@@ -1,310 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bíblia Audiobook</title>
+  <title>Аудиокнига Библии – Слушайте где угодно</title>
   <style>
-    /* Reset e base */
     body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
       margin: 0;
-      background: black;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      padding-top: 4.5em; /* Igual à altura do header */
-      padding-bottom: 3.5em; /* Igual à altura do footer */
+      padding: 20px;
+      background: #f7f7f7;
+      color: #333;
     }
-
-    /* Header fixo com neon amarelo */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 4.5em;
-      background-color: black;
-      color: #f9f871;
-      font-weight: bold;
-      font-size: 2.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-      text-shadow:
-        0 0 8px #f9f871,
-        0 0 20px #f9f871,
-        0 0 40px #f9f871,
-        0 0 80px #f9f871;
-      animation: neonPulseYellow 2s infinite alternate;
-      user-select: none;
-      letter-spacing: 0.05em;
-      z-index: 100;
+    h1 {
+      color: #2a2a2a;
+      margin-bottom: 0.5em;
     }
-
-    @keyframes neonPulseYellow {
-      0% {
-        text-shadow:
-          0 0 10px #f9f871,
-          0 0 30px #f9f871,
-          0 0 50px #f9f871,
-          0 0 100px #f9f871;
-      }
-      100% {
-        text-shadow:
-          0 0 20px #f9f871,
-          0 0 40px #f9f871,
-          0 0 70px #f9f871,
-          0 0 120px #f9f871;
-      }
-    }
-
-    /* Conteúdo principal */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem 2rem;
-      gap: 3rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      box-sizing: border-box;
-      min-height: calc(100vh - 4.5em - 3.5em);
-    }
-
-    /* Bandeiras lado a lado com efeito fade */
-    .flags-row {
-      display: flex;
-      gap: 3rem;
-      justify-content: center;
-      align-items: center;
-      padding-top: 5rem;
-    }
-
-    .flag {
-      width: 160px;
-      height: 110px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 12px;
-      filter: brightness(0.75);
-      animation: fadeOpacity 8s infinite alternate ease-in-out;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
-      cursor: default;
-      user-select: none;
-      transition: filter 0.3s ease;
-    }
-    .flag:hover {
-      filter: brightness(1);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
-    }
-    .flag.south {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
-      animation-delay: 0s;
-    }
-    .flag.north {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
-      animation-delay: 4s;
-    }
-    @keyframes fadeOpacity {
-      0% {opacity: 1;}
-      100% {opacity: 0.4;}
-    }
-
-    /* Argumentos com estilo */
     .arguments {
-      background: rgba(0,0,0,0.6);
-      padding: 2rem 2.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-      font-weight: 600;
-      font-size: 1.4rem;
-      line-height: 1.5;
-      max-width: 720px;
-      text-align: center;
-      user-select: none;
-      text-shadow: 0 0 5px #000;
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      font-size: 1.1em;
     }
-
-    /* Faixa de amostra com player estiloso */
-    .sample-section {
-      background: rgba(249, 248, 113, 0.1);
-      padding: 1.8rem 2.2rem;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+    .download-buttons {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.2rem;
-      max-width: 700px;
-      user-select: none;
-    }
-
-    .sample-section audio {
-      width: 100%;
-      outline: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
-      cursor: pointer;
-    }
-
-    /* Botão play customizado */
-    .play-button {
-      background: #f9f871;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow:
-        0 0 10px #f9f871,
-        0 0 25px #f9f871;
-      transition: transform 0.2s ease;
-    }
-    .play-button:hover {
-      transform: scale(1.15);
-      box-shadow:
-        0 0 20px #f9f871,
-        0 0 40px #f9f871;
-    }
-    .play-button:active {
-      transform: scale(0.95);
-    }
-
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-left: 18px solid black;
-      margin-left: 3px;
-    }
-
-    /* Botões das lojas */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.8rem;
+      gap: 15px;
       flex-wrap: wrap;
-      margin-top: 1rem;
     }
-    .buttons a {
-      display: inline-block;
-      padding: 0.7em 1.8em;
-      background: #00bfff;
+    .button {
+      background-color: #0078d7;
       color: #fff;
       text-decoration: none;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
-      user-select: none;
-      white-space: nowrap;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    }
-    .buttons a:hover {
-      background: #0099cc;
-      transform: scale(1.08);
-      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
-    }
-
-    /* Footer fixo */
-    footer {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      height: 3.5em;
-      background-color: black;
-      color: #ccc;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      flex: 1 1 150px;
       text-align: center;
-      line-height: 3.5em;
-      font-size: 0.9rem;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
-      user-select: none;
-      z-index: 100;
     }
-
-    /* Responsividade básica */
-    @media (max-width: 480px) {
-      header {
-        font-size: 1.8rem;
-        height: 3.8em;
-      }
-      footer {
-        font-size: 0.8rem;
-        height: 3em;
-        line-height: 3em;
-      }
-      body {
-        padding-top: 3.8em;
-        padding-bottom: 3em;
-      }
-      main {
-        min-height: calc(100vh - 3.8em - 3em);
-        padding: 1rem 1rem 1rem;
-      }
-      .flags-row {
-        gap: 1.5rem;
-      }
-      .flag {
-        width: 120px;
-        height: 82px;
-      }
-      .arguments {
-        font-size: 1.2rem;
-        padding: 1.5rem 1.8rem;
-      }
-      .sample-section {
-        max-width: 100%;
-        padding: 1.5rem 1.5rem;
-      }
-      .buttons a {
-        padding: 0.6em 1.4em;
-        font-size: 0.9rem;
-      }
+    .button:hover,
+    .button:focus {
+      background-color: #005a9e;
+      outline: none;
     }
   </style>
 </head>
 <body>
   <header>
-    Bíblia Audiobook
+    <h1>Аудиокнига Библии</h1>
+    <p>Слушайте Библию где угодно и в любое время с четким и спокойным голосом.</p>
   </header>
 
   <main>
-    <div class="flags-row" aria-label="Bandeiras das Coreias">
-      <div class="flag south" title="Coreia do Sul"></div>
-      <div class="flag north" title="Coreia do Norte"></div>
-    </div>
-
-    <div class="arguments" aria-live="polite" role="region" aria-label="Argumentos para ouvir a Bíblia em áudio">
-      Você pode ouvir a Bíblia onde quiser, no seu tempo e no seu ritmo. É uma forma prática de levar a Palavra de Deus consigo, mesmo nas tarefas do dia a dia. O audiobook traz uma experiência imersiva, com narração clara e serena, perfeita para momentos de estudo e reflexão.
-    </div>
-
-    <section class="sample-section" aria-label="Exemplo de audição de trecho da Bíblia">
-      <strong>Ouça um trecho grátis:</strong>
-      <audio controls preload="metadata" aria-describedby="audio-desc">
-        <source src="https://cdn.somesaudavel.com.br/audio/biblia-trecho.mp3" type="audio/mpeg" />
-        Seu navegador não suporta o elemento de áudio.
-      </audio>
-      <div id="audio-desc" class="sr-only">Trecho da Bíblia narrado por Brian Moises.</div>
+    <section class="arguments" aria-live="polite" role="region" aria-label="Причины слушать аудиокнигу Библии">
+      Вы можете слушать Библию где угодно, в удобное для вас время и в вашем собственном темпе. Это практичный способ всегда иметь Слово Божье при себе, даже во время повседневных дел. Аудиокнига обеспечивает глубокое погружение с ясным и спокойным голосом, идеально подходящим для учебы и размышлений.
     </section>
 
-    <div class="buttons" role="navigation" aria-label="Links para compra do audiobook">
-      <a href="https://www.apple.com/br/apple-books/" target="_blank" rel="noopener noreferrer" aria-label="Comprar na Apple Books">Apple Books</a>
-      <a href="https://play.google.com/store/books" target="_blank" rel="noopener noreferrer" aria-label="Comprar na Google Play Livros">Google Play Livros</a>
-      <a href="https://www.kobo.com/br/pt" target="_blank" rel="noopener noreferrer" aria-label="Comprar na Kobo">Kobo</a>
-      <a href="https://www.amazon.com.br" target="_blank" rel="noopener noreferrer" aria-label="Comprar na Amazon">Amazon</a>
-    </div>
+    <nav class="download-buttons" role="group" aria-label="Кнопки для загрузки аудиокниги">
+      <a href="https://www.apple.com/ru/apple-books/" class="button" aria-label="Слушать в Apple Books" target="_blank" rel="noopener noreferrer">Apple Books</a>
+      <a href="https://play.google.com/store/apps" class="button" aria-label="Слушать в Google Play" target="_blank" rel="noopener noreferrer">Google Play</a>
+      <a href="https://www.kobo.com/ru/ru" class="button" aria-label="Слушать в Kobo" target="_blank" rel="noopener noreferrer">Kobo</a>
+      <a href="https://www.audible.com/" class="button" aria-label="Слушать в Audible" target="_blank" rel="noopener noreferrer">Audible</a>
+    </nav>
   </main>
 
-  <footer>
-    &copy; 2025 T S Telles - Todos os direitos reservados
+  <footer style="margin-top: 40px; font-size: 0.9em; color: #666; text-align: center;">
+    © 2025 Все права защищены. Аудиокнига Библии.
   </footer>
-
 </body>
 </html>
