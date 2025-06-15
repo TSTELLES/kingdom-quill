@@ -66,8 +66,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem 2rem; /* Mantive o padding-bottom de 2rem */
-      gap: 3rem; /* Espaçamento entre as seções dentro do main */
+      padding: 2rem 1rem 2rem;
+      gap: 3rem;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
@@ -81,8 +81,7 @@
       gap: 3rem;
       justify-content: center;
       align-items: center;
-      /* AJUSTADO: Aumentando o espaço acima das bandeiras para 5rem */
-      padding-top: 5rem; /* Este é o valor que você pode ajustar */
+      padding-top: 5rem;
     }
 
     .flag {
@@ -250,8 +249,7 @@
         padding: 1.5rem 1rem 1.5rem;
       }
       .flags-row {
-        /* AJUSTADO: Aumentando o espaço acima das bandeiras para mobile também */
-        padding-top: 3rem; /* Ajuste este valor para mobile */
+        padding-top: 3rem;
       }
       .arguments {
         font-size: 1.1rem;
@@ -291,7 +289,7 @@
       <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
         <div class="play-icon" id="playIcon"></div>
       </button>
-      <audio id="audioSample" preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/retail-sample.MP3"></audio>
     </section>
 
     <nav class="buttons" aria-label="오디오 구매 옵션">
@@ -304,7 +302,6 @@
   <footer>© 2025 T S TELLES. 모든 권리 보유.</footer>
 
   <script>
-    // Script para o botão play/pause estiloso da amostra
     const audio = document.getElementById('audioSample');
     const btn = document.getElementById('playPauseBtn');
     const playIcon = document.getElementById('playIcon');
