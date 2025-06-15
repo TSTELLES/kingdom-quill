@@ -1,52 +1,297 @@
-body {
-  background-color: #121212; /* preto suave, nada agressivo */
-  color: #f5f5f5; /* quase branco, pra não cansar */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0 20px;
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>성경 오디오북</title>
+  <style>
+    /* Reset e base */
+    body {
+      margin: 0;
+      background: black;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-header, footer {
-  background-color: #1f1f1f; /* cinza bem escuro */
-  color: #ffcc00; /* amarelo neon, destaque */
-  padding: 15px 20px;
-  text-align: center;
-  font-weight: bold;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.7);
-}
+    /* Header fixo com neon amarelo */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4.5em;
+      background-color: black;
+      color: #f9f871;
+      font-weight: bold;
+      font-size: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
+      z-index: 100;
+    }
 
-h1, h2, h3 {
-  color: #ffcc00; /* mantém o amarelo neon */
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-}
+    @keyframes neonPulseYellow {
+      0% {
+        text-shadow:
+          0 0 10px #f9f871,
+          0 0 30px #f9f871,
+          0 0 50px #f9f871,
+          0 0 100px #f9f871;
+      }
+      100% {
+        text-shadow:
+          0 0 20px #f9f871,
+          0 0 40px #f9f871,
+          0 0 70px #f9f871,
+          0 0 120px #f9f871;
+      }
+    }
 
-a {
-  color: #ffcc00;
-  text-decoration: none;
-}
+    /* Espaço após header */
+    main {
+      margin-top: 4.5em;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 5rem; /* bottom espaço para footer */
+      gap: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    /* Bandeiras lado a lado com efeito fade */
+    .flags-row {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+    }
 
-p {
-  line-height: 1.6;
-  margin-bottom: 1em;
-}
+    .flag {
+      width: 160px;
+      height: 110px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      filter: brightness(0.75);
+      animation: fadeOpacity 8s infinite alternate ease-in-out;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      cursor: default;
+      user-select: none;
+      transition: filter 0.3s ease;
+    }
+    .flag:hover {
+      filter: brightness(1);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
+    }
+    .flag.south {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
+      animation-delay: 0s;
+    }
+    .flag.north {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
+      animation-delay: 4s;
+    }
+    @keyframes fadeOpacity {
+      0% {opacity: 1;}
+      100% {opacity: 0.4;}
+    }
 
-/* Para destacar botões ou links importantes */
-button, .btn {
-  background-color: #ffcc00;
-  border: none;
-  padding: 10px 15px;
-  color: #121212;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
+    /* Argumentos com estilo */
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+    }
 
-button:hover, .btn:hover {
-  background-color: #e6b800;
-}
+    /* Faixa de amostra com player estiloso */
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 1.8rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      max-width: 700px;
+      user-select: none;
+    }
+
+    .sample-section audio {
+      width: 100%;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
+      cursor: pointer;
+    }
+
+    /* Botão play customizado */
+    .play-button {
+      background: #f9f871;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow:
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
+      transition: transform 0.2s ease;
+    }
+    .play-button:hover {
+      transform: scale(1.15);
+      box-shadow:
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
+    }
+    .play-button:active {
+      transform: scale(0.95);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    /* Botões das lojas */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .buttons a {
+      display: inline-block;
+      padding: 0.7em 1.8em;
+      background: #00bfff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
+      user-select: none;
+      white-space: nowrap;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .buttons a:hover {
+      background: #0099cc;
+      transform: scale(1.08);
+      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+    }
+
+    /* Footer fixo */
+    footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 3.5em;
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 3.5em;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
+      z-index: 100;
+    }
+
+    /* Responsividade básica */
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        height: 3.8em;
+      }
+      footer {
+        font-size: 0.8rem;
+        height: 3em;
+        line-height: 3em;
+      }
+      .arguments {
+        font-size: 1.1rem;
+        padding: 1.5rem 1.8rem;
+      }
+      .buttons a {
+        font-size: 0.95rem;
+        padding: 0.65em 1.4em;
+      }
+      .flag {
+        width: 120px;
+        height: 80px;
+      }
+      .sample-section {
+        max-width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>성경 오디오북</header>
+
+  <main>
+    <!-- Bandeiras com efeito fade -->
+    <section class="flags-row" aria-label="국기">
+      <div class="flag south" role="img" aria-label="대한민국 국기"></div>
+      <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
+    </section>
+
+    <!-- Argumentos: você poderá... -->
+    <section class="arguments" aria-label="오디오북의 혜택">
+      당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.<br />
+      깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
+      바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
+      가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
+    </section>
+
+    <!-- Faixa de amostra com player -->
+    <section class="sample-section" aria-label="오디오 샘플">
+      <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    </section>
+
+    <!-- Botões das lojas -->
+    <nav class="buttons" aria-label="오디오 구매 옵션">
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
+    </nav>
+  </main>
+
+  <footer>&copy; 2025 T S TELLES. 모든 권리 보유.</footer>
+
+  <script>
+    // Script para o botão play/pause estiloso da amostra
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElement
