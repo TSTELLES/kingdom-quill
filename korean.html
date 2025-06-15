@@ -72,7 +72,6 @@ footer {
   user-select: none;
 }
 
-/* Container principal: mantém tudo centralizado */
 .flags-container {
   position: fixed;
   top: 4.5em;
@@ -80,25 +79,23 @@ footer {
   width: 100%;
   height: calc(100% - 8em);
   display: flex;
-  flex-direction: column; /* coluna: linha de bandeiras + info-box embaixo */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1em 2em;
   text-align: center;
-  gap: 2rem; /* espaço entre linha de bandeiras e info-box */
+  gap: 2rem;
   box-sizing: border-box;
-  margin-top: 2em; /* <<< Ajuste para afastar do header */
+  margin-top: 4em; /* aumentei aqui para afastar mais do header */
 }
 
-/* Linha de bandeiras */
 .flags-row {
-  display: flex;         /* para ficar lado a lado */
-  gap: 2rem;             /* espaço entre as bandeiras */
+  display: flex;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
 }
 
-/* Bandeiras */
 .flag {
   width: 150px;
   height: 100px;
@@ -124,7 +121,6 @@ footer {
   100% { opacity: 0; }
 }
 
-/* Info box */
 .info-box {
   max-width: 720px;
   background: rgba(0, 0, 0, 0.5);
@@ -143,7 +139,7 @@ footer {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 3rem; /* aqui aumentei para abaixar os botões */
 }
 
 .buttons a {
@@ -194,13 +190,11 @@ footer {
 <body>
 <header>성경 - Korean Bible</header>
 <div class="flags-container">
-  <!-- Linha de bandeiras -->
   <div class="flags-row">
     <div class="flag south"></div>
     <div class="flag north"></div>
   </div>
 
-  <!-- Info box abaixo da linha de bandeiras -->
   <div class="info-box" role="main">
     Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the Korean Bible is ready for you anytime, anywhere.
     <div class="buttons" aria-label="Audio listening options">
