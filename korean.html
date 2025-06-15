@@ -96,9 +96,15 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      animation: fade 8s infinite alternate ease-in-out;
+      opacity: 0;
+      animation: fadeInOut 8s infinite;
       filter: brightness(0.7);
-      z-index: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .flag.south {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
+      animation-delay: 0s;
     }
 
     .flag.north {
@@ -106,23 +112,22 @@
       animation-delay: 4s;
     }
 
-    .flag.south {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
-    }
-
-    @keyframes fade {
+    @keyframes fadeInOut {
       0% { opacity: 1; }
-      100% { opacity: 0; }
+      40% { opacity: 1; }
+      50% { opacity: 0; }
+      90% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     .info-box {
       position: relative;
       max-width: 720px;
-      background: rgba(0, 0, 0, 0.5); /* caixa preta suave */
+      background: rgba(0, 0, 0, 0.5);
       padding: 2rem 2.5rem;
       border-radius: 12px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-      color: #fff; /* letras brancas */
+      color: #fff;
       font-size: 1.5rem;
       line-height: 1.4;
       z-index: 10;
@@ -137,7 +142,7 @@
       justify-content: center;
       gap: 1.5rem;
       z-index: 10;
-      margin-top: 1rem; /* Espaço entre texto e botões */
+      margin-top: 1rem;
     }
 
     .buttons a {
