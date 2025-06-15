@@ -30,6 +30,29 @@
       font-size: 1.5em;
       z-index: 10;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+    }
+
+    @keyframes neonPulseYellow {
+      from {
+        text-shadow:
+          0 0 10px #f9f871,
+          0 0 30px #f9f871,
+          0 0 50px #f9f871,
+          0 0 100px #f9f871;
+      }
+      to {
+        text-shadow:
+          0 0 20px #f9f871,
+          0 0 40px #f9f871,
+          0 0 70px #f9f871,
+          0 0 120px #f9f871;
+      }
     }
 
     footer {
@@ -84,17 +107,19 @@
     main {
       position: relative;
       z-index: 8;
-      text-align: center;
-      padding: 4em 2em 4em;
       max-width: 700px;
-      margin: 0 auto;
-      flex-grow: 1;
-      overflow-y: auto;
+      margin: auto;
+      padding: 2em;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: calc(100vh - 7em); /* altura total menos header e footer */
+      box-sizing: border-box;
     }
 
     p {
       font-size: 1.5rem;
-      max-width: 700px;
       margin: 1em auto;
       text-shadow: 0 0 10px #000;
       background: rgba(0,0,0,0.5);
