@@ -2,139 +2,207 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>한국어 오디오 성경</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>성경 오디오북</title>
   <style>
     body {
-      font-family: 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #4A5FC1;
+      background: black;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       color: #fff;
-      text-align: center;
-      padding: 60px 20px 40px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 10px 0 0 0;
-      font-size: 1.2em;
-    }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .benefits {
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-    }
-    .benefits h2 {
-      margin-top: 0;
-      color: #4A5FC1;
-    }
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-    }
-    .benefits li {
-      margin-bottom: 15px;
-      padding-left: 30px;
-      position: relative;
-    }
-    .benefits li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #4A5FC1;
+
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4.5em;
+      background-color: black;
+      color: #f9f871;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
+      font-size: 2.2rem;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
     }
-    .cta {
+
+    @keyframes neonPulseYellow {
+      from {
+        text-shadow:
+          0 0 10px #f9f871,
+          0 0 30px #f9f871,
+          0 0 50px #f9f871,
+          0 0 100px #f9f871;
+      }
+      to {
+        text-shadow:
+          0 0 20px #f9f871,
+          0 0 40px #f9f871,
+          0 0 70px #f9f871,
+          0 0 120px #f9f871;
+      }
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 3.5em;
+      background-color: black;
+      color: #ccc;
       text-align: center;
-      margin: 30px 0;
+      line-height: 3.5em;
+      font-size: 0.9rem;
+      z-index: 10;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
     }
-    .cta a {
-      background: #4A5FC1;
+
+    .flags-container {
+      position: fixed;
+      top: 4.5em;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 8em);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1em 2em;
+      text-align: center;
+      gap: 2rem;
+      box-sizing: border-box;
+    }
+
+    .flags-row {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flag {
+      width: 150px;
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(0.7);
+      border-radius: 8px;
+      animation: fade 8s infinite alternate ease-in-out;
+    }
+
+    .flag.north {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
+      animation-delay: 4s;
+    }
+
+    .flag.south {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
+    }
+
+    @keyframes fade {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .info-box {
+      max-width: 720px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      font-weight: 600;
+      text-shadow: 0 0 8px #000;
+      user-select: none;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 0.6em 1.5em;
+      background: #00bfff;
       color: #fff;
       text-decoration: none;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 5px;
-      transition: background 0.3s ease;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(0, 191, 255, 0.6);
+      transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      white-space: nowrap;
     }
-    .cta a:hover {
-      background: #364BA0;
+
+    .buttons a:hover {
+      background: #0099cc;
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 153, 204, 0.9);
     }
-    .sample {
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    .sample h2 {
-      color: #4A5FC1;
-    }
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9em;
-      color: #777;
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        height: 3.8em;
+      }
+      footer {
+        font-size: 0.8rem;
+        height: 3em;
+        line-height: 3em;
+      }
+      .info-box {
+        font-size: 1.2rem;
+        padding: 1.5rem 1.8rem;
+      }
+      .buttons {
+        gap: 1rem;
+      }
+      .buttons a {
+        font-size: 1rem;
+        padding: 0.8em 1.5em;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>한국어 오디오 성경</h1>
-    <p>언제 어디서나 깨끗한 음성으로 하나님의 말씀을 들으세요.</p>
-    <div class="cta">
-      <a href="#">지금 바로 들으세요!</a>
-    </div>
-  </header>
-
-  <div class="container">
-
-    <section class="benefits">
-      <h2>왜 한국어 오디오 성경을 들어야 할까요?</h2>
-      <ul>
-        <li>편안하고 또렷한 성우 음성으로 말씀을 들을 수 있습니다.</li>
-        <li>인터넷만 있으면 언제 어디서나 접속 가능.</li>
-        <li>광고 없이, 방해 없이 오로지 말씀에 집중하세요.</li>
-        <li>기도 시간, 출근길, 휴식 중에도 은혜로운 말씀과 함께.</li>
-        <li>가족과 함께, 교회 모임에서도 활용 가능합니다.</li>
-        <li>깔끔한 음질과 신뢰할 수 있는 성경 번역본 사용.</li>
-      </ul>
-    </section>
-
-    <div class="cta">
-      <a href="#">지금 바로 말씀을 만나보세요</a>
+  <header>성경 오디오북</header>
+  <div class="flags-container">
+    <div class="flags-row">
+      <div class="flag south"></div>
+      <div class="flag north"></div>
     </div>
 
-    <section class="sample">
-      <h2>미리 들어보기</h2>
-      <!-- Aqui vai sua faixa de amostra -->
-      <audio controls>
-        <source src="sua_amostra.mp3" type="audio/mpeg">
-        브라우저가 오디오 요소를 지원하지 않습니다.
-      </audio>
-    </section>
-
+    <div class="info-box" role="main">
+      깨끗한 음질과 은혜로운 낭독으로 언제 어디서나 하나님의 말씀을 들으세요. 성경 오디오북으로 마음에 평안을 누리세요.
+      <div class="buttons" aria-label="오디오 구매 옵션">
+        <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
+        <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
+        <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
+      </div>
+    </div>
   </div>
-
-  <footer>
-    &copy; 2025 한국어 오디오 성경 | 모든 권리 보유
-  </footer>
-
+  <footer>&copy; 2025 T S TELLES. 모든 권리 보유.</footer>
 </body>
 </html>
