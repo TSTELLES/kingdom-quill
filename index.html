@@ -1,227 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Remastered Evangelistic Bibles</title>
-<style>
-  /* Reset básico */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body, html {
-    height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #f5f5f5;
-    overflow-x: hidden;
-    background: #000;
-  }
-  /* Fundo com imagem e movimento lento */
-  .background {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://cdn.fondecranvip.com/2025/01/lCaTQVKE-fond-decran-croix-68.webp') no-repeat center center/cover;
-    animation: slowZoom 60s linear infinite alternate;
-    z-index: -1;
-    filter: brightness(0.3);
-  }
-  @keyframes slowZoom {
-    0% {transform: scale(1) translate(0,0);}
-    100% {transform: scale(1.05) translate(10px, 10px);}
-  }
-
-  /* Conteúdo principal */
-  .container {
-    max-width: 900px;
-    margin: 5% auto 3em auto;
-    padding: 1em 2em;
-    background: rgba(0,0,0,0.5);
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.7);
-  }
-  h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.5em;
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-  p.description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    text-align: center;
-    margin-bottom: 2em;
-  }
-
-  /* Seção idiomas */
-  .languages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-  .lang-card {
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 1.2em 2em;
-    flex: 1 1 220px;
-    max-width: 260px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .lang-card:hover {
-    background: rgba(255,255,255,0.25);
-  }
-  .lang-card a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.2rem;
-    display: block;
-  }
-
-  /* Footer simples */
-  footer {
-    text-align: center;
-    padding: 1em;
-    font-size: 0.9rem;
-    color: #bbb;
-  }
-
-  /* Responsividade */
-  @media (max-width: 600px) {
-    h1 { font-size: 2rem; }
-    .lang-card { max-width: 100%; }
-  }
-</style>
-</head>
-<body>
-
-<div class="background" aria-hidden="true"></div>
-
-<div class="container" role="main">
-  <h1>Remastered Evangelistic Bibles</h1>
-  <p class="description">
-    This project aims to expand the reach of narrated Bibles in various languages, making the Word of God accessible worldwide. 
-    We combat overpriced and censored versions by providing clear, human-like narration, free from noise or quality loss. 
-    Independent and dedicated to dignity and access, we invite you to explore our available languages.
-  </p>
-
-  <section class="languages" aria-label="Available Languages">
-    <div class="lang-card"><a href="<!DOCTYPE html>
-<html lang="ko">
-<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>성경 - Korean Remastered Bible</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Holy Bible Audiobooks</title>
   <style>
-    body {
-      background:
-        url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg') no-repeat center center fixed,
-        url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat center center fixed;
-      background-size: cover, cover;
-      color: #f5f5f5;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    body, html {
+      margin: 0; padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
     }
-
-    /* Escurece o fundo para contraste */
-    body::before {
-      content: "";
+    .background {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 0;
+      z-index: -1;
     }
-
-    main {
+    .content {
       position: relative;
       z-index: 1;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start; /* Alinha mais para o topo */
-      align-items: center;
-      padding: 4em 1em; /* Espaço extra no topo */
-      text-align: center;
+      top: 40%;
+      transform: translateY(-50%);
     }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1em;
+    .languages {
+      margin-top: 30px;
     }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2em;
-      max-width: 600px;
-    }
-
-    .buttons a {
+    .languages a {
       display: inline-block;
-      margin: 0.5em;
-      padding: 0.8em 1.5em;
-      background: #fff;
-      color: #000;
+      margin: 10px;
+      padding: 15px 25px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 5px;
+      color: white;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s ease;
+      font-size: 18px;
     }
-
-    .buttons a:hover {
-      background: #ddd;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1em;
-      font-size: 0.9rem;
-      color: #aaa;
-      position: relative;
-      z-index: 1;
+    .languages a:hover {
+      background: rgba(0,0,0,0.8);
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>성경 (Korean Remastered Bible)</h1>
-    <p>Listen to the remastered Korean Bible — crystal clear, human-like narration, no noise, and dignified delivery. Available on your favorite platforms.</p>
-
-    <div class="buttons">
-      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
-      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank">Listen on Google Play</a>
-      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank">Listen on Spotify</a>
+  <video class="background" autoplay muted loop>
+    <source src="https://cdn.coverr.co/videos/coverr-cross-on-a-hill-0523/1080p.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="content">
+    <h1>Holy Bible Audiobooks</h1>
+    <p>Select your language:</p>
+    <div class="languages">
+      <a href="korean.html">Korean</a>
+      <a href="russian.html">Russian</a>
+      <a href="chinese.html">Chinese</a>
+      <a href="french.html">French</a>
+      <a href="german.html">German</a>
+      <a href="english-nt.html">English NT</a>
+      <a href="english-ot.html">English OT</a>
+      <a href="arabic.html">Arabic</a>
+      <a href="spanish.html">Spanish</a>
     </div>
-  </main>
-
-  <footer>
-    &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
-  </footer>
-</body>
-</html>
-">Korean (한국어)</a></div>
-    <div class="lang-card"><a href="russian.html">Russian (Русский)</a></div>
-    <div class="lang-card"><a href="chinese.html">Chinese (中文)</a></div>
-    <div class="lang-card"><a href="french.html">French (Français)</a></div>
-    <div class="lang-card"><a href="german.html">German (Deutsch)</a></div>
-    <div class="lang-card"><a href="english.html">English (English)</a></div>
-    <div class="lang-card"><a href="spanish.html">Spanish (Español)</a></div>
-    <div class="lang-card"><a href="arabic.html">Arabic (العربية)</a></div>
-  </section>
-</div>
-
-<footer>
-  &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
-</footer>
-
+  </div>
 </body>
 </html>
