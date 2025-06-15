@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>성경 - Korean Remastered Bible</title>
+  <style>
+    body {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 2em;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Sobreposição escura para leitura ficar ótima */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 0;
+    }
+
+    h1, p, .buttons, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2em;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 0.5em;
+      padding: 0.8em 1.5em;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .buttons a:hover {
+      background: #ddd;
+    }
+    footer {
+      margin-top: 3em;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>성경 (Korean Remastered Bible)</h1>
+  <p>Listen to the remastered Korean Bible — crystal clear, human-like narration, no noise, and dignified delivery. Available on your favorite platforms.</p>
+
+  <div class="buttons">
+    <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
+    <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank">Listen on Google Play</a>
+    <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank">Listen on Spotify</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
+  </footer>
+</body>
+</html>
