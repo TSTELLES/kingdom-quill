@@ -68,34 +68,30 @@
     box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
     user-select: none;
   }
-  /* Container vermelho que envolve as bandeiras e o balão */
   .flags-container {
     position: fixed;
-    top: 4.5em;
+    top: 4.5em;    /* logo abaixo do header */
+    bottom: 3.5em; /* até acima do footer */
     left: 0;
-    width: 100%;
-    height: calc(100% - 8em); /* header + footer */
-    background-color: #b22222; /* vermelho escuro */
+    right: 0;
     overflow: hidden;
-    z-index: 5;
-
+    z-index: 5; /* entre o fundo e header/footer */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 1em 2em;
+    text-align: center;
   }
-
-  /* Bandeiras ocupam toda a área da flags-container */
   .flag {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     animation: fade 8s infinite alternate ease-in-out;
     filter: brightness(0.7);
-    z-index: 1; /* atrás do balão */
+    z-index: 0;
   }
   .flag.north {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
@@ -108,31 +104,28 @@
     0% { opacity: 1; }
     100% { opacity: 0; }
   }
-
-  /* Caixa central do texto e botões */
   .info-box {
     position: relative;
     max-width: 720px;
-    background: rgba(0, 0, 0, 0.65); /* caixa preta suave */
+    background: rgba(0, 0, 0, 0.5);
     padding: 2rem 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.85);
-    color: #fff; /* letras brancas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    color: #fff;
     font-size: 1.5rem;
     line-height: 1.4;
-    z-index: 10;
+    z-index: 10; /* acima das bandeiras */
     user-select: none;
     font-weight: 600;
     text-shadow: 0 0 8px #000;
-    text-align: center;
+    margin-bottom: 1.5rem;
   }
-  /* Botões alinhados e espaçados */
   .buttons {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     z-index: 10;
-    margin-top: 1.5rem; /* espaço do texto para os botões */
+    margin-top: 1rem;
   }
   .buttons a {
     display: inline-block;
@@ -153,8 +146,6 @@
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 153, 204, 0.9);
   }
-
-  /* Responsividade */
   @media (max-width: 480px) {
     header {
       font-size: 1.8rem;
@@ -172,7 +163,6 @@
     }
     .buttons {
       gap: 1rem;
-      flex-wrap: wrap;
     }
     .buttons a {
       font-size: 1rem;
@@ -183,11 +173,10 @@
 </head>
 <body>
   <header>성경 - Korean Remastered Bible</header>
-  <div class="flags-container" role="main" aria-label="Korean Bible audio options with flags background">
+  <div class="flags-container">
     <div class="flag south"></div>
     <div class="flag north"></div>
-
-    <div class="info-box" tabindex="0">
+    <div class="info-box" role="main">
       Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the remastered Korean Bible is ready for you anytime, anywhere.
       <div class="buttons" aria-label="Audio listening options">
         <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">Listen on Kobo</a>
