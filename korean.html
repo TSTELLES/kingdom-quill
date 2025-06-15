@@ -70,7 +70,7 @@ footer {
 }
 .flags-container {
   position: fixed;
-  top: 4.5em;
+  top: 4.5em; /* abaixo do header */
   left: 0;
   width: 100%;
   height: calc(100% - 8em); /* 4.5em header + 3.5em footer */
@@ -78,23 +78,19 @@ footer {
   z-index: 5;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  align-items: flex-start; /* topo da faixa */
+  flex-direction: column;  /* empilhado */
   padding: 1em 2em;
   text-align: center;
   box-sizing: border-box;
-  position: relative; /* para posicionar bandeiras absolute dentro */
+  position: relative; /* para posicionar elementos internos se precisar */
 }
 .flag {
-  position: absolute;
-  top: 1em;       /* afastado do topo para não ficar atrás do header */
-  bottom: 1em;    /* afastado da base para não ficar atrás do footer */
-  left: 0;
-  right: 0;
-  margin: auto;
+  /* Removido position absolute */
+  margin: 0.5em auto;
   width: auto;
-  max-height: calc(100% - 2em); /* para caber no espaço vertical */
-  background-size: contain; 
+  max-height: 6em; /* controla o tamanho para não sumir */
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   animation: fade 8s infinite alternate ease-in-out;
