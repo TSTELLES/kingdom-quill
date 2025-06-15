@@ -1,225 +1,52 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>성경 오디오북</title>
-  <style>
-    /* Reset e base */
-    body {
-      margin: 0;
-      background: black;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+body {
+  background-color: #121212; /* preto suave, nada agressivo */
+  color: #f5f5f5; /* quase branco, pra não cansar */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0 20px;
+}
 
-    /* Header fixo com neon amarelo */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 4.5em;
-      background-color: black;
-      color: #f9f871;
-      font-weight: bold;
-      font-size: 2.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-      text-shadow:
-        0 0 8px #f9f871,
-        0 0 20px #f9f871,
-        0 0 40px #f9f871,
-        0 0 80px #f9f871;
-      animation: neonPulseYellow 2s infinite alternate;
-      user-select: none;
-      letter-spacing: 0.05em;
-      z-index: 100;
-    }
+header, footer {
+  background-color: #1f1f1f; /* cinza bem escuro */
+  color: #ffcc00; /* amarelo neon, destaque */
+  padding: 15px 20px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
 
-    @keyframes neonPulseYellow {
-      0% {
-        text-shadow:
-          0 0 10px #f9f871,
-          0 0 30px #f9f871,
-          0 0 50px #f9f871,
-          0 0 100px #f9f871;
-      }
-      100% {
-        text-shadow:
-          0 0 20px #f9f871,
-          0 0 40px #f9f871,
-          0 0 70px #f9f871,
-          0 0 120px #f9f871;
-      }
-    }
+h1, h2, h3 {
+  color: #ffcc00; /* mantém o amarelo neon */
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
 
-    /* Espaço após header */
-    main {
-      margin-top: 4.5em;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem 5rem; /* bottom espaço para footer */
-      gap: 3rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      box-sizing: border-box;
-    }
+a {
+  color: #ffcc00;
+  text-decoration: none;
+}
 
-    /* Bandeiras lado a lado com efeito fade */
-    .flags-row {
-      display: flex;
-      gap: 3rem;
-      justify-content: center;
-      align-items: center;
-    }
+a:hover {
+  text-decoration: underline;
+}
 
-    .flag {
-      width: 160px;
-      height: 110px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 12px;
-      filter: brightness(0.75);
-      animation: fadeOpacity 8s infinite alternate ease-in-out;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
-      cursor: default;
-      user-select: none;
-      transition: filter 0.3s ease;
-    }
-    .flag:hover {
-      filter: brightness(1);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
-    }
-    .flag.south {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
-      animation-delay: 0s;
-    }
-    .flag.north {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
-      animation-delay: 4s;
-    }
-    @keyframes fadeOpacity {
-      0% {opacity: 1;}
-      100% {opacity: 0.4;}
-    }
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
 
-    /* Argumentos com estilo */
-    .arguments {
-      background: rgba(0,0,0,0.6);
-      padding: 2rem 2.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-      font-weight: 600;
-      font-size: 1.4rem;
-      line-height: 1.5;
-      max-width: 720px;
-      text-align: center;
-      user-select: none;
-      text-shadow: 0 0 5px #000;
-    }
+/* Para destacar botões ou links importantes */
+button, .btn {
+  background-color: #ffcc00;
+  border: none;
+  padding: 10px 15px;
+  color: #121212;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
 
-    /* Faixa de amostra com player estiloso */
-    .sample-section {
-      background: rgba(249, 248, 113, 0.1);
-      padding: 1.8rem 2.2rem;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.2rem;
-      max-width: 700px;
-      user-select: none;
-    }
-
-    .sample-section audio {
-      width: 100%;
-      outline: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
-      cursor: pointer;
-    }
-
-    /* Botão play customizado */
-    .play-button {
-      background: #f9f871;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow:
-        0 0 10px #f9f871,
-        0 0 25px #f9f871;
-      transition: transform 0.2s ease;
-    }
-    .play-button:hover {
-      transform: scale(1.15);
-      box-shadow:
-        0 0 20px #f9f871,
-        0 0 40px #f9f871;
-    }
-    .play-button:active {
-      transform: scale(0.95);
-    }
-
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-left: 18px solid black;
-      margin-left: 3px;
-    }
-
-    .pause-icon {
-      width: 18px;
-      height: 24px;
-      position: relative;
-    }
-    .pause-icon::before,
-    .pause-icon::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 6px;
-      height: 100%;
-      background: black;
-      border-radius: 2px;
-    }
-    .pause-icon::before {
-      left: 0;
-    }
-    .pause-icon::after {
-      right: 0;
-    }
-
-    /* Botões das lojas */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-    .buttons a {
-      display: inline-block;
-      padding: 0.7em 1.8em;
-      background: #00bfff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 5
+button:hover, .btn:hover {
+  background-color: #e6b800;
+}
