@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>성경 - Korean Remastered Bible</title>
   <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: black;
@@ -20,14 +25,14 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%;
-      height: 3.5em;
+      height: 4.5em;
       background-color: black;
       color: #f9f871;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 2.2rem; /* maior que antes */
       z-index: 10;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
       text-shadow:
@@ -36,6 +41,8 @@
         0 0 40px #f9f871,
         0 0 80px #f9f871;
       animation: neonPulseYellow 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
     }
 
     @keyframes neonPulseYellow {
@@ -67,16 +74,23 @@
       font-size: 0.9rem;
       z-index: 10;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
     }
 
     .flags-container {
       position: fixed;
-      top: 3.5em; /* abaixo do header */
+      top: 4.5em; /* abaixo do header */
       left: 0;
       width: 100%;
-      height: calc(100% - 7em); /* altura total menos header e footer */
+      height: calc(100% - 8em); /* altura total menos header e footer */
       overflow: hidden;
       z-index: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 1em 2em;
+      text-align: center;
     }
 
     .flag {
@@ -88,6 +102,8 @@
       background-position: center;
       background-repeat: no-repeat;
       animation: fade 8s infinite alternate ease-in-out;
+      filter: brightness(0.7);
+      z-index: 0;
     }
 
     .flag.north {
@@ -104,44 +120,78 @@
       100% { opacity: 0; }
     }
 
-    main {
+    /* Caixa informativa centralizada sobre as bandeiras */
+    .info-box {
       position: relative;
-      z-index: 8;
-      max-width: 700px;
-      margin: auto;
-      padding: 2em;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: calc(100vh - 7em); /* altura total menos header e footer */
-      box-sizing: border-box;
+      max-width: 720px;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      color: #f9f871;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      z-index: 10;
+      user-select: none;
+      font-weight: 600;
+      text-shadow: 0 0 8px #000;
     }
 
-    p {
-      font-size: 1.5rem;
-      margin: 1em auto;
-      text-shadow: 0 0 10px #000;
-      background: rgba(0,0,0,0.5);
-      padding: 1em;
-      border-radius: 10px;
+    .buttons {
+      margin-top: 1.8rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      z-index: 10;
     }
 
     .buttons a {
       display: inline-block;
-      margin: 0.5em;
-      padding: 1em 2em;
+      padding: 1em 2.2em;
       background: #00bfff;
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: transform 0.2s ease, background 0.3s ease;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0, 191, 255, 0.6);
+      transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      white-space: nowrap;
     }
 
     .buttons a:hover {
       background: #0099cc;
       transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 153, 204, 0.9);
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        height: 3.8em;
+      }
+
+      footer {
+        font-size: 0.8rem;
+        height: 3em;
+        line-height: 3em;
+      }
+
+      .info-box {
+        font-size: 1.2rem;
+        padding: 1.5rem 1.8rem;
+      }
+
+      .buttons {
+        gap: 1rem;
+      }
+
+      .buttons a {
+        font-size: 1rem;
+        padding: 0.8em 1.5em;
+      }
     }
   </style>
 </head>
@@ -151,18 +201,17 @@
   <div class="flags-container">
     <div class="flag south"></div>
     <div class="flag north"></div>
-  </div>
 
-  <main>
-    <p>
+    <div class="info-box" role="main">
       Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the remastered Korean Bible is ready for you anytime, anywhere.
-    </p>
-    <div class="buttons">
-      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
-      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank">Listen on Google Play</a>
-      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank">Listen on Spotify</a>
+
+      <div class="buttons" aria-label="Audio listening options">
+        <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">Listen on Kobo</a>
+        <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">Listen on Google Play</a>
+        <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
+      </div>
     </div>
-  </main>
+  </div>
 
   <footer>
     &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
