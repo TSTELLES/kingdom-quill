@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Animated Korea Flags</title>
+  <title>성경 - Korean Remastered Bible</title>
   <style>
     body {
       margin: 0;
       background: black;
       height: 100vh;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .flags-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: 0;
     }
 
     .flag {
@@ -23,10 +30,10 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-size: contain;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      animation: fade 8s infinite alternate;
+      animation: fade 8s infinite alternate ease-in-out;
     }
 
     .flag.north {
@@ -42,6 +49,77 @@
       0% { opacity: 1; }
       100% { opacity: 0; }
     }
+
+    main {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2em;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #00bfff; /* azul forte tipo bandeira sul-coreana */
+      text-shadow:
+        0 0 5px #00bfff,
+        0 0 20px #00bfff,
+        0 0 40px #00bfff;
+      animation: neonPulse 2s infinite alternate;
+    }
+
+    @keyframes neonPulse {
+      from {
+        text-shadow:
+          0 0 10px #00bfff,
+          0 0 30px #00bfff,
+          0 0 50px #00bfff;
+      }
+      to {
+        text-shadow:
+          0 0 20px #00bfff,
+          0 0 40px #00bfff,
+          0 0 80px #00bfff;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 1em auto;
+      text-shadow: 0 0 10px #000;
+      background: rgba(0,0,0,0.5);
+      padding: 1em;
+      border-radius: 10px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 0.5em;
+      padding: 1em 2em;
+      background: #00bfff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: #0099cc;
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 1em;
+      background: rgba(0,0,0,0.6);
+      font-size: 0.9rem;
+      color: #ccc;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
@@ -49,5 +127,21 @@
     <div class="flag south"></div>
     <div class="flag north"></div>
   </div>
+
+  <main>
+    <h1>성경 (Remastered Korean Bible)</h1>
+    <p>
+      Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the remastered Korean Bible is ready for you anytime, anywhere.
+    </p>
+    <div class="buttons">
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank">Listen on Google Play</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank">Listen on Spotify</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
+  </footer>
 </body>
 </html>
