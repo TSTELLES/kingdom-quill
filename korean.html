@@ -3,131 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>성경 - Korean Remastered Bible</title>
+  <title>Animated Korea Flags</title>
   <style>
     body {
-      background:
-        url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg') no-repeat left center fixed,
-        url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat right center fixed;
-      background-size: 40% auto, 40% auto;
-      color: #f5f5f5;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      background: black;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
-      z-index: 0;
-    }
-
-    main {
+    .flags-container {
       position: relative;
-      z-index: 1;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 4em 1em 6em;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1em;
-      color: #0073cf; /* Azul vibrante coreano */
-      text-shadow:
-        0 0 5px #0073cf,
-        0 0 10px #0073cf,
-        0 0 20px #0073cf,
-        0 0 40px #0073cf;
-      animation: neonBlue 2s infinite alternate;
-    }
-
-    @keyframes neonBlue {
-      from {
-        text-shadow:
-          0 0 5px #0073cf,
-          0 0 10px #0073cf,
-          0 0 20px #0073cf,
-          0 0 40px #0073cf;
-      }
-      to {
-        text-shadow:
-          0 0 10px #0073cf,
-          0 0 20px #0073cf,
-          0 0 40px #0073cf,
-          0 0 80px #0073cf;
-      }
-    }
-
-    p {
-      font-size: 1.3rem;
-      margin-bottom: 2em;
-      max-width: 700px;
-      text-shadow: 0 0 10px #ffffffaa;
-      animation: fadeIn 3s ease-in-out forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin: 0.5em;
-      padding: 0.8em 1.5em;
-      background: #fff;
-      color: #000;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .buttons a:hover {
-      background: #ddd;
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1em;
-      font-size: 0.9rem;
-      color: #aaa;
-      position: fixed;
-      bottom: 0;
-      left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 2;
+      height: 100%;
+    }
+
+    .flag {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: fade 8s infinite alternate;
+    }
+
+    .flag.north {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
+      animation-delay: 4s;
+    }
+
+    .flag.south {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
+    }
+
+    @keyframes fade {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>성경 (Korean Remastered Bible)</h1>
-    <p>
-      Discover the remastered Korean Bible: carefully edited, crystal-clear narration with a human touch, free from background noise.
-      Immerse yourself in the sacred text with a dignified, warm voice. Available on your favorite platforms to listen anytime, anywhere.
-    </p>
-
-    <div class="buttons">
-      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
-      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank">Listen on Google Play</a>
-      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank">Listen on Spotify</a>
-    </div>
-  </main>
-
-  <footer>
-    &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
-  </footer>
+  <div class="flags-container">
+    <div class="flag south"></div>
+    <div class="flag north"></div>
+  </div>
 </body>
 </html>
