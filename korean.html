@@ -15,16 +15,16 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      /* Ajustado: Adicionado padding ao body para deixar espaço para header e footer fixos */
-      padding-top: 4.5em; /* Mesma altura do header */
-      padding-bottom: 3.5em; /* Mesma altura do footer */
+      /* ESSENCIAL: Padding para o body para evitar que header e footer fixos cubram o conteúdo */
+      padding-top: 4.5em; /* Igual à altura do header */
+      padding-bottom: 3.5em; /* Igual à altura do footer */
     }
 
     /* Header fixo com neon amarelo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
-      height: 4.5em;
+      height: 4.5em; /* Altura do header */
       background-color: black;
       color: #f9f871;
       font-weight: bold;
@@ -41,7 +41,7 @@
       animation: neonPulseYellow 2s infinite alternate;
       user-select: none;
       letter-spacing: 0.05em;
-      z-index: 100;
+      z-index: 100; /* Garante que o header fique na frente */
     }
 
     @keyframes neonPulseYellow {
@@ -61,21 +61,22 @@
       }
     }
 
-    /* Espaço após header e antes do footer */
+    /* Conteúdo principal, se estende para preencher o espaço */
     main {
-      flex: 1;
+      flex: 1; /* Permite que o main ocupe o espaço restante */
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Ajustado: Mantive o padding superior e adicionei o padding inferior de volta para dar espaço extra ao final do conteúdo */
-      padding: 2rem 1rem 2rem; /* Adicionado padding-bottom de 2rem */
-      gap: 3rem;
+      /* Padding interno para espaçar o conteúdo do main de suas bordas */
+      padding: 2rem 1rem 2rem; /* Adicionado um padding-bottom para espaçamento interno */
+      gap: 3rem; /* Espaçamento entre as seções dentro do main */
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
-      /* Min-height para garantir que o main ocupe o espaço visível entre header e footer */
-      min-height: calc(100vh - 4.5em - 3.5em);
+      /* ESSENCIAL: min-height para garantir que o main seja sempre alto o suficiente
+         para empurrar o footer para a parte inferior da viewport se o conteúdo for curto */
+      min-height: calc(100vh - 4.5em - 3.5em); /* Altura da tela - altura do header - altura do footer */
     }
 
     /* Bandeiras lado a lado com efeito fade */
@@ -118,7 +119,7 @@
 
     /* Argumentos com estilo */
     .arguments {
-      /* Restaurado: Fundo para o texto dos argumentos */
+      /* FUNDO ORIGINAL: Este é o que deve aparecer */
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
       border-radius: 15px;
@@ -134,8 +135,210 @@
 
     /* Faixa de amostra com player estiloso */
     .sample-section {
-      /* Restaurado: Fundo para a seção do player */
+      /* FUNDO ORIGINAL: Este é o que deve aparecer */
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
       border-radius: 15px;
-      box-shadow: 0 0 15
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      max-width: 700px;
+      user-select: none;
+    }
+
+    .sample-section audio {
+      width: 100%;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
+      cursor: pointer;
+    }
+
+    /* Botão play customizado */
+    .play-button {
+      background: #f9f871;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow:
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
+      transition: transform 0.2s ease;
+    }
+    .play-button:hover {
+      transform: scale(1.15);
+      box-shadow:
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
+    }
+    .play-button:active {
+      transform: scale(0.95);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    /* Botões das lojas */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .buttons a {
+      display: inline-block;
+      padding: 0.7em 1.8em;
+      background: #00bfff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
+      user-select: none;
+      white-space: nowrap;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .buttons a:hover {
+      background: #0099cc;
+      transform: scale(1.08);
+      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+    }
+
+    /* Footer fixo */
+    footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 3.5em; /* Altura do footer */
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 3.5em;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
+      z-index: 100; /* Garante que o footer fique na frente */
+    }
+
+    /* Responsividade básica */
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        height: 3.8em; /* Altura do header para mobile */
+      }
+      footer {
+        font-size: 0.8rem;
+        height: 3em; /* Altura do footer para mobile */
+        line-height: 3em;
+      }
+      /* Ajuste os paddings do body para mobile também */
+      body {
+        padding-top: 3.8em; /* Mesma altura do header para mobile */
+        padding-bottom: 3em; /* Mesma altura do footer para mobile */
+      }
+      main {
+        /* Ajuste o min-height para mobile */
+        min-height: calc(100vh - 3.8em - 3em);
+        /* Ajuste o padding do main para mobile */
+        padding: 1.5rem 1rem 1.5rem; /* Mantido padding-bottom de 1.5rem para mobile */
+      }
+      .arguments {
+        font-size: 1.1rem;
+        padding: 1.5rem 1.8rem;
+      }
+      .buttons a {
+        font-size: 0.95rem;
+        padding: 0.65em 1.4em;
+      }
+      .flag {
+        width: 120px;
+        height: 80px;
+      }
+      .sample-section {
+        max-width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>성경 오디오북</header>
+
+  <main>
+    <section class="flags-row" aria-label="국기">
+      <div class="flag south" role="img" aria-label="대한민국 국기"></div>
+      <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
+    </section>
+
+    <section class="arguments" aria-label="오디오북의 혜택">
+      당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.<br />
+      깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
+      바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
+      가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
+    </section>
+
+    <section class="sample-section" aria-label="오디오 샘플">
+      <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    </section>
+
+    <nav class="buttons" aria-label="오디오 구매 옵션">
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
+    </nav>
+  </main>
+
+  <footer>© 2025 T S TELLES. 모든 권리 보유.</footer>
+
+  <script>
+    // Script para o botão play/pause estiloso da amostra
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+
+    let isPlaying = false;
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        audio.pause();
+        playIcon.style.borderLeft = '18px solid black'; // Play icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '0';
+      } else {
+        audio.play();
+        playIcon.style.borderLeft = 'none'; // Pause icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '12px'; // Adjust width for pause bars
+        playIcon.style.borderLeft = '6px solid black';
+        playIcon.style.borderRight = '6px solid black';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    btn.addEventListener('click', togglePlayPause);
+
+    audio.addEventListener('ended', () => {
+      isPlaying = false;
+      playIcon.style.borderLeft = '18px solid black'; // Reset to play icon
+      playIcon.style.borderRight = 'none';
+      playIcon.style.width = '0';
+    });
+  </script>
+</body>
+</html>
