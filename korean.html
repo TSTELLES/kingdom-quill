@@ -72,7 +72,7 @@ footer {
   user-select: none;
 }
 
-/* Container principal: mantém tudo centralizado */
+/* Container principal */
 .flags-container {
   position: fixed;
   top: 4.5em;
@@ -80,46 +80,46 @@ footer {
   width: 100%;
   height: calc(100% - 8em);
   display: flex;
-  flex-direction: column; /* coluna: linha de bandeiras + info-box embaixo */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1em 2em;
   text-align: center;
-  gap: 2rem; /* espaço entre linha de bandeiras e info-box */
+  gap: 2rem;
   box-sizing: border-box;
 }
 
-/* Linha de bandeiras */
 .flags-row {
-  display: flex;         /* para ficar lado a lado */
-  gap: 2rem;             /* espaço entre as bandeiras */
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 150px;
+  height: 100px;
 }
 
-/* Bandeiras */
 .flag {
+  position: absolute;
   width: 150px;
   height: 100px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.7);
   border-radius: 8px;
-  animation: fade 8s infinite alternate ease-in-out;
-}
-
-.flag.north {
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
-  animation-delay: 4s;
+  animation: fadeInOut 8s infinite;
 }
 
 .flag.south {
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
+  animation-delay: 0s;
 }
 
-@keyframes fade {
+.flag.north {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
+  animation-delay: 4s; /* metade do ciclo */
+}
+
+@keyframes fadeInOut {
   0% { opacity: 1; }
+  45% { opacity: 1; }
+  55% { opacity: 0; }
   100% { opacity: 0; }
 }
 
@@ -193,13 +193,10 @@ footer {
 <body>
 <header>성경 - Korean Bible</header>
 <div class="flags-container">
-  <!-- Linha de bandeiras -->
   <div class="flags-row">
     <div class="flag south"></div>
     <div class="flag north"></div>
   </div>
-
-  <!-- Info box abaixo da linha de bandeiras -->
   <div class="info-box" role="main">
     Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the Korean Bible is ready for you anytime, anywhere.
     <div class="buttons" aria-label="Audio listening options">
