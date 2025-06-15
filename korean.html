@@ -6,133 +6,119 @@
   <title>성경 - Korean Remastered Bible</title>
   <style>
     body {
-      margin: 0;
-      background: black;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      color: #fff;
+      background:
+        url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg') no-repeat left center fixed,
+        url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat right center fixed;
+      background-size: 40% auto, 40% auto;
+      color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    .flags-container {
+    body::before {
+      content: "";
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      overflow: hidden;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
       z-index: 0;
-    }
-
-    .flag {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      animation: fade 8s infinite alternate ease-in-out;
-    }
-
-    .flag.north {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
-      animation-delay: 4s;
-    }
-
-    .flag.south {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
-    }
-
-    @keyframes fade {
-      0% { opacity: 1; }
-      100% { opacity: 0; }
     }
 
     main {
       position: relative;
       z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 4em 1em 6em;
       text-align: center;
-      padding: 2em;
     }
 
     h1 {
-      font-size: 4rem;
-      color: #00bfff; /* azul forte tipo bandeira sul-coreana */
+      font-size: 3rem;
+      margin-bottom: 1em;
+      color: #0073cf; /* Azul vibrante coreano */
       text-shadow:
-        0 0 5px #00bfff,
-        0 0 20px #00bfff,
-        0 0 40px #00bfff;
-      animation: neonPulse 2s infinite alternate;
+        0 0 5px #0073cf,
+        0 0 10px #0073cf,
+        0 0 20px #0073cf,
+        0 0 40px #0073cf;
+      animation: neonBlue 2s infinite alternate;
     }
 
-    @keyframes neonPulse {
+    @keyframes neonBlue {
       from {
         text-shadow:
-          0 0 10px #00bfff,
-          0 0 30px #00bfff,
-          0 0 50px #00bfff;
+          0 0 5px #0073cf,
+          0 0 10px #0073cf,
+          0 0 20px #0073cf,
+          0 0 40px #0073cf;
       }
       to {
         text-shadow:
-          0 0 20px #00bfff,
-          0 0 40px #00bfff,
-          0 0 80px #00bfff;
+          0 0 10px #0073cf,
+          0 0 20px #0073cf,
+          0 0 40px #0073cf,
+          0 0 80px #0073cf;
       }
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 2em;
       max-width: 700px;
-      margin: 1em auto;
-      text-shadow: 0 0 10px #000;
-      background: rgba(0,0,0,0.5);
-      padding: 1em;
-      border-radius: 10px;
+      text-shadow: 0 0 10px #ffffffaa;
+      animation: fadeIn 3s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .buttons a {
       display: inline-block;
       margin: 0.5em;
-      padding: 1em 2em;
-      background: #00bfff;
-      color: #fff;
+      padding: 0.8em 1.5em;
+      background: #fff;
+      color: #000;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: bold;
-      transition: transform 0.2s ease, background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .buttons a:hover {
-      background: #0099cc;
+      background: #ddd;
       transform: scale(1.05);
     }
 
     footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
       text-align: center;
       padding: 1em;
-      background: rgba(0,0,0,0.6);
       font-size: 0.9rem;
-      color: #ccc;
-      z-index: 1;
+      color: #aaa;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
     }
   </style>
 </head>
 <body>
-  <div class="flags-container">
-    <div class="flag south"></div>
-    <div class="flag north"></div>
-  </div>
-
   <main>
-    <h1>성경 (Remastered Korean Bible)</h1>
+    <h1>성경 (Korean Remastered Bible)</h1>
     <p>
-      Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the remastered Korean Bible is ready for you anytime, anywhere.
+      Discover the remastered Korean Bible: carefully edited, crystal-clear narration with a human touch, free from background noise.
+      Immerse yourself in the sacred text with a dignified, warm voice. Available on your favorite platforms to listen anytime, anywhere.
     </p>
+
     <div class="buttons">
       <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
       <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank">Listen on Google Play</a>
