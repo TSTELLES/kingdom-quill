@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>성경 오디오북</title>
   <style>
+    /* Reset e base */
     body {
       margin: 0;
       background: black;
@@ -16,6 +17,7 @@
       overflow-x: hidden;
     }
 
+    /* Header fixo com neon amarelo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -56,14 +58,15 @@
       }
     }
 
+    /* Espaço após header */
     main {
-      margin-top: 4.5em; /* para compensar o header fixo */
+      margin-top: 6em; /* Alterado para mais espaço */
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem 5rem;
-      gap: 2rem; /* menos espaço entre seções para não sobrar muito branco */
+      padding: 2rem 1rem 5rem; /* bottom espaço para footer */
+      gap: 3rem;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
@@ -73,10 +76,9 @@
     /* Bandeiras lado a lado com efeito fade */
     .flags-row {
       display: flex;
-      gap: 2rem; /* menor gap para juntar as bandeiras */
+      gap: 3rem;
       justify-content: center;
       align-items: center;
-      margin-bottom: 0; /* tira qualquer margem inferior extra */
     }
 
     .flag {
@@ -109,6 +111,7 @@
       100% {opacity: 0.4;}
     }
 
+    /* Argumentos com estilo */
     .arguments {
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
@@ -121,9 +124,9 @@
       text-align: center;
       user-select: none;
       text-shadow: 0 0 5px #000;
-      margin-top: 0; /* elimina espaços extras */
     }
 
+    /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
@@ -132,10 +135,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 1.2rem;
       max-width: 700px;
       user-select: none;
-      margin-top: 0; /* tira espaço extra */
     }
 
     .sample-section audio {
@@ -146,6 +148,7 @@
       cursor: pointer;
     }
 
+    /* Botão play customizado */
     .play-button {
       background: #f9f871;
       border: none;
@@ -178,37 +181,15 @@
       border-bottom: 12px solid transparent;
       border-left: 18px solid black;
       margin-left: 3px;
-      transition: border-left-color 0.3s ease;
-    }
-    .play-icon.pause {
-      border-left-color: transparent;
-      width: 18px;
-      height: 24px;
-      position: relative;
-      margin-left: 0;
-    }
-    .play-icon.pause::before,
-    .play-icon.pause::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      width: 6px;
-      height: 24px;
-      background: black;
-    }
-    .play-icon.pause::before {
-      left: 0;
-    }
-    .play-icon.pause::after {
-      right: 0;
     }
 
+    /* Botões das lojas */
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1.8rem;
       flex-wrap: wrap;
-      margin-top: 0; /* reduz o espaço acima */
+      margin-top: 1rem;
     }
     .buttons a {
       display: inline-block;
@@ -230,6 +211,7 @@
       box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
     }
 
+    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -244,74 +226,103 @@
       z-index: 100;
     }
 
+    /* Responsividade básica */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
         height: 3.8em;
       }
+      /* Ajuste o margin-top do main para mobile também, se necessário */
       main {
-        padding: 1.5rem 1rem 4rem;
+        margin-top: 5em; /* Exemplo: ajuste para mobile */
+      }
+      footer {
+        font-size: 0.8rem;
+        height: 3em;
+        line-height: 3em;
+      }
+      .arguments {
+        font-size: 1.1rem;
+        padding: 1.5rem 1.8rem;
+      }
+      .buttons a {
+        font-size: 0.95rem;
+        padding: 0.65em 1.4em;
       }
       .flag {
         width: 120px;
-        height: 83px;
+        height: 80px;
       }
-      .buttons a {
-        padding: 0.6em 1.2em;
-        font-size: 0.9rem;
+      .sample-section {
+        max-width: 90vw;
       }
     }
   </style>
 </head>
 <body>
   <header>성경 오디오북</header>
+
   <main>
-    <div class="flags-row" aria-label="Flags">
-      <div class="flag south" title="South Korea"></div>
-      <div class="flag north" title="North Korea"></div>
-    </div>
-
-    <div class="arguments" aria-live="polite">
-      성경을 완전하게 다시 체험할 수 있도록 새로 녹음된 오디오북입니다. 
-      진정한 믿음과 감동을 찾는 분들을 위해 준비한 특별한 작품입니다.
-    </div>
-
-    <section class="sample-section" aria-label="Audio sample section">
-      <audio id="audioPlayer" src="https://example.com/sample-audio.mp3" preload="auto"></audio>
-      <button id="playBtn" class="play-button" aria-label="Play audio sample" aria-pressed="false">
-        <span class="play-icon"></span>
-      </button>
+    <section class="flags-row" aria-label="국기">
+      <div class="flag south" role="img" aria-label="대한민국 국기"></div>
+      <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
     </section>
 
-    <div class="buttons">
-      <a href="https://itunes.apple.com" target="_blank" rel="noopener noreferrer">아이튠즈에서 구매</a>
-      <a href="https://www.google.com/intl/ko_chrome" target="_blank" rel="noopener noreferrer">구글 플레이에서 구매</a>
-      <a href="https://www.kobo.com" target="_blank" rel="noopener noreferrer">코보에서 구매</a>
-    </div>
+    <section class="arguments" aria-label="오디오북의 혜택">
+      당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.<br />
+      깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
+      바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
+      가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
+    </section>
+
+    <section class="sample-section" aria-label="오디오 샘플">
+      <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    </section>
+
+    <nav class="buttons" aria-label="오디오 구매 옵션">
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
+    </nav>
   </main>
 
-  <footer>© 2025 Bible Audio. All rights reserved.</footer>
+  <footer>© 2025 T S TELLES. 모든 권리 보유.</footer>
 
   <script>
-    const audio = document.getElementById('audioPlayer');
-    const playBtn = document.getElementById('playBtn');
-    const playIcon = playBtn.querySelector('.play-icon');
+    // Script para o botão play/pause estiloso da amostra
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
 
-    playBtn.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        playBtn.setAttribute('aria-pressed', 'true');
-        playIcon.classList.add('pause');
-      } else {
+    let isPlaying = false;
+
+    function togglePlayPause() {
+      if (isPlaying) {
         audio.pause();
-        playBtn.setAttribute('aria-pressed', 'false');
-        playIcon.classList.remove('pause');
+        playIcon.style.borderLeft = '18px solid black'; // Play icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '0';
+      } else {
+        audio.play();
+        playIcon.style.borderLeft = 'none'; // Pause icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '12px'; // Adjust width for pause bars
+        playIcon.style.borderLeft = '6px solid black';
+        playIcon.style.borderRight = '6px solid black';
       }
-    });
+      isPlaying = !isPlaying;
+    }
+
+    btn.addEventListener('click', togglePlayPause);
 
     audio.addEventListener('ended', () => {
-      playBtn.setAttribute('aria-pressed', 'false');
-      playIcon.classList.remove('pause');
+      isPlaying = false;
+      playIcon.style.borderLeft = '18px solid black'; // Reset to play icon
+      playIcon.style.borderRight = 'none';
+      playIcon.style.width = '0';
     });
   </script>
 </body>
