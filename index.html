@@ -121,7 +121,6 @@
   <title>성경 - Korean Remastered Bible</title>
   <style>
     body {
-      /* Camada múltipla de background: Norte por baixo, Sul por cima */
       background:
         url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg') no-repeat center center fixed,
         url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat center center fixed;
@@ -129,32 +128,41 @@
       color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 2em;
-      text-align: center;
-      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Sobreposição escura para garantir contraste de texto */
+    /* Escurece o fundo para contraste */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0,0,0,0.7);
       z-index: 0;
     }
 
-    h1, p, .buttons, footer {
+    main {
       position: relative;
       z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Alinha mais para o topo */
+      align-items: center;
+      padding: 4em 1em; /* Espaço extra no topo */
+      text-align: center;
     }
 
     h1 {
       font-size: 2.5rem;
+      margin-bottom: 1em;
     }
 
     p {
       font-size: 1.2rem;
       margin-bottom: 2em;
+      max-width: 600px;
     }
 
     .buttons a {
@@ -174,21 +182,26 @@
     }
 
     footer {
-      margin-top: 3em;
+      text-align: center;
+      padding: 1em;
       font-size: 0.9rem;
       color: #aaa;
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
-  <h1>성경 (Korean Remastered Bible)</h1>
-  <p>Listen to the remastered Korean Bible — crystal clear, human-like narration, no noise, and dignified delivery. Available on your favorite platforms.</p>
+  <main>
+    <h1>성경 (Korean Remastered Bible)</h1>
+    <p>Listen to the remastered Korean Bible — crystal clear, human-like narration, no noise, and dignified delivery. Available on your favorite platforms.</p>
 
-  <div class="buttons">
-    <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
-    <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank">Listen on Google Play</a>
-    <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank">Listen on Spotify</a>
-  </div>
+    <div class="buttons">
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank">Listen on Kobo</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank">Listen on Google Play</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank">Listen on Spotify</a>
+    </div>
+  </main>
 
   <footer>
     &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
