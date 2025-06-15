@@ -75,7 +75,7 @@
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
-    /* Bandeiras lado a lado com efeito fade */
+    /* Bandeiras lado a lado com efeito fade (se quiser usar) */
     .flags-row {
       display: flex;
       gap: 3rem;
@@ -141,6 +141,7 @@
       gap: 1.2rem;
       max-width: 700px;
       user-select: none;
+      color: black; /* Texto dentro do sample-section em preto para contraste */
     }
 
     .sample-section audio {
@@ -273,7 +274,18 @@
   <header>Аудиокнига Библии</header>
 
   <main>
-    <section class="flags-row" aria-label="Флаги">
-      <div class="flag south" role="img" aria-label
-::contentReference[oaicite:11]{index=11}
- 
+    <section class="sample-section" aria-label="Пример аудиокниги">
+      <h2>Пример аудиокниги</h2>
+      <audio controls preload="metadata" aria-describedby="audio-desc">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        Ваш браузер не поддерживает элемент audio.
+      </audio>
+      <p id="audio-desc" style="font-size: 0.9rem; color: #444;">
+        Пример аудио для проверки работы плеера на странице.
+      </p>
+    </section>
+  </main>
+
+  <footer>© 2025 T S Telles - Todos os direitos reservados</footer>
+</body>
+</html>
