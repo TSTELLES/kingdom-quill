@@ -70,22 +70,26 @@
   }
   .flags-container {
     position: fixed;
-    top: 4.5em;    /* logo abaixo do header */
-    bottom: 3.5em; /* até acima do footer */
+    top: 4.5em;
+    bottom: 3.5em;
     left: 0;
     right: 0;
     overflow: hidden;
-    z-index: 5; /* entre o fundo e header/footer */
+    z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 1em 2em;
     text-align: center;
+    position: relative;
   }
   .flag {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 1em;    /* afastando do topo para não invadir header */
+    bottom: 1em; /* afastando do rodapé para não invadir footer */
+    left: 0;
+    right: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -107,14 +111,14 @@
   .info-box {
     position: relative;
     max-width: 720px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* caixa preta suave */
     padding: 2rem 2.5rem;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    color: #fff;
+    color: #fff; /* letras brancas */
     font-size: 1.5rem;
     line-height: 1.4;
-    z-index: 10; /* acima das bandeiras */
+    z-index: 10;
     user-select: none;
     font-weight: 600;
     text-shadow: 0 0 8px #000;
@@ -125,7 +129,7 @@
     justify-content: center;
     gap: 1.5rem;
     z-index: 10;
-    margin-top: 1rem;
+    margin-top: 1rem; /* Espaço entre texto e botões */
   }
   .buttons a {
     display: inline-block;
@@ -172,21 +176,21 @@
 </style>
 </head>
 <body>
-  <header>성경 - Korean Remastered Bible</header>
-  <div class="flags-container">
-    <div class="flag south"></div>
-    <div class="flag north"></div>
-    <div class="info-box" role="main">
-      Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the remastered Korean Bible is ready for you anytime, anywhere.
-      <div class="buttons" aria-label="Audio listening options">
-        <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">Listen on Kobo</a>
-        <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">Listen on Google Play</a>
-        <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
-      </div>
+<header>성경 - Korean Remastered Bible</header>
+<div class="flags-container" aria-label="Flags and main content">
+  <div class="flag south"></div>
+  <div class="flag north"></div>
+  <div class="info-box" role="main">
+    Experience the sacred text with crystal-clear narration, dignified voice and modern editing — the remastered Korean Bible is ready for you anytime, anywhere.
+    <div class="buttons" aria-label="Audio listening options">
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">Listen on Kobo</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">Listen on Google Play</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
     </div>
   </div>
-  <footer>
-    &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
-  </footer>
+</div>
+<footer>
+  &copy; 2025 Remastered Evangelistic Bibles. All Rights Reserved.
+</footer>
 </body>
 </html>
