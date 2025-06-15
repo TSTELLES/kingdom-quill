@@ -87,7 +87,7 @@
       gap: 2rem;
       box-sizing: border-box;
       margin-top: 4em;
-      overflow-y: auto; /* liberar scroll se precisar */
+      overflow-y: auto; /* para garantir scroll se o conteúdo crescer */
     }
 
     .flags-row {
@@ -136,6 +136,43 @@
       user-select: none;
     }
 
+    /* Nova seção de argumentos */
+    .arguments-box {
+      max-width: 720px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #f9f871;
+      color: #f9f871;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      font-weight: 500;
+      text-align: left;
+      user-select: none;
+      margin: 0 auto;
+      margin-top: 1.5rem;
+    }
+
+    .arguments-box h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871;
+    }
+
+    .arguments-box ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      color: #f9f871;
+    }
+
+    .arguments-box ul li {
+      margin-bottom: 0.9rem;
+    }
+
     .buttons {
       display: flex;
       justify-content: center;
@@ -164,80 +201,6 @@
       box-shadow: 0 6px 15px rgba(0, 153, 204, 0.9);
     }
 
-    /* Nova seção de argumentos */
-    .arguments-box {
-      max-width: 720px;
-      background: rgba(10, 10, 10, 0.7);
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
-      color: #cceeff;
-      font-size: 1.3rem;
-      line-height: 1.5;
-      font-weight: 500;
-      margin-top: 2rem;
-      text-shadow: 0 0 6px #003366;
-      user-select: none;
-    }
-
-    /* Seção upload */
-    .upload-box {
-      max-width: 720px;
-      background: rgba(0, 0, 30, 0.6);
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 150, 255, 0.7);
-      color: #aaddff;
-      font-size: 1.2rem;
-      line-height: 1.4;
-      font-weight: 600;
-      margin-top: 2rem;
-      text-shadow: 0 0 4px #002244;
-      user-select: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .upload-box label {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .upload-box input[type="file"] {
-      background: #003366;
-      border: none;
-      border-radius: 8px;
-      color: #fff;
-      padding: 0.5em 1em;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 0 10px #007acc;
-      transition: background 0.3s ease;
-    }
-
-    .upload-box input[type="file"]:hover {
-      background: #0055aa;
-    }
-
-    .upload-box button {
-      padding: 0.6em 1.5em;
-      background: #0088ff;
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 136, 255, 0.8);
-      transition: background 0.3s ease;
-    }
-
-    .upload-box button:hover {
-      background: #005bb5;
-    }
-
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -248,7 +211,7 @@
         height: 3em;
         line-height: 3em;
       }
-      .info-box {
+      .info-box, .arguments-box {
         font-size: 1.2rem;
         padding: 1.5rem 1.8rem;
       }
@@ -259,60 +222,38 @@
         font-size: 1rem;
         padding: 0.8em 1.5em;
       }
-      .arguments-box {
-        font-size: 1rem;
-        padding: 1rem 1.8rem;
-      }
-      .upload-box {
-        font-size: 1rem;
-        padding: 1rem 1.8rem;
-      }
-      .upload-box button {
-        font-size: 0.9rem;
-        padding: 0.5em 1em;
-      }
     }
   </style>
 </head>
 <body>
   <header>성경 오디오북</header>
-  <div class="flags-container">
+  <div class="flags-container" role="main" aria-label="성경 오디오북 소개 및 구매 링크">
     <div class="flags-row">
-      <div class="flag south"></div>
-      <div class="flag north"></div>
+      <div class="flag south" aria-label="대한민국 국기"></div>
+      <div class="flag north" aria-label="조선민주주의인민공화국 국기"></div>
     </div>
 
-    <div class="info-box" role="main">
+    <div class="info-box" tabindex="0">
       깨끗한 음질과 은혜로운 낭독으로 언제 어디서나 하나님의 말씀을 들으세요. 성경 오디오북으로 마음에 평안을 누리세요.
       <div class="buttons" aria-label="오디오 구매 옵션">
         <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
         <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
-        <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
+        <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7af74126" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
       </div>
     </div>
 
-    <!-- Argumentos para aquisição -->
-    <div class="arguments-box" role="region" aria-label="구매 장점 설명">
-      <h2>왜 이 오디오북을 선택해야 할까요?</h2>
+    <section class="arguments-box" tabindex="0" aria-label="오디오북에 대한 주요 논점">
+      <h2>주요 논점</h2>
       <ul>
-        <li>최고 품질의 녹음으로 명확하고 생생한 성경 말씀 청취</li>
-        <li>휴대용으로 언제 어디서나 마음의 위로와 영적 성장 가능</li>
-        <li>전문 낭독자가 은혜롭게 전달하는 깊은 감동</li>
-        <li>구매 후 다양한 플랫폼에서 자유롭게 재생 가능</li>
-        <li>영혼을 새롭게 하는 진정한 영적 체험</li>
+        <li>전 세계적으로 한국어 성경 오디오북의 수요가 지속적으로 증가하고 있습니다.</li>
+        <li>고품질의 낭독과 음향 기술이 청취자의 몰입 경험을 극대화합니다.</li>
+        <li>모바일 친화적 접근성과 다양한 플랫폼에서 쉽게 이용할 수 있습니다.</li>
+        <li>기독교 공동체 내에서 신앙 강화와 말씀 묵상을 돕는 효과가 입증되었습니다.</li>
+        <li>문화적 이해와 영적 성장을 위한 매개체로서의 역할을 수행합니다.</li>
       </ul>
-    </div>
-
-    <!-- Upload de áudio para amostra -->
-    <div class="upload-box" role="region" aria-label="오디오 샘플 업로드">
-      <form action="/upload-audio" method="POST" enctype="multipart/form-data" aria-describedby="upload-desc">
-        <label for="audio-sample">오디오 샘플 파일 선택</label>
-        <input type="file" id="audio-sample" name="audio-sample" accept="audio/*" required />
-        <p id="upload-desc">최대 10MB 크기의 오디오 파일을 업로드하세요. (mp3, wav, m4a 지원)</p>
-        <button type="submit">샘플 업로드</button>
-      </form>
-    </div>
+    </section>
   </div>
-  <footer>© 2023 성경 오디오북 | 모든 권리 보유</footer>
+
+  <footer>© 2025 성경 오디오북 제작팀</footer>
 </body>
 </html>
