@@ -99,9 +99,9 @@
   <style>
     body {
       background:
-        url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg') no-repeat center center fixed,
-        url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat center center fixed;
-      background-size: cover, cover;
+        url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg') no-repeat left center fixed,
+        url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat right center fixed;
+      background-size: 30% auto, 30% auto;
       color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -125,9 +125,9 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* Alinha mais para o topo */
+      justify-content: flex-start;
       align-items: center;
-      padding: 4em 1em; /* Espaço extra no topo */
+      padding: 4em 1em 6em; /* espaço maior embaixo para footer fixo */
       text-align: center;
     }
 
@@ -163,8 +163,12 @@
       padding: 1em;
       font-size: 0.9rem;
       color: #aaa;
-      position: relative;
-      z-index: 1;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
     }
   </style>
 </head>
