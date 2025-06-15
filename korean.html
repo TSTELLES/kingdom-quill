@@ -15,7 +15,7 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      /* NOVO: Adicione padding ao body para deixar espaço para header e footer fixos */
+      /* Ajustado: Adicionado padding ao body para deixar espaço para header e footer fixos */
       padding-top: 4.5em; /* Mesma altura do header */
       padding-bottom: 3.5em; /* Mesma altura do footer */
     }
@@ -61,22 +61,21 @@
       }
     }
 
-    /* Espaço após header */
+    /* Espaço após header e antes do footer */
     main {
-      /* REMOVIDO: margin-top não é mais necessário aqui */
-      flex: 1; /* Permite que o main ocupe o espaço restante */
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Ajuste o padding horizontal e remova o bottom se o body já tiver padding-bottom */
-      padding: 2rem 1rem;
+      /* Ajustado: Mantive o padding superior e adicionei o padding inferior de volta para dar espaço extra ao final do conteúdo */
+      padding: 2rem 1rem 2rem; /* Adicionado padding-bottom de 2rem */
       gap: 3rem;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
-      /* NOVO: Min-height para garantir que o main seja sempre alto o suficiente */
-      min-height: calc(100vh - 4.5em - 3.5em); /* Altura da tela - altura do header - altura do footer */
+      /* Min-height para garantir que o main ocupe o espaço visível entre header e footer */
+      min-height: calc(100vh - 4.5em - 3.5em);
     }
 
     /* Bandeiras lado a lado com efeito fade */
@@ -119,6 +118,7 @@
 
     /* Argumentos com estilo */
     .arguments {
+      /* Restaurado: Fundo para o texto dos argumentos */
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
       border-radius: 15px;
@@ -134,76 +134,8 @@
 
     /* Faixa de amostra com player estiloso */
     .sample-section {
+      /* Restaurado: Fundo para a seção do player */
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.2rem;
-      max-width: 700px;
-      user-select: none;
-    }
-
-    .sample-section audio {
-      width: 100%;
-      outline: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
-      cursor: pointer;
-    }
-
-    /* Botão play customizado */
-    .play-button {
-      background: #f9f871;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow:
-        0 0 10px #f9f871,
-        0 0 25px #f9f871;
-      transition: transform 0.2s ease;
-    }
-    .play-button:hover {
-      transform: scale(1.15);
-      box-shadow:
-        0 0 20px #f9f871,
-        0 0 40px #f9f871;
-    }
-    .play-button:active {
-      transform: scale(0.95);
-    }
-
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-left: 18px solid black;
-      margin-left: 3px;
-    }
-
-    /* Botões das lojas */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-    .buttons a {
-      display: inline-block;
-      padding: 0.7em 1.8em;
-      background: #00bfff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
+      box-shadow: 0 0 15
