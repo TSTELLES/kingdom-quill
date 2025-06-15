@@ -19,7 +19,7 @@
       padding-bottom: 3.5em; /* Igual à altura do footer */
     }
 
-    /* Header fixo com neon amarelo (mantido, pois você pediu só o player) */
+    /* Header fixo com neon amarelo (mantido) */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -92,14 +92,16 @@
       border-radius: 12px;
       filter: brightness(0.75);
       animation: fadeOpacity 8s infinite alternate ease-in-out;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8); /* Mantido amarelo para o efeito nas bandeiras */
+      /* AJUSTADO: Box-shadow das bandeiras para branco */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Alterado para branco */
       cursor: default;
       user-select: none;
       transition: filter 0.3s ease;
     }
     .flag:hover {
       filter: brightness(1);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 1); /* Mantido amarelo para o efeito nas bandeiras */
+      /* AJUSTADO: Box-shadow das bandeiras ao passar o mouse para branco */
+      box-shadow: 0 0 25px rgba(255, 255, 255, 1); /* Alterado para branco */
     }
     .flag.south {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
@@ -119,7 +121,8 @@
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6); /* Mantido amarelo para a sombra do box */
+      /* AJUSTADO: Box-shadow do box de argumentos para branco */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Alterado para branco */
       font-weight: 600;
       font-size: 1.4rem;
       line-height: 1.5;
@@ -131,11 +134,11 @@
 
     /* Faixa de amostra com player estiloso */
     .sample-section {
-      background: rgba(249, 248, 113, 0.1); /* Mantido amarelo para o fundo semitransparente da seção */
+      background: rgba(249, 248, 113, 0.1); /* Fundo da seção do player (mantido amarelo translúcido) */
       padding: 1.8rem 2.2rem;
       border-radius: 15px;
-      /* AJUSTADO: Box-shadow da seção do player para branco */
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Alterado para branco */
+      /* Box-shadow da seção do player para branco */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -148,15 +151,15 @@
       width: 100%;
       outline: none;
       border-radius: 10px;
-      /* AJUSTADO: Box-shadow do áudio player para branco */
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Alterado para branco */
+      /* Box-shadow do áudio player para branco */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
       cursor: pointer;
     }
 
     /* Botão play customizado */
     .play-button {
-      /* AJUSTADO: Background do botão para branco */
-      background: #FFFFFF; /* Alterado para branco */
+      /* Background do botão para branco */
+      background: #FFFFFF;
       border: none;
       border-radius: 50%;
       width: 60px;
@@ -165,18 +168,18 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      /* AJUSTADO: Box-shadow do botão para branco */
+      /* Box-shadow do botão para branco */
       box-shadow:
-        0 0 10px #FFFFFF, /* Alterado para branco */
-        0 0 25px #FFFFFF; /* Alterado para branco */
+        0 0 10px #FFFFFF,
+        0 0 25px #FFFFFF;
       transition: transform 0.2s ease;
     }
     .play-button:hover {
       transform: scale(1.15);
-      /* AJUSTADO: Box-shadow do botão ao passar o mouse para branco */
+      /* Box-shadow do botão ao passar o mouse para branco */
       box-shadow:
-        0 0 20px #FFFFFF, /* Alterado para branco */
-        0 0 40px #FFFFFF; /* Alterado para branco */
+        0 0 20px #FFFFFF,
+        0 0 40px #FFFFFF;
     }
     .play-button:active {
       transform: scale(0.95);
@@ -219,7 +222,7 @@
       box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
     }
 
-    /* Footer fixo (mantido preto/cinza) */
+    /* Footer fixo (mantido) */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -259,6 +262,8 @@
       .arguments {
         font-size: 1.1rem;
         padding: 1.5rem 1.8rem;
+        /* AJUSTADO: Box-shadow do box de argumentos para branco em mobile */
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
       }
       .buttons a {
         font-size: 0.95rem;
@@ -267,14 +272,20 @@
       .flag {
         width: 120px;
         height: 80px;
+        /* AJUSTADO: Box-shadow das bandeiras para branco em mobile */
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+      }
+      .flag:hover {
+        /* AJUSTADO: Box-shadow das bandeiras ao passar o mouse para branco em mobile */
+        box-shadow: 0 0 25px rgba(255, 255, 255, 1);
       }
       .sample-section {
         max-width: 90vw;
-        /* AJUSTADO: Box-shadow da seção do player para branco em mobile */
+        /* Box-shadow da seção do player para branco em mobile (já estava correto) */
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
       }
       .sample-section audio {
-        /* AJUSTADO: Box-shadow do áudio player para branco em mobile */
+        /* Box-shadow do áudio player para branco em mobile (já estava correto) */
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
       }
     }
