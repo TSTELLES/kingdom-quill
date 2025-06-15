@@ -58,14 +58,13 @@
       }
     }
 
-    /* Espaço após header */
     main {
       margin-top: 4.5em;
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem 5rem; /* bottom espaço para footer */
+      padding: 2rem 1rem 5rem;
       gap: 3rem;
       max-width: 900px;
       margin-left: auto;
@@ -73,7 +72,6 @@
       box-sizing: border-box;
     }
 
-    /* Bandeiras lado a lado com efeito fade */
     .flags-row {
       display: flex;
       gap: 3rem;
@@ -111,7 +109,6 @@
       100% {opacity: 0.4;}
     }
 
-    /* Argumentos com estilo */
     .arguments {
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
@@ -126,7 +123,6 @@
       text-shadow: 0 0 5px #000;
     }
 
-    /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
@@ -148,42 +144,6 @@
       cursor: pointer;
     }
 
-    /* Botão play customizado */
-    .play-button {
-      background: #f9f871;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow:
-        0 0 10px #f9f871,
-        0 0 25px #f9f871;
-      transition: transform 0.2s ease;
-    }
-    .play-button:hover {
-      transform: scale(1.15);
-      box-shadow:
-        0 0 20px #f9f871,
-        0 0 40px #f9f871;
-    }
-    .play-button:active {
-      transform: scale(0.95);
-    }
-
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-left: 18px solid black;
-      margin-left: 3px;
-    }
-
-    /* Botões das lojas */
     .buttons {
       display: flex;
       justify-content: center;
@@ -211,7 +171,6 @@
       box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
     }
 
-    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -226,7 +185,6 @@
       z-index: 100;
     }
 
-    /* Responsividade básica */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -259,39 +217,34 @@
   <header>성경 오디오북</header>
 
   <main>
-    <!-- Bandeiras com efeito fade -->
-    <section class="flags-row" aria-label="국기">
-      <div class="flag south" role="img" aria-label="대한민국 국기"></div>
-      <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
+    <section class="flags-row">
+      <div class="flag south"></div>
+      <div class="flag north"></div>
     </section>
 
-    <!-- Argumentos: você poderá... -->
-    <section class="arguments" aria-label="오디오북의 혜택">
-      당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.<br />
-      깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
-      바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
-      가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
+    <section class="arguments">
+      당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.<br>
+      깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br>
+      바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br>
+      가족과 함께 듣고 은혜를 나누세요.
     </section>
 
-    <!-- Faixa de amostra com player -->
-    <section class="sample-section" aria-label="오디오 샘플">
-      <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
-        <div class="play-icon" id="playIcon"></div>
-      </button>
-      <audio id="audioSample" preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <section class="sample-section">
+      <p>아래는 성경 오디오북의 짧은 샘플입니다.</p>
+      <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        브라우저가 오디오 요소를 지원하지 않습니다.
+      </audio>
     </section>
 
-    <!-- Botões das lojas -->
-    <nav class="buttons" aria-label="오디오 구매 옵션">
-      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
-      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
-      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
-    </nav>
+    <div class="buttons">
+      <a href="#">Apple Books</a>
+      <a href="#">Google Play</a>
+      <a href="#">Kobo</a>
+      <a href="#">Spotify</a>
+    </div>
   </main>
 
-  <footer>&copy; 2025 T S TELLES. 모든 권리 보유.</footer>
-
-  <script>
-    // Script para o botão play/pause estiloso da amostra
-    const audio = document.getElementById('audioSample');
-    const btn = document.getElement
+  <footer>ⓒ 2025 T S Telles. All rights reserved.</footer>
+</body>
+</html>
