@@ -5,30 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>성경 오디오북</title>
   <style>
+    /* Reset e base */
     body {
       margin: 0;
       background: black;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
+    /* Header fixo com neon amarelo */
     header {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%;
+      top: 0; left: 0; right: 0;
       height: 4.5em;
       background-color: black;
       color: #f9f871;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-weight: bold;
       font-size: 2.2rem;
-      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
       text-shadow:
         0 0 8px #f9f871,
@@ -38,17 +38,18 @@
       animation: neonPulseYellow 2s infinite alternate;
       user-select: none;
       letter-spacing: 0.05em;
+      z-index: 100;
     }
 
     @keyframes neonPulseYellow {
-      from {
+      0% {
         text-shadow:
           0 0 10px #f9f871,
           0 0 30px #f9f871,
           0 0 50px #f9f871,
           0 0 100px #f9f871;
       }
-      to {
+      100% {
         text-shadow:
           0 0 20px #f9f871,
           0 0 40px #f9f871,
@@ -57,150 +58,175 @@
       }
     }
 
+    /* Espaço após header */
+    main {
+      margin-top: 4.5em;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 5rem; /* bottom espaço para footer */
+      gap: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+
+    /* Bandeiras lado a lado com efeito fade */
+    .flags-row {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flag {
+      width: 160px;
+      height: 110px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      filter: brightness(0.75);
+      animation: fadeOpacity 8s infinite alternate ease-in-out;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      cursor: default;
+      user-select: none;
+      transition: filter 0.3s ease;
+    }
+    .flag:hover {
+      filter: brightness(1);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
+    }
+    .flag.south {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
+      animation-delay: 0s;
+    }
+    .flag.north {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
+      animation-delay: 4s;
+    }
+    @keyframes fadeOpacity {
+      0% {opacity: 1;}
+      100% {opacity: 0.4;}
+    }
+
+    /* Argumentos com estilo */
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+    }
+
+    /* Faixa de amostra com player estiloso */
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 1.8rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      max-width: 700px;
+      user-select: none;
+    }
+
+    .sample-section audio {
+      width: 100%;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
+      cursor: pointer;
+    }
+
+    /* Botão play customizado */
+    .play-button {
+      background: #f9f871;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow:
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
+      transition: transform 0.2s ease;
+    }
+    .play-button:hover {
+      transform: scale(1.15);
+      box-shadow:
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
+    }
+    .play-button:active {
+      transform: scale(0.95);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    /* Botões das lojas */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .buttons a {
+      display: inline-block;
+      padding: 0.7em 1.8em;
+      background: #00bfff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
+      user-select: none;
+      white-space: nowrap;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .buttons a:hover {
+      background: #0099cc;
+      transform: scale(1.08);
+      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+    }
+
+    /* Footer fixo */
     footer {
       position: fixed;
-      bottom: 0; left: 0;
-      width: 100%;
+      bottom: 0; left: 0; right: 0;
       height: 3.5em;
       background-color: black;
       color: #ccc;
       text-align: center;
       line-height: 3.5em;
       font-size: 0.9rem;
-      z-index: 10;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
       user-select: none;
+      z-index: 100;
     }
 
-    .flags-container {
-      position: fixed;
-      top: 4.5em;
-      left: 0;
-      width: 100%;
-      height: calc(100% - 8em);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1em 2em;
-      text-align: center;
-      gap: 2rem;
-      box-sizing: border-box;
-      margin-top: 4em;
-      overflow-y: auto; /* para garantir scroll se o conteúdo crescer */
-    }
-
-    .flags-row {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .flag {
-      width: 150px;
-      height: 100px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      filter: brightness(0.7);
-      border-radius: 8px;
-      animation: fade 8s infinite alternate ease-in-out;
-    }
-
-    .flag.north {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
-      animation-delay: 4s;
-    }
-
-    .flag.south {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
-    }
-
-    @keyframes fade {
-      0% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-
-    .info-box {
-      max-width: 720px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-      color: #fff;
-      font-size: 1.5rem;
-      line-height: 1.4;
-      font-weight: 600;
-      text-shadow: 0 0 8px #000;
-      user-select: none;
-    }
-
-    /* Nova seção de argumentos */
-    .arguments-box {
-      max-width: 720px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #f9f871;
-      color: #f9f871;
-      font-size: 1.25rem;
-      line-height: 1.6;
-      font-weight: 500;
-      text-align: left;
-      user-select: none;
-      margin: 0 auto;
-      margin-top: 1.5rem;
-    }
-
-    .arguments-box h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-align: center;
-      text-shadow:
-        0 0 8px #f9f871,
-        0 0 20px #f9f871;
-    }
-
-    .arguments-box ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-      color: #f9f871;
-    }
-
-    .arguments-box ul li {
-      margin-bottom: 0.9rem;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .buttons a {
-      display: inline-block;
-      padding: 0.6em 1.5em;
-      background: #00bfff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 10px rgba(0, 191, 255, 0.6);
-      transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      white-space: nowrap;
-    }
-
-    .buttons a:hover {
-      background: #0099cc;
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 153, 204, 0.9);
-    }
-
+    /* Responsividade básica */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -211,49 +237,61 @@
         height: 3em;
         line-height: 3em;
       }
-      .info-box, .arguments-box {
-        font-size: 1.2rem;
+      .arguments {
+        font-size: 1.1rem;
         padding: 1.5rem 1.8rem;
       }
-      .buttons {
-        gap: 1rem;
-      }
       .buttons a {
-        font-size: 1rem;
-        padding: 0.8em 1.5em;
+        font-size: 0.95rem;
+        padding: 0.65em 1.4em;
+      }
+      .flag {
+        width: 120px;
+        height: 80px;
+      }
+      .sample-section {
+        max-width: 90vw;
       }
     }
   </style>
 </head>
 <body>
   <header>성경 오디오북</header>
-  <div class="flags-container" role="main" aria-label="성경 오디오북 소개 및 구매 링크">
-    <div class="flags-row">
-      <div class="flag south" aria-label="대한민국 국기"></div>
-      <div class="flag north" aria-label="조선민주주의인민공화국 국기"></div>
-    </div>
 
-    <div class="info-box" tabindex="0">
-      깨끗한 음질과 은혜로운 낭독으로 언제 어디서나 하나님의 말씀을 들으세요. 성경 오디오북으로 마음에 평안을 누리세요.
-      <div class="buttons" aria-label="오디오 구매 옵션">
-        <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
-        <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
-        <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7af74126" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
-      </div>
-    </div>
-
-    <section class="arguments-box" tabindex="0" aria-label="오디오북에 대한 주요 논점">
-      <h2>주요 논점</h2>
-      <ul>
-        <li>전 세계적으로 한국어 성경 오디오북의 수요가 지속적으로 증가하고 있습니다.</li>
-        <li>고품질의 낭독과 음향 기술이 청취자의 몰입 경험을 극대화합니다.</li>
-        <li>모바일 친화적 접근성과 다양한 플랫폼에서 쉽게 이용할 수 있습니다.</li>
-        <li>기독교 공동체 내에서 신앙 강화와 말씀 묵상을 돕는 효과가 입증되었습니다.</li>
-        <li>문화적 이해와 영적 성장을 위한 매개체로서의 역할을 수행합니다.</li>
-      </ul>
+  <main>
+    <!-- Bandeiras com efeito fade -->
+    <section class="flags-row" aria-label="국기">
+      <div class="flag south" role="img" aria-label="대한민국 국기"></div>
+      <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
     </section>
-  </div>
 
-  <footer>© 2025 성경 오디오북 제작팀</footer>
-</body>
-</html>
+    <!-- Argumentos: você poderá... -->
+    <section class="arguments" aria-label="오디오북의 혜택">
+      당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.<br />
+      깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
+      바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
+      가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
+    </section>
+
+    <!-- Faixa de amostra com player -->
+    <section class="sample-section" aria-label="오디오 샘플">
+      <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    </section>
+
+    <!-- Botões das lojas -->
+    <nav class="buttons" aria-label="오디오 구매 옵션">
+      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
+      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
+      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
+    </nav>
+  </main>
+
+  <footer>&copy; 2025 T S TELLES. 모든 권리 보유.</footer>
+
+  <script>
+    // Script para o botão play/pause estiloso da amostra
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElement
