@@ -19,13 +19,13 @@
       padding-bottom: 3.5em; /* Igual à altura do footer */
     }
 
-    /* Header fixo com neon amarelo (mantido) */
+    /* Header fixo com neon amarelo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       height: 4.5em;
       background-color: black;
-      color: #f9f871; /* Cor do texto neon do header */
+      color: #f9f871;
       font-weight: bold;
       font-size: 2.2rem;
       display: flex;
@@ -66,8 +66,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem 2rem;
-      gap: 3rem;
+      padding: 2rem 1rem 2rem; /* Mantive o padding-bottom de 2rem */
+      gap: 3rem; /* Espaçamento entre as seções dentro do main */
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
@@ -81,7 +81,8 @@
       gap: 3rem;
       justify-content: center;
       align-items: center;
-      padding-top: 5rem; /* Ajustado para 5rem */
+      /* AJUSTADO: Aumentando o espaço acima das bandeiras para 5rem */
+      padding-top: 5rem; /* Este é o valor que você pode ajustar */
     }
 
     .flag {
@@ -92,16 +93,14 @@
       border-radius: 12px;
       filter: brightness(0.75);
       animation: fadeOpacity 8s infinite alternate ease-in-out;
-      /* AJUSTADO: Box-shadow das bandeiras para branco */
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Alterado para branco */
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
       cursor: default;
       user-select: none;
       transition: filter 0.3s ease;
     }
     .flag:hover {
       filter: brightness(1);
-      /* AJUSTADO: Box-shadow das bandeiras ao passar o mouse para branco */
-      box-shadow: 0 0 25px rgba(255, 255, 255, 1); /* Alterado para branco */
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
     .flag.south {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
@@ -121,8 +120,7 @@
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
       border-radius: 15px;
-      /* AJUSTADO: Box-shadow do box de argumentos para branco */
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Alterado para branco */
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
       font-weight: 600;
       font-size: 1.4rem;
       line-height: 1.5;
@@ -134,11 +132,10 @@
 
     /* Faixa de amostra com player estiloso */
     .sample-section {
-      background: rgba(249, 248, 113, 0.1); /* Fundo da seção do player (mantido amarelo translúcido) */
+      background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
       border-radius: 15px;
-      /* Box-shadow da seção do player para branco */
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -151,15 +148,13 @@
       width: 100%;
       outline: none;
       border-radius: 10px;
-      /* Box-shadow do áudio player para branco */
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
       cursor: pointer;
     }
 
     /* Botão play customizado */
     .play-button {
-      /* Background do botão para branco */
-      background: #FFFFFF;
+      background: #f9f871;
       border: none;
       border-radius: 50%;
       width: 60px;
@@ -168,18 +163,16 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      /* Box-shadow do botão para branco */
       box-shadow:
-        0 0 10px #FFFFFF,
-        0 0 25px #FFFFFF;
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
       transition: transform 0.2s ease;
     }
     .play-button:hover {
       transform: scale(1.15);
-      /* Box-shadow do botão ao passar o mouse para branco */
       box-shadow:
-        0 0 20px #FFFFFF,
-        0 0 40px #FFFFFF;
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
     }
     .play-button:active {
       transform: scale(0.95);
@@ -190,11 +183,11 @@
       height: 0;
       border-top: 12px solid transparent;
       border-bottom: 12px solid transparent;
-      border-left: 18px solid black; /* Mantido preto para contraste */
+      border-left: 18px solid black;
       margin-left: 3px;
     }
 
-    /* Botões das lojas (mantido azul) */
+    /* Botões das lojas */
     .buttons {
       display: flex;
       justify-content: center;
@@ -222,7 +215,7 @@
       box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
     }
 
-    /* Footer fixo (mantido) */
+    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -257,13 +250,12 @@
         padding: 1.5rem 1rem 1.5rem;
       }
       .flags-row {
-        padding-top: 3rem;
+        /* AJUSTADO: Aumentando o espaço acima das bandeiras para mobile também */
+        padding-top: 3rem; /* Ajuste este valor para mobile */
       }
       .arguments {
         font-size: 1.1rem;
         padding: 1.5rem 1.8rem;
-        /* AJUSTADO: Box-shadow do box de argumentos para branco em mobile */
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
       }
       .buttons a {
         font-size: 0.95rem;
@@ -272,21 +264,9 @@
       .flag {
         width: 120px;
         height: 80px;
-        /* AJUSTADO: Box-shadow das bandeiras para branco em mobile */
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-      }
-      .flag:hover {
-        /* AJUSTADO: Box-shadow das bandeiras ao passar o mouse para branco em mobile */
-        box-shadow: 0 0 25px rgba(255, 255, 255, 1);
       }
       .sample-section {
         max-width: 90vw;
-        /* Box-shadow da seção do player para branco em mobile (já estava correto) */
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-      }
-      .sample-section audio {
-        /* Box-shadow do áudio player para branco em mobile (já estava correto) */
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
       }
     }
   </style>
