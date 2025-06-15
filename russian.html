@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Библейские Аудиокниги</title>
   <style>
+    /* Reset e base */
     body {
       margin: 0;
       background: black;
@@ -14,10 +15,11 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      padding-top: 4.5em;
-      padding-bottom: 3.5em;
+      padding-top: 4.5em; /* Igual à altura do header */
+      padding-bottom: 3.5em; /* Igual à altura do footer */
     }
 
+    /* Header fixo com neon amarelo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -29,6 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
       text-shadow:
         0 0 8px #f9f871,
         0 0 20px #f9f871,
@@ -57,17 +60,22 @@
       }
     }
 
+    /* Conteúdo principal */
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 2rem;
+      gap: 3rem;
       max-width: 900px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       box-sizing: border-box;
+      min-height: calc(100vh - 4.5em - 3.5em);
     }
 
+    /* Bandeira única */
     .flags-row {
       display: flex;
       justify-content: center;
@@ -88,10 +96,12 @@
       user-select: none;
       transition: filter 0.3s ease;
     }
+
     .flag:hover {
       filter: brightness(1);
       box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
+
     .flag.russia {
       background-image: url('https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg');
     }
@@ -101,6 +111,111 @@
       100% { opacity: 0.4; }
     }
 
+    /* Argumentos com estilo */
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+    }
+
+    /* Faixa de amostra */
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 1.8rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      max-width: 700px;
+      user-select: none;
+    }
+
+    .sample-section audio {
+      width: 100%;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
+      cursor: pointer;
+    }
+
+    /* Botão play */
+    .play-button {
+      background: #f9f871;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow:
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
+      transition: transform 0.2s ease;
+    }
+
+    .play-button:hover {
+      transform: scale(1.15);
+      box-shadow:
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
+    }
+
+    .play-button:active {
+      transform: scale(0.95);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    /* Botões de lojas */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 0.7em 1.8em;
+      background: #00bfff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
+      user-select: none;
+      white-space: nowrap;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: #0099cc;
+      transform: scale(1.08);
+      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+    }
+
+    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -115,6 +230,7 @@
       z-index: 100;
     }
 
+    /* Responsividade */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -130,14 +246,26 @@
         padding-bottom: 3em;
       }
       main {
-        padding: 1.5rem 1rem;
+        min-height: calc(100vh - 3.8em - 3em);
+        padding: 1.5rem 1rem 1.5rem;
       }
       .flags-row {
         padding-top: 3rem;
       }
+      .arguments {
+        font-size: 1.1rem;
+        padding: 1.5rem 1.8rem;
+      }
+      .buttons a {
+        font-size: 0.95rem;
+        padding: 0.65em 1.4em;
+      }
       .flag {
         width: 120px;
         height: 80px;
+      }
+      .sample-section {
+        max-width: 90vw;
       }
     }
   </style>
@@ -145,10 +273,27 @@
 <body>
   <header>Библейские Аудиокниги</header>
   <main>
-    <section class="flags-row" aria-label="Флаг России">
-      <div class="flag russia" role="img" aria-label="Флаг России"></div>
+    <!-- Bandeira da Rússia -->
+    <section class="flags-row" aria-label="Флаг">
+      <div class="flag russia" role="img" aria-label="Бандера России"></div>
+    </section>
+
+    <!-- Argumentos -->
+    <section class="arguments">
+      Послушайте выборку аудиокниги, затем приобретите полную версию!
+    </section>
+
+    <!-- Faixa de amostra -->
+    <section class="sample-section">
+      <button class="play-button" onclick="document.getElementById('audio-sample').play();">
+        <div class="play-icon"></div>
+      </button>
+      <audio id="audio-sample" controls src="sample.mp3"></audio>
+      <div class="buttons">
+        <a href="#">Купить</a>
+      </div>
     </section>
   </main>
-  <footer>© 2025 T S Telles</footer>
+  <footer>&copy; 2025 Библейские Аудиокниги</footer>
 </body>
 </html>
