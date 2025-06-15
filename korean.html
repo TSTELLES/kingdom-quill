@@ -15,7 +15,6 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      /* ESSENCIAL: Padding para o body para evitar que header e footer fixos cubram o conteúdo */
       padding-top: 4.5em; /* Igual à altura do header */
       padding-bottom: 3.5em; /* Igual à altura do footer */
     }
@@ -24,7 +23,7 @@
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
-      height: 4.5em; /* Altura do header */
+      height: 4.5em;
       background-color: black;
       color: #f9f871;
       font-weight: bold;
@@ -41,7 +40,7 @@
       animation: neonPulseYellow 2s infinite alternate;
       user-select: none;
       letter-spacing: 0.05em;
-      z-index: 100; /* Garante que o header fique na frente */
+      z-index: 100;
     }
 
     @keyframes neonPulseYellow {
@@ -63,20 +62,17 @@
 
     /* Conteúdo principal, se estende para preencher o espaço */
     main {
-      flex: 1; /* Permite que o main ocupe o espaço restante */
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Padding interno para espaçar o conteúdo do main de suas bordas */
-      padding: 2rem 1rem 2rem; /* Adicionado um padding-bottom para espaçamento interno */
+      padding: 2rem 1rem 2rem; /* Mantive o padding-bottom de 2rem */
       gap: 3rem; /* Espaçamento entre as seções dentro do main */
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
-      /* ESSENCIAL: min-height para garantir que o main seja sempre alto o suficiente
-         para empurrar o footer para a parte inferior da viewport se o conteúdo for curto */
-      min-height: calc(100vh - 4.5em - 3.5em); /* Altura da tela - altura do header - altura do footer */
+      min-height: calc(100vh - 4.5em - 3.5em);
     }
 
     /* Bandeiras lado a lado com efeito fade */
@@ -85,6 +81,8 @@
       gap: 3rem;
       justify-content: center;
       align-items: center;
+      /* AQUI ESTÁ O AJUSTE: Adiciona espaço acima das bandeiras */
+      padding-top: 2rem; /* Ajuste este valor conforme necessário */
     }
 
     .flag {
@@ -119,7 +117,6 @@
 
     /* Argumentos com estilo */
     .arguments {
-      /* FUNDO ORIGINAL: Este é o que deve aparecer */
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
       border-radius: 15px;
@@ -135,7 +132,6 @@
 
     /* Faixa de amostra com player estiloso */
     .sample-section {
-      /* FUNDO ORIGINAL: Este é o que deve aparecer */
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
       border-radius: 15px;
@@ -223,7 +219,7 @@
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
-      height: 3.5em; /* Altura do footer */
+      height: 3.5em;
       background-color: black;
       color: #ccc;
       text-align: center;
@@ -231,30 +227,31 @@
       font-size: 0.9rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
       user-select: none;
-      z-index: 100; /* Garante que o footer fique na frente */
+      z-index: 100;
     }
 
     /* Responsividade básica */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
-        height: 3.8em; /* Altura do header para mobile */
+        height: 3.8em;
       }
       footer {
         font-size: 0.8rem;
-        height: 3em; /* Altura do footer para mobile */
+        height: 3em;
         line-height: 3em;
       }
-      /* Ajuste os paddings do body para mobile também */
       body {
-        padding-top: 3.8em; /* Mesma altura do header para mobile */
-        padding-bottom: 3em; /* Mesma altura do footer para mobile */
+        padding-top: 3.8em;
+        padding-bottom: 3em;
       }
       main {
-        /* Ajuste o min-height para mobile */
         min-height: calc(100vh - 3.8em - 3em);
-        /* Ajuste o padding do main para mobile */
-        padding: 1.5rem 1rem 1.5rem; /* Mantido padding-bottom de 1.5rem para mobile */
+        padding: 1.5rem 1rem 1.5rem;
+      }
+      .flags-row {
+        /* Ajuste também o padding-top para mobile se necessário */
+        padding-top: 1.5rem; /* Um pouco menos de espaço em mobile, por exemplo */
       }
       .arguments {
         font-size: 1.1rem;
