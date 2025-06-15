@@ -121,8 +121,11 @@
   <title>성경 - Korean Remastered Bible</title>
   <style>
     body {
-      background: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat center center fixed;
-      background-size: cover;
+      /* Camada múltipla de background: Norte por baixo, Sul por cima */
+      background:
+        url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg') no-repeat center center fixed,
+        url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg') no-repeat center center fixed;
+      background-size: cover, cover;
       color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -131,12 +134,12 @@
       position: relative;
     }
 
-    /* Sobreposição escura para leitura ficar ótima */
+    /* Sobreposição escura para garantir contraste de texto */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.7);
       z-index: 0;
     }
 
@@ -148,10 +151,12 @@
     h1 {
       font-size: 2.5rem;
     }
+
     p {
       font-size: 1.2rem;
       margin-bottom: 2em;
     }
+
     .buttons a {
       display: inline-block;
       margin: 0.5em;
@@ -163,9 +168,11 @@
       font-weight: bold;
       transition: background 0.3s ease;
     }
+
     .buttons a:hover {
       background: #ddd;
     }
+
     footer {
       margin-top: 3em;
       font-size: 0.9rem;
