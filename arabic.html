@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar">
-<head>
+<html lang="ar"> <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>الكتاب المقدس</title>
-  <style>
+  <title>الكتاب المقدس</title> <style>
+    /* Reset e base */
     body {
       margin: 0;
       background: black;
@@ -14,12 +13,13 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      padding-top: 4.5em;
-      padding-bottom: 3.5em;
-      direction: rtl;
-      text-align: right;
+      padding-top: 4.5em; /* Igual à altura do header */
+      padding-bottom: 3.5em; /* Igual à altura do footer */
+      direction: rtl; /* Adicionado para layout RTL (direita para esquerda) */
+      text-align: right; /* Alinha o texto principal à direita */
     }
 
+    /* Header fixo com neon amarelo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -45,18 +45,27 @@
 
     @keyframes neonPulseYellow {
       0% {
-        text-shadow: 0 0 10px #f9f871, 0 0 30px #f9f871, 0 0 50px #f9f871, 0 0 100px #f9f871;
+        text-shadow:
+          0 0 10px #f9f871,
+          0 0 30px #f9f871,
+          0 0 50px #f9f871,
+          0 0 100px #f9f871;
       }
       100% {
-        text-shadow: 0 0 20px #f9f871, 0 0 40px #f9f871, 0 0 70px #f9f871, 0 0 120px #f9f871;
+        text-shadow:
+          0 0 20px #f9f871,
+          0 0 40px #f9f871,
+          0 0 70px #f9f871,
+          0 0 120px #f9f871;
       }
     }
 
+    /* Conteúdo principal, se estende para preencher o espaço */
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* Centraliza horizontalmente (no contexto RTL, ainda é o centro) */
       padding: 2rem 1rem 2rem;
       gap: 3rem;
       max-width: 900px;
@@ -66,44 +75,45 @@
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
+    /* Bandeiras lado a lado */
     .flags-row {
       display: flex;
-      gap: 1.5rem;
-      justify-content: center;
+      gap: 3rem; /* Espaçamento entre as duas bandeiras */
+      justify-content: center; /* Centraliza as bandeiras */
       align-items: center;
       padding-top: 5rem;
     }
 
     .flag {
-      width: 140px;
-      height: 95px;
+      width: 160px; /* Largura padrão para 2 bandeiras */
+      height: 110px; /* Altura padrão para manter proporção */
       background-size: cover;
       background-position: center;
       border-radius: 12px;
-      filter: brightness(0.75);
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      /* REMOVIDO: filter e box-shadow para garantir visibilidade */
+      /* filter: brightness(0.75); */
+      /* box-shadow: 0 0 15px rgba(249, 248, 113, 0.8); */
       cursor: default;
       user-select: none;
-      transition: filter 0.3s ease;
+      /* REMOVIDO: transition para evitar qualquer atraso */
+      /* transition: filter 0.3s ease; */
+      opacity: 1; /* Garante que a bandeira esteja sempre 100% visível */
     }
-
     .flag:hover {
-      filter: brightness(1);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
+      /* REMOVIDO: filter e box-shadow para garantir visibilidade */
+      /* filter: brightness(1); */
+      /* box-shadow: 0 0 25px rgba(249, 248, 113, 1); */
     }
 
+    /* Arabic Flags Specific Styles */
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
     }
-
-    .flag.uae {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg');
+    .flag.egypt {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
     }
 
-    .flag.lebanon {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Lebanon.svg');
-    }
-
+    /* Argumentos com estilo */
     .arguments {
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
@@ -113,11 +123,12 @@
       font-size: 1.4rem;
       line-height: 1.5;
       max-width: 720px;
-      text-align: right;
+      text-align: right; /* Alinha o texto à direita para RTL */
       user-select: none;
       text-shadow: 0 0 5px #000;
     }
 
+    /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
@@ -125,7 +136,7 @@
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* Centraliza o conteúdo do player */
       gap: 1.2rem;
       max-width: 700px;
       user-select: none;
@@ -139,6 +150,7 @@
       cursor: pointer;
     }
 
+    /* Botão play customizado */
     .play-button {
       background: #f9f871;
       border: none;
@@ -149,15 +161,17 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 0 10px #f9f871, 0 0 25px #f9f871;
+      box-shadow:
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
       transition: transform 0.2s ease;
     }
-
     .play-button:hover {
       transform: scale(1.15);
-      box-shadow: 0 0 20px #f9f871, 0 0 40px #f9f871;
+      box-shadow:
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
     }
-
     .play-button:active {
       transform: scale(0.95);
     }
@@ -167,18 +181,18 @@
       height: 0;
       border-top: 12px solid transparent;
       border-bottom: 12px solid transparent;
-      border-left: 18px solid black;
+      border-left: 18px solid black; /* Ícone de play/pause ainda é LTR */
       margin-left: 3px;
     }
 
+    /* Botões das lojas */
     .buttons {
       display: flex;
-      justify-content: center;
+      justify-content: center; /* Centraliza os botões */
       gap: 1.8rem;
       flex-wrap: wrap;
       margin-top: 1rem;
     }
-
     .buttons a {
       display: inline-block;
       padding: 0.7em 1.8em;
@@ -193,20 +207,20 @@
       white-space: nowrap;
       transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     }
-
     .buttons a:hover {
       background: #0099cc;
       transform: scale(1.08);
       box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
     }
 
+    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
       height: 3.5em;
       background-color: black;
       color: #ccc;
-      text-align: center;
+      text-align: center; /* Centraliza o texto do rodapé */
       line-height: 3.5em;
       font-size: 0.9rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
@@ -214,6 +228,7 @@
       z-index: 100;
     }
 
+    /* Responsividade básica */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -255,54 +270,47 @@
   </style>
 </head>
 <body>
-  <header>الكتاب المقدس</header>
-  <main>
-    <section class="flags-row" aria-label="الأعلام">
-      <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div>
-      <div class="flag uae" role="img" aria-label="علم الإمارات العربية المتحدة"></div>
-      <div class="flag lebanon" role="img" aria-label="علم لبنان"></div>
-    </section>
+  <header>الكتاب المقدس</header> <main>
+    <section class="flags-row" aria-label="الأعلام"> <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div> <div class="flag egypt" role="img" aria-label="علم مصر"></div> </section>
 
-    <section class="arguments">
-      يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
+    <section class="arguments" aria-label="فوائد الكتاب الصوتي"> يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
       اختبر نعمة عميقة وسلامًا، لتجد الطمأنينة في روحك.<br />
       يمكنك الوصول بسهولة إلى كلمة الله حتى مع جدول أعمال مزدحم.<br />
       أثرِ حياتك الروحية مع عائلتك.
     </section>
 
-    <section class="sample-section">
-      <button class="play-button" id="playPauseBtn" type="button">
-        <div class="play-icon" id="playIcon"></div>
+    <section class="sample-section" aria-label="عينة صوتية"> <button class="play-button" aria-label="تشغيل/إيقاف مؤقت للعينة" id="playPauseBtn" type="button"> <div class="play-icon" id="playIcon"></div>
       </button>
       <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/final_arabic.MP3"></audio>
     </section>
 
-    <nav class="buttons">
-      <a href="https://www.kobo.com/us/en/audiobook/oIWni2T0zjy1HdIu-_8BEg" target="_blank" rel="noopener noreferrer">استمع على Kobo</a>
+    <nav class="buttons" aria-label="خيارات شراء الصوت"> <a href="https://www.kobo.com/us/en/audiobook/oIWni2T0zjy1HdIu-_8BEg" target="_blank" rel="noopener noreferrer">استمع على Kobo</a>
       <a href="https://www.storytel.com/se/sv/books/الكتاب-المقدس-10054894" target="_blank" rel="noopener noreferrer">استمع على Storytel</a>
       <a href="https://play.google.com/store/audiobooks/details/VA_%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8_%D8%A7%D9%84%D9%85%D9%82%D8%AF%D8%B3?id=AQAAAEDy4XqhmM" target="_blank" rel="noopener noreferrer">استمع على Google Play</a>
       <a href="https://open.spotify.com/show/38JAiz4U89VJMa2NzGhNRE?si=6bf6e417a60c4874" target="_blank" rel="noopener noreferrer">استمع على Spotify</a>
     </nav>
   </main>
-  <footer>© 2025 T S TELLES. جميع الحقوق محفوظة.</footer>
 
-  <script>
+  <footer>© 2025 T S TELLES. جميع الحقوق محفوظة.</footer> <script>
     const audio = document.getElementById('audioSample');
     const btn = document.getElementById('playPauseBtn');
     const playIcon = document.getElementById('playIcon');
+
     let isPlaying = false;
 
     function togglePlayPause() {
       if (isPlaying) {
         audio.pause();
-        playIcon.style.borderLeft = '18px solid black';
+        playIcon.style.borderLeft = '18px solid black'; // Play icon
         playIcon.style.borderRight = 'none';
         playIcon.style.width = '0';
       } else {
         audio.play();
+        playIcon.style.borderLeft = 'none'; // Pause icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '12px'; // Adjust width for pause bars
         playIcon.style.borderLeft = '6px solid black';
         playIcon.style.borderRight = '6px solid black';
-        playIcon.style.width = '12px';
       }
       isPlaying = !isPlaying;
     }
@@ -311,7 +319,7 @@
 
     audio.addEventListener('ended', () => {
       isPlaying = false;
-      playIcon.style.borderLeft = '18px solid black';
+      playIcon.style.borderLeft = '18px solid black'; // Reset to play icon
       playIcon.style.borderRight = 'none';
       playIcon.style.width = '0';
     });
