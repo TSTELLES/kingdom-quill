@@ -13,10 +13,10 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      padding-top: 4.5em; /* Igual à altura do header */
-      padding-bottom: 3.5em; /* Igual à altura do footer */
-      direction: rtl; /* Adicionado para layout RTL (direita para esquerda) */
-      text-align: right; /* Alinha o texto principal à direita */
+      padding-top: 4.5em;
+      padding-bottom: 3.5em;
+      direction: rtl;
+      text-align: right;
     }
 
     /* Header fixo com neon amarelo */
@@ -91,7 +91,12 @@
       background-position: center;
       border-radius: 8px;
       opacity: 1; /* Garante visibilidade */
-      /* Efeitos visuais (filter, box-shadow, transition, hover) REMOVIDOS para focar na exibição */
+      box-shadow: 0 0 10px #f9f871, 0 0 25px #f9f871; /* Efeito neon amarelo */
+      transition: transform 0.2s ease; /* Transição suave para o hover */
+    }
+
+    .flag:hover {
+      transform: scale(1.08); /* Aumenta um pouco no hover */
     }
 
     /* Estilos específicos para cada bandeira com os URLs fornecidos */
