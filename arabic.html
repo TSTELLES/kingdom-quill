@@ -78,7 +78,7 @@
     /* Bandeiras lado a lado com efeito visual */
     .flags-row {
       display: flex;
-      gap: 1.5rem; /* Ajustado para um gap menor para 3 bandeiras */
+      gap: 1.2rem; /* Ajustado para um gap menor para 4 bandeiras ou mais */
       justify-content: center; /* Centraliza as bandeiras */
       align-items: center;
       padding-top: 5rem;
@@ -86,13 +86,13 @@
     }
 
     .flag {
-      width: 140px; /* Reduzido um pouco a largura para caberem 3 */
-      height: 95px; /* Ajustado para manter proporção */
+      width: 120px; /* REDUZIDO: Largura para acomodar 4 bandeiras ou mais */
+      height: 80px; /* Ajustado para manter proporção (proporção 3:2) */
       background-size: cover;
       background-position: center;
       border-radius: 12px;
       filter: brightness(0.75);
-      opacity: 1; /* NOVO: Garante que a bandeira esteja sempre 100% visível */
+      opacity: 1; /* Garante que a bandeira esteja sempre 100% visível */
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
       cursor: default;
       user-select: none;
@@ -107,11 +107,14 @@
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
     }
+    .flag.syria { /* NEW: Bandeira da Síria */
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg');
+    }
     .flag.egypt {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
     }
-    .flag.uae {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg');
+    .flag.algeria { /* NEW: Bandeira da Argélia */
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg');
     }
 
     /* Argumentos com estilo */
@@ -250,11 +253,11 @@
       }
       .flags-row {
         padding-top: 3rem;
-        gap: 1rem;
+        gap: 0.8rem; /* Ajustado para um gap menor para mobile com 4 bandeiras */
       }
       .flags-row .flag {
-        width: 100px;
-        height: 68px;
+        width: 75px; /* Reduzido para caberem 4 bandeiras ou mais em mobile */
+        height: 50px; /* Ajustado para manter proporção */
       }
       .arguments {
         font-size: 1.1rem;
@@ -272,7 +275,7 @@
 </head>
 <body>
   <header>الكتاب المقدس</header> <main>
-    <section class="flags-row" aria-label="الأعلام"> <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div> <div class="flag egypt" role="img" aria-label="علم مصر"></div> <div class="flag uae" role="img" aria-label="علم الإمارات العربية المتحدة"></div> </section>
+    <section class="flags-row" aria-label="الأعلام"> <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div> <div class="flag syria" role="img" aria-label="علم سوريا"></div> <div class="flag egypt" role="img" aria-label="علم مصر"></div> <div class="flag algeria" role="img" aria-label="علم الجزائر"></div> </section>
 
     <section class="arguments" aria-label="فوائد الكتاب الصوتي"> يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
       اختبر نعمة عميقة وسلامًا، لتجد الطمأنينة في روحك.<br />
