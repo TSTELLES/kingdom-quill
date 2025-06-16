@@ -60,12 +60,12 @@
       }
     }
 
-    /* Conteúdo principal, se estende para preencher o espaço */
+    /* Conteúdo principal */
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
-      align-items: center; /* Centraliza horizontalmente (no contexto RTL, ainda é o centro) */
+      align-items: center;
       padding: 2rem 1rem 2rem;
       gap: 3rem;
       max-width: 900px;
@@ -75,40 +75,37 @@
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
-    /* Bandeira principal (única) */
+    /* Bandeiras lado a lado */
     .flags-row {
       display: flex;
-      gap: 0; /* Não precisa de gap para uma única bandeira */
-      justify-content: center; /* Centraliza a bandeira */
+      gap: 1.5rem; /* Espaçamento entre as bandeiras */
+      justify-content: center;
       align-items: center;
       padding-top: 5rem;
     }
 
     .flag {
-      width: 160px; /* Tamanho da bandeira única */
-      height: 110px; /* Proporção 3:2 aproximadamente */
+      width: 140px; /* Largura para três bandeiras */
+      height: 95px; /* Altura proporcional */
       background-size: cover;
       background-position: center;
-      border-radius: 12px;
-      /* REINTRODUZIDO: filter e box-shadow para o efeito de luz */
-      filter: brightness(0.75);
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8); /* Luz amarela neon */
-      cursor: default;
-      user-select: none;
-      transition: filter 0.3s ease, box-shadow 0.3s ease; /* Transição para o hover */
-      opacity: 1; /* Garante visibilidade total */
-    }
-    .flag:hover {
-      filter: brightness(1);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 1); /* Luz mais intensa no hover */
+      border-radius: 8px;
+      opacity: 1; /* Garante visibilidade */
+      /* Efeitos visuais (filter, box-shadow, transition, hover) REMOVIDOS para focar na exibição */
     }
 
-    /* Arabic Flag Specific Style (única) */
+    /* Estilos específicos para cada bandeira com os URLs fornecidos */
     .flag.saudi-arabia {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
+      background-image: url('https://www.arabia-saudita.org/imagens/Bandeira-da-Arabia-Saudita-1-1.jpg');
+    }
+    .flag.egypt {
+      background-image: url('https://geo5.net/imagens/Bandeira-do-Egito.png');
+    }
+    .flag.palestine {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Palestine.svg/1200px-Flag_of_Palestine.svg.png');
     }
 
-    /* Argumentos com estilo */
+    /* Resto do CSS (inalterado) */
     .arguments {
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
@@ -118,12 +115,11 @@
       font-size: 1.4rem;
       line-height: 1.5;
       max-width: 720px;
-      text-align: right; /* Alinha o texto à direita para RTL */
+      text-align: right;
       user-select: none;
       text-shadow: 0 0 5px #000;
     }
 
-    /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
@@ -131,7 +127,7 @@
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
       display: flex;
       flex-direction: column;
-      align-items: center; /* Centraliza o conteúdo do player */
+      align-items: center;
       gap: 1.2rem;
       max-width: 700px;
       user-select: none;
@@ -145,7 +141,6 @@
       cursor: pointer;
     }
 
-    /* Botão play customizado */
     .play-button {
       background: #f9f871;
       border: none;
@@ -176,14 +171,13 @@
       height: 0;
       border-top: 12px solid transparent;
       border-bottom: 12px solid transparent;
-      border-left: 18px solid black; /* Ícone de play/pause ainda é LTR */
+      border-left: 18px solid black;
       margin-left: 3px;
     }
 
-    /* Botões das lojas */
     .buttons {
       display: flex;
-      justify-content: center; /* Centraliza os botões */
+      justify-content: center;
       gap: 1.8rem;
       flex-wrap: wrap;
       margin-top: 1rem;
@@ -208,14 +202,13 @@
       box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
     }
 
-    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
       height: 3.5em;
       background-color: black;
       color: #ccc;
-      text-align: center; /* Centraliza o texto do rodapé */
+      text-align: center;
       line-height: 3.5em;
       font-size: 0.9rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
@@ -223,7 +216,6 @@
       z-index: 100;
     }
 
-    /* Responsividade básica */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -244,10 +236,11 @@
       }
       .flags-row {
         padding-top: 3rem;
+        gap: 1rem;
       }
       .flags-row .flag {
-        width: 120px;
-        height: 80px;
+        width: 100px;
+        height: 68px;
       }
       .arguments {
         font-size: 1.1rem;
@@ -265,7 +258,11 @@
 </head>
 <body>
   <header>الكتاب المقدس</header> <main>
-    <section class="flags-row" aria-label="العلم"> <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div> </section>
+    <section class="flags-row" aria-label="الأعلام">
+      <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div>
+      <div class="flag egypt" role="img" aria-label="علم مصر"></div>
+      <div class="flag palestine" role="img" aria-label="علم فلسطين"></div>
+    </section>
 
     <section class="arguments" aria-label="فوائد الكتاب الصوتي"> يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
       اختبر نعمة عميقة وسلامًا، لتجد الطمأنينة في روحك.<br />
@@ -295,14 +292,14 @@
     function togglePlayPause() {
       if (isPlaying) {
         audio.pause();
-        playIcon.style.borderLeft = '18px solid black'; // Play icon
+        playIcon.style.borderLeft = '18px solid black';
         playIcon.style.borderRight = 'none';
         playIcon.style.width = '0';
       } else {
         audio.play();
-        playIcon.style.borderLeft = 'none'; // Pause icon
+        playIcon.style.borderLeft = 'none';
         playIcon.style.borderRight = 'none';
-        playIcon.style.width = '12px'; // Adjust width for pause bars
+        playIcon.style.width = '12px';
         playIcon.style.borderLeft = '6px solid black';
         playIcon.style.borderRight = '6px solid black';
       }
@@ -313,7 +310,7 @@
 
     audio.addEventListener('ended', () => {
       isPlaying = false;
-      playIcon.style.borderLeft = '18px solid black'; // Reset to play icon
+      playIcon.style.borderLeft = '18px solid black';
       playIcon.style.borderRight = 'none';
       playIcon.style.width = '0';
     });
