@@ -75,42 +75,37 @@
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
-    /* Bandeiras lado a lado */
+    /* Bandeira principal (única) */
     .flags-row {
       display: flex;
-      gap: 3rem; /* Espaçamento entre as duas bandeiras */
-      justify-content: center; /* Centraliza as bandeiras */
+      gap: 0; /* Não precisa de gap para uma única bandeira */
+      justify-content: center; /* Centraliza a bandeira */
       align-items: center;
       padding-top: 5rem;
     }
 
     .flag {
-      width: 160px; /* Largura padrão para 2 bandeiras */
-      height: 110px; /* Altura padrão para manter proporção */
+      width: 160px; /* Tamanho da bandeira única */
+      height: 110px; /* Proporção 3:2 aproximadamente */
       background-size: cover;
       background-position: center;
       border-radius: 12px;
-      /* REMOVIDO: filter e box-shadow para garantir visibilidade */
-      /* filter: brightness(0.75); */
-      /* box-shadow: 0 0 15px rgba(249, 248, 113, 0.8); */
+      /* REINTRODUZIDO: filter e box-shadow para o efeito de luz */
+      filter: brightness(0.75);
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8); /* Luz amarela neon */
       cursor: default;
       user-select: none;
-      /* REMOVIDO: transition para evitar qualquer atraso */
-      /* transition: filter 0.3s ease; */
-      opacity: 1; /* Garante que a bandeira esteja sempre 100% visível */
+      transition: filter 0.3s ease, box-shadow 0.3s ease; /* Transição para o hover */
+      opacity: 1; /* Garante visibilidade total */
     }
     .flag:hover {
-      /* REMOVIDO: filter e box-shadow para garantir visibilidade */
-      /* filter: brightness(1); */
-      /* box-shadow: 0 0 25px rgba(249, 248, 113, 1); */
+      filter: brightness(1);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1); /* Luz mais intensa no hover */
     }
 
-    /* Arabic Flags Specific Styles */
+    /* Arabic Flag Specific Style (única) */
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
-    }
-    .flag.egypt {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
     }
 
     /* Argumentos com estilo */
@@ -249,11 +244,10 @@
       }
       .flags-row {
         padding-top: 3rem;
-        gap: 1rem;
       }
       .flags-row .flag {
-        width: 100px;
-        height: 68px;
+        width: 120px;
+        height: 80px;
       }
       .arguments {
         font-size: 1.1rem;
@@ -271,7 +265,7 @@
 </head>
 <body>
   <header>الكتاب المقدس</header> <main>
-    <section class="flags-row" aria-label="الأعلام"> <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div> <div class="flag egypt" role="img" aria-label="علم مصر"></div> </section>
+    <section class="flags-row" aria-label="العلم"> <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div> </section>
 
     <section class="arguments" aria-label="فوائد الكتاب الصوتي"> يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
       اختبر نعمة عميقة وسلامًا، لتجد الطمأنينة في روحك.<br />
