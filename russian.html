@@ -3,30 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Аудиокнига Библии</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Holy Bible Audiobooks - Russian</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #007acc;
+      color: #fff;
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <header>Аудиокнига Библии</header>
-
-  <div class="arguments">
-    Измени свой день с Библией, которую можно слушать. Эта аудиокнига создана так, чтобы даже жители Северной Кореи могли безопасно услышать Евангелие.
-  </div>
-
-  <div class="sample-section">
-    <h2>Послушать образец</h2>
-    <!-- Вставьте здесь ваш аудиоплеер -->
-    <audio controls>
-      <source src="sample.mp3" type="audio/mpeg">
-      Ваш браузер не поддерживает воспроизведение аудио.
-    </audio>
-  </div>
-
-  <div class="buttons">
-    <a href="#">Купить</a>
-    <a href="#">Слушать</a>
-  </div>
-
-  <footer>© 2025 Все права защищены.</footer>
+  <h1>Святая Библия Аудиокниги — Russian</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Номер</th>
+        <th>Название (Russian)</th>
+        <th>Translit</th>
+        <th>Главы</th>
+        <th>Слушать</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Бытие</td>
+        <td>Bytie</td>
+        <td>50</td>
+        <td><a href="https://example.com/ru/genesis">Слушать</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Исход</td>
+        <td>Iskhod</td>
+        <td>40</td>
+        <td><a href="https://example.com/ru/exodus">Слушать</a></td>
+      </tr>
+      <!-- Continue the same for all books -->
+      <!-- Example last book -->
+      <tr>
+        <td>66</td>
+        <td>Откровение</td>
+        <td>Otkrovenie</td>
+        <td>22</td>
+        <td><a href="https://example.com/ru/revelation">Слушать</a></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
