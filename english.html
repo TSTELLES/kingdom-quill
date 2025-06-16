@@ -112,7 +112,7 @@
       100% {opacity: 0.4;}
     }
 
-    /* Container para os testamentos lado a lado */
+    /* Container para os testamentos lado a lado (agora apenas um) */
     .testament-container {
         display: flex;
         flex-wrap: wrap;
@@ -139,6 +139,7 @@
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
+        max-width: 700px; /* Ajusta largura máxima para um único testamento */
     }
     
     .testament-section h2 {
@@ -225,20 +226,19 @@
     }
 
     /* Botões das lojas */
-    /* Garante que o contêiner dos botões seja um flexbox para empilhar */
     .testament-section .buttons {
       display: flex;
-      flex-direction: column; /* Botões empilhados dentro de cada testamento */
-      gap: 0.8rem; /* Espaço menor entre os botões */
+      flex-direction: column; /* Botões empilhados */
+      gap: 0.8rem;
       margin-top: 1.5rem;
       width: 100%;
       align-items: center; /* Centraliza os botões */
     }
     .testament-section .buttons a {
-      display: flex; /* Garante que o link ocupe sua própria linha e aceite width/height, e centralize o texto */
-      justify-content: center; /* Centraliza o texto horizontalmente */
-      align-items: center; /* Centraliza o texto verticalmente */
-      padding: 0.6em 1em; /* Ajusta o padding */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.6em 1em;
       background: #00bfff;
       color: #fff;
       text-decoration: none;
@@ -249,10 +249,9 @@
       user-select: none;
       white-space: nowrap;
       transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      width: 80%; /* Ajusta a largura dos botões */
-      max-width: 250px; /* Largura máxima para não ficarem muito grandes */
-      /* margin: 0 auto; REMOVIDO: o align-items no parent fará a centralização */
-      min-height: 2.8em; /* Garante uma altura mínima para o botão */
+      width: 80%;
+      max-width: 250px;
+      min-height: 2.8em;
     }
     .testament-section .buttons a:hover {
       background: #0099cc;
@@ -281,7 +280,7 @@
         .testament-container {
             flex-direction: column;
             align-items: center;
-            gap: 2rem; /* Reduz o gap entre os testamentos empilhados */
+            gap: 2rem;
         }
         .testament-section {
             width: 90%;
@@ -309,7 +308,7 @@
         gap: 2rem;
       }
       .flags-row {
-        padding-top: calc(3.8em + 1.5rem); /* Ajuste para header menor */
+        padding-top: calc(3.8em + 1.5rem);
         padding-bottom: 1.5rem;
       }
       .arguments {
@@ -360,14 +359,6 @@
                 <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-king-james-version-11174096" target="_blank" rel="noopener noreferrer">Listen on Storytel</a>
                 <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
                 <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer">Listen on Apple Books</a>
-            </nav>
-        </section>
-
-        <section class="testament-section" aria-label="Old Testament Audio Bible">
-            <h2>Old Testament</h2>
-            <p>Discover the rich narratives and timeless wisdom of the Old Testament.</p>
-            <nav class="buttons" aria-label="Old Testament purchase options">
-                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-old-testament-1" target="_blank" rel="noopener noreferrer">Listen on Kobo</a>
             </nav>
         </section>
     </div>
