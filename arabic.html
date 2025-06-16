@@ -62,7 +62,7 @@
       }
     }
 
-    /* Conteúdo principal, se estende para preencher o espaço */
+    /* Conteúdo principal */
     main {
       flex: 1;
       display: flex;
@@ -107,14 +107,11 @@
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
     }
+    .flag.yemen {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Yemen.svg');
+    }
     .flag.egypt {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
-      animation-delay: 2.5s;
-    }
-
-    @keyframes fadeOpacity {
-      0% {opacity: 1;}
-      100% {opacity: 0.4;}
     }
 
     /* Argumentos com estilo */
@@ -132,7 +129,7 @@
       text-shadow: 0 0 5px #000;
     }
 
-    /* Faixa de amostra com player estiloso */
+    /* Faixa de amostra */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
@@ -232,7 +229,7 @@
       z-index: 100;
     }
 
-    /* Responsividade básica */
+    /* Responsividade */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -278,6 +275,7 @@
   <main>
     <section class="flags-row" aria-label="الأعلام">
       <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div>
+      <div class="flag yemen" role="img" aria-label="علم اليمن"></div>
       <div class="flag egypt" role="img" aria-label="علم مصر"></div>
     </section>
 
