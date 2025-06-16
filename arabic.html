@@ -91,29 +91,31 @@
       background-size: cover;
       background-position: center;
       border-radius: 12px;
-      filter: brightness(0.75);
+      /* REMOVIDO TEMPORARIAMENTE: filter e box-shadow para teste de visibilidade */
+      /* filter: brightness(0.75); */
       opacity: 1; /* Garante que a bandeira esteja sempre 100% visível */
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      /* box-shadow: 0 0 15px rgba(249, 248, 113, 0.8); */
       cursor: default;
       user-select: none;
       transition: filter 0.3s ease;
     }
     .flag:hover {
-      filter: brightness(1);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
+      /* REMOVIDO TEMPORARIAMENTE: filter e box-shadow para teste de visibilidade */
+      /* filter: brightness(1); */
+      /* box-shadow: 0 0 25px rgba(249, 248, 113, 1); */
     }
 
     /* Arabic Flags Specific Styles */
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
     }
-    .flag.syria { /* NEW: Bandeira da Síria */
+    .flag.syria { /* Bandeira da Síria */
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg');
     }
     .flag.egypt {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
     }
-    .flag.algeria { /* NEW: Bandeira da Argélia */
+    .flag.algeria { /* Bandeira da Argélia */
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg');
     }
 
