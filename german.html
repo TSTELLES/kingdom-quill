@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de"> <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Die Heilige Schrift – Lutherbibel</title> <style>
+    /* Reset e base */
+    body {
+      margin: 0;
+      background: black;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-top: 4.5em; /* Igual à altura do header */
+      padding-bottom: 3.5em; /* Igual à altura do footer */
+    }
+
+    /* Header fixo com neon amarelo */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4.5em;
+      background-color: black;
+      color: #f9f871;
+      font-weight: bold;
+      font-size: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
+      z-index: 100;
+    }
+
+    @keyframes neonPulseYellow {
+      0% {
+        text-shadow:
+          0 0 10px #f9f871,
+          0 0 30px #f9f871,
+          0 0 50px #f9f871,
+          0 0 100px #f9f871;
+      }
+      100% {
+        text-shadow:
+          0 0 20px #f9f871,
+          0 0 40px #f9f871,
+          0 0 70px #f9f871,
+          0 0 120px #f9f871;
+      }
+    }
+
+    /* Conteúdo principal, se estende para preencher o espaço */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 2rem;
+      gap: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      min-height: calc(100vh - 4.5em - 3.5em);
+    }
+
+    /* Bandeiras lado a lado com efeito fade */
+    .flags-row {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+      padding-top: 5rem;
+    }
+
+    .flag {
+      width: 160px;
+      height: 110px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      filter: brightness(0.75);
+      animation: fadeOpacity 8s infinite alternate ease-in-out;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      cursor: default;
+      user-select: none;
+      transition: filter 0.3s ease;
+    }
+    .flag:hover {
+      filter: brightness(1);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
+    }
+
+    /* NEW: German Flag Specific Styles */
+    .flag.germany {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg');
+      animation-delay: 0s;
+    }
+
+    @keyframes fadeOpacity {
+      0% {opacity: 1;}
+      100% {opacity: 0.4;}
+    }
+
+    /* Argumentos com estilo */
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+    }
+
+    /* Faixa de amostra com player estiloso */
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 1.8rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      max-width: 700px;
+      user-select: none;
+    }
+
+    .sample-section audio {
+      width: 100%;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
+      cursor: pointer;
+    }
+
+    /* Botão play customizado */
+    .play-button {
+      background: #f9f871;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow:
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
+      transition: transform 0.2s ease;
+    }
+    .play-button:hover {
+      transform: scale(1.15);
+      box-shadow:
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
+    }
+    .play-button:active {
+      transform: scale(0.95);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    /* Botões das lojas */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .buttons a {
+      display: inline-block;
+      padding: 0.7em 1.8em;
+      background: #00bfff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
+      user-select: none;
+      white-space: nowrap;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .buttons a:hover {
+      background: #0099cc;
+      transform: scale(1.08);
+      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+    }
+
+    /* Footer fixo */
+    footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 3.5em;
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 3.5em;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
+      z-index: 100;
+    }
+
+    /* Responsividade básica */
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        height: 3.8em;
+      }
+      footer {
+        font-size: 0.8rem;
+        height: 3em;
+        line-height: 3em;
+      }
+      body {
+        padding-top: 3.8em;
+        padding-bottom: 3em;
+      }
+      main {
+        min-height: calc(100vh - 3.8em - 3em);
+        padding: 1.5rem 1rem 1.5rem;
+      }
+      .flags-row {
+        padding-top: 3rem;
+      }
+      .arguments {
+        font-size: 1.1rem;
+        padding: 1.5rem 1.8rem;
+      }
+      .buttons a {
+        font-size: 0.95rem;
+        padding: 0.65em 1.4em;
+      }
+      .flag {
+        width: 120px;
+        height: 80px;
+      }
+      .sample-section {
+        max-width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Die Heilige Schrift – Lutherbibel</header> <main>
+    <section class="flags-row" aria-label="Flagge"> <div class="flag germany" role="img" aria-label="Flagge Deutschlands"></div> </section>
+
+    <section class="arguments" aria-label="Vorteile des Hörbuchs"> Sie können die Bibel in klarer Audioqualität überall und jederzeit hören.<br />
+      Erleben Sie tiefe Gnade und Frieden und finden Sie Seelenfrieden.<br />
+      Greifen Sie auch bei einem vollen Terminkalender einfach auf Gottes Wort zu.<br />
+      Bereichern Sie Ihr geistliches Leben mit Ihrer Familie.
+    </section>
+
+    <section class="sample-section" aria-label="Audiobeispiel"> <button class="play-button" aria-label="Wiedergabe/Pause Beispiel" id="playPauseBtn" type="button"> <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/retalier-german.MP3"></audio>
+    </section>
+
+    <nav class="buttons" aria-label="Kaufoptionen für Audio"> <a href="https://libro.fm/audiobooks/9798318074318" target="_blank" rel="noopener noreferrer">Bei Libro.fm anhören</a>
+      <a href="https://www.kobo.com/us/en/audiobook/die-heilige-schrift-lutherbibel" target="_blank" rel="noopener noreferrer">Bei Kobo anhören</a>
+      <a href="https://www.barnesandnoble.com/w/die-heilige-schrift-lutherbibel-verschiedene-autoren/1147461028" target="_blank" rel="noopener noreferrer">Bei Barnes & Noble anhören</a>
+      <a href="https://play.google.com/store/audiobooks/details/Verschiedene_Autoren_Die_Heilige_Schrift_Lutherbib?id=AQAAAEBK_zq_YM" target="_blank" rel="noopener noreferrer">Bei Google Play anhören</a>
+      <a href="https://open.spotify.com/show/4d5jX3Y6k5cifE1qH1GcF0?si=5d0b705e8fc04b5d" target="_blank" rel="noopener noreferrer">Bei Spotify anhören</a>
+    </nav>
+  </main>
+
+  <footer>© 2025 T S TELLES. Alle Rechte vorbehalten.</footer> <script>
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+
+    let isPlaying = false;
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        audio.pause();
+        playIcon.style.borderLeft = '18px solid black'; // Play icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '0';
+      } else {
+        audio.play();
+        playIcon.style.borderLeft = 'none'; // Pause icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '12px'; // Adjust width for pause bars
+        playIcon.style.borderLeft = '6px solid black';
+        playIcon.style.borderRight = '6px solid black';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    btn.addEventListener('click', togglePlayPause);
+
+    audio.addEventListener('ended', () => {
+      isPlaying = false;
+      playIcon.style.borderLeft = '18px solid black'; // Reset to play icon
+      playIcon.style.borderRight = 'none';
+      playIcon.style.width = '0';
+    });
+  </script>
+</body>
+</html>
