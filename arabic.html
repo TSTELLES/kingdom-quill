@@ -75,13 +75,14 @@
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
-    /* Bandeiras lado a lado com efeito fade */
+    /* Bandeiras lado a lado com efeito visual */
     .flags-row {
       display: flex;
       gap: 1.5rem; /* Ajustado para um gap menor para 3 bandeiras */
       justify-content: center; /* Centraliza as bandeiras */
       align-items: center;
       padding-top: 5rem;
+      flex-wrap: wrap; /* Permite que as bandeiras quebrem a linha se não houver espaço suficiente */
     }
 
     .flag {
@@ -106,15 +107,15 @@
     /* NEW: Arabic Flags Specific Styles */
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
-      /* REMOVIDO: animation-delay */
+      /* animation-delay removido */
     }
     .flag.egypt {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
-      /* REMOVIDO: animation-delay */
+      /* animation-delay removido */
     }
     .flag.uae {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg');
-      /* REMOVIDO: animation-delay */
+      /* animation-delay removido */
     }
 
     /* REMOVIDO: @keyframes fadeOpacity não é mais necessário */
