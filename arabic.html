@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>الكتاب المقدس</title>
   <style>
-    /* Reset e base */
     body {
       margin: 0;
       background: black;
@@ -21,7 +20,6 @@
       text-align: right;
     }
 
-    /* Header fixo com neon amarelo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -62,7 +60,6 @@
       }
     }
 
-    /* Conteúdo principal */
     main {
       flex: 1;
       display: flex;
@@ -77,7 +74,6 @@
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
-    /* Bandeiras lado a lado */
     .flags-row {
       display: flex;
       gap: 1.5rem;
@@ -103,18 +99,16 @@
       box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
 
-    /* Arabic Flags Specific Styles */
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
     }
-    .flag.yemen {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Flag_of_Yemen.svg');
+    .flag.uae {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg');
     }
-    .flag.egypt {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
+    .flag.lebanon {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Lebanon.svg');
     }
 
-    /* Argumentos com estilo */
     .arguments {
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
@@ -129,7 +123,6 @@
       text-shadow: 0 0 5px #000;
     }
 
-    /* Faixa de amostra */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
@@ -151,7 +144,6 @@
       cursor: pointer;
     }
 
-    /* Botão play customizado */
     .play-button {
       background: #f9f871;
       border: none;
@@ -186,7 +178,6 @@
       margin-left: 3px;
     }
 
-    /* Botões das lojas */
     .buttons {
       display: flex;
       justify-content: center;
@@ -214,7 +205,6 @@
       box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
     }
 
-    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -229,7 +219,6 @@
       z-index: 100;
     }
 
-    /* Responsividade */
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -275,8 +264,8 @@
   <main>
     <section class="flags-row" aria-label="الأعلام">
       <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div>
-      <div class="flag yemen" role="img" aria-label="علم اليمن"></div>
-      <div class="flag egypt" role="img" aria-label="علم مصر"></div>
+      <div class="flag uae" role="img" aria-label="علم الإمارات العربية المتحدة"></div>
+      <div class="flag lebanon" role="img" aria-label="علم لبنان"></div>
     </section>
 
     <section class="arguments" aria-label="فوائد الكتاب الصوتي">
@@ -294,10 +283,10 @@
     </section>
 
     <nav class="buttons" aria-label="خيارات شراء الصوت">
-      <a href="https://www.kobo.com/us/en/audiobook/oIWni2T0zjy1HdIu-_8BEg" target="_blank" rel="noopener noreferrer">استمع على Kobo</a>
-      <a href="https://www.storytel.com/se/sv/books/الكتاب-المقدس-10054894" target="_blank" rel="noopener noreferrer">استمع على Storytel</a>
-      <a href="https://play.google.com/store/audiobooks/details/VA_%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8_%D8%A7%D9%84%D9%85%D9%82%D8%AF%D8%B3?id=AQAAAEDy4XqhmM" target="_blank" rel="noopener noreferrer">استمع على Google Play</a>
-      <a href="https://open.spotify.com/show/38JAiz4U89VJMa2NzGhNRE?si=6bf6e417a60c4874" target="_blank" rel="noopener noreferrer">استمع على Spotify</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">استمع على Kobo</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">استمع على Storytel</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">استمع على Google Play</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">استمع على Spotify</a>
     </nav>
   </main>
 
