@@ -13,10 +13,10 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      padding-top: 4.5em;
-      padding-bottom: 3.5em;
-      direction: rtl;
-      text-align: right;
+      padding-top: 4.5em; /* Igual à altura do header */
+      padding-bottom: 3.5em; /* Igual à altura do footer */
+      direction: rtl; /* Adicionado para layout RTL (direita para esquerda) */
+      text-align: right; /* Alinha o texto principal à direita */
     }
 
     /* Header fixo com neon amarelo */
@@ -91,12 +91,17 @@
       background-position: center;
       border-radius: 8px;
       opacity: 1; /* Garante visibilidade */
-      box-shadow: 0 0 10px #f9f871, 0 0 25px #f9f871; /* Efeito neon amarelo */
-      transition: transform 0.2s ease; /* Transição suave para o hover */
+      /* REINTRODUZIDO: Efeitos visuais para o brilho */
+      filter: brightness(0.75); /* Brilho padrão reduzido */
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8); /* Sombra neon amarela padrão */
+      transition: filter 0.3s ease, box-shadow 0.3s ease; /* Transição gradual para hover */
+      cursor: default; /* Mantém o cursor padrão */
+      user-select: none;
     }
 
     .flag:hover {
-      transform: scale(1.08); /* Aumenta um pouco no hover */
+      filter: brightness(1); /* Aumenta o brilho no hover */
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1); /* Aumenta a intensidade da sombra no hover */
     }
 
     /* Estilos específicos para cada bandeira com os URLs fornecidos */
@@ -271,7 +276,7 @@
 
     <section class="arguments" aria-label="فوائد الكتاب الصوتي"> يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
       اختبر نعمة عميقة وسلامًا، لتجد الطمأنينة في روحك.<br />
-      يمكنك الوصول بسهولة إلى كلمة الله حتى مع جدول أعمال مزدحم.<br />
+      يمكنك الوصول بسهiramente إلى كلمة الله حتى مع جدول أعمال مزدحم.<br />
       أثرِ حياتك الروحية مع عائلتك.
     </section>
 
