@@ -45,18 +45,10 @@
 
     @keyframes neonPulseYellow {
       0% {
-        text-shadow:
-          0 0 10px #f9f871,
-          0 0 30px #f9f871,
-          0 0 50px #f9f871,
-          0 0 100px #f9f871;
+        text-shadow: 0 0 10px #f9f871, 0 0 30px #f9f871, 0 0 50px #f9f871, 0 0 100px #f9f871;
       }
       100% {
-        text-shadow:
-          0 0 20px #f9f871,
-          0 0 40px #f9f871,
-          0 0 70px #f9f871,
-          0 0 120px #f9f871;
+        text-shadow: 0 0 20px #f9f871, 0 0 40px #f9f871, 0 0 70px #f9f871, 0 0 120px #f9f871;
       }
     }
 
@@ -94,6 +86,7 @@
       user-select: none;
       transition: filter 0.3s ease;
     }
+
     .flag:hover {
       filter: brightness(1);
       box-shadow: 0 0 25px rgba(249, 248, 113, 1);
@@ -102,9 +95,11 @@
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
     }
+
     .flag.uae {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg');
     }
+
     .flag.lebanon {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/59/Flag_of_Lebanon.svg');
     }
@@ -154,17 +149,15 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow:
-        0 0 10px #f9f871,
-        0 0 25px #f9f871;
+      box-shadow: 0 0 10px #f9f871, 0 0 25px #f9f871;
       transition: transform 0.2s ease;
     }
+
     .play-button:hover {
       transform: scale(1.15);
-      box-shadow:
-        0 0 20px #f9f871,
-        0 0 40px #f9f871;
+      box-shadow: 0 0 20px #f9f871, 0 0 40px #f9f871;
     }
+
     .play-button:active {
       transform: scale(0.95);
     }
@@ -185,6 +178,7 @@
       flex-wrap: wrap;
       margin-top: 1rem;
     }
+
     .buttons a {
       display: inline-block;
       padding: 0.7em 1.8em;
@@ -199,6 +193,7 @@
       white-space: nowrap;
       transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     }
+
     .buttons a:hover {
       background: #0099cc;
       transform: scale(1.08);
@@ -268,35 +263,33 @@
       <div class="flag lebanon" role="img" aria-label="علم لبنان"></div>
     </section>
 
-    <section class="arguments" aria-label="فوائد الكتاب الصوتي">
+    <section class="arguments">
       يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
       اختبر نعمة عميقة وسلامًا، لتجد الطمأنينة في روحك.<br />
       يمكنك الوصول بسهولة إلى كلمة الله حتى مع جدول أعمال مزدحم.<br />
       أثرِ حياتك الروحية مع عائلتك.
     </section>
 
-    <section class="sample-section" aria-label="عينة صوتية">
-      <button class="play-button" aria-label="تشغيل/إيقاف مؤقت للعينة" id="playPauseBtn" type="button">
+    <section class="sample-section">
+      <button class="play-button" id="playPauseBtn" type="button">
         <div class="play-icon" id="playIcon"></div>
       </button>
       <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/final_arabic.MP3"></audio>
     </section>
 
-    <nav class="buttons" aria-label="خيارات شراء الصوت">
-      <a href="#" target="_blank" rel="noopener noreferrer">استمع على Kobo</a>
-      <a href="#" target="_blank" rel="noopener noreferrer">استمع على Storytel</a>
-      <a href="#" target="_blank" rel="noopener noreferrer">استمع على Google Play</a>
-      <a href="#" target="_blank" rel="noopener noreferrer">استمع على Spotify</a>
+    <nav class="buttons">
+      <a href="https://www.kobo.com/us/en/audiobook/oIWni2T0zjy1HdIu-_8BEg" target="_blank" rel="noopener noreferrer">استمع على Kobo</a>
+      <a href="https://www.storytel.com/se/sv/books/الكتاب-المقدس-10054894" target="_blank" rel="noopener noreferrer">استمع على Storytel</a>
+      <a href="https://play.google.com/store/audiobooks/details/VA_%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8_%D8%A7%D9%84%D9%85%D9%82%D8%AF%D8%B3?id=AQAAAEDy4XqhmM" target="_blank" rel="noopener noreferrer">استمع على Google Play</a>
+      <a href="https://open.spotify.com/show/38JAiz4U89VJMa2NzGhNRE?si=6bf6e417a60c4874" target="_blank" rel="noopener noreferrer">استمع على Spotify</a>
     </nav>
   </main>
-
   <footer>© 2025 T S TELLES. جميع الحقوق محفوظة.</footer>
 
   <script>
     const audio = document.getElementById('audioSample');
     const btn = document.getElementById('playPauseBtn');
     const playIcon = document.getElementById('playIcon');
-
     let isPlaying = false;
 
     function togglePlayPause() {
@@ -307,11 +300,9 @@
         playIcon.style.width = '0';
       } else {
         audio.play();
-        playIcon.style.borderLeft = 'none';
-        playIcon.style.borderRight = 'none';
-        playIcon.style.width = '12px';
         playIcon.style.borderLeft = '6px solid black';
         playIcon.style.borderRight = '6px solid black';
+        playIcon.style.width = '12px';
       }
       isPlaying = !isPlaying;
     }
