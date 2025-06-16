@@ -92,8 +92,7 @@
       background-position: center;
       border-radius: 12px;
       filter: brightness(0.75);
-      /* REMOVIDO: Animação de opacidade para que todas as bandeiras fiquem visíveis o tempo todo */
-      /* animation: fadeOpacity 8s infinite alternate ease-in-out; */
+      opacity: 1; /* NOVO: Garante que a bandeira esteja sempre 100% visível */
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
       cursor: default;
       user-select: none;
@@ -104,25 +103,16 @@
       box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
 
-    /* NEW: Arabic Flags Specific Styles */
+    /* Arabic Flags Specific Styles */
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
-      /* animation-delay removido */
     }
     .flag.egypt {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
-      /* animation-delay removido */
     }
     .flag.uae {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg');
-      /* animation-delay removido */
     }
-
-    /* REMOVIDO: @keyframes fadeOpacity não é mais necessário */
-    /* @keyframes fadeOpacity {
-      0% {opacity: 1;}
-      100% {opacity: 0.4;}
-    } */
 
     /* Argumentos com estilo */
     .arguments {
