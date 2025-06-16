@@ -78,15 +78,15 @@
     /* Bandeiras lado a lado com efeito fade */
     .flags-row {
       display: flex;
-      gap: 3rem;
+      gap: 1.5rem; /* Ajustado para um gap menor para 3 bandeiras */
       justify-content: center; /* Centraliza as bandeiras */
       align-items: center;
       padding-top: 5rem;
     }
 
     .flag {
-      width: 160px;
-      height: 110px;
+      width: 140px; /* Reduzido um pouco a largura para caberem 3 */
+      height: 95px; /* Ajustado para manter proporção */
       background-size: cover;
       background-position: center;
       border-radius: 12px;
@@ -102,11 +102,20 @@
       box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
 
-    /* NEW: Saudi Arabia Flag Specific Styles */
+    /* NEW: Arabic Flags Specific Styles */
     .flag.saudi-arabia {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_Saudi_Arabia.svg');
       animation-delay: 0s;
     }
+    .flag.egypt {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg');
+      animation-delay: 2.5s; /* Diferente delay para o efeito */
+    }
+    .flag.uae {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg');
+      animation-delay: 5s; /* Diferente delay para o efeito */
+    }
+
 
     @keyframes fadeOpacity {
       0% {opacity: 1;}
@@ -249,11 +258,11 @@
       }
       .flags-row {
         padding-top: 3rem;
-        gap: 2rem;
+        gap: 1rem; /* Reduz o gap em mobile para 3 bandeiras */
       }
       .flags-row .flag {
-        width: 120px;
-        height: 80px;
+        width: 100px; /* Reduz ainda mais em mobile */
+        height: 68px; /* Ajustado para manter proporção */
       }
       .arguments {
         font-size: 1.1rem;
@@ -271,7 +280,7 @@
 </head>
 <body>
   <header>الكتاب المقدس</header> <main>
-    <section class="flags-row" aria-label="العلم"> <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div> </section>
+    <section class="flags-row" aria-label="الأعلام"> <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div> <div class="flag egypt" role="img" aria-label="علم مصر"></div> <div class="flag uae" role="img" aria-label="علم الإمارات العربية المتحدة"></div> </section>
 
     <section class="arguments" aria-label="فوائد الكتاب الصوتي"> يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
       اختبر نعمة عميقة وسلامًا، لتجد الطمأنينة في روحك.<br />
