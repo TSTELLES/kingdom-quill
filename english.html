@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Holy Bible</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7XkSs0R4u3T9M7O+vL/n+uR3m+0y0P5L0A3F2O/p4x8q+K/S2S2s2/d3+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Reset e base */
     body {
@@ -167,6 +168,15 @@
       text-shadow: 0 0 5px #000;
     }
 
+    /* Título do player */
+    .player-title {
+        color: #f9f871;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 5px #f9f871;
+        margin-bottom: 1rem; /* Espaço abaixo do título */
+    }
+
     /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
@@ -259,6 +269,34 @@
       box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
     }
 
+    /* Estilo dos ícones dentro dos botões */
+    .testament-section .buttons a i {
+        margin-right: 0.5em; /* Espaço entre o ícone e o texto */
+        font-size: 1.2em; /* Tamanho do ícone */
+    }
+
+    /* Novos textos de chamada de ação */
+    .call-to-action-section {
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        max-width: 720px;
+        text-align: center;
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        margin-top: 3rem; /* Espaço acima desta seção */
+    }
+    .call-to-action-section p {
+        margin-bottom: 1rem; /* Espaço entre parágrafos */
+    }
+    .call-to-action-section strong {
+        color: #f9f871; /* Destaca a parte "Ready?" */
+    }
+
 
     /* Footer fixo */
     footer {
@@ -285,6 +323,13 @@
         .testament-section {
             width: 90%;
             max-width: 500px;
+        }
+        .player-title {
+            font-size: 1.3rem;
+        }
+        .call-to-action-section {
+            font-size: 1.2rem;
+            padding: 1.8rem 2rem;
         }
     }
 
@@ -329,6 +374,13 @@
       .sample-section {
         max-width: 90vw;
       }
+      .player-title {
+          font-size: 1.1rem;
+      }
+      .call-to-action-section {
+          font-size: 1rem;
+          padding: 1.5rem 1.8rem;
+      }
     }
   </style>
 </head>
@@ -341,10 +393,22 @@
 
   <main>
     <section class="arguments" aria-label="Benefits of the Audio Bible">
-      Immerse yourself in the Holy Bible anytime, anywhere, with crystal clear audio.<br />
-      Experience profound grace and peace, finding comfort for your soul.<br />
-      Easily connect with God's word even in your busy daily life.<br />
-      Enrich your faith journey and share it with your family.
+      <h2 style="color: #f9f871; font-size: 2rem; margin-top: 0;">Complete Holy Bible in Audio</h2>
+      <p style="margin-top: 0.5rem; font-size: 1.6rem; font-weight: bold;">Crystal-Clear Narration, Ad-Free!</p>
+    </section>
+
+    <section class="sample-section" aria-label="Audio Sample">
+      <h3 class="player-title">Listen Now – Click to Play Sample</h3>
+      <button class="play-button" aria-label="Play/Pause sample" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/0616(1).MP3"></audio>
+    </section>
+
+    <section class="call-to-action-section" aria-label="Audio Bible Features and Call to Action">
+        <p>🎧 Enjoy offline playback, ad-free listening, and screen-off mode.</p>
+        <p>Your support helps us create new translations and maintain quality recordings.</p>
+        <p>👉 <strong>Ready?</strong> Start listening to the full Bible in audio now – available on all your favorite platforms!</p>
     </section>
 
     <div class="testament-container">
@@ -352,23 +416,16 @@
             <h2>New Testament</h2>
             <p>Experience the profound wisdom and divine teachings of the New Testament.</p>
             <nav class="buttons" aria-label="New Testament purchase options">
-                <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer">Listen on Libro.fm</a>
-                <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer">Listen on Barnes & Noble</a>
-                <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer">Listen on Google Play</a>
-                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer">Listen on Kobo</a>
-                <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-king-james-version-11174096" target="_blank" rel="noopener noreferrer">Listen on Storytel</a>
-                <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
-                <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer">Listen on Apple Books</a>
+                <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-reader"></i> Libro.fm</a>
+                <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-open"></i> Barnes & Noble</a>
+                <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"></i> Google Play</a>
+                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer"><i class="fas fa-headphones-alt"></i> Kobo</a>
+                <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-king-james-version-11174096" target="_blank" rel="noopener noreferrer"><i class="fas fa-book"></i> Storytel</a>
+                <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i> Spotify</a>
+                <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"></i> Apple Books</a>
             </nav>
         </section>
     </div>
-
-    <section class="sample-section" aria-label="Audio Sample">
-      <button class="play-button" aria-label="Play/Pause sample" id="playPauseBtn" type="button">
-        <div class="play-icon" id="playIcon"></div>
-      </button>
-      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/0616(1).MP3"></audio>
-    </section>
 
   </main>
 
