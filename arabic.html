@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar"> <head>
+<html lang="ar">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>الكتاب المقدس</title> <style>
+  <title>الكتاب المقدس - العهد الجديد</title> <style>
     /* Reset e base */
     body {
       margin: 0;
@@ -60,28 +61,32 @@
       }
     }
 
-    /* Conteúdo principal */
+    /* Conteúdo principal, se estende para preencher o espaço */
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* **MANTÉM O CONTEÚDO DO MAIN CENTRALIZADO HORIZONTALMENTE** */
       padding: 2rem 1rem 2rem;
       gap: 3rem;
-      max-width: 900px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
-    /* Bandeiras lado a lado */
+    /* Bandeira única com efeito fade - Adaptado para 3 bandeiras e RTL */
     .flags-row {
       display: flex;
-      gap: 1.5rem; /* Espaçamento entre as bandeiras */
       justify-content: center;
       align-items: center;
-      padding-top: 5rem;
+      padding-top: calc(4.5em + 2rem); /* Altura do header + espaço extra */
+      padding-bottom: 2rem; /* Espaço abaixo da bandeira */
+      width: 100%; /* Garante que a seção ocupe a largura para centralizar */
+      box-sizing: border-box; /* Inclui padding na largura */
+      gap: 1.5rem; /* Espaçamento entre as bandeiras */
+      flex-direction: row-reverse; /* Força RTL para as bandeiras */
     }
 
     .flag {
@@ -89,21 +94,18 @@
       height: 95px; /* Altura proporcional */
       background-size: cover;
       background-position: center;
-      border-radius: 8px;
-      opacity: 1; /* Garante visibilidade */
-      /* REINTRODUZIDO: Efeitos visuais para o brilho */
-      filter: brightness(0.75); /* Brilho padrão reduzido */
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8); /* Sombra neon amarela padrão */
-      transition: filter 0.3s ease, box-shadow 0.3s ease; /* Transição gradual para hover */
-      cursor: default; /* Mantém o cursor padrão */
+      border-radius: 12px;
+      filter: brightness(0.75);
+      animation: fadeOpacity 8s infinite alternate ease-in-out;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      cursor: default;
       user-select: none;
+      transition: filter 0.3s ease;
     }
-
     .flag:hover {
-      filter: brightness(1); /* Aumenta o brilho no hover */
-      box-shadow: 0 0 25px rgba(249, 248, 113, 1); /* Aumenta a intensidade da sombra no hover */
+      filter: brightness(1);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
-
     /* Estilos específicos para cada bandeira com os URLs fornecidos */
     .flag.saudi-arabia {
       background-image: url('https://www.arabia-saudita.org/imagens/Bandeira-da-Arabia-Saudita-1-1.jpg');
@@ -114,8 +116,52 @@
     .flag.palestine {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Palestine.svg/1200px-Flag_of_Palestine.svg.png');
     }
+    @keyframes fadeOpacity {
+      0% {opacity: 1;}
+      100% {opacity: 0.4;}
+    }
 
-    /* Resto do CSS (inalterado) */
+    /* Container para o conteúdo principal */
+    .testament-container { /* Reutilizado para envolver a seção de 'New Testament' que agora é a principal */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    .testament-section {
+        flex: 1;
+        min-width: 300px;
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        text-align: right; /* Mantém o alinhamento RTL */
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Ainda centraliza os elementos internos horizontalmente */
+        gap: 1.5rem;
+        max-width: 700px;
+    }
+    
+    .testament-section h2 {
+        color: #f9f871;
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        text-shadow:
+            0 0 5px #f9f871,
+            0 0 15px #f9f871;
+    }
+
+    /* Argumentos com estilo (texto de introdução) */
     .arguments {
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
@@ -125,11 +171,39 @@
       font-size: 1.4rem;
       line-height: 1.5;
       max-width: 720px;
-      text-align: right;
+      text-align: right; /* Mantém o alinhamento RTL */
       user-select: none;
       text-shadow: 0 0 5px #000;
     }
+    /* Estilo para o novo título principal com efeito neon */
+    .main-title-neon {
+      color: #f9f871;
+      font-size: 2rem;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
+    }
+    .subtitle-strong {
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
 
+
+    /* Título do player */
+    .player-title {
+        color: #f9f871;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 5px #f9f871;
+        margin-bottom: 1rem; /* Espaço abaixo do título */
+    }
+
+    /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
       padding: 1.8rem 2.2rem;
@@ -138,19 +212,34 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.2rem;
+      gap: 0; /* Ajustado para deixar justify-content controlar o espaçamento */
       max-width: 700px;
       user-select: none;
+      margin-top: 3rem; /* Espaço acima desta seção */
+      justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
     }
 
+    /* Adicionado padding interno aos elementos para controle de espaçamento */
+    .sample-section .player-title {
+        margin-bottom: 1rem;
+        margin-top: 0;
+        padding-top: 1rem;
+    }
+    .sample-section .play-button {
+        margin-bottom: 1rem;
+    }
     .sample-section audio {
       width: 100%;
       outline: none;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
       cursor: pointer;
+      margin-top: 0;
+      padding-bottom: 1rem;
     }
 
+
+    /* Botão play customizado */
     .play-button {
       background: #f9f871;
       border: none;
@@ -185,33 +274,76 @@
       margin-left: 3px;
     }
 
-    .buttons {
+    /* Botões das lojas - Agora para as IMAGENS dos logos */
+    .testament-section .buttons { /* Note: esta classe já existia e foi reutilizada */
       display: flex;
-      justify-content: center;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-    .buttons a {
-      display: inline-block;
-      padding: 0.7em 1.8em;
-      background: #00bfff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
-      user-select: none;
-      white-space: nowrap;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    }
-    .buttons a:hover {
-      background: #0099cc;
-      transform: scale(1.08);
-      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+      flex-direction: row; /* Coloca os logos em linha */
+      flex-wrap: wrap; /* Permite quebrar linha */
+      justify-content: center; /* Centraliza horizontalmente */
+      gap: 1.8rem; /* Espaçamento maior entre os logos */
+      margin-top: 1.5rem;
+      width: 100%;
     }
 
+    .testament-section .buttons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent; /* Fundo transparente para a "bolinha" */
+      border: 2px solid transparent; /* Borda transparente que aparece no hover */
+      border-radius: 50%; /* Faz a "bolinha" */
+      width: 80px; /* Tamanho da bolinha do logo */
+      height: 80px; /* Tamanho da bolinha do logo */
+      box-shadow: none; /* Remove qualquer sombra base */
+      transition: all 0.3s ease; /* Transição suave */
+      overflow: hidden; /* Garante que a imagem não vaze da bolinha */
+    }
+
+    .testament-section .buttons a:hover {
+      background: rgba(249, 248, 113, 0.1); /* Brilho suave no hover */
+      transform: scale(1.15); /* Efeito de zoom */
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon */
+      border-color: #f9f871; /* Borda neon */
+    }
+
+    .testament-section .buttons a img {
+      width: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
+      height: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
+      object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+      max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner */
+      max-height: 100%; /* Impede que a imagem ultrapasse a altura do contêiner */
+      filter: brightness(0.9); /* Leve escurecimento para se integrar melhor */
+      transition: filter 0.3s ease;
+    }
+
+    .testament-section .buttons a:hover img {
+        filter: brightness(1.2); /* Clareia a imagem no hover */
+    }
+
+    /* Novos textos de chamada de ação */
+    .call-to-action-section {
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        max-width: 720px;
+        text-align: right; /* Mantém alinhamento RTL */
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        margin-top: 3rem; /* Espaço acima desta seção */
+    }
+    .call-to-action-section p {
+        margin-bottom: 1rem; /* Espaço entre parágrafos */
+    }
+    .call-to-action-section strong {
+        color: #f9f871; /* Destaca a parte "Ready?" */
+    }
+
+
+    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -224,6 +356,41 @@
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
       user-select: none;
       z-index: 100;
+    }
+
+    /* Responsividade básica */
+    @media (max-width: 768px) {
+        .testament-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .testament-section {
+            width: 90%;
+            max-width: 500px;
+        }
+        .player-title {
+            font-size: 1.3rem;
+        }
+        .call-to-action-section {
+            font-size: 1.2rem;
+            padding: 1.8rem 2rem;
+        }
+        .main-title-neon {
+            font-size: 1.8rem;
+        }
+        .subtitle-strong {
+            font-size: 1.4rem;
+        }
+        /* Ajuste do tamanho dos botões de logo em telas menores */
+        .testament-section .buttons a {
+            width: 65px; /* Bolinha menor */
+            height: 65px;
+        }
+        .testament-section .buttons a img {
+            width: 60%; /* Logo menor dentro da bolinha */
+            height: 60%;
+        }
     }
 
     @media (max-width: 480px) {
@@ -243,56 +410,93 @@
       main {
         min-height: calc(100vh - 3.8em - 3em);
         padding: 1.5rem 1rem 1.5rem;
+        gap: 2rem;
       }
       .flags-row {
-        padding-top: 3rem;
-        gap: 1rem;
-      }
-      .flags-row .flag {
-        width: 100px;
-        height: 68px;
+        padding-top: calc(3.8em + 1.5rem);
+        padding-bottom: 1.5rem;
       }
       .arguments {
         font-size: 1.1rem;
         padding: 1.5rem 1.8rem;
       }
-      .buttons a {
-        font-size: 0.95rem;
-        padding: 0.65em 1.4em;
+      .testament-section h2 {
+          font-size: 1.5rem;
+      }
+      .testament-section .buttons a {
+        /* Ajusta o tamanho dos botões de logo para telas muito pequenas */
+        width: 55px; /* Bolinha ainda menor */
+        height: 55px;
+      }
+      .testament-section .buttons a img {
+        width: 60%;
+        height: 60%;
       }
       .sample-section {
         max-width: 90vw;
+      }
+      .player-title {
+          font-size: 1.1rem;
+      }
+      .call-to-action-section {
+          font-size: 1rem;
+          padding: 1.5rem 1.8rem;
+      }
+      .main-title-neon {
+          font-size: 1.6rem;
+      }
+      .subtitle-strong {
+          font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>الكتاب المقدس</header> <main>
-    <section class="flags-row" aria-label="الأعلام">
-      <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div>
-      <div class="flag egypt" role="img" aria-label="علم مصر"></div>
-      <div class="flag palestine" role="img" aria-label="علم فلسطين"></div>
+  <header>الكتاب المقدس - العهد الجديد</header>
+
+  <section class="flags-row" aria-label="الأعلام">
+    <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div>
+    <div class="flag egypt" role="img" aria-label="علم مصر"></div>
+    <div class="flag palestine" role="img" aria-label="علم فلسطين"></div>
+  </section>
+
+  <main>
+    <section class="arguments" aria-label="فوائد الكتاب الصوتي">
+      <h2 class="main-title-neon">العهد الجديد كاملاً صوتياً</h2>
+      <p class="subtitle-strong">سرد واضح تماماً، وبدون إعلانات!</p>
     </section>
 
-    <section class="arguments" aria-label="فوائد الكتاب الصوتي"> يمكنك الاستماع إلى الكتاب المقدس بجودة صوت واضحة في أي وقت وفي أي مكان.<br />
-      اختبر نعمة عميقة وسلامًا، لتجد الطمأنينة في روحك.<br />
-      يمكنك الوصول بسهولة إلى كلمة الله حتى مع جدول أعمال مزدحم.<br />
-      أثرِ حياتك الروحية مع عائلتك.
-    </section>
-
-    <section class="sample-section" aria-label="عينة صوتية"> <button class="play-button" aria-label="تشغيل/إيقاف مؤقت للعينة" id="playPauseBtn" type="button"> <div class="play-icon" id="playIcon"></div>
+    <section class="sample-section" aria-label="عينة صوتية">
+      <h3 class="player-title">استمع الآن – انقر لتشغيل العينة</h3>
+      <button class="play-button" aria-label="تشغيل/إيقاف مؤقت للعينة" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
       </button>
       <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/arabic-sample.MP3"></audio>
     </section>
 
-    <nav class="buttons" aria-label="خيارات شراء الصوت"> <a href="https://www.kobo.com/us/en/audiobook/oIWni2T0zjy1HdIu-_8BEg" target="_blank" rel="noopener noreferrer">استمع على Kobo</a>
-      <a href="https://www.storytel.com/se/sv/books/الكتاب-المقدس-10054894" target="_blank" rel="noopener noreferrer">استمع على Storytel</a>
-      <a href="https://play.google.com/store/audiobooks/details/VA_%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8_%D8%A7%D9%84%D9%85%D9%82%D8%AF%D8%B3?id=AQAAAEDy4XqhmM" target="_blank" rel="noopener noreferrer">استمع على Google Play</a>
-      <a href="https://open.spotify.com/show/38JAiz4U89VJMa2NzGhNRE?si=6bf6e417a60c4874" target="_blank" rel="noopener noreferrer">استمع على Spotify</a>
-    </nav>
+    <section class="call-to-action-section" aria-label="ميزات الكتاب الصوتي ودعوة للعمل">
+        <p>🎧 استمتع بالتشغيل دون اتصال بالإنترنت، والاستماع بدون إعلانات، ووضع إيقاف الشاشة. دعمك يساعدنا في إنشاء ترجمات جديدة والحفاظ على جودة التسجيلات.</p>
+        <p>👉 <strong>جاهز؟</strong> ابدأ الاستماع إلى <strong>العهد الجديد كاملاً</strong> صوتياً الآن – متاح على جميع منصاتك المفضلة!</p>
+    </section>
+
+    <div class="testament-container">
+        <section class="testament-section" aria-label="الكتاب المقدس الصوتي - العهد الجديد">
+            <h2>العهد الجديد</h2>
+            <p>اختبر الحكمة العميقة والتعاليم الإلهية للعهد الجديد.</p>
+            <nav class="buttons" aria-label="خيارات شراء العهد الجديد">
+                <a href="https://www.kobo.com/us/en/audiobook/oIWni2T0zjy1HdIu-_8BEg" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+                <a href="https://www.storytel.com/se/sv/books/الكتاب-المقدس-10054894" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://logowik.com/content/uploads/images/storytel4997.jpg" alt="Storytel Logo"></a>
+                <a href="https://play.google.com/store/audiobooks/details/VA_%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8_%D8%A7%D9%84%D9%85%D9%82%D8%AF%D8%B3?id=AQAAAEDy4XqhmM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+                <a href="https://open.spotify.com/show/38JAiz4U89VJMa2NzGhNRE?si=6bf6e417a60c4874" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+                </nav>
+        </section>
+    </div>
+
   </main>
 
-  <footer>© 2025 T S TELLES. جميع الحقوق محفوظة.</footer> <script>
+  <footer>© 2025 T S TELLES. جميع الحقوق محفوظة.</footer>
+
+  <script>
     const audio = document.getElementById('audioSample');
     const btn = document.getElementById('playPauseBtn');
     const playIcon = document.getElementById('playIcon');
