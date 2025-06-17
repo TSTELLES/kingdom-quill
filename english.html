@@ -288,10 +288,19 @@
     }
 
     /* Estilo dos ícones dentro dos botões */
+    /* Ajusta para centralizar o ícone e fazê-lo o único conteúdo */
     .testament-section .buttons a i {
-        margin-right: 0.5em; /* Espaço entre o ícone e o texto */
-        font-size: 1.2em; /* Tamanho do ícone */
+        margin: 0; /* Remove margem extra */
+        font-size: 1.8em; /* Aumenta o tamanho do ícone para ser mais visível */
+        line-height: 1; /* Garante que a altura da linha não afete o alinhamento */
+        width: 100%; /* Permite que o ícone preencha o botão, se necessário */
+        text-align: center; /* Centraliza o ícone horizontalmente */
     }
+    /* Esconde o texto que antes acompanhava o ícone */
+    .testament-section .buttons a span.button-text {
+        display: none;
+    }
+
 
     /* Novos textos de chamada de ação */
     .call-to-action-section {
@@ -355,6 +364,9 @@
         .subtitle-strong {
             font-size: 1.4rem;
         }
+        .testament-section .buttons a i {
+            font-size: 1.6em; /* Ajusta o tamanho do ícone para telas menores */
+        }
     }
 
     @media (max-width: 480px) {
@@ -411,17 +423,24 @@
       .subtitle-strong {
           font-size: 1.2rem;
       }
+      .testament-section .buttons a i {
+            font-size: 1.4em; /* Ajusta o tamanho do ícone para telas muito pequenas */
+        }
     }
   </style>
 </head>
 <body>
-  <header>Holy Bible - New Testament</header> <section class="flags-row" aria-label="Flag of the United States">
+  <header>Holy Bible - New Testament</header>
+
+  <section class="flags-row" aria-label="Flag of the United States">
     <div class="flag usa" role="img" aria-label="United States flag"></div>
   </section>
 
   <main>
     <section class="arguments" aria-label="Benefits of the Audio Bible">
-      <h2 class="main-title-neon">Complete New Testament in Audio</h2> <p class="subtitle-strong">Crystal-Clear Narration, Ad-Free!</p> </section>
+      <h2 class="main-title-neon">Complete New Testament in Audio</h2>
+      <p class="subtitle-strong">Crystal-Clear Narration, Ad-Free!</p>
+    </section>
 
     <section class="sample-section" aria-label="Audio Sample">
       <h3 class="player-title">Listen Now – Click to Play Sample</h3>
@@ -434,20 +453,21 @@
     <section class="call-to-action-section" aria-label="Audio Bible Features and Call to Action">
         <p>🎧 Enjoy offline playback, ad-free listening, and screen-off mode.</p>
         <p>Your support helps us create new translations and maintain quality recordings.</p>
-        <p>👉 <strong>Ready?</strong> Start listening to the <strong>full New Testament</strong> in audio now – available on all your favorite platforms!</p> </section>
+        <p>👉 <strong>Ready?</strong> Start listening to the <strong>full New Testament</strong> in audio now – available on all your favorite platforms!</p>
+    </section>
 
     <div class="testament-container">
         <section class="testament-section" aria-label="New Testament Audio Bible">
             <h2>New Testament</h2>
             <p>Experience the profound wisdom and divine teachings of the New Testament.</p>
             <nav class="buttons" aria-label="New Testament purchase options">
-                <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-reader"></i> Libro.fm</a>
-                <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-open"></i> Barnes & Noble</a>
-                <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer"><i class="fab fa-google-play"></i> Google Play</a>
-                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer"><i class="fas fa-headphones-alt"></i> Kobo</a>
-                <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-king-james-version-11174096" target="_blank" rel="noopener noreferrer"><i class="fas fa-book"></i> Storytel</a>
-                <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i> Spotify</a>
-                <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer"><i class="fab fa-apple"></i> Apple Books</a>
+                <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer" aria-label="Listen on Libro.fm"><i class="fas fa-book-reader"></i></a>
+                <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer" aria-label="Listen on Barnes & Noble"><i class="fas fa-book-open"></i></a>
+                <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer" aria-label="Listen on Google Play"><i class="fab fa-google-play"></i></a>
+                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer" aria-label="Listen on Kobo"><i class="fas fa-headphones-alt"></i></a>
+                <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-king-james-version-11174096" target="_blank" rel="noopener noreferrer" aria-label="Listen on Storytel"><i class="fas fa-book"></i></a>
+                <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer" aria-label="Listen on Spotify"><i class="fab fa-spotify"></i></a>
+                <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer" aria-label="Listen on Apple Books"><i class="fab fa-apple"></i></a>
             </nav>
         </section>
     </div>
