@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Holy Bible</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7XkSs0R4u3T9M7O+vL/n+uR3m+0y0P5L0A3F2O/p4x8q+K/S2S2s2/d3+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Holy Bible - New Testament</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7XkSs0R4u3T9M7O+vL/n+uR3m+0y0P5L0A3F2O/p4x8q+K/S2S2s2/d3+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* Reset e base */
     body {
@@ -167,6 +166,24 @@
       user-select: none;
       text-shadow: 0 0 5px #000;
     }
+    /* Estilo para o novo título principal com efeito neon */
+    .main-title-neon {
+      color: #f9f871;
+      font-size: 2rem;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
+    }
+    .subtitle-strong {
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
 
     /* Título do player */
     .player-title {
@@ -331,6 +348,12 @@
             font-size: 1.2rem;
             padding: 1.8rem 2rem;
         }
+        .main-title-neon {
+            font-size: 1.8rem;
+        }
+        .subtitle-strong {
+            font-size: 1.4rem;
+        }
     }
 
     @media (max-width: 480px) {
@@ -381,21 +404,23 @@
           font-size: 1rem;
           padding: 1.5rem 1.8rem;
       }
+      .main-title-neon {
+          font-size: 1.6rem;
+      }
+      .subtitle-strong {
+          font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>Holy Bible</header>
-
-  <section class="flags-row" aria-label="Flag of the United States">
+  <header>Holy Bible - New Testament</header> <section class="flags-row" aria-label="Flag of the United States">
     <div class="flag usa" role="img" aria-label="United States flag"></div>
   </section>
 
   <main>
     <section class="arguments" aria-label="Benefits of the Audio Bible">
-      <h2 style="color: #f9f871; font-size: 2rem; margin-top: 0;">Complete Holy Bible in Audio</h2>
-      <p style="margin-top: 0.5rem; font-size: 1.6rem; font-weight: bold;">Crystal-Clear Narration, Ad-Free!</p>
-    </section>
+      <h2 class="main-title-neon">Complete New Testament in Audio</h2> <p class="subtitle-strong">Crystal-Clear Narration, Ad-Free!</p> </section>
 
     <section class="sample-section" aria-label="Audio Sample">
       <h3 class="player-title">Listen Now – Click to Play Sample</h3>
