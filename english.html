@@ -203,19 +203,33 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.2rem;
+      /* Removido gap e padding-top/bottom extra para deixar o justify-content centralizar */
+      gap: 0; /* Ajustado para deixar justify-content controlar o espaçamento */
       max-width: 700px;
       user-select: none;
-      margin-top: 3rem; /* Espaço acima da seção de amostra */
+      margin-top: 3rem; /* Espaço acima desta seção */
+      justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
     }
 
+    /* Adicionado padding interno aos elementos para controle de espaçamento */
+    .sample-section .player-title {
+        margin-bottom: 1rem; /* Reintroduz a margem se precisar */
+        margin-top: 0; /* Garante que não há margem superior empurrando */
+        padding-top: 1rem; /* Adiciona um padding interno para a parte superior do texto */
+    }
+    .sample-section .play-button {
+        margin-bottom: 1rem; /* Adiciona espaço abaixo do botão de play */
+    }
     .sample-section audio {
       width: 100%;
       outline: none;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
       cursor: pointer;
+      margin-top: 0; /* Garante que não há margem superior empurrando */
+      padding-bottom: 1rem; /* Adiciona um padding interno para a parte inferior do áudio */
     }
+
 
     /* Botão play customizado */
     .play-button {
