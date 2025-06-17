@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr"> <head>
+<html lang="fr">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>La Sainte Bible – Version Louis Segond</title> <style>
+  <title>La Sainte Bible – Version Louis Segond</title>
+  <style>
     /* Reset e base */
     body {
       margin: 0;
@@ -66,20 +68,22 @@
       align-items: center;
       padding: 2rem 1rem 2rem;
       gap: 3rem;
-      max-width: 900px;
+      max-width: 1200px; /* Ajustado para consistência com o alemão/chinês */
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
-    /* Bandeiras lado a lado com efeito fade */
+    /* Bandeira única com efeito fade */
     .flags-row {
       display: flex;
-      gap: 3rem;
       justify-content: center;
       align-items: center;
-      padding-top: 5rem;
+      padding-top: calc(4.5em + 2rem); /* Altura do header + espaço extra */
+      padding-bottom: 2rem; /* Espaço abaixo da bandeira */
+      width: 100%; /* Garante que a seção ocupe a largura para centralizar */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
 
     .flag {
@@ -99,19 +103,57 @@
       filter: brightness(1);
       box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
-
-    /* French Flag Specific Styles */
+    /* Estilos específicos para a bandeira francesa */
     .flag.france {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg');
       animation-delay: 0s;
     }
-
     @keyframes fadeOpacity {
       0% {opacity: 1;}
       100% {opacity: 0.4;}
     }
 
-    /* Argumentos com estilo */
+    /* Container para os testamentos (agora uma seção única para a Bíblia) */
+    .testament-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem; /* Ajuste para o espaço entre os logos */
+        width: 100%;
+        margin-top: 3rem; /* Espaço entre argumentos e contêiner principal */
+    }
+
+    .testament-section { /* Reutilizado como contêiner para os botões das lojas */
+        flex: 1;
+        min-width: 300px;
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        text-align: center;
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        max-width: 700px; /* Ajusta largura máxima para o contêiner de botões */
+    }
+
+    .testament-section h2 {
+        color: #f9f871;
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        text-shadow:
+            0 0 5px #f9f871,
+            0 0 15px #f9f871;
+    }
+
+    /* Argumentos com estilo (texto de introdução principal) */
     .arguments {
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
@@ -125,28 +167,58 @@
       user-select: none;
       text-shadow: 0 0 5px #000;
     }
+    /* Estilo para o novo título principal com efeito neon */
+    .main-title-neon {
+      color: #f9f871;
+      font-size: 2rem;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
+    }
+    .subtitle-strong {
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+
+    /* Título do player */
+    .player-title {
+        color: #f9f871;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 5px #f9f871;
+        margin-bottom: 0;
+    }
 
     /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
-      padding: 1.8rem 2.2rem;
+      padding: 2.5rem 2.2rem; /* Aumentado padding top/bottom */
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.2rem;
+      justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
+      gap: 2rem; /* Espaçamento entre os itens */
       max-width: 700px;
       user-select: none;
+      margin-top: 3rem; /* Espaço acima desta seção */
     }
 
+    /* Zera margens individuais para deixar o gap e padding da sample-section controlarem o espaçamento */
+    .sample-section .player-title,
+    .sample-section .play-button,
     .sample-section audio {
-      width: 100%;
-      outline: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
-      cursor: pointer;
+        margin-top: 0;
+        margin-bottom: 0;
     }
+
 
     /* Botão play customizado */
     .play-button {
@@ -183,33 +255,75 @@
       margin-left: 3px;
     }
 
-    /* Botões das lojas */
-    .buttons {
+    /* Botões das lojas - Agora para as IMAGENS dos logos */
+    .testament-section .buttons {
+      display: flex;
+      flex-direction: row; /* Coloca os logos em linha */
+      flex-wrap: wrap; /* Permite quebrar linha */
+      justify-content: center; /* Centraliza horizontalmente */
+      gap: 1.8rem; /* Espaçamento maior entre os logos */
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+
+    .testament-section .buttons a {
       display: flex;
       justify-content: center;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
+      align-items: center;
+      background: transparent; /* Fundo transparente para a "bolinha" */
+      border: 2px solid transparent; /* Borda transparente que aparece no hover */
+      border-radius: 50%; /* Faz a "bolinha" */
+      width: 80px; /* Tamanho da bolinha do logo */
+      height: 80px; /* Tamanho da bolinha do logo */
+      box-shadow: none; /* Remove qualquer sombra base */
+      transition: all 0.3s ease; /* Transição suave */
+      overflow: hidden; /* Garante que a imagem não vaze da bolinha */
+      text-decoration: none; /* Remove sublinhado dos links */
     }
-    .buttons a {
-      display: inline-block;
-      padding: 0.7em 1.8em;
-      background: #00bfff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
-      user-select: none;
-      white-space: nowrap;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+
+    .testament-section .buttons a:hover {
+      background: rgba(249, 248, 113, 0.1); /* Brilho suave no hover */
+      transform: scale(1.15); /* Efeito de zoom */
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon */
+      border-color: #f9f871; /* Borda neon */
     }
-    .buttons a:hover {
-      background: #0099cc;
-      transform: scale(1.08);
-      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+
+    .testament-section .buttons a img {
+      width: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
+      height: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
+      object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+      max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner */
+      max-height: 100%; /* Impede que a imagem ultrapasse a altura do contêiner */
+      filter: brightness(0.9); /* Leve escurecimento para se integrar melhor */
+      transition: filter 0.3s ease;
     }
+
+    .testament-section .buttons a:hover img {
+        filter: brightness(1.2); /* Clareia a imagem no hover */
+    }
+
+    /* Novos textos de chamada de ação */
+    .call-to-action-section {
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        max-width: 720px;
+        text-align: center;
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        margin-top: 3rem; /* Espaço acima desta seção */
+    }
+    .call-to-action-section p {
+        margin-bottom: 1rem; /* Espaço entre parágrafos */
+    }
+    .call-to-action-section strong {
+        color: #f9f871; /* Destaca a parte "Ready?" */
+    }
+
 
     /* Footer fixo */
     footer {
@@ -227,6 +341,40 @@
     }
 
     /* Responsividade básica */
+    @media (max-width: 768px) {
+        .testament-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .testament-section {
+            width: 90%;
+            max-width: 500px;
+        }
+        .player-title {
+            font-size: 1.3rem;
+        }
+        .call-to-action-section {
+            font-size: 1.2rem;
+            padding: 1.8rem 2rem;
+        }
+        .main-title-neon {
+            font-size: 1.8rem;
+        }
+        .subtitle-strong {
+            font-size: 1.4rem;
+        }
+        /* Ajuste do tamanho dos botões de logo em telas menores */
+        .testament-section .buttons a {
+            width: 65px; /* Bolinha menor */
+            height: 65px;
+        }
+        .testament-section .buttons a img {
+            width: 60%; /* Logo menor dentro da bolinha */
+            height: 60%;
+        }
+    }
+
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -244,51 +392,94 @@
       main {
         min-height: calc(100vh - 3.8em - 3em);
         padding: 1.5rem 1rem 1.5rem;
+        gap: 2rem;
       }
       .flags-row {
-        padding-top: 3rem;
+        padding-top: calc(3.8em + 1.5rem);
+        padding-bottom: 1.5rem;
       }
       .arguments {
         font-size: 1.1rem;
         padding: 1.5rem 1.8rem;
       }
-      .buttons a {
-        font-size: 0.95rem;
-        padding: 0.65em 1.4em;
+      .testament-section h2 {
+          font-size: 1.5rem;
       }
-      .flag {
-        width: 120px;
-        height: 80px;
+      .testament-section .buttons a {
+        /* Ajusta o tamanho dos botões de logo para telas muito pequenas */
+        width: 55px; /* Bolinha ainda menor */
+        height: 55px;
+      }
+      .testament-section .buttons a img {
+        width: 60%;
+        height: 60%;
       }
       .sample-section {
         max-width: 90vw;
+      }
+      .player-title {
+          font-size: 1.1rem;
+      }
+      .call-to-action-section {
+          font-size: 1rem;
+          padding: 1.5rem 1.8rem;
+      }
+      .main-title-neon {
+          font-size: 1.6rem;
+      }
+      .subtitle-strong {
+          font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>La Sainte Bible – Version Louis Segond</header> <main>
-    <section class="flags-row" aria-label="Drapeau"> <div class="flag france" role="img" aria-label="Drapeau de la France"></div> </section>
+  <header>La Sainte Bible – Version Louis Segond</header>
 
-    <section class="arguments" aria-label="Avantages du livre audio"> Vous pouvez écouter la Bible en qualité audio claire, partout et à tout moment.<br />
+  <section class="flags-row" aria-label="Drapeau">
+    <div class="flag france" role="img" aria-label="Drapeau de la France"></div>
+  </section>
+
+  <main>
+    <section class="arguments" aria-label="Avantages du livre audio">
+      <h2 class="main-title-neon">La Sainte Bible – Version Louis Segond en livre audio</h2>
+      <p class="subtitle-strong">Vous pouvez écouter la Bible en qualité audio claire, partout et à tout moment.</p>
       Découvrez une profonde grâce et une paix, trouvant la tranquillité d'esprit.<br />
       Accédez facilement à la Parole de Dieu même avec un emploi du temps chargé.<br />
       Enrichissez votre vie spirituelle avec votre famille.
     </section>
 
-    <section class="sample-section" aria-label="Échantillon audio"> <button class="play-button" aria-label="Lecture/Pause de l'échantillon" id="playPauseBtn" type="button"> <div class="play-icon" id="playIcon"></div>
+    <section class="sample-section" aria-label="Échantillon audio">
+      <h3 class="player-title">Écoutez maintenant – Cliquez pour lancer l'échantillon</h3>
+      <button class="play-button" aria-label="Lecture/Pause de l'échantillon" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
       </button>
       <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/retalier-french.MP3"></audio>
     </section>
 
-    <nav class="buttons" aria-label="Options d'achat audio"> <a href="https://www.kobo.com/us/en/audiobook/la-sainte-bible-version-louis-segond" target="_blank" rel="noopener noreferrer">Écouter sur Kobo</a>
-      <a href="https://www.barnesandnoble.com/w/la-sainte-bible-version-louis-segond-va/1147445451" target="_blank" rel="noopener noreferrer">Écouter sur Barnes & Noble</a>
-      <a href="https://play.google.com/store/audiobooks/details/VA_La_Sainte_Bible_Version_Louis_Segond?id=AQAAAEBKJz5nZM" target="_blank" rel="noopener noreferrer">Écouter sur Google Play</a>
-      <a href="https://open.spotify.com/show/3bwe24C8CUmhwaS32ryxT2?si=227efd616cb944a3" target="_blank" rel="noopener noreferrer">Écouter sur Spotify</a>
-    </nav>
+    <section class="call-to-action-section" aria-label="Fonctionnalités et appel à l'action du livre audio">
+        <p>Votre soutien nous aide à créer de nouvelles traductions et à maintenir des enregistrements de haute qualité.</p>
+        <p>👉 <strong>Prêt(e)?</strong> Commencez dès maintenant à écouter la <strong>version intégrale de la Sainte Bible Louis Segond</strong> – disponible sur toutes vos plateformes préférées !</p>
+    </section>
+
+    <div class="testament-container">
+        <section class="testament-section" aria-label="Options d'achat audio">
+            <h2>La Bible</h2>
+            <p>Découvrez la sagesse profonde et les enseignements divins de la Bible.</p>
+            <nav class="buttons" aria-label="Options d'achat">
+                <a href="https://www.kobo.com/us/en/audiobook/la-sainte-bible-version-louis-segond" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+                <a href="https://www.barnesandnoble.com/w/la-sainte-bible-version-louis-segond-va/1147445451" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Barnes_%26_Noble_logo.svg" alt="Barnes & Noble Logo"></a>
+                <a href="https://play.google.com/store/audiobooks/details/VA_La_Sainte_Bible_Version_Louis_Segond?id=AQAAAEBKJz5nZM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+                <a href="https://open.spotify.com/show/3bwe24C8CUmhwaS32ryxT2?si=227efd616cb944a3" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+            </nav>
+        </section>
+    </div>
+
   </main>
 
-  <footer>© 2025 T S TELLES. Tous droits réservés.</footer> <script>
+  <footer>© 2025 T S TELLES. Tous droits réservés.</footer>
+
+  <script>
     const audio = document.getElementById('audioSample');
     const btn = document.getElementById('playPauseBtn');
     const playIcon = document.getElementById('playIcon');
