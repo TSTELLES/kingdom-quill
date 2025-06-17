@@ -200,7 +200,7 @@
         font-size: 1.5rem;
         font-weight: bold;
         text-shadow: 0 0 5px #f9f871;
-        /* margin-bottom: 1rem; */ /* Removido para usar padding-bottom */
+        margin-bottom: 0; /* Zera a margem de baixo do título */
     }
 
     /* Faixa de amostra com player estiloso */
@@ -212,24 +212,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Ajuste de espaçamento aqui: */
       justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
       padding-top: 2.5rem; /* Mais padding em cima */
       padding-bottom: 2.5rem; /* Mais padding embaixo */
       max-width: 700px;
       user-select: none;
       margin-top: 3rem; /* Espaço acima desta seção */
-      gap: 1.2rem; /* Reintroduzindo o gap para espaçamento consistente */
+      gap: 2.5rem; /* AUMENTADO O GAP PARA MAIS ESPAÇAMENTO */
     }
 
     /* Adicionado padding interno aos elementos para controle de espaçamento */
     .sample-section .player-title {
-        margin-bottom: 0; /* Zera a margem de baixo do título */
         margin-top: 0;
-        /* padding-top: 1rem; REMOVIDO, pois o padding da sample-section é suficiente */
     }
     .sample-section .play-button {
-        margin-bottom: 0; /* Zera a margem de baixo do botão */
+        margin-bottom: 0;
     }
     .sample-section audio {
       width: 100%;
@@ -238,7 +235,6 @@
       box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
       cursor: pointer;
       margin-top: 0;
-      /* padding-bottom: 1rem; REMOVIDO, pois o padding da sample-section é suficiente */
     }
 
 
