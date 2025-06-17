@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>圣经有声完整版 - 中文简体</title> <style>
+  <title>圣经完整版（无删减版）- 中文简体</title> <style>
     /* Reset e base */
     body {
       margin: 0;
@@ -122,7 +122,7 @@
         margin-top: 3rem; /* Espaço entre argumentos e contêiner principal */
     }
 
-    .testament-section {
+    .testament-section { /* Reutilizado como contêiner para os botões das lojas */
         flex: 1;
         min-width: 300px;
         background: rgba(0,0,0,0.6);
@@ -432,51 +432,41 @@
   </style>
 </head>
 <body>
-  <header>Holy Bible - New Testament</header>
-
-  <section class="flags-row" aria-label="Flag of the United States">
-    <div class="flag usa" role="img" aria-label="United States flag"></div>
+  <header>圣经完整版（无删减版）- 中文简体</header> <section class="flags-row" aria-label="国旗">
+    <div class="flag china" role="img" aria-label="中国国旗"></div>
   </section>
 
   <main>
-    <section class="arguments" aria-label="Benefits of the Audio Bible">
-      <h2 class="main-title-neon">Complete New Testament in Audio</h2>
-      <p class="subtitle-strong">Crystal-Clear Narration, Ad-Free!</p>
-    </section>
+    <section class="arguments" aria-label="有声书的益处">
+      <h2 class="main-title-neon">圣经有声完整版 – 清晰旁白，无广告!</h2> <p class="subtitle-strong">享受离线播放、无广告收听和息屏模式。</p> </section>
 
-    <section class="sample-section" aria-label="Audio Sample">
-      <h3 class="player-title">Listen Now – Click to Play Sample</h3>
-      <button class="play-button" aria-label="Play/Pause sample" id="playPauseBtn" type="button">
+    <section class="sample-section" aria-label="音频样本">
+      <h3 class="player-title">立即收听 – 点击播放样本</h3> <button class="play-button" aria-label="播放/暂停样本" id="playPauseBtn" type="button">
         <div class="play-icon" id="playIcon"></div>
       </button>
-      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/0616(1).MP3"></audio>
+      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Retail-Sample-chinese.MP3"></audio>
     </section>
 
-    <section class="call-to-action-section" aria-label="Audio Bible Features and Call to Action">
-        <p>🎧 Enjoy offline playback, ad-free listening, and screen-off mode.</p>
-        <p>Your support helps us create new translations and maintain quality recordings.</p>
-        <p>👉 <strong>Ready?</strong> Start listening to the <strong>full New Testament</strong> in audio now – available on all your favorite platforms!</p>
+    <section class="call-to-action-section" aria-label="有声圣经的特点和行动呼吁">
+        <p>您的支持有助于我们创作新译本并保持高质量录音。</p>
+        <p>👉 <strong>准备好了吗？</strong> 立即开始收听<strong>圣经有声完整版</strong> – 在您所有喜欢的平台上均可使用！</p>
     </section>
 
     <div class="testament-container">
-        <section class="testament-section" aria-label="New Testament Audio Bible">
-            <h2>New Testament</h2>
-            <p>Experience the profound wisdom and divine teachings of the New Testament.</p>
-            <nav class="buttons" aria-label="New Testament purchase options">
-                <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
-                <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://cdn.freebiesupply.com/logos/large/2x/barnes-noble-01-logo-png-transparent.png" alt="Barnes & Noble Logo"></a>
-                <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
-                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
-                <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-king-james-version-11174096" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://serieliv.no/content/uploads/2016/02/Storytel-logo.png" alt="Storytel Logo"></a>
-                <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
-                <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer" aria-label="Apple Books"><img src="https://img.icons8.com/fluent/512/ibooks.png" alt="Apple Books Logo"></a>
+        <section class="testament-section" aria-label="有声圣经购买选项">
+            <h2>圣经</h2> <p>体验圣经的深刻智慧与神圣教导。</p> <nav class="buttons" aria-label="购买选项">
+                <a href="https://libro.fm/audiobooks/9798318254833" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
+                <a href="https://www.kobo.com/us/en/audiobook/Uo3Y7SSXsTOsmVbv2W64_w" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+                <a href="https://play.google.com/store/audiobooks/details/VA_%E5%9C%A3%E7%BB%8F%E5%AE%8C%E6%95%B4%E7%89%88_%E6%97%A0%E5%88%A0%E5%87%8F%E7%89%88_%E4%B8%AD%E6%96%87%E7%AE%80%E4%BD%93?id=AQAAAEDKwmuCsM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+                <a href="https://www.audiobooks.com/audiobook/%E5%9C%A3%E7%BB%8F%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%88%E6%97%A0%E5%88%A0%E5%87%8F%E7%89%88%EF%BC%89--%E4%B8%AD%E6%96%87%E7%AE%80%E4%BD%93/928664" target="_blank" rel="noopener noreferrer" aria-label="Audiobooks.com"><img src="https://download.logo.wine/logo/Audiobooks.com/Audiobooks.com-Logo.wine.png" alt="Audiobooks.com Logo"></a>
+                <a href="https://open.spotify.com/show/5BUiquRcYO9DYq5U9glPmf?si=52a33631f20a401f" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
             </nav>
         </section>
     </div>
 
   </main>
 
-  <footer>© 2025 T S TELLES. All rights reserved.</footer>
+  <footer>© 2025 T S TELLES. 保留所有权利。</footer>
 
   <script>
     const audio = document.getElementById('audioSample');
