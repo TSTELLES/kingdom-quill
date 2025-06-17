@@ -133,7 +133,7 @@
       font-weight: 600;
       font-size: 1.4rem;
       line-height: 1.5;
-      max-width: 720px; /* Ajusta a largura máxima para legibilidade */
+      max-width: 600px; /* Ajustada para 600px para telas maiores */
       text-align: center;
       user-select: none;
       text-shadow: 0 0 5px #000;
@@ -183,22 +183,21 @@
         align-items: center; /* Centraliza os itens horizontalmente */
         background: transparent;
         border: 2px solid transparent;
-        border-radius: 15px; /* Cantos arredondados para todo o cartão */
-        width: 120px; /* Largura base para todo o cartão */
-        /* Altura ajustada para acomodar melhor a bandeira e o texto */
-        height: 140px; /* Altura aumentada para dar mais espaço para a bandeira e o texto */
+        border-radius: 15px;
+        width: 120px;
+        height: 140px;
         box-shadow: none;
         transition: all 0.3s ease;
-        overflow: hidden; /* Garante que o conteúdo permaneça dentro das bordas */
+        overflow: hidden;
         text-decoration: none;
-        color: #fff; /* Cor do texto para o nome do idioma */
+        color: #fff;
         font-weight: bold;
         font-size: 0.95rem;
-        padding: 0.8em; /* Preenchimento ajustado dentro da área clicável */
-        box-sizing: border-box; /* Inclui preenchimento no cálculo da largura */
+        padding: 0.8em;
+        box-sizing: border-box;
     }
 
-    .language-grid a:not(.unavailable):hover { /* Aplica hover apenas se não estiver indisponível */
+    .language-grid a:not(.unavailable):hover {
         background: rgba(249, 248, 113, 0.1);
         transform: scale(1.1);
         box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
@@ -206,17 +205,16 @@
     }
 
     .language-grid a img {
-        /* Estas propriedades agora garantem que toda a bandeira seja visível */
-        max-width: 100%; /* Garante que a imagem não transborde a largura */
-        max-height: 80px; /* Define uma altura máxima generosa para as bandeiras */
-        width: auto; /* Permite que a largura seja automática para respeitar a proporção */
-        height: auto; /* Permite que a altura seja automática para respeitar a proporção */
-        object-fit: contain; /* CRÍTICO: Garante que toda a bandeira seja visível, sem cortes */
-        border-radius: 8px; /* Cantos ligeiramente arredondados para a imagem da bandeira */
+        max-width: 100%;
+        max-height: 80px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
         filter: brightness(0.9);
         transition: filter 0.3s ease;
-        margin-bottom: 0.2em; /* Espaço reduzido entre a bandeira e o texto */
-        flex-shrink: 0; /* Impede que a imagem encolha se o espaço for apertado */
+        margin-bottom: 0.2em;
+        flex-shrink: 0;
     }
 
     .language-grid a:not(.unavailable):hover img {
@@ -225,18 +223,18 @@
 
     .language-grid a span {
         text-align: center;
-        flex-grow: 1; /* Permite que o texto cresça e ocupe o espaço disponível */
+        flex-grow: 1;
         display: flex;
-        align-items: center; /* Centraliza o texto verticalmente */
-        justify-content: center; /* Centraliza o texto horizontalmente */
-        line-height: 1.2; /* Ajusta a altura da linha para um texto multilinha melhor */
+        align-items: center;
+        justify-content: center;
+        line-height: 1.2;
     }
 
     /* Estilo para botões de idioma indisponíveis */
     .language-grid a.unavailable {
-        opacity: 0.5; /* Diminui o botão */
-        cursor: default; /* Altera o cursor para o padrão */
-        pointer-events: none; /* Desativa eventos de clique */
+        opacity: 0.5;
+        cursor: default;
+        pointer-events: none;
     }
 
     /* Rodapé fixo */
@@ -251,12 +249,12 @@
       font-size: 0.9rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
       user-select: none;
-      z-index: 100; /* Garante que o rodapé esteja no topo */
+      z-index: 100;
     }
 
     /* Estilo neon rosa mais suave */
     .neon-pink-soft {
-      color: var(--neon-pink-soft); /* Rosa neon mais suave */
+      color: var(--neon-pink-soft);
       text-shadow:
         0 0 8px var(--neon-pink-soft),
         0 0 20px var(--neon-pink-soft),
@@ -265,14 +263,14 @@
 
     /* Estilo para o título do livro (fonte e cor rosa) */
     .book-title-style {
-      font-family: 'Monotype Corsiva', cursive; /* Fonte Monotype Corsiva */
-      font-weight: normal; /* Para garantir que não fique negrito automaticamente */
-      text-transform: uppercase; /* Convert to uppercase */
+      font-family: 'Monotype Corsiva', cursive;
+      font-weight: normal;
+      text-transform: uppercase;
     }
 
     /* Estilo para a parte do livro (branco aceso) */
     .book-part-white-glow {
-      color: var(--neon-white); /* Branco */
+      color: var(--neon-white);
       text-shadow:
         0 0 5px var(--neon-white),
         0 0 15px var(--neon-white),
@@ -281,30 +279,30 @@
 
     /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
     .book-part-block-style {
-        font-size: 1rem; /* Tamanho de fonte menor */
-        font-weight: bold; /* Manter negrito se for o caso */
-        display: block; /* Garante que fique em uma nova linha */
-        text-transform: uppercase; /* Manter em maiúsculas */
-        margin: 0; /* Removido margin-top para ser gerenciado pelo Flexbox da seção */
+        font-size: 1rem;
+        font-weight: bold;
+        display: block;
+        text-transform: uppercase;
+        margin: 0;
     }
 
     /* Estilo para a capa do livro */
     .book-cover {
-      max-width: 200px; /* Largura máxima da capa */
-      height: auto; /* Altura automática para manter a proporção */
-      border-radius: 10px; /* Cantos arredondados */
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon */
-      margin: 0; /* Removido margin-top, agora gerenciado pelo Flexbox da seção */
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+      margin: 0;
       transition: transform 0.3s ease;
     }
 
     .book-cover:hover {
-      transform: scale(1.05); /* Efeito de zoom suave */
+      transform: scale(1.05);
     }
 
     .coming-soon-text {
         font-size: 1.2rem;
-        color: var(--neon-white); /* Cor agora é branca */
+        color: var(--neon-white);
         font-weight: bold;
         text-shadow:
             0 0 5px var(--neon-white),
@@ -323,7 +321,7 @@
         box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
         background: rgba(0,0,0,0.6);
         border-radius: 15px;
-        max-width: 720px;
+        max-width: 720px; /* Mantido em 720px para esta secção para garantir que o layout funciona */
         box-sizing: border-box;
         margin: 0 auto;
     }
@@ -339,7 +337,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0; /* Garante que não há margens conflituantes */
+        margin: 0;
         padding: 0;
     }
     
@@ -353,6 +351,7 @@
         .content-section {
             font-size: 1.2rem;
             padding: 1.8rem 2rem;
+            max-width: 90%; /* Ajuste para telas menores */
         }
         .main-title-neon {
             font-size: 1.8rem;
@@ -361,16 +360,16 @@
             font-size: 1.4rem;
         }
         .language-grid a {
-            width: 100px; /* Largura do cartão ajustada */
-            height: 110px; /* Altura do cartão ajustada */
+            width: 100px;
+            height: 110px;
             font-size: 0.85rem;
         }
         .language-grid a img {
-            max-height: 65px; /* Altura da imagem ajustada */
+            max-height: 65px;
         }
         .content-section.book-cover-section {
-            min-height: 400px; /* Ajuste min-height para telas menores */
-            padding: 1.8rem 2rem; /* Ajuste o padding para telas menores */
+            min-height: 400px;
+            padding: 1.8rem 2rem;
         }
     }
 
@@ -390,24 +389,24 @@
       }
       main {
         min-height: calc(100vh - 3.8em - 3em);
-        /* Preenchimento superior ajustado também para mobile */
-        padding: 5.5em 1rem 1.5rem; /* Ajustado para mobile para fornecer mais espaço */
+        padding: 5.5em 1rem 1.5rem;
         gap: 2rem;
       }
       .language-grid {
         gap: 1rem;
       }
       .language-grid a {
-        width: 85px; /* Largura do cartão ajustada para ecrãs muito pequenos */
-        height: 95px; /* Altura do cartão ajustada */
-        font-size: 0.75rem; /* Tamanho da fonte menor para nomes de idiomas */
+        width: 85px;
+        height: 95px;
+        font-size: 0.75rem;
       }
       .language-grid a img {
-        max-height: 55px; /* Altura da imagem ajustada */
+        max-height: 55px;
       }
       .content-section {
         font-size: 1.1rem;
         padding: 1.5rem 1.8rem;
+        max-width: 95%; /* Ajuste para telas muito pequenas */
       }
       .main-title-neon {
           font-size: 1.6rem;
@@ -416,17 +415,17 @@
           font-size: 1.2rem;
       }
       .book-cover {
-        max-width: 150px; /* Ajusta a largura da capa em telas menores */
+        max-width: 150px;
       }
       .coming-soon-text {
         font-size: 1rem;
       }
       .book-part-block-style {
-          font-size: 0.9rem; /* Ajusta o tamanho da fonte para mobile */
+          font-size: 0.9rem;
       }
       .content-section.book-cover-section {
-          min-height: 350px; /* Ajuste para mobile */
-          padding: 1.5rem 1.8rem; /* Ajuste o padding para telas menores */
+          min-height: 350px;
+          padding: 1.5rem 1.8rem;
       }
     }
   </style>
@@ -464,7 +463,7 @@
     <section class="content-section" aria-label="Why It Matters">
       <h2 class="main-title-neon">🌍 Why It Matters</h2>
       <p class="subtitle-strong">Your support today fuels tomorrow’s freedom.</p>
-      <p>Every minute streamed, every Bible shared, every book read helps push this project closer to its ultimate goal: a world where no one is kept from the truth because of cost, censorship, or marketing agendas.</p>
+      <p>Every minute streamed, every Bible shared, every book read helps push this project closer to its ultimate goal: aworld where no one is kept from the truth because of cost, censorship, or marketing agendas.</p>
       <p>Thank you for being part of this mission. May these works bless you — and may you help them bless many more.</p>
     </section>
 
@@ -502,8 +501,10 @@
 
     <!-- Nova seção para "Welcome to New York" com capa e "Coming Soon" -->
     <section class="content-section book-cover-section" aria-label="Welcome to New York Novel">
-      <h2 class="main-title-neon"><span class="neon-pink-soft book-title-style">Welcome to New York</span></h2>
-      <p class="book-part-white-glow book-part-block-style">Part 1</p>
+      <div class="book-header-group"> <!-- Agrupamento para título e part 1 -->
+        <h2 class="main-title-neon"><span class="neon-pink-soft book-title-style">Welcome to New York</span></h2>
+        <p class="book-part-white-glow book-part-block-style">Part 1</p>
+      </div>
       <img src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Capa%20vol%2014.jpg" alt="Capa do Livro Welcome to New York" class="book-cover">
       <p class="coming-soon-text">Coming Soon</p>
     </section>
