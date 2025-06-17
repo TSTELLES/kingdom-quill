@@ -68,7 +68,7 @@
       align-items: center; /* **MANTÉM O CONTEÚDO DO MAIN CENTRALIZADO HORIZONTALMENTE** */
       padding: 2rem 1rem 2rem;
       gap: 3rem;
-      max-width: 900px;
+      max-width: 1200px; /* Ajustado para consistência */
       margin-left: auto;
       margin-right: auto; /* **CENTRALIZA O PRÓPRIO CONTAINER MAIN NA PÁGINA** */
       box-sizing: border-box;
@@ -81,7 +81,10 @@
       gap: 3rem;
       justify-content: center; /* **CENTRALIZA AS BANDEIRAS DENTRO DA LINHA** */
       align-items: center;
-      padding-top: 5rem;
+      padding-top: calc(4.5em + 2rem); /* Altura do header + espaço extra */
+      padding-bottom: 2rem; /* Espaço abaixo da bandeira */
+      width: 100%; /* Garante que a seção ocupe a largura para centralizar */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
 
     .flag {
@@ -101,6 +104,7 @@
       filter: brightness(1);
       box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
+    /* Estilos específicos para as bandeiras coreanas */
     .flag.south {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
       animation-delay: 0s;
@@ -114,7 +118,7 @@
       100% {opacity: 0.4;}
     }
 
-    /* Argumentos com estilo */
+    /* Argumentos com estilo (texto de introdução principal) */
     .arguments {
       background: rgba(0,0,0,0.6);
       padding: 2rem 2.5rem;
@@ -128,28 +132,58 @@
       user-select: none;
       text-shadow: 0 0 5px #000;
     }
+    /* Estilo para o novo título principal com efeito neon */
+    .main-title-neon {
+      color: #f9f871;
+      font-size: 2rem;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
+    }
+    .subtitle-strong {
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+
+    /* Título do player */
+    .player-title {
+        color: #f9f871;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 5px #f9f871;
+        margin-bottom: 0;
+    }
 
     /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
-      padding: 1.8rem 2.2rem;
+      padding: 2.5rem 2.2rem; /* Aumentado padding top/bottom */
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
       display: flex;
       flex-direction: column;
-      align-items: center; /* **CENTRALIZA O CONTEÚDO DO PLAYER (BOTÃO E ÁUDIO)** */
-      gap: 1.2rem;
+      align-items: center;
+      justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
+      gap: 2rem; /* Espaçamento entre os itens */
       max-width: 700px;
       user-select: none;
+      margin-top: 3rem; /* Espaço acima desta seção */
     }
 
+    /* Zera margens individuais para deixar o gap e padding da sample-section controlarem o espaçamento */
+    .sample-section .player-title,
+    .sample-section .play-button,
     .sample-section audio {
-      width: 100%;
-      outline: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
-      cursor: pointer;
+        margin-top: 0;
+        margin-bottom: 0;
     }
+
 
     /* Botão play customizado */
     .play-button {
@@ -186,33 +220,75 @@
       margin-left: 3px;
     }
 
-    /* Botões das lojas */
-    .buttons {
+    /* Botões das lojas - Agora para as IMAGENS dos logos */
+    .testament-section .buttons {
       display: flex;
-      justify-content: center; /* **CENTRALIZA OS BOTÕES DA LOJA** */
-      gap: 1.8rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
+      flex-direction: row; /* Coloca os logos em linha */
+      flex-wrap: wrap; /* Permite quebrar linha */
+      justify-content: center; /* Centraliza horizontalmente */
+      gap: 1.8rem; /* Espaçamento maior entre os logos */
+      margin-top: 1.5rem;
+      width: 100%;
     }
-    .buttons a {
-      display: inline-block;
-      padding: 0.7em 1.8em;
-      background: #00bfff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
-      user-select: none;
-      white-space: nowrap;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+
+    .testament-section .buttons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent; /* Fundo transparente para a "bolinha" */
+      border: 2px solid transparent; /* Borda transparente que aparece no hover */
+      border-radius: 50%; /* Faz a "bolinha" */
+      width: 80px; /* Tamanho da bolinha do logo */
+      height: 80px; /* Tamanho da bolinha do logo */
+      box-shadow: none; /* Remove qualquer sombra base */
+      transition: all 0.3s ease; /* Transição suave */
+      overflow: hidden; /* Garante que a imagem não vaze da bolinha */
+      text-decoration: none; /* Remove sublinhado dos links */
     }
-    .buttons a:hover {
-      background: #0099cc;
-      transform: scale(1.08);
-      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+
+    .testament-section .buttons a:hover {
+      background: rgba(249, 248, 113, 0.1); /* Brilho suave no hover */
+      transform: scale(1.15); /* Efeito de zoom */
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon */
+      border-color: #f9f871; /* Borda neon */
     }
+
+    .testament-section .buttons a img {
+      width: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
+      height: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
+      object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+      max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner */
+      max-height: 100%; /* Impede que a imagem ultrapasse a altura do contêiner */
+      filter: brightness(0.9); /* Leve escurecimento para se integrar melhor */
+      transition: filter 0.3s ease;
+    }
+
+    .testament-section .buttons a:hover img {
+        filter: brightness(1.2); /* Clareia a imagem no hover */
+    }
+
+    /* Novos textos de chamada de ação */
+    .call-to-action-section {
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        max-width: 720px;
+        text-align: center;
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        margin-top: 3rem; /* Espaço acima desta seção */
+    }
+    .call-to-action-section p {
+        margin-bottom: 1rem; /* Espaço entre parágrafos */
+    }
+    .call-to-action-section strong {
+        color: #f9f871; /* Destaca a parte "Ready?" */
+    }
+
 
     /* Footer fixo */
     footer {
@@ -230,6 +306,40 @@
     }
 
     /* Responsividade básica */
+    @media (max-width: 768px) {
+        .testament-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .testament-section {
+            width: 90%;
+            max-width: 500px;
+        }
+        .player-title {
+            font-size: 1.3rem;
+        }
+        .call-to-action-section {
+            font-size: 1.2rem;
+            padding: 1.8rem 2rem;
+        }
+        .main-title-neon {
+            font-size: 1.8rem;
+        }
+        .subtitle-strong {
+            font-size: 1.4rem;
+        }
+        /* Ajuste do tamanho dos botões de logo em telas menores */
+        .testament-section .buttons a {
+            width: 65px; /* Bolinha menor */
+            height: 65px;
+        }
+        .testament-section .buttons a img {
+            width: 60%; /* Logo menor dentro da bolinha */
+            height: 60%;
+        }
+    }
+
     @media (max-width: 480px) {
       header {
         font-size: 1.8rem;
@@ -247,24 +357,48 @@
       main {
         min-height: calc(100vh - 3.8em - 3em);
         padding: 1.5rem 1rem 1.5rem;
+        gap: 2rem;
       }
       .flags-row {
-        padding-top: 3rem;
+        padding-top: calc(3.8em + 1.5rem);
+        padding-bottom: 1.5rem;
+        gap: 1rem; /* Reduz o gap para caber duas bandeiras em telas muito pequenas */
+      }
+      .flags-row .flag {
+        width: 100px; /* Ajusta ainda mais o tamanho da bandeira */
+        height: 68px;
       }
       .arguments {
         font-size: 1.1rem;
         padding: 1.5rem 1.8rem;
       }
-      .buttons a {
-        font-size: 0.95rem;
-        padding: 0.65em 1.4em;
+      .testament-section h2 {
+          font-size: 1.5rem;
       }
-      .flag {
-        width: 120px;
-        height: 80px;
+      .testament-section .buttons a {
+        /* Ajusta o tamanho dos botões de logo para telas muito pequenas */
+        width: 55px; /* Bolinha ainda menor */
+        height: 55px;
+      }
+      .testament-section .buttons a img {
+        width: 60%;
+        height: 60%;
       }
       .sample-section {
         max-width: 90vw;
+      }
+      .player-title {
+          font-size: 1.1rem;
+      }
+      .call-to-action-section {
+          font-size: 1rem;
+          padding: 1.5rem 1.8rem;
+      }
+      .main-title-neon {
+          font-size: 1.6rem;
+      }
+      .subtitle-strong {
+          font-size: 1.2rem;
       }
     }
   </style>
@@ -272,31 +406,45 @@
 <body>
   <header>성경</header>
 
-  <main>
-    <section class="flags-row" aria-label="국기">
-      <div class="flag south" role="img" aria-label="대한민국 국기"></div>
-      <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
-    </section>
+  <section class="flags-row" aria-label="국기">
+    <div class="flag south" role="img" aria-label="대한민국 국기"></div>
+    <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
+  </section>
 
+  <main>
     <section class="arguments" aria-label="오디오북의 혜택">
-      당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.<br />
+      <h2 class="main-title-neon">성경 오디오북 – 완벽한 버전</h2>
+      <p class="subtitle-strong">당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.</p>
       깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
       바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
       가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
     </section>
 
     <section class="sample-section" aria-label="오디오 샘플">
+      <h3 class="player-title">지금 들어보세요 – 샘플 재생을 클릭하세요</h3>
       <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
         <div class="play-icon" id="playIcon"></div>
       </button>
       <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/retail-sample.MP3"></audio>
     </section>
 
-    <nav class="buttons" aria-label="오디오 구매 옵션">
-      <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer">코보에서 듣기</a>
-      <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer">구글 플레이에서 듣기</a>
-      <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer">스포티파이에서 듣기</a>
-    </nav>
+    <section class="call-to-action-section" aria-label="오디오북 기능 및 구매 안내">
+        <p>여러분의 지원은 새로운 번역본 제작 및 고품질 녹음 유지에 도움이 됩니다.</p>
+        <p>👉 <strong>준비되셨나요?</strong> 지금 바로 <strong>완벽한 성경 오디오북</strong>을 듣기 시작하세요 – 즐겨찾는 모든 플랫폼에서 이용 가능합니다!</p>
+    </section>
+
+    <div class="testament-container">
+        <section class="testament-section" aria-label="오디오 구매 옵션">
+            <h2>성경</h2>
+            <p>성경의 깊은 지혜와 신성한 가르침을 경험하세요.</p>
+            <nav class="buttons" aria-label="오디오 구매 옵션">
+                <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+                <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+                <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+            </nav>
+        </section>
+    </div>
+
   </main>
 
   <footer>© 2025 T S TELLES. 모든 권리 보유.</footer>
