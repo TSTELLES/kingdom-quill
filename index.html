@@ -3,110 +3,363 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Remastered Evangelistic Bibles</title>
+  <title>Best Bibles Audiobooks</title> <!-- Título da página atualizado -->
   <style>
-    html, body {
+    /* Global styles and resets */
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow-x: hidden;
+      background: black; /* Main background, background image will layer on top */
+      color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000;
-      color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      /*
+        Padding top and bottom create space for the fixed header and footer.
+        This ensures main content scrolls beneath them without being hidden.
+      */
+      padding-top: 4.5em; /* Space for fixed header */
+      padding-bottom: 3.5em; /* Space for fixed footer */
+      position: relative; /* Needed for z-index of background to work */
     }
-    .background {
+
+    /* Animated background image */
+    .background-animated {
       position: fixed;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
       background: url('https://cdn.pixabay.com/photo/2017/08/10/20/33/cross-2619362_1280.jpg') center center/cover no-repeat;
-      animation: zoom 60s infinite alternate linear;
-      filter: brightness(0.3);
-      z-index: -1;
+      animation: zoomBackground 60s infinite alternate linear;
+      filter: brightness(0.3); /* Darken the image */
+      z-index: -1; /* Send to back */
     }
-    @keyframes zoom {
+    @keyframes zoomBackground {
       0% { transform: scale(1); }
       100% { transform: scale(1.05); }
     }
-    .container {
-      max-width: 900px;
-      margin: 5% auto;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.7);
-    }
-    h1 {
-      text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 0.5em;
-    }
-    p {
-      text-align: center;
-      line-height: 1.6;
-      margin-bottom: 2em;
-    }
-    .languages {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-    .lang-card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 1em 1.5em;
-      text-align: center;
-      flex: 1 1 200px;
-      max-width: 250px;
-      transition: background 0.3s;
-    }
-    .lang-card:hover {
-      background: rgba(255,255,255,0.25);
-    }
-    .lang-card a {
-      color: #f5f5f5;
-      text-decoration: none;
+
+    /* Header fixed with neon yellow */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4.5em;
+      background-color: black;
+      color: #f9f871;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
+      z-index: 100; /* Ensure header is on top */
     }
-    footer {
+
+    @keyframes neonPulseYellow {
+      0% {
+        text-shadow:
+          0 0 10px #f9f871,
+          0 0 30px #f9f871,
+          0 0 50px #f9f871,
+          0 0 100px #f9f871;
+      }
+      100% {
+        text-shadow:
+          0 0 20px #f9f871,
+          0 0 40px #f9f871,
+          0 0 70px #f9f871,
+          0 0 120px #f9f871;
+      }
+    }
+
+    /* Main content area */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Increased top padding to push content further down from the fixed header */
+      padding: 6em 1rem 2rem; /* Adjusted from 4rem to 6em for top padding */
+      gap: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      /*
+        min-height calculation ensures main takes up available space
+        between fixed header and footer when content is short.
+      */
+      min-height: calc(100vh - 4.5em - 3.5em);
+      position: relative; /* Ensure main content is above background */
+      z-index: 1; /* Ensure main content is above background */
+    }
+
+    /* Shared section styling for text blocks */
+    .content-section {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px; /* Adjust max-width for readability */
       text-align: center;
-      padding: 1em;
-      font-size: 0.9rem;
-      color: #bbb;
-      background: rgba(0, 0, 0, 0.5);
-      position: relative; /* ou position: fixed se quiser fixo */
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+      margin-top: 0; /* Managed by main's gap */
     }
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      .lang-card { max-width: 100%; }
+    .content-section p {
+        margin-bottom: 1rem; /* Space between paragraphs */
+        margin-top: 0;
+    }
+    .content-section strong {
+        color: #f9f871; /* Highlight key words with neon yellow */
+    }
+
+    /* Main titles with neon effect */
+    .main-title-neon {
+      color: #f9f871;
+      font-size: 2rem;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate; /* Applies the neon animation */
+    }
+    .subtitle-strong {
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    /* Language selection grid (similar to store buttons) */
+    .language-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.8rem; /* Spacing between language flags */
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 800px; /* Limit width of the grid */
+    }
+
+    .language-grid a {
+        display: flex;
+        flex-direction: column; /* Stack flag and text */
+        justify-content: space-between; /* Space out flag and text */
+        align-items: center; /* Center items horizontally */
+        background: transparent;
+        border: 2px solid transparent;
+        border-radius: 15px; /* Rounded corners for the entire card */
+        width: 120px; /* Base width for the entire card */
+        /* Adjusted height to accommodate both flag and text better */
+        height: 140px; /* Increased height to give more space for flag and text */
+        box-shadow: none;
+        transition: all 0.3s ease;
+        overflow: hidden; /* Ensure content stays within borders */
+        text-decoration: none;
+        color: #fff; /* Text color for language name */
+        font-weight: bold;
+        font-size: 0.95rem;
+        padding: 0.8em; /* Adjusted padding inside the clickable area */
+        box-sizing: border-box; /* Include padding in dimensions */
+    }
+
+    .language-grid a:not(.unavailable):hover { /* Apply hover only if not unavailable */
+        background: rgba(249, 248, 113, 0.1);
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+        border-color: #f9f871;
+    }
+
+    .language-grid a img {
+        /* These properties now ensure the entire flag is visible */
+        max-width: 100%; /* Ensure image doesn't overflow width */
+        max-height: 80px; /* Give a generous max-height for flags */
+        width: auto; /* Let width be auto to respect aspect ratio */
+        height: auto; /* Let height be auto to respect aspect ratio */
+        object-fit: contain; /* CRUCIAL: Ensures the entire flag is visible, no cropping */
+        border-radius: 8px; /* Slightly rounded flag image */
+        filter: brightness(0.9);
+        transition: filter 0.3s ease;
+        margin-bottom: 0.2em; /* Reduced space between flag and text */
+        flex-shrink: 0; /* Prevent image from shrinking if space is tight */
+    }
+
+    .language-grid a:not(.unavailable):hover img {
+        filter: brightness(1.2);
+    }
+
+    .language-grid a span {
+        text-align: center;
+        flex-grow: 1; /* Allow text to grow and take available space */
+        display: flex;
+        align-items: center; /* Center text vertically */
+        justify-content: center; /* Center text horizontally */
+        line-height: 1.2; /* Adjust line height for better multi-line text */
+    }
+
+    /* Style for unavailable language buttons */
+    .language-grid a.unavailable {
+        opacity: 0.5; /* Dim the button */
+        cursor: default; /* Change cursor to default */
+        pointer-events: none; /* Disable click events */
+    }
+
+    /* Footer fixed */
+    footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 3.5em;
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 3.5em;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
+      z-index: 100; /* Ensure footer is on top */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .content-section {
+            font-size: 1.2rem;
+            padding: 1.8rem 2rem;
+        }
+        .main-title-neon {
+            font-size: 1.8rem;
+        }
+        .subtitle-strong {
+            font-size: 1.4rem;
+        }
+        .language-grid a {
+            width: 100px; /* Adjusted card width */
+            height: 110px; /* Adjusted card height */
+            font-size: 0.85rem;
+        }
+        .language-grid a img {
+            max-height: 65px; /* Adjusted image height */
+        }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.8rem;
+        height: 3.8em;
+      }
+      footer {
+        font-size: 0.8rem;
+        height: 3em;
+        line-height: 3em;
+      }
+      body {
+        padding-top: 3.8em;
+        padding-bottom: 3em;
+      }
+      main {
+        min-height: calc(100vh - 3.8em - 3em);
+        /* Adjusted padding top for mobile as well */
+        padding: 4.5em 1rem 1.5rem; /* Adjusted for mobile to provide more space */
+        gap: 2rem;
+      }
+      .language-grid {
+        gap: 1rem;
+      }
+      .language-grid a {
+        width: 85px; /* Adjusted card width for very small screens */
+        height: 95px; /* Adjusted card height */
+        font-size: 0.75rem; /* Smaller font size for language names */
+      }
+      .language-grid a img {
+        max-height: 55px; /* Adjusted image height */
+      }
+      .content-section {
+        font-size: 1.1rem;
+        padding: 1.5rem 1.8rem;
+      }
+      .main-title-neon {
+          font-size: 1.6rem;
+      }
+      .subtitle-strong {
+          font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="background" aria-hidden="true"></div>
+  <div class="background-animated" aria-hidden="true"></div>
 
-  <div class="container">
-    <h1>Remastered Evangelistic Bibles</h1>
-    <p>This project expands access to narrated Bibles worldwide — high quality, human-like voice, noise-free and censorship-free. Explore by language below:</p>
-    <div class="languages">
-      <div class="lang-card"><a href="korean.html">Korean (한국어)</a></div>
-      <div class="lang-card"><a href="russian.html">Russian (Русский)</a></div>
-      <div class="lang-card"><a href="chinese.html">Chinese (中文)</a></div>
-      <div class="lang-card"><a href="french.html">French (Français)</a></div>
-      <div class="lang-card"><a href="german.html">German (Deutsch)</a></div>
-      <div class="lang-card"><a href="english.html">English</a></div>
-      <div class="lang-card"><a href="spanish.html">Spanish (Español)</a></div>
-      <div class="lang-card"><a href="arabic.html">Arabic (العربية)</a></div>
-    </div>
-  </div>
+  <header>Best Bibles Audiobooks</header>
 
-  <footer>&copy; 2025 Remastered Evangelistic Bibles. All rights reserved.</footer>
+  <main>
+    <section class="content-section" aria-label="Project Introduction">
+      <h2 class="main-title-neon">📖 Best Bibles Audiobooks</h2>
+      <p class="subtitle-strong">Bringing clear, accessible audio Bibles to every corner of the world.</p>
+      <p>Welcome to the official page of Holy Bible Audiobooks, an independent project created by T. S. Telles, author of Christian-themed fiction and fantasy.</p>
+      <ul>
+        <li>✅ To challenge the overpriced audio Bibles on the market — which often limit access to God’s Word through high costs and restrictive distribution.</li>
+        <li>✅ To reach people and countries where clear, high-quality Bibles are scarce or even censored.</li>
+        <li>✅ To use any profit exclusively for expanding production and distribution, aiming to make these Bibles freely available on as many platforms as possible, and without ads.</li>
+      </ul>
+      <p>By purchasing or streaming these Bibles, you directly help break barriers that keep many from hearing the Word of God in their own language, with clarity and dignity.</p>
+    </section>
+
+    <section class="content-section" aria-label="Why It Matters">
+      <h2 class="main-title-neon">🌍 Why It Matters</h2>
+      <p class="subtitle-strong">Your support today fuels tomorrow’s freedom.</p>
+      <p>Every minute streamed, every Bible shared, every book read helps push this project closer to its ultimate goal: a world where no one is kept from the truth because of cost, censorship, or marketing agendas.</p>
+      <p>Thank you for being part of this mission. May these works bless you — and may you help them bless many more.</p>
+    </section>
+
+    <section class="content-section" aria-label="Get Involved">
+      <h2 class="main-title-neon">📚 Get Involved</h2>
+      <p class="subtitle-strong">Explore by language below:</p>
+      <div class="language-grid">
+        <a href="korean.html" aria-label="Korean Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea"><span>한국어 (Korean)</span></a>
+        <a href="russian.html" aria-label="Russian Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia"><span>Русский (Russian)</span></a>
+        <a href="chinese.html" aria-label="Chinese Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China"><span>中文 (Chinese)</span></a>
+        <a href="french.html" aria-label="French Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France"><span>Français (French)</span></a>
+        <a href="german.html" aria-label="German Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany"><span>Deutsch (German)</span></a>
+        <a href="english.html" aria-label="English Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States"><span>English</span></a>
+        <a href="spanish.html" aria-label="Spanish Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"><span>Español (Spanish)</span></a>
+        <a href="arabic.html" aria-label="Arabic Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia"><span>العربية (Arabic)</span></a>
+        <!-- New Hindi (unavailable) button -->
+        <a class="unavailable" aria-label="Hindi Bible - Coming Soon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
+          <span>हिन्दी (Hindi)</span>
+        </a>
+      </div>
+      <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px;">
+        <li>✔️ Stream and share the Bibles on Spotify, Storytel, Google Play, and more.</li>
+        <li>✔️ Read Welcome to New York — Part 1 on Amazon.</li>
+        <li>✔️ Spread the word — help us reach languages and countries still waiting for a clear, dignified audio Bible.</li>
+      </ul>
+    </section>
+    
+    <section class="content-section" aria-label="About the Adapter">
+      <h2 class="main-title-neon">✍️ About the Adapter</h2>
+      <p>T. S. Telles is not only dedicated to spreading the Bible in audio format — but is also the author of the novel Welcome to New York — Part 1, now available on Amazon.</p>
+      <p>This story offers a romance shaped by Christian values and daily faith, free from gratuitous nudity or profanity, focusing instead on characters and plots that nurture the reader’s spiritual and moral well-being. There are no forced sermons here — just authentic storytelling that breathes truth and hope.</p>
+      <p>Part 2 of Welcome to New York is already in progress and will be published independently — without agents, companies, or publishers — to ensure complete creative control and to protect the story’s spiritual essence from commercial dilution.</p>
+    </section>
+
+  </main>
+
+  <footer>&copy; 2025 T S TELLES. All rights reserved.</footer>
 
 </body>
 </html>
