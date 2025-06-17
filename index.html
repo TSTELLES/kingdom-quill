@@ -243,6 +243,64 @@
       z-index: 100; /* Garante que o rodapé esteja no topo */
     }
 
+    /* Estilo neon rosa mais suave */
+    .neon-pink-soft {
+      color: #FF66CC; /* Rosa neon mais suave */
+      text-shadow:
+        0 0 8px #FF66CC,
+        0 0 20px #FF66CC,
+        0 0 40px #FF66CC;
+    }
+
+    /* Estilo para o título do livro (fonte e cor rosa) */
+    .book-title-style {
+      font-family: 'Monotype Corsiva', cursive; /* Fonte Monotype Corsiva */
+      font-weight: normal; /* Para garantir que não fique negrito automaticamente */
+      text-transform: uppercase; /* Convert to uppercase */
+    }
+
+    /* Estilo para a parte do livro (branco aceso) */
+    .book-part-white-glow {
+      color: #FFF; /* Branco */
+      text-shadow:
+        0 0 5px #FFF,
+        0 0 15px #FFF,
+        0 0 25px #FFF;
+    }
+
+    /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
+    .book-part-block-style {
+        font-size: 1rem; /* Tamanho de fonte menor */
+        font-weight: bold; /* Manter negrito se for o caso */
+        display: block; /* Garante que fique em uma nova linha */
+        text-transform: uppercase; /* Manter em maiúsculas */
+        margin-top: 0.2em; /* Pequeno espaçamento superior */
+    }
+
+    /* Estilo para a capa do livro */
+    .book-cover {
+      max-width: 200px; /* Largura máxima da capa */
+      height: auto; /* Altura automática para manter a proporção */
+      border-radius: 10px; /* Cantos arredondados */
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon */
+      margin-top: 1.5em; /* Espaço acima da capa */
+      transition: transform 0.3s ease;
+    }
+
+    .book-cover:hover {
+      transform: scale(1.05); /* Efeito de zoom suave */
+    }
+
+    .coming-soon-text {
+        font-size: 1.2rem;
+        color: #FFF; /* Cor agora é branca */
+        margin-top: 1em; /* Espaço acima do texto "Coming Soon" */
+        font-weight: bold;
+        text-shadow:
+            0 0 5px #FFF,
+            0 0 10px #FFF;
+    }
+
     /* Ajustes de responsividade */
     @media (max-width: 768px) {
         .content-section {
@@ -306,6 +364,15 @@
       .subtitle-strong {
           font-size: 1.2rem;
       }
+      .book-cover {
+        max-width: 150px; /* Ajusta a largura da capa em telas menores */
+      }
+      .coming-soon-text {
+        font-size: 1rem;
+      }
+      .book-part-block-style {
+          font-size: 0.9rem; /* Ajusta o tamanho da fonte para mobile */
+      }
     }
   </style>
 </head>
@@ -363,16 +430,24 @@
       </div>
       <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px;">
         <li>✔️ Faça streaming e partilhe as Bíblias no Spotify, Storytel, Google Play e mais.</li>
-        <li>✔️ Leia *Welcome to New York — Parte 1* na Amazon.</li>
+        <li>✔️ Read <span class="neon-pink-soft book-title-style">Welcome to New York</span> — <span class="book-part-white-glow">Part 1</span> on Amazon.</li>
         <li>✔️ Espalhe a palavra — ajude-nos a alcançar idiomas e países que ainda aguardam uma Bíblia de áudio clara e digna.</li>
       </ul>
     </section>
 
     <section class="content-section" aria-label="About the Adapter">
       <h2 class="main-title-neon">✍️ About the Adapter</h2>
-      <p>T. S. Telles is not only dedicated to spreading the Bible in audio format — but is also the author of the novel Welcome to New York — Part 1, now available on Amazon.</p>
+      <p>T. S. Telles is not only dedicated to spreading the Bible in audio format — but is also the author of the novel <span class="neon-pink-soft book-title-style">Welcome to New York</span> — <span class="book-part-white-glow">Part 1</span>, now available on Amazon.</p>
       <p>This story offers a romance shaped by Christian values and daily faith, free from gratuitous nudity or profanity, focusing instead on characters and plots that nurture the reader’s spiritual and moral well-being. There are no forced sermons here — just authentic storytelling that breathes truth and hope.</p>
-      <p>Part 2 of Welcome to New York is already in progress and will be published independently — without agents, companies, or publishers — to ensure complete creative control and to protect the story’s spiritual essence from commercial dilution.</p>
+      <p><span class="neon-pink-soft book-title-style">Welcome to New York</span> — <span class="book-part-white-glow">Part 2</span> is already in progress and will be published independently — without agents, companies, or publishers — to ensure complete creative control and to protect the story’s spiritual essence from commercial dilution.</p>
+    </section>
+
+    <!-- Nova seção para "Welcome to New York" com capa e "Coming Soon" -->
+    <section class="content-section" aria-label="Welcome to New York Novel">
+      <h2 class="main-title-neon"><span class="neon-pink-soft book-title-style">Welcome to New York</span></h2>
+      <p class="book-part-white-glow book-part-block-style">Part 1</p>
+      <img src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Capa%20vol%2014.jpg" alt="Capa do Livro Welcome to New York" class="book-cover">
+      <p class="coming-soon-text">Coming Soon</p>
     </section>
 
   </main>
