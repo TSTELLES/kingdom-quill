@@ -253,54 +253,46 @@
       margin-left: 3px;
     }
 
-    /* Botões das lojas */
+    /* Botões das lojas - Agora com estilos para exibir apenas o ícone */
     .testament-section .buttons {
       display: flex;
-      flex-direction: column; /* Botões empilhados */
-      gap: 0.8rem;
+      flex-direction: row; /* Volta para linha para os ícones */
+      flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+      justify-content: center; /* Centraliza horizontalmente */
+      gap: 1.5rem; /* Espaço entre os ícones */
       margin-top: 1.5rem;
       width: 100%;
-      align-items: center; /* Centraliza os botões */
     }
     .testament-section .buttons a {
-      display: flex;
+      display: flex; /* Para centralizar o ícone */
       justify-content: center;
       align-items: center;
-      padding: 0.6em 1em;
-      background: #00bfff;
-      color: #fff;
+      background: transparent; /* FUNDO TRANSPARENTE */
+      border: 2px solid transparent; /* Adiciona uma borda transparente para o hover */
+      border-radius: 50%; /* Torna o botão redondo */
+      width: 65px; /* Tamanho fixo para o círculo do logo */
+      height: 65px; /* Tamanho fixo para o círculo do logo */
+      color: #fff; /* Cor do ícone (branco padrão) */
       text-decoration: none;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.7);
+      font-size: 1rem; /* Não afeta o ícone diretamente, mas bom para consistência */
+      box-shadow: none; /* REMOVE A SOMBRA DO BOTÃO AZUL */
       user-select: none;
-      white-space: nowrap;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      width: 80%;
-      max-width: 250px;
-      min-height: 2.8em;
+      transition: all 0.3s ease; /* Transição suave para todos os efeitos */
     }
     .testament-section .buttons a:hover {
-      background: #0099cc;
-      transform: scale(1.08);
-      box-shadow: 0 7px 22px rgba(0, 153, 204, 0.95);
+      background: rgba(249, 248, 113, 0.1); /* Um leve brilho no hover */
+      transform: scale(1.15); /* Efeito de zoom no hover */
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon no hover */
+      border-color: #f9f871; /* Borda neon no hover */
     }
 
-    /* Estilo dos ícones dentro dos botões */
-    /* Ajusta para centralizar o ícone e fazê-lo o único conteúdo */
+    /* Estilo dos ícones dentro dos botões (agora eles são o próprio botão visual) */
     .testament-section .buttons a i {
-        margin: 0; /* Remove margem extra */
-        font-size: 1.8em; /* Aumenta o tamanho do ícone para ser mais visível */
-        line-height: 1; /* Garante que a altura da linha não afete o alinhamento */
-        width: 100%; /* Permite que o ícone preencha o botão, se necessário */
-        text-align: center; /* Centraliza o ícone horizontalmente */
+        margin: 0; /* Garante que não há margem interna */
+        font-size: 2.2em; /* Tamanho maior do ícone para ser o foco */
+        line-height: 1; /* Garante que o ícone fique centralizado verticalmente */
+        color: inherit; /* Faz com que o ícone herde a cor do pai (branco) */
     }
-    /* Esconde o texto que antes acompanhava o ícone */
-    .testament-section .buttons a span.button-text {
-        display: none;
-    }
-
 
     /* Novos textos de chamada de ação */
     .call-to-action-section {
@@ -364,8 +356,13 @@
         .subtitle-strong {
             font-size: 1.4rem;
         }
+        /* Ajuste do tamanho dos botões de logo em telas menores */
+        .testament-section .buttons a {
+            width: 55px;
+            height: 55px;
+        }
         .testament-section .buttons a i {
-            font-size: 1.6em; /* Ajusta o tamanho do ícone para telas menores */
+            font-size: 1.8em;
         }
     }
 
@@ -400,8 +397,12 @@
           font-size: 1.5rem;
       }
       .testament-section .buttons a {
-        font-size: 0.9rem;
-        padding: 0.6em 1em;
+        /* Ajusta o tamanho dos botões de logo para telas muito pequenas */
+        width: 50px;
+        height: 50px;
+      }
+      .testament-section .buttons a i {
+        font-size: 1.6em;
       }
       .flag {
         width: 120px;
@@ -423,9 +424,6 @@
       .subtitle-strong {
           font-size: 1.2rem;
       }
-      .testament-section .buttons a i {
-            font-size: 1.4em; /* Ajusta o tamanho do ícone para telas muito pequenas */
-        }
     }
   </style>
 </head>
@@ -461,13 +459,13 @@
             <h2>New Testament</h2>
             <p>Experience the profound wisdom and divine teachings of the New Testament.</p>
             <nav class="buttons" aria-label="New Testament purchase options">
-                <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer" aria-label="Listen on Libro.fm"><i class="fas fa-book-reader"></i></a>
-                <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer" aria-label="Listen on Barnes & Noble"><i class="fas fa-book-open"></i></a>
-                <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer" aria-label="Listen on Google Play"><i class="fab fa-google-play"></i></a>
-                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer" aria-label="Listen on Kobo"><i class="fas fa-headphones-alt"></i></a>
-                <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-king-james-version-11174096" target="_blank" rel="noopener noreferrer" aria-label="Listen on Storytel"><i class="fas fa-book"></i></a>
-                <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer" aria-label="Listen on Spotify"><i class="fab fa-spotify"></i></a>
-                <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer" aria-label="Listen on Apple Books"><i class="fab fa-apple"></i></a>
+                <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><i class="fas fa-book-reader"></i></a>
+                <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><i class="fas fa-book-open"></i></a>
+                <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><i class="fab fa-google-play"></i></a>
+                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><i class="fas fa-headphones-alt"></i></a>
+                <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-king-james-version-11174096" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><i class="fas fa-book"></i></a>
+                <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer" aria-label="Apple Books"><i class="fab fa-apple"></i></a>
             </nav>
         </section>
     </div>
