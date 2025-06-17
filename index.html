@@ -131,7 +131,7 @@
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
       font-weight: 600;
-      font-size: 1.2rem; /* Reduzido de 1.4rem para 1.2rem */
+      font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
       line-height: 1.5;
       max-width: 500px; /* Ajustada de 600px para 500px para telas maiores */
       text-align: center;
@@ -193,11 +193,11 @@
         color: #fff;
         font-weight: bold;
         font-size: 0.9rem; /* Reduzido de 0.95rem para 0.9rem */
-        padding: 0.7em; /* Ajustado */
+        padding: 0.7em;
         box-sizing: border-box;
     }
 
-    .language-grid a:not(.unavailable):hover {
+    .language-grid a:not(.unavailable):hover { /* Aplica hover apenas se não estiver indisponível */
         background: rgba(249, 248, 113, 0.1);
         transform: scale(1.1);
         box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
@@ -349,29 +349,29 @@
     /* Ajustes de responsividade */
     @media (max-width: 768px) {
         .content-section {
-            font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
-            padding: 1.5rem 1.8rem; /* Reduzido o padding */
+            font-size: 1.05rem; /* Reduzido de 1.1rem para 1.05rem */
+            padding: 1.5rem 1.8rem;
             max-width: 90%;
         }
         .main-title-neon {
-            font-size: 1.6rem; /* Reduzido de 1.8rem para 1.6rem */
+            font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
         }
         .subtitle-strong {
-            font-size: 1.3rem; /* Reduzido de 1.4rem para 1.3rem */
+            font-size: 1.25rem; /* Reduzido de 1.3rem para 1.25rem */
         }
         .language-grid {
-            gap: 1.2rem; /* Ajustado */
+            gap: 1.2rem;
         }
         .language-grid a {
-            width: 90px; /* Ajustado */
-            height: 100px; /* Ajustado */
-            font-size: 0.8rem; /* Ajustado */
+            width: 90px;
+            height: 100px;
+            font-size: 0.8rem;
         }
         .language-grid a img {
-            max-height: 60px; /* Ajustado */
+            max-height: 60px;
         }
         .content-section.book-cover-section {
-            min-height: 380px; /* Ajuste min-height para telas menores */
+            min-height: 380px;
             padding: 1.5rem 1.8rem;
         }
     }
@@ -396,38 +396,38 @@
         gap: 2rem;
       }
       .language-grid {
-        gap: 0.8rem; /* Mais ajustado para telas muito pequenas */
+        gap: 0.8rem;
       }
       .language-grid a {
-        width: 80px; /* Mais ajustado */
-        height: 90px; /* Mais ajustado */
-        font-size: 0.7rem; /* Mais ajustado */
+        width: 80px;
+        height: 90px;
+        font-size: 0.7rem;
       }
       .language-grid a img {
-        max-height: 50px; /* Mais ajustado */
+        max-height: 50px;
       }
       .content-section {
-        font-size: 1rem; /* Reduzido para telas muito pequenas */
-        padding: 1.2rem 1.5rem; /* Mais ajustado */
+        font-size: 0.95rem; /* Reduzido para telas muito pequenas */
+        padding: 1.2rem 1.5rem;
         max-width: 95%;
       }
       .main-title-neon {
-          font-size: 1.4rem; /* Reduzido */
+          font-size: 1.3rem; /* Reduzido */
       }
       .subtitle-strong {
-          font-size: 1.1rem; /* Reduzido */
+          font-size: 1.05rem; /* Reduzido */
       }
       .book-cover {
-        max-width: 130px; /* Ajusta a largura da capa em telas menores */
+        max-width: 130px;
       }
       .coming-soon-text {
-        font-size: 0.9rem; /* Reduzido */
+        font-size: 0.85rem; /* Reduzido */
       }
       .book-part-block-style {
-          font-size: 0.8rem; /* Reduzido */
+          font-size: 0.75rem; /* Reduzido */
       }
       .content-section.book-cover-section {
-          min-height: 300px; /* Ajuste para mobile */
+          min-height: 300px;
           padding: 1.2rem 1.5rem;
       }
     }
@@ -450,10 +450,8 @@
 
   <main>
     <section class="content-section" aria-label="Project Introduction">
-      <h2 class="main-title-neon">📖 The Bibles</h2> <!-- Título atualizado -->
-      <p class="subtitle-strong">Empowering Global Access to the Word of God Through Immersive Audio.</p>
-      <p>Welcome to the official page of Best Bibles Audiobooks, an independent project created by T. S. Telles, author of Christian-themed fiction and fantasy.</p>
-      <p style="font-style: italic;">"Go ye into all the world, and preach the gospel to every creature." (Mark 16:15, KJV)</p>
+      <h2 class="main-title-neon">📖 Welcome</h2> <!-- Título da secção alterado para "Welcome" -->
+      <p class="subtitle-strong">Welcome everyone to the official page of Best Bibles Audiobooks, an independent project created by T. S. Telles, author of Christian-themed fiction and fantasy.</p>
       <p>This initiative was born from a simple yet bold mission:</p>
       <ul>
         <li>✅ To challenge the overpriced audio Bibles on the market — which often limit access to God’s Word through high costs and restrictive distribution.</li>
@@ -461,6 +459,7 @@
         <li>✅ To use any profit exclusively for expanding production and distribution, aiming to make these Bibles freely available on as many platforms as possible, and without ads.</li>
       </ul>
       <p>By purchasing or streaming these Bibles, you directly help break barriers that keep many from hearing the Word of God in their own language, with clarity and dignity.</p>
+      <p style="font-style: italic; margin-top: 1.5em;">"Go ye into all the world, and preach the gospel to every creature." - Mark 16:15</p> <!-- Versículo movido para o final e KJV removido -->
     </section>
 
     <section class="content-section" aria-label="Why It Matters">
