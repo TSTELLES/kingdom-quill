@@ -4,7 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Best Bibles Audiobooks</title> <!-- Título da página atualizado -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <style>
+    /* Variáveis CSS para cores neon */
+    :root {
+      --neon-yellow: #f9f871;
+      --neon-pink-soft: #FF66CC;
+      --neon-white: #FFF;
+      --neon-light-green: #90EE90; /* Novo verde claro */
+    }
+
     /* Estilos globais e redefinições */
     body {
       margin: 0;
@@ -50,13 +59,14 @@
       /* Nenhuma animação é necessária aqui, o vídeo é reproduzido automaticamente */
     }
 
-    /* Cabeçalho fixo com neon amarelo */
+    /* Cabeçalho fixo com neon verde claro */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       height: 4.5em;
       background-color: black;
-      color: #f9f871;
+      color: var(--neon-light-green); /* Nova cor verde clara */
+      font-family: 'Merriweather', serif; /* Nova fonte Merriweather */
       font-weight: bold;
       font-size: 2.2rem;
       display: flex;
@@ -64,30 +74,31 @@
       align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
       text-shadow:
-        0 0 8px #f9f871,
-        0 0 20px #f9f871,
-        0 0 40px #f9f871,
-        0 0 80px #f9f871;
-      animation: neonPulseYellow 2s infinite alternate;
+        0 0 8px var(--neon-light-green),
+        0 0 20px var(--neon-light-green),
+        0 0 40px var(--neon-light-green),
+        0 0 80px var(--neon-light-green);
+      animation: neonPulseLightGreen 2s infinite alternate; /* Animação para o verde */
       user-select: none;
       letter-spacing: 0.05em;
       z-index: 100; /* Garante que o cabeçalho esteja no topo */
     }
 
-    @keyframes neonPulseYellow {
+    /* Nova animação de pulso para verde claro */
+    @keyframes neonPulseLightGreen {
       0% {
         text-shadow:
-          0 0 10px #f9f871,
-          0 0 30px #f9f871,
-          0 0 50px #f9f871,
-          0 0 100px #f9f871;
+          0 0 10px var(--neon-light-green),
+          0 0 30px var(--neon-light-green),
+          0 0 50px var(--neon-light-green),
+          0 0 100px var(--neon-light-green);
       }
       100% {
         text-shadow:
-          0 0 20px #f9f871,
-          0 0 40px #f9f871,
-          0 0 70px #f9f871,
-          0 0 120px #f9f871;
+          0 0 20px var(--neon-light-green),
+          0 0 40px var(--neon-light-green),
+          0 0 70px var(--neon-light-green),
+          0 0 120px var(--neon-light-green);
       }
     }
 
@@ -133,19 +144,19 @@
         margin-top: 0;
     }
     .content-section strong {
-        color: #f9f871; /* Destaca palavras-chave com neon amarelo */
+        color: var(--neon-yellow); /* Destaca palavras-chave com neon amarelo */
     }
 
     /* Títulos principais com efeito neon */
     .main-title-neon {
-      color: #f9f871;
+      color: var(--neon-yellow);
       font-size: 2rem;
       margin-top: 0;
       text-shadow:
-        0 0 8px #f9f871,
-        0 0 20px #f9f871,
-        0 0 40px #f9f871,
-        0 0 80px #f9f871;
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow);
       animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
     }
     .subtitle-strong {
@@ -191,7 +202,7 @@
         background: rgba(249, 248, 113, 0.1);
         transform: scale(1.1);
         box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
-        border-color: #f9f871;
+        border-color: var(--neon-yellow);
     }
 
     .language-grid a img {
@@ -245,11 +256,11 @@
 
     /* Estilo neon rosa mais suave */
     .neon-pink-soft {
-      color: #FF66CC; /* Rosa neon mais suave */
+      color: var(--neon-pink-soft); /* Rosa neon mais suave */
       text-shadow:
-        0 0 8px #FF66CC,
-        0 0 20px #FF66CC,
-        0 0 40px #FF66CC;
+        0 0 8px var(--neon-pink-soft),
+        0 0 20px var(--neon-pink-soft),
+        0 0 40px var(--neon-pink-soft);
     }
 
     /* Estilo para o título do livro (fonte e cor rosa) */
@@ -261,11 +272,11 @@
 
     /* Estilo para a parte do livro (branco aceso) */
     .book-part-white-glow {
-      color: #FFF; /* Branco */
+      color: var(--neon-white); /* Branco */
       text-shadow:
-        0 0 5px #FFF,
-        0 0 15px #FFF,
-        0 0 25px #FFF;
+        0 0 5px var(--neon-white),
+        0 0 15px var(--neon-white),
+        0 0 25px var(--neon-white);
     }
 
     /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
@@ -274,7 +285,7 @@
         font-weight: bold; /* Manter negrito se for o caso */
         display: block; /* Garante que fique em uma nova linha */
         text-transform: uppercase; /* Manter em maiúsculas */
-        margin-top: 0.2em; /* Pequeno espaçamento superior */
+        margin: 0; /* Removido margin-top para ser gerenciado pelo Flexbox da seção */
     }
 
     /* Estilo para a capa do livro */
@@ -283,7 +294,7 @@
       height: auto; /* Altura automática para manter a proporção */
       border-radius: 10px; /* Cantos arredondados */
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon */
-      margin-top: 1.5em; /* Espaço acima da capa */
+      margin: 0; /* Removido margin-top, agora gerenciado pelo Flexbox da seção */
       transition: transform 0.3s ease;
     }
 
@@ -293,12 +304,48 @@
 
     .coming-soon-text {
         font-size: 1.2rem;
-        color: #FFF; /* Cor agora é branca */
-        margin-top: 1em; /* Espaço acima do texto "Coming Soon" */
+        color: var(--neon-white); /* Cor agora é branca */
         font-weight: bold;
         text-shadow:
-            0 0 5px #FFF,
-            0 0 10px #FFF;
+            0 0 5px var(--neon-white),
+            0 0 10px var(--neon-white);
+        margin: 0; /* Removido margin-top, gerenciado pelo Flexbox */
+    }
+
+    /* Estilo para a seção da capa do livro (para Flexbox e simetria) */
+    .content-section.book-cover-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly; /* Distribui o espaço uniformemente entre os itens e ao redor deles */
+        min-height: 550px; /* Aumentei a altura mínima para dar mais espaço e simetria */
+        padding: 2rem 2.5rem; /* Mantém o padding original do .content-section */
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        background: rgba(0,0,0,0.6);
+        border-radius: 15px;
+        max-width: 720px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    /* Resetar margens dos filhos diretos para que justify-content controle */
+    .content-section.book-cover-section > * {
+        margin: 0; /* Remover todas as margens para que justify-content e padding da seção as controlem */
+        padding: 0; /* Remover qualquer padding indesejado que possa afetar o espaçamento */
+    }
+
+    /* Agrupamento de título e "Part 1" para Flexbox */
+    .book-header-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0; /* Garante que não há margens conflituantes */
+        padding: 0;
+    }
+    
+    /* Espaçamento interno específico para Part 1 dentro do grupo */
+    .book-header-group p.book-part-block-style {
+        margin-top: 0.5em; /* Pequeno espaçamento abaixo do H2, como você queria */
     }
 
     /* Ajustes de responsividade */
@@ -320,6 +367,10 @@
         }
         .language-grid a img {
             max-height: 65px; /* Altura da imagem ajustada */
+        }
+        .content-section.book-cover-section {
+            min-height: 400px; /* Ajuste min-height para telas menores */
+            padding: 1.8rem 2rem; /* Ajuste o padding para telas menores */
         }
     }
 
@@ -373,6 +424,10 @@
       .book-part-block-style {
           font-size: 0.9rem; /* Ajusta o tamanho da fonte para mobile */
       }
+      .content-section.book-cover-section {
+          min-height: 350px; /* Ajuste para mobile */
+          padding: 1.5rem 1.8rem; /* Ajuste o padding para telas menores */
+      }
     }
   </style>
 </head>
@@ -386,7 +441,10 @@
     </video>
   </div>
 
-  <header>Best Bibles Audiobooks</header>
+  <!-- Note que os estilos de cor e fonte foram movidos para o CSS no <head> -->
+  <header>
+    Best Bibles Audiobooks
+  </header>
 
   <main>
     <section class="content-section" aria-label="Project Introduction">
@@ -430,7 +488,7 @@
       </div>
       <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px;">
         <li>✔️ Faça streaming e partilhe as Bíblias no Spotify, Storytel, Google Play e mais.</li>
-        <li>✔️ Read <span class="neon-pink-soft book-title-style">Welcome to New York</span> — <span class="book-part-white-glow">Part 1</span> on Amazon.</li>
+        <li>✔️ Leia <span class="neon-pink-soft book-title-style">Welcome to New York</span> — <span class="book-part-white-glow">Part 1</span> on Amazon.</li>
         <li>✔️ Espalhe a palavra — ajude-nos a alcançar idiomas e países que ainda aguardam uma Bíblia de áudio clara e digna.</li>
       </ul>
     </section>
@@ -443,7 +501,7 @@
     </section>
 
     <!-- Nova seção para "Welcome to New York" com capa e "Coming Soon" -->
-    <section class="content-section" aria-label="Welcome to New York Novel">
+    <section class="content-section book-cover-section" aria-label="Welcome to New York Novel">
       <h2 class="main-title-neon"><span class="neon-pink-soft book-title-style">Welcome to New York</span></h2>
       <p class="book-part-white-glow book-part-block-style">Part 1</p>
       <img src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Capa%20vol%2014.jpg" alt="Capa do Livro Welcome to New York" class="book-cover">
