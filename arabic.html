@@ -200,7 +200,7 @@
         font-size: 1.5rem;
         font-weight: bold;
         text-shadow: 0 0 5px #f9f871;
-        margin-bottom: 1rem; /* Espaço abaixo do título */
+        /* margin-bottom: 1rem; */ /* Removido para usar padding-bottom */
     }
 
     /* Faixa de amostra com player estiloso */
@@ -212,21 +212,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0; /* Ajustado para deixar justify-content controlar o espaçamento */
+      /* Ajuste de espaçamento aqui: */
+      justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
+      padding-top: 2.5rem; /* Mais padding em cima */
+      padding-bottom: 2.5rem; /* Mais padding embaixo */
       max-width: 700px;
       user-select: none;
       margin-top: 3rem; /* Espaço acima desta seção */
-      justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
+      gap: 1.2rem; /* Reintroduzindo o gap para espaçamento consistente */
     }
 
     /* Adicionado padding interno aos elementos para controle de espaçamento */
     .sample-section .player-title {
-        margin-bottom: 1rem;
+        margin-bottom: 0; /* Zera a margem de baixo do título */
         margin-top: 0;
-        padding-top: 1rem;
+        /* padding-top: 1rem; REMOVIDO, pois o padding da sample-section é suficiente */
     }
     .sample-section .play-button {
-        margin-bottom: 1rem;
+        margin-bottom: 0; /* Zera a margem de baixo do botão */
     }
     .sample-section audio {
       width: 100%;
@@ -235,7 +238,7 @@
       box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
       cursor: pointer;
       margin-top: 0;
-      padding-bottom: 1rem;
+      /* padding-bottom: 1rem; REMOVIDO, pois o padding da sample-section é suficiente */
     }
 
 
@@ -452,7 +455,9 @@
   </style>
 </head>
 <body>
-  <header>الكتاب المقدس</header> <section class="flags-row" aria-label="الأعلام">
+  <header>الكتاب المقدس</header>
+
+  <section class="flags-row" aria-label="الأعلام">
     <div class="flag saudi-arabia" role="img" aria-label="علم المملكة العربية السعودية"></div>
     <div class="flag egypt" role="img" aria-label="علم مصر"></div>
     <div class="flag palestine" role="img" aria-label="علم فلسطين"></div>
@@ -460,7 +465,8 @@
 
   <main>
     <section class="arguments" aria-label="فوائد الكتاب الصوتي">
-      <h2 class="main-title-neon">الكتاب المقدس كاملاً صوتياً</h2> <p class="subtitle-strong">سرد واضح تماماً، وبدون إعلانات!</p>
+      <h2 class="main-title-neon">الكتاب المقدس كاملاً صوتياً</h2>
+      <p class="subtitle-strong">سرد واضح تماماً، وبدون إعلانات!</p>
     </section>
 
     <section class="sample-section" aria-label="عينة صوتية">
@@ -473,15 +479,19 @@
 
     <section class="call-to-action-section" aria-label="ميزات الكتاب الصوتي ودعوة للعمل">
         <p>🎧 استمتع بالتشغيل دون اتصال بالإنترنت، والاستماع بدون إعلانات، ووضع إيقاف الشاشة. دعمك يساعدنا في إنشاء ترجمات جديدة والحفاظ على جودة التسجيلات.</p>
-        <p>👉 <strong>جاهز؟</strong> ابدأ الاستماع إلى <strong>الكتاب المقدس كاملاً</strong> صوتياً الآن – متاح على جميع منصاتك المفضلة!</p> </section>
+        <p>👉 <strong>جاهز؟</strong> ابدأ الاستماع إلى <strong>الكتاب المقدس كاملاً</strong> صوتياً الآن – متاح على جميع منصاتك المفضلة!</p>
+    </section>
 
     <div class="testament-container">
-        <section class="testament-section" aria-label="الكتاب المقدس الصوتي"> <h2>الكتاب المقدس</h2> <p>اختبر الحكمة العميقة والتعاليم الإلهية للكتاب المقدس كاملاً.</p> <nav class="buttons" aria-label="خيارات شراء الكتاب المقدس">
+        <section class="testament-section" aria-label="الكتاب المقدس الصوتي">
+            <h2>الكتاب المقدس</h2>
+            <p>اختبر الحكمة العميقة والتعاليم الإلهية للكتاب المقدس كاملاً.</p>
+            <nav class="buttons" aria-label="خيارات شراء الكتاب المقدس">
                 <a href="https://www.kobo.com/us/en/audiobook/oIWni2T0zjy1HdIu-_8BEg" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
                 <a href="https://www.storytel.com/se/sv/books/الكتاب-المقدس-10054894" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://serieliv.no/content/uploads/2016/02/Storytel-logo.png" alt="Storytel Logo"></a>
                 <a href="https://play.google.com/store/audiobooks/details/VA_%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8_%D8%A7%D9%84%D9%85%D9%82%D8%AF%D8%B3?id=AQAAAEDy4XqhmM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
                 <a href="https://open.spotify.com/show/38JAiz4U89VJMa2NzGhNRE?si=6bf6e417a60c4874" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
-                </nav>
+            </nav>
         </section>
     </div>
 
