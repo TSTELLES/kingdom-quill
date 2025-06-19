@@ -35,7 +35,7 @@
         Isso garante que o conteúdo principal role por baixo deles sem ser ocultado.
       */
       padding-top: 4.5em; /* Espaço para o cabeçalho fixo */
-      padding-bottom: 2.5em; /* Espaço para o rodapé fixo */
+      padding-bottom: 2em; /* Ajustado para 2em */
       position: relative; /* Necessário para o z-index do fundo funcionar */
     }
 
@@ -125,7 +125,7 @@
         O cálculo min-height garante que o 'main' ocupe o espaço disponível
         entre o cabeçalho e o rodapé fixos quando o conteúdo é curto.
       */
-      min-height: calc(100vh - 4.5em - 3.5em);
+      min-height: calc(100vh - 4.5em - 2em); /* Ajustado para 2em */
       position: relative; /* Garante que o conteúdo principal esteja acima do fundo */
       z-index: 1; /* Garante que o conteúdo principal esteja acima do fundo */
     }
@@ -243,15 +243,21 @@
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
-      height: 3.5em;
+      height: 2em; /* Ajustado para 2em */
       background-color: black;
       color: #ccc;
       text-align: center;
-      line-height: 3.5em;
+      line-height: 2em; /* Ajustado para 2em */
       font-size: 0.9rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
       user-select: none;
       z-index: 100;
+    }
+
+    footer p { /* Adicionado estilo para o parágrafo dentro do footer */
+      margin: 0; /* Remove margem padrão do parágrafo */
+      font-size: 0.8rem; /* Fonte ligeiramente menor para caber em 2em */
+      line-height: 2em; /* Ajusta o line-height para a altura do footer, centralizando o texto */
     }
 
     /* Estilo neon rosa mais suave */
@@ -487,15 +493,15 @@
       }
       footer {
         font-size: 0.8rem;
-        height: 3em;
-        line-height: 3em;
+        height: 2em; /* Ajustado para 2em */
+        line-height: 2em; /* Ajustado para 2em */
       }
       body {
         padding-top: 3.8em;
-        padding-bottom: 3em;
+        padding-bottom: 2em; /* Ajustado para 2em */
       }
       main {
-        min-height: calc(100vh - 3.8em - 3em);
+        min-height: calc(100vh - 3.8em - 2em); /* Ajustado para 2em */
         padding: 5.5em 1rem 1.5rem;
         gap: 2rem;
       }
