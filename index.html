@@ -15,6 +15,9 @@
       --neon-white: #FFF;
       --neon-light-green: #90EE90; /* Novo verde claro */
       --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
+      /* Novas variáveis para tons de roxo para o brilho, para consistência */
+      --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
+      --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
     }
 
     /* Estilos globais e redefinições */
@@ -147,7 +150,7 @@
         margin-top: 0;
     }
     .content-section strong {
-        color: var(--neon-yellow); /* Destaca palavras-chave com neon amarelo */
+      color: var(--neon-yellow); /* Destaca palavras-chave com neon amarelo */
     }
 
     /* Títulos principais com efeito neon */
@@ -280,8 +283,8 @@
     .neon-purple-glow {
         color: var(--neon-purple); /* Cor base mais escura */
         text-shadow:
-          0 0 15px rgba(255, 0, 255, 0.8), /* Roxo claro, quase magenta, para o brilho interno */
-          0 0 30px rgba(180, 0, 180, 0.6), /* Roxo médio para o brilho intermédio */
+          0 0 15px var(--neon-purple-light), /* Roxo claro, quase magenta, para o brilho interno */
+          0 0 30px var(--neon-purple-medium), /* Roxo médio para o brilho intermédio */
           0 0 50px var(--neon-purple), /* Cor base para o brilho externo */
           0 0 80px var(--neon-purple); /* Mais da cor base para um halo maior */
         animation: neonPulsePurple 1.6s infinite alternate; /* Animação para o pulso */
@@ -291,15 +294,15 @@
     @keyframes neonPulsePurple {
       0% {
         text-shadow:
-          0 0 10px rgba(255, 0, 255, 0.7),
-          0 0 25px rgba(180, 0, 180, 0.5),
+          0 0 10px var(--neon-purple-light),
+          0 0 25px var(--neon-purple-medium),
           0 0 45px var(--neon-purple),
           0 0 70px var(--neon-purple);
       }
       100% {
         text-shadow:
-          0 0 20px rgba(255, 0, 255, 1),
-          0 0 40px rgba(180, 0, 180, 0.8),
+          0 0 20px var(--neon-purple-light),
+          0 0 40px var(--neon-purple-medium),
           0 0 60px var(--neon-purple),
           0 0 90px var(--neon-purple);
       }
@@ -327,7 +330,7 @@
         font-weight: bold;
         display: block;
         text-transform: uppercase;
-        margin: 0;
+        margin-top: -0.7em; /* Valor negativo para puxar para cima ainda mais */
     }
 
     /* Estilo para a capa do livro */
@@ -336,7 +339,7 @@
       height: auto;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
-      margin: 0;
+      margin-top: 8rem; /* Mantido em 8rem */
       transition: transform 0.3s ease;
     }
 
@@ -344,23 +347,54 @@
       transform: scale(1.05);
     }
 
-    .coming-soon-text {
-        font-size: 1.2rem;
-        color: var(--neon-white);
-        font-weight: bold;
-        text-shadow:
-            0 0 5px var(--neon-white),
-            0 0 10px var(--neon-white);
-        margin-top: 1rem; /* Adicionado espaço acima */
+    /* Novo estilo de botão neon - RESTAURADO para AMARELO NEON */
+    .neon-button {
+      display: inline-block;
+      padding: 0.7rem 1.8rem; /* Mantido no tamanho menor */
+      border: 2px solid var(--neon-yellow); /* Borda amarela neon */
+      border-radius: 25px; /* Mais arredondado */
+      background: linear-gradient(45deg, rgba(249, 248, 113, 0.1), rgba(249, 248, 113, 0.05)); /* Gradiente amarelo */
+      color: var(--neon-yellow); /* Cor do texto padrão do botão (amarelo) */
+      font-weight: bold;
+      font-size: 1rem; /* Mantido no tamanho da fonte menor */
+      text-decoration: none;
+      text-shadow:
+        0 0 10px var(--neon-yellow), /* Brilho amarelo */
+        0 0 30px var(--neon-yellow),
+        0 0 60px var(--neon-yellow);
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.5); /* Brilho exterior amarelo */
+      transition: all 0.3s ease;
+      user-select: none;
+      letter-spacing: 0.05em; /* Ligeiramente mais espaçado */
+      cursor: pointer; /* Indicar interatividade */
     }
+
+    .neon-button:hover {
+      background: linear-gradient(45deg, rgba(249, 248, 113, 0.2), rgba(249, 248, 113, 0.1)); /* Mais vibrante ao passar o mouse */
+      transform: scale(1.08); /* Escala mais pronunciada */
+      box-shadow:
+        0 0 25px rgba(249, 248, 113, 0.8), /* Brilho exterior mais forte amarelo */
+        inset 0 0 10px rgba(249, 248, 113, 0.4); /* Efeito de brilho interior amarelo */
+      border-color: var(--neon-yellow); /* Borda amarela neon no hover */
+    }
+
+    /* NOVO ESTILO PARA O TEXTO "HERE" DENTRO DO BOTÃO - ROSA NEON */
+    .neon-button-text-pink {
+      color: var(--neon-pink-soft);
+      text-shadow:
+        0 0 8px var(--neon-pink-soft),
+        0 0 20px var(--neon-pink-soft),
+        0 0 40px var(--neon-pink-soft);
+    }
+
 
     /* Estilo para a seção da capa do livro (para Flexbox e simetria) */
     .content-section.book-cover-section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly; /* Distribui o espaço uniformemente entre os itens e ao redor deles */
-        min-height: 550px; /* Aumentado para dar mais espaço */
+        justify-content: space-between;
+        min-height: 650px; /* Ajustado para um valor intermédio */
         padding: 2rem 2.5rem;
         box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
         background: rgba(0,0,0,0.6);
@@ -381,14 +415,33 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem; /* Controla o espaço entre o título e "Part 1" */
+        gap: 0; /* Remove o gap entre o título e "Part 1" */
         padding: 0;
     }
     
     /* Espaçamento interno específico para Part 1 dentro do grupo */
     .book-header-group p.book-part-block-style {
-        margin-top: 0; /* Controlado pelo gap do pai */
+        margin-top: -0.7em; /* Valor negativo para puxar para cima ainda mais */
     }
+
+    /* Estilo para o contêiner do botão e das mãos */
+    .button-with-hands {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem; /* Espaçamento entre as mãos e o botão */
+        margin-top: 4.5rem; /* Ajustado para um valor intermédio */
+    }
+
+    .hand-emoji {
+        font-size: 1.5rem; /* Tamanho da mãozinha */
+        color: var(--neon-yellow); /* Cor da mãozinha */
+        text-shadow:
+          0 0 5px var(--neon-yellow),
+          0 0 10px var(--neon-yellow),
+          0 0 20px var(--neon-yellow);
+        animation: neonPulseYellow 1.5s infinite alternate; /* Animação para a mãozinha */
+    }
+
 
     /* Ajustes de responsividade */
     @media (max-width: 768px) {
@@ -415,8 +468,15 @@
             max-height: 60px;
         }
         .content-section.book-cover-section {
-            min-height: 380px;
+            min-height: 480px; /* Ajustado para telas menores */
             padding: 1.5rem 1.8rem;
+        }
+        .neon-button {
+            padding: 0.6rem 1.5rem; /* Ajustado para telas menores */
+            font-size: 0.95rem; /* Ajustado para telas menores */
+        }
+        .button-with-hands {
+            margin-top: 3rem; /* Ajuste para telas menores, valor intermédio */
         }
     }
 
@@ -463,16 +523,21 @@
       }
       .book-cover {
         max-width: 130px;
+        margin-top: 6rem; /* Mantido em 6rem */
       }
-      .coming-soon-text {
-        font-size: 0.85rem; /* Reduzido */
+      .neon-button {
+        font-size: 0.8rem; /* Reduced font size for smaller screens */
+        padding: 0.4rem 1rem; /* Adjusted padding */
       }
       .book-part-block-style {
           font-size: 0.75rem; /* Reduzido */
       }
       .content-section.book-cover-section {
-          min-height: 300px;
+          min-height: 350px; /* Ajustado para telas muito pequenas */
           padding: 1.2rem 1.5rem;
+      }
+      .button-with-hands {
+          margin-top: 1.5rem; /* Ajuste para telas muito pequenas, valor intermédio */
       }
     }
   </style>
@@ -511,7 +576,7 @@
     <section class="content-section" aria-label="Why It Matters">
       <h2 class="main-title-neon">🌍 Why It Matters</h2>
       <p class="subtitle-strong">Your purchase helps break barriers: more languages, more countries, more freedom to hear the Word.</p>
-      <p>Every Bible sold helps make the next one possible — with no ads and no big companies controlling it.</p>
+      <p>Every Bible sold helps make the next one possible — with no ads and no big companies controlando-o.</p>
     </p>
     </section>
 
@@ -522,7 +587,7 @@
         <a href="korean.html" aria-label="Korean Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea"><span>한국어 (Korean)</span></a>
         <a href="russian.html" aria-label="Russian Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia"><span>Русский (Russian)</span></a>
         <a href="chinese.html" aria-label="Chinese Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China"><span>中文 (Chinese)</span></a>
-        <a href="french.html" aria-label="French Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France"><span>Français (French)</span></a>
+        <a href="french.html" aria-label="French Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France"><span>Français (French)</a>
         <a href="german.html" aria-label="German Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany"><span>Deutsch (German)</a>
         <a href="english.html" aria-label="English Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States"><span>English</span></a>
         <a href="spanish.html" aria-label="Spanish Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"><span>Español (Spanish)</a>
@@ -544,25 +609,31 @@
       <h2 class="main-title-neon">✍️ About T. S. Telles</h2>
       <p>T. S. Telles is also the author of Christian romance and epic fantasy. Her novel <span class="book-title-style"><span class="neon-pink-soft">Welcome </span><span class="book-part-white-glow">to</span> <span class="neon-yellow-glow">New York</span></span> — <span class="book-part-white-glow">Part 1</span> is available on Amazon — a clean, heartfelt story free from explicit content or crude language, focusing on deep characters, faith, and hope without forced sermons.</p>
       <p>She is currently working on her next epic fantasy saga, <span class="neon-purple-glow abaddon-font-style">Axwar</span>: <span class="book-part-white-glow">The Power of Four Thrones</span>, which will bring readers an inspiring journey of courage and destiny. Coming soon.</p>
-      <p class="subtitle-strong"><a href="https://www.amazon.com/dp/B0BP3X6V81" style="text-decoration: none; transition: text-shadow 0.3s ease;">
-        <span class="book-part-white-glow">👉 Discover </span>
-        <span class="book-title-style">
-          <span class="neon-pink-soft">Welcome </span>
-          <span class="book-part-white-glow">to</span>
-          <span class="neon-yellow-glow"> New York</span>
-        </span>
-        <span class="book-part-white-glow"> here.</span>
-      </a></p>
     </section>
 
-    <!-- Nova seção para "Welcome to New York" com capa e "Coming Soon" -->
+    <!-- Nova seção para "Welcome to New York" com capa e botão de acesso -->
     <section class="content-section book-cover-section" aria-label="Welcome to New York Novel">
       <div class="book-header-group"> <!-- Agrupamento para título e part 1 -->
-        <h2 class="main-title-neon"><span class="book-title-style"><span class="neon-pink-soft">Welcome </span><span class="book-part-white-glow">to</span> <span class="neon-yellow-glow">New York</span></span></h2>
+        <h2 class="main-title-neon">
+          <!-- O link do título permanece, mas sem a mãozinha -->
+          <a href="https://www.amazon.com/dp/B0BP3X6V81" style="text-decoration: none; transition: text-shadow 0.3s ease;">
+            <span class="book-part-white-glow">Discovery </span>
+            <span class="book-title-style">
+              <span class="neon-pink-soft">Welcome </span>
+              <span class="book-part-white-glow">to</span>
+              <span class="neon-yellow-glow"> New York</span>
+            </span>
+          </a>
+        </h2>
         <p class="book-part-white-glow book-part-block-style">Part 1</p>
       </div>
       <img src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Capa%20vol%2014.jpg" alt="Capa do Livro Welcome to New York" class="book-cover">
-      <p class="coming-soon-text">Coming Soon</p>
+      <!-- Contêiner para o botão e as mãozinhas -->
+      <div class="button-with-hands">
+        <span class="hand-emoji">👉</span> <!-- Mão invertida -->
+        <a href="welcome-to-ny.html" class="neon-button"><span class="neon-button-text-pink">Here</span></a> <!-- Texto do botão alterado para "Here" com span para cor -->
+        <span class="hand-emoji">👈</span> <!-- Mão invertida -->
+      </div>
     </section>
 
   </main>
