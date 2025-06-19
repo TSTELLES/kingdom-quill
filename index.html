@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Best Bibles Audiobooks</title> <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <title>Best Bibles Audiobooks</title> <!-- Título da página atualizado -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <!-- Abaddon Font from CDNFonts.com -->
+  <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
   <style>
-    /* CSS variables for neon colors */
+    /* Variáveis CSS para cores neon */
     :root {
       --neon-yellow: #f9f871;
       --neon-pink-soft: #FF66CC;
       --neon-white: #FFF;
-      --neon-light-green: #90EE90; /* New light green */
+      --neon-light-green: #90EE90; /* Novo verde claro */
+      --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
     }
 
-    /* Global styles and resets */
+    /* Estilos globais e redefinições */
     body {
       margin: 0;
-      background: black; /* Main background, video will be overlaid */
+      background: black; /* Fundo principal, o vídeo será sobreposto */
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
@@ -24,48 +28,48 @@
       min-height: 100vh;
       overflow-x: hidden;
       /*
-        Top and bottom padding creates space for fixed header and footer.
-        This ensures the main content scrolls beneath them without being hidden.
+        O preenchimento superior e inferior cria espaço para o cabeçalho e rodapé fixos.
+        Isso garante que o conteúdo principal role por baixo deles sem ser ocultado.
       */
-      padding-top: 4.5em; /* Space for fixed header */
-      padding-bottom: 3.5em; /* Space for fixed footer */
-      position: relative; /* Necessary for background z-index to work */
+      padding-top: 4.5em; /* Espaço para o cabeçalho fixo */
+      padding-bottom: 3.5em; /* Espaço para o rodapé fixo */
+      position: relative; /* Necessário para o z-index do fundo funcionar */
     }
 
-    /* Animated video background container */
+    /* Contêiner de fundo de vídeo animado */
     .background-animated {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Ensures video doesn't overflow container */
-      z-index: -1; /* Sends to the back */
-      filter: brightness(0.3); /* Darkens the video */
+      overflow: hidden; /* Garante que o vídeo não transborde do contêiner */
+      z-index: -1; /* Envia para o fundo */
+      filter: brightness(0.3); /* Escurece o vídeo */
     }
 
-    /* Video style to cover entire background */
+    /* Estilo do vídeo para cobrir todo o fundo */
     .background-animated video {
       min-width: 100%;
       min-height: 100%;
-      width: auto; /* Allows video to scale naturally */
-      height: auto; /* Allows height to be automatic for natural scaling */
+      width: auto; /* Permite que o vídeo seja dimensionado naturalmente */
+      height: auto; /* Permite que a altura seja automática para ser dimensionado naturalmente */
       position: absolute;
-      top: 55%; /* Moves video slightly down from 50% to 55% */
+      top: 55%; /* Move o vídeo ligeiramente para baixo de 50% para 55% */
       left: 50%;
-      transform: translate(-50%, -50%); /* Centers the video */
-      object-fit: cover; /* Ensures video covers entire container */
-      /* No animation needed here, video plays automatically */
+      transform: translate(-50%, -50%); /* Centraliza o vídeo */
+      object-fit: cover; /* Garante que o vídeo cubra todo o contêiner */
+      /* Nenhuma animação é necessária aqui, o vídeo é reproduzido automaticamente */
     }
 
-    /* Fixed header with light neon green */
+    /* Cabeçalho fixo com neon verde claro */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       height: 4.5em;
       background-color: black;
-      color: var(--neon-light-green); /* New light green color */
-      font-family: 'Merriweather', serif; /* New Merriweather font */
+      color: var(--neon-light-green); /* Nova cor verde clara */
+      font-family: 'Merriweather', serif; /* Nova fonte Merriweather */
       font-weight: bold;
       font-size: 2.2rem;
       display: flex;
@@ -77,13 +81,13 @@
         0 0 20px var(--neon-light-green),
         0 0 40px var(--neon-light-green),
         0 0 80px var(--neon-light-green);
-      animation: neonPulseLightGreen 2s infinite alternate; /* Green animation */
+      animation: neonPulseLightGreen 2s infinite alternate; /* Animação para o verde */
       user-select: none;
       letter-spacing: 0.05em;
-      z-index: 100; /* Ensures header is on top */
+      z-index: 100; /* Garante que o cabeçalho esteja no topo */
     }
 
-    /* New pulse animation for light green */
+    /* Nova animação de pulso para verde claro */
     @keyframes neonPulseLightGreen {
       0% {
         text-shadow:
@@ -101,102 +105,102 @@
       }
     }
 
-    /* Main content area */
+    /* Área de conteúdo principal */
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Increased top padding to push content down from fixed header */
-      padding: 10em 1rem 2rem; /* Adjusted from 8em to 10em for top padding */
+      /* Preenchimento superior aumentado para empurrar o conteúdo para baixo do cabeçalho fixo */
+      padding: 10em 1rem 2rem; /* Ajustado de 8em para 10em para preenchimento superior */
       gap: 3rem;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
       /*
-        min-height calculation ensures 'main' takes up available space
-        between fixed header and footer when content is short.
+        O cálculo min-height garante que o 'main' ocupe o espaço disponível
+        entre o cabeçalho e o rodapé fixos quando o conteúdo é curto.
       */
       min-height: calc(100vh - 4.5em - 3.5em);
-      position: relative; /* Ensures main content is above background */
-      z-index: 1; /* Ensures main content is above background */
+      position: relative; /* Garante que o conteúdo principal esteja acima do fundo */
+      z-index: 1; /* Garante que o conteúdo principal esteja acima do fundo */
     }
 
-    /* Shared section style for text blocks */
+    /* Estilo de secção partilhado para blocos de texto */
     .content-section {
       background: rgba(0,0,0,0.6);
-      padding: 1.5rem 2rem; /* Reduced from 2rem to 1.5rem */
+      padding: 1.5rem 2rem; /* Reduzido de 2rem para 1.5rem */
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
       font-weight: 600;
-      font-size: 1.1rem; /* Reduced from 1.2rem to 1.1rem */
+      font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
       line-height: 1.5;
-      max-width: 500px; /* Adjusted from 600px to 500px for larger screens */
+      max-width: 500px; /* Ajustada de 600px para 500px para telas maiores */
       text-align: center;
       user-select: none;
       text-shadow: 0 0 5px #000;
-      margin-top: 0; /* Managed by 'main' gap */
+      margin-top: 0; /* Gerido pelo 'gap' do 'main' */
     }
     .content-section p {
-        margin-bottom: 0.8rem; /* Space between paragraphs, adjusted */
+        margin-bottom: 0.8rem; /* Espaço entre parágrafos, ajustado */
         margin-top: 0;
     }
     .content-section strong {
-        color: var(--neon-yellow); /* Highlights keywords with neon yellow */
+        color: var(--neon-yellow); /* Destaca palavras-chave com neon amarelo */
     }
 
-    /* Main titles with neon effect */
+    /* Títulos principais com efeito neon */
     .main-title-neon {
       color: var(--neon-yellow);
-      font-size: 1.8rem; /* Reduced from 2rem to 1.8rem */
+      font-size: 1.8rem; /* Reduzido de 2rem para 1.8rem */
       margin-top: 0;
       text-shadow:
         0 0 8px var(--neon-yellow),
         0 0 20px var(--neon-yellow),
         0 0 40px var(--neon-yellow),
         0 0 80px var(--neon-yellow);
-      animation: neonPulseYellow 2s infinite alternate; /* Applies neon animation */
+      animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
     }
     .subtitle-strong {
-        margin-top: 0.4rem; /* Adjusted */
-        font-size: 1.4rem; /* Reduced from 1.6rem to 1.4rem */
+        margin-top: 0.4rem; /* Ajustado */
+        font-size: 1.4rem; /* Reduzido de 1.6rem para 1.4rem */
         font-weight: bold;
     }
 
-    /* Language selection grid (similar to store buttons) */
+    /* Grelha de seleção de idiomas (semelhante aos botões de loja) */
     .language-grid {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1.5rem; /* Adjusted from 1.8rem to 1.5rem */
-        margin-top: 1.2rem; /* Adjusted */
+        gap: 1.5rem; /* Ajustado de 1.8rem para 1.5rem */
+        margin-top: 1.2rem; /* Ajustado */
         width: 100%;
-        max-width: 700px; /* Reduced from 800px to 700px */
+        max-width: 700px; /* Reduzido de 800px para 700px */
     }
 
     .language-grid a {
         display: flex;
-        flex-direction: column; /* Stacks flag and text */
-        justify-content: space-between; /* Spaces flag and text */
-        align-items: center; /* Centers items horizontally */
+        flex-direction: column; /* Empilha a bandeira e o texto */
+        justify-content: space-between; /* Espaça a bandeira e o texto */
+        align-items: center; /* Centraliza os itens horizontalmente */
         background: transparent;
         border: 2px solid transparent;
         border-radius: 15px;
-        width: 110px; /* Reduced from 120px to 110px */
-        height: 130px; /* Reduced from 140px to 130px */
+        width: 110px; /* Reduzido de 120px para 110px */
+        height: 130px; /* Reduzido de 140px para 130px */
         box-shadow: none;
         transition: all 0.3s ease;
         overflow: hidden;
         text-decoration: none;
         color: #fff;
         font-weight: bold;
-        font-size: 0.9rem; /* Reduced from 0.95rem to 0.9rem */
+        font-size: 0.9rem; /* Reduzido de 0.95rem para 0.9rem */
         padding: 0.7em;
         box-sizing: border-box;
     }
 
-    .language-grid a:not(.unavailable):hover { /* Apply hover only if not unavailable */
+    .language-grid a:not(.unavailable):hover { /* Aplica hover apenas se não estiver indisponível */
         background: rgba(249, 248, 113, 0.1);
         transform: scale(1.1);
         box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
@@ -205,7 +209,7 @@
 
     .language-grid a img {
         max-width: 100%;
-        max-height: 70px; /* Reduced from 80px to 70px */
+        max-height: 70px; /* Reduzido de 80px para 70px */
         width: auto;
         height: auto;
         object-fit: contain;
@@ -214,10 +218,6 @@
         transition: filter 0.3s ease;
         margin-bottom: 0.2em;
         flex-shrink: 0;
-    }
-
-    .language-grid a:not(.unavailable):hover img {
-        filter: brightness(1.2);
     }
 
     .language-grid a span {
@@ -229,14 +229,14 @@
         line-height: 1.2;
     }
 
-    /* Style for unavailable language buttons */
+    /* Estilo para botões de idioma indisponíveis */
     .language-grid a.unavailable {
         opacity: 0.5;
         cursor: default;
         pointer-events: none;
     }
 
-    /* Fixed footer */
+    /* Rodapé fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -251,7 +251,7 @@
       z-index: 100;
     }
 
-    /* Softer neon pink style */
+    /* Estilo neon rosa mais suave */
     .neon-pink-soft {
       color: var(--neon-pink-soft);
       text-shadow:
@@ -260,14 +260,14 @@
         0 0 40px var(--neon-pink-soft);
     }
 
-    /* Style for book title (font and pink color) */
+    /* Estilo para o título do livro (fonte e cor rosa) */
     .book-title-style {
       font-family: 'Monotype Corsiva', cursive;
       font-weight: normal;
       text-transform: uppercase;
     }
 
-    /* Style for book part (glowing white) */
+    /* Estilo para a parte do livro (branco aceso) */
     .book-part-white-glow {
       color: var(--neon-white);
       text-shadow:
@@ -276,7 +276,52 @@
         0 0 25px var(--neon-white);
     }
 
-    /* Style for the book part that is a separate block (smaller and uppercase) */
+    /* Novo estilo de brilho roxo neon */
+    .neon-purple-glow {
+        color: var(--neon-purple); /* Cor base mais escura */
+        text-shadow:
+          0 0 15px rgba(255, 0, 255, 0.8), /* Roxo claro, quase magenta, para o brilho interno */
+          0 0 30px rgba(180, 0, 180, 0.6), /* Roxo médio para o brilho intermédio */
+          0 0 50px var(--neon-purple), /* Cor base para o brilho externo */
+          0 0 80px var(--neon-purple); /* Mais da cor base para um halo maior */
+        animation: neonPulsePurple 1.6s infinite alternate; /* Animação para o pulso */
+    }
+
+    /* Nova animação de pulso para roxo neon */
+    @keyframes neonPulsePurple {
+      0% {
+        text-shadow:
+          0 0 10px rgba(255, 0, 255, 0.7),
+          0 0 25px rgba(180, 0, 180, 0.5),
+          0 0 45px var(--neon-purple),
+          0 0 70px var(--neon-purple);
+      }
+      100% {
+        text-shadow:
+          0 0 20px rgba(255, 0, 255, 1),
+          0 0 40px rgba(180, 0, 180, 0.8),
+          0 0 60px var(--neon-purple),
+          0 0 90px var(--neon-purple);
+      }
+    }
+
+    /* Estilo de brilho amarelo neon */
+    .neon-yellow-glow {
+      color: var(--neon-yellow);
+      text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow);
+    }
+
+    /* Estilo para a fonte Abaddon */
+    .abaddon-font-style {
+        font-family: 'Abaddon', sans-serif;
+        font-size: 1.6rem; /* Tamanho da fonte menor e legível */
+    }
+
+    /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
     .book-part-block-style {
         font-size: 1rem;
         font-weight: bold;
@@ -285,7 +330,7 @@
         margin: 0;
     }
 
-    /* Style for book cover */
+    /* Estilo para a capa do livro */
     .book-cover {
       max-width: 200px;
       height: auto;
@@ -306,16 +351,16 @@
         text-shadow:
             0 0 5px var(--neon-white),
             0 0 10px var(--neon-white);
-        margin: 0; /* Removed margin-top, managed by Flexbox */
+        margin-top: 1rem; /* Adicionado espaço acima */
     }
 
-    /* Style for book cover section (for Flexbox and symmetry) */
+    /* Estilo para a seção da capa do livro (para Flexbox e simetria) */
     .content-section.book-cover-section {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly; /* Distributes space evenly between and around items */
-        min-height: 500px; /* Reduced from 550px to 500px */
+        justify-content: space-evenly; /* Distribui o espaço uniformemente entre os itens e ao redor deles */
+        min-height: 550px; /* Aumentado para dar mais espaço */
         padding: 2rem 2.5rem;
         box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
         background: rgba(0,0,0,0.6);
@@ -325,38 +370,38 @@
         margin: 0 auto;
     }
 
-    /* Reset direct child margins for justify-content control */
+    /* Resetar margens dos filhos diretos para que justify-content controle */
     .content-section.book-cover-section > * {
         margin: 0;
         padding: 0;
     }
 
-    /* Grouping for title and "Part 1" for Flexbox */
+    /* Agrupamento de título e "Part 1" para Flexbox */
     .book-header-group {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0;
+        gap: 0.5rem; /* Controla o espaço entre o título e "Part 1" */
         padding: 0;
     }
     
-    /* Specific inner spacing for Part 1 within the group */
+    /* Espaçamento interno específico para Part 1 dentro do grupo */
     .book-header-group p.book-part-block-style {
-        margin-top: 0.5em;
+        margin-top: 0; /* Controlado pelo gap do pai */
     }
 
-    /* Responsiveness adjustments */
+    /* Ajustes de responsividade */
     @media (max-width: 768px) {
         .content-section {
-            font-size: 1.05rem; /* Reduced from 1.1rem to 1.05rem */
+            font-size: 1.05rem; /* Reduzido de 1.1rem para 1.05rem */
             padding: 1.5rem 1.8rem;
             max-width: 90%;
         }
         .main-title-neon {
-            font-size: 1.5rem; /* Reduced from 1.6rem to 1.5rem */
+            font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
         }
         .subtitle-strong {
-            font-size: 1.25rem; /* Reduced from 1.3rem to 1.25rem */
+            font-size: 1.25rem; /* Reduzido de 1.3rem para 1.25rem */
         }
         .language-grid {
             gap: 1.2rem;
@@ -406,24 +451,24 @@
         max-height: 50px;
       }
       .content-section {
-        font-size: 0.95rem; /* Reduced for very small screens */
+        font-size: 0.95rem; /* Reduzido para telas muito pequenas */
         padding: 1.2rem 1.5rem;
         max-width: 95%;
       }
       .main-title-neon {
-          font-size: 1.3rem; /* Reduced */
+          font-size: 1.3rem; /* Reduzido */
       }
       .subtitle-strong {
-          font-size: 1.05rem; /* Reduced */
+          font-size: 1.05rem; /* Reduzido */
       }
       .book-cover {
         max-width: 130px;
       }
       .coming-soon-text {
-        font-size: 0.85rem; /* Reduced */
+        font-size: 0.85rem; /* Reduzido */
       }
       .book-part-block-style {
-          font-size: 0.75rem; /* Reduced */
+          font-size: 0.75rem; /* Reduzido */
       }
       .content-section.book-cover-section {
           min-height: 300px;
@@ -435,77 +480,96 @@
 <body>
 
   <div class="background-animated" aria-hidden="true">
+    <!-- Fundo alterado de imagem para vídeo -->
     <video autoplay loop muted playsinline>
       <source src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      O seu navegador não suporta a tag de vídeo.
     </video>
   </div>
 
+  <!-- Note que os estilos de cor e fonte foram movidos para o CSS no <head> -->
   <header>
     Best Bibles Audiobooks
   </header>
 
   <main>
     <section class="content-section" aria-label="Project Introduction">
-      <h2 class="main-title-neon">📖 Welcome</h2> <p class="subtitle-strong">Welcome everyone to the official page of Best Bibles Audiobooks, an independent project created by T. S. Telles, author of Christian-themed fiction and fantasy.</p>
-      <p>This initiative was born from a simple yet bold mission:</p>
-      <ul>
-        <li>✅ To challenge the overpriced audio Bibles on the market — which often limit access to God’s Word through high costs and restrictive distribution.</li>
-        <li>✅ To reach people and countries where clear, high-quality Bibles are scarce or even censored.</li>
-        <li>✅ To use any profit exclusively for expanding production and distribution, aiming to make these Bibles freely available on as many platforms as possible, and without ads.</li>
-      </ul>
-      <p>By purchasing or streaming these Bibles, you directly help break barriers that keep many from hearing the Word of God in their own language, with clarity and dignity.</p>
-      <p style="font-style: italic; margin-top: 1.5em;">"Go ye into all the world, and preach the gospel to every creature." - Mark 16:15</p> </section>
+      <h2 class="main-title-neon">📖 Welcome</h2> <!-- Título da secção alterado para "Welcome" -->
+      <p class="subtitle-strong">🔥 Get your Bible — listen anytime, own it forever. 🔥</p>
+      <p>Welcome to the official page of Best Bibles Audiobooks, an independent work by T. S. Telles, author of Christian fiction and fantasy.</p>
+      <p>This project exists to make clear, uncut audio Bibles affordable and free of ads — for everyone, everywhere.</p>
+      <p>Stream free parts or buy the complete version to own it for life and support more languages.</p>
+      <p style="font-style: italic; margin-top: 1.5em;">"Go ye into all the world, and preach the gospel to every creature." - Mark 16:15</p> <!-- Versículo movido para o final e KJV removido -->
+    </section>
+
+    <section class="content-section" aria-label="Listen to God's Word">
+      <h2 class="main-title-neon">🎧 Listen to the Complete Word of God — Anytime, Anywhere!</h2>
+      <p class="subtitle-strong">High-quality audio Bibles in your language — no ads, no subscription, yours forever.</p>
+      <p class="subtitle-strong">👉 Choose your Bible below and start listening today!</p>
+    </section>
 
     <section class="content-section" aria-label="Why It Matters">
       <h2 class="main-title-neon">🌍 Why It Matters</h2>
-      <p class="subtitle-strong">Your support today fuels tomorrow’s freedom.</p>
-      <p>Every minute streamed, every Bible shared, every book read helps push this project closer to its ultimate goal: a world where no one is kept from the truth because of cost, censorship, or marketing agendas.</p>
-      <p>Thank you for being part of this mission. May these works bless you — and may you help them bless many more.</p>
+      <p class="subtitle-strong">Your purchase helps break barriers: more languages, more countries, more freedom to hear the Word.</p>
+      <p>Every Bible sold helps make the next one possible — with no ads and no big companies controlling it.</p>
+    </p>
     </section>
 
-    <section class="content-section" aria-label="Get Involved">
-      <h2 class="main-title-neon">📚 Get Involved</h2>
-      <p class="subtitle-strong">Explore by language below:</p>
+    <section class="content-section" aria-label="Explore by Language">
+      <h2 class="main-title-neon">📚 Explore by Language</h2>
+      <p class="subtitle-strong">Listen and own your Bible in your language — clear, ad-free, uncut.</p>
       <div class="language-grid">
         <a href="korean.html" aria-label="Korean Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea"><span>한국어 (Korean)</span></a>
         <a href="russian.html" aria-label="Russian Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia"><span>Русский (Russian)</span></a>
         <a href="chinese.html" aria-label="Chinese Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China"><span>中文 (Chinese)</span></a>
         <a href="french.html" aria-label="French Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France"><span>Français (French)</span></a>
-        <a href="german.html" aria-label="German Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany"><span>Deutsch (German)</span></a>
+        <a href="german.html" aria-label="German Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany"><span>Deutsch (German)</a>
         <a href="english.html" aria-label="English Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States"><span>English</span></a>
-        <a href="spanish.html" aria-label="Spanish Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"><span>Español (Spanish)</span></a>
+        <a href="spanish.html" aria-label="Spanish Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"><span>Español (Spanish)</a>
         <a href="arabic.html" aria-label="Arabic Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia"><span>العربية (Arabic)</span></a>
+        <!-- Novo botão Hindi (indisponível) -->
         <a class="unavailable" aria-label="Hindi Bible - Coming Soon">
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
           <span>हिन्दी (Hindi)</span>
         </a>
       </div>
       <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px;">
-        <li>✔️ Stream and share Bibles on Spotify, Storytel, Google Play, and more.</li>
-        <li>✔️ Read <span class="neon-pink-soft book-title-style">Welcome to New York</span> — <span class="book-part-white-glow">Part 1</span> on Amazon.</li>
-        <li>✔️ Spread the word — help us reach languages and countries still awaiting a clear, dignified audio Bible.</li>
+        <li>✔️ Stream parts for free on YouTube.</li>
+        <li>✔️ Get the full version on Spotify, Storytel, Google Play and more.</li>
+        <li>✔️ Share with family and help reach new languages.</li>
       </ul>
     </section>
 
-    <section class="content-section" aria-label="About the Adapter">
-      <h2 class="main-title-neon">✍️ About the Adapter</h2>
-      <p>T. S. Telles is not only dedicated to spreading the Bible in audio format — but is also the author of the novel <span class="neon-pink-soft book-title-style">Welcome to New York</span> — <span class="book-part-white-glow">Part 1</span>, now available on Amazon.</p>
-      <p>This story offers a romance shaped by Christian values and daily faith, free from gratuitous nudity or profanity, focusing instead on characters and plots that nurture the reader’s spiritual and moral well-being. There are no forced sermons here — just authentic storytelling that breathes truth and hope.</p>
-      <p><span class="neon-pink-soft book-title-style">Welcome to New York</span> — <span class="book-part-white-glow">Part 2</span> is already in progress and will be published independently — without agents, companies, or publishers — to ensure complete creative control and to protect the story’s spiritual essence from commercial dilution.</p>
+    <section class="content-section" aria-label="About T. S. Telles">
+      <h2 class="main-title-neon">✍️ About T. S. Telles</h2>
+      <p>T. S. Telles is also the author of Christian romance and epic fantasy. Her novel <span class="book-title-style"><span class="neon-pink-soft">Welcome </span><span class="book-part-white-glow">to</span> <span class="neon-yellow-glow">New York</span></span> — <span class="book-part-white-glow">Part 1</span> is available on Amazon — a clean, heartfelt story free from explicit content or crude language, focusing on deep characters, faith, and hope without forced sermons.</p>
+      <p>She is currently working on her next epic fantasy saga, <span class="neon-purple-glow abaddon-font-style">Axwar</span>: <span class="book-part-white-glow">The Power of Four Thrones</span>, which will bring readers an inspiring journey of courage and destiny. Coming soon.</p>
+      <p class="subtitle-strong"><a href="https://www.amazon.com/dp/B0BP3X6V81" style="text-decoration: none; transition: text-shadow 0.3s ease;">
+        <span class="book-part-white-glow">👉 Discover </span>
+        <span class="book-title-style">
+          <span class="neon-pink-soft">Welcome </span>
+          <span class="book-part-white-glow">to</span>
+          <span class="neon-yellow-glow"> New York</span>
+        </span>
+        <span class="book-part-white-glow"> here.</span>
+      </a></p>
     </section>
 
+    <!-- Nova seção para "Welcome to New York" com capa e "Coming Soon" -->
     <section class="content-section book-cover-section" aria-label="Welcome to New York Novel">
-      <div class="book-header-group"> <h2 class="main-title-neon"><span class="neon-pink-soft book-title-style">Welcome to New York</span></h2>
+      <div class="book-header-group"> <!-- Agrupamento para título e part 1 -->
+        <h2 class="main-title-neon"><span class="book-title-style"><span class="neon-pink-soft">Welcome </span><span class="book-part-white-glow">to</span> <span class="neon-yellow-glow">New York</span></span></h2>
         <p class="book-part-white-glow book-part-block-style">Part 1</p>
       </div>
-      <img src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Capa%20vol%2014.jpg" alt="Welcome to New York Book Cover" class="book-cover">
+      <img src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Capa%20vol%2014.jpg" alt="Capa do Livro Welcome to New York" class="book-cover">
       <p class="coming-soon-text">Coming Soon</p>
     </section>
 
   </main>
 
-  <footer>&copy; 2025 T S TELLES. All rights reserved.</footer>
+  <footer>
+    <p>&copy; 2025 T. S. TELLES. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
