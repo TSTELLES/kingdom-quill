@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Die Heilige Schrift – Lutherbibel</title>
+  <title>Die Heilige Schrift – Lutherbibel Hörbuch (Deutsch) | T. S. Telles</title>
+  <meta name="description" content="Hören Sie die komplette Lutherbibel als Hörbuch in deutscher Sprache. Klare Audioqualität, werbefrei und offline verfügbar. Erleben Sie die Heilige Schrift auf all Ihren Lieblingsplattformen." />
+  <meta name="keywords" content="Lutherbibel Hörbuch, Die Heilige Schrift Hörbuch, Bibel hören, deutsche Bibel Audio, Lutherbibel, Bibel offline, christliches Hörbuch, Gottes Wort, Altes Testament, Neues Testament" />
   <style>
     /* Reset e base */
     body {
@@ -141,6 +143,7 @@
         align-items: center;
         gap: 1.5rem;
         max-width: 700px; /* Ajusta largura máxima para o contêiner de botões */
+        margin: 0 auto; /* Centraliza a seção dentro do contêiner */
     }
 
     .testament-section h2 {
@@ -163,9 +166,12 @@
       font-size: 1.4rem;
       line-height: 1.5;
       max-width: 720px;
+      margin: 0 auto; /* Adicionado para centralizar explicitamente */
       text-align: center;
       user-select: none;
       text-shadow: 0 0 5px #000;
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
     /* Estilo para o novo título principal com efeito neon */
     .main-title-neon {
@@ -193,6 +199,7 @@
         font-weight: bold;
         text-shadow: 0 0 5px #f9f871;
         margin-bottom: 0;
+        text-align: center; /* Centraliza o texto dentro do título */
     }
 
     /* Faixa de amostra com player estiloso */
@@ -207,8 +214,10 @@
       justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
       gap: 2rem; /* Espaçamento entre os itens */
       max-width: 700px;
+      margin: 3rem auto 0 auto; /* Ajustado para centralizar explicitamente, mantendo o margin-top */
       user-select: none;
-      margin-top: 3rem; /* Espaço acima desta seção */
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
 
     /* Zera margens individuais para deixar o gap e padding da sample-section controlarem o espaçamento */
@@ -312,10 +321,12 @@
         font-size: 1.4rem;
         line-height: 1.5;
         max-width: 720px;
+        margin: 3rem auto 0 auto; /* Ajustado para centralizar explicitamente, mantendo o margin-top */
         text-align: center;
         user-select: none;
         text-shadow: 0 0 5px #000;
-        margin-top: 3rem; /* Espaço acima desta seção */
+        width: 100%; /* Garante que ocupe a largura máxima permitida */
+        box-sizing: border-box; /* Inclui padding na largura */
     }
     .call-to-action-section p {
         margin-bottom: 1rem; /* Espaço entre parágrafos */
@@ -350,6 +361,7 @@
         .testament-section {
             width: 90%;
             max-width: 500px;
+            margin: 0 auto; /* Adicionado para centralizar explicitamente */
         }
         .player-title {
             font-size: 1.3rem;
@@ -464,7 +476,7 @@
 
     <div class="testament-container">
         <section class="testament-section" aria-label="Kaufoptionen für das Hörbuch">
-            <h2>Die Bibel</h2>
+            <h2 class="main-title-neon">Die Bibel</h2>
             <p>Erleben Sie die tiefgründige Weisheit und die göttlichen Lehren der Bibel.</p>
             <nav class="buttons" aria-label="Kaufoptionen">
                 <a href="https://libro.fm/audiobooks/9798318074318" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
