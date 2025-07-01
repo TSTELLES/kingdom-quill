@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>圣经完整版（无删减版）- 中文简体</title> <style>
+  <title>圣经有声完整版 (和合本) - 中文简体 | T. S. Telles</title>
+  <meta name="description" content="收听圣经有声完整版（和合本），中文简体。清晰旁白，无广告，支持离线播放和息屏模式。随时随地体验神的话语，加深信仰生活。" />
+  <meta name="keywords" content="圣经有声书, 中文圣经, 圣经完整版, 圣经朗读, 圣经音频, 和合本, 离线圣经, 无广告, 神的话语, 基督教" />
+  <style>
     /* Reset e base */
     body {
       margin: 0;
@@ -140,6 +143,7 @@
         align-items: center;
         gap: 1.5rem;
         max-width: 700px; /* Ajusta largura máxima para o contêiner de botões */
+        margin: 0 auto; /* Centraliza a seção dentro do contêiner */
     }
     
     .testament-section h2 {
@@ -162,9 +166,12 @@
       font-size: 1.4rem;
       line-height: 1.5;
       max-width: 720px;
+      margin: 0 auto; /* Adicionado para centralizar explicitamente */
       text-align: center;
       user-select: none;
       text-shadow: 0 0 5px #000;
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
     /* Estilo para o novo título principal com efeito neon */
     .main-title-neon {
@@ -192,6 +199,7 @@
         font-weight: bold;
         text-shadow: 0 0 5px #f9f871;
         margin-bottom: 0;
+        text-align: center; /* Centraliza o texto dentro do título */
     }
 
     /* Faixa de amostra com player estiloso */
@@ -206,8 +214,10 @@
       justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
       gap: 2rem; /* Espaçamento entre os itens */
       max-width: 700px;
+      margin: 3rem auto 0 auto; /* Ajustado para centralizar explicitamente, mantendo o margin-top */
       user-select: none;
-      margin-top: 3rem; /* Espaço acima desta seção */
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
 
     /* Zera margens individuais para deixar o gap e padding da sample-section controlarem o espaçamento */
@@ -310,10 +320,12 @@
         font-size: 1.4rem;
         line-height: 1.5;
         max-width: 720px;
+        margin: 3rem auto 0 auto; /* Ajustado para centralizar explicitamente, mantendo o margin-top */
         text-align: center;
         user-select: none;
         text-shadow: 0 0 5px #000;
-        margin-top: 3rem; /* Espaço acima desta seção */
+        width: 100%; /* Garante que ocupe a largura máxima permitida */
+        box-sizing: border-box; /* Inclui padding na largura */
     }
     .call-to-action-section p {
         margin-bottom: 1rem; /* Espaço entre parágrafos */
@@ -348,6 +360,7 @@
         .testament-section {
             width: 90%;
             max-width: 500px;
+            margin: 0 auto; /* Adicionado para centralizar explicitamente */
         }
         .player-title {
             font-size: 1.3rem;
@@ -432,16 +445,24 @@
   </style>
 </head>
 <body>
-  <header>圣经完整版（无删减版）- 中文简体</header> <section class="flags-row" aria-label="国旗">
+  <header>圣经完整版（无删减版）- 中文简体</header>
+  <section class="flags-row" aria-label="国旗">
     <div class="flag china" role="img" aria-label="中国国旗"></div>
   </section>
 
   <main>
     <section class="arguments" aria-label="有声书的益处">
-      <h2 class="main-title-neon">圣经有声完整版 – 清晰旁白，无广告!</h2> <p class="subtitle-strong">享受离线播放、无广告收听和息屏模式。</p> </section>
+      <h2 class="main-title-neon">圣经有声完整版 – 清晰旁白，无广告!</h2>
+      <p class="subtitle-strong">享受离线播放、无广告收听和息屏模式。</p>
+      您可以在任何时间、任何地点，以清晰的音频质量聆听圣经。<br />
+      体验深刻的恩典与平安，找到内心的宁静。<br />
+      即使日程繁忙，也能轻松接触到神的话语。<br />
+      与家人一同丰富您的信仰生活。
+    </section>
 
     <section class="sample-section" aria-label="音频样本">
-      <h3 class="player-title">立即收听 – 点击播放样本</h3> <button class="play-button" aria-label="播放/暂停样本" id="playPauseBtn" type="button">
+      <h3 class="player-title">立即收听 – 点击播放样本</h3>
+      <button class="play-button" aria-label="播放/暂停样本" id="playPauseBtn" type="button">
         <div class="play-icon" id="playIcon"></div>
       </button>
       <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Retail-Sample-chinese.MP3"></audio>
@@ -454,7 +475,9 @@
 
     <div class="testament-container">
         <section class="testament-section" aria-label="有声圣经购买选项">
-            <h2>圣经</h2> <p>体验圣经的深刻智慧与神圣教导。</p> <nav class="buttons" aria-label="购买选项">
+            <h2 class="main-title-neon">圣经</h2>
+            <p>体验圣经的深刻智慧与神圣教导。</p>
+            <nav class="buttons" aria-label="购买选项">
                 <a href="https://libro.fm/audiobooks/9798318254833" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
                 <a href="https://www.kobo.com/us/en/audiobook/Uo3Y7SSXsTOsmVbv2W64_w" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
                 <a href="https://play.google.com/store/audiobooks/details/VA_%E5%9C%A3%E7%BB%8F%E5%AE%8C%E6%95%B4%E7%89%88_%E6%97%A0%E5%88%A0%E5%87%8F%E7%89%88_%E4%B8%AD%E6%96%87%E7%AE%80%E4%BD%93?id=AQAAAEDKwmuCsM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
