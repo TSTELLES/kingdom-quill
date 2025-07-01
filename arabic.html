@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>الكتاب المقدس</title> <style>
+  <title>الكتاب المقدس الصوتي الكامل (العربية) | T. S. Telles</title>
+  <meta name="description" content="استمع إلى الكتاب المقدس كاملاً في اللغة العربية. جودة صوت واضحة، بدون إعلانات، ودعم التشغيل دون اتصال بالإنترنت. اختبر كلمة الله في أي وقت ومكان." />
+  <meta name="keywords" content="الكتاب المقدس مسموع, الكتاب المقدس الصوتي, الإنجيل المسموع, الكتاب المقدس, الإنجيل, العهد القديم, العهد الجديد, المسيحية, مسيحي, كلمة الله, استمع إلى الكتاب المقدس, بدون إعلانات, تشغيل دون اتصال بالإنترنت" />
+  <style>
     /* Reset e base */
     body {
       margin: 0;
@@ -149,6 +152,7 @@
         align-items: center; /* Ainda centraliza os elementos internos horizontalmente */
         gap: 1.5rem;
         max-width: 700px;
+        margin: 0 auto; /* Centraliza a seção dentro do contêiner */
     }
     
     .testament-section h2 {
@@ -171,9 +175,12 @@
       font-size: 1.4rem;
       line-height: 1.5;
       max-width: 720px;
+      margin: 0 auto; /* Adicionado para centralizar explicitamente */
       text-align: right; /* Mantém o alinhamento RTL */
       user-select: none;
       text-shadow: 0 0 5px #000;
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
     /* Estilo para o novo título principal com efeito neon */
     .main-title-neon {
@@ -201,6 +208,7 @@
         font-weight: bold;
         text-shadow: 0 0 5px #f9f871;
         margin-bottom: 0; /* Zera a margem de baixo do título */
+        text-align: right; /* Mantém alinhamento RTL */
     }
 
     /* Faixa de amostra com player estiloso */
@@ -216,8 +224,10 @@
       padding-top: 2.5rem; /* Mais padding em cima */
       padding-bottom: 2.5rem; /* Mais padding embaixo */
       max-width: 700px;
+      margin: 3rem auto 0 auto; /* Ajustado para centralizar explicitamente, mantendo o margin-top */
       user-select: none;
-      margin-top: 3rem; /* Espaço acima desta seção */
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
       gap: 2rem; /* AJUSTADO O GAP PARA UM POUCO MENOS DE ESPAÇAMENTO */
     }
 
@@ -329,10 +339,12 @@
         font-size: 1.4rem;
         line-height: 1.5;
         max-width: 720px;
+        margin: 3rem auto 0 auto; /* Ajustado para centralizar explicitamente, mantendo o margin-top */
         text-align: right; /* Mantém alinhamento RTL */
         user-select: none;
         text-shadow: 0 0 5px #000;
-        margin-top: 3rem; /* Espaço acima desta seção */
+        width: 100%; /* Garante que ocupe a largura máxima permitida */
+        box-sizing: border-box; /* Inclui padding na largura */
     }
     .call-to-action-section p {
         margin-bottom: 1rem; /* Espaço entre parágrafos */
@@ -367,6 +379,7 @@
         .testament-section {
             width: 90%;
             max-width: 500px;
+            margin: 0 auto; /* Adicionado para centralizar explicitamente */
         }
         .player-title {
             font-size: 1.3rem;
@@ -463,6 +476,10 @@
     <section class="arguments" aria-label="فوائد الكتاب الصوتي">
       <h2 class="main-title-neon">الكتاب المقدس كاملاً صوتياً</h2>
       <p class="subtitle-strong">سرد واضح تماماً، وبدون إعلانات!</p>
+      يمكنك الاستماع إلى كلمة الله بجودة صوت واضحة، في أي وقت ومكان.<br />
+      اختبر نعمة عميقة وسلامًا، واجد راحة البال.<br />
+      يمكنك الوصول بسهولة إلى كلمة الله حتى في جدولك المزدحم.<br />
+      أثرِ حياتك الإيمانية مع عائلتك.
     </section>
 
     <section class="sample-section" aria-label="عينة صوتية">
@@ -480,7 +497,7 @@
 
     <div class="testament-container">
         <section class="testament-section" aria-label="الكتاب المقدس الصوتي">
-            <h2>الكتاب المقدس</h2>
+            <h2 class="main-title-neon">الكتاب المقدس</h2>
             <p>اختبر الحكمة العميقة والتعاليم الإلهية للكتاب المقدس كاملاً.</p>
             <nav class="buttons" aria-label="خيارات شراء الكتاب المقدس">
                 <a href="https://www.kobo.com/us/en/audiobook/oIWni2T0zjy1HdIu-_8BEg" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
