@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>성경</title>
+  <title>성경 오디오북 - 한국어 개역한글 버전 | T. S. Telles</title>
+  <meta name="description" content="한국어 개역한글 성경 오디오북 전체를 들어보세요. 깨끗한 음질, 광고 없이, 오프라인 재생 가능. 즐겨찾는 모든 플랫폼에서 이용 가능합니다." />
+  <meta name="keywords" content="성경 오디오북, 한국어 성경, 오디오 성경, 성경 낭독, 개역한글, 성경 듣기, 오프라인 성경, 기독교 오디오북, 하나님의 말씀, 구약, 신약" />
   <style>
     /* Reset e base */
     body {
@@ -128,9 +130,12 @@
       font-size: 1.4rem;
       line-height: 1.5;
       max-width: 720px;
+      margin: 0 auto; /* Centraliza a seção */
       text-align: center; /* **CENTRALIZA O TEXTO DENTRO DESTA SEÇÃO** */
       user-select: none;
       text-shadow: 0 0 5px #000;
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
     /* Estilo para o novo título principal com efeito neon */
     .main-title-neon {
@@ -158,6 +163,7 @@
         font-weight: bold;
         text-shadow: 0 0 5px #f9f871;
         margin-bottom: 0;
+        text-align: center; /* Centraliza o texto dentro do título */
     }
 
     /* Faixa de amostra com player estiloso */
@@ -173,7 +179,9 @@
       gap: 2rem; /* Espaçamento entre os itens */
       max-width: 700px;
       user-select: none;
-      margin-top: 3rem; /* Espaço acima desta seção */
+      margin: 3rem auto 0 auto; /* Espaço acima desta seção e centraliza */
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
 
     /* Zera margens individuais para deixar o gap e padding da sample-section controlarem o espaçamento */
@@ -220,6 +228,47 @@
       margin-left: 3px;
     }
 
+    /* Container para os testamentos (agora uma seção única para a Bíblia) */
+    .testament-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem; /* Ajuste para o espaço entre os logos */
+        width: 100%;
+        margin-top: 3rem; /* Espaço entre argumentos e contêiner principal */
+    }
+
+    .testament-section { /* Reutilizado como contêiner para os botões das lojas */
+        flex: 1;
+        min-width: 300px;
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        text-align: center;
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        max-width: 700px; /* Ajusta largura máxima para o contêiner de botões */
+        margin: 0 auto; /* Centraliza a seção dentro do contêiner */
+    }
+
+    .testament-section h2 {
+        color: #f9f871;
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        text-shadow:
+            0 0 5px #f9f871,
+            0 0 15px #f9f871;
+    }
+
     /* Botões das lojas - Agora para as IMAGENS dos logos */
     .testament-section .buttons {
       display: flex;
@@ -256,7 +305,7 @@
     .testament-section .buttons a img {
       width: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
       height: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
-      object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+      object-fit: contain; /* Garante que a imagem se ajuste sin cortar */
       max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner */
       max-height: 100%; /* Impede que a imagem ultrapasse a altura do contêiner */
       filter: brightness(0.9); /* Leve escurecimento para se integrar melhor */
@@ -277,10 +326,12 @@
         font-size: 1.4rem;
         line-height: 1.5;
         max-width: 720px;
+        margin: 3rem auto 0 auto; /* Ajustado para centralizar explicitamente, mantendo o margin-top */
         text-align: center;
         user-select: none;
         text-shadow: 0 0 5px #000;
-        margin-top: 3rem; /* Espaço acima desta seção */
+        width: 100%; /* Garante que ocupe a largura máxima permitida */
+        box-sizing: border-box; /* Inclui padding na largura */
     }
     .call-to-action-section p {
         margin-bottom: 1rem; /* Espaço entre parágrafos */
@@ -315,6 +366,7 @@
         .testament-section {
             width: 90%;
             max-width: 500px;
+            margin: 0 auto; /* Adicionado para centralizar explicitamente */
         }
         .player-title {
             font-size: 1.3rem;
