@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Holy Bible New Testament Audiobook - Listen Ad-Free | T. S. Telles</title>
-  <meta name="description" content="Listen to the complete Holy Bible New Testament audiobook. Enjoy crystal-clear narration, ad-free listening, and offline playback. Available on all your favorite platforms." />
-  <meta name="keywords" content="Holy Bible, New Testament, audiobook, audio Bible, English Bible, listen Bible, ad-free, offline, Christian audiobook, Bible study, King James Version, KJV" />
+  <title>Holy Bible Audiobook - Listen Ad-Free | T. S. Telles</title>
+  <meta name="description" content="Listen to the Holy Bible audiobook (Old and New Testaments). Enjoy crystal-clear narration, ad-free listening, and offline playback. Available on all your favorite platforms." />
+  <meta name="keywords" content="Holy Bible, Old Testament, New Testament, Bible audiobook, audio Bible, English Bible, listen Bible, ad-free, offline, Christian audiobook, Bible study, King James Version, KJV, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible, Welcome to New York T. S. Telles, Axwar fantasy T. S. Telles" />
   <style>
     /* Reset e base */
     body {
@@ -114,35 +114,35 @@
       100% {opacity: 0.4;}
     }
 
-    /* Container para os testamentos lado a lado (agora apenas um) */
+    /* Container para os testamentos lado a lado (agora dois) */
     .testament-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Permite que as colunas quebrem para a próxima linha em telas menores */
         justify-content: center;
-        gap: 1.5rem; /* Ajuste para o espaço entre os logos */
+        gap: 2.5rem; /* Espaçamento entre as duas seções de testamento */
         width: 100%;
         margin-top: 3rem; /* Espaço entre argumentos e testamentos */
     }
 
     .testament-section { /* Esta seção agora é mais um contêiner para os logos */
-        flex: 1;
-        min-width: 300px; /* Mantém uma largura mínima para o contêiner geral do NT */
-        background: rgba(0,0,0,0.6);
-        padding: 2rem 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-        font-weight: 600;
-        font-size: 1.2rem;
-        line-height: 1.5;
-        text-align: center;
-        user-select: none;
-        text-shadow: 0 0 5px #000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        max-width: 700px;
-        margin: 0 auto; /* Centraliza a seção dentro do contêiner */
+      flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis. Permite que ocupem cerca de 45% cada */
+      min-width: 300px; /* Mantém uma largura mínima para cada seção */
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 500px; /* Limita a largura máxima para cada coluna */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
     
     .testament-section h2 {
@@ -365,7 +365,7 @@
     /* Responsividade básica */
     @media (max-width: 768px) {
         .testament-container {
-            flex-direction: column;
+            flex-direction: column; /* Em telas menores, as seções empilham */
             align-items: center;
             gap: 2rem;
         }
@@ -457,7 +457,7 @@
   </style>
 </head>
 <body>
-  <header>Holy Bible - New Testament</header>
+  <header>Holy Bible Audiobook</header>
 
   <section class="flags-row" aria-label="Flag of the United States">
     <div class="flag usa" role="img" aria-label="United States flag"></div>
@@ -465,7 +465,7 @@
 
   <main>
     <section class="arguments" aria-label="Benefits of the Audio Bible">
-      <h2 class="main-title-neon">Complete New Testament in Audio</h2>
+      <h2 class="main-title-neon">Holy Bible in Audio</h2>
       <p class="subtitle-strong">Crystal-Clear Narration, Ad-Free!</p>
     </section>
 
@@ -480,22 +480,35 @@
     <section class="call-to-action-section" aria-label="Audio Bible Features and Call to Action">
         <p>🎧 Enjoy offline playback, ad-free listening, and screen-off mode.</p>
         <p>Your support helps us create new translations and maintain quality recordings.</p>
-        <p>👉 <strong>Ready?</strong> Start listening to the <strong>full New Testament</strong> in audio now – available on all your favorite platforms!</p>
+        <p>👉 <strong>Ready?</strong> Start listening to the <strong>Holy Bible</strong> in audio now – available on all your favorite platforms!</p>
     </section>
 
     <div class="testament-container">
+        <section class="testament-section" aria-label="Old Testament Audio Bible">
+          <h2>Old Testament</h2>
+          <p>Delve into the rich history and prophetic narratives of the Old Testament.</p>
+          <nav class="buttons" aria-label="Old Testament purchase options">
+            <a href="https://libro.fm/audiobooks/9798318030246" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
+            <a href="https://www.barnesandnoble.com/w/holy-bible-old-testament-va/1147367701?ean=2940195476793" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://cdn.freebiesupply.com/logos/large/2x/barnes-noble-01-logo-png-transparent.png" alt="Barnes & Noble Logo"></a>
+            <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_Old_Testament?id=AQAAEDKW3QbrM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+            <a href="https://www.kobo.com/us/en/audiobook/holy-bible-old-testament-2" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+            <a href="https://www.storytel.com/se/sv/books/holy-bible-old-testament-king-james-version-11696747" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://serieliv.no/content/uploads/2016/02/Storytel-logo.png" alt="Storytel Logo"></a>
+            <a href="https://open.spotify.com/show/5bUWnJepK7Hyo6pNwCGwI6?si=csv2ivWHSau64nBgUhvJXw" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+          </nav>
+        </section>
+
         <section class="testament-section" aria-label="New Testament Audio Bible">
-            <h2>New Testament</h2>
-            <p>Experience the profound wisdom and divine teachings of the New Testament.</p>
-            <nav class="buttons" aria-label="New Testament purchase options">
-                <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
-                <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://cdn.freebiesupply.com/logos/large/2x/barnes-noble-01-logo-png-transparent.png" alt="Barnes & Noble Logo"></a>
-                <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
-                <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
-                <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-11174096" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://serieliv.no/content/uploads/2016/02/Storytel-logo.png" alt="Storytel Logo"></a>
-                <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
-                <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer" aria-label="Apple Books"><img src="https://img.icons8.com/fluent/512/ibooks.png" alt="Apple Books Logo"></a>
-            </nav>
+          <h2>New Testament</h2>
+          <p>Experience the profound wisdom and divine teachings of the New Testament.</p>
+          <nav class="buttons" aria-label="New Testament purchase options">
+            <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
+            <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://cdn.freebiesupply.com/logos/large/2x/barnes-noble-01-logo-png-transparent.png" alt="Barnes & Noble Logo"></a>
+            <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+            <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+            <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-11174096" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://serieliv.no/content/uploads/2016/02/Storytel-logo.png" alt="Storytel Logo"></a>
+            <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+            <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer" aria-label="Apple Books"><img src="https://img.icons8.com/fluent/512/ibooks.png" alt="Apple Books Logo"></a>
+          </nav>
         </section>
     </div>
 
