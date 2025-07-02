@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Best Bibles Audiobooks</title> <!-- Título da página atualizado -->
   <!-- Meta tag para palavras-chave de SEO -->
-  <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Hindi Bible, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible, Welcome to New York T. S. Telles, Axwar fantasy T. S. Telles">
+  <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Hindi Bible, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW455H9ND7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FW455H9ND7');
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <!-- Abaddon Font from CDNFonts.com -->
   <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
@@ -89,7 +98,7 @@
       animation: neonPulseLightGreen 2s infinite alternate; /* Animação para o verde */
       user-select: none;
       letter-spacing: 0.05em;
-      z-index: 100; /* Garante que o cabeçalho esteja no topo */
+      z-index: 100;
     }
 
     /* Nova animação de pulso para verde claro */
@@ -373,7 +382,7 @@
       box-shadow: 0 0 20px rgba(249, 248, 113, 0.5); /* Brilho exterior amarelo */
       transition: all 0.3s ease;
       user-select: none;
-      letter-spacing: 0.05em; /* Ligeiramente mais espaçado */
+      letter-spacing: 0.05em;
       cursor: pointer; /* Indicar interatividade */
     }
 
@@ -584,29 +593,28 @@
     <section class="content-section" aria-label="Why It Matters">
       <h2 class="main-title-neon">🌍 Why It Matters</h2>
       <p class="subtitle-strong">Your purchase helps break barriers: more languages, more countries, more freedom to hear the Word.</p>
-      <p>Every Bible sold helps make the next one possible — with no ads and no big companies controlando-o.</p>
-    </p>
+      <p>Every Bible sold helps make the next one possible — with no ads and no big companies controlling it.</p>
     </section>
 
     <section class="content-section" aria-label="Explore by Language">
       <h2 class="main-title-neon">📚 Explore by Language</h2>
       <p class="subtitle-strong">Listen and own your Bible in your language — clear, ad-free, uncut.</p>
       <div class="language-grid">
-        <a href="korean.html" aria-label="Korean Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea"><span>한국어 (Korean)</span></a>
-        <a href="russian.html" aria-label="Russian Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia"><span>Русский (Russian)</span></a>
-        <a href="chinese.html" aria-label="Chinese Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China"><span>中文 (Chinese)</span></a>
-        <a href="french.html" aria-label="French Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France"><span>Français (French)</a>
-        <a href="german.html" aria-label="German Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany"><span>Deutsch (German)</a>
-        <a href="english.html" aria-label="English Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States"><span>English</span></a>
-        <a href="spanish.html" aria-label="Spanish Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"><span>Español (Spanish)</a>
-        <a href="arabic.html" aria-label="Arabic Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia"><span>العربية (Arabic)</span></a>
+        <a href="korean.html" aria-label="Korean Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Korean Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea"><span>한국어 (Korean)</span></a>
+        <a href="russian.html" aria-label="Russian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Russian Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia"><span>Русский (Russian)</span></a>
+        <a href="chinese.html" aria-label="Chinese Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Chinese Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China"><span>中文 (Chinese)</span></a>
+        <a href="french.html" aria-label="French Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'French Bible' });"><span>Français (French)</span></a>
+        <a href="german.html" aria-label="German Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'German Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany"><span>Deutsch (German)</span></a>
+        <a href="english.html" aria-label="English Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'English Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States"><span>English</span></a>
+        <a href="spanish.html" aria-label="Spanish Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Spanish Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"><span>Español (Spanish)</span></a>
+        <a href="arabic.html" aria-label="Arabic Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Arabic Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia"><span>العربية (Arabic)</span></a>
         <!-- Novo botão Italiano -->
-        <a href="italian.html" aria-label="Italian Bible">
+        <a href="italian.html" aria-label="Italian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Italian Bible' });">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Flag of Italy">
           <span>Italiano (Italian)</span>
         </a>
         <!-- Novo botão Hindi (indisponível) -->
-        <a class="unavailable" aria-label="Hindi Bible - Coming Soon">
+        <a class="unavailable" aria-label="Hindi Bible - Coming Soon" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Hindi Bible - Unavailable' });">
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
           <span>हिन्दी (Hindi)</span>
         </a>
@@ -642,7 +650,7 @@
       <!-- Contêiner para o botão e as mãozinhas -->
       <div class="button-with-hands">
         <span class="hand-emoji">👉</span> <!-- Mão invertida -->
-        <a href="welcome-to-ny.html" class="neon-button"><span class="neon-button-text-pink">Here</span></a> <!-- Texto do botão alterado para "Here" com span para cor -->
+        <a href="welcome-to-ny.html" class="neon-button" onclick="gtag('event', 'click', { 'event_category': 'Book Link', 'event_label': 'Welcome to New York' });"><span class="neon-button-text-pink">Here</span></a> <!-- Texto do botão alterado para "Here" com span para cor -->
         <span class="hand-emoji">👈</span> <!-- Mão invertida -->
       </div>
     </section>
