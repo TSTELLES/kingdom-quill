@@ -135,7 +135,7 @@
             align-items: center; /* Centraliza os itens horizontalmente */
             padding-top: 11.5em; /* Ajustado para dar espaço ao cabeçalho maior */
             padding-bottom: 2rem;
-            gap: 6rem; /* AUMENTADO O ESPAÇAMENTO ENTRE AS SEÇÕES */
+            /* Removido o 'gap' da main para controlar o espaçamento via margin-bottom das seções */
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
@@ -158,7 +158,14 @@
             text-align: center; /* Centraliza o texto dentro da seção */
             user-select: none;
             text-shadow: 0 0 5px #000;
-            margin: 0 auto; /* Centraliza a seção horizontalmente */
+            margin: 0 auto 6rem; /* Centraliza a seção horizontalmente e define o espaçamento padrão */
+        }
+        /* Aumenta o espaçamento superior para seções específicas */
+        .content-section.section-extra-spacing {
+            margin-top: 4rem; /* Adiciona um espaçamento extra acima dessas seções */
+        }
+        .content-section:last-child {
+            margin-bottom: 0; /* Remove margin-bottom da última seção para evitar espaço extra no final */
         }
         .content-section p {
             margin-bottom: 0.8rem; /* Espaço entre parágrafos, ajustado */
@@ -547,6 +554,7 @@
                 font-size: 1.05rem; /* Reduzido de 1.1rem para 1.05rem */
                 padding: 1.5rem 1.8rem;
                 max-width: 90%;
+                margin-bottom: 3rem; /* Ajuste responsivo do margin-bottom */
             }
             .main-title-neon {
                 font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
@@ -610,6 +618,7 @@
                 font-size: 0.95rem; /* Reduced for very small screens */
                 padding: 1.2rem 1.5rem;
                 max-width: 95%;
+                margin-bottom: 2rem; /* Ajuste responsivo do margin-bottom */
             }
             .main-title-neon {
                 font-size: 1.3rem; /* Reduced */
@@ -738,14 +747,14 @@
         </section>
 
         <!-- 5) About the Series -->
-        <section class="content-section">
+        <section class="content-section section-extra-spacing">
             <h2 class="main-title-neon">A Legacy in New York: A Saga in Parts</h2>
             <p><em>Born Ricciwood</em> is just the first volume in the thrilling <strong>A Legacy in New York</strong> series. This developing saga promises to unveil even more secrets, passions, and twists in the lives of Gabriel and those around him.</p>
             <p>Prepare for a literary journey that deepens with each book. Each part reveals deeper secrets, until the untold past comes to light, shaping everyone's destiny.</p>
         </section>
 
         <!-- 6) Who This Book Is For -->
-        <section class="content-section">
+        <section class="content-section section-extra-spacing">
             <h2 class="main-title-neon">Who This Book Is For</h2>
             <ul>
                 <li>For those who love purposeful romances and heartwarming stories.</li>
@@ -756,14 +765,14 @@
         </section>
 
         <!-- 7) Formats and Extras -->
-        <section class="content-section">
+        <section class="content-section section-extra-spacing">
             <h2 class="main-title-neon">Formats and Extras</h2>
             <p><em>Welcome to New York: Born Ricciwood</em> is available on <strong>Kindle</strong> for you to read anywhere. The <strong>Audiobook</strong> version is coming soon, perfect for listening at a TV series pace, immersed in the New York atmosphere.</p>
             <!-- Removed paragraph and "Sign up for News" button -->
         </section>
 
         <!-- 8) Testimonials and Social Proof -->
-        <section class="content-section testimonials">
+        <section class="content-section testimonials section-extra-spacing">
             <h2 class="main-title-neon">What Our First Readers Say</h2>
             <div class="testimonial">
                 <p>
@@ -783,7 +792,7 @@
         </section>
 
         <!-- 9) Frequently Asked Questions (FAQ) -->
-        <section class="content-section faq">
+        <section class="content-section faq section-extra-spacing">
             <h2 class="main-title-neon">Frequently Asked Questions</h2>
             <ul>
                 <li><strong>Is this the only book?</strong> — No! <em>Born Ricciwood</em> is the first volume in the <strong>A Legacy in New York</strong> series. The saga is under development, and more books are coming!</li>
@@ -794,7 +803,7 @@
         </section>
 
         <!-- 10) Final Call to Action (Golden Close) -->
-        <section class="content-section">
+        <section class="content-section section-extra-spacing">
             <h2 class="main-title-neon">Don't Miss This Story!</h2>
             <p class="subtitle-strong">“Gabriel Ricciwood awaits you.</p>
             <p class="subtitle-strong">Discover the legacy.</p>
