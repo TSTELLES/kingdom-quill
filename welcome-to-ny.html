@@ -171,13 +171,19 @@
             list-style: none;
             padding: 0;
             margin: 1em auto; /* Centraliza a lista horizontalmente */
-            text-align: left; /* Mantém o texto alinhado à esquerda dentro dos itens */
             width: fit-content; /* Faz a lista ocupar apenas a largura necessária */
+            /* Removido text-align: left; para centralizar o conteúdo da lista */
+        }
+        .content-section ul li {
+            margin-bottom: 0.5em;
+            position: relative;
+            padding-left: 1.5em;
+            text-align: center; /* Centraliza o texto dentro de cada item da lista */
         }
         .content-section ul li::before {
             content: '✨'; /* Bullet point de estrela */
             position: absolute;
-            left: 0;
+            left: 0; /* Mantém o bullet point à esquerda */
             color: var(--neon-yellow);
         }
         .content-section.author-note {
@@ -388,16 +394,16 @@
         }
 
         .audio-player-icon {
-            font-size: 1.0em; /* Tamanho ajustado para ser menor e mais bonito */
+            font-size: 0.8em; /* Tamanho ajustado para ser menor e mais bonito */
             color: var(--neon-yellow);
             text-shadow:
-                0 0 3px var(--neon-yellow), /* Brilho mais suave */
-                0 0 8px var(--neon-yellow),
-                0 0 15px var(--neon-yellow); /* Brilho ajustado para mais intensidade */
+                0 0 2px var(--neon-yellow), /* Brilho mais suave */
+                0 0 6px var(--neon-yellow),
+                0 0 10px var(--neon-yellow); /* Brilho ajustado para mais intensidade */
             transition: all 0.3s ease;
-            padding: 0.5em; /* Aumentar o preenchimento para um "botão" mais visível */
+            padding: 0.6em; /* Aumentar o preenchimento para um "botão" mais visível */
             border-radius: 50%; /* Mantém circular */
-            box-shadow: 0 0 5px var(--neon-yellow); /* Sombra mais suave para o próprio ícone */
+            box-shadow: 0 0 4px var(--neon-yellow); /* Sombra mais suave para o próprio ícone */
             display: flex; /* Usar flexbox para centralizar o ícone dentro do seu próprio espaço */
             justify-content: center;
             align-items: center;
@@ -408,10 +414,10 @@
         .audio-player-icon.playing {
             color: var(--neon-pink-soft);
             text-shadow:
-                0 0 3px var(--neon-pink-soft), /* Brilho mais suave */
-                0 0 8px var(--neon-pink-soft),
-                0 0 15px var(--neon-pink-soft); /* Brilho ajustado para o estado de reprodução */
-            box-shadow: 0 0 5px var(--neon-pink-soft); /* Sombra mais suave para o estado de reprodução */
+                0 0 2px var(--neon-pink-soft), /* Brilho mais suave */
+                0 0 6px var(--neon-pink-soft),
+                0 0 10px var(--neon-pink-soft); /* Brilho ajustado para o estado de reprodução */
+            box-shadow: 0 0 4px var(--neon-pink-soft); /* Sombra mais suave para o estado de reprodução */
         }
 
 
@@ -566,7 +572,7 @@
                 padding: 1.2em; /* Ajusta padding */
             }
             .audio-player-icon {
-                font-size: 1.0em; /* Ajusta tamanho do ícone */
+                font-size: 0.8em; /* Ajusta tamanho do ícone */
             }
             .purchase-buttons-container {
                 gap: 1rem; /* Espaçamento menor entre botões */
@@ -632,7 +638,7 @@
                 padding: 1em;
             }
             .audio-player-icon {
-                font-size: 0.8em; /* Ajusta ainda mais para mobile */
+                font-size: 0.6em; /* Ajusta ainda mais para mobile */
             }
             .purchase-buttons-container {
                 gap: 0.8rem;
