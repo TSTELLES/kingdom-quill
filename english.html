@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Best Bibles Audiobooks</title> <!-- Título da página atualizado -->
-  <!-- Meta tag para palavras-chave de SEO -->
-  <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Hindi Bible, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
+  <title>Holy Bible Audiobook - Listen Ad-Free | T. S. Telles</title>
+  <meta name="description" content="Listen to the Holy Bible audiobook (Old and New Testaments). Enjoy crystal-clear narration, ad-free listening, and offline playback. Available on all your favorite platforms." />
+  <meta name="keywords" content="Holy Bible, Old Testament, New Testament, Bible audiobook, audio Bible, English Bible, listen Bible, ad-free, offline, Christian audiobook, Bible study, King James Version, KJV, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW455H9ND7"></script>
   <script>
@@ -15,75 +15,28 @@
 
     gtag('config', 'G-FW455H9ND7');
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-  <!-- Abaddon Font from CDNFonts.com -->
-  <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
   <style>
-    /* Variáveis CSS para cores neon */
-    :root {
-      --neon-yellow: #f9f871;
-      --neon-pink-soft: #FF66CC;
-      --neon-white: #FFF;
-      --neon-light-green: #90EE90; /* Novo verde claro */
-      --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
-      /* Novas variáveis para tons de roxo para o brilho, para consistência */
-      --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
-      --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
-    }
-
-    /* Estilos globais e redefinições */
+    /* Reset e base */
     body {
       margin: 0;
-      background: black; /* Fundo principal, o vídeo será sobreposto */
+      background: black;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      /*
-        O preenchimento superior e inferior cria espaço para o cabeçalho e rodapé fixos.
-        Isso garante que o conteúdo principal role por baixo deles sem ser ocultado.
-      */
-      padding-top: 4.5em; /* Espaço para o cabeçalho fixo */
-      padding-bottom: 2em; /* Ajustado para 2em */
-      position: relative; /* Necessário para o z-index do fundo funcionar */
+      padding-top: 4.5em; /* Igual à altura do header */
+      padding-bottom: 3.5em; /* Igual à altura do footer */
     }
 
-    /* Contêiner de fundo de vídeo animado */
-    .background-animated {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden; /* Garante que o vídeo não transborde do contêiner */
-      z-index: -1; /* Envia para o fundo */
-      filter: brightness(0.3); /* Escurece o vídeo */
-    }
-
-    /* Estilo do vídeo para cobrir todo o fundo */
-    .background-animated video {
-      min-width: 100%;
-      min-height: 100%;
-      width: auto; /* Permite que o vídeo seja dimensionado naturalmente */
-      height: auto; /* Permite que a altura seja automática para ser dimensionado naturalmente */
-      position: absolute;
-      top: 55%; /* Move o vídeo ligeiramente para baixo de 50% para 55% */
-      left: 50%;
-      transform: translate(-50%, -50%); /* Centraliza o vídeo */
-      object-fit: cover; /* Garante que o vídeo cubra todo o contêiner */
-      /* Nenhuma animação é necessária aqui, o vídeo é reproduzido automaticamente */
-    }
-
-    /* Cabeçalho fixo com neon verde claro */
+    /* Header fixo com neon amarelo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       height: 4.5em;
       background-color: black;
-      color: var(--neon-light-green); /* Nova cor verde clara */
-      font-family: 'Merriweather', serif; /* Nova fonte Merriweather */
+      color: #f9f871;
       font-weight: bold;
       font-size: 2.2rem;
       display: flex;
@@ -91,409 +44,366 @@
       align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
       text-shadow:
-        0 0 8px var(--neon-light-green),
-        0 0 20px var(--neon-light-green),
-        0 0 40px var(--neon-light-green),
-        0 0 80px var(--neon-light-green);
-      animation: neonPulseLightGreen 2s infinite alternate; /* Animação para o verde */
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
       user-select: none;
       letter-spacing: 0.05em;
       z-index: 100;
     }
 
-    /* Nova animação de pulso para verde claro */
-    @keyframes neonPulseLightGreen {
+    @keyframes neonPulseYellow {
       0% {
         text-shadow:
-          0 0 10px var(--neon-light-green),
-          0 0 30px var(--neon-light-green),
-          0 0 50px var(--neon-light-green),
-          0 0 100px var(--neon-light-green);
+          0 0 10px #f9f871,
+          0 0 30px #f9f871,
+          0 0 50px #f9f871,
+          0 0 100px #f9f871;
       }
       100% {
         text-shadow:
-          0 0 20px var(--neon-light-green),
-          0 0 40px var(--neon-light-green),
-          0 0 70px var(--neon-light-green),
-          0 0 120px var(--neon-light-green);
+          0 0 20px #f9f871,
+          0 0 40px #f9f871,
+          0 0 70px #f9f871,
+          0 0 120px #f9f871;
       }
     }
 
-    /* Área de conteúdo principal */
+    /* Conteúdo principal, se estende para preencher o espaço */
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      /* Preenchimento superior aumentado para empurrar o conteúdo para baixo do cabeçalho fixo */
-      padding: 10em 1rem 2rem; /* Ajustado de 8em para 10em para preenchimento superior */
+      align-items: center; /* **MANTÉM O CONTEÚDO DO MAIN CENTRALIZADO HORIZONTALMENTE** */
+      padding: 2rem 1rem 2rem;
       gap: 3rem;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
-      /*
-        O cálculo min-height garante que o 'main' ocupe o espaço disponível
-        entre o cabeçalho e o rodapé fixos quando o conteúdo é curto.
-      */
-      min-height: calc(100vh - 4.5em - 2em); /* Ajustado para 2em */
-      position: relative; /* Garante que o conteúdo principal esteja acima do fundo */
-      z-index: 1; /* Garante que o conteúdo principal esteja acima do fundo */
+      min-height: calc(100vh - 4.5em - 3.5em);
     }
 
-    /* Estilo de secção partilhado para blocos de texto */
-    .content-section {
+    /* Bandeira única com efeito fade */
+    .flags-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: calc(4.5em + 2rem); /* Altura do header + espaço extra */
+      padding-bottom: 2rem; /* Espaço abaixo da bandeira */
+      width: 100%; /* Garante que a seção ocupe a largura para centralizar */
+      box-sizing: border-box; /* Inclui padding na largura */
+    }
+
+    .flag {
+      width: 160px;
+      height: 110px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      filter: brightness(0.75);
+      animation: fadeOpacity 8s infinite alternate ease-in-out;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      cursor: default;
+      user-select: none;
+      transition: filter 0.3s ease;
+    }
+    .flag:hover {
+      filter: brightness(1);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
+    }
+    .flag.usa {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg');
+      animation-delay: 0s;
+    }
+    @keyframes fadeOpacity {
+      0% {opacity: 1;}
+      100% {opacity: 0.4;}
+    }
+
+    /* Container para os testamentos lado a lado (agora dois) */
+    .testament-container {
+        display: flex;
+        flex-wrap: wrap; /* Permite que as colunas quebrem para a próxima linha em telas menores */
+        justify-content: center;
+        gap: 2.5rem; /* Espaçamento entre as duas seções de testamento */
+        width: 100%;
+        margin-top: 3rem; /* Espaço entre argumentos e testamentos */
+    }
+
+    .testament-section { /* Esta seção agora é mais um contêiner para os logos */
+      flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis. Permite que ocupem cerca de 45% cada */
+      min-width: 300px; /* Mantém uma largura mínima para cada seção */
       background: rgba(0,0,0,0.6);
-      padding: 1.5rem 2rem; /* Reduzido de 2rem para 1.5rem */
+      padding: 2rem 1.5rem;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
       font-weight: 600;
-      font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
+      font-size: 1.2rem;
       line-height: 1.5;
-      max-width: 500px; /* Ajustada de 600px para 500px para telas maiores */
       text-align: center;
       user-select: none;
       text-shadow: 0 0 5px #000;
-      margin-top: 0; /* Gerido pelo 'gap' do 'main' */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 500px; /* Limita a largura máxima para cada coluna */
+      box-sizing: border-box; /* Inclui padding na largura */
     }
-    .content-section p {
-        margin-bottom: 0.8rem; /* Espaço entre parágrafos, ajustado */
+    
+    .testament-section h2 {
+        color: #f9f871;
+        font-size: 1.8rem;
         margin-top: 0;
-    }
-    .content-section strong {
-      color: var(--neon-yellow); /* Destaca palavras-chave com neon amarelo */
+        margin-bottom: 1rem;
+        text-shadow:
+            0 0 5px #f9f871,
+            0 0 15px #f9f871;
     }
 
-    /* Títulos principais com efeito neon */
+    /* Argumentos com estilo (texto de introdução) */
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px;
+      margin: 0 auto; /* Adicionado para centralizar explicitamente */
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
+    }
+    /* Estilo para o novo título principal com efeito neon */
     .main-title-neon {
-      color: var(--neon-yellow);
-      font-size: 1.8rem; /* Reduzido de 2rem para 1.8rem */
+      color: #f9f871;
+      font-size: 2rem;
       margin-top: 0;
       text-shadow:
-        0 0 8px var(--neon-yellow),
-        0 0 20px var(--neon-yellow),
-        0 0 40px var(--neon-yellow),
-        0 0 80px var(--neon-yellow);
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
       animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
     }
     .subtitle-strong {
-        margin-top: 0.4rem; /* Ajustado */
-        font-size: 1.4rem; /* Reduzido de 1.6rem para 1.4rem */
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
         font-weight: bold;
     }
 
-    /* Grelha de seleção de idiomas (semelhante aos botões de loja) */
-    .language-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem; /* Ajustado de 1.8rem para 1.5rem */
-        margin-top: 1.2rem; /* Ajustado */
-        width: 100%;
-        max-width: 700px; /* Reduzido de 800px para 700px */
+
+    /* Título do player */
+    .player-title {
+        color: #f9f871;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 5px #f9f871;
+        margin-bottom: 0; /* Zera a margem de baixo do título */
+        text-align: center; /* Centraliza o texto dentro do título */
     }
 
-    .language-grid a {
-        display: flex;
-        flex-direction: column; /* Empilha a bandeira e o texto */
-        justify-content: space-between; /* Espaça a bandeira e o texto */
-        align-items: center; /* Centraliza os itens horizontalmente */
-        background: transparent;
-        border: 2px solid transparent;
+    /* Faixa de amostra com player estiloso */
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 1.8rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
+      padding-top: 2.5rem; /* Mais padding em cima */
+      padding-bottom: 2.5rem; /* Mais padding embaixo */
+      max-width: 700px;
+      user-select: none;
+      margin: 3rem auto 0 auto; /* Espaço acima desta seção e centraliza */
+      gap: 2rem; /* AJUSTADO O GAP PARA UM POUCO MENOS DE ESPAÇAMENTO */
+      width: 100%; /* Garante que ocupe a largura máxima permitida */
+      box-sizing: border-box; /* Inclui padding na largura */
+    }
+
+    /* Zera margens individuais para deixar o gap e padding da sample-section controlarem o espaçamento */
+    .sample-section .player-title {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .sample-section .play-button {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .sample-section audio {
+      width: 100%;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
+      cursor: pointer;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+
+    /* Botão play customizado */
+    .play-button {
+      background: #f9f871;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow:
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
+      transition: transform 0.2s ease;
+    }
+    .play-button:hover {
+      transform: scale(1.15);
+      box-shadow:
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
+    }
+    .play-button:active {
+      transform: scale(0.95);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    /* Botões das lojas - Agora para as IMAGENS dos logos */
+    .testament-section .buttons {
+      display: flex;
+      flex-direction: row; /* Coloca os logos em linha */
+      flex-wrap: wrap; /* Permite quebrar linha */
+      justify-content: center; /* Centraliza horizontalmente */
+      gap: 1.8rem; /* Espaçamento maior entre os logos */
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+
+    .testament-section .buttons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent; /* Fundo transparente para a "bolinha" */
+      border: 2px solid transparent; /* Borda transparente que aparece no hover */
+      border-radius: 50%; /* Faz a "bolinha" */
+      width: 80px; /* Tamanho da bolinha do logo */
+      height: 80px; /* Tamanho da bolinha do logo */
+      box-shadow: none; /* Remove qualquer sombra base */
+      transition: all 0.3s ease; /* Transição suave */
+      overflow: hidden; /* Garante que a imagem não vaze da bolinha */
+    }
+
+    .testament-section .buttons a:hover {
+      background: rgba(249, 248, 113, 0.1); /* Brilho suave no hover */
+      transform: scale(1.15); /* Efeito de zoom */
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon */
+      border-color: #f9f871; /* Borda neon */
+    }
+
+    .testament-section .buttons a img {
+      width: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
+      height: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
+      object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+      max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner */
+      max-height: 100%; /* Impede que a imagem ultrapasse a altura do contêiner */
+      filter: brightness(0.9); /* Leve escurecimento para se integrar melhor */
+      transition: filter 0.3s ease;
+    }
+
+    .testament-section .buttons a:hover img {
+        filter: brightness(1.2); /* Clareia a imagem no hover */
+    }
+
+    /* Novos textos de chamada de ação */
+    .call-to-action-section {
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 2.5rem;
         border-radius: 15px;
-        width: 110px; /* Reduzido de 120px para 110px */
-        height: 130px; /* Reduzido de 140px para 130px */
-        box-shadow: none;
-        transition: all 0.3s ease;
-        overflow: hidden;
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        font-size: 0.9rem; /* Reduzido de 0.95rem para 0.9rem */
-        padding: 0.7em;
-        box-sizing: border-box;
-    }
-
-    .language-grid a:not(.unavailable):hover { /* Aplica hover apenas se não estiver indisponível */
-        background: rgba(249, 248, 113, 0.1);
-        transform: scale(1.1);
-        box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
-        border-color: var(--neon-yellow);
-    }
-
-    .language-grid a img {
-        max-width: 100%;
-        max-height: 70px; /* Reduzido de 80px para 70px */
-        width: auto;
-        height: auto;
-        object-fit: contain;
-        border-radius: 8px;
-        filter: brightness(0.9);
-        transition: filter 0.3s ease;
-        margin-bottom: 0.2em;
-        flex-shrink: 0;
-    }
-
-    .language-grid a span {
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        max-width: 720px;
+        margin: 3rem auto 0 auto; /* Ajustado para centralizar explicitamente, mantendo o margin-top */
         text-align: center;
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1.2;
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        width: 100%; /* Garante que ocupe a largura máxima permitida */
+        box-sizing: border-box; /* Inclui padding na largura */
+    }
+    .call-to-action-section p {
+        margin-bottom: 1rem; /* Espaço entre parágrafos */
+    }
+    .call-to-action-section strong {
+        color: #f9f871; /* Destaca a parte "Ready?" */
     }
 
-    /* Estilo para botões de idioma indisponíveis */
-    .language-grid a.unavailable {
-        opacity: 0.5;
-        cursor: default;
-        pointer-events: none;
-    }
 
-    /* Rodapé fixo */
+    /* Footer fixo */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
-      height: 2em; /* Ajustado para 2em */
+      height: 3.5em;
       background-color: black;
       color: #ccc;
       text-align: center;
-      line-height: 2em; /* Ajustado para 2em */
+      line-height: 3.5em;
       font-size: 0.9rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
       user-select: none;
       z-index: 100;
     }
 
-    footer p { /* Adicionado estilo para o parágrafo dentro do footer */
-      margin: 0; /* Remove margem padrão do parágrafo */
-      font-size: 0.8rem; /* Fonte ligeiramente menor para caber em 2em */
-      line-height: 2em; /* Ajusta o line-height para a altura do footer, centralizando o texto */
-    }
-
-    /* Estilo neon rosa mais suave */
-    .neon-pink-soft {
-      color: var(--neon-pink-soft);
-      text-shadow:
-        0 0 8px var(--neon-pink-soft),
-        0 0 20px var(--neon-pink-soft),
-        0 0 40px var(--neon-pink-soft);
-    }
-
-    /* Estilo para o título do livro (fonte e cor rosa) */
-    .book-title-style {
-      font-family: 'Monotype Corsiva', cursive;
-      font-weight: normal;
-      text-transform: uppercase;
-    }
-
-    /* Estilo para a parte do livro (branco aceso) */
-    .book-part-white-glow {
-      color: var(--neon-white);
-      text-shadow:
-        0 0 5px var(--neon-white),
-        0 0 15px var(--neon-white),
-        0 0 25px var(--neon-white);
-    }
-
-    /* Novo estilo de brilho roxo neon */
-    .neon-purple-glow {
-        color: var(--neon-purple); /* Cor base mais escura */
-        text-shadow:
-          0 0 15px var(--neon-purple-light), /* Roxo claro, quase magenta, para o brilho interno */
-          0 0 30px var(--neon-purple-medium), /* Roxo médio para o brilho intermédio */
-          0 0 50px var(--neon-purple), /* Cor base para o brilho externo */
-          0 0 80px var(--neon-purple); /* Mais da cor base para um halo maior */
-        animation: neonPulsePurple 1.6s infinite alternate; /* Animação para o pulso */
-    }
-
-    /* Nova animação de pulso para roxo neon */
-    @keyframes neonPulsePurple {
-      0% {
-        text-shadow:
-          0 0 10px var(--neon-purple-light),
-          0 0 25px var(--neon-purple-medium),
-          0 0 45px var(--neon-purple),
-          0 0 70px var(--neon-purple);
-      }
-      100% {
-        text-shadow:
-          0 0 20px var(--neon-purple-light),
-          0 0 40px var(--neon-purple-medium),
-          0 0 60px var(--neon-purple),
-          0 0 90px var(--neon-purple);
-      }
-    }
-
-    /* Estilo de brilho amarelo neon */
-    .neon-yellow-glow {
-      color: var(--neon-yellow);
-      text-shadow:
-        0 0 8px var(--neon-yellow),
-        0 0 20px var(--neon-yellow),
-        0 0 40px var(--neon-yellow),
-        0 0 80px var(--neon-yellow);
-    }
-
-    /* Estilo para a fonte Abaddon */
-    .abaddon-font-style {
-        font-family: 'Abaddon', sans-serif;
-        font-size: 1.6rem; /* Tamanho da fonte menor e legível */
-    }
-
-    /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
-    .book-part-block-style {
-        font-size: 1rem;
-        font-weight: bold;
-        display: block;
-        text-transform: uppercase;
-        margin-top: -0.7em; /* Valor negativo para puxar para cima ainda mais */
-    }
-
-    /* Estilo para a capa do livro */
-    .book-cover {
-      max-width: 200px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
-      margin-top: 4rem; /* Aumentado ligeiramente de 3.5rem */
-      transition: transform 0.3s ease;
-    }
-
-    .book-cover:hover {
-      transform: scale(1.05);
-    }
-
-    /* Novo estilo de botão neon - RESTAURADO para AMARELO NEON */
-    .neon-button {
-      display: inline-block;
-      padding: 0.7rem 1.8rem; /* Mantido no tamanho menor */
-      border: 2px solid var(--neon-yellow); /* Borda amarela neon */
-      border-radius: 25px; /* Mais arredondado */
-      background: linear-gradient(45deg, rgba(249, 248, 113, 0.1), rgba(249, 248, 113, 0.05)); /* Gradiente amarelo */
-      color: var(--neon-yellow); /* Cor do texto padrão do botão (amarelo) */
-      font-weight: bold;
-      font-size: 1rem; /* Mantido no tamanho da fonte menor */
-      text-decoration: none;
-      text-shadow:
-        0 0 10px var(--neon-yellow), /* Brilho amarelo */
-        0 0 30px var(--neon-yellow),
-        0 0 60px var(--neon-yellow);
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.5); /* Brilho exterior amarelo */
-      transition: all 0.3s ease;
-      user-select: none;
-      letter-spacing: 0.05em;
-      cursor: pointer; /* Indicar interatividade */
-    }
-
-    .neon-button:hover {
-      background: linear-gradient(45deg, rgba(249, 248, 113, 0.2), rgba(249, 248, 113, 0.1)); /* Mais vibrante ao passar o mouse */
-      transform: scale(1.08); /* Escala mais pronunciada */
-      box-shadow:
-        0 0 25px rgba(249, 248, 113, 0.8), /* Brilho exterior mais forte amarelo */
-        inset 0 0 10px rgba(249, 248, 113, 0.4); /* Efeito de brilho interior amarelo */
-      border-color: var(--neon-yellow); /* Borda amarela neon no hover */
-    }
-
-    /* NOVO ESTILO PARA O TEXTO "HERE" DENTRO DO BOTÃO - ROSA NEON */
-    .neon-button-text-pink {
-      color: var(--neon-pink-soft);
-      text-shadow:
-        0 0 8px var(--neon-pink-soft),
-        0 0 20px var(--neon-pink-soft),
-        0 0 40px var(--neon-pink-soft);
-    }
-
-
-    /* Estilo para a seção da capa do livro (para Flexbox e simetria) */
-    .content-section.book-cover-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 620px; /* Aumentado ligeiramente de 600px */
-        padding: 2rem 2.5rem;
-        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-        background: rgba(0,0,0,0.6);
-        border-radius: 15px;
-        max-width: 500px;
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
-
-    /* Resetar margens dos filhos diretos para que justify-content controle */
-    .content-section.book-cover-section > * {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Agrupamento de título e "Part 1" para Flexbox */
-    .book-header-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0; /* Remove o gap entre o título e "Part 1" */
-        padding: 0;
-    }
-    
-    /* Espaçamento interno específico para Part 1 dentro do grupo */
-    .book-header-group p.book-part-block-style {
-        margin-top: -0.7em; /* Valor negativo para puxar para cima ainda mais */
-    }
-
-    /* Estilo para o contêiner do botão e das mãos */
-    .button-with-hands {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem; /* Espaçamento entre as mãos e o botão */
-        margin-top: 6rem; /* Aumentado ligeiramente de 5rem */
-    }
-
-    .hand-emoji {
-        font-size: 1.5rem; /* Tamanho da mãozinha */
-        color: var(--neon-yellow); /* Cor da mãozinha */
-        text-shadow:
-          0 0 5px var(--neon-yellow),
-          0 0 10px var(--neon-yellow),
-          0 0 20px var(--neon-yellow);
-        animation: neonPulseYellow 1.5s infinite alternate; /* Animação para a mãozinha */
-    }
-
-
-    /* Ajustes de responsividade */
+    /* Responsividade básica */
     @media (max-width: 768px) {
-        .content-section {
-            font-size: 1.05rem; /* Reduzido de 1.1rem para 1.05rem */
-            padding: 1.5rem 1.8rem;
-            max-width: 90%;
+        .testament-container {
+            flex-direction: column; /* Em telas menores, as seções empilham */
+            align-items: center;
+            gap: 2rem;
+        }
+        .testament-section {
+            width: 90%;
+            max-width: 500px;
+            margin: 0 auto; /* Adicionado para centralizar explicitamente */
+        }
+        .player-title {
+            font-size: 1.3rem;
+        }
+        .call-to-action-section {
+            font-size: 1.2rem;
+            padding: 1.8rem 2rem;
         }
         .main-title-neon {
-            font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
+            font-size: 1.8rem;
         }
         .subtitle-strong {
-            font-size: 1.25rem; /* Reduzido de 1.3rem para 1.25rem */
+            font-size: 1.4rem;
         }
-        .language-grid {
-            gap: 1.2rem;
+        /* Ajuste do tamanho dos botões de logo em telas menores */
+        .testament-section .buttons a {
+            width: 65px; /* Bolinha menor */
+            height: 65px;
         }
-        .language-grid a {
-            width: 90px;
-            height: 100px;
-            font-size: 0.8rem;
-        }
-        .language-grid a img {
-            max-height: 60px;
-        }
-        .content-section.book-cover-section {
-            min-height: 480px; /* Aumentado ligeiramente de 450px para telas menores */
-            padding: 1.5rem 1.8rem;
-        }
-        .neon-button {
-            padding: 0.6rem 1.5rem; /* Ajustado para telas menores */
-            font-size: 0.95rem; /* Ajustado para telas menores */
-        }
-        .button-with-hands {
-            margin-top: 4rem; /* Aumentado ligeiramente de 3.5rem */
+        .testament-section .buttons a img {
+            width: 60%; /* Logo menor dentro da bolinha */
+            height: 60%;
         }
     }
 
@@ -504,163 +414,149 @@
       }
       footer {
         font-size: 0.8rem;
-        height: 2em; /* Ajustado para 2em */
-        line-height: 2em; /* Ajustado para 2em */
+        height: 3em;
+        line-height: 3em;
       }
       body {
         padding-top: 3.8em;
-        padding-bottom: 2em; /* Ajustado para 2em */
+        padding-bottom: 3em;
       }
       main {
-        min-height: calc(100vh - 3.8em - 2em); /* Ajustado para 2em */
-        padding: 5.5em 1rem 1.5rem;
+        min-height: calc(100vh - 3.8em - 3em);
+        padding: 1.5rem 1rem 1.5rem;
         gap: 2rem;
       }
-      .language-grid {
-        gap: 0.8rem;
+      .flags-row {
+        padding-top: calc(3.8em + 1.5rem);
+        padding-bottom: 1.5rem;
       }
-      .language-grid a {
-        width: 80px;
-        height: 90px;
-        font-size: 0.7rem;
+      .arguments {
+        font-size: 1.1rem;
+        padding: 1.5rem 1.8rem;
       }
-      .language-grid a img {
-        max-height: 50px;
+      .testament-section h2 {
+          font-size: 1.5rem;
       }
-      .content-section {
-        font-size: 0.95rem; /* Reduzido para telas muito pequenas */
-        padding: 1.2rem 1.5rem;
-        max-width: 95%;
+      .testament-section .buttons a {
+        /* Ajusta o tamanho dos botões de logo para telas muito pequenas */
+        width: 55px; /* Bolinha ainda menor */
+        height: 55px;
+      }
+      .testament-section .buttons a img {
+        width: 60%;
+        height: 60%;
+      }
+      .sample-section {
+        max-width: 90vw;
+      }
+      .player-title {
+          font-size: 1.1rem;
+      }
+      .call-to-action-section {
+          font-size: 1rem;
+          padding: 1.5rem 1.8rem;
       }
       .main-title-neon {
-          font-size: 1.3rem; /* Reduzido */
+          font-size: 1.6rem;
       }
       .subtitle-strong {
-          font-size: 1.05rem; /* Reduzido */
-      }
-      .book-cover {
-        max-width: 130px;
-        margin-top: 3rem; /* Aumentado ligeiramente de 2.5rem */
-      }
-      .neon-button {
-        font-size: 0.8rem; /* Reduced font size for smaller screens */
-        padding: 0.4rem 1rem; /* Adjusted padding */
-      }
-      .book-part-block-style {
-          font-size: 0.75rem; /* Reduzido */
-      }
-      .content-section.book-cover-section {
-          min-height: 340px; /* Aumentado ligeiramente de 300px para telas muito pequenas */
-          padding: 1.2rem 1.5rem;
-      }
-      .button-with-hands {
-          margin-top: 2.2rem; /* Aumentado ligeiramente de 1.75rem */
+          font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
+  <header>Holy Bible Audiobook</header>
 
-  <div class="background-animated" aria-hidden="true">
-    <!-- Fundo alterado de imagem para vídeo -->
-    <video autoplay loop muted playsinline>
-      <source src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
-      O seu navegador não suporta a tag de vídeo.
-    </video>
-  </div>
-
-  <!-- Note que os estilos de cor e fonte foram movidos para o CSS no <head> -->
-  <header>
-    Best Bibles Audiobooks
-  </header>
+  <section class="flags-row" aria-label="Flag of the United States">
+    <div class="flag usa" role="img" aria-label="United States flag"></div>
+  </section>
 
   <main>
-    <section class="content-section" aria-label="Project Introduction">
-      <h2 class="main-title-neon">📖 Welcome</h2> <!-- Título da secção alterado para "Welcome" -->
-      <p class="subtitle-strong">🔥 Get your Bible — listen anytime, own it forever. 🔥</p>
-      <p>Welcome to the official page of Best Bibles Audiobooks, an independent work by T. S. Telles, author of Christian fiction and fantasy.</p>
-      <p>This project exists to make clear, uncut audio Bibles affordable and free of ads — for everyone, everywhere.</p>
-      <p>Stream free parts or buy the complete version to own it for life and support more languages.</p>
-      <p style="font-style: italic; margin-top: 1.5em;">"Go ye into all the world, and preach the gospel to every creature." - Mark 16:15</p> <!-- Versículo movido para o final e KJV removido -->
+    <section class="arguments" aria-label="Benefits of the Audio Bible">
+      <h2 class="main-title-neon">Holy Bible in Audio</h2>
+      <p class="subtitle-strong">Crystal-Clear Narration, Ad-Free!</p>
     </section>
 
-    <section class="content-section" aria-label="Listen to God's Word">
-      <h2 class="main-title-neon">🎧 Listen to the Complete Word of God — Anytime, Anywhere!</h2>
-      <p class="subtitle-strong">High-quality audio Bibles in your language — no ads, no subscription, yours forever.</p>
-      <p class="subtitle-strong">👉 Choose your Bible below and start listening today!</p>
+    <section class="sample-section" aria-label="Audio Sample">
+      <h3 class="player-title">Listen Now – Click to Play Sample</h3>
+      <button class="play-button" aria-label="Play/Pause sample" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/0616(1).MP3"></audio>
     </section>
 
-    <section class="content-section" aria-label="Why It Matters">
-      <h2 class="main-title-neon">🌍 Why It Matters</h2>
-      <p class="subtitle-strong">Your purchase helps break barriers: more languages, more countries, more freedom to hear the Word.</p>
-      <p>Every Bible sold helps make the next one possible — with no ads and no big companies controlando-o.</p>
-    </p>
+    <section class="call-to-action-section" aria-label="Audio Bible Features and Call to Action">
+        <p>🎧 Enjoy offline playback, ad-free listening, and screen-off mode.</p>
+        <p>Your support helps us create new translations and maintain quality recordings.</p>
+        <p>👉 <strong>Ready?</strong> Start listening to the <strong>Holy Bible</strong> in audio now – available on all your favorite platforms!</p>
     </section>
 
-    <section class="content-section" aria-label="Explore by Language">
-      <h2 class="main-title-neon">📚 Explore by Language</h2>
-      <p class="subtitle-strong">Listen and own your Bible in your language — clear, ad-free, uncut.</p>
-      <div class="language-grid">
-        <a href="korean.html" aria-label="Korean Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea"><span>한국어 (Korean)</span></a>
-        <a href="russian.html" aria-label="Russian Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia"><span>Русский (Russian)</span></a>
-        <a href="chinese.html" aria-label="Chinese Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China"><span>中文 (Chinese)</span></a>
-        <a href="french.html" aria-label="French Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France"><span>Français (French)</a>
-        <a href="german.html" aria-label="German Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany"><span>Deutsch (German)</a>
-        <a href="english.html" aria-label="English Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States"><span>English</span></a>
-        <a href="spanish.html" aria-label="Spanish Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"><span>Español (Spanish)</a>
-        <a href="arabic.html" aria-label="Arabic Bible"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia"><span>العربية (Arabic)</span></a>
-        <!-- Novo botão Italiano -->
-        <a href="italian.html" aria-label="Italian Bible">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Flag of Italy">
-          <span>Italiano (Italian)</span>
-        </a>
-        <!-- Novo botão Hindi (indisponível) -->
-        <a class="unavailable" aria-label="Hindi Bible - Coming Soon">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
-          <span>हिन्दी (Hindi)</span>
-        </a>
-      </div>
-      <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px;">
-        <li>✔️ Stream parts for free on YouTube.</li>
-        <li>✔️ Get the full version on Spotify, Storytel, Google Play and more.</li>
-        <li>✔️ Share with family and help reach new languages.</li>
-      </ul>
-    </section>
+    <div class="testament-container">
+        <section class="testament-section" aria-label="Old Testament Audio Bible">
+          <h2>Old Testament</h2>
+          <p>Delve into the rich history and prophetic narratives of the Old Testament.</p>
+          <nav class="buttons" aria-label="Old Testament purchase options">
+            <a href="https://libro.fm/audiobooks/9798318030246" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
+            <a href="https://www.barnesandnoble.com/w/holy-bible-old-testament-va/1147367701?ean=2940195476793" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://cdn.freebiesupply.com/logos/large/2x/barnes-noble-01-logo-png-transparent.png" alt="Barnes & Noble Logo"></a>
+            <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_Old_Testament?id=AQAAEDKW3QbrM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+            <a href="https://www.kobo.com/us/en/audiobook/holy-bible-old-testament-2" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+            <a href="https://www.storytel.com/se/sv/books/holy-bible-old-testament-king-james-version-11696747" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://serieliv.no/content/uploads/2016/02/Storytel-logo.png" alt="Storytel Logo"></a>
+            <a href="https://open.spotify.com/show/5bUWnJepK7Hyo6pNwCGwI6?si=csv2ivWHSau64nBgUhvJXw" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+          </nav>
+        </section>
 
-    <section class="content-section" aria-label="About T. S. Telles">
-      <h2 class="main-title-neon">✍️ About T. S. Telles</h2>
-      <p>T. S. Telles is also the author of Christian romance and epic fantasy. Her novel <span class="book-title-style"><span class="neon-pink-soft">Welcome </span><span class="book-part-white-glow">to</span> <span class="neon-yellow-glow">New York</span></span> — <span class="book-part-white-glow">Part 1</span> is available on Amazon — a clean, heartfelt story free from explicit content or crude language, focusing on deep characters, faith, and hope without forced sermons.</p>
-      <p>She is currently working on her next epic fantasy saga, <span class="neon-purple-glow abaddon-font-style">Axwar</span>: <span class="book-part-white-glow">The Power of Four Thrones</span>, which will bring readers an inspiring journey of courage and destiny. Coming soon.</p>
-    </section>
-
-    <!-- Nova seção para "Welcome to New York" com capa e botão de acesso -->
-    <section class="content-section book-cover-section" aria-label="Welcome to New York Novel">
-      <div class="book-header-group"> <!-- Agrupamento para título e part 1 -->
-        <h2 class="main-title-neon">
-          <!-- O link do título foi removido, agora é apenas texto com spans para estilo -->
-          <span class="book-part-white-glow">Discovery </span>
-          <span class="book-title-style">
-            <span class="neon-pink-soft">Welcome </span>
-            <span class="book-part-white-glow">to</span>
-            <span class="neon-yellow-glow"> New York</span>
-          </span>
-        </h2>
-        <p class="book-part-white-glow book-part-block-style">Part 1</p>
-      </div>
-      <img src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Capa%20vol%2014.jpg" alt="Capa do Livro Welcome to New York" class="book-cover">
-      <!-- Contêiner para o botão e as mãozinhas -->
-      <div class="button-with-hands">
-        <span class="hand-emoji">👉</span> <!-- Mão invertida -->
-        <a href="welcome-to-ny.html" class="neon-button"><span class="neon-button-text-pink">Here</span></a> <!-- Texto do botão alterado para "Here" com span para cor -->
-        <span class="hand-emoji">👈</span> <!-- Mão invertida -->
-      </div>
-    </section>
+        <section class="testament-section" aria-label="New Testament Audio Bible">
+          <h2>New Testament</h2>
+          <p>Experience the profound wisdom and divine teachings of the New Testament.</p>
+          <nav class="buttons" aria-label="New Testament purchase options">
+            <a href="https://libro.fm/audiobooks/9798318456978" target="_blank" rel="noopener noreferrer" aria-label="Libro.fm"><img src="https://thebookmatters.com/cdn/shop/files/Librofm-Logo-V-1.png?v=1662478278&width=480" alt="Libro.fm Logo"></a>
+            <a href="https://www.barnesandnoble.com/w/holy-bible-new-testament-va/1147292980?ean=2940192873519" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://cdn.freebiesupply.com/logos/large/2x/barnes-noble-01-logo-png-transparent.png" alt="Barnes & Noble Logo"></a>
+            <a href="https://play.google.com/store/audiobooks/details/VA_Holy_Bible_New_Testament?id=AQAAAEBK4ieifM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+            <a href="https://www.kobo.com/us/en/audiobook/holy-bible-new-testament-5" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+            <a href="https://www.storytel.com/se/sv/books/holy-bible-new-testament-11174096" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://serieliv.no/content/uploads/2016/02/Storytel-logo.png" alt="Storytel Logo"></a>
+            <a href="https://open.spotify.com/show/0se9w6593snb5LV4jY6LFy?si=d60d6f05a74b4673" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+            <a href="https://books.apple.com/us/audiobook/holy-bible-new-testament-king-james-version/id1808875366" target="_blank" rel="noopener noreferrer" aria-label="Apple Books"><img src="https://img.icons8.com/fluent/512/ibooks.png" alt="Apple Books Logo"></a>
+          </nav>
+        </section>
+    </div>
 
   </main>
 
-  <footer>
-    <p>&copy; 2025 T. S. TELLES. All rights reserved.</p>
-  </footer>
+  <footer>© 2025 T S TELLES. All rights reserved.</footer>
 
+  <script>
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+
+    let isPlaying = false;
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        audio.pause();
+        playIcon.style.borderLeft = '18px solid black'; // Play icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '0';
+      } else {
+        audio.play();
+        playIcon.style.borderLeft = 'none'; // Pause icon
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '12px'; // Adjust width for pause bars
+        playIcon.style.borderLeft = '6px solid black';
+        playIcon.style.borderRight = '6px solid black';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    btn.addEventListener('click', togglePlayPause);
+
+    audio.addEventListener('ended', () => {
+      isPlaying = false;
+      playIcon.style.borderLeft = '18px solid black'; // Reset to play icon
+      playIcon.style.borderRight = 'none';
+      playIcon.style.width = '0';
+    });
+  </script>
 </body>
 </html>
