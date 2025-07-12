@@ -167,6 +167,9 @@
         .content-section:last-child {
             margin-bottom: 0; /* Remove margin-bottom da última seção para evitar espaço extra no final */
         }
+        .content-section.hero-banner { /* Específico para a primeira seção */
+            margin-bottom: 4rem; /* Espaçamento menor para a primeira seção */
+        }
         .content-section p {
             margin-bottom: 0.8rem; /* Espaço entre parágrafos, ajustado */
             margin-top: 0;
@@ -509,12 +512,25 @@
             display: none; /* Esconde o botão único antigo */
         }
         .book-collage {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
+            height: 0;
+            overflow: hidden;
             max-width: 100%;
-            height: auto;
+            margin: 1.5em auto; /* Centraliza a imagem/vídeo */
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
-            margin: 1.5em auto; /* Centraliza a imagem da colagem */
             display: block; /* Garante que a margem auto funcione */
+        }
+
+        .book-collage iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px; /* Aplica border-radius ao iframe também */
         }
 
         /* Rodapé fixo */
@@ -743,7 +759,9 @@
                 <li><strong>Faith and Redemption:</strong> A soul-touching story, showing how pain can lead to healing.</li>
                 <li><strong>TV Series Pace:</b> With twists and cliffhangers, each chapter will leave you wanting more.</li>
             </ul>
-            <img src="https://placehold.co/450x250/000000/F9F871?text=NYC+Scenes+Collage" alt="Collage of New York scenes, elite school, and couple" class="book-collage" />
+            <div class="book-collage">
+                <iframe src="https://player.vimeo.com/video/1100753891?autoplay=1&loop=1&controls=0&muted=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </section>
 
         <!-- 5) About the Series -->
@@ -788,7 +806,7 @@
                 </p>
                 <span class="reader-tag">— First Reader</span>
             </div>
-            <p style="font-style: italic; margin-top: 1.5em;">(This space will be updated with more real testimonials soon!)</p>
+            <!-- Removed the placeholder text here -->
         </section>
 
         <!-- 9) Frequently Asked Questions (FAQ) -->
