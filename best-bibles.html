@@ -82,7 +82,7 @@
       top: 0; left: 0; right: 0;
       height: 4.5em;
       background-color: black;
-      color: var(--neon-light-green); /* Nova cor verde clara */
+      color: var(--neon-yellow); /* Alterado para amarelo neon */
       font-family: 'Merriweather', serif; /* Nova fonte Merriweather */
       font-weight: bold;
       font-size: 2.2rem;
@@ -91,11 +91,11 @@
       align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
       text-shadow:
-        0 0 8px var(--neon-light-green),
-        0 0 20px var(--neon-light-green),
-        0 0 40px var(--neon-light-green),
-        0 0 80px var(--neon-light-green);
-      animation: neonPulseLightGreen 2s infinite alternate; /* Animação para o verde */
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow); /* Alterado para amarelo neon */
+      animation: neonPulseYellow 2s infinite alternate; /* Alterado para animação amarela */
       user-select: none;
       letter-spacing: 0.05em;
       z-index: 100;
@@ -459,6 +459,59 @@
         animation: neonPulseYellow 1.5s infinite alternate; /* Animação para a mãozinha */
     }
 
+    /* Estilos para cards de Bíblias, Devocionais e Livros */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 900px; /* Para controlar a largura da grade */
+    }
+
+    .card {
+      background: rgba(0,0,0,0.7);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 0.7);
+    }
+
+    .card img {
+      max-width: 150px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      color: var(--neon-light-green);
+      text-shadow: 0 0 5px var(--neon-light-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
+    }
+
+    .card .neon-button {
+      margin-top: auto; /* Empurra o botão para o final do card */
+    }
 
     /* Ajustes de responsividade */
     @media (max-width: 768px) {
@@ -494,6 +547,10 @@
         }
         .button-with-hands {
             margin-top: 4rem; /* Aumentado ligeiramente de 3.5rem */
+        }
+        .card-grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.5rem;
         }
     }
 
@@ -571,7 +628,7 @@
 
   <!-- Note que os estilos de cor e fonte foram movidos para o CSS no <head> -->
   <header>
-    Best Bibles Audiobooks
+    Best Bibles
   </header>
 
   <main>
@@ -624,35 +681,6 @@
         <li>✔️ Get the full version on Spotify, Storytel, Google Play and more.</li>
         <li>✔️ Share with family and help reach new languages.</li>
       </ul>
-    </section>
-
-    <section class="content-section" aria-label="About T. S. Telles">
-      <h2 class="main-title-neon">✍️ About T. S. Telles</h2>
-      <p>T. S. Telles is also the author of Christian romance and epic fantasy. Her novel <span class="book-title-style"><span class="neon-pink-soft">Welcome </span><span class="book-part-white-glow">to</span> <span class="neon-yellow-glow">New York</span></span> — <span class="book-part-white-glow">Part 1</span> is available on Amazon — a clean, heartfelt story free from explicit content or crude language, focusing on deep characters, faith, and hope without forced sermons.</p>
-      <p>She is currently working on her next epic fantasy saga, <span class="neon-purple-glow abaddon-font-style">Axwar</span>: <span class="book-part-white-glow">The Power of Four Thrones</span>, which will bring readers an inspiring journey of courage and destiny. Coming soon.</p>
-    </section>
-
-    <!-- Nova seção para "Welcome to New York" com capa e botão de acesso -->
-    <section class="content-section book-cover-section" aria-label="Welcome to New York Novel">
-      <div class="book-header-group"> <!-- Agrupamento para título e part 1 -->
-        <h2 class="main-title-neon">
-          <!-- O link do título foi removido, agora é apenas texto com spans para estilo -->
-          <span class="book-part-white-glow">Discovery </span>
-          <span class="book-title-style">
-            <span class="neon-pink-soft">Welcome </span>
-            <span class="book-part-white-glow">to</span>
-            <span class="neon-yellow-glow"> New York</span>
-          </span>
-        </h2>
-        <p class="book-part-white-glow book-part-block-style">Part 1</p>
-      </div>
-      <img src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/Capa%20vol%2014.jpg" alt="Capa do Livro Welcome to New York" class="book-cover">
-      <!-- Contêiner para o botão e as mãozinhas -->
-      <div class="button-with-hands">
-        <span class="hand-emoji">👉</span> <!-- Mão invertida -->
-        <a href="welcome-to-ny.html" class="neon-button" onclick="gtag('event', 'click', { 'event_category': 'Book Link', 'event_label': 'Welcome to New York' });"><span class="neon-button-text-pink">Here</span></a> <!-- Texto do botão alterado para "Here" com span para cor -->
-        <span class="hand-emoji">👈</span> <!-- Mão invertida -->
-      </div>
     </section>
 
   </main>
