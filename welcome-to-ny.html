@@ -154,12 +154,19 @@
             font-weight: 600;
             font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
             line-height: 1.5;
-            max-width: 500px; /* Ajustada de 600px para 500px para telas maiores */
+            max-width: 500px; /* Largura padrão para texto */
             text-align: center; /* Centraliza o texto dentro da seção */
             user-select: none;
             text-shadow: 0 0 5px #000;
             margin: 0 auto 6rem; /* Centraliza a seção horizontalmente e define o espaçamento padrão */
         }
+        
+        /* Estilo para seções de vídeo maiores */
+        .content-section.video-container {
+            max-width: 800px; /* AUMENTADO SIGNIFICATIVAMENTE */
+            width: 90%;
+        }
+
         /* Aumenta o espaçamento superior para seções específicas */
         .content-section.section-extra-spacing {
             margin-top: 4rem; /* Adiciona um espaçamento extra acima dessas seções */
@@ -739,7 +746,7 @@
         </section>
 
         <!-- 4) About the Book -->
-        <section class="content-section">
+        <section class="content-section video-container">
             <h2 class="main-title-neon">Why Welcome to New York is Unlike Anything You've Read Before</h2>
             <ul>
                 <li><strong>Romance with Purpose:</strong> Dive into an inspiring love, free from toxic clichés.</li>
@@ -759,6 +766,14 @@
             <h2 class="main-title-neon">A Legacy in New York: A Saga in Parts</h2>
             <p><em>Born Ricciwood</em> is just the first volume in the thrilling <strong>A Legacy in New York</strong> series. This developing saga promises to unveil even more secrets, passions, and twists in the lives of Gabriel and those around him.</p>
             <p>Prepare for a literary journey that deepens with each book. Each part reveals deeper secrets, until the untold past comes to light, shaping everyone's destiny.</p>
+        </section>
+
+        <!-- New Video Section -->
+        <section class="content-section section-extra-spacing video-container">
+            <h2 class="main-title-neon">Meet the Characters</h2>
+            <div class="book-collage">
+                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1102811075?h=7679ef5602" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+            </div>
         </section>
 
         <!-- 6) Who This Book Is For -->
@@ -797,6 +812,14 @@
                 <span class="reader-tag">— First Reader</span>
             </div>
             <!-- Removed the placeholder text here -->
+        </section>
+
+        <!-- New Video Player Section -->
+        <section class="content-section section-extra-spacing video-container">
+            <h2 class="main-title-neon">Watch The Trailer</h2>
+            <div class="book-collage">
+                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1102801648?h=679f9f08d2" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+            </div>
         </section>
 
         <!-- 9) Frequently Asked Questions (FAQ) -->
