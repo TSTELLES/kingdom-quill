@@ -42,6 +42,826 @@
       min-height: 100vh;
       overflow-x: hidden;
       /* Ajustado o padding-top para garantir que o conteúdo não fique atrás do cabeçalho fixo */
+      padding-top: 8em; /* Diminuído para reduzir o espaço */
+      padding-bottom: 2em;
+      position: relative;
+    }
+
+    /* Contêiner de fundo de vídeo animado */
+    .background-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      filter: brightness(0.3);
+    }
+
+    /* Estilo do vídeo para cobrir todo o fundo */
+    .background-animated video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+
+    /* Cabeçalho fixo com neon verde claro */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 6.5em; /* Mantido o tamanho anterior do cabeçalho */
+      background-color: black;
+      color: var(--neon-light-green); /* Cor geral do cabeçalho */
+      font-family: 'Merriweather', serif;
+      font-weight: bold;
+      font-size: 2.2rem;
+      display: flex;
+      flex-direction: column; /* Empilha título, slogan e navegação */
+      justify-content: space-between; /* Distribui o espaço entre os elementos */
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow: /* Sombra geral do cabeçalho, não do título */
+        0 0 8px var(--neon-light-green),
+        0 0 20px var(--neon-light-green),
+        0 0 40px var(--neon-light-green),
+        0 0 80px var(--neon-light-green);
+      animation: neonPulseLightGreen 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
+      z-index: 100;
+      padding-top: 0.8em; /* Espaço acima do conteúdo do cabeçalho */
+      padding-bottom: 0.8em; /* Espaço abaixo da navegação */
+    }
+
+    /* Grupo para Título e Slogan */
+    .title-slogan-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Centraliza verticalmente dentro do seu espaço */
+      flex-grow: 1; /* Permite que ocupe o espaço disponível */
+      width: 100%;
+    }
+
+    .site-title {
+      font-size: 2.2rem;
+      margin-bottom: 0.5em; /* Espaço entre título e slogan */
+      color: var(--neon-yellow); /* Cor do título alterada para amarelo */
+      text-shadow: /* Sombra do título alterada para amarelo */
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow);
+      animation: neonPulseYellow 2s infinite alternate; /* Animação para o amarelo */
+    }
+
+    .header-slogan {
+      font-size: 1.2rem; /* Tamanho do slogan no cabeçalho */
+      font-weight: normal;
+      color: var(--neon-white); /* Cor do slogan alterada para branco */
+      text-shadow: /* Sombra do slogan alterada para branco */
+        0 0 5px var(--neon-white),
+        0 0 10px var(--neon-white);
+      margin-top: 0;
+      margin-bottom: 0; /* Removido, pois o grupo e o header cuidam do espaçamento */
+      animation: neonPulseWhite 2s infinite alternate; /* Animação para o branco */
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: normal;
+      text-shadow: none;
+      /* Nenhuma margem vertical aqui, pois o header flexbox já posiciona */
+    }
+
+    .main-nav a {
+      color: var(--neon-white);
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px var(--neon-white);
+    }
+
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--neon-yellow);
+      text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow);
+      transform: scale(1.05);
+    }
+
+    /* Nova animação de pulso para verde claro */
+    @keyframes neonPulseLightGreen {
+      0% {
+        text-shadow:
+          0 0 10px var(--neon-light-green),
+          0 0 30px var(--neon-light-green),
+          0 0 50px var(--neon-light-green),
+          0 0 100px var(--neon-light-green);
+      }
+      100% {
+        text-shadow:
+          0 0 20px var(--neon-light-green),
+          0 0 40px var(--neon-light-green),
+          0 0 70px var(--neon-light-green),
+          0 0 120px var(--neon-light-green);
+      }
+    }
+
+    /* Nova animação de pulso para branco */
+    @keyframes neonPulseWhite {
+      0% {
+        text-shadow:
+          0 0 10px var(--neon-white),
+          0 0 30px var(--neon-white),
+          0 0 50px var(--neon-white),
+          0 0 100px var(--neon-white);
+      }
+      100% {
+        text-shadow:
+          0 0 20px var(--neon-white),
+          0 0 40px var(--neon-white),
+          0 0 70px var(--neon-white),
+          0 0 120px var(--neon-white);
+      }
+    }
+
+    /* Nova animação de pulso para amarelo */
+    @keyframes neonPulseYellow {
+      0% {
+        text-shadow:
+          0 0 8px var(--neon-yellow),
+          0 0 20px var(--neon-yellow),
+          0 0 40px var(--neon-yellow),
+          0 0 80px var(--neon-yellow);
+      }
+      100% {
+        text-shadow:
+          0 0 15px var(--neon-yellow),
+          0 0 30px var(--neon-yellow),
+          0 0 50px var(--neon-yellow),
+          0 0 100px var(--neon-yellow);
+      }
+    }
+
+    /* Área de conteúdo principal */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 1rem; /* Ajustado para acomodar o cabeçalho dinâmico */
+      gap: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      min-height: calc(100vh - 6.5em - 2em); /* Ajustado para o cabeçalho dinâmico */
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Estilo de secção partilhado para blocos de texto */
+    .content-section {
+      background: rgba(0,0,0,0.6);
+      padding: 1.5rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      max-width: 500px;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+      /* Adicionado margin-top para empurrar a seção para baixo */
+      margin-top: 2rem;
+    }
+    .content-section p {
+        margin-bottom: 0.8rem;
+        margin-top: 0;
+    }
+    .content-section strong {
+      color: var(--neon-yellow);
+    }
+
+    /* Títulos principais com efeito neon */
+    .main-title-neon {
+      color: var(--neon-yellow);
+      font-size: 1.8rem;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow);
+      animation: neonPulseYellow 2s infinite alternate;
+    }
+    .subtitle-strong {
+        margin-top: 0.4rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    /* Grelha de seleção de idiomas (semelhante aos botões de loja) */
+    .language-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.2rem;
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .language-grid a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: 2px solid transparent;
+        border-radius: 15px;
+        width: 110px;
+        height: 130px;
+        box-shadow: none;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.9rem;
+        padding: 0.7em;
+        box-sizing: border-box;
+    }
+
+    .language-grid a:not(.unavailable):hover {
+        background: rgba(249, 248, 113, 0.1);
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+        border-color: var(--neon-yellow);
+    }
+
+    .language-grid a img {
+        max-width: 100%;
+        max-height: 70px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        filter: brightness(0.9);
+        transition: filter 0.3s ease;
+        margin-bottom: 0.2em;
+        flex-shrink: 0;
+    }
+
+    .language-grid a span {
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.2;
+    }
+
+    /* Estilo para botões de idioma indisponíveis */
+    .language-grid a.unavailable {
+        opacity: 0.5;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    /* Rodapé fixo */
+    footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 2em;
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 2em;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
+      z-index: 100;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.8rem;
+      line-height: 2em;
+    }
+
+    /* Estilo neon rosa mais suave */
+    .neon-pink-soft {
+      color: var(--neon-pink-soft);
+      text-shadow:
+        0 0 8px var(--neon-pink-soft),
+        0 0 20px var(--neon-pink-soft),
+        0 0 40px var(--neon-pink-soft);
+    }
+
+    /* Estilo para o título do livro (fonte e cor rosa) */
+    .book-title-style {
+      font-family: 'Monotype Corsiva', cursive;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    /* Estilo para a parte do livro (branco aceso) */
+    .book-part-white-glow {
+      color: var(--neon-white);
+      text-shadow:
+        0 0 5px var(--neon-white),
+        0 0 15px var(--neon-white),
+        0 0 25px var(--neon-white);
+    }
+
+    /* Novo estilo de brilho roxo neon */
+    .neon-purple-glow {
+        color: var(--neon-purple);
+        text-shadow:
+          0 0 15px var(--neon-purple-light),
+          0 0 30px var(--neon-purple-medium),
+          0 0 50px var(--neon-purple),
+          0 0 80px var(--neon-purple);
+        animation: neonPulsePurple 1.6s infinite alternate;
+    }
+
+    /* Nova animação de pulso para roxo neon */
+    @keyframes neonPulsePurple {
+      0% {
+        text-shadow:
+          0 0 10px var(--neon-purple-light),
+          0 0 25px var(--neon-purple-medium),
+          0 0 45px var(--neon-purple),
+          0 0 70px var(--neon-purple);
+      }
+      100% {
+        text-shadow:
+          0 0 20px var(--neon-purple-light),
+          0 0 40px var(--neon-purple-medium),
+          0 0 60px var(--neon-purple),
+          0 0 90px var(--neon-purple);
+      }
+    }
+
+    /* Estilo de brilho amarelo neon */
+    .neon-yellow-glow {
+      color: var(--neon-yellow);
+      text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow);
+    }
+
+    /* Estilo para a fonte Abaddon */
+    .abaddon-font-style {
+        font-family: 'Abaddon', sans-serif;
+        font-size: 1.6rem;
+    }
+
+    /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
+    .book-part-block-style {
+        font-size: 1rem;
+        font-weight: bold;
+        display: block;
+        text-transform: uppercase;
+        margin-top: -0.7em;
+    }
+
+    /* Estilo para a capa do livro */
+    .book-cover {
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+      margin-top: 4rem;
+      transition: transform 0.3s ease;
+    }
+
+    .book-cover:hover {
+      transform: scale(1.05);
+    }
+
+    /* Novo estilo de botão neon - RESTAURADO para AMARELO NEON */
+    .neon-button {
+      display: inline-block;
+      padding: 0.7rem 1.8rem;
+      border: 2px solid var(--neon-yellow);
+      border-radius: 25px;
+      background: linear-gradient(45deg, rgba(249, 248, 113, 0.1), rgba(249, 248, 113, 0.05));
+      color: var(--neon-yellow);
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+      text-shadow:
+        0 0 10px var(--neon-yellow),
+        0 0 30px var(--neon-yellow),
+        0 0 60px var(--neon-yellow);
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.5);
+      transition: all 0.3s ease;
+      user-select: none;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+
+    .neon-button:hover {
+      background: linear-gradient(45deg, rgba(249, 248, 113, 0.2), rgba(249, 248, 113, 0.1));
+      transform: scale(1.08);
+      box-shadow:
+        0 0 25px rgba(249, 248, 113, 0.8),
+        inset 0 0 10px rgba(249, 248, 113, 0.4);
+      border-color: var(--neon-yellow);
+    }
+
+    /* NOVO ESTILO PARA O TEXTO "HERE" DENTRO DO BOTÃO - ROSA NEON */
+    .neon-button-text-pink {
+      color: var(--neon-pink-soft);
+      text-shadow:
+        0 0 8px var(--neon-pink-soft),
+        0 0 20px var(--neon-pink-soft),
+        0 0 40px var(--neon-pink-soft);
+    }
+
+    /* Estilo para a seção da capa do livro (para Flexbox e simetria) */
+    .content-section.book-cover-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 620px;
+        padding: 2rem 2.5rem;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        background: rgba(0,0,0,0.6);
+        border-radius: 15px;
+        max-width: 500px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    /* Resetar margens dos filhos diretos para que justify-content controle */
+    .content-section.book-cover-section > * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Agrupamento de título e "Part 1" para Flexbox */
+    .book-header-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+    }
+    
+    /* Espaçamento interno específico para Part 1 dentro do grupo */
+    .book-header-group p.book-part-block-style {
+        margin-top: -0.7em;
+    }
+
+    /* Estilo para o contêiner do botão e das mãos */
+    .button-with-hands {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 6rem;
+    }
+
+    .hand-emoji {
+        font-size: 1.5rem;
+        color: var(--neon-yellow);
+        text-shadow:
+          0 0 5px var(--neon-yellow),
+          0 0 10px var(--neon-yellow),
+          0 0 20px var(--neon-yellow);
+        animation: neonPulseYellow 1.5s infinite alternate;
+    }
+
+    /* Estilos para cards de Bíblias, Devocionais e Livros */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.7);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 0.7);
+    }
+
+    .card img {
+      max-width: 150px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      color: var(--neon-light-green);
+      text-shadow: 0 0 5px var(--neon-light-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .card .neon-button {
+      margin-top: auto;
+    }
+
+    /* Estilos para a seção About T. S. Telles (author-note) */
+    .content-section.author-note {
+        text-align: center;
+    }
+    .content-section.author-note img {
+        display: block;
+        margin: 1em auto;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        box-shadow: 0 0 10px var(--neon-pink-soft);
+    }
+    .content-section.author-note .signature {
+        font-family: 'Monotype Corsiva', cursive;
+        font-size: 1.5rem;
+        color: var(--neon-pink-soft);
+        text-align: center;
+        margin-top: 1em;
+        text-shadow: 0 0 5px var(--neon-pink-soft);
+    }
+
+    /* Ajustes de responsividade */
+    @media (max-width: 768px) {
+        .content-section {
+            font-size: 1.05rem;
+            padding: 1.5rem 1.8rem;
+            max-width: 90%;
+        }
+        .main-title-neon {
+            font-size: 1.5rem;
+        }
+        .subtitle-strong {
+            font-size: 1.25rem;
+        }
+        .language-grid {
+            gap: 1.2rem;
+        }
+        .language-grid a {
+            width: 90px;
+            height: 100px;
+            font-size: 0.8rem;
+        }
+        .language-grid a img {
+            max-height: 60px;
+        }
+        .content-section.book-cover-section {
+            min-height: 480px;
+            padding: 1.5rem 1.8rem;
+        }
+        .neon-button {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.95rem;
+        }
+        .button-with-hands {
+            margin-top: 4rem;
+        }
+        .card-grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.5rem;
+        }
+        header {
+          font-size: 1.8rem;
+          height: 6em; /* Ajustado para telas menores */
+          padding-top: 0.7em;
+          padding-bottom: 0.7em;
+        }
+        .site-title {
+          font-size: 1.8rem;
+        }
+        .header-slogan {
+          font-size: 1rem;
+          margin-bottom: 0; /* Ajustado para telas menores */
+        }
+        .main-nav {
+          gap: 1rem;
+          font-size: 0.9rem;
+        }
+        body {
+          padding-top: 8em; /* Ajustado para telas menores */
+        }
+        main {
+          min-height: calc(100vh - 6em - 2em); /* Ajustado para telas menores */
+        }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.5rem;
+        height: 5.5em; /* Ajustado para telas muito pequenas */
+        padding-top: 0.6em;
+        padding-bottom: 0.6em;
+      }
+      .site-title {
+        font-size: 1.5rem;
+      }
+      .header-slogan {
+        font-size: 0.9rem;
+        margin-bottom: 0; /* Ajustado para telas muito pequenas */
+      }
+      .main-nav {
+        gap: 0.8rem;
+        font-size: 0.8rem;
+      }
+      footer {
+        font-size: 0.8rem;
+        height: 2em;
+        line-height: 2em;
+      }
+      body {
+        padding-top: 7em; /* Ajustado para telas muito pequenas */
+        padding-bottom: 2em;
+      }
+      main {
+        min-height: calc(100vh - 5.5em - 2em); /* Ajustado para telas muito pequenas */
+        padding: 1em 1rem 1.5rem;
+        gap: 2rem;
+      }
+      .language-grid {
+        gap: 0.8rem;
+      }
+      .language-grid a {
+        width: 80px;
+        height: 90px;
+        font-size: 0.7rem;
+      }
+      .language-grid a img {
+        max-height: 50px;
+      }
+      .content-section {
+        font-size: 0.95rem;
+        padding: 1.2rem 1.5rem;
+        max-width: 95%;
+      }
+      .main-title-neon {
+          font-size: 1.3rem;
+      }
+      .subtitle-strong {
+          font-size: 1.05rem;
+      }
+      .book-cover {
+        max-width: 130px;
+        margin-top: 3rem;
+      }
+      .neon-button {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+      }
+      .book-part-block-style {
+          font-size: 0.75rem;
+      }
+      .content-section.book-cover-section {
+          min-height: 340px;
+          padding: 1.2rem 1.5rem;
+      }
+      .button-with-hands {
+          margin-top: 2.2rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-animated" aria-hidden="true">
+    <video autoplay loop muted playsinline>
+      <source src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
+      O seu navegador não suporta a tag de vídeo.
+    </video>
+  </div>
+
+  <header>
+    <div class="title-slogan-group">
+      <span class="site-title">Kingdom & Quill</span>
+      <p class="header-slogan">Ink. Spirit. Legacy.</p>
+    </div>
+    <nav class="main-nav">
+      <a href="/best-bibles-audiobooks/best-bibles.html">Best Bibles</a>
+      <a href="#devotionals-section">Devotional</a>
+      <a href="welcome-to-ny.html" onclick="gtag('event', 'click', { 'event_category': 'Navigation', 'event_label': 'Welcome to New York' });">Welcome to New York</a>
+      <a href="axwar.html" onclick="gtag('event', 'click', { 'event_category': 'Navigation', 'event_label': 'Axwar' });">Axwar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content-section" id="project-mission-section" aria-label="Our Mission">
+      <h2 class="main-title-neon">🌟 Inside the Kingdom & Quill Mission 🌟</h2>
+      <p>Kingdom & Quill is an independent project dedicated to distributing remastered audio Bibles in multiple languages, with the purpose of making the Word of God accessible — with dignity — to people across the globe, especially those living under religious persecution, government censorship, or in war zones.</p>
+      <p>The audio Bibles are made available on a wide range of digital platforms, including free versions that require no personal data or payment information. This ensures that marginalized Christian communities can hear the Truth without compromising their safety. Paid editions in open regions help fund and sustain the mission in high-risk areas.</p>
+      <p>Kingdom & Quill was born from the vision of a Christian author committed to proclaiming the true Gospel — without prosperity theology, without a false Christ, and without commercial compromise. The content shared through this project — including devotionals, fiction books, and Scripture — is crafted to strengthen hearts and stir souls toward the presence of the Lord.</p>
+      <p>There is no room here for profanity, sexual content, or shallow entertainment. Only reverent creativity, sound doctrine, and powerful storytelling anchored in eternal truth.</p>
+    </section>
+
+    <section class="content-section author-note" aria-label="About T. S. Telles">
+      <h2 class="main-title-neon">About T. S. Telles</h2>
+      <img src="https://raw.githubusercontent.com/TSTELLES/best-bibles-audiobooks/main/tsphoto.jpg" alt="Author's Photo" />
+      <p>I've always been passionate about stories that blend elite glamour with deep human dramas, like <em>Gossip Girl</em> and <em>The Vampire Diaries</em>. However, I noticed that many of these captivating plots didn't address themes of faith, forgiveness, and redemption in a meaningful way, or even featured toxic relationships.</p>
+      <p><em>Welcome to New York: Born Ricciwood</em> was born from the desire to create a tribute to these beloved series, but with a different voice. It's an answer to the search for a romance that, beyond intrigue and luxury, also explores themes of faith, forgiveness, and redemption.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 T. S. TELLES. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kingdom & Quill</title> <!-- Título da página atualizado para Kingdom & Quill -->
+  <!-- Meta tag para palavras-chave de SEO -->
+  <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Hindi Bible, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googlesearch.com/gtag/js?id=G-FW455H9ND7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FW455H9ND7');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <!-- Abaddon Font from CDNFonts.com -->
+  <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
+  <style>
+    /* Variáveis CSS para cores neon */
+    :root {
+      --neon-yellow: #f9f871;
+      --neon-pink-soft: #FF66CC;
+      --neon-white: #FFF;
+      --neon-light-green: #90EE90; /* Novo verde claro */
+      --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
+      /* Novas variáveis para tons de roxo para o brilho, para consistência */
+      --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
+      --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
+    }
+
+    /* Estilos globais e redefinições */
+    body {
+      margin: 0;
+      background: black; /* Fundo principal, o vídeo será sobreposto */
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      /* Ajustado o padding-top para garantir que o conteúdo não fique atrás do cabeçalho fixo */
       padding-top: 20em; /* Aumentado para descer mais o conteúdo */
       padding-bottom: 2em;
       position: relative;
