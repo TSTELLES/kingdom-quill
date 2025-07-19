@@ -42,7 +42,7 @@
       min-height: 100vh;
       overflow-x: hidden;
       /* Ajustado o padding-top para garantir que o conteúdo não fique atrás do cabeçalho fixo */
-      padding-top: 13.5em; 
+      padding-top: 20em; /* Aumentado para descer mais o conteúdo */
       padding-bottom: 2em;
       position: relative;
     }
@@ -76,7 +76,7 @@
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
-      height: 10.5em; /* Altura ajustada para acomodar título, slogan e navegação */
+      height: 6.5em; /* Mantido o tamanho anterior do cabeçalho */
       background-color: black;
       color: var(--neon-light-green); /* Cor geral do cabeçalho */
       font-family: 'Merriweather', serif;
@@ -230,7 +230,7 @@
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
-      min-height: calc(100vh - 10.5em - 2em); /* Ajustado para o cabeçalho dinâmico */
+      min-height: calc(100vh - 6.5em - 2em); /* Ajustado para o cabeçalho dinâmico */
       position: relative;
       z-index: 1;
     }
@@ -607,6 +607,28 @@
       margin-top: auto;
     }
 
+    /* Estilos para a seção About T. S. Telles (author-note) */
+    .content-section.author-note {
+        text-align: center;
+    }
+    .content-section.author-note img {
+        display: block;
+        margin: 1em auto;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        box-shadow: 0 0 10px var(--neon-pink-soft);
+    }
+    .content-section.author-note .signature {
+        font-family: 'Monotype Corsiva', cursive;
+        font-size: 1.5rem;
+        color: var(--neon-pink-soft);
+        text-align: center;
+        margin-top: 1em;
+        text-shadow: 0 0 5px var(--neon-pink-soft);
+    }
+
     /* Ajustes de responsividade */
     @media (max-width: 768px) {
         .content-section {
@@ -648,7 +670,7 @@
         }
         header {
           font-size: 1.8rem;
-          height: 9.5em; /* Ajustado para telas menores */
+          height: 6em; /* Ajustado para telas menores */
           padding-top: 0.7em;
           padding-bottom: 0.7em;
         }
@@ -664,17 +686,17 @@
           font-size: 0.9rem;
         }
         body {
-          padding-top: 10em; /* Ajustado para telas menores */
+          padding-top: 12em; /* Ajustado para telas menores */
         }
         main {
-          min-height: calc(100vh - 9.5em - 2em); /* Ajustado para telas menores */
+          min-height: calc(100vh - 6em - 2em); /* Ajustado para telas menores */
         }
     }
 
     @media (max-width: 480px) {
       header {
         font-size: 1.5rem;
-        height: 8.5em; /* Ajustado para telas muito pequenas */
+        height: 5.5em; /* Ajustado para telas muito pequenas */
         padding-top: 0.6em;
         padding-bottom: 0.6em;
       }
@@ -695,11 +717,11 @@
         line-height: 2em;
       }
       body {
-        padding-top: 9em; /* Ajustado para telas muito pequenas */
+        padding-top: 11.5em; /* Ajustado para telas muito pequenas */
         padding-bottom: 2em;
       }
       main {
-        min-height: calc(100vh - 8.5em - 2em); /* Ajustado para telas muito pequenas */
+        min-height: calc(100vh - 5.5em - 2em); /* Ajustado para telas muito pequenas */
         padding: 2em 1rem 1.5rem;
         gap: 2rem;
       }
@@ -774,12 +796,20 @@
 
   <main>
     <section class="content-section" id="project-mission-section" aria-label="Our Mission">
-      <h2 class="main-title-neon">🌟 Our Mission</h2>
+      <h2 class="main-title-neon">🌟 Inside the Kingdom & Quill Mission 🌟</h2>
       <p>Kingdom & Quill is an independent project dedicated to distributing remastered audio Bibles in multiple languages, with the purpose of making the Word of God accessible — with dignity — to people across the globe, especially those living under religious persecution, government censorship, or in war zones.</p>
       <p>The audio Bibles are made available on a wide range of digital platforms, including free versions that require no personal data or payment information. This ensures that marginalized Christian communities can hear the Truth without compromising their safety. Paid editions in open regions help fund and sustain the mission in high-risk areas.</p>
       <p>Kingdom & Quill was born from the vision of a Christian author committed to proclaiming the true Gospel — without prosperity theology, without a false Christ, and without commercial compromise. The content shared through this project — including devotionals, fiction books, and Scripture — is crafted to strengthen hearts and stir souls toward the presence of the Lord.</p>
       <p>There is no room here for profanity, sexual content, or shallow entertainment. Only reverent creativity, sound doctrine, and powerful storytelling anchored in eternal truth.</p>
     </section>
+
+    <section class="content-section author-note" aria-label="About T. S. Telles">
+      <h2 class="main-title-neon">About T. S. Telles</h2>
+      <img src="https://raw.githubusercontent.com/TSTELLES/best-bibles-audiobooks/main/tsphoto.jpg" alt="Author's Photo" />
+      <p>I've always been passionate about stories that blend elite glamour with deep human dramas, like <em>Gossip Girl</em> and <em>The Vampire Diaries</em>. However, I noticed that many of these captivating plots didn't address themes of faith, forgiveness, and redemption in a meaningful way, or even featured toxic relationships.</p>
+      <p><em>Welcome to New York: Born Ricciwood</em> was born from the desire to create a tribute to these beloved series, but with a different voice. It's an answer to the search for a romance that, beyond intrigue and luxury, also explores themes of faith, forgiveness, and redemption.</p>
+    </section>
+
   </main>
 
   <footer>
