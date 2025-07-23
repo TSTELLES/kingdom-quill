@@ -42,8 +42,8 @@
       min-height: 100vh;
       overflow-x: hidden;
       /* Ajustado o padding-top para garantir que o conteúdo não fique atrás do cabeçalho fixo */
-      padding-top: 10em; /* Aumentado para aumentar o espaço */
-      padding-bottom: 2em;
+      padding-top: 15em; /* Aumentado para aumentar o espaço */
+      padding-bottom: 4em; /* Aumentado para dar espaço ao rodapé fixo */
       position: relative;
     }
 
@@ -287,8 +287,10 @@
     
     /* Rodapé fixo */
     footer {
-      position: relative; /* Mudado para relative para não ser fixo */
-      margin-top: 2rem;
+      position: fixed; /* MUDADO PARA FIXED */
+      bottom: 0;
+      left: 0;
+      right: 0;
       height: 2em;
       background-color: black;
       color: #ccc;
@@ -309,7 +311,7 @@
     /* Ajustes de responsividade */
     @media (max-width: 768px) {
         body {
-            padding-top: 8em; /* Ajustado para o novo header */
+            padding-top: 16em; /* Ajustado para o novo header */
         }
         header {
             font-size: 1.8rem;
@@ -333,7 +335,7 @@
 
     @media (max-width: 480px) {
         body {
-            padding-top: 9em; /* Ajustado para o novo header em telas pequenas */
+            padding-top: 17em; /* Ajustado para o novo header em telas pequenas */
         }
         header {
             font-size: 1.5rem;
