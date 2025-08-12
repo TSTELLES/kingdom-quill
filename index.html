@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kingdom & Quill</title> <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Hindi Bible, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
+  <title>Kingdom & Quill</title>
+  <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Hindi Bible, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8D2XP76XMD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,6 +20,7 @@
     :root {
       --neon-yellow: #f9f871;
       --neon-pink-soft: #FF66CC;
+      --neon-pink-light: #FF99CC; /* Novo rosa claro para o brilho do pop-up */
       --neon-white: #FFF;
       --neon-light-green: #90EE90; /* Novo verde claro */
       --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
@@ -304,6 +306,123 @@
       line-height: 2em;
     }
 
+    /* Estilos para o Pop-up de Idioma */
+    .language-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+        display: flex; /* Usar flexbox para centralizar */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* Acima de tudo */
+        visibility: hidden; /* Escondido por padrão */
+        opacity: 0; /* Totalmente transparente por padrão */
+        transition: visibility 0.3s, opacity 0.3s ease-in-out; /* Transição suave */
+    }
+
+    .language-modal-overlay.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .language-modal-content {
+        background: rgba(0, 0, 0, 0.95); /* Fundo do balão mais escuro */
+        padding: 2.5em 3em;
+        border-radius: 20px; /* Mais arredondado */
+        box-shadow: 
+            0 0 15px var(--neon-pink-light), /* Brilho interno rosa claro */
+            0 0 30px var(--neon-pink-soft), /* Brilho médio rosa */
+            0 0 50px var(--neon-pink-soft), /* Brilho externo principal rosa */
+            0 0 80px var(--neon-pink-soft);
+        text-align: center;
+        max-width: 90%;
+        width: 400px;
+        position: relative;
+        animation: neonPulsePink 2s infinite alternate; /* Adiciona a animação neon rosa */
+    }
+
+    /* Animação de pulso para rosa */
+    @keyframes neonPulsePink { /* Renomeado para Pink */
+        0% {
+            box-shadow:
+                0 0 15px var(--neon-pink-light),
+                0 0 30px var(--neon-pink-soft),
+                0 0 50px var(--neon-pink-soft),
+                0 0 80px var(--neon-pink-soft);
+        }
+        100% {
+            box-shadow:
+                0 0 20px var(--neon-pink-light),
+                0 0 40px var(--neon-pink-soft),
+                0 0 70px var(--neon-pink-soft),
+                0 0 100px var(--neon-pink-soft);
+        }
+    }
+
+    .language-modal-content h3 {
+        color: var(--neon-pink-soft); /* Cor do título do pop-up */
+        font-family: 'Merriweather', serif;
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 1.5em;
+        text-shadow: 
+            0 0 8px var(--neon-pink-soft),
+            0 0 20px var(--neon-pink-soft);
+    }
+
+    .language-modal-buttons {
+        display: flex;
+        flex-direction: column; /* Botões empilhados */
+        gap: 1em; /* Espaçamento entre os botões */
+    }
+
+    .language-modal-buttons button {
+        background: none;
+        border: 2px solid var(--neon-yellow); /* Borda amarela neon */
+        color: var(--neon-white);
+        padding: 0.8em 1.5em;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 5px var(--neon-white);
+        box-shadow: 0 0 10px rgba(249, 248, 113, 0.5); /* Sombra inicial amarelo claro */
+    }
+
+    .language-modal-buttons button:hover {
+        background-color: rgba(249, 248, 113, 0.1); /* Fundo levemente amarelo no hover */
+        color: var(--neon-yellow); /* Texto amarelo neon no hover */
+        text-shadow: 
+            0 0 8px var(--neon-yellow),
+            0 0 20px var(--neon-yellow);
+        box-shadow: 
+            0 0 15px var(--neon-yellow), /* Sombra amarela mais intensa */
+            0 0 30px var(--neon-yellow);
+        transform: scale(1.05);
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: var(--neon-white);
+        font-size: 2em;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        text-shadow: 0 0 5px var(--neon-white);
+    }
+
+    .close-modal:hover {
+        color: var(--neon-pink-soft);
+        text-shadow: 0 0 8px var(--neon-pink-soft), 0 0 20px var(--neon-pink-soft);
+    }
+
     /* Ajustes de responsividade */
     @media (max-width: 768px) {
         body {
@@ -326,6 +445,17 @@
             font-size: 1.05rem;
             padding: 1.5rem 1.8rem;
             max-width: 90%;
+        }
+        .language-modal-content {
+            padding: 2em 2.5em;
+            width: 300px;
+        }
+        .language-modal-content h3 {
+            font-size: 1.5rem;
+        }
+        .language-modal-buttons button {
+            font-size: 1rem;
+            padding: 0.7em 1.2em;
         }
     }
 
@@ -351,6 +481,17 @@
         main {
             padding-top: 2rem;
         }
+        .language-modal-content {
+            padding: 1.5em 2em;
+            width: 280px;
+        }
+        .language-modal-content h3 {
+            font-size: 1.3rem;
+        }
+        .language-modal-buttons button {
+            font-size: 0.9em;
+            padding: 0.6em 1em;
+        }
     }
   </style>
 </head>
@@ -371,7 +512,8 @@
     <nav class="main-nav">
       <a href="best-bibles.html">Best Bibles</a>
       <a href="#devotionals-section">Devotional</a>
-      <a href="welcome-to-ny.html" onclick="gtag('event', 'click', { 'event_category': 'Navigation', 'event_label': 'Welcome to New York' });">Welcome to New York</a>
+      <!-- Link Welcome to New York - AGORA IRÁ ABRIR O POP-UP -->
+      <a href="#" id="welcomeToNyLink">Welcome to New York</a>
       <a href="axwar.html" onclick="gtag('event', 'click', { 'event_category': 'Navigation', 'event_label': 'Axwar' });">Axwar</a>
     </nav>
   </header>
@@ -398,6 +540,68 @@
   <footer>
     <p>&copy; 2025 T. S. TELLES. All rights reserved.</p>
   </footer>
+
+  <!-- HTML para o Pop-up de Seleção de Idioma -->
+  <div id="languageModal" class="language-modal-overlay">
+    <div class="language-modal-content">
+      <button class="close-modal">&times;</button>
+      <h3>Select Your Language / Selecione Seu Idioma</h3>
+      <div class="language-modal-buttons">
+        <button id="selectEnglish">English</button>
+        <button id="selectPortuguese">Português</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // GARANTE QUE O SCRIPT RODE APÓS O CARREGAMENTO TOTAL DA PÁGINA
+    window.onload = function() {
+      // OBTÉM REFERÊNCIAS PARA OS ELEMENTOS
+      const welcomeToNyLink = document.getElementById('welcomeToNyLink');
+      const languageModal = document.getElementById('languageModal');
+      const closeModalButton = languageModal.querySelector('.close-modal');
+      const selectEnglishButton = document.getElementById('selectEnglish');
+      const selectPortugueseButton = document.getElementById('selectPortuguese');
+      const languageModalContent = languageModal.querySelector('.language-modal-content');
+
+      // FUNÇÃO PARA ABRIR O POP-UP
+      function openModal(event) {
+        event.preventDefault(); // IMPEDE A NAVEGAÇÃO IMEDIATA DO LINK
+        languageModal.classList.add('show'); // Adiciona a classe 'show' para exibir e animar
+      }
+
+      // FUNÇÃO PARA FECHAR O POP-UP
+      function closeModal() {
+        languageModal.classList.remove('show'); // Remove a classe 'show' para esconder e animar
+      }
+
+      // ADICIONA EVENT LISTENER PARA O CLIQUE NO LINK "WELCOME TO NEW YORK"
+      welcomeToNyLink.addEventListener('click', openModal);
+
+      // ADICIONA EVENT LISTENER PARA O CLIQUE NO BOTÃO DE FECHAR
+      closeModalButton.addEventListener('click', closeModal);
+
+      // FECHA O POP-UP AO CLICAR FORA DO CONTEÚDO DO MODAL
+      languageModal.addEventListener('click', function(event) {
+        if (!languageModalContent.contains(event.target) && event.target === languageModal) {
+          closeModal();
+        }
+      });
+
+      // ADICIONA EVENT LISTENERS PARA OS BOTÕES DE SELEÇÃO DE IDIOMA
+      selectEnglishButton.addEventListener('click', function() {
+        // ENCAMINHA PARA A PÁGINA EM INGLÊS E REGISTRA O EVENTO DO GA
+        window.location.href = './welcome-to-ny.html'; // ALTERADO PARA './welcome-to-ny.html' para garantir caminho relativo
+        gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Welcome to New York - English' });
+      });
+
+      selectPortugueseButton.addEventListener('click', function() {
+        // ENCAMINHA PARA A PÁGINA EM PORTUGUÊS E REGISTRA O EVENTO DO GA
+        window.location.href = 'welcome-to-ny-pt.html';
+        gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Welcome to New York - Portuguese' });
+      });
+    };
+  </script>
 
 </body>
 </html>
