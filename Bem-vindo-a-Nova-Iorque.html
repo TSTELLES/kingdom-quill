@@ -17,7 +17,7 @@
             --neon-pink-soft: #FF66CC;
             --neon-white: #FFF;
             --neon-light-green: #90EE90; /* Novo verde claro */
-            --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
+            --neon-purple: #3C096C; /* Roxo neon especificado pelo usuário */
             /* Novas variáveis para tons de roxo para o brilho, para consistência */
             --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
             --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
@@ -146,7 +146,7 @@
             z-index: 1; /* Garante que o conteúdo principal esteja acima do fundo */
         }
 
-        /* Estilo de secção partilhado para blocos de texto */
+        /* Estilo de seção compartilhado para blocos de texto */
         .content-section {
             background: rgba(0,0,0,0.6);
             padding: 1.5rem 2rem; /* Reduzido de 2rem para 1.5rem */
@@ -164,8 +164,22 @@
         
         /* Estilo para seções de vídeo maiores */
         .content-section.video-container {
-            max-width: 800px; /* AUMENTADO SIGNIFICATIVAMENTE */
+            max-width: 900px; /* AUMENTADO PARA DEIXAR O VÍDEO MAIOR */
             width: 90%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
+            height: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .content-section.video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
         }
 
         /* Aumenta o espaçamento superior para seções específicas */
@@ -619,7 +633,7 @@
     <div class="background-animated" aria-hidden="true">
         <video autoplay loop muted playsinline>
             <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Make_paint_write_202506211339_7rv0y.mp4" type="video/mp4">
-            O seu navegador não suporta a tag de vídeo.
+            Seu navegador não suporta a tag de vídeo.
         </video>
     </div>
 
@@ -639,7 +653,7 @@
             </h1>
             <p class="book-part-block-style book-part-white-glow">Parte 1 da Série Um Legado em Nova Iorque</p>
             <div class="book-mockup-group">
-                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-vol-14.jpg" alt="Capa do livro Welcome to New York - Mockup 3D" />
+                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-14.jpg" alt="Capa do livro Bem-vindo a Nova Iorque - Mockup 3D" />
                 <!-- Removed the audiobook mockup image -->
             </div>
             <p class="subtitle-strong neon-pink-soft">"Mesmo os corações mais partidos podem encontrar um novo começo."</p>
@@ -656,18 +670,6 @@
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
                 </a>
             </div>
-            
-            <!-- Player de Áudio Personalizado -->
-            <!-- REMOVIDO PARA ESTA VERSÃO:
-            <div class="audio-player-container" id="audioPlayerContainer">
-                <p>Ouça uma breve conversa sobre o livro</p>
-                <i class="fas fa-play audio-player-icon" id="playPauseIcon"></i>
-                <audio id="bookAudio" preload="auto">
-                    <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/coment%C3%A1rio-para-p%C3%A1gina-de-vendas.mp3" type="audio/mpeg">
-                    O seu navegador não suporta o elemento de áudio.
-                </audio>
-            </div>
-            -->
         </section>
 
         <!-- 2) Bloco de Resumo — Gancho Inicial -->
@@ -689,13 +691,13 @@
             </div>
         </section>
 
-        <!-- 3) Como Welcome to New York Nasceu -->
+        <!-- 3) Como Welcome to New York Was Born -->
         <section class="content-section">
             <h2 class="main-title-neon">Como Bem-vindo a Nova Iorque Nasceu</h2>
             <p>Bem-vindo a Nova Iorque nasceu do desejo de misturar o melhor de dois mundos inesquecíveis — a intensidade glamorosa de Gossip Girl e os complexos arcos emocionais de The Vampire Diaries. Mas, para além do fascínio e do drama, esta história busca algo mais profundo: oferecer um romance que pareça verdadeiro, não tóxico — um amor que constrói em vez de destruir.</p>
             <p>Criado para ressoar com os leitores de hoje, Bem-vindo a Nova Iorque é mais do que um romance de amadurecimento. Ele explora as arestas cruas da vida real: famílias fraturadas, um passado que assombra, e a busca por um propósito maior. É uma jornada por Nova Iorque onde a fé, a esperança e a restauração se entrelaçam.</p>
             <p>Este livro é um lembrete de que, mesmo em meio às cicatrizes do passado, o amor pode ser o guia para um futuro de redenção.</p>
-            <!-- Purchase Buttons (reinforcement): Google Play Books, Amazon, Kindle Unlimited -->
+            <!-- Botões de Compra (reforço): Google Play Livros, Amazon, Kindle Unlimited -->
             <div class="purchase-buttons-container">
                 <a href="#" class="neon-button">
                     <i class="fab fa-google-play"></i> <span class="neon-button-text-pink">Compre no Google Play</span>
@@ -709,6 +711,12 @@
             </div>
         </section>
 
+        <!-- Seção dedicada ao vídeo "Conheça a inspiração por trás do livro" -->
+        <section class="content-section video-container section-extra-spacing">
+            <h2 class="main-title-neon">Conheça a inspiração por trás do livro</h2>
+            <iframe src="https://player.vimeo.com/video/1109755520" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
         <!-- 4) Key Themes Section -->
         <section class="content-section">
             <h2 class="main-title-neon">Temas Principais</h2>
@@ -719,7 +727,7 @@
                 <li>Jornada de Autodescoberta</li>
                 <li>Confrontando o Passado</li>
             </ul>
-            <!-- Purchase Buttons (reinforcement): Google Play Books, Amazon, Kindle Unlimited -->
+            <!-- Botões de Compra (reforço): Google Play Livros, Amazon, Kindle Unlimited -->
             <div class="purchase-buttons-container">
                 <a href="#" class="neon-button">
                     <i class="fab fa-google-play"></i> <span class="neon-button-text-pink">Compre no Google Play</span>
@@ -735,7 +743,7 @@
 
         <!-- 5) Audience Section -->
         <section class="content-section">
-            <h2 class="main-title-neon">Este Livro É Para Si Se...</h2>
+            <h2 class="main-title-neon">Este Livro É Para Você Se...</h2>
             <ul>
                 <li>Acredita no poder da transformação e da fé.</li>
                 <li>Procura uma história com personagens profundos e complexos.</li>
@@ -743,7 +751,7 @@
                 <li>Aprecia narrativas que unem drama, romance e temas cristãos.</li>
                 <li>Deseja um livro que inspire esperança e redenção.</li>
             </ul>
-            <!-- Purchase Buttons (reinforcement): Google Play Books, Amazon, Kindle Unlimited -->
+            <!-- Botões de Compra (reforço): Google Play Livros, Amazon, Kindle Unlimited -->
             <div class="purchase-buttons-container">
                 <a href="#" class="neon-button">
                     <i class="fab fa-google-play"></i> <span class="neon-button-text-pink">Compre no Google Play</span>
@@ -759,7 +767,7 @@
 
         <!-- 6) Testimonials Section -->
         <section class="content-section testimonials">
-            <h2 class="main-title-neon">O Que Os Leitores Estão a Dizer</h2>
+            <h2 class="main-title-neon">O Que Os Leitores Estão Dizendo</h2>
             <div class="testimonial">
                 <p>"Uma história cativante sobre superação e amor. Não consegui parar de ler!"<span class="reader-tag">— Ana P.</span></p>
             </div>
@@ -769,7 +777,7 @@
             <div class="testimonial">
                 <p>"Um romance emocionante que realmente toca o coração. Recomendo a todos que procuram uma leitura significativa."<span class="reader-tag">— Sofia M.</span></p>
             </div>
-            <!-- Purchase Buttons (reinforcement): Google Play Books, Amazon, Kindle Unlimited -->
+            <!-- Botões de Compra (reforço): Google Play Livros, Amazon, Kindle Unlimited -->
             <div class="purchase-buttons-container">
                 <a href="#" class="neon-button">
                     <i class="fab fa-google-play"></i> <span class="neon-button-text-pink">Compre no Google Play</span>
@@ -783,10 +791,16 @@
             </div>
         </section>
 
+        <!-- Vídeo do Vimeo Inserido Aqui (Trailer do Livro) -->
+        <section class="content-section video-container section-extra-spacing">
+            <h2 class="main-title-neon">Assista ao Trailer do Livro</h2>
+            <iframe src="https://player.vimeo.com/video/1109744075" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
         <!-- 7) Call to Action at the End -->
         <section class="content-section">
-            <h2 class="main-title-neon">Pronto para a Sua Jornada?</h2>
-            <p>Não perca esta emocionante história de amor, fé e redenção. Clique abaixo para começar a sua leitura hoje!</p>
+            <h2 class="main-title-neon">Pronto para Sua Jornada?</h2>
+            <p>Não perca esta emocionante história de amor, fé e redenção. Clique abaixo para começar sua leitura hoje!</p>
             <div class="purchase-buttons-container">
                 <a href="#" class="neon-button">
                     <i class="fab fa-google-play"></i> <span class="neon-button-text-pink">Compre no Google Play</span>
