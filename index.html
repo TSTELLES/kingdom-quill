@@ -591,13 +591,13 @@
       // ADICIONA EVENT LISTENERS PARA OS BOTÕES DE SELEÇÃO DE IDIOMA
       selectEnglishButton.addEventListener('click', function() {
         // ENCAMINHA PARA A PÁGINA EM INGLÊS E REGISTRA O EVENTO DO GA
-        window.location.href = './welcome-to-ny.html'; // ALTERADO PARA './welcome-to-ny.html' para garantir caminho relativo
+        window.location.href = './welcome-to-ny.html';
         gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Welcome to New York - English' });
       });
 
       selectPortugueseButton.addEventListener('click', function() {
         // ENCAMINHA PARA A PÁGINA EM PORTUGUÊS E REGISTRA O EVENTO DO GA
-        window.location.href = 'welcome-to-ny-pt.html';
+        window.location.href = 'Bem-vindo-a-Nova-Iorque.html'; // ALTERADO PARA 'Bem-vindo-a-Nova-Iorque.html'
         gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Welcome to New York - Portuguese' });
       });
     };
