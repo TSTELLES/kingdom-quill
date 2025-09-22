@@ -1,589 +1,872 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Welcome to New York: Born Ricciwood — Part 1 of A Legacy in New York. Romance, intrigue and redemption." />
-  <title>Welcome to New York Part 1: Born Ricciwood - Sales Page</title>
-
-  <!-- Performance hints -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" as="style">
-  <link rel="preload" href="https://fonts.cdnfonts.com/css/abaddon" as="style">
-
-  <!-- Fonts & icons (stylesheets loaded normally but non-blocking via media swap technique) -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to New York Part 1: Born Ricciwood - Sales Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
-  </noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Variáveis CSS para cores neon */
+        :root {
+            --neon-yellow: #f9f871;
+            --neon-pink-soft: #FF66CC;
+            --neon-white: #FFF;
+            --neon-light-green: #90EE90; /* Novo verde claro */
+            --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
+            /* Novas variáveis para tons de roxo para o brilho, para consistência */
+            --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
+            --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
+        }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="" crossorigin="anonymous">
+        /* Estilos globais e redefinições */
+        body {
+            margin: 0;
+            background: black; /* Fundo principal, o vídeo será sobreposto */
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 4.5em; /* Espaço para o cabeçalho fixo */
+            padding-bottom: 2em; /* Ajustado para 2em */
+            position: relative; /* Necessário para o z-index do fundo funcionar */
+        }
 
-  <style>
-    :root{
-      --neon-yellow:#f9f871;
-      --neon-pink:#FF66CC;
-      --neon-white:#FFFFFF;
-      --neon-light-green:#90EE90;
-      --neon-purple:#3C096C;
-      --bg:#000;
-      --card-bg: rgba(0,0,0,0.6);
-      --glass: linear-gradient(45deg, rgba(249,248,113,0.08), rgba(249,248,113,0.04));
-      --max-width:1200px;
-      --radius:12px;
-      --gap:1.25rem;
-    }
+        /* Contêiner de fundo de vídeo animado */
+        .background-animated {
+            position: fixed;
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta para centralização exata */
+            width: 90vw; /* Reduz a largura para 90% da largura da viewport */
+            height: 90vh; /* Reduz a altura para 90% da altura da viewport */
+            overflow: hidden; /* Garante que o vídeo não transborde do contêiner */
+            z-index: -1; /* Envia para o fundo */
+            filter: brightness(0.3); /* Escurece o vídeo */
+        }
 
-    /* Reset & base */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:var(--bg);
-      color:var(--neon-white);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding-top:4.5rem;
-      padding-bottom:3.5rem;
-      display:flex;
-      flex-direction:column;
-      min-height:100vh;
-    }
+        /* Estilo do vídeo para cobrir todo o fundo */
+        .background-animated video {
+            width: 100%; /* Ocupa 100% da largura do seu contêiner (.background-animated) */
+            height: 100%; /* Ocupa 100% da altura do seu contêiner */
+            position: absolute;
+            object-fit: cover; /* Garante que o vídeo cubra todo o contêiner, mantendo a proporção e cortando se necessário */
+        }
 
-    /* Accessibility: skip link */
-    .skip-link{
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-    .skip-link:focus{
-      left: 1rem;
-      top: 1rem;
-      width:auto;
-      height:auto;
-      padding:.5rem .75rem;
-      background:#fff;
-      color:#000;
-      z-index:9999;
-      border-radius:6px;
-    }
+        /* Cabeçalho fixo com neon verde claro */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 6em; /* Aumentado para o título ficar maior */
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+            user-select: none;
+            letter-spacing: 0.05em;
+            z-index: 100; /* Garante que o cabeçalho esteja no topo */
+            color: initial; /* Reseta a cor */
+            font-family: initial; /* Reseta a fonte */
+            text-shadow: none; /* Reseta a sombra */
+            animation: none; /* Reseta a animação */
+        }
 
-    /* Background video container (keeps video centered and slightly scaled) */
-    .background-animated{
-      position:fixed;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      z-index:-1;
-      pointer-events:none;
-      filter:brightness(.32);
-    }
-    .background-animated video{
-      min-width:100%;
-      min-height:100%;
-      width:auto;
-      height:auto;
-      object-fit:cover;
-      display:block;
-    }
+        /* Nova animação de pulso para verde claro (mantida, mas não aplicada diretamente ao header) */
+        @keyframes neonPulseLightGreen {
+            0% {
+                text-shadow:
+                    0 0 10px var(--neon-light-green),
+                    0 0 30px var(--neon-light-green),
+                    0 0 50px var(--neon-light-green),
+                    0 0 100px var(--neon-light-green);
+            }
+            100% {
+                text-shadow:
+                    0 0 20px var(--neon-light-green),
+                    0 0 40px var(--neon-light-green),
+                    0 0 70px var(--neon-light-green),
+                    0 0 120px var(--neon-light-green);
+            }
+        }
 
-    header{
-      position:fixed;
-      top:0;left:0;right:0;
-      height:4.5rem;
-      display:flex;
-      gap:.5rem;
-      align-items:center;
-      justify-content:center;
-      background:transparent;
-      z-index:80;
-      user-select:none;
-      pointer-events:auto;
-    }
+        /* Nova animação de pulso para rosa */
+        @keyframes neonPulsePink {
+            0% {
+                text-shadow:
+                    0 0 8px var(--neon-pink-soft),
+                    0 0 20px var(--neon-pink-soft),
+                    0 0 40px var(--neon-pink-soft);
+            }
+            100% {
+                text-shadow:
+                    0 0 15px var(--neon-pink-soft),
+                    0 0 30px var(--neon-pink-soft),
+                    0 0 50px var(--neon-pink-soft);
+            }
+        }
 
-    .book-title{
-      display:flex;
-      gap:.35rem;
-      align-items:baseline;
-    }
-    .book-title .part{
-      font-family:'Abaddon', sans-serif;
-      letter-spacing:.02em;
-      text-transform:uppercase;
-      font-weight:400;
-      font-size:1.35rem;
-    }
-    .neon{
-      text-shadow:0 0 6px currentColor,0 0 18px currentColor;
-    }
-    .neon-yellow{ color:var(--neon-yellow); }
-    .neon-pink{ color:var(--neon-pink); }
-    .neon-white{ color:var(--neon-white); }
+        /* Nova animação de pulso para branco */
+        @keyframes neonPulseWhite {
+            0% {
+                text-shadow:
+                    0 0 5px var(--neon-white),
+                    0 0 15px var(--neon-white),
+                    0 0 25px var(--neon-white);
+            }
+            100% {
+                text-shadow:
+                    0 0 10px var(--neon-white),
+                    0 0 20px var(--neon-white),
+                    0 0 35px var(--neon-white);
+            }
+        }
 
-    /* Main layout */
-    main{
-      width:100%;
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:5.5rem 1rem 2rem;
-      display:flex;
-      flex-direction:column;
-      gap:2.25rem;
-      z-index:1;
-    }
+        /* Área de conteúdo principal */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza os itens horizontalmente */
+            padding-top: 11.5em; /* Ajustado para dar espaço ao cabeçalho maior */
+            padding-bottom: 2rem;
+            /* Removido o 'gap' da main para controlar o espaçamento via margin-bottom das seções */
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            min-height: calc(100vh - 6em - 2em); /* Ajustado para 6em de cabeçalho */
+            position: relative; /* Garante que o conteúdo principal esteja acima do fundo */
+            z-index: 1; /* Garante que o conteúdo principal esteja acima do fundo */
+        }
 
-    .content-card{
-      background:var(--card-bg);
-      border-radius:var(--radius);
-      padding:1.35rem 1.35rem;
-      box-shadow:0 0 18px rgba(249,248,113,.08);
-      max-width:900px;
-      margin:0 auto;
-      text-align:center;
-      font-weight:600;
-    }
+        /* Estilo de secção partilhado para blocos de texto */
+        .content-section {
+            background: rgba(0,0,0,0.6);
+            padding: 1.5rem 2rem; /* Reduzido de 2rem para 1.5rem */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+            font-weight: 600;
+            font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
+            line-height: 1.5;
+            max-width: 500px; /* Largura padrão para texto */
+            text-align: center; /* Centraliza o texto dentro da seção */
+            user-select: none;
+            text-shadow: 0 0 5px #000;
+            margin: 0 auto 3rem; /* Centraliza a seção horizontalmente e define o espaçamento padrão REDUZIDO */
+        }
+        
+        /* Estilo para seções de vídeo maiores */
+        .content-section.video-container {
+            max-width: 800px; /* AUMENTADO SIGNIFICATIVAMENTE */
+            width: 90%;
+        }
 
-    .hero{
-      padding:1.6rem;
-    }
-    .hero h1{
-      margin:.25rem 0 0;
-      font-family:'Merriweather', serif;
-      font-size:2.2rem;
-      line-height:1;
-    }
-    .book-part{
-      display:block;
-      font-size:.95rem;
-      margin-top:.35rem;
-      letter-spacing:.06em;
-      color:var(--neon-white);
-      opacity:.95;
-    }
-    .tagline{ margin:.7rem 0 0; font-size:1.05rem; font-style:italic;}
+        /* Aumenta o espaçamento superior para seções específicas */
+        .content-section.section-extra-spacing {
+            margin-top: 1rem; /* Adiciona um espaçamento extra acima dessas seções REDUZIDO */
+        }
+        .content-section:last-child {
+            margin-bottom: 0; /* Remove margin-bottom da última seção para evitar espaço extra no final */
+        }
+        .content-section.hero-banner { /* Específico para a primeira seção */
+            margin-bottom: 3rem; /* Espaçamento menor para a primeira seção REDUZIDO */
+        }
+        .content-section p {
+            margin-bottom: 0.8rem; /* Espaço entre parágrafos, ajustado */
+            margin-top: 0;
+        }
+        .content-section strong {
+            color: var(--neon-yellow); /* Destaca palavras-chave com neon amarelo */
+        }
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 1em auto; /* Centraliza a lista horizontalmente */
+            width: fit-content; /* Faz a lista ocupar apenas a largura necessária */
+        }
+        .content-section ul li {
+            margin-bottom: 0.5em;
+            position: relative;
+            padding-left: 1.5em;
+            text-align: left; /* Mantém o texto alinhado à esquerda dentro dos itens */
+        }
+        .content-section ul li::before {
+            content: '✨'; /* Bullet point de estrela */
+            position: absolute;
+            left: 0; /* Mantém o bullet point à esquerda */
+            color: var(--neon-yellow);
+        }
+        .content-section.author-note {
+            text-align: center; /* ALINHAMENTO CENTRALIZADO PARA A NOTA DA AUTORA */
+        }
+        .content-section.author-note img {
+            display: block;
+            margin: 1em auto; /* Centraliza a imagem da autora */
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            box-shadow: 0 0 10px var(--neon-pink-soft);
+        }
+        .content-section.author-note .signature {
+            font-family: 'Monotype Corsiva', cursive; /* Fonte elegante para a assinatura */
+            font-size: 1.5rem;
+            color: var(--neon-pink-soft);
+            text-align: center;
+            margin-top: 1em;
+            text-shadow: 0 0 5px var(--neon-pink-soft);
+        }
+        .content-section.faq ul li::before {
+            content: '💡'; /* Bullet point de lâmpada para FAQ */
+        }
+        .content-section.testimonials .testimonial {
+            font-style: italic;
+            margin-bottom: 1em;
+        }
+        /* Ensure all text within .testimonial uses Arial, is white, and smaller */
+        .content-section.testimonials .testimonial p {
+            font-family: Arial, sans-serif !important;
+            font-weight: normal;
+            text-shadow: none;
+            color: white; /* Set text color to white */
+            font-size: 0.95rem; /* Smaller font size */
+        }
+        /* Remove specific styles for spans within testimonials as they are now handled by the parent p */
+        .content-section.testimonials .testimonial p span {
+            color: inherit; /* Inherit color from parent p */
+            text-shadow: none; /* Ensure no text shadow */
+            animation: none; /* Ensure no animation */
+        }
+        .content-section.testimonials .reader-tag {
+            display: block;
+            font-weight: bold;
+            color: var(--neon-yellow);
+            margin-top: 0.5em;
+            font-size: 0.9em;
+            font-family: Arial, sans-serif; /* Ensure reader tag is also Arial */
+        }
 
-    /* Mockup & media */
-    .book-mockup{
-      display:flex;
-      justify-content:center;
-      margin:1.1rem 0 0;
-    }
-    .book-mockup img{
-      max-width:260px;
-      width:45%;
-      height:auto;
-      border-radius:10px;
-      box-shadow:0 0 18px rgba(249,248,113,.22);
-      display:block;
-      margin:0 auto;
-    }
+        /* Títulos principais com efeito neon */
+        .main-title-neon {
+            color: var(--neon-yellow);
+            font-size: 1.8rem; /* Reduzido de 2rem para 1.8rem */
+            margin-top: 0;
+            text-shadow:
+                0 0 8px var(--neon-yellow),
+                0 0 20px var(--neon-yellow),
+                0 0 40px var(--neon-yellow),
+                0 0 80px var(--neon-yellow);
+            animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
+        }
+        .subtitle-strong {
+            margin-top: 0.4rem; /* Ajustado */
+            font-size: 1.4rem; /* Reduzido de 1.6rem para 1.4rem */
+            font-weight: bold;
+        }
 
-    .purchase-buttons{
-      display:flex;
-      gap:1rem;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:1rem;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:.6rem;
-      padding:.6rem 1.35rem;
-      border-radius:28px;
-      border:2px solid var(--neon-yellow);
-      background:var(--glass);
-      text-decoration:none;
-      font-weight:700;
-      color:var(--neon-yellow);
-      box-shadow:0 0 14px rgba(249,248,113,.18);
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .btn:focus{ outline:3px solid rgba(255,255,255,.08) }
-    .btn:hover{ transform:translateY(-4px); box-shadow:0 0 26px rgba(249,248,113,.28) }
+        /* Estilo neon rosa mais suave */
+        .neon-pink-soft {
+            color: var(--neon-pink-soft);
+            text-shadow:
+                0 0 8px var(--neon-pink-soft),
+                0 0 20px var(--neon-pink-soft),
+                0 0 40px var(--neon-pink-soft);
+            animation: neonPulsePink 2s infinite alternate; /* Adicionado animação */
+        }
 
-    /* Audio player container */
-    .audio-player{
-      margin:1.2rem auto 0;
-      width:90%;
-      max-width:460px;
-      padding:1.15rem;
-      border-radius:12px;
-      border:2px solid var(--neon-yellow);
-      background:rgba(0,0,0,.74);
-      display:flex;
-      align-items:center;
-      gap:1rem;
-      justify-content:center;
-      cursor:pointer;
-    }
-    .audio-player .icon{
-      font-size:1.1rem;
-      width:2.2rem;
-      height:2.2rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:50%;
-      color:var(--neon-yellow);
-      text-shadow:0 0 6px var(--neon-yellow);
-    }
-    .audio-player .icon.playing{
-      color:var(--neon-pink);
-      text-shadow:0 0 8px var(--neon-pink);
-    }
-    .audio-player p{ margin:0; font-weight:700; font-size:.98rem; color:var(--neon-white) }
+        /* Estilo para o título do livro (fonte e cor rosa) */
+        .book-title-style {
+            font-family: 'Monotype Corsiva', cursive;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 2.8rem; /* Aumentado o tamanho da fonte para o cabeçalho */
+        }
 
-    /* Section titles with neon */
-    .section-title{
-      font-size:1.2rem;
-      margin:0 0 .6rem;
-      color:var(--neon-yellow);
-      text-shadow:0 0 8px var(--neon-yellow);
-      font-weight:800;
-    }
+        /* Estilo para a parte do livro (branco aceso) */
+        .book-part-white-glow {
+            color: var(--neon-white);
+            text-shadow:
+                0 0 5px var(--neon-white),
+                0 0 15px var(--neon-white),
+                0 0 25px var(--neon-white);
+            animation: neonPulseWhite 2s infinite alternate; /* Adicionado animação */
+        }
 
-    .content{
-      text-align:left;
-      font-weight:600;
-      font-size:1rem;
-      margin-top:.45rem;
-    }
+        /* Novo estilo de brilho roxo neon */
+        @keyframes neonPulsePurple {
+            0% {
+                text-shadow:
+                    0 0 10px var(--neon-purple-light),
+                    0 0 25px var(--neon-purple-medium),
+                    0 0 45px var(--neon-purple),
+                    0 0 70px var(--neon-purple);
+            }
+            100% {
+                text-shadow:
+                    0 0 20px var(--neon-purple-light),
+                    0 0 40px var(--neon-purple-medium),
+                    0 0 60px var(--neon-purple),
+                    0 0 90px var(--neon-purple);
+            }
+        }
 
-    ul.feature-list{
-      list-style:none;
-      padding:0;
-      margin:1rem 0 0;
-      display:block;
-    }
-    ul.feature-list li{
-      margin-bottom:.6rem;
-      padding-left:1.4rem;
-      position:relative;
-      font-weight:700;
-    }
-    ul.feature-list li::before{
-      content:'✨';
-      position:absolute;
-      left:0;
-      top:0;
-    }
+        /* Estilo de brilho amarelo neon */
+        .neon-yellow-glow {
+            color: var(--neon-yellow);
+            text-shadow:
+                0 0 8px var(--neon-yellow),
+                0 0 20px var(--neon-yellow),
+                0 0 40px var(--neon-yellow),
+                0 0 80px var(--neon-yellow);
+            animation: neonPulseYellow 2s infinite alternate; /* Aplicada diretamente aqui */
+        }
 
-    /* Collage (responsive iframes) */
-    .responsive-embed{
-      position:relative;
-      width:100%;
-      padding-bottom:56.25%;
-      border-radius:10px;
-      overflow:hidden;
-      box-shadow:0 0 18px rgba(0,0,0,.6);
-      margin-top:1rem;
-    }
-    .responsive-embed iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:0;
-    }
+        /* Estilo para a fonte Abaddon */
+        .abaddon-font-style {
+            font-family: 'Abaddon', sans-serif;
+            font-size: 1.6rem; /* Tamanho da fonte menor e legível */
+        }
 
-    /* testimonials */
-    .testimonials .testimonial{ font-style:italic; margin-bottom:1rem; color:var(--neon-white); }
-    .reader-tag{ display:block; font-weight:800; margin-top:.4rem; color:var(--neon-yellow); font-size:.9rem; font-family:Arial, sans-serif }
+        /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
+        .book-part-block-style {
+            font-size: 1rem;
+            font-weight: bold;
+            display: block;
+            text-transform: uppercase;
+            margin-top: -0.7em; /* Valor negativo para puxar para cima ainda mais */
+        }
 
-    /* footer */
-    footer{
-      position:fixed;
-      bottom:0;left:0;right:0;
-      height:2.2rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:transparent;
-      z-index:80;
-      pointer-events:none;
-    }
-    footer p{ margin:0; font-size:.8rem; color:#ccc; pointer-events:auto }
+        /* Estilo para a capa do livro e mockups */
+        .book-mockup-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+            margin-top: 4rem; /* Aumentado ligeiramente de 3.5rem */
+            transition: transform 0.3s ease;
+        }
+        .book-mockup-group img {
+            max-width: 250px; /* Ajuste para mockups múltiplos */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+        }
+        /* Removed the audiobook-mockup image from here */
+        .book-mockup-group:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Estilo para o container do player de áudio (replicado do exemplo) */
+        .audio-player-container {
+            margin: 2.5em auto 0; /* Centraliza horizontalmente e adiciona margem superior */
+            background: rgba(0,0,0,0.7); /* Fundo escuro transparente */
+            border: 2px solid var(--neon-yellow); /* Borda amarela neon */
+            border-radius: 15px; /* Cantos arredondados */
+            box-shadow: 0 0 20px rgba(249, 248, 113, 0.6); /* Sombra neon */
+            padding: 2em; /* Increased padding for more space */
+            width: 80%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Ensure vertical centering */
+            align-items: center;
+            gap: 1.5em; /* Increased gap for more separation */
+            box-sizing: border-box;
+            color: var(--neon-white);
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-shadow: 0 0 5px var(--neon-white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-    /* small screens */
-    @media (max-width:768px){
-      .hero h1{ font-size:1.6rem }
-      .book-mockup img{ max-width:180px; width:40% }
-      .btn{ padding:.5rem 1rem; font-size:.95rem }
-      .audio-player{ gap:.6rem; padding:.9rem }
-    }
-    @media (max-width:480px){
-      header{ height:3.6rem }
-      body{ padding-top:3.6rem }
-      .hero h1{ font-size:1.25rem }
-      .book-mockup img{ max-width:130px; width:48% }
-      .content-card{ padding:1rem }
-    }
+        .audio-player-container:hover {
+            box-shadow: 0 0 30px rgba(249, 248, 113, 0.8); /* Glow effect on hover */
+            transform: translateY(-3px);
+        }
 
-    /* Respect reduce motion preference */
-    @media (prefers-reduced-motion:reduce){
-      *{ transition:none !important; animation:none !important }
-    }
-  </style>
+        .audio-player-container p {
+            margin: 0; /* Remove default paragraph margin */
+            font-size: 1em;
+            text-shadow: none; /* Remove inner text shadow for clarity */
+            color: var(--neon-white); /* Ensure paragraph text is white */
+        }
+
+        .audio-player-icon {
+            font-size: 0.8em; /* Tamanho ajustado para ser menor e mais bonito */
+            color: var(--neon-yellow);
+            text-shadow:
+                0 0 2px var(--neon-yellow), /* Brilho mais suave */
+                0 0 6px var(--neon-yellow),
+                0 0 10px var(--neon-yellow); /* Brilho ajustado para mais intensidade */
+            transition: all 0.3s ease;
+            padding: 0.6em; /* Aumentar o preenchimento para um "botão" mais visível */
+            border-radius: 50%; /* Mantém circular */
+            box-shadow: 0 0 4px var(--neon-yellow); /* Sombra mais suave para o próprio ícone */
+            display: flex; /* Usar flexbox para centralizar o ícone dentro do seu próprio espaço */
+            justify-content: center;
+            align-items: center;
+            width: 1em; /* Definir uma largura e altura fixas para o círculo */
+            height: 1em;
+        }
+
+        .audio-player-icon.playing {
+            color: var(--neon-pink-soft);
+            text-shadow:
+                0 0 2px var(--neon-pink-soft), /* Brilho mais suave */
+                0 0 6px var(--neon-pink-soft),
+                0 0 10px var(--neon-pink-soft); /* Brilho ajustado para o estado de reprodução */
+            box-shadow: 0 0 4px var(--neon-pink-soft); /* Sombra mais suave para o estado de reprodução */
+        }
+
+
+        /* Novo estilo de botão neon */
+        .neon-button {
+            display: inline-flex; /* Use flexbox para alinhar conteúdo e ícones */
+            align-items: center;
+            justify-content: center; /* Centraliza texto e ícone */
+            padding: 0.7rem 1.8rem;
+            border: 2px solid var(--neon-yellow);
+            border-radius: 25px;
+            background: linear-gradient(45deg, rgba(249, 248, 113, 0.1), rgba(249, 248, 113, 0.05));
+            color: var(--neon-yellow);
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            text-shadow:
+                0 0 10px var(--neon-yellow),
+                0 0 30px var(--neon-yellow),
+                0 0 60px var(--neon-yellow);
+            box-shadow: 0 0 20px rgba(249, 248, 113, 0.5);
+            transition: all 0.3s ease;
+            user-select: none;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            gap: 0.5em; /* Espaçamento entre ícone e texto */
+        }
+
+        .neon-button:hover {
+            background: linear-gradient(45deg, rgba(249, 248, 113, 0.2), rgba(249, 248, 113, 0.1));
+            transform: scale(1.08);
+            box-shadow:
+                0 0 25px rgba(249, 248, 113, 0.8),
+                inset 0 0 10px rgba(249, 248, 113, 0.4);
+            border-color: var(--neon-yellow);
+        }
+
+        /* Estilo para texto rosa dentro do botão neon */
+        .neon-button-text-pink {
+            color: var(--neon-pink-soft);
+            text-shadow:
+                0 0 8px var(--neon-pink-soft),
+                0 0 20px var(--neon-pink-soft),
+                0 0 40px var(--neon-pink-soft);
+        }
+
+        /* Container para os botões de compra */
+        .purchase-buttons-container {
+            display: flex;
+            flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha em telas menores */
+            justify-content: center; /* Centraliza os botões */
+            gap: 1.5rem; /* Espaço entre os botões */
+            margin-top: 1.5em; /* Espaço acima do container de botões */
+            width: 100%; /* Ocupa a largura total para permitir o justify-content */
+            max-width: 600px; /* Limita a largura do container de botões */
+        }
+        
+        .purchase-buttons-container .neon-button {
+            flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço */
+            max-width: 250px; /* Largura máxima para cada botão */
+        }
+
+        /* Estilo para o contêiner do botão e das mãos (original, agora talvez menos usado) */
+        .button-with-hands {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* Espaçamento entre as mãos e o botão */
+            margin-top: 2rem; /* Ajustado para melhor fluxo */
+            margin-bottom: 1rem;
+            justify-content: center; /* Centraliza o flexbox */
+        }
+        .hand-emoji {
+            font-size: 1.5rem; /* Tamanho da mãozinha */
+            color: var(--neon-yellow); /* Cor da mãozinha */
+            text-shadow:
+                0 0 5px var(--neon-yellow),
+                0 0 10px var(--neon-yellow),
+                0 0 20px var(--neon-yellow);
+            animation: neonPulseYellow 1.5s infinite alternate; /* Animação para a mãozinha */
+        }
+        .main-cta-button {
+            /* Esta classe será substituída pelo purchase-buttons-container */
+            display: none; /* Esconde o botão único antigo */
+        }
+        .book-collage {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 1.5em auto; /* Centraliza a imagem/vídeo */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+            display: block; /* Garante que a margem auto funcione */
+        }
+
+        .book-collage iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px; /* Aplica border-radius ao iframe também */
+        }
+
+        /* Rodapé fixo */
+        footer {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            height: 2em; /* Ajustado para 2em */
+            background-color: black;
+            color: #ccc;
+            text-align: center;
+            line-height: 2em; /* Ajustado para 2em */
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+            user-select: none;
+            z-index: 100;
+        }
+
+        footer p { /* Adicionado estilo para o parágrafo dentro do footer */
+            margin: 0; /* Remove margem padrão do parágrafo */
+            font-size: 0.8rem; /* Fonte ligeiramente menor para caber em 2em */
+            line-height: 2em; /* Ajusta o line-height para a altura do footer, centralizando o texto */
+        }
+
+        /* Ajustes de responsividade */
+        @media (max-width: 768px) {
+            header {
+                height: 5.5em; /* Reduz ligeiramente em telas médias */
+            }
+            .book-title-style {
+                font-size: 2.2rem; /* Reduz fonte do título em telas médias */
+            }
+            main {
+                padding-top: 10em; /* Ajusta padding para o cabeçalho em telas médias */
+                min-height: calc(100vh - 5.5em - 2em);
+            }
+            .content-section {
+                font-size: 1.05rem; /* Reduzido de 1.1rem para 1.05rem */
+                padding: 1.5rem 1.8rem;
+                max-width: 90%;
+                margin-bottom: 3rem; /* Ajuste responsivo do margin-bottom */
+            }
+            .main-title-neon {
+                font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
+            }
+            .subtitle-strong {
+                font-size: 1.25rem; /* Reduzido de 1.3rem para 1.25rem */
+            }
+            .neon-button {
+                padding: 0.6rem 1.5rem; /* Ajustado para telas menores */
+                font-size: 0.95rem; /* Ajustado para telas menores */
+            }
+            .button-with-hands {
+                margin-top: 1.5rem; /* Ajuste para telas menores */
+            }
+            .book-mockup-group {
+                margin-top: 3rem;
+            }
+            .audio-player-container {
+                width: 90%; /* Mais largo em telas menores */
+                max-width: 350px; /* Limite em telas médias */
+                font-size: 1rem; /* Ajusta fonte */
+                padding: 1.2em; /* Ajusta padding */
+            }
+            .audio-player-icon {
+                font-size: 0.8em; /* Ajusta tamanho do ícone */
+            }
+            .purchase-buttons-container {
+                gap: 1rem; /* Espaçamento menor entre botões */
+                flex-direction: column; /* Pilha em colunas em telas menores */
+                align-items: center;
+            }
+            .purchase-buttons-container .neon-button {
+                width: 90%; /* Quase largura total em telas pequenas */
+                max-width: 300px; /* Limite */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.8rem;
+                height: 3.8em;
+            }
+            .book-title-style {
+                font-size: 1.8rem; /* Further reduce title font on mobile */
+            }
+            footer {
+                font-size: 0.8rem;
+                height: 2em; /* Adjusted to 2em */
+                line-height: 2em; /* Adjusted to 2em */
+            }
+            body {
+                padding-top: 3.8em;
+                padding-bottom: 2em; /* Adjusted to 2em */
+            }
+            main {
+                min-height: calc(100vh - 3.8em - 2em); /* Adjusted to 2em */
+                padding: 5.5em 1rem 1.5rem;
+                gap: 2rem;
+            }
+            .content-section {
+                font-size: 0.95rem; /* Reduced for very small screens */
+                padding: 1.2rem 1.5rem;
+                max-width: 95%;
+                margin-bottom: 2rem; /* Ajuste responsivo do margin-bottom */
+            }
+            .main-title-neon {
+                font-size: 1.3rem; /* Reduced */
+            }
+            .subtitle-strong {
+                font-size: 1.05rem; /* Reduced */
+            }
+            .book-mockup-group {
+                max-width: 130px;
+                margin-top: 2.5rem; /* Adjustment for very small screens */
+            }
+            .neon-button {
+                font-size: 0.8rem; /* Reduced font size for smaller screens */
+                padding: 0.4rem 1rem; /* Adjusted padding */
+            }
+            .button-with-hands {
+                margin-top: 1rem; /* Adjustment for very small screens */
+            }
+            .audio-player-container {
+                max-width: 280px; /* Further adjust for mobile */
+                font-size: 0.8rem;
+                padding: 1em;
+            }
+            .audio-player-icon {
+                font-size: 0.6em; /* Ajusta ainda mais para mobile */
+            }
+            .purchase-buttons-container {
+                gap: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Background video (keeps original source) -->
-  <div class="background-animated" aria-hidden="true">
-    <video autoplay loop muted playsinline preload="auto" poster="" aria-hidden="true">
-      <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Make_paint_write_202506211339_7rv0y.mp4" type="video/mp4">
-      <!-- Fallback text if browser doesn't support video -->
-    </video>
-  </div>
-
-  <header role="banner" aria-label="Site header">
-    <div class="book-title" aria-hidden="false">
-      <span class="part neon neon-pink">Welcome</span>
-      <span class="part neon neon-white">to</span>
-      <span class="part neon neon-yellow">New York</span>
+    <div class="background-animated" aria-hidden="true">
+        <video autoplay loop muted playsinline>
+            <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Make_paint_write_202506211339_7rv0y.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-  </header>
 
-  <main id="main" role="main">
-    <!-- HERO -->
-    <section class="content-card hero" aria-labelledby="hero-title">
-      <h1 id="hero-title" style="margin-bottom:0.25rem">
-        <span class="neon neon-pink" style="font-family:'Abaddon',sans-serif;font-size:1.15em">Welcome</span>
-        <span class="neon neon-white" style="font-family:'Abaddon',sans-serif;font-size:1.15em">to</span>
-        <span class="neon neon-yellow" style="font-family:'Abaddon',sans-serif;font-size:1.15em">New York</span>
-      </h1>
-      <span class="book-part">Part 1 of A Legacy in New York Series</span>
+    <header>
+        <span class="book-title-style neon-pink-soft">Welcome </span>
+        <span class="book-title-style book-part-white-glow">to</span>
+        <span class="book-title-style neon-yellow-glow"> New York</span>
+    </header>
 
-      <div class="book-mockup" aria-hidden="false">
-        <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.jpg"
-             alt="Cover: Welcome to New York: Born Ricciwood"
-             loading="lazy">
-      </div>
+    <main>
+        <section class="content-section hero-banner">
+            <h1 class="main-title-neon">
+                <span class="book-title-style neon-pink-soft">Welcome </span>
+                <span class="book-title-style book-part-white-glow">to</span>
+                <span class="book-title-style neon-yellow-glow"> New York</span>
+            </h1>
+            <p class="book-part-block-style book-part-white-glow">Part 1 of A Legacy in New York Series</p>
+            <div class="book-mockup-group">
+                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.jpg" alt="Welcome to New York Book Cover - 3D Mockup" />
+                </div>
+            <p class="subtitle-strong neon-pink-soft">"Even the most broken hearts can find a new beginning."</p>
+            
+            <div class="purchase-buttons-container">
+                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Buy in Kindle</span>
+                </a>
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-button">
+                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Read in Kindle Unlimited</span>
+                </a>
+            </div>
+            
+            <div class="audio-player-container" id="audioPlayerContainer">
+                <p>Listen to a short conversation about the book</p>
+                <i class="fas fa-play audio-player-icon" id="playPauseIcon"></i>
+                <audio id="bookAudio" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/coment%C3%A1rio-para-p%C3%A1gina-de-vendas.mp3" preload="auto"></audio>
+            </div>
+        </section>
 
-      <p class="tagline neon-pink" style="margin-top:.6rem">
-        "Even the most broken hearts can find a new beginning."
-      </p>
+        <section class="content-section">
+            <h2 class="main-title-neon">Intrigue Begins in New York...</h2>
+            <p>Gabriel Ricciwood, heir to a ruthless dynasty, lives under the weight of a past that doesn't define him. When fate brings him back to New York's elite, he must confront family secrets, lost loves, and the truth about who he truly is.</p>
+            <p class="subtitle-strong" style="font-style: italic;">“For those who believe that even the most broken hearts can find a new beginning.”</p>
+            <div class="purchase-buttons-container">
+                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Buy in Kindle</span>
+                </a>
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-button">
+                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Read in Kindle Unlimited</span>
+                </a>
+            </div>
+        </section>
 
-      <div class="purchase-buttons" role="group" aria-label="Buy links">
-        <a class="btn" href="https://www.amazon.com/dp/B0F9W8N7HY" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-amazon" aria-hidden="true"></i>
-          <span>Buy in Kindle</span>
-        </a>
-        <a class="btn" href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-book-reader" aria-hidden="true"></i>
-          <span>Read in Kindle Unlimited</span>
-        </a>
-      </div>
+        <section class="content-section">
+            <h2 class="main-title-neon">How Welcome to New York Was Born</h2>
+            <p>Welcome to New York was born from a desire to blend the best of two unforgettable worlds—Gossip Girl’s glamorous intensity and The Vampire Diaries’ complex emotional arcs. But beyond the allure and the drama, this story seeks something deeper: to offer a romance that feels true, not toxic—a love that builds instead of breaks.</p>
+            <p>Crafted to resonate with today’s readers, Welcome to New York is more than a coming-of-age romance. It explores the raw edges of real life: fractured families, emotional neglect, the weight of unresolved grief, and the subtle poison of emotionally irresponsible relationships. At its heart, it asks what it really means to be loved—and to love in return.</p>
+            <p>Influenced by classic literature like The Picture of Dorian Gray and The Phantom of the Opera, the story also acts as a cautionary tale about the dangers of rushing into adulthood. It reminds us of the beauty of growing at the right pace, of not trying to skip the seasons of life that shape who we are.</p>
+            <p>This is a novel for readers who crave authenticity. For those who are tired of the same old tropes and are ready for characters who fight for redemption, who learn the hard way, and who still believe that love—real, deep, respectful love—is worth holding onto.</p>
+        </section>
 
-      <div class="audio-player" id="audioPlayer" role="region" aria-label="Audio: short conversation about the book" tabindex="0">
-        <div id="playPauseIcon" class="icon" role="button" aria-pressed="false" aria-label="Play audio">
-          <i class="fas fa-play" aria-hidden="true"></i>
-        </div>
-        <p>Listen to a short conversation about the book</p>
-        <audio id="bookAudio" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/coment%C3%A1rio-para-p%C3%A1gina-de-vendas.mp3" preload="auto"></audio>
-      </div>
-    </section>
+        <section class="content-section video-container">
+            <h2 class="main-title-neon">Why Welcome to New York is Unlike Anything You've Read Before</h2>
+            <ul>
+                <li><strong>Romance with Purpose:</strong> Dive into an inspiring love, free from toxic clichés.</li>
+                <li><strong>Elite Intrigue:</strong> Uncover secrets and manipulations in the dazzling New York setting.</li>
+                <li><strong>Complex Characters:</strong> Follow Gabriel and other characters on their journeys of self-discovery.</li>
+                <li><strong>Faith and Redemption:</strong> A soul-touching story, showing how pain can lead to healing.</li>
+                <li><strong>TV Series Pace:</strong> With twists and cliffhangers, each chapter will leave you wanting more.</li>
+            </ul>
+            <div class="book-collage">
+                <iframe src="https://player.vimeo.com/video/1100753891" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            </section>
 
-    <!-- Introduction -->
-    <section class="content-card" aria-labelledby="intro-title">
-      <h2 id="intro-title" class="section-title">Intrigue Begins in New York...</h2>
-      <div class="content">
-        <p>Gabriel Ricciwood, heir to a ruthless dynasty, lives under the weight of a past that doesn't define him. When fate brings him back to New York's elite, he must confront family secrets, lost loves, and the truth about who he truly is.</p>
-        <p style="font-style:italic;margin-top:.5rem">“For those who believe that even the most broken hearts can find a new beginning.”</p>
+        <section class="content-section section-extra-spacing">
+            <h2 class="main-title-neon">A Legacy in New York: A Saga in Parts</h2>
+            <p><em>Born Ricciwood</em> is just the first volume in the thrilling <strong>A Legacy in New York</strong> series. This developing saga promises to unveil even more secrets, passions, and twists in the lives of Gabriel and those around him.</p>
+            <p>Prepare for a literary journey that deepens with each book. Each part reveals deeper secrets, until the untold past comes to light, shaping everyone's destiny.</p>
+        </section>
 
-        <div class="purchase-buttons" style="margin-top:1rem">
-          <a class="btn" href="https://www.amazon.com/dp/B0F9W8N7HY" target="_blank" rel="noopener noreferrer"><i class="fab fa-amazon" aria-hidden="true"></i><span>Buy in Kindle</span></a>
-          <a class="btn" href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-reader" aria-hidden="true"></i><span>Read in Kindle Unlimited</span></a>
-        </div>
-      </div>
-    </section>
+        <section class="content-section section-extra-spacing video-container">
+    <h2 class="main-title-neon">Trailer</h2>
+    <div class="book-collage">
+        <iframe title="vimeo-player" src="https://player.vimeo.com/video/1120687033" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</section>
+        <section class="content-section section-extra-spacing">
+            <h2 class="main-title-neon">Who This Book Is For</h2>
+            <ul>
+                <li>For those who love purposeful romances and heartwarming stories.</li>
+                <li>For fans of elite intrigue, but tired of toxic and superficial loves.</li>
+                <li>For those seeking complex characters and narratives that explore forgiveness and new beginnings.</li>
+                <li>For those who believe that even pain can turn into redemption and that hope always wins.</li>
+            </ul>
+        </section>
 
-    <!-- Origins -->
-    <section class="content-card" aria-labelledby="born-title">
-      <h2 id="born-title" class="section-title">How Welcome to New York Was Born</h2>
-      <div class="content" role="article">
-        <p>Welcome to New York was born from a desire to blend the best of two unforgettable worlds—Gossip Girl’s glamorous intensity and The Vampire Diaries’ complex emotional arcs. But beyond the allure and the drama, this story seeks something deeper: to offer a romance that feels true, not toxic—a love that builds instead of breaks.</p>
-        <p>Crafted to resonate with today’s readers, Welcome to New York is more than a coming-of-age romance. It explores fractured families, emotional neglect, unresolved grief, and the subtle poison of emotionally irresponsible relationships. At its heart, it asks what it really means to be loved—and to love in return.</p>
-        <p>Influenced by classic literature like <em>The Picture of Dorian Gray</em> and <em>The Phantom of the Opera</em>, the story also acts as a cautionary tale about the dangers of rushing into adulthood. It reminds us of the beauty of growing at the right pace, of not trying to skip the seasons of life that shape who we are.</p>
-      </div>
-    </section>
+        <section class="content-section section-extra-spacing">
+            <h2 class="main-title-neon">Formats and Extras</h2>
+            <p><em>Welcome to New York: Born Ricciwood</em> is available on <strong>Kindle</strong> for you to read anywhere. The <strong>Audiobook</strong> version is coming soon, perfect for listening at a TV series pace, immersed in the New York atmosphere.</p>
+            </section>
 
-    <!-- Features + Video embed (TRAILER changed to 1120687033) -->
-    <section class="content-card" aria-labelledby="features-title">
-      <h2 id="features-title" class="section-title">Why Welcome to New York is Unlike Anything You've Read Before</h2>
-      <ul class="feature-list">
-        <li><strong>Romance with Purpose:</strong> Dive into an inspiring love, free from toxic clichés.</li>
-        <li><strong>Elite Intrigue:</strong> Uncover secrets and manipulations in the dazzling New York setting.</li>
-        <li><strong>Complex Characters:</strong> Follow Gabriel and other characters on their journeys of self-discovery.</li>
-        <li><strong>Faith and Redemption:</strong> A soul-touching story, showing how pain can lead to healing.</li>
-        <li><strong>TV Series Pace:</strong> With twists and cliffhangers, each chapter will leave you wanting more.</li>
-      </ul>
+        <section class="content-section testimonials section-extra-spacing">
+            <h2 class="main-title-neon">What early readers are saying</h2>
+            <div class="testimonial">
+                <p>
+                    <span>“A story that made me cry and gave me hope. </span>
+                    <span>A must-read for anyone who loves deep romances.”</span>
+                </p>
+                <span class="reader-tag">— Beta Reader</span>
+            </div>
+            <div class="testimonial">
+                <p>
+                    <span>“It feels like a Netflix series, but with the soul of a true romance. </span>
+                    <span>Addictive from beginning to end!”</span>
+                </p>
+                <span class="reader-tag">— First Reader</span>
+            </div>
+            </section>
 
-      <div class="responsive-embed" aria-hidden="false" title="Trailer">
-        <iframe src="https://player.vimeo.com/video/1120687033" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Welcome to New York Trailer"></iframe>
-      </div>
-    </section>
+        <section class="content-section section-extra-spacing video-container">
+            <h2 class="main-title-neon">Discover the City</h2>
+            <div class="book-collage">
+                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1102801648?h=679f9f08d2" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+            </div>
+        </section>
 
-    <!-- Saga -->
-    <section class="content-card" aria-labelledby="saga-title">
-      <h2 id="saga-title" class="section-title">A Legacy in New York: A Saga in Parts</h2>
-      <div class="content">
-        <p><em>Born Ricciwood</em> is just the first volume in the thrilling <strong>A Legacy in New York</strong> series. This developing saga promises to unveil even more secrets, passions, and twists in the lives of Gabriel and those around him.</p>
-      </div>
-    </section>
+        <section class="content-section faq section-extra-spacing">
+            <h2 class="main-title-neon">Frequently Asked Questions</h2>
+            <ul>
+                <li><strong>Is this the only book?</strong> — No! <em>Born Ricciwood</em> is the first volume in the <strong>A Legacy in New York</strong> series. The saga is under development, and more books are coming!</li>
+                <li><strong>What is the age rating?</strong> — Recommended for young adults and adults. The story focuses on romance and personal growth, without explicit scenes or inappropriate language.</li>
+                <li><strong>Where can I read or listen?</strong> — The book is available on Kindle and the audiobook version is coming soon on major platforms.</li>
+                <li><strong>Do I need to be Christian to enjoy it? — No! It's a story for everyone who values deep romance, overcoming challenges, and the search for purpose, regardless of their faith.</li>
+            </ul>
+        </section>
 
-    <!-- Trailer repeated (changed to 1120687033) -->
-    <section class="content-card" aria-labelledby="trailer2">
-      <h2 id="trailer2" class="section-title">Trailer</h2>
-      <div class="responsive-embed">
-        <iframe src="https://player.vimeo.com/video/1120687033" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Welcome to New York Trailer"></iframe>
-      </div>
-    </section>
+        <section class="content-section section-extra-spacing">
+            <h2 class="main-title-neon">Don't Miss This Story!</h2>
+            <p class="subtitle-strong">“Gabriel Ricciwood awaits you.</p>
+            <p class="subtitle-strong">Discover the legacy.</p>
+            <p class="subtitle-strong">Experience New York like you've never imagined.</p>
+            <p class="subtitle-strong">And believe: some secrets heal, others set you free.</p>
+            <p class="subtitle-strong">Start now.”</p>
+            <div class="purchase-buttons-container">
+                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Buy in Kindle</span>
+                </a>
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-button">
+                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Read in Kindle Unlimited</span>
+                </a>
+            </div>
+        </section>
+    </main>
 
-    <!-- Audience -->
-    <section class="content-card" aria-labelledby="who-title">
-      <h2 id="who-title" class="section-title">Who This Book Is For</h2>
-      <div class="content">
-        <ul class="feature-list">
-          <li>For those who love purposeful romances and heartwarming stories.</li>
-          <li>For fans of elite intrigue, but tired of toxic and superficial loves.</li>
-          <li>For those seeking complex characters and narratives that explore forgiveness and new beginnings.</li>
-          <li>For those who believe that even pain can turn into redemption and that hope always wins.</li>
-        </ul>
-      </div>
-    </section>
+    <footer>
+        <p>&copy; 2025 T. S. TELLES. All rights reserved.</p>
+    </footer>
 
-    <!-- Formats -->
-    <section class="content-card" aria-labelledby="formats">
-      <h2 id="formats" class="section-title">Formats and Extras</h2>
-      <div class="content">
-        <p><em>Welcome to New York: Born Ricciwood</em> is available on <strong>Kindle</strong>. The <strong>Audiobook</strong> version is coming soon — perfect for listening at a TV series pace.</p>
-      </div>
-    </section>
+    <script>
+        const audioPlayerContainer = document.getElementById('audioPlayerContainer');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const bookAudio = document.getElementById('bookAudio');
 
-    <!-- Testimonials -->
-    <section class="content-card testimonials" aria-labelledby="testi-title">
-      <h2 id="testi-title" class="section-title">What early readers are saying</h2>
-      <div class="testimonial">
-        <p>“A story that made me cry and gave me hope. A must-read for anyone who loves deep romances.”</p>
-        <span class="reader-tag">— Beta Reader</span>
-      </div>
-      <div class="testimonial">
-        <p>“It feels like a Netflix series, but with the soul of a true romance. Addictive from beginning to end!”</p>
-        <span class="reader-tag">— First Reader</span>
-      </div>
-    </section>
+        audioPlayerContainer.addEventListener('click', () => {
+            if (bookAudio.paused) {
+                bookAudio.play();
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
+                playPauseIcon.classList.add('playing'); // Add class to change color
+            } else {
+                bookAudio.pause();
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+                playPauseIcon.classList.remove('playing'); // Remove class
+            }
+        });
 
-    <!-- Discover city -->
-    <section class="content-card" aria-labelledby="discover">
-      <h2 id="discover" class="section-title">Discover the City</h2>
-      <div class="responsive-embed">
-        <iframe src="https://player.vimeo.com/video/1120687033" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Discover the City"></iframe>
-      </div>
-    </section>
+        // Event when audio ends
+        bookAudio.addEventListener('ended', () => {
+            playPauseIcon.classList.remove('fa-pause');
+            playPauseIcon.classList.add('fa-play');
+            playPauseIcon.classList.remove('playing');
+            bookAudio.currentTime = 0; // Go back to the beginning
+        });
 
-    <!-- FAQ -->
-    <section class="content-card" aria-labelledby="faq">
-      <h2 id="faq" class="section-title">Frequently Asked Questions</h2>
-      <div class="content">
-        <ul class="feature-list">
-          <li><strong>Is this the only book?</strong> — No! <em>Born Ricciwood</em> is the first volume in the <strong>A Legacy in New York</strong> series.</li>
-          <li><strong>What is the age rating?</strong> — Recommended for young adults and adults. No explicit scenes or inappropriate language.</li>
-          <li><strong>Where can I read or listen?</strong> — Available on Kindle; audiobook coming soon.</li>
-          <li><strong>Do I need to be Christian to enjoy it?</strong> — No. The story is for anyone who values deep romance and redemption.</li>
-        </ul>
-      </div>
-    </section>
+        // Event to handle audio being paused for other reasons (e.g., losing focus)
+        bookAudio.addEventListener('pause', () => {
+            if (!bookAudio.ended) { // Only change to play if not ended
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
+                playPauseIcon.classList.remove('playing');
+            }
+        });
 
-    <!-- CTA -->
-    <section class="content-card" aria-labelledby="cta">
-      <h2 id="cta" class="section-title">Don't Miss This Story!</h2>
-      <div class="content" style="text-align:center">
-        <p class="neon-yellow" style="font-weight:800">Gabriel Ricciwood awaits you.</p>
-        <p style="margin-top:.4rem">Start now.</p>
-
-        <div class="purchase-buttons" style="margin-top:1rem">
-          <a class="btn" href="https://www.amazon.com/dp/B0F9W8N7HY" target="_blank" rel="noopener noreferrer"><i class="fab fa-amazon" aria-hidden="true"></i><span>Buy in Kindle</span></a>
-          <a class="btn" href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-reader" aria-hidden="true"></i><span>Read in Kindle Unlimited</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <p>&copy; 2025 T. S. TELLES. All rights reserved.</p>
-  </footer>
-
-  <!-- Scripts (deferred) -->
-  <script>
-    // Audio player controls - accessible, keyboard-friendly
-    (function(){
-      const audio = document.getElementById('bookAudio');
-      const player = document.getElementById('audioPlayer');
-      const iconWrap = document.getElementById('playPauseIcon');
-      const icon = iconWrap.querySelector('i');
-
-      function updateUI(isPlaying){
-        if(isPlaying){
-          icon.classList.remove('fa-play');
-          icon.classList.add('fa-pause');
-          iconWrap.classList.add('playing');
-          iconWrap.setAttribute('aria-pressed','true');
-        } else {
-          icon.classList.remove('fa-pause');
-          icon.classList.add('fa-play');
-          iconWrap.classList.remove('playing');
-          iconWrap.setAttribute('aria-pressed','false');
-        }
-      }
-
-      // Click / tap
-      player.addEventListener('click', function(e){
-        e.preventDefault();
-        if(audio.paused){
-          audio.play().catch(()=>{/* autoplay blocked */});
-        } else {
-          audio.pause();
-        }
-      });
-
-      // Keyboard support (Enter / Space)
-      player.addEventListener('keydown', function(e){
-        if(e.key === 'Enter' || e.key === ' '){
-          e.preventDefault();
-          if(audio.paused) audio.play().catch(()=>{});
-          else audio.pause();
-        }
-      });
-
-      audio.addEventListener('play', ()=> updateUI(true));
-      audio.addEventListener('pause', ()=> updateUI(false));
-      audio.addEventListener('ended', ()=>{
-        audio.currentTime = 0;
-        updateUI(false);
-      });
-
-      // allow clicking the icon specifically (for screen readers)
-      iconWrap.addEventListener('click', (e)=>{
-        e.stopPropagation();
-        if(audio.paused) audio.play().catch(()=>{});
-        else audio.pause();
-      });
-
-      // Make player focusable for keyboard users
-      player.setAttribute('tabindex','0');
-    })();
-  </script>
+        // Event to handle audio being played for other reasons
+        bookAudio.addEventListener('play', () => {
+            playPauseIcon.classList.remove('fa-play');
+            playPauseIcon.classList.add('fa-pause');
+            playPauseIcon.classList.add('playing');
+        });
+    </script>
 </body>
-</html>
+</html
