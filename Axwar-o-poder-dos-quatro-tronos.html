@@ -6,15 +6,14 @@
     <title>Axwar: O Poder dos Quatro Tronos - Página de Vendas</title>
     <meta name="keywords" content="Fantasia Épica, Alta Fantasia, Romance, Profecia, Magia, Reinos, Conflito, Aventura, Axwar, O Poder dos Quatro Tronos, livros de fantasia, ebook de fantasia, literatura brasileira, ficção fantástica, romance de aventura">
     
-    <!-- Fontes externas para o design temático -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
         /* ====================================
-           Variáveis CSS e Animações Neon
-           ==================================== */
+            Variáveis CSS e Animações Neon
+            ==================================== */
         :root {
             --neon-white: #FFF;
             --neon-light-purple: #B5A4E8;
@@ -38,8 +37,8 @@
         }
 
         /* ====================================
-           Estilos Globais e Layout
-           ==================================== */
+            Estilos Globais e Layout
+            ==================================== */
         body {
             margin: 0;
             background: black;
@@ -55,33 +54,30 @@
             position: relative;
         }
 
+        /* Contêiner de fundo de vídeo animado ajustado */
         .background-animated {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta para centralização exata */
+            width: 90vw; /* Reduz a largura para 90% da largura da viewport */
+            height: 90vh; /* Reduz a altura para 90% da altura da viewport */
+            overflow: hidden; /* Garante que o vídeo não transborde do contêiner */
             z-index: -1;
             filter: brightness(0.3);
             animation: fadeIn 2s ease-in-out;
         }
+        /* Estilo do vídeo para cobrir todo o fundo, mantendo a proporção */
         .background-animated video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
+            width: 100%; /* Ocupa 100% da largura do seu contêiner (.background-animated) */
+            height: 100%; /* Ocupa 100% da altura do seu contêiner */
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
+            object-fit: cover; /* Garante que o vídeo cubra todo o contêiner, mantendo a proporção e cortando se necessário */
         }
 
         /* ====================================
-           Estilos do Cabeçalho e Rodapé
-           ==================================== */
+            Estilos do Cabeçalho e Rodapé
+            ==================================== */
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -125,8 +121,8 @@
         footer p { margin: 0; font-size: 0.8rem; line-height: 2em; }
 
         /* ====================================
-           Estilos das Seções de Conteúdo
-           ==================================== */
+            Estilos das Seções de Conteúdo
+            ==================================== */
         main {
             flex: 1;
             display: flex;
@@ -204,8 +200,8 @@
         }
 
         /* ====================================
-           Estilos para Imagens e Vídeos
-           ==================================== */
+            Estilos para Imagens e Vídeos
+            ==================================== */
         .book-mockup-group {
             display: flex;
             flex-direction: column;
@@ -237,8 +233,8 @@
         }
 
         /* ====================================
-           Estilos de Botão
-           ==================================== */
+            Estilos de Botão
+            ==================================== */
         .neon-button {
             display: inline-flex;
             align-items: center;
@@ -291,8 +287,8 @@
         }
 
         /* ====================================
-           Botão Voltar ao Topo
-           ==================================== */
+            Botão Voltar ao Topo
+            ==================================== */
         #scrollTopBtn {
             position: fixed;
             bottom: 3.5em;
@@ -319,8 +315,8 @@
         }
 
         /* ====================================
-           Estilos Responsivos
-           ==================================== */
+            Estilos Responsivos
+            ==================================== */
         @media (max-width: 768px) {
             body { padding-top: 14em; } /* Ajusta o padding para a altura do cabeçalho fixo */
             header { height: 14em; }
@@ -355,8 +351,7 @@
 
     <div class="background-animated" aria-hidden="true">
         <video autoplay loop muted playsinline>
-            <!-- Substitua esta URL pela URL completa do seu vídeo de fundo -->
-            <source src="https://videos.pexels.com/video-files/3847847/3847847-hd_1280_720_25fps.mp4" type="video/mp4">
+            <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Make_paint_write_202506211339_7rv0y.mp4" type="video/mp4">
             Seu navegador não suporta a tag de vídeo.
         </video>
     </div>
@@ -405,7 +400,7 @@
                 <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0DJ1XB47C" class="neon-button">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-purple">Leia no Kindle Unlimited</span>
                 </a>
-                   <a href="https://elevenreader.io/audiobooks/axwar/uHpCO3TUlVyXbrJbsthk" class="neon-button">
+                    <a href="https://elevenreader.io/audiobooks/axwar/uHpCO3TUlVyXbrJbsthk" class="neon-button">
                     <i class="fas fa-headphones"></i> <span class="neon-button-text-purple">Ouça o Audiobook completo</span>
                 </a>
             </div>
@@ -427,7 +422,7 @@
                 <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0DJ1XB47C" class="neon-button">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-purple">Leia no Kindle Unlimited</span>
                 </a>
-                   <a href="https://elevenreader.io/audiobooks/axwar/uHpCO3TUlVyXbrJbsthk" class="neon-button">
+                    <a href="https://elevenreader.io/audiobooks/axwar/uHpCO3TUlVyXbrJbsthk" class="neon-button">
                     <i class="fas fa-headphones"></i> <span class="neon-button-text-purple">Ouça o Audiobook completo</span>
                 </a>
             </div>
