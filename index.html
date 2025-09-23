@@ -1,607 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kingdom & Quill</title>
-  <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Hindi Bible, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8D2XP76XMD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kingdom & Quill</title>
+  <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Hindi Bible, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8D2XP76XMD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    gtag('config', 'G-8D2XP76XMD');
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
-  <style>
-    /* Variáveis CSS para cores neon */
-    :root {
-      --neon-yellow: #f9f871;
-      --neon-pink-soft: #FF66CC;
-      --neon-pink-light: #FF99CC; /* Novo rosa claro para o brilho do pop-up */
-      --neon-white: #FFF;
-      --neon-light-green: #90EE90; /* Novo verde claro */
-      --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
-      /* Novas variáveis para tons de roxo para o brilho, para consistência */
-      --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
-      --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
-    }
+    gtag('config', 'G-8D2XP76XMD');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
+  <style>
+    /* Variáveis CSS para cores neon */
+    :root {
+      --neon-yellow: #f9f871;
+      --neon-pink-soft: #FF66CC;
+      --neon-pink-light: #FF99CC; /* Novo rosa claro para o brilho do pop-up */
+      --neon-white: #FFF;
+      --neon-light-green: #90EE90; /* Novo verde claro */
+      --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
+      /* Novas variáveis para tons de roxo para o brilho, para consistência */
+      --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
+      --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
+    }
 
-    /* Estilos globais e redefinições */
-    body {
-      margin: 0;
-      background: black; /* Fundo principal, o vídeo será sobreposto */
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      /* Ajustado o padding-top para garantir que o conteúdo não fique atrás do cabeçalho fixo */
-      padding-top: 15em; /* Aumentado para aumentar o espaço */
-      padding-bottom: 4em; /* Aumentado para dar espaço ao rodapé fixo */
-      position: relative;
-    }
+    /* Estilos globais e redefinições */
+    body {
+      margin: 0;
+      background: black; /* Fundo principal, o vídeo será sobreposto */
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      /* Ajustado o padding-top para garantir que o conteúdo não fique atrás do cabeçalho fixo */
+      padding-top: 15em; /* Aumentado para aumentar o espaço */
+      padding-bottom: 4em; /* Aumentado para dar espaço ao rodapé fixo */
+      position: relative;
+    }
 
-    /* Contêiner de fundo de vídeo animado */
-    .background-animated {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1;
-      filter: brightness(0.3);
-    }
+    /* Contêiner de fundo de vídeo animado */
+    .background-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      filter: brightness(0.3);
+    }
 
-    /* Estilo do vídeo para cobrir todo o fundo */
-    .background-animated video {
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-    }
+    /* Estilo do vídeo para cobrir todo o fundo */
+    .background-animated video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
 
-    /* Cabeçalho fixo com neon verde claro */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: auto; /* Altura automática para acomodar conteúdo dinâmico */
-      background-color: black;
-      color: var(--neon-light-green); /* Cor geral do cabeçalho */
-      font-family: 'Merriweather', serif;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column; /* Empilha título, slogan e navegação */
-      justify-content: center; /* Centraliza verticalmente */
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-      text-shadow: /* Sombra geral do cabeçalho, não do título */
-        0 0 8px var(--neon-light-green),
-        0 0 20px var(--neon-light-green),
-        0 0 40px var(--neon-light-green),
-        0 0 80px var(--neon-light-green);
-      animation: neonPulseLightGreen 2s infinite alternate;
-      user-select: none;
-      letter-spacing: 0.05em;
-      z-index: 100;
-      padding: 1em 0.5em; /* Espaçamento interno */
-    }
+    /* Cabeçalho fixo com neon verde claro */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: auto; /* Altura automática para acomodar conteúdo dinâmico */
+      background-color: black;
+      color: var(--neon-light-green); /* Cor geral do cabeçalho */
+      font-family: 'Merriweather', serif;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column; /* Empilha título, slogan e navegação */
+      justify-content: center; /* Centraliza verticalmente */
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow: /* Sombra geral do cabeçalho, não do título */
+        0 0 8px var(--neon-light-green),
+        0 0 20px var(--neon-light-green),
+        0 0 40px var(--neon-light-green),
+        0 0 80px var(--neon-light-green);
+      animation: neonPulseLightGreen 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
+      z-index: 100;
+      padding: 1em 0.5em; /* Espaçamento interno */
+    }
 
-    /* Grupo para Título e Slogan */
-    .title-slogan-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; /* Centraliza verticalmente dentro do seu espaço */
-      margin-bottom: 1em; /* Espaço entre o slogan e a navegação */
-    }
+    /* Grupo para Título e Slogan */
+    .title-slogan-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Centraliza verticalmente dentro do seu espaço */
+      margin-bottom: 1em; /* Espaço entre o slogan e a navegação */
+    }
 
-    .site-title {
-      font-size: 2.2rem;
-      margin: 0;
-      color: var(--neon-yellow); /* Cor do título alterada para amarelo */
-      text-shadow: /* Sombra do título alterada para amarelo */
-        0 0 8px var(--neon-yellow),
-        0 0 20px var(--neon-yellow),
-        0 0 40px var(--neon-yellow),
-        0 0 80px var(--neon-yellow);
-      animation: neonPulseYellow 2s infinite alternate; /* Animação para o amarelo */
-    }
+    .site-title {
+      font-size: 2.2rem;
+      margin: 0;
+      color: var(--neon-yellow); /* Cor do título alterada para amarelo */
+      text-shadow: /* Sombra do título alterada para amarelo */
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow);
+      animation: neonPulseYellow 2s infinite alternate; /* Animação para o amarelo */
+    }
 
-    .header-slogan {
-      font-size: 1.2rem; /* Tamanho do slogan no cabeçalho */
-      font-weight: normal;
-      color: var(--neon-white); /* Cor do slogan alterada para branco */
-      text-shadow: /* Sombra do slogan alterada para branco */
-        0 0 5px var(--neon-white),
-        0 0 10px var(--neon-white);
-      margin-top: 0.2em;
-      animation: neonPulseWhite 2s infinite alternate; /* Animação para o branco */
-    }
+    .header-slogan {
+      font-size: 1.2rem; /* Tamanho do slogan no cabeçalho */
+      font-weight: normal;
+      color: var(--neon-white); /* Cor do slogan alterada para branco */
+      text-shadow: /* Sombra do slogan alterada para branco */
+        0 0 5px var(--neon-white),
+        0 0 10px var(--neon-white);
+      margin-top: 0.2em;
+      animation: neonPulseWhite 2s infinite alternate; /* Animação para o branco */
+    }
 
-    .main-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      font-size: 1rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: normal;
-      text-shadow: none;
-    }
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: normal;
+      text-shadow: none;
+    }
 
-    .main-nav a {
-      color: var(--neon-white);
-      text-decoration: none;
-      padding: 0.5em 1em;
-      border-radius: 15px;
-      transition: all 0.3s ease;
-      text-shadow: 0 0 5px var(--neon-white);
-    }
+    .main-nav a {
+      color: var(--neon-white);
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px var(--neon-white);
+    }
 
-    .main-nav a:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--neon-yellow);
-      text-shadow:
-        0 0 8px var(--neon-yellow),
-        0 0 20px var(--neon-yellow);
-      transform: scale(1.05);
-    }
+    .main-nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--neon-yellow);
+      text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow);
+      transform: scale(1.05);
+    }
 
-    /* Nova animação de pulso para verde claro */
-    @keyframes neonPulseLightGreen {
-      0% {
-        text-shadow:
-          0 0 10px var(--neon-light-green),
-          0 0 30px var(--neon-light-green),
-          0 0 50px var(--neon-light-green),
-          0 0 100px var(--neon-light-green);
-      }
-      100% {
-        text-shadow:
-          0 0 20px var(--neon-light-green),
-          0 0 40px var(--neon-light-green),
-          0 0 70px var(--neon-light-green),
-          0 0 120px var(--neon-light-green);
-      }
-    }
+    /* Nova animação de pulso para verde claro */
+    @keyframes neonPulseLightGreen {
+      0% {
+        text-shadow:
+          0 0 10px var(--neon-light-green),
+          0 0 30px var(--neon-light-green),
+          0 0 50px var(--neon-light-green),
+          0 0 100px var(--neon-light-green);
+      }
+      100% {
+        text-shadow:
+          0 0 20px var(--neon-light-green),
+          0 0 40px var(--neon-light-green),
+          0 0 70px var(--neon-light-green),
+          0 0 120px var(--neon-light-green);
+      }
+    }
 
-    /* Nova animação de pulso para branco */
-    @keyframes neonPulseWhite {
-      0% {
-        text-shadow:
-          0 0 10px var(--neon-white),
-          0 0 30px var(--neon-white),
-          0 0 50px var(--neon-white),
-          0 0 100px var(--neon-white);
-      }
-      100% {
-        text-shadow:
-          0 0 20px var(--neon-white),
-          0 0 40px var(--neon-white),
-          0 0 70px var(--neon-white),
-          0 0 120px var(--neon-white);
-      }
-    }
+    /* Nova animação de pulso para branco */
+    @keyframes neonPulseWhite {
+      0% {
+        text-shadow:
+          0 0 10px var(--neon-white),
+          0 0 30px var(--neon-white),
+          0 0 50px var(--neon-white),
+          0 0 100px var(--neon-white);
+      }
+      100% {
+        text-shadow:
+          0 0 20px var(--neon-white),
+          0 0 40px var(--neon-white),
+          0 0 70px var(--neon-white),
+          0 0 120px var(--neon-white);
+      }
+    }
 
-    /* Nova animação de pulso para amarelo */
-    @keyframes neonPulseYellow {
-      0% {
-        text-shadow:
-          0 0 8px var(--neon-yellow),
-          0 0 20px var(--neon-yellow),
-          0 0 40px var(--neon-yellow),
-          0 0 80px var(--neon-yellow);
-      }
-      100% {
-        text-shadow:
-          0 0 15px var(--neon-yellow),
-          0 0 30px var(--neon-yellow),
-          0 0 50px var(--neon-yellow),
-          0 0 100px var(--neon-yellow);
-      }
-    }
+    /* Nova animação de pulso para amarelo */
+    @keyframes neonPulseYellow {
+      0% {
+        text-shadow:
+          0 0 8px var(--neon-yellow),
+          0 0 20px var(--neon-yellow),
+          0 0 40px var(--neon-yellow),
+          0 0 80px var(--neon-yellow);
+      }
+      100% {
+        text-shadow:
+          0 0 15px var(--neon-yellow),
+          0 0 30px var(--neon-yellow),
+          0 0 50px var(--neon-yellow),
+          0 0 100px var(--neon-yellow);
+      }
+    }
 
-    /* Área de conteúdo principal */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem 1rem; /* Ajustado para acomodar o cabeçalho dinâmico */
-      gap: 3rem;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      box-sizing: border-box;
-      min-height: calc(100vh - 6.5em - 2em); /* Ajustado para o cabeçalho dinâmico */
-      position: relative;
-      z-index: 1;
-    }
+    /* Área de conteúdo principal */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 1rem; /* Ajustado para acomodar o cabeçalho dinâmico */
+      gap: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      min-height: calc(100vh - 6.5em - 2em); /* Ajustado para o cabeçalho dinâmico */
+      position: relative;
+      z-index: 1;
+    }
 
-    /* Estilo de secção partilhado para blocos de texto */
-    .content-section {
-      background: rgba(0,0,0,0.6);
-      padding: 1.5rem 2rem;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-      font-weight: 600;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      max-width: 500px;
-      text-align: center;
-      user-select: none;
-      text-shadow: 0 0 5px #000;
-      margin-top: 0; /* Gerido pelo 'gap' do 'main' */
-    }
-    .content-section p {
-        margin-bottom: 0.8rem;
-        margin-top: 0;
-    }
-    .content-section strong {
-      color: var(--neon-yellow);
-    }
+    /* Estilo de secção partilhado para blocos de texto */
+    .content-section {
+      background: rgba(0,0,0,0.6);
+      padding: 1.5rem 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      max-width: 500px;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+      margin-top: 0; /* Gerido pelo 'gap' do 'main' */
+    }
+    .content-section p {
+        margin-bottom: 0.8rem;
+        margin-top: 0;
+    }
+    .content-section strong {
+      color: var(--neon-yellow);
+    }
 
-    /* Títulos principais com efeito neon */
-    .main-title-neon {
-      color: var(--neon-yellow);
-      font-size: 1.8rem;
-      margin-top: 0;
-      text-shadow:
-        0 0 8px var(--neon-yellow),
-        0 0 20px var(--neon-yellow),
-        0 0 40px var(--neon-yellow),
-        0 0 80px var(--neon-yellow);
-      animation: neonPulseYellow 2s infinite alternate;
-    }
-    .subtitle-strong {
-        margin-top: 0.4rem;
-        font-size: 1.4rem;
-        font-weight: bold;
-    }
-    
-    /* Estilos para a seção About T. S. Telles (author-note) */
-    .content-section.author-note {
-        text-align: center;
-    }
-    .content-section.author-note img {
-        display: block;
-        margin: 1em auto;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        box-shadow: 0 0 10px var(--neon-pink-soft);
-    }
-    
-    /* Rodapé fixo */
-    footer {
-      position: fixed; /* MUDADO PARA FIXED */
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2em;
-      background-color: black;
-      color: #ccc;
-      text-align: center;
-      line-height: 2em;
-      font-size: 0.9rem;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
-      user-select: none;
-      z-index: 100;
-    }
+    /* Títulos principais com efeito neon */
+    .main-title-neon {
+      color: var(--neon-yellow);
+      font-size: 1.8rem;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow);
+      animation: neonPulseYellow 2s infinite alternate;
+    }
+    .subtitle-strong {
+        margin-top: 0.4rem;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    
+    /* Estilos para a seção About T. S. Telles (author-note) */
+    .content-section.author-note {
+        text-align: center;
+    }
+    .content-section.author-note img {
+        display: block;
+        margin: 1em auto;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        box-shadow: 0 0 10px var(--neon-pink-soft);
+    }
+    
+    /* Rodapé fixo */
+    footer {
+      position: fixed; /* MUDADO PARA FIXED */
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2em;
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 2em;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
+      z-index: 100;
+    }
 
-    footer p {
-      margin: 0;
-      font-size: 0.8rem;
-      line-height: 2em;
-    }
+    footer p {
+      margin: 0;
+      font-size: 0.8rem;
+      line-height: 2em;
+    }
 
-    /* Estilos para o Pop-up de Idioma */
-    .language-modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
-        display: flex; /* Usar flexbox para centralizar */
-        justify-content: center;
-        align-items: center;
-        z-index: 1000; /* Acima de tudo */
-        visibility: hidden; /* Escondido por padrão */
-        opacity: 0; /* Totalmente transparente por padrão */
-        transition: visibility 0.3s, opacity 0.3s ease-in-out; /* Transição suave */
-    }
+    /* Estilos para o Pop-up de Idioma */
+    .language-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+        display: flex; /* Usar flexbox para centralizar */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* Acima de tudo */
+        visibility: hidden; /* Escondido por padrão */
+        opacity: 0; /* Totalmente transparente por padrão */
+        transition: visibility 0.3s, opacity 0.3s ease-in-out; /* Transição suave */
+    }
 
-    .language-modal-overlay.show {
-        visibility: visible;
-        opacity: 1;
-    }
+    .language-modal-overlay.show {
+        visibility: visible;
+        opacity: 1;
+    }
 
-    .language-modal-content {
-        background: rgba(0, 0, 0, 0.95); /* Fundo do balão mais escuro */
-        padding: 2.5em 3em;
-        border-radius: 20px; /* Mais arredondado */
-        box-shadow: 
-            0 0 15px var(--neon-pink-light), /* Brilho interno rosa claro */
-            0 0 30px var(--neon-pink-soft), /* Brilho médio rosa */
-            0 0 50px var(--neon-pink-soft), /* Brilho externo principal rosa */
-            0 0 80px var(--neon-pink-soft);
-        text-align: center;
-        max-width: 90%;
-        width: 400px;
-        position: relative;
-        animation: neonPulsePink 2s infinite alternate; /* Adiciona a animação neon rosa */
-    }
+    .language-modal-content {
+        background: rgba(0, 0, 0, 0.95); /* Fundo do balão mais escuro */
+        padding: 2.5em 3em;
+        border-radius: 20px; /* Mais arredondado */
+        box-shadow: 
+            0 0 15px var(--neon-pink-light), /* Brilho interno rosa claro */
+            0 0 30px var(--neon-pink-soft), /* Brilho médio rosa */
+            0 0 50px var(--neon-pink-soft), /* Brilho externo principal rosa */
+            0 0 80px var(--neon-pink-soft);
+        text-align: center;
+        max-width: 90%;
+        width: 400px;
+        position: relative;
+        animation: neonPulsePink 2s infinite alternate; /* Adiciona a animação neon rosa */
+    }
 
-    /* Animação de pulso para rosa */
-    @keyframes neonPulsePink { /* Renomeado para Pink */
-        0% {
-            box-shadow:
-                0 0 15px var(--neon-pink-light),
-                0 0 30px var(--neon-pink-soft),
-                0 0 50px var(--neon-pink-soft),
-                0 0 80px var(--neon-pink-soft);
-        }
-        100% {
-            box-shadow:
-                0 0 20px var(--neon-pink-light),
-                0 0 40px var(--neon-pink-soft),
-                0 0 70px var(--neon-pink-soft),
-                0 0 100px var(--neon-pink-soft);
-        }
-    }
+    /* Animação de pulso para rosa */
+    @keyframes neonPulsePink { /* Renomeado para Pink */
+        0% {
+            box-shadow:
+                0 0 15px var(--neon-pink-light),
+                0 0 30px var(--neon-pink-soft),
+                0 0 50px var(--neon-pink-soft),
+                0 0 80px var(--neon-pink-soft);
+        }
+        100% {
+            box-shadow:
+                0 0 20px var(--neon-pink-light),
+                0 0 40px var(--neon-pink-soft),
+                0 0 70px var(--neon-pink-soft),
+                0 0 100px var(--neon-pink-soft);
+        }
+    }
 
-    .language-modal-content h3 {
-        color: var(--neon-pink-soft); /* Cor do título do pop-up */
-        font-family: 'Merriweather', serif;
-        font-size: 1.8rem;
-        margin-top: 0;
-        margin-bottom: 1.5em;
-        text-shadow: 
-            0 0 8px var(--neon-pink-soft),
-            0 0 20px var(--neon-pink-soft);
-    }
+    .language-modal-content h3 {
+        color: var(--neon-pink-soft); /* Cor do título do pop-up */
+        font-family: 'Merriweather', serif;
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 1.5em;
+        text-shadow: 
+            0 0 8px var(--neon-pink-soft),
+            0 0 20px var(--neon-pink-soft);
+    }
 
-    .language-modal-buttons {
-        display: flex;
-        flex-direction: column; /* Botões empilhados */
-        gap: 1em; /* Espaçamento entre os botões */
-    }
+    .language-modal-buttons {
+        display: flex;
+        flex-direction: column; /* Botões empilhados */
+        gap: 1em; /* Espaçamento entre os botões */
+    }
 
-    .language-modal-buttons button {
-        background: none;
-        border: 2px solid var(--neon-yellow); /* Borda amarela neon */
-        color: var(--neon-white);
-        padding: 0.8em 1.5em;
-        font-size: 1.1rem;
-        font-weight: bold;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-shadow: 0 0 5px var(--neon-white);
-        box-shadow: 0 0 10px rgba(249, 248, 113, 0.5); /* Sombra inicial amarelo claro */
-    }
+    .language-modal-buttons button {
+        background: none;
+        border: 2px solid var(--neon-yellow); /* Borda amarela neon */
+        color: var(--neon-white);
+        padding: 0.8em 1.5em;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 5px var(--neon-white);
+        box-shadow: 0 0 10px rgba(249, 248, 113, 0.5); /* Sombra inicial amarelo claro */
+    }
 
-    .language-modal-buttons button:hover {
-        background-color: rgba(249, 248, 113, 0.1); /* Fundo levemente amarelo no hover */
-        color: var(--neon-yellow); /* Texto amarelo neon no hover */
-        text-shadow: 
-            0 0 8px var(--neon-yellow),
-            0 0 20px var(--neon-yellow);
-        box-shadow: 
-            0 0 15px var(--neon-yellow), /* Sombra amarela mais intensa */
-            0 0 30px var(--neon-yellow);
-        transform: scale(1.05);
-    }
+    .language-modal-buttons button:hover {
+        background-color: rgba(249, 248, 113, 0.1); /* Fundo levemente amarelo no hover */
+        color: var(--neon-yellow); /* Texto amarelo neon no hover */
+        text-shadow: 
+            0 0 8px var(--neon-yellow),
+            0 0 20px var(--neon-yellow);
+        box-shadow: 
+            0 0 15px var(--neon-yellow), /* Sombra amarela mais intensa */
+            0 0 30px var(--neon-yellow);
+        transform: scale(1.05);
+    }
 
-    .close-modal {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        background: none;
-        border: none;
-        color: var(--neon-white);
-        font-size: 2em;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        text-shadow: 0 0 5px var(--neon-white);
-    }
+    .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: var(--neon-white);
+        font-size: 2em;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        text-shadow: 0 0 5px var(--neon-white);
+    }
 
-    .close-modal:hover {
-        color: var(--neon-pink-soft);
-        text-shadow: 0 0 8px var(--neon-pink-soft), 0 0 20px var(--neon-pink-soft);
-    }
+    .close-modal:hover {
+        color: var(--neon-pink-soft);
+        text-shadow: 0 0 8px var(--neon-pink-soft), 0 0 20px var(--neon-pink-soft);
+    }
 
-    /* Ajustes de responsividade */
-    @media (max-width: 768px) {
-        body {
-            padding-top: 16em; /* Ajustado para o novo header */
-        }
-        header {
-            font-size: 1.8rem;
-        }
-        .site-title {
-            font-size: 1.8rem;
-        }
-        .header-slogan {
-            font-size: 1rem;
-        }
-        .main-nav {
-            gap: 1rem;
-            font-size: 0.9rem;
-        }
-        .content-section {
-            font-size: 1.05rem;
-            padding: 1.5rem 1.8rem;
-            max-width: 90%;
-        }
-        .language-modal-content {
-            padding: 2em 2.5em;
-            width: 300px;
-        }
-        .language-modal-content h3 {
-            font-size: 1.5rem;
-        }
-        .language-modal-buttons button {
-            font-size: 1rem;
-            padding: 0.7em 1.2em;
-        }
-    }
+    /* Ajustes de responsividade */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 16em; /* Ajustado para o novo header */
+        }
+        header {
+            font-size: 1.8rem;
+        }
+        .site-title {
+            font-size: 1.8rem;
+        }
+        .header-slogan {
+            font-size: 1rem;
+        }
+        .main-nav {
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+        .content-section {
+            font-size: 1.05rem;
+            padding: 1.5rem 1.8rem;
+            max-width: 90%;
+        }
+        .language-modal-content {
+            padding: 2em 2.5em;
+            width: 300px;
+        }
+        .language-modal-content h3 {
+            font-size: 1.5rem;
+        }
+        .language-modal-buttons button {
+            font-size: 1rem;
+            padding: 0.7em 1.2em;
+        }
+    }
 
-    @media (max-width: 480px) {
-        body {
-            padding-top: 17em; /* Ajustado para o novo header em telas pequenas */
-        }
-        header {
-            font-size: 1.5rem;
-        }
-        .site-title {
-            font-size: 1.5rem;
-        }
-        .header-slogan {
-            font-size: 0.9rem;
-        }
-        .main-nav {
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            flex-direction: column;
-            align-items: center;
-        }
-        main {
-            padding-top: 2rem;
-        }
-        .language-modal-content {
-            padding: 1.5em 2em;
-            width: 280px;
-        }
-        .language-modal-content h3 {
-            font-size: 1.3rem;
-        }
-        .language-modal-buttons button {
-            font-size: 0.9em;
-            padding: 0.6em 1em;
-        }
-    }
-  </style>
+    @media (max-width: 480px) {
+        body {
+            padding-top: 17em; /* Ajustado para o novo header em telas pequenas */
+        }
+        header {
+            font-size: 1.5rem;
+        }
+        .site-title {
+            font-size: 1.5rem;
+        }
+        .header-slogan {
+            font-size: 0.9rem;
+        }
+        .main-nav {
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            flex-direction: column;
+            align-items: center;
+        }
+        main {
+            padding-top: 2rem;
+        }
+        .language-modal-content {
+            padding: 1.5em 2em;
+            width: 280px;
+        }
+        .language-modal-content h3 {
+            font-size: 1.3rem;
+        }
+        .language-modal-buttons button {
+            font-size: 0.9em;
+            padding: 0.6em 1em;
+        }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="background-animated" aria-hidden="true">
-    <video autoplay loop muted playsinline>
-      <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
-      O seu navegador não suporta a tag de vídeo.
-    </video>
-  </div>
+  <div class="background-animated" aria-hidden="true">
+    <video autoplay loop muted playsinline>
+      <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
+      O seu navegador não suporta a tag de vídeo.
+    </video>
+  </div>
 
-  <header>
-    <div class="title-slogan-group">
-      <span class="site-title">Kingdom & Quill</span>
-      <p class="header-slogan">Ink. Spirit. Legacy.</p>
-    </div>
-    <nav class="main-nav">
-      <a href="best-bibles.html">Best Bibles</a>
-      <a href="#devotionals-section">Devotional</a>
-      <!-- Link Welcome to New York - AGORA IRÁ ABRIR O POP-UP -->
-      <a href="#" id="welcomeToNyLink">Welcome to New York</a>
-      <a href="axwar.html" onclick="gtag('event', 'click', { 'event_category': 'Navigation', 'event_label': 'Axwar' });">Axwar</a>
-    </nav>
-  </header>
+  <header>
+    <div class="title-slogan-group">
+      <span class="site-title">Kingdom & Quill</span>
+      <p class="header-slogan">Ink. Spirit. Legacy.</p>
+    </div>
+    <nav class="main-nav">
+      <a href="best-bibles.html">Best Bibles</a>
+      <a href="#devotionals-section">Devotional</a>
+      <!-- Link Welcome to New York - AGORA IRÁ ABRIR O POP-UP -->
+      <a href="#" id="welcomeToNyLink">Welcome to New York</a>
+      <a href="Axwar-o-poder-dos-quatro-tronos.html">Axwar</a>
+    </nav>
+  </header>
 
-  <main>
-    <section class="content-section" id="project-mission-section" aria-label="Our Mission">
-      <h2 class="main-title-neon">🌟 Inside the Kingdom & Quill Mission 🌟</h2>
-      <p>Kingdom & Quill is an independent project dedicated to distributing remastered audio Bibles in multiple languages, with the purpose of making the Word of God accessible — with dignity — to people across the globe, especially those living under religious persecution, government censorship, or in war zones.</p>
-      <p>The audio Bibles are made available on a wide range of digital platforms, including free versions that require no personal data or payment information. This ensures that marginalized Christian communities can hear the Truth without compromising their safety. Paid editions in open regions help fund and sustain the mission in high-risk areas.</p>
-      <p>Kingdom & Quill was born from the vision of a Christian author committed to proclaiming the true Gospel — without prosperity theology, without a false Christ, and without commercial compromise. The content shared through this project — including devotionals, fiction books, and Scripture — is crafted to strengthen hearts and stir souls toward the presence of the Lord.</p>
-      <p>There is no room here for profanity, sexual content, or shallow entertainment. Only reverent creativity, sound doctrine, and powerful storytelling anchored in eternal truth.</p>
-    </section>
+  <main>
+    <section class="content-section" id="project-mission-section" aria-label="Our Mission">
+      <h2 class="main-title-neon">🌟 Inside the Kingdom & Quill Mission 🌟</h2>
+      <p>Kingdom & Quill is an independent project dedicated to distributing remastered audio Bibles in multiple languages, with the purpose of making the Word of God accessible — with dignity — to people across the globe, especially those living under religious persecution, government censorship, or in war zones.</p>
+      <p>The audio Bibles are made available on a wide range of digital platforms, including free versions that require no personal data or payment information. This ensures that marginalized Christian communities can hear the Truth without compromising their safety. Paid editions in open regions help fund and sustain the mission in high-risk areas.</p>
+      <p>Kingdom & Quill was born from the vision of a Christian author committed to proclaiming the true Gospel — without prosperity theology, without a false Christ, and without commercial compromise. The content shared through this project — including devotionals, fiction books, and Scripture — is crafted to strengthen hearts and stir souls toward the presence of the Lord.</p>
+      <p>There is no room here for profanity, sexual content, or shallow entertainment. Only reverent creativity, sound doctrine, and powerful storytelling anchored in eternal truth.</p>
+    </section>
 
-    <section class="content-section author-note" aria-label="About T. S. Telles">
-      <h2 class="main-title-neon">About the Creator</h2>
-      <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/tsphoto.jpg" alt="Author's Photo" />
-      <p>T. S. Telles is a computer science and cybersecurity specialist, a lifelong Christian, and the driving force behind a global Bible audio initiative. Her mission is to make God’s Word accessible in multiple languages with clarity, reverence, and high quality—especially in regions where the truth is often silenced.</p>
-      <p>As a devoted Christian creator, she crafts stories with purpose that inspire faith, courage, and transformation without being preachy. Her novel Welcome to New York – Part 1, available on Amazon, is a heartfelt narrative free from explicit content or crude language. Focused on deep, complex characters, the book celebrates the strength found in faith, hope, and restoration.</p>
-      <p>She is currently working on Axwar: The Power of Four Thrones, an epic fantasy saga distinguished by rich worldbuilding and a dense, compelling storyline. Her upcoming works are in preparation, and readers can follow the latest updates through the project pages on this site.</p>
-    </section>
+    <section class="content-section author-note" aria-label="About T. S. Telles">
+      <h2 class="main-title-neon">About the Creator</h2>
+      <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/tsphoto.jpg" alt="Author's Photo" />
+      <p>T. S. Telles is a computer science and cybersecurity specialist, a lifelong Christian, and the driving force behind a global Bible audio initiative. Her mission is to make God’s Word accessible in multiple languages with clarity, reverence, and high quality—especially in regions where the truth is often silenced.</p>
+      <p>As a devoted Christian creator, she crafts stories with purpose that inspire faith, courage, and transformation without being preachy. Her novel Welcome to New York – Part 1, available on Amazon, is a heartfelt narrative free from explicit content or crude language. Focused on deep, complex characters, the book celebrates the strength found in faith, hope, and restoration.</p>
+      <p>She is currently working on Axwar: The Power of Four Thrones, an epic fantasy saga distinguished by rich worldbuilding and a dense, compelling storyline. Her upcoming works are in preparation, and readers can follow the latest updates through the project pages on this site.</p>
+    </section>
 
-  </main>
+  </main>
 
-  <footer>
-    <p>&copy; 2025 T. S. TELLES. All rights reserved.</p>
-  </footer>
+  <footer>
+    <p>&copy; 2025 T. S. TELLES. All rights reserved.</p>
+  </footer>
 
-  <!-- HTML para o Pop-up de Seleção de Idioma -->
-  <div id="languageModal" class="language-modal-overlay">
-    <div class="language-modal-content">
-      <button class="close-modal">&times;</button>
-      <h3>Select Your Language / Selecione Seu Idioma</h3>
-      <div class="language-modal-buttons">
-        <button id="selectEnglish">English</button>
-        <button id="selectPortuguese">Português</button>
-      </div>
-    </div>
-  </div>
+  <!-- HTML para o Pop-up de Seleção de Idioma -->
+  <div id="languageModal" class="language-modal-overlay">
+    <div class="language-modal-content">
+      <button class="close-modal">&times;</button>
+      <h3>Select Your Language / Selecione Seu Idioma</h3>
+      <div class="language-modal-buttons">
+        <button id="selectEnglish">English</button>
+        <button id="selectPortuguese">Português</button>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    // GARANTE QUE O SCRIPT RODE APÓS O CARREGAMENTO TOTAL DA PÁGINA
-    window.onload = function() {
-      // OBTÉM REFERÊNCIAS PARA OS ELEMENTOS
-      const welcomeToNyLink = document.getElementById('welcomeToNyLink');
-      const languageModal = document.getElementById('languageModal');
-      const closeModalButton = languageModal.querySelector('.close-modal');
-      const selectEnglishButton = document.getElementById('selectEnglish');
-      const selectPortugueseButton = document.getElementById('selectPortuguese');
-      const languageModalContent = languageModal.querySelector('.language-modal-content');
+  <script>
+    // GARANTE QUE O SCRIPT RODE APÓS O CARREGAMENTO TOTAL DA PÁGINA
+    window.onload = function() {
+      // OBTÉM REFERÊNCIAS PARA OS ELEMENTOS
+      const welcomeToNyLink = document.getElementById('welcomeToNyLink');
+      const languageModal = document.getElementById('languageModal');
+      const closeModalButton = languageModal.querySelector('.close-modal');
+      const selectEnglishButton = document.getElementById('selectEnglish');
+      const selectPortugueseButton = document.getElementById('selectPortuguese');
+      const languageModalContent = languageModal.querySelector('.language-modal-content');
 
-      // FUNÇÃO PARA ABRIR O POP-UP
-      function openModal(event) {
-        event.preventDefault(); // IMPEDE A NAVEGAÇÃO IMEDIATA DO LINK
-        languageModal.classList.add('show'); // Adiciona a classe 'show' para exibir e animar
-      }
+      // FUNÇÃO PARA ABRIR O POP-UP
+      function openModal(event) {
+        event.preventDefault(); // IMPEDE A NAVEGAÇÃO IMEDIATA DO LINK
+        languageModal.classList.add('show'); // Adiciona a classe 'show' para exibir e animar
+      }
 
-      // FUNÇÃO PARA FECHAR O POP-UP
-      function closeModal() {
-        languageModal.classList.remove('show'); // Remove a classe 'show' para esconder e animar
-      }
+      // FUNÇÃO PARA FECHAR O POP-UP
+      function closeModal() {
+        languageModal.classList.remove('show'); // Remove a classe 'show' para esconder e animar
+      }
 
-      // ADICIONA EVENT LISTENER PARA O CLIQUE NO LINK "WELCOME TO NEW YORK"
-      welcomeToNyLink.addEventListener('click', openModal);
+      // ADICIONA EVENT LISTENER PARA O CLIQUE NO LINK "WELCOME TO NEW YORK"
+      welcomeToNyLink.addEventListener('click', openModal);
 
-      // ADICIONA EVENT LISTENER PARA O CLIQUE NO BOTÃO DE FECHAR
-      closeModalButton.addEventListener('click', closeModal);
+      // ADICIONA EVENT LISTENER PARA O CLIQUE NO BOTÃO DE FECHAR
+      closeModalButton.addEventListener('click', closeModal);
 
-      // FECHA O POP-UP AO CLICAR FORA DO CONTEÚDO DO MODAL
-      languageModal.addEventListener('click', function(event) {
-        if (!languageModalContent.contains(event.target) && event.target === languageModal) {
-          closeModal();
-        }
-      });
+      // FECHA O POP-UP AO CLICAR FORA DO CONTEÚDO DO MODAL
+      languageModal.addEventListener('click', function(event) {
+        if (!languageModalContent.contains(event.target) && event.target === languageModal) {
+          closeModal();
+        }
+      });
 
-      // ADICIONA EVENT LISTENERS PARA OS BOTÕES DE SELEÇÃO DE IDIOMA
-      selectEnglishButton.addEventListener('click', function() {
-        // ENCAMINHA PARA A PÁGINA EM INGLÊS E REGISTRA O EVENTO DO GA
-        window.location.href = './welcome-to-ny.html';
-        gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Welcome to New York - English' });
-      });
+      // ADICIONA EVENT LISTENERS PARA OS BOTÕES DE SELEÇÃO DE IDIOMA
+      selectEnglishButton.addEventListener('click', function() {
+        // ENCAMINHA PARA A PÁGINA EM INGLÊS E REGISTRA O EVENTO DO GA
+        window.location.href = './welcome-to-ny.html';
+        gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Welcome to New York - English' });
+      });
 
-      selectPortugueseButton.addEventListener('click', function() {
-        // ENCAMINHA PARA A PÁGINA EM PORTUGUÊS E REGISTRA O EVENTO DO GA
-        window.location.href = 'Bem-vindo-a-Nova-Iorque.html'; // ALTERADO PARA 'Bem-vindo-a-Nova-Iorque.html'
-        gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Welcome to New York - Portuguese' });
-      });
-    };
-  </script>
+      selectPortugueseButton.addEventListener('click', function() {
+        // ENCAMINHA PARA A PÁGINA EM PORTUGUÊS E REGISTRA O EVENTO DO GA
+        window.location.href = 'Bem-vindo-a-Nova-Iorque.html'; // ALTERADO PARA 'Bem-vindo-a-Nova-Iorque.html'
+        gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Welcome to New York - Portuguese' });
+      });
+    };
+  </script>
 
 </body>
 </html>
