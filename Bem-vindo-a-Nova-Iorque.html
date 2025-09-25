@@ -328,6 +328,24 @@
                     0 0 90px var(--neon-purple);
             }
         }
+        
+        /* Animação de pulso para amarelo */
+        @keyframes neonPulseYellow {
+            0% {
+                text-shadow:
+                    0 0 8px var(--neon-yellow),
+                    0 0 20px var(--neon-yellow),
+                    0 0 40px var(--neon-yellow),
+                    0 0 80px var(--neon-yellow);
+            }
+            100% {
+                text-shadow:
+                    0 0 15px var(--neon-yellow),
+                    0 0 30px var(--neon-yellow),
+                    0 0 50px var(--neon-yellow),
+                    0 0 100px var(--neon-yellow);
+            }
+        }
 
         /* Estilo de brilho amarelo neon */
         .neon-yellow-glow {
@@ -375,17 +393,6 @@
             transform: scale(1.05);
         }
         
-        /* Estilo para o container do player de áudio (replicado do exemplo) */
-        /* REMOVIDO: .audio-player-container */
-
-
-        /* REMOVIDO: .audio-player-container p */
-
-        /* REMOVIDO: .audio-player-icon */
-
-        /* REMOVIDO: .audio-player-icon.playing */
-
-
         /* Novo estilo de botão neon */
         .neon-button {
             display: inline-flex; /* Use flexbox para alinhar conteúdo e ícones */
@@ -544,15 +551,7 @@
             .book-mockup-group {
                 margin-top: 3rem;
             }
-            .audio-player-container {
-                width: 90%; /* Mais largo em telas menores */
-                max-width: 350px; /* Limite em telas médias */
-                font-size: 1rem; /* Ajusta fonte */
-                padding: 1.2em; /* Ajusta padding */
-            }
-            .audio-player-icon {
-                font-size: 0.8em; /* Ajusta tamanho do ícone */
-            }
+            
             .purchase-buttons-container {
                 gap: 1rem; /* Espaçamento menor entre botões */
                 flex-direction: column; /* Pilha em colunas em telas menores */
@@ -606,20 +605,13 @@
                 font-size: 0.8rem; /* Reduced font size for smaller screens */
                 padding: 0.4rem 1rem; /* Adjusted padding */
             }
-            .book-part-block-style {
+             .book-part-block-style {
                 font-size: 0.75rem; /* Reduced */
             }
             .button-with-hands {
                 margin-top: 1rem; /* Adjustment for very small screens */
             }
-            .audio-player-container {
-                max-width: 280px; /* Further adjust for mobile */
-                font-size: 0.8rem;
-                padding: 1em;
-            }
-            .audio-player-icon {
-                font-size: 0.6em; /* Ajusta ainda mais para mobile */
-            }
+           
             .purchase-buttons-container {
                 gap: 0.8rem;
             }
@@ -655,11 +647,14 @@
             <p class="subtitle-strong" style="font-style: italic;">"Mesmo os corações mais partidos podem encontrar um novo começo."</p>
             
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button">
+                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button" target="_blank">
                     <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Comprar na Amazon</span>
                 </a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button">
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button" target="_blank">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
+                </a>
+                <a href="https://elevenreader.io/audiobooks/bem-vindo-a-nova-iorque/JF2QnQm1bhe43BjjRTWM" class="neon-button" target="_blank">
+                    <i class="fas fa-headphones-alt"></i> <span class="neon-button-text-pink">Ouvir no ElevenLabs</span>
                 </a>
             </div>
         </section>
@@ -670,11 +665,14 @@
             <p class="subtitle-strong" style="font-style: italic;">“Para aqueles que acreditam que mesmo os corações mais partidos podem encontrar um novo começo.”</p>
             
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button">
+                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button" target="_blank">
                     <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Comprar na Amazon</span>
                 </a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button">
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button" target="_blank">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
+                </a>
+                <a href="https://elevenreader.io/audiobooks/bem-vindo-a-nova-iorque/JF2QnQm1bhe43BjjRTWM" class="neon-button" target="_blank">
+                    <i class="fas fa-headphones-alt"></i> <span class="neon-button-text-pink">Ouvir no ElevenLabs</span>
                 </a>
             </div>
         </section>
@@ -691,11 +689,14 @@
             <p>Este livro é um lembrete de que, mesmo em meio às cicatrizes do passado, o amor pode ser o guia para um futuro de redenção.</p>
             
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button">
+                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button" target="_blank">
                     <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Comprar na Amazon</span>
                 </a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button">
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button" target="_blank">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
+                </a>
+                <a href="https://elevenreader.io/audiobooks/bem-vindo-a-nova-iorque/JF2QnQm1bhe43BjjRTWM" class="neon-button" target="_blank">
+                    <i class="fas fa-headphones-alt"></i> <span class="neon-button-text-pink">Ouvir no ElevenLabs</span>
                 </a>
             </div>
         </section>
@@ -715,11 +716,14 @@
                 <li>Confrontando o Passado</li>
             </ul>
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button">
+                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button" target="_blank">
                     <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Comprar na Amazon</span>
                 </a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button">
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button" target="_blank">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
+                </a>
+                 <a href="https://elevenreader.io/audiobooks/bem-vindo-a-nova-iorque/JF2QnQm1bhe43BjjRTWM" class="neon-button" target="_blank">
+                    <i class="fas fa-headphones-alt"></i> <span class="neon-button-text-pink">Ouvir no ElevenLabs</span>
                 </a>
             </div>
         </section>
@@ -773,3 +777,4 @@
 
 </body>
 </html>
+
