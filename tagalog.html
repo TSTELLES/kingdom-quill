@@ -2,58 +2,106 @@
 <html lang="tl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bagong Tipan – Tagalog Audio Bible. Pakinggan ang Salita ng Diyos sa iyong wika, sa isang malinaw at mahinahong tinig. Available na ngayon.">
-  <title>Bagong Tipan – Tagalog Audio Bible</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bagong Tipan Audiobook – Tagalog | T. S. Telles</title>
+  <meta name="description" content="Pakinggan ang Bagong Tipan – Tagalog Audio Bible, malinaw at tahimik ang narasyon, puwedeng pakinggan offline sa iyong paboritong platform.">
+  <meta name="keywords" content="Bagong Tipan, Tagalog, Audio Bible, audiobook, Salita ng Diyos, Biblia, Makinig, Offline, Kristiyano, InAudio">
+
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: "Poppins", sans-serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      background: black;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-top: 4.5em;
+      padding-bottom: 3.5em;
     }
 
     header {
-      margin-top: 50px;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4.5em;
+      background-color: black;
+      color: #f9f871;
+      font-weight: bold;
+      font-size: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
+      z-index: 100;
     }
 
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
+    @keyframes neonPulseYellow {
+      0% {
+        text-shadow:
+          0 0 10px #f9f871,
+          0 0 30px #f9f871,
+          0 0 50px #f9f871,
+          0 0 100px #f9f871;
+      }
+      100% {
+        text-shadow:
+          0 0 20px #f9f871,
+          0 0 40px #f9f871,
+          0 0 70px #f9f871,
+          0 0 120px #f9f871;
+      }
     }
 
-    p {
-      font-size: 1.1em;
-      margin-bottom: 25px;
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 2rem;
+      gap: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      min-height: calc(100vh - 4.5em - 3.5em);
     }
 
     .flags-row {
       display: flex;
+      gap: 2.5rem;
       justify-content: center;
       align-items: center;
-      gap: 20px;
-      margin-top: 30px;
-      margin-bottom: 40px;
+      padding-top: calc(4.5em + 2rem);
+      padding-bottom: 2rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .flag {
-      width: 60px;
-      height: 40px;
+      width: auto;
+      height: 80px;
+      border-radius: 12px;
+      filter: brightness(0.85);
+      animation: fadeOpacity 8s infinite alternate ease-in-out;
+      box-shadow: 0 0 12px rgba(249, 248, 113, 0.8);
+      cursor: default;
+      user-select: none;
+      transition: filter 0.3s ease;
       background-size: cover;
-      border-radius: 6px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
-      animation: glow 2s infinite alternate ease-in-out;
+      background-position: center;
     }
-
-    @keyframes glow {
-      from {
-        box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
-      }
-      to {
-        box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
-      }
+    .flag:hover {
+      filter: brightness(1);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
     }
 
     .flag.philippines {
@@ -63,48 +111,307 @@
 
     .flag.mexico {
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg');
-      animation-delay: 0.5s;
+      animation-delay: 4s;
     }
 
-    a.button {
-      display: inline-block;
-      background-color: #ffd700;
-      color: #000;
-      padding: 14px 26px;
-      border-radius: 30px;
+    @keyframes fadeOpacity {
+      0% {opacity: 1;}
+      100% {opacity: 0.4;}
+    }
+
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .main-title-neon {
+      color: #f9f871;
+      font-size: 2rem;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+    }
+    .subtitle-strong {
+      margin-top: 0.5rem;
+      font-size: 1.6rem;
       font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s, transform 0.3s;
     }
 
-    a.button:hover {
-      background-color: #fff;
-      transform: scale(1.07);
+    .player-title {
+      color: #f9f871;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px #f9f871;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 2.5rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 700px;
+      user-select: none;
+      margin: 3rem auto 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .play-button {
+      background: #f9f871;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow:
+        0 0 10px #f9f871,
+        0 0 25px #f9f871;
+      transition: transform 0.2s ease;
+    }
+    .play-button:hover {
+      transform: scale(1.15);
+      box-shadow:
+        0 0 20px #f9f871,
+        0 0 40px #f9f871;
+    }
+    .play-button:active {
+      transform: scale(0.95);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    .call-to-action-section {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px;
+      margin: 3rem auto 0 auto;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .call-to-action-section p {
+      margin-bottom: 1rem;
+    }
+    .call-to-action-section strong {
+      color: #f9f871;
+    }
+
+    .testament-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      width: 100%;
+      margin-top: 3rem;
+    }
+
+    .testament-section {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      text-align: center;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .testament-section h2 {
+      color: #f9f871;
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 5px #f9f871, 0 0 15px #f9f871;
+    }
+
+    .testament-section .buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+
+    .testament-section .buttons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      box-shadow: none;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .testament-section .buttons a:hover {
+      background: rgba(249, 248, 113, 0.1);
+      transform: scale(1.15);
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+      border-color: #f9f871;
+    }
+
+    .testament-section .buttons a img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+      filter: brightness(0.9);
+      transition: filter 0.3s ease;
+    }
+
+    .testament-section .buttons a:hover img {
+      filter: brightness(1.2);
     }
 
     footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      opacity: 0.8;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 3.5em;
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 3.5em;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      user-select: none;
+      z-index: 100;
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Bagong Tipan – Tagalog Audio Bible</h1>
-    <p>Pakinggan ang Salita ng Diyos sa iyong wika, malinaw at may kapayapaan. Isang pagkakataon upang maranasan ang Kanyang mga salita saan ka man naroroon.</p>
-  </header>
+  <header>Bagong Tipan</header>
 
-  <section class="flags-row" aria-label="Mga Bansa">
+  <section class="flags-row" aria-label="Banderas">
     <div class="flag philippines" role="img" aria-label="Bandila ng Pilipinas"></div>
     <div class="flag mexico" role="img" aria-label="Bandila ng Mexico"></div>
   </section>
 
-  <a href="#" class="button">Makinig Ngayon</a>
+  <main>
+    <section class="arguments" aria-label="Benepisyo ng Audiobook">
+      <h2 class="main-title-neon">Bagong Tipan – Kumpletong Audiobook</h2>
+      <p class="subtitle-strong">Makinig sa Bagong Tipan anumang oras, saan man, na malinaw at maayos ang narasyon.</p>
+      Maranasan ang kapayapaan at biyaya, at magbigay ng katahimikan sa isip.<br />
+      Madaling ma-access ang Salita ng Diyos kahit abala sa trabaho.<br />
+      Pagyamanin ang iyong espirituwal na buhay kasama ang pamilya.
+    </section>
 
-  <footer>
-    <p>© 2025 InAudio Project – Lahat ng Karapatan ay Nakalaan.</p>
-  </footer>
+    <section class="sample-section" aria-label="Sample Audio">
+      <h3 class="player-title">Makinig Ngayon – I-click upang i-play ang sample</h3>
+      <button class="play-button" aria-label="Play/Pause Sample" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/retail-spanish.MP3"></audio>
+    </section>
+
+    <section class="call-to-action-section" aria-label="Call to Action">
+      <p>Ang iyong suporta ay tumutulong sa paggawa ng bagong audio Bibles at pagpapanatili ng kalidad.</p>
+      <p>👉 <strong>Handa ka na ba?</strong> Simulan na ang pakikinig sa <strong>Bagong Tipan</strong> – available sa lahat ng paborito mong platform!</p>
+    </section>
+
+    <div class="testament-container">
+      <section class="testament-section" aria-label="Mga opsyon sa pagbili">
+        <h2 class="main-title-neon">Bagong Tipan</h2>
+        <p>Alamin ang karunungan at mga aral ng Diyos sa Bagong Tipan.</p>
+        <nav class="buttons" aria-label="Mga link ng tindahan">
+          <a href="https://www.barnesandnoble.com/w/bagong-tipan/1139553005" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://cdn.freebiesupply.com/logos/large/2x/barnes-noble-01-logo-png-transparent.png" alt="Barnes & Noble Logo"></a>
+          <a href="https://www.kobo.com/us/en/audiobook/bagong-tipan" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
+          <a href="https://books.google.com/store/books/details?id=bagong_tipan" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+          <a href="https://open.spotify.com/album/bagongtipan" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+          <a href="https://books.apple.com/us/audiobook/bagong-tipan/id1234567890" target="_blank" rel="noopener noreferrer" aria-label="Apple Books"><img src="https://img.icons8.com/fluent/512/ibooks.png" alt="Apple Books Logo"></a>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <footer>© 2025 T S TELLES. Lahat ng Karapatan ay Nakalaan.</footer>
+
+  <script>
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+
+    let isPlaying = false;
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        audio.pause();
+        playIcon.style.borderLeft = '18px solid black';
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '0';
+      } else {
+        audio.play();
+        playIcon.style.borderLeft = '6px solid black';
+        playIcon.style.borderRight = '6px solid black';
+        playIcon.style.width = '12px';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    btn.addEventListener('click', togglePlayPause);
+
+    audio.addEventListener('ended', () => {
+      isPlaying = false;
+      playIcon.style.borderLeft = '18px solid black';
+      playIcon.style.borderRight = 'none';
+      playIcon.style.width = '0';
+    });
+  </script>
 </body>
 </html>
