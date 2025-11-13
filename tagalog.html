@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bagong Tipan – Tagalog Audio Bible. Pakinggan ang Salita ng Diyos sa iyong wika, sa isang malinaw at mahinahong tinig. Available na ngayon.">
+  <title>Bagong Tipan – Tagalog Audio Bible</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      margin-top: 50px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 25px;
+    }
+
+    .flags-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+
+    .flag {
+      width: 60px;
+      height: 40px;
+      background-size: cover;
+      border-radius: 6px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+      animation: glow 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+      }
+      to {
+        box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    .flag.philippines {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg');
+      animation-delay: 0s;
+    }
+
+    .flag.mexico {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg');
+      animation-delay: 0.5s;
+    }
+
+    a.button {
+      display: inline-block;
+      background-color: #ffd700;
+      color: #000;
+      padding: 14px 26px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    a.button:hover {
+      background-color: #fff;
+      transform: scale(1.07);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Bagong Tipan – Tagalog Audio Bible</h1>
+    <p>Pakinggan ang Salita ng Diyos sa iyong wika, malinaw at may kapayapaan. Isang pagkakataon upang maranasan ang Kanyang mga salita saan ka man naroroon.</p>
+  </header>
+
+  <section class="flags-row" aria-label="Mga Bansa">
+    <div class="flag philippines" role="img" aria-label="Bandila ng Pilipinas"></div>
+    <div class="flag mexico" role="img" aria-label="Bandila ng Mexico"></div>
+  </section>
+
+  <a href="#" class="button">Makinig Ngayon</a>
+
+  <footer>
+    <p>© 2025 InAudio Project – Lahat ng Karapatan ay Nakalaan.</p>
+  </footer>
+</body>
+</html>
