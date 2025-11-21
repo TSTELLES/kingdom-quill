@@ -62,6 +62,21 @@
             border-left: 5px solid var(--accent-color);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
+        
+        /* NOVO: Estilo para o Badge de Placa Promocional (Storefront Sign) */
+        .storefront-badge {
+            background-color: var(--accent-dark); /* Fundo Forte */
+            color: #FFF; /* Texto Branco Puro */
+            font-weight: 800; /* Extra Bold */
+            /* Sombra forte para simular flutuação/3D e o brilho da promoção */
+            box-shadow: 0 5px 20px rgba(255, 160, 0, 0.7); 
+            /* Borda grossa para destaque */
+            border: 3px solid var(--accent-color);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.1em;
+            /* Garante que o badge fique acima de outros elementos */
+            z-index: 20; 
+        }
     </style>
 </head>
 <body class="text-text-light">
@@ -76,14 +91,6 @@
             <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-text-light">
                 Hear, O Israel: 30 Days to Align with the Father’s Voice
             </h1>
-            
-            <!-- Botão de Copiar Título Adicionado -->
-            <div class="mb-6 flex justify-center">
-                <button id="copyButton" data-title="Hear, O Israel: 30 Days to Align with the Father’s Voice" class="flex items-center text-sm text-gray-400 hover:text-accent transition duration-300 p-2 rounded-lg border border-transparent hover:border-subtle-gray" title="Copy Book Title">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 002-2v-1a2 2 0 00-2-2h-4a2 2 0 00-2 2v-1a2 2 0 00-2-2H6a2 2 0 00-2 2v-1a2 2 0 00-2-2H2a2 2 0 00-2 2v1"></path></svg>
-                    <span id="copyText">Copy Book Title</span>
-                </button>
-            </div>
             
             <!-- SINOPSE COMERCIAL: APENAS O TÍTULO INTERNO COM NEON -->
             <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto text-gray-400">
@@ -240,7 +247,6 @@
                                 <p class="text-6xl font-extrabold text-text-light">
                                     US$ <span class="text-7xl">8.99</span>
                                 </p>
-                                <p class="text-base font-semibold text-gray-500 mt-2">(One-time Payment)</p>
                             </div>
 
                             <ul class="text-left space-y-3 mb-10 text-gray-300">
@@ -259,7 +265,8 @@
                     <!-- OPÇÃO 2: PACK VERSION (Mantido embaixo) -->
                     <div class="bg-card-bg p-8 md:p-10 rounded-xl shadow-2xl premium-highlight relative z-10 flex flex-col justify-between transform scale-100 hover:scale-[1.01] transition duration-300">
                         <div>
-                            <div class="absolute top-0 right-0 -mt-4 -mr-4 bg-accent-dark text-white px-3 py-1 text-sm font-bold rounded-full shadow-lg rotate-3">
+                            <!-- BADGE DE PROMOÇÃO ESTILO VITRINE -->
+                            <div class="absolute top-4 right-[-1rem] md:right-[-2rem] transform rotate-6 px-6 py-2 text-base md:text-xl uppercase rounded-lg storefront-badge">
                                 MOST POPULAR
                             </div>
 
@@ -305,7 +312,6 @@
             </div>
             <!-- Fim do Wrapper de Centralização -->
 
-            <!-- REMOVIDA A MENSAGEM DE SEGURANÇA AQUI -->
         </div>
     </section>
 
@@ -317,48 +323,5 @@
             </p>
         </div>
     </footer>
-
-    <!-- Elemento de Mensagem de Cópia (Escondido) -->
-    <div id="copyMessage" class="fixed bottom-5 right-5 z-50 bg-accent-dark text-white px-4 py-2 rounded-lg shadow-xl opacity-0 transition-opacity duration-300 pointer-events-none">Title copied!</div>
-
-    <!-- Script de Copiar Título -->
-    <script>
-        function copyTitle() {
-            const button = document.getElementById('copyButton');
-            const titleText = button.getAttribute('data-title');
-            const message = document.getElementById('copyMessage');
-            
-            // Cria um campo de texto temporário
-            const tempInput = document.createElement('input');
-            tempInput.value = titleText;
-            document.body.appendChild(tempInput);
-            
-            // Seleciona e copia o texto
-            tempInput.select();
-            // Using execCommand for broader compatibility in iFrames
-            try {
-                document.execCommand('copy');
-                
-                // Exibe a mensagem de sucesso
-                message.classList.remove('opacity-0');
-                message.classList.add('opacity-100');
-                
-                // Esconde a mensagem após 2 segundos
-                setTimeout(() => {
-                    message.classList.remove('opacity-100');
-                    message.classList.add('opacity-0');
-                }, 2000);
-
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
-            }
-            
-            // Remove o campo de texto temporário
-            document.body.removeChild(tempInput);
-        }
-        
-        // Adiciona o listener ao botão
-        document.getElementById('copyButton').addEventListener('click', copyTitle);
-    </script>
 </body>
 </html>
