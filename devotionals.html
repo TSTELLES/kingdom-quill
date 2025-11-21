@@ -57,13 +57,17 @@
             box-shadow: 0 6px 20px rgba(255, 160, 0, 0.6);
         }
 
-        /* Destaque para o Plano Pack */
+        /* Destaque para o Plano Pack com NEON BRANCO (agora usado em ambos) */
         .premium-highlight {
-            border-left: 5px solid var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #FFFFFF; /* Linha branca */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Brilho neon branco */
+            transition: all 0.3s ease; /* Transição suave para o hover */
+        }
+        .premium-highlight:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); /* Brilho mais intenso no hover */
         }
         
-        /* NOVO: Estilo para o Badge de Placa Promocional (Storefront Sign) */
+        /* Estilo para o Badge de Placa Promocional (Storefront Sign) */
         .storefront-badge {
             background-color: var(--accent-dark); /* Fundo Forte */
             color: #FFF; /* Texto Branco Puro */
@@ -231,8 +235,8 @@
                 <!-- Grid agora é SEMPRE 1 coluna (removido lg:grid-cols-2) -->
                 <div class="grid grid-cols-1 gap-8 items-stretch">
                     
-                    <!-- OPÇÃO 1: STANDARD VERSION (Mantido em cima) -->
-                    <div class="bg-card-bg p-8 md:p-10 rounded-xl shadow-lg border border-subtle-gray flex flex-col justify-between">
+                    <!-- OPÇÃO 1: STANDARD VERSION (AGORA COM NEON BRANCO E HOVER SCALE) -->
+                    <div class="bg-card-bg p-8 md:p-10 rounded-xl shadow-2xl premium-highlight flex flex-col justify-between transform scale-100 hover:scale-[1.01] transition duration-300">
                         <div>
                             <h3 class="text-2xl font-bold mb-2 text-accent">Standard</h3>
                             
@@ -262,7 +266,7 @@
                         </a>
                     </div>
 
-                    <!-- OPÇÃO 2: PACK VERSION (Mantido embaixo) -->
+                    <!-- OPÇÃO 2: PACK VERSION (Mantido embaixo - com o badge de destaque) -->
                     <div class="bg-card-bg p-8 md:p-10 rounded-xl shadow-2xl premium-highlight relative z-10 flex flex-col justify-between transform scale-100 hover:scale-[1.01] transition duration-300">
                         <div>
                             <!-- BADGE DE PROMOÇÃO ESTILO VITRINE -->
