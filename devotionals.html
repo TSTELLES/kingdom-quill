@@ -1,1 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Page - Devocional Editorial</title>
+    <!-- Carrega o Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração de Fonte (Inter) e Tema de Cores EDITORIAL/DARK -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            /* Fundo principal bem escuro (quase preto) */
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; 
+            color: #E5E7EB; /* Texto Principal Claro */
+        }
+        
+        /* Cores Base para o Estilo Dark */
+        :root {
+            --primary-bg: #121212; /* Fundo do Corpo */
+            --section-bg: #1F1F1F; /* Fundo das Seções Alternadas/Claras Antigas */
+            --card-bg: #2C2C2C; /* Fundo dos Cards/Containers */
+            --text-light: #E5E7EB; 
+            --text-muted: #A0A0A0;
+            --accent-color: #2DD4BF; /* Emerald Claro (Destaque) */
+            --accent-dark: #14B8A6; /* Emerald Escuro (para botões) */
+            --subtle-gray: #4B5563; /* Dark Border */
+        }
 
+        .text-accent { color: var(--accent-color); }
+        .bg-accent { background-color: var(--accent-dark); }
+        
+        /* Estilo para Botão CTA Principal */
+        .btn-cta-clean {
+            background-color: var(--accent-dark); 
+            color: var(--text-light);
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+        }
+        .btn-cta-clean:hover {
+            background-color: #0D9488; /* Teal mais profundo no hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.6);
+        }
+
+        /* Destaque para o Plano Pack */
+        .premium-highlight {
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="text-text-light">
+
+    <!-- Seção Principal (Hero) - Fundo Escuro -->
+    <header class="bg-primary-bg py-16 md:py-24 border-b border-subtle-gray">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <span class="text-sm font-semibold uppercase tracking-widest text-accent mb-3 block">
+                DEVOCIONAL
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-text-light">
+                Hear, O Israel: 30 Days to Align with the Father’s Voice
+            </h1>
+            <!-- SINOPSE COMERCIAL ATUALIZADA (Hook) - AGORA EM INGLÊS -->
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto text-gray-400">
+                In a world of noise, confusion, and compromise, this devotional is a call back to clarity. Discover **Hear, O Israel: 30 Days to Align with the Father's Voice** and rediscover the voice that guides you back to the covenant, obedience, and truth.
+            </p>
+
+            <!-- Área das Capas (Versões Inglês e Espanhol) -->
+            <div class="flex justify-center items-end space-x-8 mb-10 mt-10">
+                <!-- Capa 1: Inglês -->
+                <div class="w-32 md:w-40 transform rotate-[-3deg] shadow-2xl transition duration-300 hover:rotate-0 hover:scale-105">
+                    <!-- Usando a capa enviada como versão em Inglês -->
+                    <img src="/files/devotional-cover.jpg" alt="Capa Devocional: Versão em Inglês" class="rounded-lg border-2 border-accent-dark">
+                    <p class="text-sm font-semibold mt-2 text-gray-400">English Edition</p>
+                </div>
+                <!-- Capa 2: Espanhol (Placeholder) -->
+                <div class="w-32 md:w-40 transform rotate-[3deg] shadow-2xl transition duration-300 hover:rotate-0 hover:scale-105">
+                    <!-- Placeholder para a versão em Espanhol -->
+                    <img src="https://placehold.co/300x450/2C2C2C/A0A0A0?text=Devocional+en+Espa%C3%B1ol" alt="Capa Devocional: Versão em Espanhol" class="rounded-lg border-2 border-subtle-gray opacity-80">
+                    <p class="text-sm font-semibold mt-2 text-gray-400">Spanish Edition</p>
+                </div>
+            </div>
+            <!-- Fim da Área das Capas -->
+
+            <!-- Chamada para Ação (CTAs Duplos) -->
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+                <!-- CTA 1: Versão em Inglês. Bandeira dos EUA (🇺🇸) adicionada. -->
+                <a href="#comprar" class="btn-cta-clean font-bold py-3 px-8 rounded-xl shadow-lg text-lg uppercase tracking-wider inline-block">
+                    <span class="text-xl mr-2">🇺🇸</span> English Edition
+                </a>
+                <!-- CTA 2: Versão em Espanhol. Bandeira da Espanha (🇪🇸) adicionada. -->
+                <a href="#comprar" class="btn-cta-clean font-bold py-3 px-8 rounded-xl shadow-lg text-lg uppercase tracking-wider inline-block">
+                    <span class="text-xl mr-2">🇪🇸</span> Versión en Español
+                </a>
+            </div>
+            <!-- Fim dos CTAs Duplos -->
+
+        </div>
+    </header>
+
+    <!-- Seção de Promessa e Diferenciais - Fundo Ligeiramente Mais Claro -->
+    <section class="py-16 md:py-20 bg-section-bg">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-text-light">
+                Menos Distração, Mais Conexão Genuína
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefício 1 -->
+                <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-text-light">Foco Rápido e Profundo</h3>
+                    <p class="text-gray-400">Conteúdo direto para 7 minutos diários, perfeito para sua rotina corrida.</p>
+                </div>
+                <!-- Benefício 2 -->
+                <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21H12M4 10h4m-4 0v10M4 10h2a2 2 0 012 2v10m0-10h2a2 2 0 012 2v10m-2 2h2"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-text-light">Crescimento Sólido</h3>
+                    <p class="text-gray-400">Reflexões práticas e exercícios que transformam a teoria bíblica em vida real.</p>
+                </div>
+                <!-- Benefício 3 -->
+                <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4M17 3h4m-2 2v4m-12 3h14a2 2 0 002-2V7a2 2 0 00-2-2H8a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-text-light">Rotina de Fé Consistente</h3>
+                    <p class="text-gray-400">Reacenda a chama da sua fé com um encontro diário e intencional com Deus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre o Livro (Conteúdo e Mockup) - Fundo Escuro -->
+    <section class="py-16 md:py-20 bg-primary-bg border-t border-b border-subtle-gray">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Mockup do Livro (Imagem Placeholder) -->
+                <div class="w-full md:w-1/3 flex-shrink-0">
+                    <!-- Usando a imagem enviada. Adicionei uma borda suave e sombra para o estilo clean. -->
+                    <img src="/files/devotional-cover.jpg" alt="Capa do Livro Devocional" class="rounded-lg shadow-xl w-full mx-auto border border-subtle-gray" onerror="this.onerror=null; this.src='https://placehold.co/300x450/14B8A6/121212?text=Devocional+Cover';" loading="lazy">
+                </div>
+
+                <!-- Descrição do Livro (Detalhes da Sinopse) -->
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-accent">
+                        Conteúdo Essencial para a Sua Jornada
+                    </h2>
+                    <!-- NOVO TEXTO BASEADO NA SINOPSE -->
+                    <p class="text-lg mb-6 text-gray-300">
+                        **"Ouve, Israel: 30 Dias para Alinhar-se à Voz do Pai"** não é uma jornada de religião, mas um retorno ao convênio, à obediência e à verdade. Durante trinta dias, você será guiado por orações, Escrituras e reflexões para despertar seu espírito e realinhar seu coração com a Voz do Pai. 
+                        <br><br>
+                        Este devocional foi escrito para ajudar tanto o cristão que honra as raízes bíblicas de sua fé quanto o judeu que reconhece Yeshua como Messias, afiando sua audição espiritual e reacendendo seu amor pelo Deus de Israel.
+                    </p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            **30 Reflexões Diárias** com passagens bíblicas relevantes.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            **Orações Guiadas** para facilitar seu momento de intimidade.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            **Formato Digital (E-book)** para leitura em qualquer lugar.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Testemunhos (Prova Social) - Fundo Ligeiramente Mais Claro -->
+    <section class="py-16 md:py-20 bg-section-bg">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-light">
+                O que as pessoas estão dizendo
+            </h2>
+            <p class="text-xl font-light mb-12 text-gray-500">
+                Veja o impacto que este devocional está causando:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testemunho 1 -->
+                <div class="bg-card-bg p-6 rounded-xl shadow-md border border-subtle-gray">
+                    <p class="italic mb-4 text-gray-300">"Estava desanimado com a leitura bíblica, mas os 7 minutos diários me trouxeram de volta. A reflexão de hoje sobre perdão transformou meu dia. É um presente!"</p>
+                    <p class="font-semibold text-sm text-accent">- Ana C., São Paulo/SP</p>
+                </div>
+                <!-- Testemunho 2 -->
+                <div class="bg-card-bg p-6 rounded-xl shadow-md border border-subtle-gray">
+                    <p class="italic mb-4 text-gray-300">"A linguagem é simples, mas o conteúdo é profundo. Finalmente consegui criar uma rotina devocional consistente. Recomendo a todos que buscam paz de espírito."</p>
+                    <p class="font-semibold text-sm text-accent">- Lucas R., Curitiba/PR</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Final de Compra (Preço e CTA Dupla) - Fundo Escuro -->
+    <section id="comprar" class="py-16 md:py-20 bg-primary-bg border-t border-subtle-gray">
+        <div class="container mx-auto px-6 max-w-6xl text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-10 text-text-light">
+                Escolha o Plano que Transformará Sua Rotina
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                
+                <!-- OPÇÃO 1: UNIDADE PLAN -->
+                <div class="bg-card-bg p-8 md:p-10 rounded-xl shadow-lg border border-subtle-gray flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2 text-accent">Unidade</h3>
+                        <!-- ALTERAÇÃO 1: Descrição atualizada para incluir versões/capas -->
+                        <p class="text-lg text-gray-400 mb-6">Acesso imediato ao Devocional Digital completo. Inclui as versões em **Inglês, Espanhol** e **Português**.</p>
+                        
+                        <div class="mb-8">
+                            <p class="text-3xl font-light text-gray-500 line-through">Preço Regular: $<s>15.99</s></p>
+                            <p class="text-6xl font-extrabold text-text-light">
+                                US$ <span class="text-7xl">8.99</span>
+                            </p>
+                            <p class="text-base font-semibold text-gray-500 mt-2">(Pagamento Único)</p>
+                        </div>
+
+                        <ul class="text-left space-y-3 mb-10 text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <!-- ALTERAÇÃO 2: Primeiro item da lista atualizado -->
+                                E-book **"Ouve, Israel"** (30 dias) nas versões **Inglês, Espanhol** e **Português**.
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Acesso vitalício e download imediato.
+                            </li>
+                            <li class="flex items-start opacity-50">
+                                <svg class="w-5 h-5 mr-3 text-gray-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                NÃO inclui Materiais Bônus.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="bg-gray-700 text-text-light font-bold py-4 px-8 rounded-xl shadow-md text-xl uppercase tracking-wider block hover:bg-gray-600 transition duration-300">
+                        Comprar Somente o Devocional
+                    </a>
+                </div>
+
+                <!-- OPÇÃO 2: PACK PLAN - DESTAQUE EDITORIAL DARK -->
+                <div class="bg-card-bg p-8 md:p-10 rounded-xl shadow-2xl premium-highlight relative z-10 flex flex-col justify-between transform scale-100 hover:scale-[1.01] transition duration-300">
+                    <div>
+                        <div class="absolute top-0 right-0 -mt-4 -mr-4 bg-accent-dark text-white px-3 py-1 text-sm font-bold rounded-full shadow-lg rotate-3">
+                            MAIS POPULAR
+                        </div>
+
+                        <h3 class="text-3xl font-bold mb-2 text-accent">Pack</h3>
+                        <!-- Reduzi a margem para agrupar o texto e a imagem -->
+                        <p class="text-xl text-gray-400 mb-4">O pacote completo para uma transformação profunda na sua fé e rotina.</p>
+                        
+                        <!-- Novo: Quadro/Imagem do Pack -->
+                        <!-- Colocamos a imagem para representar visualmente o valor do Pack -->
+                        <div class="mb-6 p-4 bg-gray-900 rounded-xl shadow-inner border border-accent-dark">
+                            <img src="https://placehold.co/400x150/14B8A6/121212?text=PACK+COMPLETO+%2B+B%C3%94NUS" alt="Mockup do Pacote Completo Devocional" class="rounded-lg w-full">
+                        </div>
+                        <!-- Fim do Quadro/Imagem do Pack -->
+
+                        <div class="mb-8">
+                            <p class="text-4xl font-light text-gray-500 line-through">Preço Regular: $<s>22.99</s></p>
+                            <p class="text-7xl font-extrabold text-text-light">
+                                US$ <span class="text-8xl">15.99</span>
+                            </p>
+                            <p class="text-lg font-semibold text-accent-dark mt-2">(Economize US$ 7.00!)</p>
+                        </div>
+
+                        <ul class="text-left space-y-3 mb-10 text-gray-300">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <!-- ALTERAÇÃO 3: Primeiro item da lista do Pack atualizado (consistência) -->
+                                E-book **"Ouve, Israel"** (30 dias) nas versões **Inglês, Espanhol** e **Português**.
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                **BÔNUS 1:** [Nome do E-book Bônus]
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                **BÔNUS 2:** [Nome do Guia/Checklist Bônus]
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Acesso vitalício e Garantia de 7 dias.
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn-cta-clean font-bold py-5 px-10 rounded-xl shadow-2xl text-2xl uppercase tracking-wider block">
+                        Eu Quero o Pacote Completo
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 flex items-center justify-center text-sm text-gray-500">
+                <svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                Sua compra é 100% segura e garantida, em ambas as opções.
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé - Fundo Ligeiramente Mais Claro -->
+    <footer class="bg-section-bg text-gray-400 py-8">
+        <div class="container mx-auto px-6 max-w-5xl text-center text-sm space-y-2">
+            <p>
+                © 2025 T. S. TELLES. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
