@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Venta - Editorial Devocional</title>
+    <!-- Carga de Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Fuente (Inter) y Tema de Colores EDITORIAL/DARK -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            /* Fondo principal muy oscuro (casi negro) */
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; 
+            color: #E5E7EB; /* Texto Principal Claro */
+        }
+        
+        /* Colores Base para el Estilo Dark - ORO/AMARILLO */
+        :root {
+            --primary-bg: #121212; /* Fondo del Cuerpo */
+            --section-bg: #1F1F1F; /* Fondo de Secciones Alternadas */
+            --card-bg: #2C2C2C; /* Fondo de Tarjetas/Contenedores */
+            --text-light: #E5E7EB; 
+            --text-muted: #A0A0A0;
+            --accent-color: #FFC107; /* Oro/Ámbar Claro (Destacado) */
+            --accent-dark: #FFA000; /* Oro Oscuro/Naranja (para botones) */
+            --subtle-gray: #4B5563; /* Borde Oscuro */
+        }
+
+        /* EFECTO NEÓN BLANCO */
+        .text-neon-effect {
+            color: #FFFFFF !important; /* Blanco puro */
+            text-shadow: 
+                0 0 5px rgba(255, 255, 255, 0.7),
+                0 0 10px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .text-accent { color: var(--accent-color); }
+        .bg-accent { background-color: var(--accent-dark); }
+        
+        /* Estilo para Botón CTA Principal */
+        .btn-cta-clean {
+            background-color: var(--accent-dark); 
+            color: var(--text-light);
+            font-weight: 700;
+            transition: all 0.3s ease;
+            /* Sombra de Oro Oscuro */
+            box-shadow: 0 4px 15px rgba(255, 160, 0, 0.4); 
+        }
+        .btn-cta-clean:hover {
+            background-color: #E3B100; /* Tono de oro más profundo en hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 160, 0, 0.6);
+        }
+
+        /* Resaltado Premium (Brillo Neón Blanco) */
+        .premium-highlight {
+            border-left: 5px solid #FFFFFF; 
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); 
+            transition: all 0.3s ease; 
+        }
+        .premium-highlight:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); 
+        }
+        
+        /* Estilo para Insignia Promocional (Storefront Sign) */
+        .storefront-badge {
+            background-color: var(--accent-dark); 
+            color: #FFF; 
+            font-weight: 800; 
+            box-shadow: 0 5px 20px rgba(255, 160, 0, 0.7); 
+            border: 3px solid var(--accent-color);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.1em;
+            z-index: 20; 
+        }
+    </style>
+</head>
+<body class="text-text-light">
+
+    <!-- Seção Principal (Hero) - Fundo Oscuro -->
+    <header class="bg-primary-bg py-16 md:py-24 border-b border-subtle-gray">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <span class="text-sm font-semibold uppercase tracking-widest text-accent mb-3 block">
+                DEVOCIONAL
+            </span>
+            <!-- H1 (TÍTULO) - Traduzido para Español -->
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-text-light">
+                Escucha, Israel: 30 Días para Alinearte con la Voz del Padre
+            </h1>
+            
+            <!-- SINOPSE COMERCIAL - Traduzido para Español -->
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto text-gray-400">
+                En un mundo de ruido, confusión y compromiso, este devocional es un llamado de regreso a la claridad. Descubre <span class="text-neon-effect">Escucha, Israel: 30 Días para Alinearte con la Voz del Padre</span> y redescubre la voz que te guía de vuelta al pacto, la obediencia y la verdad.
+            </p>
+
+            <!-- Área de la Cubierta Principal (ESPANHOL) - CENTRALIZADA -->
+            <div class="flex justify-center mb-10 mt-10">
+                <div class="w-40 md:w-48 shadow-2xl transition duration-300 hover:scale-105">
+                    <!-- Cubierta 1: Espanhol (CORRIGIDA) -->
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/capa-devocional-espanhol.jpg" alt="Portada del Devocional: Edición en Español" class="rounded-lg border-4 border-accent-dark shadow-2xl shadow-accent-dark/40" loading="lazy">
+                </div>
+            </div>
+            <!-- Fin del Área de la Cubierta Principal -->
+
+            <!-- Llamada a la Acción (CTA Principal Centrado) -->
+            <div class="mt-8">
+                <!-- CTA Único y Centralizado: Versión en Español. APUNTANDO A AMAZON -->
+                <a href="https://www.amazon.com/-/pt/dp/B0FK2YJC5L/ref=tmm_kin_swatch_0" target="_blank" class="btn-cta-clean font-bold py-4 px-10 rounded-xl shadow-xl text-xl uppercase tracking-wider inline-block">
+                    Comprar en Amazon
+                </a>
+            </div>
+            <!-- Fin del CTA Principal -->
+            
+        </div>
+    </header>
+
+    <!-- Sección de Promesa y Diferenciales - Fondo Ligeramente Más Claro -->
+    <section class="py-16 md:py-20 bg-section-bg">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <!-- H2 (TÍTULO) - Traduzido para Español -->
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-text-light">
+                Menos Distracción, Más Conexión Genuina
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Beneficio 1: Contenido Profundo y Perfecto -->
+                <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-text-light">Contenido Profundo y Perfecto</h3>
+                    <!-- Descrição Padrão - Traduzido para Español -->
+                    <p class="text-gray-400">Contenido cuidadosamente elaborado, ideal para un encuentro diario perfecto, transformando la fe en una experiencia viva.</p>
+                </div>
+                <!-- Beneficio 2 -->
+                <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21H12M4 10h4m-4 0v10M4 10h2a2 2 0 012 2v10m0-10h2a2 2 0 012 2v10m-2 2h2"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-text-light">Crecimiento Sólido</h3>
+                    <!-- Descrição Padrão - Traduzido para Español -->
+                    <p class="text-gray-400">Reflexiones y ejercicios prácticos que transforman la teoría bíblica en vida real.</p>
+                </div>
+                <!-- Beneficio 3 -->
+                <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4M17 3h4m-2 2v4m-12 3h14a2 2 0 002-2V7a2 2 0 00-2-2H8a2 2 0 00-2 2v6a2 2 0 002 2z"></path></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-text-light">Rutina de Fe Consistente</h3>
+                    <!-- Descrição Padrão - Traduzido para Español -->
+                    <p class="text-gray-400">Reaviva la llama de tu fe con un encuentro diario e intencional con Dios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre el Libro (Contenido y Mockup) - Fondo Oscuro -->
+    <section class="py-16 md:py-20 bg-primary-bg border-t border-b border-subtle-gray">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Mockup del Libro (Imagen Placeholder) -->
+                <div class="w-full md:w-1/3 flex-shrink-0">
+                    <!-- Cubierta en destaque (CORRIGIDA) -->
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/capa-devocional-espanhol.jpg" alt="Portada del Libro Devocional" class="rounded-lg shadow-xl w-full mx-auto border border-subtle-gray" onerror="this.onerror=null; this.src='https://placehold.co/300x450/14B8A6/121212?text=Portada+Devocional';" loading="lazy">
+                </div>
+
+                <!-- Descripción del Libro (Detalles de la Sinopsis) -->
+                <div class="w-full md:w-2/3">
+                    <!-- H2 (TÍTULO) - Traduzido para Español -->
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-light">
+                        Contenido Esencial para Tu Jornada
+                    </h2>
+                    <!-- TEXTO SINOPSE - Traduzido para Español -->
+                    <p class="text-lg mb-6 text-gray-300">
+                        "Escucha, Israel: 30 Días para Alinearte con la Voz del Padre" no es un viaje religioso, sino un llamado de regreso al pacto, la obediencia y la verdad. Durante treinta días, serás guiado por oraciones, Escrituras y reflexiones para despertar tu espíritu y realinear tu corazón con la Voz del Padre. 
+                        <br><br>
+                        Este devocional fue escrito para ayudar tanto al cristiano que honra las raíces bíblicas de su fe, como al judío que reconoce a Yeshúa como el Mesías, agudizando su oído espiritual y reavivando su amor por el Dios de Israel.
+                    </p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            30 Reflexiones Diarias con pasajes bíblicos relevantes.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Oraciones Guiadas para facilitar tu momento de intimidad.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Formato Digital (E-book) para leer en cualquier lugar.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios (Prueba Social) - Fondo Ligeramente Más Claro -->
+    <section class="py-16 md:py-20 bg-section-bg">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <!-- H2 (TÍTULO) - Traduzido para Español -->
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-light">
+                Lo Que la Gente Está Diciendo
+            </h2>
+            <p class="text-xl font-light mb-12 text-gray-500">
+                Observa el impacto que está teniendo este devocional:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonio 1 (Traduzido) -->
+                <div class="bg-card-bg p-6 rounded-xl shadow-md border border-subtle-gray">
+                    <p class="italic mb-4 text-gray-300">"Estaba desanimada con la lectura de la Biblia, pero los 7 minutos diarios me trajeron de vuelta. La reflexión de hoy sobre el perdón transformó mi día. ¡Es un regalo!"</p>
+                    <p class="font-semibold text-sm text-accent">- Anna</p>
+                </div>
+                <!-- Testimonio 2 (Traduzido) -->
+                <div class="bg-card-bg p-6 rounded-xl shadow-md border border-subtle-gray">
+                    <p class="italic mb-4 text-gray-300">"El lenguaje es sencillo, pero el contenido es profundo. Finalmente logré crear una rutina devocional consistente. Lo recomiendo a todos los que buscan paz mental."</p>
+                    <p class="font-semibold text-sm text-accent">- Luke</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Final de Compra (Precio y CTA Dupla) - Fondo Oscuro -->
+    <section id="comprar" class="py-16 md:py-20 bg-primary-bg border-t border-subtle-gray">
+        <div class="container mx-auto px-6 max-w-6xl text-center">
+            <!-- H2 (TÍTULO) - Traduzido para Español -->
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-10 text-text-light">
+                Elige la Versión que Transformará Tu Rutina
+            </h2>
+            
+            <!-- Wrapper: Centraliza la cuadrícula de tarjetas -->
+            <div class="max-w-xl mx-auto">
+                <!-- Grid de tarjetas de compra -->
+                <div class="grid grid-cols-1 gap-8 items-stretch">
+                    
+                    <!-- OPCIÓN 1: STANDARD VERSION -->
+                    <div class="bg-card-bg p-8 md:p-10 rounded-xl shadow-2xl premium-highlight flex flex-col justify-between transform scale-100 hover:scale-[1.01] transition duration-300">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 text-accent">Estándar</h3>
+                            
+                            <!-- IMAGEN DE LA CUBIERTA -->
+                            <div class="mb-6 flex justify-center">
+                                <!-- Capa Padrão (CORRIGIDA) -->
+                                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/capa-devocional-espanhol.jpg" alt="Portada del Devocional: Edición Estándar" class="rounded-lg w-40 shadow-lg border border-subtle-gray transition duration-300 hover:scale-105" loading="lazy">
+                            </div>
+
+                            <div class="mb-8">
+                                <p class="text-3xl font-light text-gray-500 line-through">Precio Regular: $<s>15.99</s></p>
+                                <p class="text-6xl font-extrabold text-text-light">
+                                    US$ <span class="text-7xl">8.99</span>
+                                </p>
+                            </div>
+
+                            <ul class="text-left space-y-3 mb-10 text-gray-300">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    E-book "Escucha, Israel: 30 Días para Alinearte con la Voz del Padre" en versión español.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- LINK DE COMPRA: STANDARD (AMAZON) - Traduzido para Español -->
+                        <a href="https://www.amazon.com/-/pt/dp/B0FK2YJC5L/ref=tmm_kin_swatch_0" target="_blank" class="bg-gray-700 text-text-light font-bold py-4 px-8 rounded-xl shadow-md text-xl uppercase tracking-wider block hover:bg-gray-600 transition duration-300">
+                            Comprar Solo el Devocional
+                        </a>
+                    </div>
+
+                    <!-- OPCIÓN 2: PACK VERSION (Más Popular) -->
+                    <div class="bg-card-bg p-8 md:p-10 rounded-xl shadow-2xl premium-highlight relative z-10 flex flex-col justify-between transform scale-100 hover:scale-[1.01] transition duration-300">
+                        <div>
+                            <!-- INSIGNIA DE PROMOCIÓN - Traduzido para Español -->
+                            <div class="absolute top-4 right-[-1rem] md:right-[-2rem] transform rotate-6 px-6 py-2 text-base md:text-xl uppercase rounded-lg storefront-badge">
+                                MÁS POPULAR
+                            </div>
+
+                            <h3 class="text-3xl font-bold mb-2 text-accent">Paquete Completo</h3>
+                            <!-- Descripción - Traduzido para Español -->
+                            <p class="text-xl text-gray-400 mb-4">El paquete completo para una profunda transformación en tu fe y rutina.</p>
+                            
+                            <!-- Imagen del Paquete (Mantida) -->
+                            <div class="mb-6 p-4 bg-gray-900 rounded-xl shadow-inner border border-accent-dark">
+                                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/pack-título-1.png" alt="Imagen del Paquete Completo con Bonos" class="rounded-lg w-full" onerror="this.onerror=null; this.src='https://placehold.co/400x150/14B8A6/121212?text=PAQUETE+COMPLETO+%2B+BONOS';" loading="lazy">
+                            </div>
+
+                            <div class="mb-8">
+                                <p class="text-4xl font-light text-gray-500 line-through">Precio Regular: $<s>22.99</s></p>
+                                <p class="text-7xl font-extrabold text-text-light">
+                                    US$ <span class="text-8xl">15.99</span>
+                                </p>
+                                <p class="text-lg font-semibold text-accent-dark mt-2">(¡Ahorra US$ 7.00!)</p>
+                            </div>
+
+                            <ul class="text-left space-y-3 mb-10 text-gray-300">
+                                <!-- ITEMS DEL PACK - Traduzido para Español -->
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    E-book "Escucha, Israel: 30 Días para Alinearte con la Voz del Padre" en versión español.
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    BONO 1: Biblia de Audio KJV Completa
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    BONO 2: Muestra de la Novela de Romance Cristiano "Welcome to New York Parte 1" de T. S. Telles.
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- LINK DE COMPRA: PACK (GUMROAD) - Traduzido para Español -->
+                        <a href="https://tstelles.gumroad.com/l/kgkxyg" target="_blank" class="btn-cta-clean font-bold py-5 px-10 rounded-xl shadow-2xl text-2xl uppercase tracking-wider block">
+                            Quiero el Paquete Completo
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin del Wrapper de Centralización -->
+
+        </div>
+    </section>
+
+    <!-- Pie de página - Fondo Ligeramente Más Claro -->
+    <footer class="bg-section-bg text-gray-400 py-8">
+        <div class="container mx-auto px-6 max-w-5xl text-center text-sm space-y-2">
+            <p>
+                © 2025 T. S. TELLES. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
