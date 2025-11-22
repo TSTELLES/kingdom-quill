@@ -28,7 +28,7 @@
             --subtle-gray: #4B5563; /* Borde Oscuro */
         }
 
-        /* EFECTO NEÓN BLANCO */
+        /* EFECTO NEÓN BLANCO - MANTIDO PARA OUTROS USOS, MAS REMOVIDO DO ITEM DE BÔNUS */
         .text-neon-effect {
             color: #FFFFFF !important; /* Blanco puro */
             text-shadow: 
@@ -98,8 +98,8 @@
 
             <!-- Área de la Cubierta Principal (ESPANHOL) - CENTRALIZADA -->
             <div class="flex justify-center mb-10 mt-10">
-                <!-- Ajustando a largura de volta para um formato de capa de e-book -->
-                <div class="w-40 md:w-48 shadow-2xl transition duration-300 hover:scale-105">
+                <!-- Alteração de tamanho: w-48 (móvel) e md:w-64 (desktop) -->
+                <div class="w-48 md:w-64 shadow-2xl transition duration-300 hover:scale-105">
                     <!-- Cubierta 1: Espanhol (URL RAW CORRIGIDA) -->
                     <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/capa-devotional-espanhol.jpg" alt="Portada del Devocional: Edición en Español" class="rounded-lg border-4 border-accent-dark shadow-2xl shadow-accent-dark/40" loading="lazy">
                 </div>
@@ -182,9 +182,10 @@
                             <svg class="w-6 h-6 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             Oraciones Guiadas para facilitar tu momento de intimidad.
                         </li>
+                        <!-- ITEM MODIFICADO: BÔNUS DE JEJUM (Sem efeito neon e com o ícone check) -->
                         <li class="flex items-start">
                             <svg class="w-6 h-6 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Formato Digital (E-book) para leer en cualquier lugar.
+                            BONUS: Guía de Desafío de Ayuno de Siete Días.
                         </li>
                     </ul>
                 </div>
@@ -252,14 +253,19 @@
                                 <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 E-book "Escucha, Israel: 30 Días para Alinearte con la Voz del Padre".
                             </li>
+                            <!-- ITEM ADICIONADO: BÔNUS DE JEJUM (Sem efeito neon e com o ícone check) -->
                             <li class="flex items-start">
                                 <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Guía de Desafío de Ayuno de Siete Días.
+                                BONUS: Guía de Desafío de Ayuno de Siete Días.
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Acceso Inmediato para lectura en Kindle o dispositivos móviles.
                             </li>
                         </ul>
                     </div>
 
-                    <!-- LINK DE COMPRA: STANDARD (AMAZON) - NOVO TEXTO -->
+                    <!-- LINK DE COMPRA: STANDARD (AMAZON) - TEXTO ATUALIZADO -->
                     <a href="https://www.amazon.com/-/pt/dp/B0FK2YJC5L/ref=tmm_kin_swatch_0" target="_blank" class="btn-cta-clean font-bold py-4 px-8 rounded-xl shadow-xl text-xl uppercase tracking-wider block">
                         Inicia Tu Camino Espiritual Ahora
                     </a>
