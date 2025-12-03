@@ -5,19 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bem-vindo a Nova Iorque Parte 1: Nascido Ricciwood - Página de Vendas</title>
     <meta name="keywords" content="Audiobooks da Bíblia, audiobooks cristãos, autor cristão, T. S. Telles, ficção cristã, fantasia épica, romance cristão contemporâneo, Cristianismo, Bíblia Coreana, Bíblia Russa, Bíblia Chinesa, Bíblia Francesa, Bíblia Alemã, Bíblia Inglesa, Bíblia Espanhola, Bíblia Árabe, Bíblia Italiana, Bíblia Hindi, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, Deus de Israel, YHWH, audiobook da bíblia, comprar audiobook da bíblia, audiobook da bíblia gratuito, áudio da bíblia sem anúncios, Bíblia no Spotify, Bíblia no Google Play, Bíblia no Storytel, Bíblia no YouTube">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BY4RXZNY0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-0BY4RXZNY0');
-    </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght700&display=swap" rel="stylesheet">
+    <!-- Abaddon Font from CDNFonts.com -->
     <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Variáveis CSS para cores neon */
@@ -25,54 +16,53 @@
             --neon-yellow: #f9f871;
             --neon-pink-soft: #FF66CC;
             --neon-white: #FFF;
-            --neon-light-green: #90EE90; /* Novo verde claro */
-            --neon-purple: #3C096C; /* Roxo neon especificado pelo usuário */
-            /* Novas variáveis para tons de roxo para o brilho, para consistência */
-            --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
-            --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
+            --neon-light-green: #90EE90;
+            --neon-purple: #3C096C;
+            --neon-purple-light: #FF00FF;
+            --neon-purple-medium: #B400B4;
         }
 
         /* Estilos globais e redefinições */
         body {
             margin: 0;
-            background: black; /* Fundo principal, o vídeo será sobreposto */
+            background: black;
             color: #fff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
-            padding-top: 4.5em; /* Espaço para o cabeçalho fixo */
-            padding-bottom: 2em; /* Ajustado para 2em */
-            position: relative; /* Necessário para o z-index do fundo funcionar */
+            padding-top: 4.5em;
+            padding-bottom: 2em;
+            position: relative;
         }
 
         /* Contêiner de fundo de vídeo animado */
         .background-animated {
             position: fixed;
-            top: 50%; /* Centraliza verticalmente */
-            left: 50%; /* Centraliza horizontalmente */
-            transform: translate(-50%, -50%); /* Ajusta para centralização exata */
-            width: 90vw; /* Reduz a largura para 90% da largura da viewport */
-            height: 90vh; /* Reduz a altura para 90% da altura da viewport */
-            overflow: hidden; /* Garante que o vídeo não transborde do contêiner */
-            z-index: -1; /* Envia para o fundo */
-            filter: brightness(0.3); /* Escurece o vídeo */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw;
+            height: 90vh;
+            overflow: hidden;
+            z-index: -1;
+            filter: brightness(0.3);
         }
 
         /* Estilo do vídeo para cobrir todo o fundo */
         .background-animated video {
-            width: 100%; /* Ocupa 100% da largura do seu contêiner (.background-animated) */
-            height: 100%; /* Ocupa 100% da altura do seu contêiner */
+            width: 100%;
+            height: 100%;
             position: absolute;
-            object-fit: cover; /* Garante que o vídeo cubra todo o contêiner, mantendo a proporção e cortando se necessário */
+            object-fit: cover;
         }
 
         /* Cabeçalho fixo com neon verde claro */
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
-            height: 6em; /* Aumentado para o título ficar maior */
+            height: 6em;
             background-color: black;
             display: flex;
             justify-content: center;
@@ -80,14 +70,14 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.7);
             user-select: none;
             letter-spacing: 0.05em;
-            z-index: 100; /* Garante que o cabeçalho esteja no topo */
-            color: initial; /* Reseta a cor */
-            font-family: initial; /* Reseta a fonte */
-            text-shadow: none; /* Reseta a sombra */
-            animation: none; /* Reseta a animação */
+            z-index: 100;
+            color: initial;
+            font-family: initial;
+            text-shadow: none;
+            animation: none;
         }
 
-        /* Nova animação de pulso para verde claro (mantida, mas não aplicada diretamente ao header) */
+        /* Animações neon (MANTIDAS) */
         @keyframes neonPulseLightGreen {
             0% {
                 text-shadow:
@@ -105,7 +95,6 @@
             }
         }
 
-        /* Nova animação de pulso para rosa */
         @keyframes neonPulsePink {
             0% {
                 text-shadow:
@@ -121,7 +110,6 @@
             }
         }
 
-        /* Nova animação de pulso para branco */
         @keyframes neonPulseWhite {
             0% {
                 text-shadow:
@@ -137,210 +125,6 @@
             }
         }
 
-        /* Área de conteúdo principal */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centraliza os itens horizontalmente */
-            padding-top: 11.5em; /* Ajustado para dar espaço ao cabeçalho maior */
-            padding-bottom: 2rem;
-            /* Removido o 'gap' da main para controlar o espaçamento via margin-bottom das seções */
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            box-sizing: border-box;
-            min-height: calc(100vh - 6em - 2em); /* Ajustado para 6em de cabeçalho */
-            position: relative; /* Garante que o conteúdo principal esteja acima do fundo */
-            z-index: 1; /* Garante que o conteúdo principal esteja acima do fundo */
-        }
-
-        /* Estilo de seção compartilhado para blocos de texto */
-        .content-section {
-            background: rgba(0,0,0,0.6);
-            padding: 1.5rem 2rem; /* Reduzido de 2rem para 1.5rem */
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-            font-weight: 600;
-            font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
-            line-height: 1.5;
-            max-width: 500px; /* Largura padrão para texto */
-            text-align: center; /* Centraliza o texto dentro da seção */
-            user-select: none;
-            text-shadow: 0 0 5px #000;
-            margin: 0 auto 3rem; /* Centraliza a seção horizontalmente e define o espaçamento padrão REDUZIDO */
-        }
-        
-        /* Estilo para seções de vídeo maiores */
-        .content-section.video-container {
-            max-width: 900px; /* AUMENTADO PARA DEIXAR O VÍDEO MAIOR */
-            width: 90%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
-            height: 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .content-section.video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            border-radius: 10px;
-        }
-
-        /* Aumenta o espaçamento superior para seções específicas */
-        .content-section.section-extra-spacing {
-            margin-top: 1rem; /* Adiciona um espaçamento extra acima dessas seções REDUZIDO */
-        }
-        .content-section:last-child {
-            margin-bottom: 0; /* Remove margin-bottom da última seção para evitar espaço extra no final */
-        }
-        .content-section.hero-banner { /* Específico para a primeira seção */
-            margin-bottom: 3rem; /* Espaçamento menor para a primeira seção REDUZIDO */
-        }
-        .content-section p {
-            margin-bottom: 0.8rem; /* Espaço entre parágrafos, ajustado */
-            margin-top: 0;
-        }
-        .content-section strong {
-            color: var(--neon-yellow); /* Destaca palavras-chave com neon amarelo */
-        }
-        .content-section ul {
-            list-style: none;
-            padding: 0;
-            margin: 1em auto; /* Centraliza a lista horizontalmente */
-            width: fit-content; /* Faz a lista ocupar apenas a largura necessária */
-        }
-        .content-section ul li {
-            margin-bottom: 0.5em;
-            position: relative;
-            padding-left: 1.5em;
-            text-align: left; /* Mantém o texto alinhado à esquerda dentro dos itens */
-        }
-        .content-section ul li::before {
-            content: '✨'; /* Bullet point de estrela */
-            position: absolute;
-            left: 0; /* Mantém o bullet point à esquerda */
-            color: var(--neon-yellow);
-        }
-        .content-section.author-note {
-            text-align: center; /* ALINHAMENTO CENTRALIZADO PARA A NOTA DA AUTORA */
-        }
-        .content-section.author-note img {
-            display: block;
-            margin: 1em auto; /* Centraliza a imagem da autora */
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            box-shadow: 0 0 10px var(--neon-pink-soft);
-        }
-        .content-section.author-note .signature {
-            font-family: 'Monotype Corsiva', cursive; /* Fonte elegante para a assinatura */
-            font-size: 1.5rem;
-            color: var(--neon-pink-soft);
-            text-align: center;
-            margin-top: 1em;
-            text-shadow: 0 0 5px var(--neon-pink-soft);
-        }
-        .content-section.faq ul li::before {
-            content: '💡'; /* Bullet point de lâmpada para FAQ */
-        }
-        .content-section.testimonials .testimonial {
-            font-style: italic;
-            margin-bottom: 1em;
-        }
-        /* Ensure all text within .testimonial uses Arial, is white, and smaller */
-        .content-section.testimonials .testimonial p {
-            font-family: Arial, sans-serif !important;
-            font-weight: normal;
-            text-shadow: none;
-            color: white; /* Set text color to white */
-            font-size: 0.95rem; /* Smaller font size */
-        }
-        /* Remove specific styles for spans within testimonials as they are now handled by the parent p */
-        .content-section.testimonials .testimonial p span {
-            color: inherit; /* Inherit color from parent p */
-            text-shadow: none; /* Ensure no text shadow */
-            animation: none; /* Ensure no animation */
-        }
-        .content-section.testimonials .reader-tag {
-            display: block;
-            font-weight: bold;
-            color: var(--neon-yellow);
-            margin-top: 0.5em;
-            font-size: 0.9em;
-            font-family: Arial, sans-serif; /* Ensure reader tag is also Arial */
-        }
-
-        /* Títulos principais com efeito neon */
-        .main-title-neon {
-            color: var(--neon-yellow);
-            font-size: 1.8rem; /* Reduzido de 2rem para 1.8rem */
-            margin-top: 0;
-            text-shadow:
-                0 0 8px var(--neon-yellow),
-                0 0 20px var(--neon-yellow),
-                0 0 40px var(--neon-yellow),
-                0 0 80px var(--neon-yellow);
-            animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
-        }
-        .subtitle-strong {
-            margin-top: 0.4rem; /* Ajustado */
-            font-size: 1.4rem; /* Reduzido de 1.6rem para 1.4rem */
-            font-weight: bold;
-        }
-
-        /* Estilo neon rosa mais suave */
-        .neon-pink-soft {
-            color: var(--neon-pink-soft);
-            text-shadow:
-                0 0 8px var(--neon-pink-soft),
-                0 0 20px var(--neon-pink-soft),
-                0 0 40px var(--neon-pink-soft);
-            animation: neonPulsePink 2s infinite alternate; /* Adicionado animação */
-        }
-
-        /* Estilo para o título do livro (fonte e cor rosa) */
-        .book-title-style {
-            font-family: 'Monotype Corsiva', cursive;
-            font-weight: normal;
-            text-transform: uppercase;
-            font-size: 2.8rem; /* Aumentado o tamanho da fonte para o cabeçalho */
-        }
-
-        /* Estilo para a parte do livro (branco aceso) */
-        .book-part-white-glow {
-            color: var(--neon-white);
-            text-shadow:
-                0 0 5px var(--neon-white),
-                0 0 15px var(--neon-white),
-                0 0 25px var(--neon-white);
-            animation: neonPulseWhite 2s infinite alternate; /* Adicionado animação */
-        }
-
-        /* Novo estilo de brilho roxo neon */
-        @keyframes neonPulsePurple {
-            0% {
-                text-shadow:
-                    0 0 10px var(--neon-purple-light),
-                    0 0 25px var(--neon-purple-medium),
-                    0 0 45px var(--neon-purple),
-                    0 0 70px var(--neon-purple);
-            }
-            100% {
-                text-shadow:
-                    0 0 20px var(--neon-purple-light),
-                    0 0 40px var(--neon-purple-medium),
-                    0 0 60px var(--neon-purple),
-                    0 0 90px var(--neon-purple);
-            }
-        }
-        
-        /* Animação de pulso para amarelo */
         @keyframes neonPulseYellow {
             0% {
                 text-shadow:
@@ -353,9 +137,138 @@
                 text-shadow:
                     0 0 15px var(--neon-yellow),
                     0 0 30px var(--neon-yellow),
-                    0 0 50px var(--neon-yellow),
+                    0 0 60px var(--neon-yellow),
                     0 0 100px var(--neon-yellow);
             }
+        }
+
+        /* Área de conteúdo principal */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 11.5em;
+            padding-bottom: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            min-height: calc(100vh - 6em - 2em);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Estilo de seção compartilhado para blocos de texto */
+        .content-section {
+            background: rgba(0,0,0,0.6);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            max-width: 500px;
+            text-align: center;
+            user-select: none;
+            text-shadow: 0 0 5px #000;
+            margin: 0 auto 3rem;
+        }
+
+        /* Estilo para seções de vídeo maiores */
+        .content-section.video-container {
+            max-width: 900px;
+            width: 90%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 3rem; /* Adicionar margem inferior aqui para separação */
+        }
+
+        .content-section.video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        .content-section.hero-banner {
+            margin-bottom: 3rem;
+        }
+        .content-section p {
+            margin-bottom: 0.8rem;
+            margin-top: 0;
+        }
+        .content-section strong {
+            color: var(--neon-yellow);
+        }
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 1em auto;
+            width: fit-content;
+        }
+        .content-section ul li {
+            margin-bottom: 0.5em;
+            position: relative;
+            padding-left: 1.5em;
+            text-align: left;
+        }
+        .content-section ul li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            color: var(--neon-yellow);
+        }
+
+        /* Títulos principais com efeito neon */
+        .main-title-neon {
+            color: var(--neon-yellow);
+            font-size: 1.8rem;
+            margin-top: 0;
+            text-shadow:
+                0 0 8px var(--neon-yellow),
+                0 0 20px var(--neon-yellow),
+                0 0 40px var(--neon-yellow),
+                0 0 80px var(--neon-yellow);
+            animation: neonPulseYellow 2s infinite alternate;
+        }
+        .subtitle-strong {
+            margin-top: 0.4rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* Estilo neon rosa mais suave */
+        .neon-pink-soft {
+            color: var(--neon-pink-soft);
+            text-shadow:
+                0 0 8px var(--neon-pink-soft),
+                0 0 20px var(--neon-pink-soft),
+                0 0 40px var(--neon-pink-soft);
+            animation: neonPulsePink 2s infinite alternate;
+        }
+
+        /* Estilo para o título do livro (fonte e cor rosa) */
+        .book-title-style {
+            font-family: 'Monotype Corsiva', cursive;
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 2.8rem;
+        }
+
+        /* Estilo para a parte do livro (branco aceso) */
+        .book-part-white-glow {
+            color: var(--neon-white);
+            text-shadow:
+                0 0 5px var(--neon-white),
+                0 0 15px var(--neon-white),
+                0 0 25px var(--neon-white);
+            animation: neonPulseWhite 2s infinite alternate;
         }
 
         /* Estilo de brilho amarelo neon */
@@ -366,13 +279,7 @@
                 0 0 20px var(--neon-yellow),
                 0 0 40px var(--neon-yellow),
                 0 0 80px var(--neon-yellow);
-            animation: neonPulseYellow 2s infinite alternate; /* Aplicada diretamente aqui */
-        }
-
-        /* Estilo para a fonte Abaddon */
-        .abaddon-font-style {
-            font-family: 'Abaddon', sans-serif;
-            font-size: 1.6rem; /* Tamanho da fonte menor e legível */
+            animation: neonPulseYellow 2s infinite alternate;
         }
 
         /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
@@ -380,8 +287,7 @@
             font-size: 1rem;
             font-weight: bold;
             display: block;
-            text-transform: uppercase;
-            margin-top: -0.7em; /* Valor negativo para puxar para cima ainda mais */
+            margin-top: -0.7em;
         }
 
         /* Estilo para a capa do livro e mockups */
@@ -390,25 +296,24 @@
             flex-direction: column;
             align-items: center;
             gap: 1em;
-            margin-top: 4rem; /* Aumentado ligeiramente de 3.5rem */
+            margin-top: 4rem;
             transition: transform 0.3s ease;
         }
         .book-mockup-group img {
-            max-width: 250px; /* Ajuste para mockups múltiplos */
+            max-width: 250px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
         }
-        /* Removed the audiobook-mockup image from here */
         .book-mockup-group:hover {
             transform: scale(1.05);
         }
-        
+
         /* Novo estilo de botão neon */
         .neon-button {
-            display: inline-flex; /* Use flexbox para alinhar conteúdo e ícones */
+            display: inline-flex;
             align-items: center;
-            justify-content: center; /* Centraliza texto e ícone */
+            justify-content: center;
             padding: 0.7rem 1.8rem;
             border: 2px solid var(--neon-yellow);
             border-radius: 25px;
@@ -426,7 +331,7 @@
             user-select: none;
             letter-spacing: 0.05em;
             cursor: pointer;
-            gap: 0.5em; /* Espaçamento entre ícone e texto */
+            gap: 0.5em;
         }
 
         .neon-button:hover {
@@ -447,130 +352,81 @@
                 0 0 40px var(--neon-pink-soft);
         }
 
+        /* Estilo para o ícone do ElevenLabs (REMOVIDO - Não é mais usado) */
+
         /* Container para os botões de compra */
         .purchase-buttons-container {
             display: flex;
-            flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha em telas menores */
-            justify-content: center; /* Centraliza os botões */
-            gap: 1.5rem; /* Espaço entre os botões */
-            margin-top: 1.5em; /* Espaço acima do container de botões */
-            width: 100%; /* Ocupa a largura total para permitir o justify-content */
-            max-width: 600px; /* Limita a largura do container de botões */
-        }
-        
-        .purchase-buttons-container .neon-button {
-            flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço */
-            max-width: 250px; /* Largura máxima para cada botão */
-        }
-
-        /* Estilo para o contêiner do botão e das mãos (original, agora talvez menos usado) */
-        .button-with-hands {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem; /* Espaçamento entre as mãos e o botão */
-            margin-top: 2rem; /* Ajustado para melhor fluxo */
-            margin-bottom: 1rem;
-            justify-content: center; /* Centraliza o flexbox */
-        }
-        .hand-emoji {
-            font-size: 1.5rem; /* Tamanho da mãozinha */
-            color: var(--neon-yellow); /* Cor da mãozinha */
-            text-shadow:
-                0 0 5px var(--neon-yellow),
-                0 0 10px var(--neon-yellow),
-                0 0 20px var(--neon-yellow);
-            animation: neonPulseYellow 1.5s infinite alternate; /* Animação para a mãozinha */
-        }
-        .main-cta-button {
-            /* Esta classe será substituída pelo purchase-buttons-container */
-            display: none; /* Esconde o botão único antigo */
-        }
-        .book-collage {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            margin: 1.5em auto; /* Centraliza a imagem/vídeo */
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
-            display: block; /* Garante que a margem auto funcione */
-        }
-
-        .book-collage iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5em;
             width: 100%;
-            height: 100%;
-            border: 0;
-            border-radius: 10px; /* Aplica border-radius ao iframe também */
+            max-width: 800px; /* Aumentado para acomodar 3 botões */
+        }
+
+        .purchase-buttons-container .neon-button {
+            flex-grow: 1;
+            max-width: 250px;
         }
 
         /* Rodapé fixo */
         footer {
             position: fixed;
             bottom: 0; left: 0; right: 0;
-            height: 2em; /* Ajustado para 2em */
+            height: 2em;
             background-color: black;
             color: #ccc;
             text-align: center;
-            line-height: 2em; /* Ajustado para 2em */
+            line-height: 2em;
             font-size: 0.9rem;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
             user-select: none;
             z-index: 100;
         }
 
-        footer p { /* Adicionado estilo para o parágrafo dentro do footer */
-            margin: 0; /* Remove margem padrão do parágrafo */
-            font-size: 0.8rem; /* Fonte ligeiramente menor para caber em 2em */
-            line-height: 2em; /* Ajusta o line-height para a altura do footer, centralizando o texto */
+        footer p {
+            margin: 0;
+            font-size: 0.8rem;
+            line-height: 2em;
         }
 
-        /* Ajustes de responsividade */
+        /* Ajustes de responsividade (MANTIDOS) */
         @media (max-width: 768px) {
             header {
-                height: 5.5em; /* Reduz ligeiramente em telas médias */
+                height: 5.5em;
             }
             .book-title-style {
-                font-size: 2.2rem; /* Reduz fonte do título em telas médias */
+                font-size: 2.2rem;
             }
             main {
-                padding-top: 10em; /* Ajusta padding para o cabeçalho em telas médias */
+                padding-top: 10em;
                 min-height: calc(100vh - 5.5em - 2em);
             }
             .content-section {
-                font-size: 1.05rem; /* Reduzido de 1.1rem para 1.05rem */
+                font-size: 1.05rem;
                 padding: 1.5rem 1.8rem;
                 max-width: 90%;
-                margin-bottom: 3rem; /* Ajuste responsivo do margin-bottom */
+                margin-bottom: 3rem;
             }
             .main-title-neon {
-                font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
+                font-size: 1.5rem;
             }
             .subtitle-strong {
-                font-size: 1.25rem; /* Reduzido de 1.3rem para 1.25rem */
+                font-size: 1.25rem;
             }
             .neon-button {
-                padding: 0.6rem 1.5rem; /* Ajustado para telas menores */
-                font-size: 0.95rem; /* Ajustado para telas menores */
+                padding: 0.6rem 1.5rem;
+                font-size: 0.95rem;
             }
-            .button-with-hands {
-                margin-top: 1.5rem; /* Ajuste para telas menores */
-            }
-            .book-mockup-group {
-                margin-top: 3rem;
-            }
-            
             .purchase-buttons-container {
-                gap: 1rem; /* Espaçamento menor entre botões */
+                gap: 1rem;
                 flex-direction: column; /* Pilha em colunas em telas menores */
                 align-items: center;
             }
             .purchase-buttons-container .neon-button {
-                width: 90%; /* Quase largura total em telas pequenas */
-                max-width: 300px; /* Limite */
+                width: 90%;
+                max-width: 300px;
             }
         }
 
@@ -580,49 +436,41 @@
                 height: 3.8em;
             }
             .book-title-style {
-                font-size: 1.8rem; /* Further reduce title font on mobile */
+                font-size: 1.8rem;
             }
             footer {
                 font-size: 0.8rem;
-                height: 2em; /* Adjusted to 2em */
-                line-height: 2em; /* Adjusted to 2em */
+                height: 2em;
+                line-height: 2em;
             }
             body {
                 padding-top: 3.8em;
-                padding-bottom: 2em; /* Adjusted to 2em */
+                padding-bottom: 2em;
             }
             main {
-                min-height: calc(100vh - 3.8em - 2em); /* Adjusted to 2em */
+                min-height: calc(100vh - 3.8em - 2em);
                 padding: 5.5em 1rem 1.5rem;
                 gap: 2rem;
             }
             .content-section {
-                font-size: 0.95rem; /* Reduced for very small screens */
+                font-size: 0.95rem;
                 padding: 1.2rem 1.5rem;
                 max-width: 95%;
-                margin-bottom: 2rem; /* Ajuste responsivo do margin-bottom */
+                margin-bottom: 2rem;
             }
             .main-title-neon {
-                font-size: 1.3rem; /* Reduced */
+                font-size: 1.3rem;
             }
             .subtitle-strong {
-                font-size: 1.05rem; /* Reduced */
-            }
-            .book-mockup-group {
-                max-width: 130px;
-                margin-top: 2.5rem; /* Adjustment for very small screens */
+                font-size: 1.05rem;
             }
             .neon-button {
-                font-size: 0.8rem; /* Reduced font size for smaller screens */
-                padding: 0.4rem 1rem; /* Adjusted padding */
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
             }
-             .book-part-block-style {
-                font-size: 0.75rem; /* Reduced */
+            .book-part-block-style {
+                font-size: 0.75rem;
             }
-            .button-with-hands {
-                margin-top: 1rem; /* Adjustment for very small screens */
-            }
-            
             .purchase-buttons-container {
                 gap: 0.8rem;
             }
@@ -645,6 +493,7 @@
     </header>
 
     <main>
+        <!-- 1) Seção de Abertura — Banner Principal -->
         <section class="content-section hero-banner">
             <h1 class="main-title-neon">
                 <span class="book-title-style neon-pink-soft">Bem-vindo </span>
@@ -653,70 +502,89 @@
             </h1>
             <p class="book-part-block-style book-part-white-glow">Parte 1 da Série Um Legado em Nova Iorque</p>
             <div class="book-mockup-group">
-                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-vol-único-1zin.jpg" alt="Capa do livro Bem-vindo a Nova Iorque - Mockup 3D" />
+                <!-- Capa atualizada com a nova URL -->
+                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-vol-único-com-carro-cinza.jpg" alt="Capa do livro Bem-vindo a Nova Iorque - Mockup 3D" />
             </div>
-            <p class="subtitle-strong" style="font-style: italic;">"Mesmo os corações mais partidos podem encontrar um novo começo."</p>
-            
+            <p class="subtitle-strong neon-pink-soft">"Mesmo os corações mais partidos podem encontrar um novo começo."</p>
+
+            <!-- Botões de Compra: Amazon, Kindle Unlimited, e o NOVO ELEVENLABS -->
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button" target="_blank">
-                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Comprar na Amazon</span>
+                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Acessar agora</span>
                 </a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button" target="_blank">
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
                 </a>
-                <a href="https://elevenreader.io/audiobooks/bem-vindo-a-nova-iorque/JF2QnQm1bhe43BjjRTWM" class="neon-button" target="_blank">
-                    <i class="fas fa-headphones-alt"></i> <span class="neon-button-text-pink">Ouvir no ElevenLabs</span>
+                <!-- Botão: ElevenLabs com ícone de áudio -->
+                <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="neon-button">
+                    <i class="fas fa-volume-up"></i> <span class="neon-button-text-pink">Ouvir gratuitamente no ElevenLabs</span>
                 </a>
             </div>
         </section>
 
-        <section class="content-section">
-            <h2 class="main-title-neon">A Intriga Começa em Nova Iorque...</h2>
-            <p>Gabriel Ricciwood vive sob o peso de um passado que não o define. Quando o destino o traz de volta à elite de Nova Iorque, ele deve confrontar segredos de família, amores perdidos e a verdade sobre quem ele realmente é.</p>
-            <p class="subtitle-strong" style="font-style: italic;">“Para aqueles que acreditam que mesmo os corações mais partidos podem encontrar um novo começo.”</p>
-            
-            <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button" target="_blank">
-                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Comprar na Amazon</span>
-                </a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button" target="_blank">
-                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
-                </a>
-                <a href="https://elevenreader.io/audiobooks/bem-vindo-a-nova-iorque/JF2QnQm1bhe43BjjRTWM" class="neon-button" target="_blank">
-                    <i class="fas fa-headphones-alt"></i> <span class="neon-button-text-pink">Ouvir no ElevenLabs</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="content-section video-container section-extra-spacing">
-            <h2 class="main-title-neon">Cenas do Livro</h2>
+        <!-- 2) VÍDEO 1: Trailer/Teaser (antes do Resumo) -->
+        <section class="content-section video-container">
+            <h2 class="main-title-neon">Assista ao Trailer Oficial</h2>
+            <!-- URL de incorporação limpa do Vimeo -->
             <iframe src="https://player.vimeo.com/video/1120677768" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </section>
 
+        <!-- 3) Bloco de Resumo — Gancho Inicial -->
+        <section class="content-section">
+            <h2 class="main-title-neon">A Intriga Começa em Nova Iorque...</h2>
+            <p>Gabriel Ricciwood, herdeiro de uma dinastia impiedosa, vive sob o peso de um passado que não o define. Quando o destino o traz de volta à elite de Nova Iorque, ele deve confrontar segredos de família, amores perdidos e a verdade sobre quem ele realmente é.</p>
+            <p class="subtitle-strong" style="font-style: italic;">“Para aqueles que acreditam que mesmo os corações mais partidos podem encontrar um novo começo.”</p>
+            <!-- Botões de Compra (reforço): Amazon, Kindle Unlimited, e o NOVO ELEVENLABS -->
+            <div class="purchase-buttons-container">
+                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Acessar agora</span>
+                </a>
+                <!-- CORREÇÃO: URL do Kindle Unlimited na Seção 3 para usar .com.br -->
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button">
+                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
+                </a>
+                <!-- Botão: ElevenLabs com ícone de áudio -->
+                <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="neon-button">
+                    <i class="fas fa-volume-up"></i> <span class="neon-button-text-pink">Ouvir gratuitamente no ElevenLabs</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 4) VÍDEO 2: Conheça a inspiração por trás do livro (Após Resumo) -->
+        <section class="content-section video-container">
+            <h2 class="main-title-neon">Conheça a inspiração por trás do livro</h2>
+            <iframe src="https://player.vimeo.com/video/1109755520" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <!-- 5) Como Welcome to New York Was Born -->
         <section class="content-section">
             <h2 class="main-title-neon">Como Bem-vindo a Nova Iorque Nasceu</h2>
             <p>Bem-vindo a Nova Iorque nasceu do desejo de misturar o melhor de dois mundos inesquecíveis — a intensidade glamorosa de Gossip Girl e os complexos arcos emocionais de The Vampire Diaries. Mas, para além do fascínio e do drama, esta história busca algo mais profundo: oferecer um romance que pareça verdadeiro, não tóxico — um amor que constrói em vez de destruir.</p>
             <p>Criado para ressoar com os leitores de hoje, Bem-vindo a Nova Iorque é mais do que um romance de amadurecimento. Ele explora as arestas cruas da vida real: famílias fraturadas, um passado que assombra, e a busca por um propósito maior. É uma jornada por Nova Iorque onde a fé, a esperança e a restauração se entrelaçam.</p>
             <p>Este livro é um lembrete de que, mesmo em meio às cicatrizes do passado, o amor pode ser o guia para um futuro de redenção.</p>
-            
+            <!-- Botões de Compra (reforço): Amazon, Kindle Unlimited, e o NOVO ELEVENLABS -->
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button" target="_blank">
-                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Comprar na Amazon</span>
+                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Acessar agora</span>
                 </a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button" target="_blank">
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
                 </a>
-                <a href="https://elevenreader.io/audiobooks/bem-vindo-a-nova-iorque/JF2QnQm1bhe43BjjRTWM" class="neon-button" target="_blank">
-                    <i class="fas fa-headphones-alt"></i> <span class="neon-button-text-pink">Ouvir no ElevenLabs</span>
+                <!-- Botão: ElevenLabs com ícone de áudio -->
+                <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="neon-button">
+                    <i class="fas fa-volume-up"></i> <span class="neon-button-text-pink">Ouvir gratuitamente no ElevenLabs</span>
                 </a>
             </div>
         </section>
 
-        <section class="content-section video-container section-extra-spacing">
-            <h2 class="main-title-neon">Conheça a inspiração por trás do livro</h2>
-            <iframe src="https://player.vimeo.com/video/1109755520" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <!-- 6) VÍDEO 3: Conheça a Cidade (Novo) -->
+        <section class="content-section video-container">
+            <h2 class="main-title-neon">Conheça a Cidade</h2>
+            <!-- URL de incorporação limpa do Vimeo -->
+            <iframe src="https://player.vimeo.com/video/1102801648" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </section>
 
+        <!-- 7) Key Themes Section -->
         <section class="content-section">
             <h2 class="main-title-neon">Temas Principais</h2>
             <ul>
@@ -726,65 +594,23 @@
                 <li>Jornada de Autodescoberta</li>
                 <li>Confrontando o Passado</li>
             </ul>
+            <!-- Botões de Compra (reforço): Amazon, Kindle Unlimited, e o NOVO ELEVENLABS -->
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button" target="_blank">
-                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Comprar na Amazon</span>
+                <a href="https://www.amazon.com.br/dp/B0D42MJ7ZN" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Acessar agora</span>
                 </a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button" target="_blank">
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0D42MJ7ZN" class="neon-button">
                     <i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Leia no Kindle Unlimited</span>
                 </a>
-                 <a href="https://elevenreader.io/audiobooks/bem-vindo-a-nova-iorque/JF2QnQm1bhe43BjjRTWM" class="neon-button" target="_blank">
-                    <i class="fas fa-headphones-alt"></i> <span class="neon-button-text-pink">Ouvir no ElevenLabs</span>
+                <!-- Botão: ElevenLabs com ícone de áudio -->
+                <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer" class="neon-button">
+                    <i class="fas fa-volume-up"></i> <span class="neon-button-text-pink">Ouvir gratuitamente no ElevenLabs</span>
                 </a>
             </div>
         </section>
-        
-        <section class="content-section testimonials">
-            <h2 class="main-title-neon">Opinião dos Leitores</h2>
-            <div class="testimonial">
-                <p><span>"Uma leitura envolvente, cheia de reviravoltas e personagens que tocam o coração. Uma história que inspira a renovação da fé."</span><br><span class="reader-tag">- Juliana Costa</span></p>
-            </div>
-            <div class="testimonial">
-                <p><span>"A forma como a autora aborda temas profundos é simplesmente incrível. Uma jornada de superação que me fez refletir sobre a vida."</span><br><span class="reader-tag">- Pedro Andrade</span></p>
-            </div>
-            <div class="testimonial">
-                <p><span>"Achei a história surpreendente. A conexão entre os personagens e os temas de fé me cativaram de uma forma que nunca esperava. Mal posso esperar para o próximo livro!"</span><br><span class="reader-tag">- Ana Clara S.</span></p>
-            </div>
-        </section>
-        
-        <section class="content-section video-container section-extra-spacing">
-            <h2 class="main-title-neon">Áudio de Amostra</h2>
-            <iframe src="https://player.vimeo.com/video/1102801648" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        </section>
-        
-        <section class="content-section author-note">
-            <h2 class="main-title-neon">Uma Mensagem do Autor</h2>
-            <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/tsphoto.jpg" alt="Foto da autora T. S. Telles" />
-            <p>
-                Este livro nasceu de um lugar de vulnerabilidade e fé. Acredito que, no meio do caos, podemos encontrar esperança, e que as histórias têm o poder de curar. Espero que, ao se aventurar por Nova Iorque com Gabriel e os outros personagens, você se sinta inspirado a confrontar suas próprias cicatrizes e a abraçar o recomeço que está esperando por você.
-            </p>
-            <p class="signature">Com carinho,<br>T. S. Telles</p>
-        </section>
-        
-        <section class="content-section">
-            <h2 class="main-title-neon">Perguntas Frequentes</h2>
-            <ul>
-                <li><strong class="neon-yellow-glow">Este é um livro cristão?</strong>
-                    <p>Sim, o livro aborda temas de fé, esperança e perdão de forma orgânica, evitando sermões maçantes e didáticos. O foco está na jornada do protagonista e em como Deus o usa para fazer a diferença em seu meio.</p>
-                </li>
-                <li><strong class="neon-yellow-glow">Preciso ler os outros livros da série?</strong>
-                    <p>Não! Este é o primeiro livro da série 'Um Legado em Nova Iorque', então você está começando no lugar certo. A história foi feita para ser lida nesta ordem para que você possa descobrir os segredos junto com os personagens.</p>
-                </li>
-                <li><strong class="neon-yellow-glow">O livro está disponível em outros formatos?</strong>
-                    <p>Sim! Além do e-book, o livro também está disponível em formato de audiobook no ElevenLabs. Você pode encontrar os links para compra e audição diretamente nesta página.</p>
-                </li>
-            </ul>
-        </section>
     </main>
-
     <footer>
-        <p>Copyright &copy; 2025 TSTELLES. Todos os direitos reservados.</p>
+        <p>&copy; 2025 T. S. Telles. Todos os direitos reservados.</p>
     </footer>
-
 </body>
 </html>
