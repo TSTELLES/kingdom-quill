@@ -1,485 +1,215 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>성경</title>
-  <style>
-    /* Reset e base */
-    body {
-      margin: 0;
-      background: black;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      padding-top: 4.5em; /* Igual à altura do header */
-      padding-bottom: 3.5em; /* Igual à altura do footer */
-    }
-
-    /* Header fixo com neon amarelo */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 4.5em;
-      background-color: black;
-      color: #f9f871;
-      font-weight: bold;
-      font-size: 2.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-      text-shadow:
-        0 0 8px #f9f871,
-        0 0 20px #f9f871,
-        0 0 40px #f9f871,
-        0 0 80px #f9f871;
-      animation: neonPulseYellow 2s infinite alternate;
-      user-select: none;
-      letter-spacing: 0.05em;
-      z-index: 100;
-    }
-
-    @keyframes neonPulseYellow {
-      0% {
-        text-shadow:
-          0 0 10px #f9f871,
-          0 0 30px #f9f871,
-          0 0 50px #f9f871,
-          0 0 100px #f9f871;
-      }
-      100% {
-        text-shadow:
-          0 0 20px #f9f871,
-          0 0 40px #f9f871,
-          0 0 70px #f9f871,
-          0 0 120px #f9f871;
-      }
-    }
-
-    /* Conteúdo principal, se estende para preencher o espaço */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* **MANTÉM O CONTEÚDO DO MAIN CENTRALIZADO HORIZONTALMENTE** */
-      padding: 2rem 1rem 2rem;
-      gap: 3rem;
-      max-width: 1200px; /* Ajustado para consistência */
-      margin-left: auto;
-      margin-right: auto; /* **CENTRALIZA O PRÓPRIO CONTAINER MAIN NA PÁGINA** */
-      box-sizing: border-box;
-      min-height: calc(100vh - 4.5em - 3.5em);
-    }
-
-    /* Bandeiras lado a lado com efeito fade */
-    .flags-row {
-      display: flex;
-      gap: 3rem;
-      justify-content: center; /* **CENTRALIZA AS BANDEIRAS DENTRO DA LINHA** */
-      align-items: center;
-      padding-top: calc(4.5em + 2rem); /* Altura do header + espaço extra */
-      padding-bottom: 2rem; /* Espaço abaixo da bandeira */
-      width: 100%; /* Garante que a seção ocupe a largura para centralizar */
-      box-sizing: border-box; /* Inclui padding na largura */
-    }
-
-    .flag {
-      width: 160px;
-      height: 110px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 12px;
-      filter: brightness(0.75);
-      animation: fadeOpacity 8s infinite alternate ease-in-out;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
-      cursor: default;
-      user-select: none;
-      transition: filter 0.3s ease;
-    }
-    .flag:hover {
-      filter: brightness(1);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
-    }
-    /* Estilos específicos para as bandeiras coreanas */
-    .flag.south {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
-      animation-delay: 0s;
-    }
-    .flag.north {
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg');
-      animation-delay: 4s;
-    }
-    @keyframes fadeOpacity {
-      0% {opacity: 1;}
-      100% {opacity: 0.4;}
-    }
-
-    /* Argumentos com estilo (texto de introdução principal) */
-    .arguments {
-      background: rgba(0,0,0,0.6);
-      padding: 2rem 2.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-      font-weight: 600;
-      font-size: 1.4rem;
-      line-height: 1.5;
-      max-width: 720px;
-      text-align: center; /* **CENTRALIZA O TEXTO DENTRO DESTA SEÇÃO** */
-      user-select: none;
-      text-shadow: 0 0 5px #000;
-    }
-    /* Estilo para o novo título principal com efeito neon */
-    .main-title-neon {
-      color: #f9f871;
-      font-size: 2rem;
-      margin-top: 0;
-      text-shadow:
-        0 0 8px #f9f871,
-        0 0 20px #f9f871,
-        0 0 40px #f9f871,
-        0 0 80px #f9f871;
-      animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
-    }
-    .subtitle-strong {
-        margin-top: 0.5rem;
-        font-size: 1.6rem;
-        font-weight: bold;
-    }
-
-
-    /* Título do player */
-    .player-title {
-        color: #f9f871;
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-shadow: 0 0 5px #f9f871;
-        margin-bottom: 0;
-    }
-
-    /* Faixa de amostra com player estiloso */
-    .sample-section {
-      background: rgba(249, 248, 113, 0.1);
-      padding: 2.5rem 2.2rem; /* Aumentado padding top/bottom */
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
-      gap: 2rem; /* Espaçamento entre os itens */
-      max-width: 700px;
-      user-select: none;
-      margin-top: 3rem; /* Espaço acima desta seção */
-    }
-
-    /* Zera margens individuais para deixar o gap e padding da sample-section controlarem o espaçamento */
-    .sample-section .player-title,
-    .sample-section .play-button,
-    .sample-section audio {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-
-    /* Botão play customizado */
-    .play-button {
-      background: #f9f871;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow:
-        0 0 10px #f9f871,
-        0 0 25px #f9f871;
-      transition: transform 0.2s ease;
-    }
-    .play-button:hover {
-      transform: scale(1.15);
-      box-shadow:
-        0 0 20px #f9f871,
-        0 0 40px #f9f871;
-    }
-    .play-button:active {
-      transform: scale(0.95);
-    }
-
-    .play-icon {
-      width: 0;
-      height: 0;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-left: 18px solid black;
-      margin-left: 3px;
-    }
-
-    /* Botões das lojas - Agora para as IMAGENS dos logos */
-    .testament-section .buttons {
-      display: flex;
-      flex-direction: row; /* Coloca os logos em linha */
-      flex-wrap: wrap; /* Permite quebrar linha */
-      justify-content: center; /* Centraliza horizontalmente */
-      gap: 1.8rem; /* Espaçamento maior entre os logos */
-      margin-top: 1.5rem;
-      width: 100%;
-    }
-
-    .testament-section .buttons a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: transparent; /* Fundo transparente para a "bolinha" */
-      border: 2px solid transparent; /* Borda transparente que aparece no hover */
-      border-radius: 50%; /* Faz a "bolinha" */
-      width: 80px; /* Tamanho da bolinha do logo */
-      height: 80px; /* Tamanho da bolinha do logo */
-      box-shadow: none; /* Remove qualquer sombra base */
-      transition: all 0.3s ease; /* Transição suave */
-      overflow: hidden; /* Garante que a imagem não vaze da bolinha */
-      text-decoration: none; /* Remove sublinhado dos links */
-    }
-
-    .testament-section .buttons a:hover {
-      background: rgba(249, 248, 113, 0.1); /* Brilho suave no hover */
-      transform: scale(1.15); /* Efeito de zoom */
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6); /* Sombra neon */
-      border-color: #f9f871; /* Borda neon */
-    }
-
-    .testament-section .buttons a img {
-      width: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
-      height: 70%; /* Ajusta o tamanho da imagem DENTRO da bolinha */
-      object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
-      max-width: 100%; /* Impede que a imagem ultrapasse a largura do contêiner */
-      max-height: 100%; /* Impede que a imagem ultrapasse a altura do contêiner */
-      filter: brightness(0.9); /* Leve escurecimento para se integrar melhor */
-      transition: filter 0.3s ease;
-    }
-
-    .testament-section .buttons a:hover img {
-        filter: brightness(1.2); /* Clareia a imagem no hover */
-    }
-
-    /* Novos textos de chamada de ação */
-    .call-to-action-section {
-        background: rgba(0,0,0,0.6);
-        padding: 2rem 2.5rem;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-        font-weight: 600;
-        font-size: 1.4rem;
-        line-height: 1.5;
-        max-width: 720px;
-        text-align: center;
-        user-select: none;
-        text-shadow: 0 0 5px #000;
-        margin-top: 3rem; /* Espaço acima desta seção */
-    }
-    .call-to-action-section p {
-        margin-bottom: 1rem; /* Espaço entre parágrafos */
-    }
-    .call-to-action-section strong {
-        color: #f9f871; /* Destaca a parte "Ready?" */
-    }
-
-
-    /* Footer fixo */
-    footer {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      height: 3.5em;
-      background-color: black;
-      color: #ccc;
-      text-align: center; /* **CENTRALIZA O TEXTO DO RODAPÉ** */
-      line-height: 3.5em;
-      font-size: 0.9rem;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
-      user-select: none;
-      z-index: 100;
-    }
-
-    /* Responsividade básica */
-    @media (max-width: 768px) {
-        .testament-container {
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>성경 오디오북</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            padding-top: 4.5rem; /* For fixed header */
+            padding-bottom: 3.5rem; /* For fixed footer */
+            min-height: 100vh;
         }
-        .testament-section {
-            width: 90%;
-            max-width: 500px;
-        }
-        .player-title {
-            font-size: 1.3rem;
-        }
-        .call-to-action-section {
-            font-size: 1.2rem;
-            padding: 1.8rem 2rem;
-        }
-        .main-title-neon {
-            font-size: 1.8rem;
-        }
-        .subtitle-strong {
-            font-size: 1.4rem;
-        }
-        /* Ajuste do tamanho dos botões de logo em telas menores */
-        .testament-section .buttons a {
-            width: 65px; /* Bolinha menor */
-            height: 65px;
-        }
-        .testament-section .buttons a img {
-            width: 60%; /* Logo menor dentro da bolinha */
-            height: 60%;
-        }
-    }
 
-    @media (max-width: 480px) {
-      header {
-        font-size: 1.8rem;
-        height: 3.8em;
-      }
-      footer {
-        font-size: 0.8rem;
-        height: 3em;
-        line-height: 3em;
-      }
-      body {
-        padding-top: 3.8em;
-        padding-bottom: 3em;
-      }
-      main {
-        min-height: calc(100vh - 3.8em - 3em);
-        padding: 1.5rem 1rem 1.5rem;
-        gap: 2rem;
-      }
-      .flags-row {
-        padding-top: calc(3.8em + 1.5rem);
-        padding-bottom: 1.5rem;
-        gap: 1rem; /* Reduz o gap para caber duas bandeiras em telas muito pequenas */
-      }
-      .flags-row .flag {
-        width: 100px; /* Ajusta ainda mais o tamanho da bandeira */
-        height: 68px;
-      }
-      .arguments {
-        font-size: 1.1rem;
-        padding: 1.5rem 1.8rem;
-      }
-      .testament-section h2 {
-          font-size: 1.5rem;
-      }
-      .testament-section .buttons a {
-        /* Ajusta o tamanho dos botões de logo para telas muito pequenas */
-        width: 55px; /* Bolinha ainda menor */
-        height: 55px;
-      }
-      .testament-section .buttons a img {
-        width: 60%;
-        height: 60%;
-      }
-      .sample-section {
-        max-width: 90vw;
-      }
-      .player-title {
-          font-size: 1.1rem;
-      }
-      .call-to-action-section {
-          font-size: 1rem;
-          padding: 1.5rem 1.8rem;
-      }
-      .main-title-neon {
-          font-size: 1.6rem;
-      }
-      .subtitle-strong {
-          font-size: 1.2rem;
-      }
-    }
-  </style>
+        /* --- Custom Neon Effects (Retained from original CSS) --- */
+        .neon-text {
+            color: #f9f871;
+            text-shadow:
+                0 0 8px #f9f871,
+                0 0 20px #f9f871,
+                0 0 40px #f9f871,
+                0 0 80px #f9f871;
+            animation: neonPulseYellow 2s infinite alternate;
+        }
+
+        @keyframes neonPulseYellow {
+            0% {
+                text-shadow: 0 0 10px #f9f871, 0 0 30px #f9f871, 0 0 50px #f9f871, 0 0 100px #f9f871;
+            }
+            100% {
+                text-shadow: 0 0 20px #f9f871, 0 0 40px #f9f871, 0 0 70px #f9f871, 0 0 120px #f9f871;
+            }
+        }
+
+        .shadow-neon-lg {
+            box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+            border: 1px solid rgba(249, 248, 113, 0.4);
+        }
+
+        .flag {
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.75);
+            animation: fadeOpacity 8s infinite alternate ease-in-out;
+            box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .flag:hover {
+            filter: brightness(1);
+            box-shadow: 0 0 25px rgba(249, 248, 113, 1);
+        }
+
+        .flag.south { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg'); animation-delay: 0s; }
+        .flag.north { background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Flag_of_North_Korea.svg'); animation-delay: 4s; }
+
+        @keyframes fadeOpacity {
+            0% {opacity: 1;}
+            100% {opacity: 0.4;}
+        }
+
+        /* Utility classes for play button SVG */
+        .svg-icon {
+            transition: all 0.3s ease;
+        }
+        .paused-state { display: none; }
+    </style>
 </head>
-<body>
-  <header>성경</header>
+<body class="bg-black text-white antialiased">
 
-  <section class="flags-row" aria-label="국기">
-    <div class="flag south" role="img" aria-label="대한민국 국기"></div>
-    <div class="flag north" role="img" aria-label="조선민주주의인민공화국 국기"></div>
-  </section>
+    <!-- Header fixed with neon yellow text -->
+    <header class="fixed top-0 left-0 right-0 h-18 bg-black flex justify-center items-center text-4xl font-extrabold tracking-wider z-50 shadow-md">
+        <h1 class="neon-text text-3xl md:text-4xl py-4">성경</h1>
+    </header>
 
-  <main>
-    <section class="arguments" aria-label="오디오북의 혜택">
-      <h2 class="main-title-neon">성경 오디오북 – 한국어 버전</h2>
-      <p class="subtitle-strong">당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.</p>
-      깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
-      바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
-      가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
+    <!-- Flags Section -->
+    <section class="flex justify-center items-center gap-4 md:gap-12 w-full pt-6" aria-label="국기">
+        <div class="flag south w-28 h-20 sm:w-40 sm:h-28 rounded-xl cursor-default" role="img" aria-label="대한민국 국기"></div>
+        <div class="flag north w-28 h-20 sm:w-40 sm:h-28 rounded-xl cursor-default" role="img" aria-label="조선민주주의인민공화국 국기"></div>
     </section>
 
-    <section class="sample-section" aria-label="오디오 샘플">
-      <h3 class="player-title">지금 들어보세요 – 샘플 재생을 클릭하세요</h3>
-      <button class="play-button" aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
-        <div class="play-icon" id="playIcon"></div>
-      </button>
-      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/retail-sample.MP3"></audio>
-    </section>
+    <!-- Main Content Container -->
+    <main class="flex flex-col items-center w-full max-w-5xl mx-auto p-4 md:p-8 space-y-12">
 
-    <section class="call-to-action-section" aria-label="오디오북 기능 및 구매 안내">
-        <p>여러분의 지원은 새로운 번역본 제작 및 고품질 녹음 유지에 도움이 됩니다.</p>
-        <p>👉 <strong>준비되셨나요?</strong> 지금 바로 <strong>한국어 성경 오디오북</strong>을 듣기 시작하세요 – 즐겨찾는 모든 플랫폼에서 이용 가능합니다!</p>
-    </section>
+        <!-- Arguments / Benefits Section -->
+        <section class="bg-black/60 p-6 md:p-8 rounded-2xl shadow-neon-lg max-w-xl lg:max-w-3xl text-center" aria-label="오디오북의 혜택">
+            <h2 class="neon-text text-xl md:text-3xl font-bold mb-4">성경 오디오북 – 한국어 버전</h2>
+            <p class="text-lg md:text-xl font-bold text-yellow-100 mb-6">당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.</p>
+            <p class="text-base md:text-lg font-medium leading-relaxed">
+                깊은 은혜와 평안을 경험하며, 마음의 안정을 누릴 수 있습니다.<br />
+                바쁜 일상 속에서도 쉽게 하나님의 말씀을 접할 수 있습니다.<br />
+                가족과 함께 신앙 생활을 더욱 풍성하게 할 수 있습니다.
+            </p>
+        </section>
 
-    <div class="testament-container">
-        <section class="testament-section" aria-label="오디오 구매 옵션">
-            <h2 class="main-title-neon">성경</h2> <p>성경의 깊은 지혜와 신성한 가르침을 경험하세요.</p>
-            <nav class="buttons" aria-label="오디오 구매 옵션">
-                <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
-                <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
-                <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+        <!-- Sample Player Section -->
+        <section class="bg-[#f9f871]/10 p-8 rounded-2xl shadow-neon-lg flex flex-col items-center justify-center gap-6 max-w-xl w-full" aria-label="오디오 샘플">
+            <h3 class="text-xl md:text-2xl font-bold text-[#f9f871] text-shadow-md">지금 들어보세요 – 샘플 재생을 클릭하세요</h3>
+            
+            <button class="play-button bg-[#f9f871] border-none rounded-full w-20 h-20 flex items-center justify-center cursor-pointer shadow-xl shadow-[#f9f871]/60 transition duration-200 hover:scale-110 active:scale-95" 
+                aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
+                
+                <!-- Play Icon (Triangle) -->
+                <svg id="playIcon" class="svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+
+                <!-- Pause Icon (Two Bars) -->
+                <svg id="pauseIcon" class="svg-icon paused-state" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="10" y1="4" x2="10" y2="20"></line>
+                    <line x1="18" y1="4" x2="18" y2="20"></line>
+                </svg>
+            </button>
+            <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/retail-sample.MP3"></audio>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-black/60 p-6 md:p-8 rounded-2xl shadow-neon-lg max-w-xl lg:max-w-3xl text-center mt-12" aria-label="오디오북 기능 및 구매 안내">
+            <p class="text-base md:text-lg mb-4 font-medium">여러분의 지원은 새로운 번역본 제작 및 고품질 녹음 유지에 도움이 됩니다.</p>
+            <p class="text-lg md:text-xl font-extrabold text-white">👉 <strong class="neon-text text-xl md:text-2xl">준비되셨나요?</strong> 지금 바로 <strong>한국어 성경 오디오북</strong>을 듣기 시작하세요 – 즐겨찾는 모든 플랫폼에서 이용 가능합니다!</p>
+        </section>
+
+        <!-- Store Links Section -->
+        <section class="flex flex-col items-center w-full max-w-xl lg:max-w-3xl bg-black/60 p-6 md:p-8 rounded-2xl shadow-neon-lg text-center" aria-label="오디오 구매 옵션">
+            <h2 class="neon-text text-2xl md:text-3xl font-bold mb-2">성경</h2>
+            <p class="text-base md:text-lg mb-8 text-gray-300">성경의 깊은 지혜와 신성한 가르침을 경험하세요.</p>
+            <nav class="buttons flex flex-wrap justify-center gap-6 md:gap-10 w-full" aria-label="오디오 구매 옵션">
+                
+                <!-- Kobo Link -->
+                <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer" aria-label="Kobo"
+                   class="flex justify-center items-center bg-transparent w-20 h-20 md:w-24 md:h-24 rounded-full transition duration-300 overflow-hidden hover:scale-115 hover:shadow-neon-lg hover:border-2 border-transparent hover:border-[#f9f871] p-1">
+                    <img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo" class="w-11/12 h-11/12 object-contain filter brightness-90 hover:brightness-125 transition duration-300">
+                </a>
+                
+                <!-- Google Play Books Link (Tamanho ajustado para w-3/4 h-3/4) -->
+                <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"
+                   class="flex justify-center items-center bg-transparent w-20 h-20 md:w-24 md:h-24 rounded-full transition duration-300 overflow-hidden hover:scale-115 hover:shadow-neon-lg hover:border-2 border-transparent hover:border-[#f9f871] p-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo" class="w-3/4 h-3/4 object-contain filter brightness-90 hover:brightness-125 transition duration-300">
+                </a>
+                
+                <!-- Spotify Link -->
+                <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer" aria-label="Spotify"
+                   class="flex justify-center items-center bg-transparent w-20 h-20 md:w-24 md:h-24 rounded-full transition duration-300 overflow-hidden hover:scale-115 hover:shadow-neon-lg hover:border-2 border-transparent hover:border-[#f9f871] p-1">
+                    <img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo" class="w-11/12 h-11/12 object-contain filter brightness-90 hover:brightness-125 transition duration-300">
+                </a>
             </nav>
         </section>
-    </div>
 
-  </main>
+    </main>
 
-  <footer>© 2025 T S TELLES. 모든 권리 보유.</footer>
+    <!-- Footer fixed -->
+    <footer class="fixed bottom-0 left-0 right-0 h-14 bg-black text-gray-400 flex items-center justify-center text-xs md:text-sm z-50 shadow-inner">
+        &copy; 2025 T S TELLES. 모든 권리 보유.
+    </footer>
 
-  <script>
-    const audio = document.getElementById('audioSample');
-    const btn = document.getElementById('playPauseBtn');
-    const playIcon = document.getElementById('playIcon');
+    <script>
+        // JavaScript for Audio Player Toggle
+        const audio = document.getElementById('audioSample');
+        const btn = document.getElementById('playPauseBtn');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
 
-    let isPlaying = false;
+        let isPlaying = false;
 
-    function togglePlayPause() {
-      if (isPlaying) {
-        audio.pause();
-        playIcon.style.borderLeft = '18px solid black'; // Play icon
-        playIcon.style.borderRight = 'none';
-        playIcon.style.width = '0';
-      } else {
-        audio.play();
-        playIcon.style.borderLeft = 'none'; // Pause icon
-        playIcon.style.borderRight = 'none';
-        playIcon.style.width = '12px'; // Adjust width for pause bars
-        playIcon.style.borderLeft = '6px solid black';
-        playIcon.style.borderRight = '6px solid black';
-      }
-      isPlaying = !isPlaying;
-    }
+        function updateIcon(playing) {
+            if (playing) {
+                playIcon.classList.add('paused-state');
+                pauseIcon.classList.remove('paused-state');
+            } else {
+                playIcon.classList.remove('paused-state');
+                pauseIcon.classList.add('paused-state');
+            }
+        }
 
-    btn.addEventListener('click', togglePlayPause);
+        function togglePlayPause() {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.play().catch(error => {
+                    console.error("Audio playback failed:", error);
+                    // Fallback visual feedback if autoplay/play fails
+                    updateIcon(false);
+                });
+            }
+            isPlaying = !isPlaying;
+            updateIcon(isPlaying);
+        }
 
-    audio.addEventListener('ended', () => {
-      isPlaying = false;
-      playIcon.style.borderLeft = '18px solid black'; // Reset to play icon
-      playIcon.style.borderRight = 'none';
-      playIcon.style.width = '0';
-    });
-  </script>
+        // Initialize icon state on load
+        updateIcon(false);
+
+        btn.addEventListener('click', togglePlayPause);
+
+        // Listen for internal audio events to keep state in sync
+        audio.addEventListener('play', () => {
+            isPlaying = true;
+            updateIcon(true);
+        });
+
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
+            updateIcon(false);
+        });
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            updateIcon(false);
+        });
+    </script>
 </body>
 </html>
