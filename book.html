@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&Q Literature</title>
+    <!-- Carrega o Tailwind CSS CDN para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter como padrão para uma leitura moderna e clara */
+        html { font-family: 'Inter', sans-serif; }
+        
+        /* Estilos personalizados para o degradê e separador visual */
+        .series-background {
+            background: #000000; /* Preto absoluto */
+        }
+        
+        /* Efeito Glow para o Título Principal (Reino & Pena) */
+        .text-neon {
+            color: #ffffff;
+            text-shadow:
+                0 0 5px #fff,       /* Brilho interno sutil */
+                0 0 10px #ffde59,  /* Brilho interno amarelo */
+                0 0 20px #d4af37,  /* Brilho dourado principal */
+                0 0 35px #d4af37; /* Brilho dourado difuso */
+        }
+
+        /* EFEITO Dourado Metálico com mais reflexo */
+        .text-metallic-gold {
+            /* Degradê Metálico AFIADO: cria reflexos mais definidos para simular o polimento do metal. */
+            background: linear-gradient(180deg, #fff 0%, #ffde59 20%, #d4af37 40%, #997c27 80%, #d4af37 100%);
+            /* Clipping para que o background seja visível apenas onde houver texto */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Sombra sutil para dar profundidade (efeito 3D/emboss) */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+            /* Garante que o efeito funcione */
+            display: inline-block;
+        }
+        
+        .book-cover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Sombra mais forte para o efeito 3D */
+            /* Transição para transformar e para o novo box-shadow (brilho) */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+        }
+        .book-cover:hover {
+            transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
+            /* NOVO: Brilho dourado forte ao passar o mouse */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.6);
+        }
+    </style>
+    <!-- Configuração do Tailwind para usar a fonte Inter e cores escuras -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-gold': '#d4af37', // Ouro padrão
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="series-background text-white min-h-screen">
+
+    <!-- Container Principal com Layout Flexível e Padding (MAX-WIDTH APLICADO AQUI) -->
+    <div class="container mx-auto px-4 py-12 md:py-20 max-w-7xl">
+
+        <!-- Título da Série e Descrição -->
+        <header class="text-center mb-10 space-y-8">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-neon flex flex-col items-center justify-center gap-2">
+                <span>K&Q</span>
+                <span>Literature</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-medium">
+                Fiction that resonates.
+            </p>
+        </header>
+
+        <!-- SEÇÃO: Capas Lado a Lado (agora como botões/links) -->
+        <section class="flex justify-center items-end space-x-4 md:space-x-8 mb-16">
+            
+            <!-- Capa 1: Menor (Botão para Capa Welcome to New York) -->
+            <!-- Link atualizado para welcome-to-ny.html -->
+            <a href="welcome-to-ny.html" aria-label="Acessar livro Welcome to New York Born Ricciwood">
+                <img
+                    src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.jpg"
+                    alt="Capa do livro Welcome to New York Born Ricciwood"
+                    class="book-cover w-20 md:w-32 h-auto rounded-lg border-2 border-white/50 opacity-80 hover:opacity-100"
+                    onerror="this.onerror=null;this.src='https://placehold.co/120x180/4b5563/ffffff?text=Capa+1';"
+                >
+            </a>
+            
+            <!-- Capa 2: Central e Maior (Botão para Destaque Principal) -->
+            <a href="o-poder-dos-quatro-tronos-4.html" aria-label="Acessar livro O Poder dos Quatro Tronos 4">
+                <img
+                    src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-O-PODER-DOS-QUATRO-TRONOS4.jpg"
+                    alt="Capa do livro O Poder dos Quatro Tronos 4"
+                    class="book-cover w-24 md:w-40 h-auto rounded-lg border-4 border-white"
+                    onerror="this.onerror=null;this.src='https://placehold.co/150x225/4b5563/ffffff?text=Capa+2';"
+                >
+            </a>
+
+            <!-- Capa 3: Menor (Botão para Capa Vol. Único) -->
+            <a href="vol-unico-1zin.html" aria-label="Acessar livro Volume Único 1zin">
+                <img
+                    src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-vol-único-1zin.jpg"
+                    alt="Capa do livro Volume Único 1zin"
+                    class="book-cover w-20 md:w-32 h-auto rounded-lg border-2 border-white/50 opacity-80 hover:opacity-100"
+                    onerror="this.onerror=null;this.src='https://placehold.co/120x180/4b5563/ffffff?text=Capa+3';"
+                >
+            </a>
+        </section>
+        
+        <!-- Separador Estilizado 1: Entre Capas e Manifesto -->
+        <div class="flex justify-center mb-16">
+            <div class="h-0.5 w-full max-w-xs bg-gradient-to-r from-transparent via-accent-gold to-transparent rounded-full"></div>
+        </div>
+
+        <!-- Seção do Manifesto (Vitrine) -->
+        <section id="devocionais" class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto">
+
+            <!-- Card Devocional 1: O que é Isso? (Manifesto) -->
+            <div class="bg-black border border-accent-gold/50 p-8 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
+                <div class="flex flex-col items-center text-center">
+                    
+                    <!-- CLASSE text-metallic-gold para o efeito metálico mais reluzente -->
+                    <h2 class="text-4xl font-bold mb-4 text-metallic-gold">
+                        What You’ll Find Here
+                    </h2>
+                    
+                    <!-- TEXTO DE DESCRIÇÃO CURTO - Cor de texto ajustada para mais contraste -->
+                    <p class="text-gray-200 text-lg mb-0 text-left leading-relaxed mt-4">
+                        The fiction titles presented by Kingdom & Quill are written by T. S. Telles and crafted to stand shoulder-to-shoulder with mainstream entertainment in the romance and fantasy genres. Though designed to entertain, these stories carry themes that naturally resonate with the Christian community and, out of respect for the convictions behind this project, they avoid explicit sexual content and any values that clash with a life of faith. You won’t find identity-driven manifestos or crude language here. What you’ll find are deep narratives—plots that balance tension and purpose without losing their edge.
+                        <br><br>
+                        If you came for romance, suspense, or fantasy, you’re in the right place. Check each book’s content rating and its availability in your preferred language.
+                        <br><br>
+                        Sit back. Explore. And let each story speak for itself. God bless you.
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- NOVO BLOCO: Destaque de Livro Adicional (Welcome to New York) -->
+        <section id="destaque-wtny" class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto mt-12">
+            
+            <!-- Card de Destaque do Livro -->
+            <div class="bg-black border border-accent-gold/50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
+                <div class="flex items-start space-x-6"> 
+                    
+                    <!-- Capa do Livro (Esquerda) -->
+                    <!-- Link atualizado para welcome-to-ny.html -->
+                    <a href="welcome-to-ny.html" aria-label="Acessar livro Welcome to New York Born Ricciwood" class="flex-shrink-0">
+                        <img
+                            src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.jpg"
+                            alt="Capa do livro Welcome to New York Born Ricciwood"
+                            class="book-cover w-24 md:w-36 h-auto rounded-lg border-2 border-accent-gold"
+                            onerror="this.onerror=null;this.src='https://placehold.co/150x225/4b5563/ffffff?text=WTNY';"
+                        >
+                    </a>
+                    
+                    <!-- Descrição/Título do Livro (Direita) -->
+                    <div class="flex-grow">
+                        <h3 class="text-3xl font-bold mb-2 text-metallic-gold">
+                            Welcome to New York
+                        </h3>
+                        <!-- Subtítulo -->
+                        <p class="text-gray-300 text-lg mb-4">
+                            Part 1: Born Ricciwood
+                        </p>
+                        <p class="text-gray-400 text-sm mb-4">
+                            <span class="font-bold text-accent-gold">Genre:</span> Contemporary Romance, Christian Romance, Urban Romance, Emotional Drama, Crime Fiction, Fan Fiction
+                            <br>
+                            <span class="font-bold text-accent-gold">Language:</span> English (US)
+                        </p>
+                        
+                        <!-- SINOPSE -->
+                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2">
+                            <p>Gabriel Ricciwood has always been a mystery—even to himself. Haunted by tragedy, carrying the legacy of a last name no one dares speak aloud, Gabriel steps into Sant’Hale, an elite Manhattan school where silence is survival and history is rewritten to serve the powerful.</p>
+                            <p>He doesn’t belong.</p>
+                            <p>Not with the rich heirs of the Council. Not with the perfect girls. Not with the stories they tell of his grandfather. But beneath the marble halls and well-dressed lies, Gabriel finds something he never expected: truth, loyalty, faith—and maybe even love. Between whispers of betrayal and the scars of a past he didn’t choose, Gabriel must decide who he is, what he believes, and how far he’s willing to go to protect the people he’s learning to care about.</p>
+                        </div>
+
+                        <!-- PLACA DE CLASSIFICAÇÃO: Bandeira vermelha com "16" -->
+                        <div class="inline-block bg-red-600 text-white font-black text-base px-3 py-1 rounded-sm shadow-lg mb-4">
+                            16
+                        </div>
+                        <br>
+                        
+                        <!-- BOTÃO -->
+                        <!-- Link do botão atualizado para welcome-to-ny.html -->
+                        <a href="welcome-to-ny.html" class="inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- NOVO Separador Estilizado 2: Entre Manifesto e Rodapé -->
+        <div class="flex justify-center mt-16">
+            <div class="h-0.5 w-full max-w-xs bg-gradient-to-r from-transparent via-accent-gold to-transparent rounded-full"></div>
+        </div>
+
+    </div> <!-- FIM do Container Principal (max-w-7xl) -->
+
+    <!-- Rodapé Simples - Movido para fora do container para ocupar toda a largura. -->
+    <footer class="w-full text-center px-4 py-4 text-gray-400 text-sm border-t border-gray-700">
+        <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
