@@ -40,10 +40,13 @@
         
         .book-cover {
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Sombra mais forte para o efeito 3D */
-            transition: transform 0.3s ease-in-out;
+            /* Transição para transformar e para o novo box-shadow (brilho) */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
         }
         .book-cover:hover {
             transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
+            /* NOVO: Brilho dourado forte ao passar o mouse */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.6);
         }
     </style>
     <!-- Configuração do Tailwind para usar a fonte Inter e cores escuras -->
@@ -92,7 +95,7 @@
             </a>
             
             <!-- Capa 2: Central e Maior (Botão para Destaque Principal) -->
-            <a href="#" aria-label="Acessar Devocional Hear, O Israel">
+            <a href="hear-o-israel.html" aria-label="Acessar Devocional Hear, O Israel">
                 <img
                     src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/capa-devocional-ingles.jpg"
                     alt="Capa do Devocional Hear, O Israel: 30 Days to Align with the Father’s Voice"
@@ -102,7 +105,7 @@
             </a>
 
             <!-- Capa 3: Menor (Botão para Devocional sobre Pornografia) -->
-            <a href="#" aria-label="Acessar Devocional sobre Pornografia">
+            <a href="understanding-and-overcoming.html" aria-label="Acessar Devocional sobre Pornografia: Understanding and Overcoming">
                 <img
                     src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/devocional-sobre-pornografia-capa.jpg"
                     alt="Capa do Devocional sobre Pornografia"
