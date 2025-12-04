@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>성경 오디오북 - 한국어 개역한글 버전 | T. S. Telles</title>
-  <meta name="description" content="한국어 개역한글 성경 오디오북 전체를 들어보세요. 깨끗한 음질, 광고 없이, 오프라인 재생 가능. 즐겨찾는 모든 플랫폼에서 이용 가능합니다." />
-  <meta name="keywords" content="성경 오디오북, 한국어 성경, 오디오 성경, 성경 낭독, 개역한글, 성경 듣기, 오프라인 성경, 기독교 오디오북, 하나님의 말씀, 구약, 신약" />
+  <title>오디오 성경 – 한국어 성경 전체 듣기 | T. S. Telles</title>
+
+  <meta name="description" content="한국어로 성경 전체를 고품질 오디오로 들으세요. 광고 없는 명확한 오디오, 오프라인에서도 재생 가능. 여러분이 선호하는 모든 플랫폼에서 이용하실 수 있습니다." />
+  <meta name="keywords" content="성경, 오디오 성경, 한국어 성경, 듣기, 구약, 신약, T. S. Telles" />
+
   <style>
     /* Reset e base */
     body {
@@ -21,7 +23,7 @@
       padding-bottom: 3.5em;
     }
 
-    /* Header fixo */
+    /* Header fixo com neon amarelo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -62,7 +64,6 @@
       }
     }
 
-    /* Main */
     main {
       flex: 1;
       display: flex;
@@ -77,35 +78,242 @@
       min-height: calc(100vh - 4.5em - 3.5em);
     }
 
+    /* Bandeira da Coreia */
+    .flags-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: calc(4.5em + 2rem);
+      padding-bottom: 2rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .flag {
+      width: 160px;
+      height: 110px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      filter: brightness(0.75);
+      animation: fadeOpacity 8s infinite alternate ease-in-out;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.8);
+      cursor: default;
+      user-select: none;
+      transition: filter 0.3s ease;
+    }
+
+    .flag.korea {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg');
+    }
+
+    .flag:hover {
+      filter: brightness(1);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 1);
+    }
+
+    @keyframes fadeOpacity {
+      0% {opacity: 1;}
+      100% {opacity: 0.4;}
+    }
+
+    /* Argumentos */
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      text-align: center;
+      max-width: 720px;
+      user-select: none;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .main-title-neon {
+      color: #f9f871;
+      font-size: 2rem;
+      text-shadow:
+        0 0 8px #f9f871,
+        0 0 20px #f9f871,
+        0 0 40px #f9f871,
+        0 0 80px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+    }
+
+    .subtitle-strong {
+      margin-top: 0.5rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    /* Sample / Player */
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 2.5rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      max-width: 700px;
+      width: 100%;
+      margin: 3rem auto 0 auto;
+    }
+
+    .player-title {
+      color: #f9f871;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px #f9f871;
+      text-align: center;
+    }
+
+    /* Contêiner dos botões */
+    .testament-section {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .testament-section h2 {
+      color: #f9f871;
+      font-size: 1.8rem;
+      text-shadow: 0 0 5px #f9f871;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .buttons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: rgba(249, 248, 113, 0.1);
+      transform: scale(1.15);
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+      border-color: #f9f871;
+    }
+
+    .buttons a img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      filter: brightness(0.9);
+      transition: filter 0.3s ease;
+    }
+
+    .buttons a:hover img {
+      filter: brightness(1.2);
+    }
+
+    /* CTA */
+    .call-to-action-section {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-size: 1.4rem;
+      max-width: 720px;
+      text-align: center;
+      margin: 3rem auto 0 auto;
+      user-select: none;
+    }
+
     /* Footer */
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
       height: 3.5em;
-      background: black;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: black;
+      color: #ccc;
       text-align: center;
+      line-height: 3.5em;
       font-size: 0.9rem;
-      opacity: 0.7;
-      user-select: none;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
     }
   </style>
 </head>
 
 <body>
-  <header>한국어 성경 오디오북</header>
 
-  <main>
-    <!-- Seu conteúdo continua aqui exatamente igual -->
-  </main>
+<header>한국어 오디오 성경</header>
 
-  <!-- COPYRIGHT CENTRALIZADO -->
-  <footer>
-    <p>&copy; 2025 Kingdom&Quill. 모든 권리 보유.</p>
-  </footer>
+<main>
+
+  <div class="flags-row">
+    <div class="flag korea"></div>
+  </div>
+
+  <section class="arguments">
+    <h1 class="main-title-neon">한국어 오디오 성경 – 전체 성경을 편하게 듣기</h1>
+    <p class="subtitle-strong">구약 + 신약 • 고품질 • 광고 없음</p>
+  </section>
+
+  <section class="sample-section">
+    <p class="player-title">샘플 듣기</p>
+    <!-- Trocar o SRC quando quiser -->
+    <audio controls>
+      <source src="AQUI-O-ARQUIVO-EM-KOREANO.mp3" type="audio/mpeg" />
+    </audio>
+  </section>
+
+  <section class="testament-section">
+    <h2>플랫폼에서 듣기</h2>
+    <div class="buttons">
+
+      <!-- Substituir os links quando quiser -->
+      <a href="#" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Spotify_Logo.png" alt="Spotify" />
+      </a>
+
+      <a href="#" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+      </a>
+
+      <a href="#" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Amazon_Music_logo.svg" alt="Amazon" />
+      </a>
+
+    </div>
+  </section>
+
+  <section class="call-to-action-section">
+    <p><strong>준비되셨나요?</strong></p>
+    <p>성경을 어디서든, 언제든, 고품질 오디오로 들을 수 있습니다.</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 Kingdom&Quill. All rights reserved.
+</footer>
 
 </body>
 </html>
