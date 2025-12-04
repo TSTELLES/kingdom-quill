@@ -47,14 +47,27 @@
             color: var(--text-light);
             font-weight: 700;
             transition: all 0.3s ease;
-            /* Sombra atualizada para refletir a cor Ouro Escuro */
+            /* Sombra Padrão: Mais suave para os botões secundários */
             box-shadow: 0 4px 15px rgba(255, 160, 0, 0.4); 
         }
-        .btn-cta-clean:hover {
+        
+        /* NOVO ESTILO: Botão CTA Principal com Efeito GLOW/Brilho Intenso */
+        .btn-cta-glow {
+            /* Cor de fundo e texto permanecem os mesmos */
+            background-color: var(--accent-dark); 
+            color: var(--text-light);
+            font-weight: 700;
+            transition: all 0.3s ease;
+            /* Sombra Dourada Intensa para o efeito glow */
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.8), 
+                        0 4px 20px rgba(255, 160, 0, 0.7);
+        }
+        .btn-cta-glow:hover {
             background-color: #E3B100; /* Tom de ouro mais profundo no hover */
-            transform: translateY(-2px);
-            /* Sombra atualizada para refletir a cor Ouro Escuro */
-            box-shadow: 0 6px 20px rgba(255, 160, 0, 0.6);
+            transform: translateY(-3px); /* Subida mais acentuada */
+            /* Brilho ainda mais intenso no hover */
+            box-shadow: 0 0 30px rgba(255, 193, 7, 1),
+                        0 8px 30px rgba(255, 160, 0, 0.9);
         }
 
         /* Destaque para o Plano Pack com NEON BRANCO (agora usado em ambos) */
@@ -112,8 +125,8 @@
 
             <!-- Chamada para Ação (CTA Principal Centrado) -->
             <div class="mt-8">
-                <!-- CTA Único e Centralizado: Versão em Inglês. APONTANDO PARA AMAZON -->
-                <a href="https://www.amazon.com/-/pt/dp/B0FK2YJC5L/ref=tmm_kin_swatch_0" target="_blank" class="btn-cta-clean font-bold py-4 px-10 rounded-xl shadow-xl text-xl uppercase tracking-wider inline-block">
+                <!-- CTA Único e Centralizado: USANDO O NOVO ESTILO GLOW -->
+                <a href="https://www.amazon.com/-/pt/dp/B0FK2YJC5L/ref=tmm_kin_swatch_0" target="_blank" class="btn-cta-glow font-bold py-4 px-10 rounded-xl text-xl uppercase tracking-wider inline-block">
                     Receive & Meditate Today
                 </a>
             </div>
@@ -130,23 +143,32 @@
                 Less Distraction, More Genuine Connection
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Benefício 1: Conteúdo Profundo e Perfeito (Atualizado) -->
+                <!-- Benefício 1: Conteúdo Profundo e Perfeito (ÍCONE BÍBLIA) -->
                 <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
-                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <!-- ÍCONE BÍBLIA (Open Book with Cross) - MANTIDO -->
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m-7-5h14a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v10a1 1 0 001 1zM10 9h4M12 7v4"/>
+                    </svg>
                     <h3 class="text-xl font-semibold mb-2 text-text-light">Deep & Perfect Content</h3>
                     <!-- Descrição Padrão -->
                     <p class="text-gray-400">Carefully crafted content, ideal for a perfect daily encounter, transforming faith into a living experience.</p>
                 </div>
-                <!-- Benefício 2 -->
+                <!-- Benefício 2: Solid Growth (NOVO ÍCONE: GRÁFICO DE TENDÊNCIA/CRESCIMENTO) -->
                 <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
-                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21H12M4 10h4m-4 0v10M4 10h2a2 2 0 012 2v10m0-10h2a2 2 0 012 2v10m-2 2h2"></path></svg>
+                    <!-- NOVO ÍCONE: GRÁFICO DE CRESCIMENTO -->
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
                     <h3 class="text-xl font-semibold mb-2 text-text-light">Solid Growth</h3>
                     <!-- Descrição Padrão -->
                     <p class="text-gray-400">Practical reflections and exercises that transform biblical theory into real life.</p>
                 </div>
-                <!-- Benefício 3 -->
+                <!-- Benefício 3: Consistent Faith Routine (NOVO ÍCONE: CALENDÁRIO SIMPLES) -->
                 <div class="text-center p-6 rounded-lg border border-subtle-gray hover:border-accent-color transition duration-300 bg-card-bg shadow-lg">
-                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4M17 3h4m-2 2v4m-12 3h14a2 2 0 002-2V7a2 2 0 00-2-2H8a2 2 0 00-2 2v6a2 2 0 002 2z"></path></path></svg>
+                    <!-- NOVO ÍCONE: CALENDÁRIO/ROTINA -->
+                    <svg class="w-10 h-10 mx-auto mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
                     <h3 class="text-xl font-semibold mb-2 text-text-light">Consistent Faith Routine</h3>
                     <!-- Descrição Padrão -->
                     <p class="text-gray-400">Rekindle the flame of your faith with a daily and intentional encounter with God.</p>
@@ -196,32 +218,6 @@
         </div>
     </section>
 
-    <!-- Seção de Testemunhos (Prova Social) - Fundo Ligeiramente Mais Claro -->
-    <section class="py-16 md:py-20 bg-section-bg">
-        <div class="container mx-auto px-6 max-w-5xl text-center">
-            <!-- H2 (TÍTULO) - SEM NEON -->
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-light">
-                What People Are Saying
-            </h2>
-            <p class="text-xl font-light mb-12 text-gray-500">
-                See the impact this devotional is having:
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Testemunho 1 (Traduzido e Localização Genérica) -->
-                <div class="bg-card-bg p-6 rounded-xl shadow-md border border-subtle-gray">
-                    <p class="italic mb-4 text-gray-300">"I was discouraged with Bible reading, but the 7 daily minutes brought me back. Today's reflection on forgiveness transformed my day. It's a gift!"</p>
-                    <p class="font-semibold text-sm text-accent">- Anna</p>
-                </div>
-                <!-- Testemunho 2 (Traduzido e Localização Genérica) -->
-                <div class="bg-card-bg p-6 rounded-xl shadow-md border border-subtle-gray">
-                    <p class="italic mb-4 text-gray-300">"The language is simple, but the content is deep. I finally managed to create a consistent devotional routine. I recommend it to everyone seeking peace of mind."</p>
-                    <p class="font-semibold text-sm text-accent">- Luke</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Seção Final de Compra (Preço e CTA Dupla) - Fundo Escuro -->
     <section id="comprar" class="py-16 md:py-20 bg-primary-bg border-t border-subtle-gray">
         <div class="container mx-auto px-6 max-w-6xl text-center">
@@ -262,8 +258,8 @@
                             </ul>
                         </div>
 
-                        <!-- LINK DE COMPRA: STANDARD (AGORA AMAZON) -->
-                        <a href="https://www.amazon.com/-/pt/dp/B0FK2YJC5L/ref=tmm_kin_swatch_0" target="_blank" class="bg-gray-700 text-text-light font-bold py-4 px-8 rounded-xl shadow-md text-xl uppercase tracking-wider block hover:bg-gray-600 transition duration-300">
+                        <!-- LINK DE COMPRA: STANDARD (AGORA AMAZON) - USANDO ESTILO CLEAN (SEGUNDÁRIO) -->
+                        <a href="https://www.amazon.com/-/pt/dp/B0FK2YJC5L/ref=tmm_kin_swatch_0" target="_blank" class="btn-cta-clean bg-gray-700 text-text-light font-bold py-4 px-8 rounded-xl shadow-md text-xl uppercase tracking-wider block hover:bg-gray-600 transition duration-300">
                             Start Your Spiritual Journey Now
                         </a>
                     </div>
@@ -311,8 +307,8 @@
                             </ul>
                         </div>
                         
-                        <!-- LINK DE COMPRA: PACK (LINK ATUALIZADO PARA GUMROAD) -->
-                        <a href="https://kingdomandquill.gumroad.com/l/kgkxyg" target="_blank" class="btn-cta-clean font-bold py-5 px-10 rounded-xl shadow-2xl text-2xl uppercase tracking-wider block">
+                        <!-- LINK DE COMPRA: PACK (LINK ATUALIZADO PARA GUMROAD) - USANDO ESTILO GLOW/Principal -->
+                        <a href="https://kingdomandquill.gumroad.com/l/kgkxyg" target="_blank" class="btn-cta-glow font-bold py-5 px-10 rounded-xl text-2xl uppercase tracking-wider block">
                             I Want the Full Package
                         </a>
                     </div>
