@@ -148,7 +148,7 @@
 
         </section>
         
-        <!-- NOVO BLOCO: Destaque de Livro Adicional (Welcome to New York) -->
+        <!-- BLOCO 1: Destaque de Livro (Welcome to New York) -->
         <section id="destaque-wtny" class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto mt-12">
             
             <!-- Card de Destaque do Livro -->
@@ -176,9 +176,10 @@
                             Part 1: Born Ricciwood
                         </p>
                         <p class="text-gray-400 text-sm mb-4">
+                            <!-- ALTERAÇÃO AQUI: Adicionado ", Portuguese (Brazil)" -->
                             <span class="font-bold text-accent-gold">Genre:</span> Contemporary Romance, Christian Romance, Urban Romance, Emotional Drama, Crime Fiction, Fan Fiction
                             <br>
-                            <span class="font-bold text-accent-gold">Language:</span> English (US)
+                            <span class="font-bold text-accent-gold">Language:</span> English (US), Portuguese (Brazil)
                         </p>
                         
                         <!-- SINOPSE -->
@@ -188,15 +189,68 @@
                             <p>Not with the rich heirs of the Council. Not with the perfect girls. Not with the stories they tell of his grandfather. But beneath the marble halls and well-dressed lies, Gabriel finds something he never expected: truth, loyalty, faith—and maybe even love. Between whispers of betrayal and the scars of a past he didn’t choose, Gabriel must decide who he is, what he believes, and how far he’s willing to go to protect the people he’s learning to care about.</p>
                         </div>
 
-                        <!-- PLACA DE CLASSIFICAÇÃO: Bandeira vermelha com "16" -->
-                        <div class="inline-block bg-red-600 text-white font-black text-base px-3 py-1 rounded-sm shadow-lg mb-4">
-                            16
-                        </div>
-                        <br>
+                        <!-- CLASSIFICAÇÃO: Já está em itálico e em inglês -->
+                        <p class="text-sm text-red-400 font-semibold mb-4 italic">
+                            This book is recommended for readers aged 16 and older due to mature themes.
+                        </p>
                         
-                        <!-- BOTÃO -->
-                        <!-- Link do botão atualizado para welcome-to-ny.html -->
-                        <a href="welcome-to-ny.html" class="inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm">
+                        <!-- BOTÃO: MODIFICADO para abrir o modal -->
+                        <button id="read-more-wtny" class="inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm cursor-pointer">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <!-- BLOCO 3: Destaque de Livro (O Poder dos Quatro Tronos) -->
+        <!-- O ID da seção foi mantido para evitar duplicação ou conflito -->
+        <section id="destaque-o-poder-dos-quatro-tronos-4" class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto mt-12">
+            
+            <!-- Card de Destaque do Livro -->
+            <div class="bg-black border border-accent-gold/50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
+                <div class="flex items-start space-x-6"> 
+                    
+                    <!-- Capa do Livro (Esquerda) -->
+                    <!-- Link ATUALIZADO para Axwar-o-poder-dos-quatro-tronos.html -->
+                    <a href="Axwar-o-poder-dos-quatro-tronos.html" aria-label="Acessar livro O Poder dos Quatro Tronos" class="flex-shrink-0">
+                        <img
+                            src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-O-PODER-DOS-QUATRO-TRONOS4.jpg"
+                            alt="Capa do livro O Poder dos Quatro Tronos 4"
+                            class="book-cover w-24 md:w-36 h-auto rounded-lg border-2 border-accent-gold"
+                            onerror="this.onerror=null;this.src='https://placehold.co/150x225/4b5563/ffffff?text=FANTASIA';"
+                        >
+                    </a>
+                    
+                    <!-- Descrição/Título do Livro (Direita) -->
+                    <div class="flex-grow">
+                        <!-- Título principal sem o 4 -->
+                        <h3 class="text-3xl font-bold mb-2 text-metallic-gold">
+                            O Poder dos Quatro Tronos
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            <!-- Gêneros atualizados com a lista fornecida pelo usuário -->
+                            <span class="font-bold text-accent-gold">Genre:</span> Fantasy, Adventure, Fiction, Horror, Thriller, Terror, Romance
+                            <br>
+                            <span class="font-bold text-accent-gold">Language:</span> Português (BR)
+                        </p>
+                        
+                        <!-- SINOPSE ATUALIZADA -->
+                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2">
+                            <p>Assim como o poder dos deuses, há muito tempo o tecido que unia os bruxos e as criaturas mágicas foi corrompido. Um reino que antes vivia em harmonia mergulhou na escuridão, dividido pela obsessão de um rei.</p>
+                            <p>Durante uma era inteira, um homem perverso governou o Grande Norte com mentiras e falsas narrativas. Bruxos com poderes incompreendidos foram escravizados e punidos por usar sua magia — não para dominar, mas para sobreviver.</p>
+                            <p>Neste primeiro livro da saga Axwar, Alyce é despertada por um chamado antigo: ela carrega um poder destinado a restaurar a justiça e reinar com sabedoria sobre os oprimidos. Mas num mundo atemporal, repleto de bruxos, dragões, caçadores, vampiros e criaturas sombrias, sua maior batalha não será contra monstros… e sim contra os rostos familiares que escondem traições.</p>
+                            <p>Para herdar o trono, Alyce precisará distinguir aliados de inimigos — antes que seja tarde demais.</p>
+                        </div>
+
+                        <!-- PLACA DE CLASSIFICAÇÃO: SUBSTITUÍDA pela tag <p> com o novo texto em português e classe 'italic' -->
+                        <p class="text-sm text-red-400 font-semibold mb-4 italic">
+                            Este livro é recomendado para leitores com 18 anos ou mais, devido a temas maduros e cenas de violência intensa.
+                        </p>
+                        
+                        <!-- BOTÃO: ATUALIZADO para Axwar-o-poder-dos-quatro-tronos.html -->
+                        <a href="Axwar-o-poder-dos-quatro-tronos.html" class="inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm">
                             Read More
                         </a>
                     </div>
@@ -205,12 +259,64 @@
 
         </section>
         
-        <!-- NOVO Separador Estilizado 2: Entre Manifesto e Rodapé -->
+        <!-- Separador Estilizado 2: Entre Manifesto e Rodapé -->
         <div class="flex justify-center mt-16">
             <div class="h-0.5 w-full max-w-xs bg-gradient-to-r from-transparent via-accent-gold to-transparent rounded-full"></div>
         </div>
 
     </div> <!-- FIM do Container Principal (max-w-7xl) -->
+    
+    <!-- Language Selection Modal (Pop-up) -->
+    <div id="language-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-gray-900 p-8 rounded-xl shadow-2xl max-w-sm w-full border border-accent-gold">
+            <h3 class="text-2xl font-bold mb-6 text-center text-metallic-gold">Select Language</h3>
+            <div class="space-y-4">
+                <!-- English Button (Link para a versão em inglês) -->
+                <a href="welcome-to-ny.html" class="block w-full text-center bg-gray-700 text-white font-semibold py-3 px-4 rounded-lg hover:bg-accent-gold hover:text-black transition duration-300 shadow-md">
+                    English (US)
+                </a>
+                <!-- Portuguese Button (Link para a versão em português) -->
+                <a href="Bem-vindo-a-Nova-Iorque.html" class="block w-full text-center bg-gray-700 text-white font-semibold py-3 px-4 rounded-lg hover:bg-accent-gold hover:text-black transition duration-300 shadow-md">
+                    Portuguese (Brazil)
+                </a>
+            </div>
+            <!-- Close Button -->
+            <button id="close-modal" class="mt-6 w-full text-center text-gray-400 hover:text-white transition duration-300 text-sm focus:outline-none">
+                Close
+            </button>
+        </div>
+    </div>
+    
+    <!-- Script para controle do Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const readMoreBtn = document.getElementById('read-more-wtny');
+            const modal = document.getElementById('language-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            
+            // Verifica se os elementos existem antes de adicionar event listeners
+            if (readMoreBtn && modal && closeModalBtn) {
+                // Abre o Modal
+                readMoreBtn.addEventListener('click', (e) => {
+                    // Previne a navegação padrão do botão/link
+                    e.preventDefault(); 
+                    modal.classList.remove('hidden');
+                });
+
+                // Fecha o Modal pelo botão "Close"
+                closeModalBtn.addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                });
+
+                // Fecha o Modal ao clicar fora da caixa do modal
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- Rodapé Simples - Movido para fora do container para ocupar toda a largura. -->
     <footer class="w-full text-center px-4 py-4 text-gray-400 text-sm border-t border-gray-700">
