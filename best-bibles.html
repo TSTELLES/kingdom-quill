@@ -227,16 +227,13 @@
         box-sizing: border-box;
     }
 
-    /* Ajustes específicos APENAS para o conteúdo interno do botão da Índia */
+    /* Ajustes específicos APENAS para o TEXTO do botão da Índia */
     .language-grid a[href="indianbibles.html"] span {
         font-size: 0.7rem; /* Letra menor */
         line-height: 1.1;
     }
     
-    .language-grid a[href="indianbibles.html"] img {
-        max-height: 50px; /* Bandeira menor para dar espaço ao texto */
-        margin-bottom: 0.2em;
-    }
+    /* Nota: A regra específica de tamanho de imagem para a Índia foi removida para garantir uniformidade */
 
     .language-grid a:not(.unavailable):hover {
         background: rgba(249, 248, 113, 0.1);
@@ -247,9 +244,8 @@
 
     .language-grid a img {
         max-width: 100%;
-        max-height: 70px;
+        height: 55px; /* Altura fixa para TODAS as bandeiras ficarem uniformes */
         width: auto;
-        height: auto;
         object-fit: contain;
         border-radius: 8px;
         filter: brightness(0.9);
@@ -344,10 +340,7 @@
         .subtitle-strong { font-size: 1.25rem; }
         .language-grid { gap: 1.2rem; }
         .language-grid a { width: 90px; height: 100px; font-size: 0.8rem; }
-        .language-grid a img { max-height: 60px; }
-        
-        /* Ajuste específico para Índia em Tablets */
-        .language-grid a[href="indianbibles.html"] img { max-height: 40px; }
+        .language-grid a img { height: 45px; } /* Ajuste uniforme para tablets */
     }
 
     @media (max-width: 480px) {
@@ -357,11 +350,11 @@
       main { min-height: calc(100vh - 3.8em - 2em); padding: 5.5em 1rem 1.5rem; gap: 2rem; }
       .language-grid { gap: 0.8rem; }
       .language-grid a { width: 80px; height: 90px; font-size: 0.7rem; }
-      .language-grid a img { max-height: 50px; }
+      .language-grid a img { height: 35px; } /* Ajuste uniforme para mobile */
 
-      /* Ajuste específico para Índia em Mobile */
-      .language-grid a[href="indianbibles.html"] img { max-height: 35px; }
+      /* Ajuste específico APENAS para TEXTO da Índia em Mobile */
       .language-grid a[href="indianbibles.html"] span { font-size: 0.6rem; }
+      /* Regra de imagem específica removida para uniformidade */
       
       .content-section { font-size: 0.95rem; padding: 1.2rem 1.5rem; max-width: 95%; }
       .main-title-neon { font-size: 1.3rem; }
@@ -452,6 +445,10 @@
         <a href="indianbibles.html" aria-label="Indian Bibles" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Indian Bibles' });">
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
           <span>भारतीय पवित्र बाइबिल<br>(Indian Bibles)</span>
+        </a>
+        <a href="hebrewbible.html" aria-label="Hebrew Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Hebrew Bible' });">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg" alt="Flag of Israel">
+          <span>עברית (Hebrew)</span>
         </a>
       </div>
       <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px; margin-top: 2rem;">
