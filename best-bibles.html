@@ -3,51 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Best Bibles Audiobooks</title> <!-- Título da página atualizado -->
+  <title>Best Bibles Audiobooks</title>
+  
   <!-- Meta tag para palavras-chave de SEO -->
   <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Tagalog, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW455H9ND7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-FW455H9ND7');
   </script>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-  <!-- Abaddon Font from CDNFonts.com -->
   <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
+
   <style>
     /* Variáveis CSS para cores neon */
     :root {
       --neon-yellow: #f9f871;
       --neon-pink-soft: #FF66CC;
       --neon-white: #FFF;
-      --neon-light-green: #90EE90; /* Novo verde claro */
-      --neon-purple: #3C096C; /* Roxo neon especificado pelo utilizador */
-      /* Novas variáveis para tons de roxo para o brilho, para consistência */
-      --neon-purple-light: #FF00FF; /* Roxo claro, quase magenta, para o brilho interno */
-      --neon-purple-medium: #B400B4; /* Roxo médio para o brilho intermédio */
+      --neon-light-green: #90EE90;
+      --neon-purple: #3C096C;
+      --neon-purple-light: #FF00FF;
+      --neon-purple-medium: #B400B4;
     }
 
     /* Estilos globais e redefinições */
     body {
       margin: 0;
-      background: black; /* Fundo principal, o vídeo será sobreposto */
+      background: black;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      /*
-        O preenchimento superior e inferior cria espaço para o cabeçalho e rodapé fixos.
-        Isso garante que o conteúdo principal role por baixo deles sem ser ocultado.
-      */
-      padding-top: 4.5em; /* Espaço para o cabeçalho fixo */
-      padding-bottom: 2em; /* Ajustado para 2em */
-      position: relative; /* Necessário para o z-index do fundo funcionar */
+      padding-top: 4.5em;
+      padding-bottom: 2em;
+      position: relative;
     }
 
     /* Contêiner de fundo de vídeo animado */
@@ -57,33 +55,31 @@
       left: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Garante que o vídeo não transborde do contêiner */
-      z-index: -1; /* Envia para o fundo */
-      filter: brightness(0.3); /* Escurece o vídeo */
+      overflow: hidden;
+      z-index: -1;
+      filter: brightness(0.3);
     }
 
-    /* Estilo do vídeo para cobrir todo o fundo */
     .background-animated video {
       min-width: 100%;
       min-height: 100%;
-      width: auto; /* Permite que o vídeo seja dimensionado naturalmente */
-      height: auto; /* Permite que a altura seja automática para ser dimensionado naturalmente */
+      width: auto;
+      height: auto;
       position: absolute;
-      top: 55%; /* Move o vídeo ligeiramente para baixo de 50% para 55% */
+      top: 55%;
       left: 50%;
-      transform: translate(-50%, -50%); /* Centraliza o vídeo */
-      object-fit: cover; /* Garante que o vídeo cubra todo o contêiner */
-      /* Nenhuma animação é necessária aqui, o vídeo é reproduzido automaticamente */
+      transform: translate(-50%, -50%);
+      object-fit: cover;
     }
 
-    /* Cabeçalho fixo com neon verde claro */
+    /* Cabeçalho fixo */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       height: 4.5em;
       background-color: black;
-      color: var(--neon-yellow); /* Alterado para amarelo neon */
-      font-family: 'Merriweather', serif; /* Nova fonte Merriweather */
+      color: var(--neon-yellow);
+      font-family: 'Merriweather', serif;
       font-weight: bold;
       font-size: 2.2rem;
       display: flex;
@@ -94,14 +90,19 @@
         0 0 8px var(--neon-yellow),
         0 0 20px var(--neon-yellow),
         0 0 40px var(--neon-yellow),
-        0 0 80px var(--neon-yellow); /* Alterado para amarelo neon */
-      animation: neonPulseYellow 2s infinite alternate; /* Alterado para animação amarela */
+        0 0 80px var(--neon-yellow);
+      animation: neonPulseYellow 2s infinite alternate;
       user-select: none;
       letter-spacing: 0.05em;
       z-index: 100;
     }
 
-    /* Nova animação de pulso para verde claro */
+    /* Animações */
+    @keyframes neonPulseYellow {
+        from { text-shadow: 0 0 8px var(--neon-yellow), 0 0 20px var(--neon-yellow); }
+        to { text-shadow: 0 0 15px var(--neon-yellow), 0 0 30px var(--neon-yellow); }
+    }
+
     @keyframes neonPulseLightGreen {
       0% {
         text-shadow:
@@ -118,11 +119,22 @@
           0 0 120px var(--neon-light-green);
       }
     }
-    
-    /* Animação de pulso para amarelo neon */
-    @keyframes neonPulseYellow {
-        from { text-shadow: 0 0 8px var(--neon-yellow), 0 0 20px var(--neon-yellow); }
-        to { text-shadow: 0 0 15px var(--neon-yellow), 0 0 30px var(--neon-yellow); }
+
+    @keyframes neonPulsePurple {
+      0% {
+        text-shadow:
+          0 0 10px var(--neon-purple-light),
+          0 0 25px var(--neon-purple-medium),
+          0 0 45px var(--neon-purple),
+          0 0 70px var(--neon-purple);
+      }
+      100% {
+        text-shadow:
+          0 0 20px var(--neon-purple-light),
+          0 0 40px var(--neon-purple-medium),
+          0 0 60px var(--neon-purple),
+          0 0 90px var(--neon-purple);
+      }
     }
 
     /* Área de conteúdo principal */
@@ -131,96 +143,102 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Preenchimento superior aumentado para empurrar o conteúdo para baixo do cabeçalho fixo */
-      padding: 10em 1rem 2rem; /* Ajustado de 8em para 10em para preenchimento superior */
+      padding: 10em 1rem 2rem;
       gap: 3rem;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
       box-sizing: border-box;
-      /*
-        O cálculo min-height garante que o 'main' ocupe o espaço disponível
-        entre o cabeçalho e o rodapé fixos quando o conteúdo é curto.
-      */
-      min-height: calc(100vh - 4.5em - 2em); /* Ajustado para 2em */
-      position: relative; /* Garante que o conteúdo principal esteja acima do fundo */
-      z-index: 1; /* Garante que o conteúdo principal esteja acima do fundo */
+      min-height: calc(100vh - 4.5em - 2em);
+      position: relative;
+      z-index: 1;
     }
 
-    /* Estilo de secção partilhado para blocos de texto */
+    /* Estilo de secção partilhado */
     .content-section {
       background: rgba(0,0,0,0.6);
-      padding: 1.5rem 2rem; /* Reduzido de 2rem para 1.5rem */
+      padding: 1.5rem 2rem;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
       font-weight: 600;
-      font-size: 1.1rem; /* Reduzido de 1.2rem para 1.1rem */
+      font-size: 1.1rem;
       line-height: 1.5;
-      max-width: 500px; /* Ajustada de 600px para 500px para telas maiores */
+      max-width: 500px;
       text-align: center;
       user-select: none;
       text-shadow: 0 0 5px #000;
-      margin-top: 0; /* Gerido pelo 'gap' do 'main' */
+      margin-top: 0;
     }
     .content-section p {
-        margin-bottom: 0.8rem; /* Espaço entre parágrafos, ajustado */
+        margin-bottom: 0.8rem;
         margin-top: 0;
     }
     .content-section strong {
-      color: var(--neon-yellow); /* Destaca palavras-chave com neon amarelo */
+      color: var(--neon-yellow);
     }
 
-    /* Títulos principais com efeito neon */
+    /* Títulos */
     .main-title-neon {
       color: var(--neon-yellow);
-      font-size: 1.8rem; /* Reduzido de 2rem para 1.8rem */
+      font-size: 1.8rem;
       margin-top: 0;
       text-shadow:
         0 0 8px var(--neon-yellow),
         0 0 20px var(--neon-yellow),
         0 0 40px var(--neon-yellow),
         0 0 80px var(--neon-yellow);
-      animation: neonPulseYellow 2s infinite alternate; /* Aplica a animação neon */
+      animation: neonPulseYellow 2s infinite alternate;
     }
     .subtitle-strong {
-        margin-top: 0.4rem; /* Ajustado */
-        font-size: 1.4rem; /* Reduzido de 1.6rem para 1.4rem */
+        margin-top: 0.4rem;
+        font-size: 1.4rem;
         font-weight: bold;
     }
 
-    /* Grelha de seleção de idiomas (semelhante aos botões de loja) */
+    /* Grelha de idiomas */
     .language-grid {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1.5rem; /* Ajustado de 1.8rem para 1.5rem */
-        margin-top: 1.2rem; /* Ajustado */
+        gap: 1.5rem;
+        margin-top: 1.2rem;
         width: 100%;
-        max-width: 700px; /* Reduzido de 800px para 700px */
+        max-width: 700px;
     }
 
     .language-grid a {
         display: flex;
-        flex-direction: column; /* Empilha a bandeira e o texto */
-        justify-content: space-between; /* Espaça a bandeira e o texto */
-        align-items: center; /* Centraliza os itens horizontalmente */
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         background: transparent;
         border: 2px solid transparent;
         border-radius: 15px;
-        width: 110px; /* Reduzido de 120px para 110px */
-        height: 130px; /* Reduzido de 140px para 130px */
+        width: 110px; /* Revertido para o tamanho original */
+        height: 130px; /* Revertido para o tamanho original */
         box-shadow: none;
         transition: all 0.3s ease;
         overflow: hidden;
         text-decoration: none;
         color: #fff;
         font-weight: bold;
-        font-size: 0.9rem; /* Reduzido de 0.95rem para 0.9rem */
+        font-size: 0.9rem;
         padding: 0.7em;
         box-sizing: border-box;
     }
 
-    .language-grid a:not(.unavailable):hover { /* Aplica hover apenas se não estiver indisponível */
+    /* Ajustes específicos APENAS para o conteúdo interno do botão da Índia */
+    .language-grid a[href="indianbibles.html"] span {
+        font-size: 0.7rem; /* Letra menor */
+        line-height: 1.1;
+    }
+    
+    .language-grid a[href="indianbibles.html"] img {
+        max-height: 50px; /* Bandeira menor para dar espaço ao texto */
+        margin-bottom: 0.2em;
+    }
+
+    .language-grid a:not(.unavailable):hover {
         background: rgba(249, 248, 113, 0.1);
         transform: scale(1.1);
         box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
@@ -229,7 +247,7 @@
 
     .language-grid a img {
         max-width: 100%;
-        max-height: 70px; /* Reduzido de 80px para 70px */
+        max-height: 70px;
         width: auto;
         height: auto;
         object-fit: contain;
@@ -249,7 +267,6 @@
         line-height: 1.2;
     }
 
-    /* Estilo para botões de idioma indisponíveis */
     .language-grid a.unavailable {
         opacity: 0.5;
         cursor: default;
@@ -260,391 +277,120 @@
     footer {
       position: fixed;
       bottom: 0; left: 0; right: 0;
-      height: 2em; /* Ajustado para 2em */
+      height: 2em;
       background-color: black;
       color: #ccc;
       text-align: center;
-      line-height: 2em; /* Ajustado para 2em */
+      line-height: 2em;
       font-size: 0.9rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
       user-select: none;
       z-index: 100;
     }
-
-    footer p { /* Adicionado estilo para o parágrafo dentro do footer */
-      margin: 0; /* Remove margem padrão do parágrafo */
-      font-size: 0.8rem; /* Fonte ligeiramente menor para caber em 2em */
-      line-height: 2em; /* Ajusta o line-height para a altura do footer, centralizando o texto */
+    footer p {
+      margin: 0;
+      font-size: 0.8rem;
+      line-height: 2em;
     }
 
-    /* Estilo neon rosa mais suave */
+    /* Utilitários Neon e Extras (preservados do CSS original) */
     .neon-pink-soft {
       color: var(--neon-pink-soft);
-      text-shadow:
-        0 0 8px var(--neon-pink-soft),
-        0 0 20px var(--neon-pink-soft),
-        0 0 40px var(--neon-pink-soft);
+      text-shadow: 0 0 8px var(--neon-pink-soft), 0 0 20px var(--neon-pink-soft), 0 0 40px var(--neon-pink-soft);
     }
-
-    /* Estilo para o título do livro (fonte e cor rosa) */
-    .book-title-style {
-      font-family: 'Monotype Corsiva', cursive;
-      font-weight: normal;
-      text-transform: uppercase;
-    }
-
-    /* Estilo para a parte do livro (branco aceso) */
-    .book-part-white-glow {
-      color: var(--neon-white);
-      text-shadow:
-        0 0 5px var(--neon-white),
-        0 0 15px var(--neon-white),
-        0 0 25px var(--neon-white);
-    }
-
-    /* Novo estilo de brilho roxo neon */
     .neon-purple-glow {
-        color: var(--neon-purple); /* Cor base mais escura */
-        text-shadow:
-          0 0 15px var(--neon-purple-light), /* Roxo claro, quase magenta, para o brilho interno */
-          0 0 30px var(--neon-purple-medium), /* Roxo médio para o brilho intermédio */
-          0 0 50px var(--neon-purple), /* Cor base para o brilho externo */
-          0 0 80px var(--neon-purple); /* Mais da cor base para um halo maior */
-        animation: neonPulsePurple 1.6s infinite alternate; /* Animação para o pulso */
+        color: var(--neon-purple);
+        text-shadow: 0 0 15px var(--neon-purple-light), 0 0 30px var(--neon-purple-medium), 0 0 50px var(--neon-purple), 0 0 80px var(--neon-purple);
+        animation: neonPulsePurple 1.6s infinite alternate;
     }
-
-    /* Nova animação de pulso para roxo neon */
-    @keyframes neonPulsePurple {
-      0% {
-        text-shadow:
-          0 0 10px var(--neon-purple-light),
-          0 0 25px var(--neon-purple-medium),
-          0 0 45px var(--neon-purple),
-          0 0 70px var(--neon-purple);
-      }
-      100% {
-        text-shadow:
-          0 0 20px var(--neon-purple-light),
-          0 0 40px var(--neon-purple-medium),
-          0 0 60px var(--neon-purple),
-          0 0 90px var(--neon-purple);
-      }
-    }
-
-    /* Estilo de brilho amarelo neon */
-    .neon-yellow-glow {
-      color: var(--neon-yellow);
-      text-shadow:
-        0 0 8px var(--neon-yellow),
-        0 0 20px var(--neon-yellow),
-        0 0 40px var(--neon-yellow),
-        0 0 80px var(--neon-yellow);
-    }
-
-    /* Estilo para a fonte Abaddon */
-    .abaddon-font-style {
-        font-family: 'Abaddon', sans-serif;
-        font-size: 1.6rem; /* Tamanho da fonte menor e legível */
-    }
-
-    /* Estilo para a parte do livro que é um bloco separado (menor e uppercase) */
-    .book-part-block-style {
-        font-size: 1rem;
-        font-weight: bold;
-        display: block;
-        text-transform: uppercase;
-        margin-top: -0.7em; /* Valor negativo para puxar para cima ainda mais */
-    }
-
-    /* Estilo para a capa do livro */
-    .book-cover {
-      max-width: 200px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
-      margin-top: 4rem; /* Aumentado ligeiramente de 3.5rem */
-      transition: transform 0.3s ease;
-    }
-
-    .book-cover:hover {
-      transform: scale(1.05);
-    }
-
-    /* Novo estilo de botão neon - RESTAURADO para AMARELO NEON */
     .neon-button {
       display: inline-block;
-      padding: 0.7rem 1.8rem; /* Mantido no tamanho menor */
-      border: 2px solid var(--neon-yellow); /* Borda amarela neon */
-      border-radius: 25px; /* Mais arredondado */
-      background: linear-gradient(45deg, rgba(249, 248, 113, 0.1), rgba(249, 248, 113, 0.05)); /* Gradiente amarelo */
-      color: var(--neon-yellow); /* Cor do texto padrão do botão (amarelo) */
+      padding: 0.7rem 1.8rem;
+      border: 2px solid var(--neon-yellow);
+      border-radius: 25px;
+      background: linear-gradient(45deg, rgba(249, 248, 113, 0.1), rgba(249, 248, 113, 0.05));
+      color: var(--neon-yellow);
       font-weight: bold;
-      font-size: 1rem; /* Mantido no tamanho da fonte menor */
+      font-size: 1rem;
       text-decoration: none;
-      text-shadow:
-        0 0 10px var(--neon-yellow), /* Brilho amarelo */
-        0 0 30px var(--neon-yellow),
-        0 0 60px var(--neon-yellow);
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.5); /* Brilho exterior amarelo */
+      text-shadow: 0 0 10px var(--neon-yellow), 0 0 30px var(--neon-yellow), 0 0 60px var(--neon-yellow);
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.5);
       transition: all 0.3s ease;
       user-select: none;
       letter-spacing: 0.05em;
-      cursor: pointer; /* Indicar interatividade */
+      cursor: pointer;
     }
-
     .neon-button:hover {
-      background: linear-gradient(45deg, rgba(249, 248, 113, 0.2), rgba(249, 248, 113, 0.1)); /* Mais vibrante ao passar o mouse */
-      transform: scale(1.08); /* Escala mais pronunciada */
-      box-shadow:
-        0 0 25px rgba(249, 248, 113, 0.8), /* Brilho exterior mais forte amarelo */
-        inset 0 0 10px rgba(249, 248, 113, 0.4); /* Efeito de brilho interior amarelo */
-      border-color: var(--neon-yellow); /* Borda amarela neon no hover */
+      background: linear-gradient(45deg, rgba(249, 248, 113, 0.2), rgba(249, 248, 113, 0.1));
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(249, 248, 113, 0.8), inset 0 0 10px rgba(249, 248, 113, 0.4);
+      border-color: var(--neon-yellow);
     }
-
-    /* NOVO ESTILO PARA O TEXTO "HERE" DENTRO DO BOTÃO - ROSA NEON */
-    .neon-button-text-pink {
-      color: var(--neon-pink-soft);
-      text-shadow:
-        0 0 8px var(--neon-pink-soft),
-        0 0 20px var(--neon-pink-soft),
-        0 0 40px var(--neon-pink-soft);
-    }
-
-
-    /* Estilo para a seção da capa do livro (para Flexbox e simetria) */
-    .content-section.book-cover-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 620px; /* Aumentado ligeiramente de 600px */
-        padding: 2rem 2.5rem;
-        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-        background: rgba(0,0,0,0.6);
-        border-radius: 15px;
-        max-width: 500px;
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
-
-    /* Resetar margens dos filhos diretos para que justify-content controle */
-    .content-section.book-cover-section > * {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Agrupamento de título e "Part 1" para Flexbox */
-    .book-header-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0; /* Remove o gap entre o título e "Part 1" */
-        padding: 0;
-    }
-    
-    /* Espaçamento interno específico para Part 1 dentro do grupo */
-    .book-header-group p.book-part-block-style {
-        margin-top: -0.7em; /* Valor negativo para puxar para cima ainda mais */
-    }
-
-    /* Estilo para o contêiner do botão e das mãos */
-    .button-with-hands {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem; /* Espaçamento entre as mãos e o botão */
-        margin-top: 6rem; /* Aumentado ligeiramente de 5rem */
-    }
-
     .hand-emoji {
-        font-size: 1.5rem; /* Tamanho da mãozinha */
-        color: var(--neon-yellow); /* Cor da mãozinha */
-        text-shadow:
-          0 0 5px var(--neon-yellow),
-          0 0 10px var(--neon-yellow),
-          0 0 20px var(--neon-yellow);
-        animation: neonPulseYellow 1.5s infinite alternate; /* Animação para a mãozinha */
+        font-size: 1.5rem;
+        color: var(--neon-yellow);
+        text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow);
+        animation: neonPulseYellow 1.5s infinite alternate;
     }
 
-    /* Estilos para cards de Bíblias, Devocionais e Livros */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-      width: 100%;
-      max-width: 900px; /* Para controlar a largura da grade */
-    }
-
-    .card {
-      background: rgba(0,0,0,0.7);
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 0.7);
-    }
-
-    .card img {
-      max-width: 150px;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .card h3 {
-      font-size: 1.5rem;
-      color: var(--neon-light-green);
-      text-shadow: 0 0 5px var(--neon-light-green);
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #ccc;
-      line-height: 1.4;
-      margin-bottom: 1rem;
-      flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
-    }
-
-    .card .neon-button {
-      margin-top: auto; /* Empurra o botão para o final do card */
-    }
-
-    /* Ajustes de responsividade */
+    /* Media Queries */
     @media (max-width: 768px) {
         .content-section {
-            font-size: 1.05rem; /* Reduzido de 1.1rem para 1.05rem */
+            font-size: 1.05rem;
             padding: 1.5rem 1.8rem;
             max-width: 90%;
         }
-        .main-title-neon {
-            font-size: 1.5rem; /* Reduzido de 1.6rem para 1.5rem */
-        }
-        .subtitle-strong {
-            font-size: 1.25rem; /* Reduzido de 1.3rem para 1.25rem */
-        }
-        .language-grid {
-            gap: 1.2rem;
-        }
-        .language-grid a {
-            width: 90px;
-            height: 100px;
-            font-size: 0.8rem;
-        }
-        .language-grid a img {
-            max-height: 60px;
-        }
-        .content-section.book-cover-section {
-            min-height: 480px; /* Aumentado ligeiramente de 450px para telas menores */
-            padding: 1.5rem 1.8rem;
-        }
-        .neon-button {
-            padding: 0.6rem 1.5rem; /* Ajustado para telas menores */
-            font-size: 0.95rem; /* Ajustado para telas menores */
-        }
-        .button-with-hands {
-            margin-top: 4rem; /* Aumentado ligeiramente de 3.5rem */
-        }
-        .card-grid {
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 1.5rem;
-        }
+        .main-title-neon { font-size: 1.5rem; }
+        .subtitle-strong { font-size: 1.25rem; }
+        .language-grid { gap: 1.2rem; }
+        .language-grid a { width: 90px; height: 100px; font-size: 0.8rem; }
+        .language-grid a img { max-height: 60px; }
+        
+        /* Ajuste específico para Índia em Tablets */
+        .language-grid a[href="indianbibles.html"] img { max-height: 40px; }
     }
 
     @media (max-width: 480px) {
-      header {
-        font-size: 1.8rem;
-        height: 3.8em;
-      }
-      footer {
-        font-size: 0.8rem;
-        height: 2em; /* Ajustado para 2em */
-        line-height: 2em; /* Ajustado para 2em */
-      }
-      body {
-        padding-top: 3.8em;
-        padding-bottom: 2em; /* Ajustado para 2em */
-      }
-      main {
-        min-height: calc(100vh - 3.8em - 2em); /* Ajustado para 2em */
-        padding: 5.5em 1rem 1.5rem;
-        gap: 2rem;
-      }
-      .language-grid {
-        gap: 0.8rem;
-      }
-      .language-grid a {
-        width: 80px;
-        height: 90px;
-        font-size: 0.7rem;
-      }
-      .language-grid a img {
-        max-height: 50px;
-      }
-      .content-section {
-        font-size: 0.95rem; /* Reduzido para telas muito pequenas */
-        padding: 1.2rem 1.5rem;
-        max-width: 95%;
-      }
-      .main-title-neon {
-          font-size: 1.3rem; /* Reduzido */
-      }
-      .subtitle-strong {
-          font-size: 1.05rem; /* Reduzido */
-      }
-      .book-cover {
-        max-width: 130px;
-        margin-top: 3rem; /* Aumentado ligeiramente de 2.5rem */
-      }
-      .neon-button {
-        font-size: 0.8rem; /* Reduced font size for smaller screens */
-        padding: 0.4rem 1rem; /* Adjusted padding */
-      }
-      .book-part-block-style {
-          font-size: 0.75rem; /* Reduzido */
-      }
-      .content-section.book-cover-section {
-          min-height: 340px; /* Aumentado ligeiramente de 300px para telas muito pequenas */
-          padding: 1.2rem 1.5rem;
-      }
-      .button-with-hands {
-          margin-top: 2.2rem; /* Aumentado ligeiramente de 1.75rem */
-      }
+      header { font-size: 1.8rem; height: 3.8em; }
+      footer { font-size: 0.8rem; height: 2em; line-height: 2em; }
+      body { padding-top: 3.8em; padding-bottom: 2em; }
+      main { min-height: calc(100vh - 3.8em - 2em); padding: 5.5em 1rem 1.5rem; gap: 2rem; }
+      .language-grid { gap: 0.8rem; }
+      .language-grid a { width: 80px; height: 90px; font-size: 0.7rem; }
+      .language-grid a img { max-height: 50px; }
+
+      /* Ajuste específico para Índia em Mobile */
+      .language-grid a[href="indianbibles.html"] img { max-height: 35px; }
+      .language-grid a[href="indianbibles.html"] span { font-size: 0.6rem; }
+      
+      .content-section { font-size: 0.95rem; padding: 1.2rem 1.5rem; max-width: 95%; }
+      .main-title-neon { font-size: 1.3rem; }
+      .subtitle-strong { font-size: 1.05rem; }
     }
   </style>
 </head>
 <body>
 
   <div class="background-animated" aria-hidden="true">
-    <!-- Fundo alterado de imagem para vídeo -->
+    <!-- Vídeo de fundo em loop -->
     <video autoplay loop muted playsinline>
       <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
-      O seu navegador não suporta a tag de vídeo.
+      <!-- Fallback color handled by CSS brightness filter mostly, or body bg -->
     </video>
   </div>
 
-  <!-- Note que os estilos de cor e fonte foram movidos para o CSS no <head> -->
   <header>
     Best Bibles
   </header>
 
   <main>
     <section class="content-section" aria-label="Project Introduction">
-      <h2 class="main-title-neon">📖 Welcome</h2> <!-- Título da secção alterado para "Welcome" -->
+      <h2 class="main-title-neon">📖 Welcome</h2>
       <p class="subtitle-strong">🔥 Get your Bible — listen anytime, own it forever. 🔥</p>
       <p>Welcome to the official page of Best Bibles Audiobooks, an independent work by T. S. Telles, author of Christian fiction and fantasy.</p>
       <p>This project exists to make clear, uncut audio Bibles affordable and free of ads — for everyone, everywhere.</p>
       <p>Stream free parts or buy the complete version to own it for life and support more languages.</p>
-      <p style="font-style: italic; margin-top: 1.5em;">"Go ye into all the world, and preach the gospel to every creature." - Mark 16:15</p> <!-- Versículo movido para o final e KJV removido -->
+      <p style="font-style: italic; margin-top: 1.5em;">"Go ye into all the world, and preach the gospel to every creature." - Mark 16:15</p>
     </section>
 
     <section class="content-section" aria-label="Listen to God's Word">
@@ -663,32 +409,57 @@
       <h2 class="main-title-neon">📚 Explore by Language</h2>
       <p class="subtitle-strong">Listen and own your Bible in your language — clear, ad-free, uncut.</p>
       <div class="language-grid">
-        <a href="korean.html" aria-label="Korean Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Korean Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea"><span>한국어 (Korean)</span></a>
-        <a href="russian.html" aria-label="Russian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Russian Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia"><span>Русский (Russian)</span></a>
-        <a href="chinese.html" aria-label="Chinese Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Chinese Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China"><span>中文 (Chinese)</span></a>
-        <a href="french.html" aria-label="French Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'French Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France"><span>Français (French)</span></a>
-        <a href="german.html" aria-label="German Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'German Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany"><span>Deutsch (German)</span></a>
-        <a href="english.html" aria-label="English Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'English Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States"><span>English</span></a>
-        <a href="spanish.html" aria-label="Spanish Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Spanish Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain"><span>Español (Spanish)</span></a>
-        <a href="arabic.html" aria-label="Arabic Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Arabic Bible' });"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia"><span>العربية (Arabic)</span></a>
-        <!-- Novo botão Italiano -->
+        <a href="korean.html" aria-label="Korean Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Korean Bible' });">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea">
+            <span>한국어 (Korean)</span>
+        </a>
+        <a href="russian.html" aria-label="Russian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Russian Bible' });">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia">
+            <span>Русский (Russian)</span>
+        </a>
+        <a href="chinese.html" aria-label="Chinese Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Chinese Bible' });">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China">
+            <span>中文 (Chinese)</span>
+        </a>
+        <a href="french.html" aria-label="French Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'French Bible' });">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France">
+            <span>Français (French)</span>
+        </a>
+        <a href="german.html" aria-label="German Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'German Bible' });">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany">
+            <span>Deutsch (German)</span>
+        </a>
+        <a href="english.html" aria-label="English Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'English Bible' });">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States">
+            <span>English</span>
+        </a>
+        <a href="spanish.html" aria-label="Spanish Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Spanish Bible' });">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain">
+            <span>Español (Spanish)</span>
+        </a>
+        <a href="arabic.html" aria-label="Arabic Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Arabic Bible' });">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia">
+            <span>العربية (Arabic)</span>
+        </a>
         <a href="italian.html" aria-label="Italian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Italian Bible' });">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Flag of Italy">
           <span>Italiano (Italian)</span>
         </a>
-        <!-- Botão Índia: AGORA DISPONÍVEL com novo texto e link -->
         <a href="tagalog.html" aria-label="Tagalog" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Tagalog Bible' });">
           <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Flag of Philippines">
           <span>Tagalog Bible </span>
         </a>
+        <a href="indianbibles.html" aria-label="Indian Bibles" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Indian Bibles' });">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
+          <span>भारतीय पवित्र बाइबिल<br>(Indian Bibles)</span>
+        </a>
       </div>
-      <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px;">
+      <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px; margin-top: 2rem;">
         <li>✔️ Stream parts for free on YouTube.</li>
         <li>✔️ Get the full version on Spotify, Storytel, Google Play and more.</li>
         <li>✔️ Share with family and help reach new languages.</li>
       </ul>
     </section>
-
   </main>
 
   <footer>
