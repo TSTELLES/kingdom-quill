@@ -214,8 +214,8 @@
         background: transparent;
         border: 2px solid transparent;
         border-radius: 15px;
-        width: 110px; /* Revertido para o tamanho original */
-        height: 130px; /* Revertido para o tamanho original */
+        width: 110px;
+        height: 130px;
         box-shadow: none;
         transition: all 0.3s ease;
         overflow: hidden;
@@ -225,15 +225,14 @@
         font-size: 0.9rem;
         padding: 0.7em;
         box-sizing: border-box;
+        cursor: pointer; /* Importante para o modal trigger */
     }
 
-    /* Ajustes específicos APENAS para o TEXTO do botão da Índia */
-    .language-grid a[href="indianbibles.html"] span {
-        font-size: 0.7rem; /* Letra menor */
+    .language-grid a[href="indianbibles.html"] span, 
+    .language-grid a#indian-trigger span {
+        font-size: 0.7rem;
         line-height: 1.1;
     }
-    
-    /* Nota: A regra específica de tamanho de imagem para a Índia foi removida para garantir uniformidade */
 
     .language-grid a:not(.unavailable):hover {
         background: rgba(249, 248, 113, 0.1);
@@ -244,7 +243,7 @@
 
     .language-grid a img {
         max-width: 100%;
-        height: 55px; /* Altura fixa para TODAS as bandeiras ficarem uniformes */
+        height: 55px;
         width: auto;
         object-fit: contain;
         border-radius: 8px;
@@ -269,6 +268,94 @@
         pointer-events: none;
     }
 
+    /* --- ESTILOS DO MODAL (POP-UP) --- */
+    .modal {
+      display: none; /* Escondido por padrão */
+      position: fixed; 
+      z-index: 1000; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.8); /* Fundo preto transparente */
+      backdrop-filter: blur(5px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: rgba(10, 10, 10, 0.95);
+      margin: auto;
+      padding: 2rem;
+      border: 2px solid var(--neon-yellow);
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 30px rgba(249, 248, 113, 0.4);
+      text-align: center;
+      position: relative;
+      animation: modalFadeIn 0.3s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .close-btn {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      color: var(--neon-yellow);
+      text-decoration: none;
+    }
+
+    .modal-title {
+      color: var(--neon-yellow);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px var(--neon-yellow);
+    }
+
+    /* Grid de línguas dentro do Modal */
+    .modal-lang-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .modal-lang-btn {
+      background: transparent;
+      border: 1px solid var(--neon-yellow);
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s;
+      min-width: 100px;
+      text-align: center;
+    }
+
+    .modal-lang-btn:hover {
+      background: var(--neon-yellow);
+      color: #000;
+      box-shadow: 0 0 15px var(--neon-yellow);
+      transform: scale(1.05);
+    }
+
     /* Rodapé fixo */
     footer {
       position: fixed;
@@ -287,46 +374,6 @@
       margin: 0;
       font-size: 0.8rem;
       line-height: 2em;
-    }
-
-    /* Utilitários Neon e Extras (preservados do CSS original) */
-    .neon-pink-soft {
-      color: var(--neon-pink-soft);
-      text-shadow: 0 0 8px var(--neon-pink-soft), 0 0 20px var(--neon-pink-soft), 0 0 40px var(--neon-pink-soft);
-    }
-    .neon-purple-glow {
-        color: var(--neon-purple);
-        text-shadow: 0 0 15px var(--neon-purple-light), 0 0 30px var(--neon-purple-medium), 0 0 50px var(--neon-purple), 0 0 80px var(--neon-purple);
-        animation: neonPulsePurple 1.6s infinite alternate;
-    }
-    .neon-button {
-      display: inline-block;
-      padding: 0.7rem 1.8rem;
-      border: 2px solid var(--neon-yellow);
-      border-radius: 25px;
-      background: linear-gradient(45deg, rgba(249, 248, 113, 0.1), rgba(249, 248, 113, 0.05));
-      color: var(--neon-yellow);
-      font-weight: bold;
-      font-size: 1rem;
-      text-decoration: none;
-      text-shadow: 0 0 10px var(--neon-yellow), 0 0 30px var(--neon-yellow), 0 0 60px var(--neon-yellow);
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.5);
-      transition: all 0.3s ease;
-      user-select: none;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-    }
-    .neon-button:hover {
-      background: linear-gradient(45deg, rgba(249, 248, 113, 0.2), rgba(249, 248, 113, 0.1));
-      transform: scale(1.08);
-      box-shadow: 0 0 25px rgba(249, 248, 113, 0.8), inset 0 0 10px rgba(249, 248, 113, 0.4);
-      border-color: var(--neon-yellow);
-    }
-    .hand-emoji {
-        font-size: 1.5rem;
-        color: var(--neon-yellow);
-        text-shadow: 0 0 5px var(--neon-yellow), 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow);
-        animation: neonPulseYellow 1.5s infinite alternate;
     }
 
     /* Media Queries */
@@ -352,23 +399,24 @@
       .language-grid a { width: 80px; height: 90px; font-size: 0.7rem; }
       .language-grid a img { height: 35px; } /* Ajuste uniforme para mobile */
 
-      /* Ajuste específico APENAS para TEXTO da Índia em Mobile */
-      .language-grid a[href="indianbibles.html"] span { font-size: 0.6rem; }
-      /* Regra de imagem específica removida para uniformidade */
+      .language-grid a[href="indianbibles.html"] span,
+      .language-grid a#indian-trigger span { font-size: 0.6rem; }
       
       .content-section { font-size: 0.95rem; padding: 1.2rem 1.5rem; max-width: 95%; }
       .main-title-neon { font-size: 1.3rem; }
       .subtitle-strong { font-size: 1.05rem; }
+      
+      /* Ajuste do modal no mobile */
+      .modal-content { width: 85%; padding: 1.5rem 1rem; }
+      .modal-lang-btn { font-size: 0.9rem; padding: 8px 10px; min-width: 80px; }
     }
   </style>
 </head>
 <body>
 
   <div class="background-animated" aria-hidden="true">
-    <!-- Vídeo de fundo em loop -->
     <video autoplay loop muted playsinline>
       <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
-      <!-- Fallback color handled by CSS brightness filter mostly, or body bg -->
     </video>
   </div>
 
@@ -435,20 +483,23 @@
             <span>العربية (Arabic)</span>
         </a>
         <a href="italian.html" aria-label="Italian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Italian Bible' });">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Flag of Italy">
-          <span>Italiano (Italian)</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Flag of Italy">
+            <span>Italiano (Italian)</span>
         </a>
         <a href="tagalog.html" aria-label="Tagalog" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Tagalog Bible' });">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Flag of Philippines">
-          <span>Tagalog Bible </span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Flag of Philippines">
+            <span>Tagalog Bible </span>
         </a>
-        <a href="indianbibles.html" aria-label="Indian Bibles" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Indian Bibles' });">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
-          <span>भारतीय पवित्र बाइबिल<br>(Indian Bibles)</span>
+        
+        <!-- INDIAN BIBLES TRIGGER - ALTERADO PARA ABRIR O MODAL -->
+        <a id="indian-trigger" onclick="openIndianModal()" aria-label="Indian Bibles" style="cursor: pointer;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
+            <span>भारतीय पवित्र बाइबिल<br>(Indian Bibles)</span>
         </a>
+
         <a href="hebrewbible.html" aria-label="Hebrew Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Hebrew Bible' });">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg" alt="Flag of Israel">
-          <span>עברית (Hebrew)</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg" alt="Flag of Israel">
+            <span>עברית (Hebrew)</span>
         </a>
       </div>
       <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px; margin-top: 2rem;">
@@ -462,6 +513,50 @@
   <footer>
     <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
   </footer>
+
+  <!-- MODAL DE LÍNGUAS INDIANAS -->
+  <div id="indianLangModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeIndianModal()">&times;</span>
+      <h3 class="modal-title">Select Language / भाषा चुनें</h3>
+      <div class="modal-lang-grid">
+        <a href="hindibible.html" class="modal-lang-btn">हिन्दी (Hindi)</a>
+        <a href="urdubible.html" class="modal-lang-btn">اردو (Urdu)</a>
+        <a href="marathi.html" class="modal-lang-btn">मराठी (Marathi)</a>
+        <a href="gujarati.html" class="modal-lang-btn">ગુજરાતી (Gujarati)</a>
+        <a href="punjabi.html" class="modal-lang-btn">ਪੰਜਾਬੀ (Punjabi)</a>
+        <a href="bengali.html" class="modal-lang-btn">বাংলা (Bengali)</a>
+        <a href="telugu.html" class="modal-lang-btn">తెలుగు (Telugu)</a>
+        <a href="tamil.html" class="modal-lang-btn">தமிழ் (Tamil)</a>
+        <a href="kannada.html" class="modal-lang-btn">ಕನ್ನಡ (Kannada)</a>
+        <a href="malayalam.html" class="modal-lang-btn">മലയാളം (Malayalam)</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Função para abrir o modal
+    function openIndianModal() {
+      document.getElementById("indianLangModal").style.display = "flex";
+      // Enviar evento ao Google Analytics se desejar
+      if(typeof gtag === 'function') {
+        gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Indian Bibles Modal Open' });
+      }
+    }
+
+    // Função para fechar o modal
+    function closeIndianModal() {
+      document.getElementById("indianLangModal").style.display = "none";
+    }
+
+    // Fechar ao clicar fora do conteúdo
+    window.onclick = function(event) {
+      const modal = document.getElementById("indianLangModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
 </html>
