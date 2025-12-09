@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>اُردو میں نئے عہد نامے کی آڈیو کتاب | T. S. Telles</title>
+  <meta name="description" content="Listen to the New Testament audiobook in Urdu. Crystal clear narration, ad-free and available for offline listening." />
+  <meta name="keywords" content="Urdu Bible, New Testament, Audiobook, Audio Bible, Urdu, Jesus, God, Scripture" />
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW455H9ND7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FW455H9ND7');
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
+  <!-- Adicionando fonte Noto Nastaliq Urdu para melhor renderização do Urdu -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Variáveis CSS para cores neon (Padronizado) */
+    :root {
+      --neon-yellow: #f9f871;
+      --neon-pink-soft: #FF66CC;
+      --neon-white: #FFF;
+      --neon-light-green: #90EE90;
+      --neon-purple: #3C096C;
+      --neon-purple-light: #FF00FF;
+      --neon-purple-medium: #B400B4;
+    }
+
+    /* Reset e base */
+    body {
+      margin: 0;
+      background: black;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-top: 4.5em;
+      padding-bottom: 3.5em;
+      position: relative;
+    }
+
+    /* Contêiner de fundo de vídeo animado */
+    .background-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      filter: brightness(0.3);
+    }
+
+    .background-animated video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+
+    /* Header fixo */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4.5em;
+      background-color: black;
+      color: var(--neon-yellow);
+      font-family: 'Noto Nastaliq Urdu', serif; /* Fonte atualizada para Urdu */
+      font-weight: bold;
+      font-size: 2.0rem; /* Ajustado ligeiramente para a fonte Urdu */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow),
+        0 0 80px var(--neon-yellow);
+      animation: neonPulseYellow 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0; /* Espaçamento normal para Urdu */
+      z-index: 100;
+      padding-bottom: 10px; /* Ajuste para caracteres Urdu altos */
+    }
+
+    @keyframes neonPulseYellow {
+        from { text-shadow: 0 0 8px var(--neon-yellow), 0 0 20px var(--neon-yellow); }
+        to { text-shadow: 0 0 15px var(--neon-yellow), 0 0 30px var(--neon-yellow); }
+    }
+
+    /* Conteúdo principal */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 2rem;
+      gap: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      min-height: calc(100vh - 4.5em - 3.5em);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Bandeiras única */
+    .flags-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: calc(4.5em + 2rem);
+      padding-bottom: 2rem;
+      width: 100%;
+    }
+
+    .flag {
+      width: 160px;
+      height: 110px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      filter: brightness(0.8);
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      cursor: default;
+      user-select: none;
+      transition: all 0.4s ease;
+      border: 2px solid rgba(249, 248, 113, 0.3);
+    }
+    .flag:hover {
+      filter: brightness(1.2);
+      box-shadow: 
+        0 0 20px rgba(249, 248, 113, 0.8),
+        0 0 40px rgba(249, 248, 113, 0.4);
+      border-color: var(--neon-yellow);
+      transform: scale(1.05);
+    }
+    
+    .flag.india {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg');
+    }
+
+    /* Container para os testamentos */
+    .testament-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    .testament-section {
+        flex: 1;
+        min-width: 300px;
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        text-align: center;
+        user-select: none;
+        text-shadow: 0 0 5px #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .testament-section h2 {
+        color: var(--neon-yellow);
+        font-size: 1.8rem;
+        font-family: 'Noto Nastaliq Urdu', serif;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 5px var(--neon-yellow);
+        line-height: 1.8;
+    }
+
+    /* Argumentos */
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+    }
+
+    .main-title-neon {
+      color: var(--neon-yellow);
+      font-size: 2rem;
+      font-family: 'Noto Nastaliq Urdu', serif;
+      margin-top: 0;
+      text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow),
+        0 0 40px var(--neon-yellow);
+      animation: neonPulseYellow 2s infinite alternate;
+      line-height: 1.8;
+    }
+    .subtitle-strong {
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    /* Player */
+    .player-title {
+        color: var(--neon-yellow);
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 2.5rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 700px;
+      margin: 3rem auto 0 auto;
+      width: 100%;
+    }
+
+    /* Botão Play */
+    .play-button {
+      background: var(--neon-yellow);
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--neon-yellow), 0 0 25px var(--neon-yellow);
+      transition: transform 0.2s ease;
+      direction: ltr; /* Mantém ícone play para a direita mesmo em modo RTL */
+    }
+    .play-button:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px var(--neon-yellow), 0 0 40px var(--neon-yellow);
+    }
+    .play-icon {
+      width: 0; height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    /* Botões das Lojas */
+    .testament-section .buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+
+    .testament-section .buttons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .testament-section .buttons a:hover {
+      background: rgba(249, 248, 113, 0.1);
+      transform: scale(1.15);
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+      border-color: var(--neon-yellow);
+    }
+
+    .testament-section .buttons a img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      filter: brightness(0.9);
+      transition: filter 0.3s ease;
+    }
+    .testament-section .buttons a:hover img {
+        filter: brightness(1.2);
+    }
+
+    /* Chamada de Ação */
+    .call-to-action-section {
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        max-width: 720px;
+        margin: 3rem auto 0 auto;
+        text-align: center;
+        width: 100%;
+    }
+    .call-to-action-section strong { color: var(--neon-yellow); }
+
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 3.5em;
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 3.5em;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+      z-index: 100;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .testament-section { width: 90%; max-width: 500px; }
+        .player-title { font-size: 1.3rem; }
+        .call-to-action-section { font-size: 1.2rem; padding: 1.8rem 2rem; }
+        .main-title-neon { font-size: 1.8rem; }
+        .subtitle-strong { font-size: 1.4rem; }
+        .testament-section .buttons a { width: 65px; height: 65px; }
+    }
+
+    @media (max-width: 480px) {
+      header { font-size: 1.8rem; height: 3.8em; }
+      footer { font-size: 0.8rem; height: 3em; line-height: 3em; }
+      body { padding-top: 3.8em; padding-bottom: 3em; }
+      main { min-height: calc(100vh - 3.8em - 3em); padding: 1.5rem 1rem; }
+      .flags-row { padding-top: calc(3.8em + 1.5rem); padding-bottom: 1.5rem; }
+      .arguments { font-size: 1.1rem; padding: 1.5rem 1.8rem; }
+      .testament-section .buttons a { width: 55px; height: 55px; }
+      .call-to-action-section { font-size: 1rem; }
+      .main-title-neon { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-animated" aria-hidden="true">
+    <video autoplay loop muted playsinline>
+      <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <header>اُردو میں نئے عہد نامے کی آڈیو کتاب</header>
+
+  <section class="flags-row" aria-label="Flags">
+    <div class="flag india" role="img" aria-label="Flag of India"></div>
+  </section>
+
+  <main>
+    <section class="arguments" aria-label="Audiobook Benefits">
+      <h2 class="main-title-neon">اُردو میں نئے عہد نامے کی آڈیو کتاب</h2>
+      <p class="subtitle-strong">اعلیٰ معیار میں آڈیو انجیل کہیں بھی اور کبھی بھی سنیں۔</p>
+      گہرے فضل اور سکون کا تجربہ کریں، اور روح کی راحت پائیں۔<br />
+      مصروف شیڈول کے باوجود یسوع کے کلام تک آسان رسائی حاصل کریں۔<br />
+      اپنے خاندان کے ساتھ اپنی روحانی زندگی کو مزید مالا مال کریں۔
+    </section>
+
+    <section class="sample-section" aria-label="Muestra de audio">
+      <h3 class="player-title">اب سنیں – نمونہ چلانے کے لیے کلک کریں</h3>
+      <button class="play-button" aria-label="Reproducir/Pausar muestra" id="playPauseBtn" type="button">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/amostra_em_urdu-Brian-pitchShift_0.mp3"></audio>
+    </section>
+
+    <section class="call-to-action-section" aria-label="Opciones y llamada a la acción del audiolibro">
+        <p>आपका समर्थन हमें नए अनुवाद बनाने और उच्च गुणवत्ता वाले ऑडियो रिकॉर्डिंग बनाए रखने में मदद करता है।</p>
+        <p>👉 <strong>तैयार हैं?</strong> अभी शुरू करें और पूरा <strong>नया नियम</strong> सुनें – यह आपकी सभी पसंदीदा प्लेटफ़ॉर्म पर उपलब्ध है!</p>
+    </section>
+
+    <div class="testament-container">
+        <section class="testament-section" aria-label="Opciones de compra de audio">
+            <h2 class="main-title-neon">नया नियम</h2>
+            <p>गहरी बुद्धि और दिव्य शिक्षाओं की खोज करें जो नए नियम में निहित हैं।</p>
+            <nav class="buttons" aria-label="Opciones de compra">
+                <!-- Botão do Google Play Livros (Substituindo o Kobo) -->
+                <a href="https://play.google.com/store/audiobooks/details/पव_त_र_ब_यबल_ह_द_म_नय_न_यम?id=AQAAAECq1ESU_M&hl=ja" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo"></a>
+                <!-- Link do Spotify Atualizado -->
+                <a href="https://open.spotify.com/show/2Y6r8RDBaqULP0LTHhhoav" target="_blank" rel="noopener noreferrer" aria-label="Spotify"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo"></a>
+                <a href="https://books.apple.com/fr/audiobook/पव-त-र-ब-यबल-ह-द-म-नय-न-यम/id1836397038" target="_blank" rel="noopener noreferrer" aria-label="Apple Books"><img src="https://img.icons8.com/fluent/512/ibooks.png" alt="Apple Books Logo"></a>
+                <a href="https://www.storytel.com/ae/books/पव-त-र-ब-यबल-ह-द-म-नय-न-यम-12231673" target="_blank" rel="noopener noreferrer" aria-label="Storytel"><img src="https://serieliv.no/content/uploads/2016/02/Storytel-logo.png" alt="Storytel Logo"></a>
+            </nav>
+        </section>
+    </div>
+
+  </main>
+
+  <footer>© 2025 Kingdom&Quill. कल सभी अधिकार सुरक्षित।</footer>
+
+  <script>
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+
+    let isPlaying = false;
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        audio.pause();
+        playIcon.style.borderLeft = '18px solid black';
+        playIcon.style.borderRight = 'none';
+        playIcon.style.borderTop = '12px solid transparent';
+        playIcon.style.borderBottom = '12px solid transparent';
+        playIcon.style.width = '0';
+        playIcon.style.height = '0';
+      } else {
+        audio.play();
+        playIcon.style.borderTop = '0';
+        playIcon.style.borderBottom = '0';
+        playIcon.style.height = '24px';
+        playIcon.style.width = '12px';
+        playIcon.style.borderLeft = '6px solid black';
+        playIcon.style.borderRight = '6px solid black';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    btn.addEventListener('click', togglePlayPause);
+
+    audio.addEventListener('ended', () => {
+      isPlaying = false;
+      playIcon.style.borderLeft = '18px solid black';
+      playIcon.style.borderRight = 'none';
+      playIcon.style.borderTop = '12px solid transparent';
+      playIcon.style.borderBottom = '12px solid transparent';
+      playIcon.style.width = '0';
+      playIcon.style.height = '0';
+    });
+  </script>
+</body>
+</html>
