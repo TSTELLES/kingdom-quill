@@ -73,7 +73,8 @@
 
         <!-- Título da Série e Descrição -->
         <header class="text-center mb-10 space-y-8">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-neon flex flex-col items-center justify-center gap-2">
+            <!-- Tamanho da fonte ajustado para mobile (text-4xl) e desktop (md:text-7xl) -->
+            <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight text-neon flex flex-col items-center justify-center gap-2">
                 <span>K&Q</span>
                 <span>Literature</span>
             </h1>
@@ -119,11 +120,13 @@
         <section id="devocionais" class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto">
 
             <!-- Card Devocional 1: O que é Isso? (Manifesto) -->
-            <div class="bg-black border border-accent-gold/50 p-8 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
+            <!-- Padding ajustado para mobile (p-6) e desktop (md:p-8) -->
+            <div class="bg-black border border-accent-gold/50 p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
                 <div class="flex flex-col items-center text-center">
                     
                     <!-- CLASSE text-metallic-gold para o efeito metálico mais reluzente -->
-                    <h2 class="text-4xl font-bold mb-4 text-metallic-gold">
+                    <!-- Tamanho da fonte ajustado para mobile (text-3xl) e desktop (md:text-4xl) -->
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-metallic-gold">
                         What You’ll Find Here
                     </h2>
                     
@@ -146,18 +149,21 @@
             
             <!-- Card de Destaque do Livro -->
             <div class="bg-black border border-accent-gold/50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
-                <div class="flex items-start space-x-6"> 
+                <!-- Layout alterado para Mobile: Flex Coluna no Mobile, Linha no Desktop -->
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6"> 
                     
-                    <!-- Capa do Livro (Esquerda - Agora apenas Imagem) -->
+                    <!-- Capa do Livro (Imagem) -->
+                    <!-- Tamanho aumentado no mobile para destaque (w-32) -->
                     <img
                         src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.jpg"
                         alt="Capa do livro Welcome to New York Born Ricciwood"
-                        class="book-cover w-24 md:w-36 h-auto rounded-lg border-2 border-accent-gold flex-shrink-0 cursor-default"
+                        class="book-cover w-32 md:w-36 h-auto rounded-lg border-2 border-accent-gold flex-shrink-0 cursor-default"
                         onerror="this.onerror=null;this.src='https://placehold.co/150x225/4b5563/ffffff?text=WTNY';"
                     >
                     
-                    <!-- Descrição/Título do Livro (Direita) -->
-                    <div class="flex-grow">
+                    <!-- Descrição/Título do Livro (Conteúdo) -->
+                    <!-- text-center no mobile, text-left no desktop -->
+                    <div class="flex-grow w-full text-center md:text-left">
                         <h3 class="text-3xl font-bold mb-2 text-metallic-gold">
                             Welcome to New York
                         </h3>
@@ -172,7 +178,7 @@
                         </p>
                         
                         <!-- SINOPSE -->
-                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2">
+                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2 text-left">
                             <p>Gabriel Ricciwood has always been a mystery—even to himself. Haunted by tragedy, carrying the legacy of a last name no one dares speak aloud, Gabriel steps into Sant’Hale, an elite Manhattan school where silence is survival and history is rewritten to serve the powerful.</p>
                             <p>He doesn’t belong.</p>
                             <p>Not with the rich heirs of the Council. Not with the perfect girls. Not with the stories they tell of his grandfather. But beneath the marble halls and well-dressed lies, Gabriel finds something he never expected: truth, loyalty, faith—and maybe even love. Between whispers of betrayal and the scars of a past he didn’t choose, Gabriel must decide who he is, what he believes, and how far he’s willing to go to protect the people he’s learning to care about.</p>
@@ -198,18 +204,20 @@
             
             <!-- Card de Destaque do Livro -->
             <div class="bg-black border border-accent-gold/50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
-                <div class="flex items-start space-x-6"> 
+                 <!-- Layout alterado para Mobile: Flex Coluna no Mobile, Linha no Desktop -->
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6"> 
                     
-                    <!-- Capa do Livro (Esquerda - Agora apenas Imagem) -->
+                    <!-- Capa do Livro (Imagem) -->
                     <img
                         src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-O-PODER-DOS-QUATRO-TRONOS4.jpg"
                         alt="Capa do livro O Poder dos Quatro Tronos 4"
-                        class="book-cover w-24 md:w-36 h-auto rounded-lg border-2 border-accent-gold flex-shrink-0 cursor-default"
+                        class="book-cover w-32 md:w-36 h-auto rounded-lg border-2 border-accent-gold flex-shrink-0 cursor-default"
                         onerror="this.onerror=null;this.src='https://placehold.co/150x225/4b5563/ffffff?text=FANTASIA';"
                     >
                     
-                    <!-- Descrição/Título do Livro (Direita) -->
-                    <div class="flex-grow">
+                    <!-- Descrição/Título do Livro (Conteúdo) -->
+                    <!-- text-center no mobile, text-left no desktop -->
+                    <div class="flex-grow w-full text-center md:text-left">
                         <!-- Título principal -->
                         <h3 class="text-3xl font-bold mb-2 text-metallic-gold">
                             O Poder dos Quatro Tronos
@@ -221,7 +229,7 @@
                         </p>
                         
                         <!-- SINOPSE -->
-                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2">
+                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2 text-left">
                             <p>Assim como o poder dos deuses, há muito tempo o tecido que unia os bruxos e as criaturas mágicas foi corrompido. Um reino que antes vivia em harmonia mergulhou na escuridão, dividido pela obsessão de um rei.</p>
                             <p>Durante uma era inteira, um homem perverso governou o Grande Norte com mentiras e falsas narrativas. Bruxos com poderes incompreendidos foram escravizados e punidos por usar sua magia — não para dominar, mas para sobreviver.</p>
                             <p>Neste primeiro livro da saga Axwar, Alyce é despertada por um chamado antigo: ela carrega um poder destinado a restaurar a justiça e reinar com sabedoria sobre os oprimidos. Mas num mundo atemporal, repleto de bruxos, dragões, caçadores, vampiros e criaturas sombrias, sua maior batalha não será contra monstros… e sim contra os rostos familiares que escondem traições.</p>
