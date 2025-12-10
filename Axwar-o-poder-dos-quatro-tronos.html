@@ -281,21 +281,27 @@
         }
         .neon-button-text-purple {
             color: var(--neon-light-purple);
-            text-shadow:
+            text-shadow: 
                 0 0 8px var(--neon-purple-light-glow),
                 0 0 20px var(--neon-purple-light-glow),
                 0 0 40px var(--neon-purple-light-glow);
         }
         .purchase-buttons-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column; /* Alterado para coluna (um embaixo do outro) */
+            align-items: center;    /* Centraliza os botões */
             gap: 1.5rem;
             margin-top: 1.5em;
             width: 100%;
             max-width: 600px;
         }
-        .purchase-buttons-container .neon-button { flex-grow: 1; max-width: 250px; }
+        /* Ajuste da largura dos botões para ficarem uniformes na coluna */
+        .purchase-buttons-container .neon-button { 
+            width: 100%; 
+            max-width: 320px; 
+        }
+        
+        /* Ajuste específico para o segundo botão manter o estilo */
         .purchase-buttons-container .neon-button:nth-child(2) {
             box-shadow: 0 0 20px rgba(158, 0, 255, 0.5);
         }
@@ -347,7 +353,8 @@
             .subtitle-strong { font-size: 1.25rem; }
             .neon-button { padding: 0.6rem 1.5rem; font-size: 0.95rem; }
             .book-mockup-group { margin-top: 3rem; }
-            .purchase-buttons-container { gap: 1rem; flex-direction: column; align-items: center; }
+            /* Mantém o comportamento de coluna no mobile também */
+            .purchase-buttons-container { gap: 1rem; } 
             .purchase-buttons-container .neon-button { width: 90%; max-width: 300px; }
             #scrollTopBtn { right: 1em; }
         }
@@ -387,14 +394,16 @@
             <p class="subtitle-strong" style="font-style: italic; color: var(--neon-light-purple);">"A profecia de um mundo novo começa onde a traição de um antigo terminou."</p>
             
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/AXWAR-Poder-dos-Quatro-Tronos-ebook/dp/B0DJ1XB47C/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=LP2L8LS3IDRU&dib=eyJ2IjoiMSJ9.uO58Ap-5RL8jgXW0UBqyHm7sBaOruN3UA3gphAJpfCE.LGhWzDq8s-H4dgyVAajjTW_AEuSz_uhpSV67OWz9hgQ&dib_tag=se&keywords=axwar&qid=1758659374&sprefix=axwar%2Caps%2C247&sr=8-1" class="neon-button">
-                    <i class="fab fa-amazon"></i> <span class="neon-button-text-purple">Comprar na Amazon</span>
+                <a href="https://www.amazon.com.br/AXWAR-Poder-dos-Quatro-Tronos-ebook/dp/B0DJ1XB47C/ref=sr_1_1?__mk_pt_BR=ÅMÅŽÕÑ&crid=LP2L8LS3IDRU&dib=eyJ2IjoiMSJ9.uO58Ap-5RL8jgXW0UBqyHm7sBaOruN3UA3gphAJpfCE.LGhWzDq8s-H4dgyVAajjTW_AEuSz_uhpSV67OWz9hgQ&dib_tag=se&keywords=axwar&qid=1758659374&sprefix=axwar%2Caps%2C247&sr=8-1" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-purple">Começar a jornada</span>
                 </a>
                 <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0DJ1XB47C" class="neon-button">
-                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-purple">Leia no Kindle Unlimited</span>
+                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-purple">Leia Ilimitado</span>
                 </a>
-                <a href="https://elevenreader.io/audiobooks/axwar/uHpCO3TUlVyXbrJbsthk" class="neon-button">
-                    <i class="fas fa-headphones"></i> <span class="neon-button-text-purple">Ouça o Audiobook completo</span>
+                <!-- Botão Audiobook Alterado: Sem link, opacidade reduzida, sem brilho -->
+                <a class="neon-button" style="opacity: 0.5; cursor: default; box-shadow: none; pointer-events: none; border-color: #666;">
+                    <i class="fas fa-headphones" style="color: #aaa;"></i> 
+                    <span class="neon-button-text-purple" style="text-shadow: none; color: #aaa;">Breve em Versão Narrada</span>
                 </a>
             </div>
         </section>
@@ -408,18 +417,22 @@
 
         <section class="content-section">
             <h2 class="main-title-neon">A Profecia Está Escrita no Sangue...</h2>
-            <p>Em um mundo à beira do caos, a profecia de quatro tronos e seus herdeiros perdidos emerge das sombras. Axwar, um jovem forasteiro, carrega em seu sangue uma linhagem esquecida e uma marca que o conecta a um destino que ele nunca pediu. Perseguido por forças sombrias e guiado por sussurros de um passado ancestral, ele deve desvendar o segredo de sua identidade antes que a escuridão consuma os reinos.</p>
+            <p>Assim como o poder dos deuses, o tecido que unia bruxos e criaturas mágicas há muito foi corrompido. O Grande Norte, um reino que antes vivia em harmonia, mergulhou na escuridão, dividido pela obsessão de um rei perverso. Durante uma era inteira, mentiras e falsas narrativas governaram, e aqueles que possuíam magia — não para dominar, mas apenas para sobreviver — foram escravizados e punidos.</p>
+            <p>No primeiro livro da saga Axwar, você conhecerá Alyce, despertada por um chamado antigo e poderosa missão: restaurar a justiça e assumir seu lugar como líder de um povo oprimido. Mas neste mundo atemporal, repleto de bruxos, dragões, caçadores, vampiros e criaturas sombrias, sua maior batalha não será contra monstros… e sim contra rostos familiares que escondem traições.</p>
+            </p>Alyce precisa aprender a distinguir aliados de inimigos — antes que seja tarde demais.</p>
             <p>Uma jornada de magia, traição e sacrifício, onde a luta pelo poder é apenas o começo da verdadeira guerra que se aproxima. Para aqueles que acreditam que mesmo os corações mais partidos podem encontrar um novo começo.
             </p>
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/AXWAR-Poder-dos-Quatro-Tronos-ebook/dp/B0DJ1XB47C/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=LP2L8LS3IDRU&dib=eyJ2IjoiMSJ9.uO58Ap-5RL8jgXW0UBqyHm7sBaOruN3UA3gphAJpfCE.LGhWzDq8s-H4dgyVAajjTW_AEuSz_uhpSV67OWz9hgQ&dib_tag=se&keywords=axwar&qid=1758659374&sprefix=axwar%2Caps%2C247&sr=8-1" class="neon-button">
-                    <i class="fab fa-amazon"></i> <span class="neon-button-text-purple">Comprar na Amazon</span>
+                <a href="https://www.amazon.com.br/AXWAR-Poder-dos-Quatro-Tronos-ebook/dp/B0DJ1XB47C/ref=sr_1_1?__mk_pt_BR=ÅMÅŽÕÑ&crid=LP2L8LS3IDRU&dib=eyJ2IjoiMSJ9.uO58Ap-5RL8jgXW0UBqyHm7sBaOruN3UA3gphAJpfCE.LGhWzDq8s-H4dgyVAajjTW_AEuSz_uhpSV67OWz9hgQ&dib_tag=se&keywords=axwar&qid=1758659374&sprefix=axwar%2Caps%2C247&sr=8-1" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-purple">Começar a jornada</span>
                 </a>
                 <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0DJ1XB47C" class="neon-button">
-                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-purple">Leia no Kindle Unlimited</span>
+                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-purple">Leia Ilimitado</span>
                 </a>
-                <a href="https://elevenreader.io/audiobooks/axwar/uHpCO3TUlVyXbrJbsthk" class="neon-button">
-                    <i class="fas fa-headphones"></i> <span class="neon-button-text-purple">Ouça o Audiobook completo</span>
+                <!-- Botão Audiobook Alterado -->
+                <a class="neon-button" style="opacity: 0.5; cursor: default; box-shadow: none; pointer-events: none; border-color: #666;">
+                    <i class="fas fa-headphones" style="color: #aaa;"></i> 
+                    <span class="neon-button-text-purple" style="text-shadow: none; color: #aaa;">Breve em Versão Narrada</span>
                 </a>
             </div>
         </section>
@@ -434,14 +447,16 @@
                 <li>✨ Uma trama repleta de mistérios, profecias e segredos que mantêm o leitor engajado até a última página, cenas gráficas para a imersão completa do público, lutas eletrizantes, línguas fantasiosas e criaturas que apresentam riscos distintos. Uma gama de elementos para um verdadeiro épico.</li>
             </ul>
             <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com.br/AXWAR-Poder-dos-Quatro-Tronos-ebook/dp/B0DJ1XB47C/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=LP2L8LS3IDRU&dib=eyJ2IjoiMSJ9.uO58Ap-5RL8jgXW0UBqyHm7sBaOruN3UA3gphAJpfCE.LGhWzDq8s-H4dgyVAajjTW_AEuSz_uhpSV67OWz9hgQ&dib_tag=se&keywords=axwar&qid=1758659374&sprefix=axwar%2Caps%2C247&sr=8-1" class="neon-button">
-                    <i class="fab fa-amazon"></i> <span class="neon-button-text-purple">Comprar na Amazon</span>
+                <a href="https://www.amazon.com.br/AXWAR-Poder-dos-Quatro-Tronos-ebook/dp/B0DJ1XB47C/ref=sr_1_1?__mk_pt_BR=ÅMÅŽÕÑ&crid=LP2L8LS3IDRU&dib=eyJ2IjoiMSJ9.uO58Ap-5RL8jgXW0UBqyHm7sBaOruN3UA3gphAJpfCE.LGhWzDq8s-H4dgyVAajjTW_AEuSz_uhpSV67OWz9hgQ&dib_tag=se&keywords=axwar&qid=1758659374&sprefix=axwar%2Caps%2C247&sr=8-1" class="neon-button">
+                    <i class="fab fa-amazon"></i> <span class="neon-button-text-purple">Começar a jornada</span>
                 </a>
                 <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0DJ1XB47C" class="neon-button">
-                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-purple">Leia no Kindle Unlimited</span>
+                    <i class="fas fa-book-reader"></i> <span class="neon-button-text-purple">Leia Ilimitado</span>
                 </a>
-                <a href="https://elevenreader.io/audiobooks/axwar/uHpCO3TUlVyXbrJbsthk" class="neon-button">
-                    <i class="fas fa-headphones"></i> <span class="neon-button-text-purple">Ouça o Audiobook completo</span>
+                <!-- Botão Audiobook Alterado -->
+                <a class="neon-button" style="opacity: 0.5; cursor: default; box-shadow: none; pointer-events: none; border-color: #666;">
+                    <i class="fas fa-headphones" style="color: #aaa;"></i> 
+                    <span class="neon-button-text-purple" style="text-shadow: none; color: #aaa;">Breve em Versão Narrada</span>
                 </a>
             </div>
         </section>
