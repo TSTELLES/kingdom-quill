@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reborn in Christ — To The Glory</title>
+    <!-- Carrega o Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1222; /* Fundo Azul Escuro Quase Preto (Fallback) */
+            position: relative;
+            min-height: 100vh;
+        }
+        /* Novo estilo para o fundo borrado */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/to-the-glory-cover.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(15px); /* Alto nível de desfoque */
+            transform: scale(1.1); /* Escala para evitar bordas brancas após o desfoque */
+            z-index: -2; /* Coloca atrás de tudo */
+        }
+        
+        /* Adicionar uma camada escura semi-transparente sobre o fundo borrado, mas abaixo do conteúdo */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(13, 18, 34, 0.85); /* Cor do fundo original com 85% de opacidade */
+            z-index: -1; /* Coloca acima do fundo borrado, mas abaixo do conteúdo */
+        }
+        /* Assegura que o conteúdo da página fique na frente do fundo */
+        .max-w-4xl {
+            position: relative;
+            z-index: 1; 
+        }
+
+        /* CLASSE DE FUNDO TRANSPARENTE PARA TODOS OS BLOCOS */
+        .bg-transparent-block {
+            background-color: rgba(0, 0, 0, 0.7); /* Preto transparente (70% opacidade) */
+            backdrop-filter: blur(4px); /* Suaviza a transição (se suportado) */
+        }
+
+        .text-accent {
+            color: #fca311; /* Dourado/Laranja Acento */
+        }
+        .cta-button-main {
+            background-color: #fca311; /* Dourado */
+            color: #0d1222;
+            transition: all 0.3s;
+            display: flex; /* Mudar para flex para alinhar o logo */
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .cta-button-main:hover {
+            background-color: #ffb74d; /* Dourado mais claro no hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button-secondary {
+            border: 2px solid #fca311;
+            color: #fca311;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: transparent;
+        }
+        .cta-button-secondary:hover {
+            background-color: #fca31120;
+        }
+        /* CLASSE NEON DOURADO (Para Reborn in Christ no título) */
+        .text-neon-gold {
+            color: #fff; 
+            text-shadow: 
+                0 0 5px #fca311,
+                0 0 10px #fca311,
+                0 0 20px #fca311;
+            font-weight: bold;
+        }
+        /* CLASSE NEON BRANCO (Para K&Q apresenta e Reborn in Christ no corpo) */
+        .text-neon-white {
+            color: #ffffff; 
+            text-shadow: 
+                0 0 5px #ffffff,
+                0 0 10px #ffffff,
+                0 0 20px #ffffff;
+            font-weight: bold;
+        }
+        /* CLASSE NEON AMARELO CORRIGIDO (Para New York) */
+        .text-neon-yellow {
+            color: #fff897; /* Amarelo muito claro para a cor base */
+            text-shadow: 
+                0 0 5px #FFC300, /* Amarelo Cobre / Quente */
+                0 0 10px #FFC300,
+                0 0 20px #FFC300;
+            font-weight: bold;
+        }
+        /* CORES ESPECÍFICAS */
+        .text-pink {
+            color: #ff69b4; /* Pink */
+        }
+        .text-white-plain {
+            color: #fff; /* Branco simples */
+        }
+
+        /* CLASSE PARA O TÍTULO DO LIVRO (MONOTYPE/CURSIVE) */
+        .font-book-title {
+            font-family: 'Monotype Corsiva', 'Apple Chancery', cursive;
+            font-style: italic;
+            font-size: 1.1em;
+            font-weight: 700;
+            /* A cor será definida pelas classes específicas (text-pink, etc.) */
+        }
+        /* Estilos para o Player Placeholder */
+        .player-placeholder {
+            width: 100%;
+            height: 80px; /* Altura padrão de um player Spotify/YouTube pequeno */
+            background-color: #171b26; /* Cor escura próxima do Spotify */
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fca311;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid #2a3449;
+        }
+        /* Estilo para ícones SVG */
+        .logo-svg {
+            fill: currentColor;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+
+    <!-- Container Principal Centrado -->
+    <div class="max-w-4xl mx-auto p-4 md:p-8">
+
+        <!-- Header e Título Principal -->
+        <header class="text-center py-8">
+            <p class="text-sm font-semibold uppercase tracking-widest text-neon-white mb-2">K&Q apresenta</p>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-neon-gold mb-4 leading-tight">
+                REBORN IN CHRIST
+            </h1>
+            <h2 class="text-xl sm:text-2xl text-gray-300 font-light">
+                To The Glory
+                <br>
+                Músicas que acompanham quem decidiu mudar.
+            </h2>
+        </header>
+
+        <!-- Seção Hero / Capa do Álbum e Manifesto -->
+        <section id="hero" class="bg-transparent-block p-6 rounded-xl shadow-2xl mb-12">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <!-- Capa do Álbum Atualizada -->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <img
+                        src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/to-the-glory-cover.jpg"
+                        alt="Capa do Álbum Reborn in Christ por To The Glory"
+                        class="w-full max-w-xs md:max-w-sm rounded-lg shadow-lg"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/1E40AF/FFFFFF?text=Imagem+indisponível';"
+                    >
+                </div>
+
+                <!-- Mensagem Principal (Áudio Placeholder Removido) -->
+                <div class="w-full md:w-1/2 text-white">
+                    <p class="text-lg mb-4 italic border-l-4 border-accent pl-3">
+                        “Reborn in Christ” não é apenas música — é um manifesto de fé. Estas canções foram escritas para pessoas que desejam viver o verdadeiro evangelho, que querem uma nova identidade construída na verdade da salvação e levar o nome do Senhor a todos os que ainda não ouviram.
+                    </p>
+                    <!-- Frase de direcionamento removida daqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: OUÇA AS PRÉVIAS AGORA -->
+        <section id="previews" class="mb-12 bg-transparent-block p-6 rounded-xl shadow-xl">
+            <h3 class="text-3xl font-bold text-center text-neon-gold mb-8">Ouça as Prévias Agora</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Player 1 -->
+                <div class="player-placeholder">
+                    [Player 1: Cole aqui o código Iframe da Faixa 1]
+                </div>
+                
+                <!-- Player 2 -->
+                <div class="player-placeholder">
+                    [Player 2: Cole aqui o código Iframe da Faixa 2]
+                </div>
+
+                <!-- Player 3 -->
+                <div class="player-placeholder">
+                    [Player 3: Cole aqui o código Iframe da Faixa 3]
+                </div>
+                
+                <!-- Player 4 -->
+                <div class="player-placeholder">
+                    [Player 4: Cole aqui o código Iframe da Faixa 4]
+                </div>
+
+                <!-- Player 5 -->
+                <div class="player-placeholder">
+                    [Player 5: Cole aqui o código Iframe da Faixa 5]
+                </div>
+                
+                <!-- Player 6 -->
+                <div class="player-placeholder">
+                    [Player 6: Cole aqui o código Iframe da Faixa 6]
+                </div>
+
+                <!-- Player 7 -->
+                <div class="player-placeholder">
+                    [Player 7: Cole aqui o código Iframe da Faixa 7]
+                </div>
+                
+                <!-- Player 8 -->
+                <div class="player-placeholder">
+                    [Player 8: Cole aqui o código Iframe da Faixa 8]
+                </div>
+
+            </div>
+        </section>
+        <!-- FIM SEÇÃO PRÉVIAS -->
+
+        <!-- Seção de História e Contexto (AGORA COM FUNDO DE BLOCO) -->
+        <section id="story" class="mb-12 text-gray-200 bg-transparent-block p-6 rounded-xl shadow-xl">
+            <h3 class="text-3xl font-bold text-center text-neon-gold mb-6">A Ponte Emocional: Livro & Música</h3>
+
+            <p class="mb-4 leading-relaxed">
+                <span class="text-neon-white">Reborn in Christ</span> traz as orações do universo de 
+                <span class="text-pink font-book-title">Welcome</span>
+                <span class="text-white-plain font-book-title"> to </span>
+                <span class="text-neon-yellow font-book-title">New York</span>
+                como declarações de verdade — sobre quem Deus é e sobre quem somos n’Ele. Aqui, emoções e dores se transformam em força, fé e identidade.
+            </p>
+            <p class="mb-4 leading-relaxed">
+                O álbum reúne oito faixas que unem atmosfera urbana, energia épica e intensidade emocional, sempre sustentadas por mensagens cristãs claras, limpas e encorajadoras.
+            </p>
+             <p class="leading-relaxed font-semibold">
+                Se a sua fé é viva, se você escolheu seguir Cristo em movimento, este som é para você. E se você realmente renasceu, alimente sua mente e seu espírito com palavras que vêm do coração e apontam direto para o Senhor.
+            </p>
+        </section>
+        
+        <!-- Seção de Destaques / Benefícios (Tabela Adaptada) - ATUALIZADA -->
+        <section id="features" class="mb-12 bg-transparent-block p-6 rounded-xl shadow-xl">
+             <h3 class="text-3xl font-bold text-center text-neon-gold mb-6">O Que Este Projeto Entrega</h3>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-200">
+                
+                <!-- Destaque 1: Mensagem Poderosa -->
+                <div class="border-l-4 border-accent pl-4">
+                    <p class="font-bold text-xl mb-1 text-white">Mensagem Poderosa</p>
+                    <p class="text-sm">Um projeto que celebra transformação e renascimento espiritual, oferecendo conteúdo verdadeiro para quem vive a fé com seriedade.</p>
+                </div>
+                
+                <!-- Destaque 2: Inovação Sonora -->
+                <div class="border-l-4 border-accent pl-4">
+                    <p class="font-bold text-xl mb-1 text-white">Inovação Sonora</p>
+                    <p class="text-sm">Composição e produção via IA, cuidadosamente trabalhadas para entregar algo limpo, emocionante e acessível.</p>
+                </div>
+                
+                <!-- Destaque 3: 8 Faixas de Imersão -->
+                <div class="border-l-4 border-accent pl-4">
+                    <p class="font-bold text-xl mb-1 text-white">8 Faixas de Imersão</p>
+                    <p class="text-sm">Músicas originais inspiradas nos arcos narrativos e na profundidade de 
+                        <span class="text-pink font-book-title">Welcome</span>
+                        <span class="text-white-plain font-book-title"> to </span>
+                        <span class="text-neon-yellow font-book-title">New York</span>, criando uma experiência coerente e envolvente.
+                    </p>
+                </div>
+                
+                <!-- Destaque 4: Ambiente Sonoro Expansivo (NOVO TEXTO) -->
+                <div class="border-l-4 border-accent pl-4">
+                    <p class="font-bold text-xl mb-1 text-white">Ambiente Sonoro Expansivo</p>
+                    <p class="text-sm">Produção detalhada, com texturas e camadas que criam profundidade e elevam a viagem musical.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção Sobre os Criadores - ATUALIZADA -->
+        <section id="creators" class="mb-12 text-center text-gray-200">
+            <h3 class="text-3xl font-bold text-neon-gold mb-8">Os Mensageiros da Arte</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- To The Glory (ATUALIZADO) -->
+                <div class="bg-transparent-block p-6 rounded-lg shadow-xl">
+                    <h4 class="text-2xl font-bold text-white mb-2">To The Glory</h4>
+                    <p class="text-sm italic mb-3">O Mensageiro Discreto e Poderoso</p>
+                    <p class="leading-relaxed">
+                        To The Glory interpreta as canções transmitindo com firmeza a mensagem da redenção com autenticidade e profundidade.
+                    </p>
+                </div>
+                <!-- Kingdom & Quill (ATUALIZADO) -->
+                <div class="bg-transparent-block p-6 rounded-lg shadow-xl">
+                    <h4 class="text-2xl font-bold text-white mb-2">Kingdom & Quill</h4>
+                    <p class="text-sm italic mb-3">A Assinatura da Produção</p>
+                    <p class="leading-relaxed">
+                        A Kingdom & Quill assina a produção com a maturidade espiritual de todo o seu conteúdo: forte, elegante e voltada para o público cristão que busca excelência.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Chamada para Ação (CTA Final) - ATUALIZADA COM LINK ÚNICO -->
+        <section id="cta" class="text-center p-8 rounded-xl shadow-2xl bg-transparent-block">
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-neon-gold mb-4">
+                Pronto para mergulhar completamente nas melodias?
+            </h3>
+            
+            <p class="text-gray-300 mb-8 text-lg">
+                Escolha seu streaming favorito.
+            </p>
+
+            <div class="flex flex-col justify-center items-center gap-6">
+                
+                <!-- Botão Principal: Streaming Hub (Link Found.ee) -->
+                <a href="https://found.ee/totheglory_reborninchrist" class="cta-button-main font-bold py-3 px-8 rounded-full shadow-lg text-lg max-w-sm">
+                    <svg class="logo-svg w-6 h-6 text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 18V6l6 6-6 6z" fill="currentColor" stroke="none"/>
+                    </svg>
+                    OUÇA AGORA (Spotify, Apple & Mais)
+                </a>
+                
+                <!-- Compra Button - Secondary Style -->
+                <a href="#link-para-compra" class="cta-button-secondary font-bold py-3 px-8 rounded-full text-lg max-w-sm">
+                    💿 COMPRE O CD (Físico/Download)
+                </a>
+            </div>
+            
+            <p class="mt-6 text-xs text-gray-500">
+                Acesse o hub de streaming ou adquira a sua cópia.
+            </p>
+        </section>
+
+        <!-- Footer Simples -->
+        <footer class="text-center py-6 mt-8 text-gray-500 text-sm">
+            &copy; 2025 To The Glory | Kingdom & Quill. Todos os direitos reservados.
+        </footer>
+
+    </div>
+</body>
+</html>
