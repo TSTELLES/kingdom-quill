@@ -76,6 +76,24 @@
             letter-spacing: 0.1em;
             z-index: 20; 
         }
+
+        /* NEW STYLE: Main CTA Button with GLOW/Intense Shine Effect (For Superpack) */
+        .btn-cta-glow {
+            background-color: var(--accent-dark); 
+            color: var(--text-light);
+            font-weight: 700;
+            transition: all 0.3s ease;
+            /* Intense Golden Shadow for glow effect */
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.8), 
+                        0 4px 20px rgba(255, 160, 0, 0.7);
+        }
+        .btn-cta-glow:hover {
+            background-color: #FFA000; /* Deeper gold tone on hover */
+            transform: translateY(-3px); /* More accentuated lift */
+            /* Even more intense glow on hover */
+            box-shadow: 0 0 30px rgba(255, 193, 7, 1),
+                        0 8px 30px rgba(255, 160, 0, 0.9);
+        }
     </style>
 </head>
 <body class="text-text-light">
@@ -91,7 +109,7 @@
                 Pornography: Understanding and Overcoming the Struggle in the Light of Scripture
             </h1>
             
-            <!-- COMMERCIAL SYNOPSIS - UPDATED TEXT AND NEON EFFECT APPLIED TO TÍTULO -->
+            <!-- COMMERCIAL SYNOPSIS - UPDATED TEXT AND NEON EFFECT APPLIED TO TITLE -->
             <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto text-gray-400">
                 In a world of constant struggles, it's easy to believe we are alone in certain battles. Among the greatest evils affecting young Christians today is the addiction to pornography—a struggle that carries so much shame that many never seek help to overcome it. With this in mind, Kingdom & Quill developed a guide of biblical hope and solid practices for lasting freedom.
                 Discover the devotional <span class="text-neon-effect">Pornography: Understanding and Overcoming the Struggle in the Light of Scripture</span>, a tool for restoration and strength through Christ.
@@ -102,7 +120,7 @@
                 <!-- Size change: w-48 (mobile) and md:w-64 (desktop) -->
                 <div class="w-48 md:w-64 shadow-2xl transition duration-300 hover:scale-105">
                     <!-- Cover 1: Normal Cover URL -->
-                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/devocional-sobre-pornografia-capa.jpg" alt="Book Cover: Pornography - Overcoming the Struggle" class="rounded-lg border-4 border-accent-dark shadow-2xl shadow-accent-dark/40" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/devocional-sobre-pornografia-capa.jpg" alt="Book Cover: Pornography - Overcoming the Struggle" class="rounded-lg border-4 border-accent-dark shadow-2xl shadow-accent-dark/40" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/300x450/14B8A6/121212?text=Purity+Devotional';">
                 </div>
             </div>
             <!-- End of Main Cover Area -->
@@ -217,7 +235,7 @@
                         <!-- COVER IMAGE -->
                         <div class="mb-6 flex justify-center">
                             <!-- Cover URL: REMAINS WITH yeah-yeah.jpg -->
-                            <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/yeah-yeah.jpg" alt="Book Cover: Pornography - Overcoming the Struggle" class="rounded-lg w-40 shadow-lg border border-subtle-gray transition duration-300 hover:scale-105" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/yeah-yeah.jpg" alt="Book Cover: Pornography - Overcoming the Struggle" class="rounded-lg w-40 shadow-lg border border-subtle-gray transition duration-300 hover:scale-105" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/300x450/14B8A6/121212?text=Purity+Devotional';">
                         </div>
 
                         <div class="mb-8">
@@ -241,7 +259,7 @@
                                 BONUS: Focused Bible readings on the topic.
                             </li>
                             <li class="flex items-start">
-                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/24/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 Immediate Access for reading on Kindle or mobile devices.
                             </li>
                         </ul>
@@ -255,6 +273,75 @@
             </div>
             <!-- End of Centralization Wrapper -->
 
+        </div>
+    </section>
+
+    <!-- Superpack Section - NEW ADDITION -->
+    <section class="py-16 md:py-20 bg-section-bg border-t border-subtle-gray">
+        <div class="container mx-auto px-6 max-w-4xl">
+             <div class="bg-card-bg rounded-xl shadow-2xl premium-highlight overflow-hidden border border-subtle-gray">
+                <div class="flex flex-col">
+                    <!-- Image Side -->
+                    <div class="w-full relative bg-gray-900 flex items-center justify-center p-8 border-b border-subtle-gray">
+                         <!-- Badge -->
+                         <div class="absolute top-4 left-4 z-20">
+                            <span class="bg-accent text-primary-bg font-bold px-4 py-1 rounded-full uppercase text-sm tracking-widest shadow-lg">
+                                Ultimate
+                            </span>
+                         </div>
+                         <!-- Superpack Image -->
+                         <div class="max-w-md mx-auto w-full">
+                             <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/superpack2.jpg" alt="Superpack Collection" class="w-full h-auto object-contain rounded-lg shadow-lg transform hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/600x600/1F1F1F/FFC107?text=Superpack+Image';">
+                         </div>
+                    </div>
+                    
+                    <!-- Content Side -->
+                    <div class="w-full p-8 md:p-12 flex flex-col justify-center">
+                        <div class="text-center mb-6">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-text-light">
+                                The Superpack Hear, O Christians
+                            </h2>
+                            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                                Take your experience to the next level. Get the K&Q devotionals, the KJV audiobook, and an exclusive bonus designed to offer clean, faith-focused entertainment for Christian audiences.
+                            </p>
+                        </div>
+                        
+                        <!-- List centered container -->
+                        <div class="max-w-2xl mx-auto w-full">
+                            <ul class="space-y-3 mb-8 text-gray-300">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Hear, O Israel – 30 Days to Rediscover the Father's Voice
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Pornography: Understanding and Overcoming the Struggle in the Light of Scripture
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Complete King James Version Audio Bible
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-3 text-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Sample of the Christian Romance Novel Welcome to New York – Part 1: Born Ricciwood
+                                </li>
+                            </ul>
+
+                            <!-- Price -->
+                            <div class="mb-8 text-center">
+                                <div class="flex items-baseline justify-center gap-2">
+                                    <span class="text-5xl font-extrabold text-accent">US$ 22.99</span>
+                                </div>
+                            </div>
+
+                            <!-- CTA -->
+                            <a href="https://kingdomandquill.gumroad.com/l/ejfquq" target="_blank" class="btn-cta-glow text-center font-bold py-4 px-8 rounded-xl text-lg uppercase tracking-wider hover:bg-opacity-90 transition duration-300 block w-full">
+                                Get The Superpack
+                            </a>
+                        </div>
+                    </div>
+                </div>
+             </div>
         </div>
     </section>
 
