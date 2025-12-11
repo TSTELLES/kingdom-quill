@@ -1,562 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Best Bibles Audiobooks</title>
-  
-  <!-- Meta tag para palavras-chave de SEO -->
-  <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Tagalog, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW455H9ND7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FW455H9ND7');
-  </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Best Bibles Audiobooks</title>
+    
+    <!-- Meta tag for SEO keywords -->
+    <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Tagalog, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
+    
+    <!-- NOTE: Google Analytics script is commented out as it's environment-specific. -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW455H9ND7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FW455H9ND7');
+    </script>
+    -->
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
+    <!-- Fonts -->
+    <!-- Using Merriweather for the header title -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
 
-  <style>
-    /* Variáveis CSS para cores neon */
-    :root {
-      --neon-yellow: #f9f871;
-      --neon-pink-soft: #FF66CC;
-      --neon-white: #FFF;
-      --neon-light-green: #90EE90;
-      --neon-purple: #3C096C;
-      --neon-purple-light: #FF00FF;
-      --neon-purple-medium: #B400B4;
-    }
-
-    /* Estilos globais e redefinições */
-    body {
-      margin: 0;
-      background: black;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      padding-top: 4.5em;
-      padding-bottom: 2em;
-      position: relative;
-    }
-
-    /* Contêiner de fundo de vídeo animado */
-    .background-animated {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1;
-      filter: brightness(0.3);
-    }
-
-    .background-animated video {
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-    }
-
-    /* Cabeçalho fixo */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 4.5em;
-      background-color: black;
-      color: var(--neon-yellow);
-      font-family: 'Merriweather', serif;
-      font-weight: bold;
-      font-size: 2.2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-      text-shadow:
-        0 0 8px var(--neon-yellow),
-        0 0 20px var(--neon-yellow),
-        0 0 40px var(--neon-yellow),
-        0 0 80px var(--neon-yellow);
-      animation: neonPulseYellow 2s infinite alternate;
-      user-select: none;
-      letter-spacing: 0.05em;
-      z-index: 100;
-    }
-
-    /* Animações */
-    @keyframes neonPulseYellow {
-        from { text-shadow: 0 0 8px var(--neon-yellow), 0 0 20px var(--neon-yellow); }
-        to { text-shadow: 0 0 15px var(--neon-yellow), 0 0 30px var(--neon-yellow); }
-    }
-
-    @keyframes neonPulseLightGreen {
-      0% {
-        text-shadow:
-          0 0 10px var(--neon-light-green),
-          0 0 30px var(--neon-light-green),
-          0 0 50px var(--neon-light-green),
-          0 0 100px var(--neon-light-green);
-      }
-      100% {
-        text-shadow:
-          0 0 20px var(--neon-light-green),
-          0 0 40px var(--neon-light-green),
-          0 0 70px var(--neon-light-green),
-          0 0 120px var(--neon-light-green);
-      }
-    }
-
-    @keyframes neonPulsePurple {
-      0% {
-        text-shadow:
-          0 0 10px var(--neon-purple-light),
-          0 0 25px var(--neon-purple-medium),
-          0 0 45px var(--neon-purple),
-          0 0 70px var(--neon-purple);
-      }
-      100% {
-        text-shadow:
-          0 0 20px var(--neon-purple-light),
-          0 0 40px var(--neon-purple-medium),
-          0 0 60px var(--neon-purple),
-          0 0 90px var(--neon-purple);
-      }
-    }
-
-    /* Área de conteúdo principal */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10em 1rem 2rem;
-      gap: 3rem;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      box-sizing: border-box;
-      min-height: calc(100vh - 4.5em - 2em);
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Estilo de secção partilhado */
-    .content-section {
-      background: rgba(0,0,0,0.6);
-      padding: 1.5rem 2rem;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-      font-weight: 600;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      max-width: 500px;
-      text-align: center;
-      user-select: none;
-      text-shadow: 0 0 5px #000;
-      margin-top: 0;
-    }
-    .content-section p {
-        margin-bottom: 0.8rem;
-        margin-top: 0;
-    }
-    .content-section strong {
-      color: var(--neon-yellow);
-    }
-
-    /* Títulos */
-    .main-title-neon {
-      color: var(--neon-yellow);
-      font-size: 1.8rem;
-      margin-top: 0;
-      text-shadow:
-        0 0 8px var(--neon-yellow),
-        0 0 20px var(--neon-yellow),
-        0 0 40px var(--neon-yellow),
-        0 0 80px var(--neon-yellow);
-      animation: neonPulseYellow 2s infinite alternate;
-    }
-    .subtitle-strong {
-        margin-top: 0.4rem;
-        font-size: 1.4rem;
-        font-weight: bold;
-    }
-
-    /* Grelha de idiomas */
-    .language-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 1.2rem;
-        width: 100%;
-        max-width: 700px;
-    }
-
-    .language-grid a {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        background: transparent;
-        border: 2px solid transparent;
-        border-radius: 15px;
-        width: 110px;
-        height: 130px;
-        box-shadow: none;
-        transition: all 0.3s ease;
-        overflow: hidden;
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        font-size: 0.9rem;
-        padding: 0.7em;
-        box-sizing: border-box;
-        cursor: pointer; /* Importante para o modal trigger */
-    }
-
-    .language-grid a[href="indianbibles.html"] span, 
-    .language-grid a#indian-trigger span {
-        font-size: 0.7rem;
-        line-height: 1.1;
-    }
-
-    .language-grid a:not(.unavailable):hover {
-        background: rgba(249, 248, 113, 0.1);
-        transform: scale(1.1);
-        box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
-        border-color: var(--neon-yellow);
-    }
-
-    .language-grid a img {
-        max-width: 100%;
-        height: 55px;
-        width: auto;
-        object-fit: contain;
-        border-radius: 8px;
-        filter: brightness(0.9);
-        transition: filter 0.3s ease;
-        margin-bottom: 0.2em;
-        flex-shrink: 0;
-    }
-
-    .language-grid a span {
-        text-align: center;
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1.2;
-    }
-
-    .language-grid a.unavailable {
-        opacity: 0.5;
-        cursor: default;
-        pointer-events: none;
-    }
-
-    /* --- ESTILOS DO MODAL (POP-UP) --- */
-    .modal {
-      display: none; /* Escondido por padrão */
-      position: fixed; 
-      z-index: 1000; 
-      left: 0;
-      top: 0;
-      width: 100%; 
-      height: 100%; 
-      overflow: auto; 
-      background-color: rgba(0,0,0,0.8); /* Fundo preto transparente */
-      backdrop-filter: blur(5px);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-content {
-      background: rgba(10, 10, 10, 0.95);
-      margin: auto;
-      padding: 2rem;
-      border: 2px solid var(--neon-yellow);
-      border-radius: 20px;
-      width: 90%;
-      max-width: 600px;
-      box-shadow: 0 0 30px rgba(249, 248, 113, 0.4);
-      text-align: center;
-      position: relative;
-      animation: modalFadeIn 0.3s ease-out;
-    }
-
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .close-btn {
-      color: #aaa;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .close-btn:hover,
-    .close-btn:focus {
-      color: var(--neon-yellow);
-      text-decoration: none;
-    }
-
-    .modal-title {
-      color: var(--neon-yellow);
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px var(--neon-yellow);
-    }
-
-    /* Grid de línguas dentro do Modal */
-    .modal-lang-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .modal-lang-btn {
-      background: transparent;
-      border: 1px solid var(--neon-yellow);
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: all 0.3s;
-      min-width: 100px;
-      text-align: center;
-    }
-
-    .modal-lang-btn:hover {
-      background: var(--neon-yellow);
-      color: #000;
-      box-shadow: 0 0 15px var(--neon-yellow);
-      transform: scale(1.05);
-    }
-
-    /* Rodapé fixo */
-    footer {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      height: 2em;
-      background-color: black;
-      color: #ccc;
-      text-align: center;
-      line-height: 2em;
-      font-size: 0.9rem;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
-      user-select: none;
-      z-index: 100;
-    }
-    footer p {
-      margin: 0;
-      font-size: 0.8rem;
-      line-height: 2em;
-    }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-        .content-section {
-            font-size: 1.05rem;
-            padding: 1.5rem 1.8rem;
-            max-width: 90%;
+    <style>
+        /* Variáveis CSS para cores neon */
+        :root {
+            --neon-yellow: #f9f871;
+            --neon-pink-soft: #FF66CC;
+            --neon-white: #FFF;
+            --neon-light-green: #90EE90;
+            --neon-purple: #3C096C;
+            --neon-purple-light: #FF00FF;
+            --neon-purple-medium: #B400B4;
+            --footer-text: #E0E0E0; /* Brightened for better contrast */
         }
-        .main-title-neon { font-size: 1.5rem; }
-        .subtitle-strong { font-size: 1.25rem; }
-        .language-grid { gap: 1.2rem; }
-        .language-grid a { width: 90px; height: 100px; font-size: 0.8rem; }
-        .language-grid a img { height: 45px; } /* Ajuste uniforme para tablets */
-    }
 
-    @media (max-width: 480px) {
-      header { font-size: 1.8rem; height: 3.8em; }
-      footer { font-size: 0.8rem; height: 2em; line-height: 2em; }
-      body { padding-top: 3.8em; padding-bottom: 2em; }
-      main { min-height: calc(100vh - 3.8em - 2em); padding: 5.5em 1rem 1.5rem; gap: 2rem; }
-      .language-grid { gap: 0.8rem; }
-      .language-grid a { width: 80px; height: 90px; font-size: 0.7rem; }
-      .language-grid a img { height: 35px; } /* Ajuste uniforme para mobile */
+        /* Estilos globais e redefinições */
+        body {
+            margin: 0;
+            background: black;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 4.5em;
+            padding-bottom: 2em;
+            position: relative;
+            /* Ensures scroll is possible if content exceeds screen height */
+        }
 
-      .language-grid a[href="indianbibles.html"] span,
-      .language-grid a#indian-trigger span { font-size: 0.6rem; }
-      
-      .content-section { font-size: 0.95rem; padding: 1.2rem 1.5rem; max-width: 95%; }
-      .main-title-neon { font-size: 1.3rem; }
-      .subtitle-strong { font-size: 1.05rem; }
-      
-      /* Ajuste do modal no mobile */
-      .modal-content { width: 85%; padding: 1.5rem 1rem; }
-      .modal-lang-btn { font-size: 0.9rem; padding: 8px 10px; min-width: 80px; }
-    }
-  </style>
+        /* --- CSS Animated Background (Replacement for Video) --- */
+        .background-animated {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            /* Subtle dark nebula/stars effect */
+            background: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 50%, rgba(0,0,0,0.9) 100%);
+            animation: backgroundShift 60s linear infinite alternate;
+        }
+
+        /* Animated pseudo-element for subtle movement */
+        .background-animated::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: repeating-radial-gradient(circle, rgba(249, 248, 113, 0.05) 0px, transparent 1px, transparent 100px);
+            opacity: 0.1;
+            animation: starMovement 120s linear infinite;
+        }
+
+        @keyframes starMovement {
+            from { transform: translate(-50%, -50%); }
+            to { transform: translate(0%, 0%); }
+        }
+        @keyframes backgroundShift {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+        /* --- END Animated Background --- */
+
+        /* Cabeçalho fixo */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 4.5em;
+            background-color: black;
+            color: var(--neon-yellow);
+            font-family: 'Merriweather', serif;
+            font-weight: bold;
+            font-size: 2.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+            text-shadow:
+                0 0 8px var(--neon-yellow),
+                0 0 20px var(--neon-yellow),
+                0 0 40px var(--neon-yellow),
+                0 0 80px var(--neon-yellow);
+            animation: neonPulseYellow 2s infinite alternate;
+            user-select: none;
+            letter-spacing: 0.05em;
+            z-index: 100;
+        }
+
+        /* Animações */
+        @keyframes neonPulseYellow {
+            from { text-shadow: 0 0 8px var(--neon-yellow), 0 0 20px var(--neon-yellow); }
+            to { text-shadow: 0 0 15px var(--neon-yellow), 0 0 30px var(--neon-yellow); }
+        }
+
+        /* Area de conteúdo principal */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10em 1rem 2rem;
+            gap: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            min-height: calc(100vh - 4.5em - 2em);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Estilo de secção partilhado */
+        .content-section {
+            background: rgba(0,0,0,0.6);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            max-width: 500px;
+            text-align: center;
+            user-select: none;
+            text-shadow: 0 0 5px #000;
+            margin-top: 0;
+        }
+        .content-section p {
+            margin-bottom: 0.8rem;
+            margin-top: 0;
+        }
+        .content-section strong {
+            color: var(--neon-yellow);
+        }
+
+        /* Títulos */
+        .main-title-neon {
+            color: var(--neon-yellow);
+            font-size: 1.8rem;
+            margin-top: 0;
+            text-shadow:
+                0 0 8px var(--neon-yellow),
+                0 0 20px var(--neon-yellow),
+                0 0 40px var(--neon-yellow),
+                0 0 80px var(--neon-yellow);
+            animation: neonPulseYellow 2s infinite alternate;
+        }
+        .subtitle-strong {
+            margin-top: 0.4rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* Grelha de idiomas */
+        .language-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .language-grid a {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            width: 110px;
+            height: 130px;
+            box-shadow: none;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 0.7em;
+            box-sizing: border-box;
+            cursor: pointer;
+            text-shadow: 0 0 5px #000; /* Added for better readability on lighter flags */
+        }
+
+        .language-grid a[href="indianbibles.html"] span, 
+        .language-grid a#indian-trigger span {
+            font-size: 0.7rem;
+            line-height: 1.1;
+        }
+
+        .language-grid a:not(.unavailable):hover {
+            background: rgba(249, 248, 113, 0.1);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+            border-color: var(--neon-yellow);
+        }
+
+        .language-grid a img {
+            max-width: 100%;
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            filter: brightness(0.9);
+            transition: filter 0.3s ease;
+            margin-bottom: 0.2em;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Slight border for image clarity */
+        }
+
+        .language-grid a span {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
+        }
+
+        .language-grid a.unavailable {
+            opacity: 0.5;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* --- ESTILOS DO MODAL (POP-UP) --- */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.8); /* Fundo preto transparente */
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: rgba(10, 10, 10, 0.95);
+            margin: auto;
+            padding: 2rem;
+            border: 2px solid var(--neon-yellow);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 0 30px rgba(249, 248, 113, 0.4);
+            text-align: center;
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-btn {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--neon-yellow);
+            text-decoration: none;
+        }
+
+        .modal-title {
+            color: var(--neon-yellow);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px var(--neon-yellow);
+        }
+
+        /* Grid de línguas dentro do Modal */
+        .modal-lang-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .modal-lang-btn {
+            background: transparent;
+            border: 1px solid var(--neon-yellow);
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .modal-lang-btn:hover {
+            background: var(--neon-yellow);
+            color: #000;
+            box-shadow: 0 0 15px var(--neon-yellow);
+            transform: scale(1.05);
+        }
+
+        /* Rodapé fixo */
+        footer {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            height: 2em;
+            background-color: black;
+            color: var(--footer-text); /* Using brightened variable */
+            text-align: center;
+            line-height: 2em;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
+            user-select: none;
+            z-index: 100;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.8rem;
+            line-height: 2em;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .content-section {
+                font-size: 1.05rem;
+                padding: 1.5rem 1.8rem;
+                max-width: 90%;
+            }
+            .main-title-neon { font-size: 1.5rem; }
+            .subtitle-strong { font-size: 1.25rem; }
+            .language-grid { gap: 1.2rem; }
+            .language-grid a { width: 90px; height: 100px; font-size: 0.8rem; }
+            .language-grid a img { height: 45px; } /* Ajuste uniforme para tablets */
+        }
+
+        @media (max-width: 480px) {
+            header { font-size: 1.8rem; height: 3.8em; }
+            footer { font-size: 0.8rem; height: 2em; line-height: 2em; }
+            body { padding-top: 3.8em; padding-bottom: 2em; }
+            main { min-height: calc(100vh - 3.8em - 2em); padding: 5.5em 1rem 1.5rem; gap: 2rem; }
+            .language-grid { gap: 0.8rem; }
+            .language-grid a { width: 80px; height: 90px; font-size: 0.7rem; }
+            .language-grid a img { height: 35px; } /* Ajuste uniforme para mobile */
+
+            .language-grid a[href="indianbibles.html"] span,
+            .language-grid a#indian-trigger span { font-size: 0.6rem; }
+            
+            .content-section { font-size: 0.95rem; padding: 1.2rem 1.5rem; max-width: 95%; }
+            .main-title-neon { font-size: 1.3rem; }
+            .subtitle-strong { font-size: 1.05rem; }
+            
+            /* Ajuste do modal no mobile */
+            .modal-content { width: 85%; padding: 1.5rem 1rem; }
+            .modal-lang-btn { font-size: 0.9rem; padding: 8px 10px; min-width: 80px; }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="background-animated" aria-hidden="true">
-    <video autoplay loop muted playsinline>
-      <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <header>
-    Best Bibles
-  </header>
-
-  <main>
-    <section class="content-section" aria-label="Project Introduction">
-      <h2 class="main-title-neon">📖 Welcome</h2>
-      <p class="subtitle-strong">🔥 Get your Bible — listen anytime, own it forever. 🔥</p>
-      <p>Welcome to the official page of Best Bibles Audiobooks, an independent work by T. S. Telles, author of Christian fiction and fantasy.</p>
-      <p>This project exists to make clear, uncut audio Bibles affordable and free of ads — for everyone, everywhere.</p>
-      <p>Stream free parts or buy the complete version to own it for life and support more languages.</p>
-      <p style="font-style: italic; margin-top: 1.5em;">"Go ye into all the world, and preach the gospel to every creature." - Mark 16:15</p>
-    </section>
-
-    <section class="content-section" aria-label="Listen to God's Word">
-      <h2 class="main-title-neon">🎧 Listen to the Complete Word of God — Anytime, Anywhere!</h2>
-      <p class="subtitle-strong">High-quality audio Bibles in your language — no ads, no subscription, yours forever.</p>
-      <p class="subtitle-strong">👉 Choose your Bible below and start listening today!</p>
-    </section>
-
-    <section class="content-section" aria-label="Why It Matters">
-      <h2 class="main-title-neon">🌍 Why It Matters</h2>
-      <p class="subtitle-strong">Your purchase helps break barriers: more languages, more countries, more freedom to hear the Word.</p>
-      <p>Every Bible sold helps make the next one possible — with no ads and no big companies controlling it.</p>
-    </section>
-
-    <section class="content-section" aria-label="Explore by Language">
-      <h2 class="main-title-neon">📚 Explore by Language</h2>
-      <p class="subtitle-strong">Listen and own your Bible in your language — clear, ad-free, uncut.</p>
-      <div class="language-grid">
-        <a href="korean.html" aria-label="Korean Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Korean Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea">
-            <span>한국어 (Korean)</span>
-        </a>
-        <a href="russian.html" aria-label="Russian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Russian Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia">
-            <span>Русский (Russian)</span>
-        </a>
-        <a href="chinese.html" aria-label="Chinese Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Chinese Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China">
-            <span>中文 (Chinese)</span>
-        </a>
-        <a href="french.html" aria-label="French Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'French Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France">
-            <span>Français (French)</span>
-        </a>
-        <a href="german.html" aria-label="German Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'German Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany">
-            <span>Deutsch (German)</span>
-        </a>
-        <a href="english.html" aria-label="English Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'English Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States">
-            <span>English</span>
-        </a>
-        <a href="spanish.html" aria-label="Spanish Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Spanish Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain">
-            <span>Español (Spanish)</span>
-        </a>
-        <a href="arabic.html" aria-label="Arabic Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Arabic Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia">
-            <span>العربية (Arabic)</span>
-        </a>
-        <a href="italian.html" aria-label="Italian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Italian Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Flag of Italy">
-            <span>Italiano (Italian)</span>
-        </a>
-        <a href="tagalog.html" aria-label="Tagalog" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Tagalog Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Flag of Philippines">
-            <span>Tagalog Bible </span>
-        </a>
-        
-        <!-- INDIAN BIBLES TRIGGER - ALTERADO PARA ABRIR O MODAL -->
-        <a id="indian-trigger" onclick="openIndianModal()" aria-label="Indian Bibles" style="cursor: pointer;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India">
-            <span>भारतीय पवित्र बाइबिल<br>(Indian Bibles)</span>
-        </a>
-
-        <a href="hebrewbible.html" aria-label="Hebrew Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Hebrew Bible' });">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg" alt="Flag of Israel">
-            <span>עברית (Hebrew)</span>
-        </a>
-      </div>
-      <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px; margin-top: 2rem;">
-        <li>✔️ Stream parts for free on YouTube.</li>
-        <li>✔️ Get the full version on Spotify, Storytel, Google Play and more.</li>
-        <li>✔️ Share with family and help reach new languages.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
-  </footer>
-
-  <!-- MODAL DE LÍNGUAS INDIANAS -->
-  <div id="indianLangModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeIndianModal()">&times;</span>
-      <h3 class="modal-title">Select Language / भाषा चुनें</h3>
-      <div class="modal-lang-grid">
-        <a href="hindibible.html" class="modal-lang-btn">हिन्दी (Hindi)</a>
-        <a href="urdubible.html" class="modal-lang-btn">اردو (Urdu)</a>
-        <a href="marathi.html" class="modal-lang-btn">मराठी (Marathi)</a>
-        <a href="gujarati.html" class="modal-lang-btn">ગુજરાતી (Gujarati)</a>
-        <a href="punjabi.html" class="modal-lang-btn">ਪੰਜਾਬੀ (Punjabi)</a>
-        <a href="bengali.html" class="modal-lang-btn">বাংলা (Bengali)</a>
-        <a href="telugu.html" class="modal-lang-btn">తెలుగు (Telugu)</a>
-        <a href="tamil.html" class="modal-lang-btn">தமிழ் (Tamil)</a>
-        <a href="kannada.html" class="modal-lang-btn">ಕನ್ನಡ (Kannada)</a>
-        <a href="malayalam.html" class="modal-lang-btn">മലയാളം (Malayalam)</a>
-      </div>
+    <!-- Replaced heavy video background with a lightweight CSS-only animated effect -->
+    <div class="background-animated" aria-hidden="true">
+        <!-- Content for animated background is handled by CSS ::after -->
     </div>
-  </div>
 
-  <script>
-    // Função para abrir o modal
-    function openIndianModal() {
-      document.getElementById("indianLangModal").style.display = "flex";
-      // Enviar evento ao Google Analytics se desejar
-      if(typeof gtag === 'function') {
-        gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Indian Bibles Modal Open' });
-      }
-    }
+    <header>
+        Best Bibles
+    </header>
 
-    // Função para fechar o modal
-    function closeIndianModal() {
-      document.getElementById("indianLangModal").style.display = "none";
-    }
+    <main>
+        <section class="content-section" aria-label="Project Introduction">
+            <h2 class="main-title-neon">📖 Welcome</h2>
+            <p class="subtitle-strong">🔥 Get your Bible — listen anytime, own it forever. 🔥</p>
+            <p>Welcome to the official page of Best Bibles Audiobooks, a fully independent project dedicated to delivering clean, high-quality Christian audio content.</p>
+            <p>Affordable, ad-free Audio Bibles — for everyone, everywhere.</p>
+            <p>Stream free parts, or get your copy to own it for life and support more languages.</p>
+            <p style="font-style: italic; margin-top: 1.5em;">"Go ye into all the world, and preach the gospel to every creature." - Mark 16:15</p>
+        </section>
 
-    // Fechar ao clicar fora do conteúdo
-    window.onclick = function(event) {
-      const modal = document.getElementById("indianLangModal");
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
+        <section class="content-section" aria-label="Listen to God's Word">
+            <h2 class="main-title-neon">🎧 Listen to the Complete Word of God — Anytime, Anywhere!</h2>
+            <p class="subtitle-strong">No subscription, yours forever.</p>
+            <p class="subtitle-strong">👉 Choose your Bible below and start listening today!</p>
+        </section>
+
+        <section class="content-section" aria-label="Why It Matters">
+            <h2 class="main-title-neon">🌍 Why It Matters</h2>
+            <p class="subtitle-strong">Your purchase helps break barriers: more languages, more countries, more freedom to hear the Word.</p>
+            <p>Every Bible sold helps make the next one possible — with no ads and no big companies controlling it.</p>
+        </section>
+
+        <section class="content-section" aria-label="Explore by Language">
+            <h2 class="main-title-neon">📚 Explore by Language</h2>
+            <p class="subtitle-strong">Listen and own your Bible in your language.</p>
+            <div class="language-grid">
+                <!-- NOTE: Added onerror fallback for image robustness -->
+                <a href="korean.html" aria-label="Korean Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Korean Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=KR'">
+                    <span>한국어 (Korean)</span>
+                </a>
+                <a href="russian.html" aria-label="Russian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Russian Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" alt="Flag of Russia" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=RU'">
+                    <span>Русский (Russian)</span>
+                </a>
+                <a href="chinese.html" aria-label="Chinese Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Chinese Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="Flag of China" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=CN'">
+                    <span>中文 (Chinese)</span>
+                </a>
+                <a href="french.html" aria-label="French Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'French Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=FR'">
+                    <span>Français (French)</span>
+                </a>
+                <a href="german.html" aria-label="German Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'German Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" alt="Flag of Germany" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=DE'">
+                    <span>Deutsch (German)</span>
+                </a>
+                <a href="english.html" aria-label="English Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'English Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Flag of the United States" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=US'">
+                    <span>English</span>
+                </a>
+                <a href="spanish.html" aria-label="Spanish Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Spanish Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Flag of Spain" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=ES'">
+                    <span>Español (Spanish)</span>
+                </a>
+                <a href="arabic.html" aria-label="Arabic Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Arabic Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" alt="Flag of Saudi Arabia" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=AR'">
+                    <span>العربية (Arabic)</span>
+                </a>
+                <a href="italian.html" aria-label="Italian Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Italian Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Flag of Italy" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=IT'">
+                    <span>Italiano (Italian)</span>
+                </a>
+                <a href="tagalog.html" aria-label="Tagalog" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Tagalog Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Flag of Philippines" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=PH'">
+                    <span>Tagalog Bible </span>
+                </a>
+                
+                <!-- INDIAN BIBLES TRIGGER - Now opens the modal via JS -->
+                <a id="indian-trigger" onclick="openIndianModal()" aria-label="Indian Bibles" style="cursor: pointer;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=IN'">
+                    <span>भारतीय पवित्र बाइबिल<br>(Indian Bibles)</span>
+                </a>
+
+                <a href="hebrewbible.html" aria-label="Hebrew Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Hebrew Bible' });">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg" alt="Flag of Israel" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=IL'">
+                    <span>עברית (Hebrew)</span>
+                </a>
+            </div>
+            <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px; margin-top: 2rem;">
+                <li>✔️ Stream parts for free on YouTube.</li>
+                <li>✔️ Get the full version on Spotify, Storytel, Google Play and more.</li>
+                <li>✔️ Share with family and help reach new languages.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
+    </footer>
+
+    <!-- MODAL DE LÍNGUAS INDIANAS -->
+    <div id="indianLangModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeIndianModal()" aria-label="Close Modal">&times;</span>
+            <h3 id="modal-title" class="modal-title">Select Language / भाषा चुनें</h3>
+            <div class="modal-lang-grid">
+                <a href="hindibible.html" class="modal-lang-btn">हिन्दी (Hindi)</a>
+                <a href="urdubible.html" class="modal-lang-btn">اردو (Urdu)</a>
+                <a href="marathi.html" class="modal-lang-btn">मराठी (Marathi)</a>
+                <a href="gujarati.html" class="modal-lang-btn">ગુજરાતી (Gujarati)</a>
+                <a href="punjabi.html" class="modal-lang-btn">ਪੰਜਾਬੀ (Punjabi)</a>
+                <a href="bengali.html" class="modal-lang-btn">বাংলা (Bengali)</a>
+                <a href="telugu.html" class="modal-lang-btn">తెలుగు (Telugu)</a>
+                <a href="tamil.html" class="modal-lang-btn">தமிழ் (Tamil)</a>
+                <a href="kannada.html" class="modal-lang-btn">ಕನ್ನಡ (Kannada)</a>
+                <a href="malayalam.html" class="modal-lang-btn">മലയാളം (Malayalam)</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir o modal
+        function openIndianModal() {
+            document.getElementById("indianLangModal").style.display = "flex";
+            // Send Google Analytics event (assuming gtag function exists)
+            if(typeof gtag === 'function') {
+                gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Indian Bibles Modal Open' });
+            }
+        }
+
+        // Função para fechar o modal
+        function closeIndianModal() {
+            document.getElementById("indianLangModal").style.display = "none";
+        }
+
+        // Fechar ao clicar fora do conteúdo
+        window.onclick = function(event) {
+            const modal = document.getElementById("indianLangModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
