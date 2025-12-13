@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | Soluções em Presença Digital de Alto Impacto</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+
+    <style>
+        /* -------------------------------------------------------------------
+        * 1. CONFIGURAÇÕES GERAIS E RESET (Mantidas da Home Page)
+        * ------------------------------------------------------------------- */
+        
+        :root {
+            --primary-color: #0056b3; 
+            --secondary-color: #00aaff; 
+            --text-dark: #212529; 
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-dark: #1f2937; 
+            --border-radius: 10px; 
+            --font-primary: 'Poppins', 'Arial', sans-serif; 
+            --success-color: #28a745; /* Verde para sucesso/destaque */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.7; 
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* -------------------------------------------------------------------
+        * 2. CABEÇALHO (Header) - Copiado da Home Page
+        * ------------------------------------------------------------------- */
+
+        .main-header {
+            background: var(--bg-light);
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .main-nav ul {
+            display: flex;
+        }
+
+        .main-nav li {
+            margin-left: 25px;
+        }
+
+        .main-nav a {
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 5px 0;
+        }
+
+        .btn-contato {
+            background: var(--primary-color);
+            color: var(--text-light) !important;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: background 0.3s, transform 0.2s;
+            font-weight: 600;
+        }
+
+        .btn-contato:hover {
+            background: var(--secondary-color);
+            color: var(--text-light) !important;
+            transform: scale(1.05); 
+        }
+
+        /* -------------------------------------------------------------------
+        * 3. BOTÕES GERAIS - Copiado da Home Page
+        * ------------------------------------------------------------------- */
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 30px; 
+            border-radius: 10px; 
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin: 5px 10px 5px 0;
+            cursor: pointer;
+            transition: all 0.3s ease; 
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4); 
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color); 
+            box-shadow: 0 6px 20px rgba(0, 170, 255, 0.6); 
+            transform: translateY(-2px); 
+        }
+
+        .btn-secondary {
+            background: none;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-tertiary {
+            background: #28a745; 
+            color: var(--text-light);
+            border: none;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4); 
+        }
+
+        .btn-tertiary:hover {
+            background: #218838;
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* -------------------------------------------------------------------
+        * 4. ESTILOS ESPECÍFICOS DA PÁGINA DE SERVIÇOS
+        * ------------------------------------------------------------------- */
+
+        .services-hero {
+            padding: 100px 0 50px;
+            background: linear-gradient(135deg, #e9f5ff 0%, #f4f8fb 100%);
+            text-align: center;
+        }
+
+        .services-hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .services-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .services-hero a {
+             /* Estilo primário adaptado para o Hero da Serviços */
+            font-size: 18px;
+        }
+        
+        /* Seção principal de listagem de serviços (Adaptado ao estilo Loguei) */
+        .service-detail-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .service-detail-section h3 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .service-block {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            text-align: left;
+        }
+
+        /* Inverter o layout para blocos alternados (imagem à direita) */
+        .service-block:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .service-block:nth-child(even) .service-content {
+            padding-left: 40px;
+            padding-right: 0;
+        }
+
+        .service-visual {
+            flex: 1;
+            min-height: 350px;
+            background-color: #f0f8ff; /* Fundo leve para o bloco visual */
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .service-visual h4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .service-content h4 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-content p {
+            margin-bottom: 25px;
+        }
+        
+        /* Lista de benefícios/diferenciais */
+        .benefits-list {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .benefits-list li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 25px;
+        }
+
+        .benefits-list li::before {
+            content: '✓'; /* Ícone de check para visual Loguei */
+            color: var(--success-color);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* -------------------------------------------------------------------
+        * 5. RODAPÉ (Footer) - Copiado da Home Page
+        * ------------------------------------------------------------------- */
+
+        .main-footer {
+            background: #2c3e50; 
+            color: #b0c4de;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+
+        .main-footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #b0c4de;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-info {
+            text-align: right;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+        }
+
+        /* -------------------------------------------------------------------
+        * 6. MEDIA QUERIES (Responsividade)
+        * ------------------------------------------------------------------- */
+
+        @media (max-width: 992px) {
+            .service-block {
+                flex-direction: column !important; /* Força a coluna em telas menores */
+                text-align: center;
+                margin-bottom: 60px;
+            }
+            .service-content, .service-block:nth-child(even) .service-content {
+                padding: 0;
+                margin-bottom: 30px;
+            }
+            .service-visual {
+                min-height: 250px;
+                width: 100%;
+            }
+            .services-hero h2 {
+                font-size: 40px;
+            }
+            .benefits-list {
+                padding-left: 0;
+                text-align: left;
+                width: fit-content;
+                margin: 0 auto 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>SUA EMPRESA</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servicos.html" class="active-link">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html" class="btn-contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="services-hero">
+        <div class="container">
+            <h2>Soluções Digitais sob Medida para o Crescimento do Seu Negócio</h2>
+            <p>Deixe-nos cuidar da sua presença online. Oferecemos serviços que vão do planejamento estratégico à implementação e gestão de resultados.</p>
+            <a href="contato.html" class="btn btn-primary">Solicite um Orçamento sem Compromisso</a>
+        </div>
+    </section>
+
+    <section class="service-detail-section">
+        <div class="container">
+            <h3>Nossa Linha Completa de Serviços B2B</h3>
+
+            <div class="service-block">
+                <div class="service-content">
+                    <h4>Criação de Websites e Plataformas</h4>
+                    <p>Construímos a fundação digital da sua empresa. Nossos sites são mais do que cartões de visita: são máquinas otimizadas para gerar leads, vendas e autoridade no seu mercado.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Design 100% Responsivo (Mobile First)</li>
+                        <li>Otimização SEO de Velocidade e Conteúdo</li>
+                        <li>Integração com CRMs e Ferramentas de Marketing</li>
+                        <li>Arquitetura robusta e segura</li>
+                    </ul>
+
+                    <a href="contato.html?service=website" class="btn btn-secondary">Quero um Site de Alto Impacto</a>
+                </div>
+                <div class="service-visual">
+                    <h4>💻 Website</h4>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-content">
+                    <h4>Estratégia e Performance de Marketing Digital</h4>
+                    <p>Não basta estar online, é preciso ser encontrado. Desenvolvemos estratégias de atração e conversão que colocam sua empresa na frente dos concorrentes, focando no retorno sobre o investimento (ROI).</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Campanhas de Tráfego Pago (Google Ads e Meta Ads)</li>
+                        <li>Consultoria e Implementação de SEO Avançado</li>
+                        <li>Marketing de Conteúdo e Geração de Leads</li>
+                        <li>Relatórios Transparentes e Otimização Constante</li>
+                    </ul>
+
+                    <a href="contato.html?service=marketing" class="btn btn-secondary">Garantir Meu ROI</a>
+                </div>
+                <div class="service-visual">
+                    <h4>📈 Marketing</h4>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-content">
+                    <h4>Desenvolvimento de E-commerce e Lojas Virtuais</h4>
+                    <p>Crie uma operação de vendas online robusta e escalável. Seja para B2C ou B2B, entregamos plataformas seguras, fáceis de gerenciar e prontas para lidar com grandes volumes de transações.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Integração com ERPs e Logística</li>
+                        <li>Sistemas de Pagamento e Checkout Otimizados</li>
+                        <li>Design Focado na Experiência de Compra (UX)</li>
+                        <li>Suporte e Treinamento Completo da Equipe</li>
+                    </ul>
+
+                    <a href="contato.html?service=ecommerce" class="btn btn-secondary">Abrir Minha Loja Online</a>
+                </div>
+                <div class="service-visual">
+                    <h4>🛒 E-commerce</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h3>Pronto para Alavancar Sua Presença Digital com Profissionais?</h3>
+            <p>O sucesso online do seu negócio começa aqui. Clique e solicite uma consultoria gratuita.</p>
+            <a href="contato.html" class="btn btn-tertiary">Fale com Nossos Especialistas Agora</a>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+                <p>Entre em Contato: (XX) XXXX-XXXX | contato@suaempresa.com</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
