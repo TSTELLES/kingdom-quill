@@ -15,7 +15,7 @@
     overflow-x: hidden;
     position: relative;
   }
-
+  
   /* Efeito de luzes e brilhos no fundo */
   body::before {
     content: "";
@@ -78,14 +78,6 @@
   .btn-wishlist { background:#2e2e2e; color:#b8860b; border:2px solid #b8860b; }
   .btn-wishlist:hover { background:#b8860b; color:#fff; transform:scale(1.05); }
 
-  /* Imagem principal */
-  .main-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    max-height: 500px;
-  }
-
   .gallery { display:flex; gap:15px; margin-top:20px; flex-wrap:wrap; }
   .gallery img {
     width:calc(33.333% - 10px); 
@@ -100,41 +92,7 @@
   }
   .gallery img:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
 
-  /* Vídeo premium */
-  .video-section {
-    margin:60px 0;
-    text-align:center;
-  }
-  .video-section h2 {
-    font-family: 'Playfair Display', serif;
-    color:#fff;
-    font-size:2rem;
-    margin-bottom:20px;
-  }
-  .video-container {
-    position: relative;
-    max-width:800px;
-    margin:0 auto;
-    border-radius:12px;
-    overflow:hidden;
-    border: 8px solid;
-    animation: goldShine 3s linear infinite;
-    border-image-slice:1;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
-  }
-  .video-container video {
-    width:100%;
-    display:block;
-  }
-
-  @media(max-width:768px){ 
-    .gallery img { width:48%; }
-    .product { flex-direction:column; text-align:center; }
-    .details { text-align:center; }
-    .btn { width:80%; margin-bottom:10px; }
-    .main-image { max-width:100%; height:auto; }
-    .video-container { max-width:100%; }
-  }
+  @media(max-width:768px){ .gallery img { width:48%; } }
   @media(max-width:480px){ .gallery img { width:100%; } }
 
   .benefits { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; margin-top:50px; }
@@ -143,8 +101,67 @@
   .benefit h3 { color:#fff; margin-bottom:10px; font-size:1.4rem; font-family: 'Playfair Display', serif; }
   .benefit p { color:#ddd; font-size:1rem; }
 
+  /* Seção de Testemunhos */
+  .testimonials {
+    margin: 60px 0;
+    text-align: center;
+  }
+  .testimonials h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  .testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  .testimonial {
+    background: #2e2e2e;
+    padding: 25px 20px;
+    border-radius: 12px;
+    max-width: 350px;
+    position: relative;
+    border: 4px solid;
+    border-image: linear-gradient(145deg, #b8860b, #ffd700, #e6c200) 1;
+    animation: goldShine 3s linear infinite;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  }
+  .testimonial p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .testimonial h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #ffd700;
+    margin: 0;
+  }
+  @media(max-width:768px) {
+    .testimonial-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
   footer { text-align:center; margin-top:50px; padding:20px 0; color:#aaa; font-size:0.9rem; border-top:1px solid #444; }
 
+  @media(max-width:768px){ 
+    .product { flex-direction:column; text-align:center; }
+    .details { text-align:center; }
+    .btn { width:80%; margin-bottom:10px; }
+    .product img { width:100%; height:auto; }
+  }
 </style>
 </head>
 <body>
@@ -156,7 +173,7 @@
   </header>
 
   <section class="product">
-    <img class="shiny-border main-image" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Premium Product">
+    <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Premium Product">
     <div class="details">
       <h2>K&Q Premium Product</h2>
       <p>Our premium K&Q product combines cutting-edge design with unmatched craftsmanship. Perfect for those who appreciate true luxury and refined detail.</p>
@@ -169,17 +186,6 @@
         <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Image 2">
         <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Image 3">
       </div>
-    </div>
-  </section>
-
-  <!-- Seção de vídeo premium -->
-  <section class="video-section">
-    <h2>Discover K&Q in Action</h2>
-    <div class="video-container">
-      <video controls poster="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
     </div>
   </section>
 
@@ -201,6 +207,26 @@
       <p>Each K&Q product is designed to impress and crafted for luxury experiences.</p>
     </div>
   </section>
+
+  <!-- Seção de Testemunhos -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial">
+        <p>"The quality of K&Q exceeded my expectations. Every detail feels luxurious and refined. Truly a premium experience!"</p>
+        <h4>- Nathan R.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"I was amazed by the craftsmanship. The product not only looks stunning but also feels substantial and elegant."</p>
+        <h4>- Isabella M.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Buying K&Q was the best decision. Customer support was attentive, and the delivery was incredibly fast. Highly recommended!"</p>
+        <h4>- Gabriel T.</h4>
+      </div>
+    </div>
+  </section>
+
 </div>
 
 <footer>
