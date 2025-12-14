@@ -44,7 +44,6 @@
   header h1 { font-family: 'Playfair Display', serif; font-size:3rem; color:#fff; margin-bottom:10px; }
   header p { font-size:1.2rem; color:#ddd; }
 
-  /* Borda dourada reluzente */
   .shiny-border {
     border: 8px solid;
     border-radius:12px;
@@ -62,10 +61,12 @@
     100% { border-image-source: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); }
   }
 
-  .product { display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; }
-  .product img { width:400px; height:400px; } 
+  /* Produto principal + galeria integrada */
+  .product { display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; align-items:flex-start; }
+  .main-image { flex: 1 1 400px; display:flex; justify-content:center; }
+  .main-image img { width:100%; max-width:400px; height:400px; }
 
-  .details { flex:1; min-width:300px; }
+  .details { flex: 1 1 400px; min-width:300px; }
   .details h2 { font-family: 'Playfair Display', serif; font-size:2.2rem; margin-bottom:15px; color:#fff; }
   .details p { margin-bottom:20px; color:#ddd; font-size:1.1rem; }
   .price { font-size:2rem; color:#b8860b; font-weight:700; margin-bottom:25px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
@@ -80,12 +81,12 @@
   .btn-wishlist { background:#2e2e2e; color:#b8860b; border:2px solid #b8860b; }
   .btn-wishlist:hover { background:#b8860b; color:#fff; transform:scale(1.05); }
 
-  /* Galeria alinhada */
-  .gallery { display: flex; justify-content: space-between; gap:15px; margin-top:20px; }
+  /* Galeria integrada abaixo da imagem principal */
+  .gallery { display:flex; justify-content:space-between; gap:15px; margin-top:20px; }
   .gallery img {
-    flex: 1;
-    height:150px;
+    flex:1;
     max-width:32%;
+    height:120px;
     border-radius:10px;
     cursor:pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -96,32 +97,17 @@
   }
   .gallery img:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
 
-  /* Seção de vídeo premium */
   .video-section { margin:50px 0; text-align:center; }
   .video-section h2 { font-family: 'Playfair Display', serif; color:#fff; margin-bottom:20px; font-size:2rem; }
-  .video-container {
-    display:inline-block;
-    border:8px solid;
-    border-radius:12px;
-    border-image-slice:1;
-    animation: goldShine 3s linear infinite;
-    overflow:hidden;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
-  }
-  .video-container video {
-    width:100%;
-    height:auto;
-    display:block;
-  }
+  .video-container { display:inline-block; border:8px solid; border-radius:12px; border-image-slice:1; animation: goldShine 3s linear infinite; overflow:hidden; box-shadow: 0 15px 25px rgba(0,0,0,0.35); }
+  .video-container video { width:100%; height:auto; display:block; }
 
-  /* Seção de testemunhos */
   .testimonials { margin-top:50px; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
   .testimonial { background:#2e2e2e; padding:25px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); transition:all 0.3s ease; }
   .testimonial:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
   .testimonial p { color:#ddd; font-size:1rem; margin-bottom:15px; font-style:italic; }
   .testimonial h4 { color:#b8860b; font-family: 'Playfair Display', serif; font-size:1.2rem; }
 
-  /* Faixa final compacta */
   .final-strip {
     display:flex;
     flex-wrap:wrap;
@@ -144,8 +130,9 @@
     .product { flex-direction:column; text-align:center; }
     .details { text-align:center; }
     .btn { width:80%; margin-bottom:10px; }
-    .product img { width:100%; height:auto; }
-    .gallery img { max-width:100%; margin-bottom:10px; }
+    .main-image img { width:100%; height:auto; margin-bottom:15px; }
+    .gallery { flex-direction:row; justify-content:center; }
+    .gallery img { max-width:30%; margin:0 5px; height:auto; }
   }
 </style>
 </head>
@@ -158,7 +145,9 @@
   </header>
 
   <section class="product">
-    <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Premium Product">
+    <div class="main-image">
+      <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Premium Product">
+    </div>
     <div class="details">
       <h2>K&Q Premium Product</h2>
       <p>Our premium K&Q product combines cutting-edge design with unmatched craftsmanship. Perfect for those who appreciate true luxury and refined detail.</p>
@@ -174,7 +163,6 @@
     </div>
   </section>
 
-  <!-- Seção de vídeo -->
   <section class="video-section">
     <h2>See K&Q in Action</h2>
     <div class="video-container">
@@ -185,7 +173,6 @@
     </div>
   </section>
 
-  <!-- Seção de testemunhos -->
   <section class="testimonials">
     <div class="testimonial">
       <p>"I’ve never owned anything so elegant. The craftsmanship is impeccable — every detail is perfect." </p>
@@ -201,7 +188,6 @@
     </div>
   </section>
 
-  <!-- Faixa final compacta -->
   <section class="final-strip">
     <div>
       <h4>Fast & Secure Delivery</h4>
