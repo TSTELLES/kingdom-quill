@@ -100,12 +100,40 @@
   }
   .gallery img:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
 
+  /* Vídeo premium */
+  .video-section {
+    margin:60px 0;
+    text-align:center;
+  }
+  .video-section h2 {
+    font-family: 'Playfair Display', serif;
+    color:#fff;
+    font-size:2rem;
+    margin-bottom:20px;
+  }
+  .video-container {
+    position: relative;
+    max-width:800px;
+    margin:0 auto;
+    border-radius:12px;
+    overflow:hidden;
+    border: 8px solid;
+    animation: goldShine 3s linear infinite;
+    border-image-slice:1;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
+  }
+  .video-container video {
+    width:100%;
+    display:block;
+  }
+
   @media(max-width:768px){ 
     .gallery img { width:48%; }
     .product { flex-direction:column; text-align:center; }
     .details { text-align:center; }
     .btn { width:80%; margin-bottom:10px; }
     .main-image { max-width:100%; height:auto; }
+    .video-container { max-width:100%; }
   }
   @media(max-width:480px){ .gallery img { width:100%; } }
 
@@ -116,6 +144,7 @@
   .benefit p { color:#ddd; font-size:1rem; }
 
   footer { text-align:center; margin-top:50px; padding:20px 0; color:#aaa; font-size:0.9rem; border-top:1px solid #444; }
+
 </style>
 </head>
 <body>
@@ -143,10 +172,40 @@
     </div>
   </section>
 
+  <!-- Seção de vídeo premium -->
+  <section class="video-section">
+    <h2>Discover K&Q in Action</h2>
+    <div class="video-container">
+      <video controls poster="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
   <section class="benefits">
     <div class="benefit">
       <h3>Fast & Secure Delivery</h3>
       <p>Receive your K&Q product quickly and in perfect condition, with premium packaging.</p>
     </div>
     <div class="benefit">
-      <h3>100%
+      <h3>100% Satisfaction Guarantee</h3>
+      <p>If you’re not satisfied, we offer a full refund. K&Q stands by its products.</p>
+    </div>
+    <div class="benefit">
+      <h3>Exclusive Customer Support</h3>
+      <p>Our dedicated K&Q team is ready to assist you with any inquiry or request.</p>
+    </div>
+    <div class="benefit">
+      <h3>Elegant & Exclusive Design</h3>
+      <p>Each K&Q product is designed to impress and crafted for luxury experiences.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 K&Q. All rights reserved.
+</footer>
+
+</body>
+</html>
