@@ -23,12 +23,16 @@
 
   .product { display:flex; flex-wrap:wrap; gap:50px; justify-content:space-between; }
   .product img {
+    width:500px;           /* largura fixa do quadro */
+    height:500px;          /* altura fixa do quadro */
+    object-fit:cover;      /* garante que a imagem preencha o quadro sem deformar */
     border-radius:12px;
     box-shadow: 0 15px 25px rgba(0,0,0,0.35);
     border: 8px solid;
     border-image: linear-gradient(145deg, #b8860b, #ffd700, #e6c200) 1;
     background-clip: padding-box;
   }
+
   .details { flex:1; min-width:300px; }
   .details h2 { font-family: 'Playfair Display', serif; font-size:2.2rem; margin-bottom:15px; color:#fff; }
   .details p { margin-bottom:20px; color:#ddd; font-size:1.1rem; }
@@ -52,6 +56,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     border: 4px solid;
     border-image: linear-gradient(145deg, #b8860b, #ffd700, #e6c200) 1;
+    object-fit:cover; /* garante enquadramento automático */
+    height:150px;      /* altura do quadro da galeria */
   }
   .gallery img:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
 
@@ -70,6 +76,7 @@
     .product { flex-direction:column; text-align:center; }
     .details { text-align:center; }
     .btn { width:80%; margin-bottom:10px; }
+    .product img { width:100%; height:auto; } /* adapta para telas pequenas */
   }
 </style>
 </head>
@@ -82,7 +89,7 @@
   </header>
 
   <section class="product">
-    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green-bottle-of-natural-herbal-cream-on-pastel-blue-royalty-free-image-996812208-1560433423.jpg" alt="K&Q Premium Product">
+    <img src="https://media.istockphoto.com/id/1560433423/photo/green-bottle-of-natural-herbal-cream-on-pastel-blue.jpg?s=612x612&w=0&k=20&c=aY5pf5BY-CVGRa6ie1JbFGOgG6tN-1tG6hxFPzF6P88=" alt="K&Q Premium Product">
     <div class="details">
       <h2>K&Q Premium Product</h2>
       <p>Our premium K&Q product combines cutting-edge design with unmatched craftsmanship. Perfect for those who appreciate true luxury and refined detail.</p>
