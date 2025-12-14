@@ -15,8 +15,8 @@
     overflow-x: hidden;
     position: relative;
   }
-  
-  /* Efeito de luzes e brilhos no fundo */
+
+  /* Luzes de fundo premium */
   body::before {
     content: "";
     position: fixed;
@@ -62,7 +62,9 @@
     100% { border-image-source: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); }
   }
 
-  .product { display:flex; flex-wrap:wrap; gap:50px; justify-content:space-between; }
+  .product { display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; }
+  .product img { width:400px; height:400px; } /* Tamanho fixo controlado */
+
   .details { flex:1; min-width:300px; }
   .details h2 { font-family: 'Playfair Display', serif; font-size:2.2rem; margin-bottom:15px; color:#fff; }
   .details p { margin-bottom:20px; color:#ddd; font-size:1.1rem; }
@@ -92,67 +94,36 @@
   }
   .gallery img:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
 
-  @media(max-width:768px){ .gallery img { width:48%; } }
-  @media(max-width:480px){ .gallery img { width:100%; } }
+  /* Seção de vídeo premium */
+  .video-section { margin:50px 0; text-align:center; }
+  .video-section h2 { font-family: 'Playfair Display', serif; color:#fff; margin-bottom:20px; font-size:2rem; }
+  .video-container {
+    display:inline-block;
+    border:8px solid;
+    border-radius:12px;
+    border-image-slice:1;
+    animation: goldShine 3s linear infinite;
+    overflow:hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
+  }
+  .video-container video {
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  /* Seção de testemunhos */
+  .testimonials { margin-top:50px; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
+  .testimonial { background:#2e2e2e; padding:25px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); transition:all 0.3s ease; }
+  .testimonial:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
+  .testimonial p { color:#ddd; font-size:1rem; margin-bottom:15px; font-style:italic; }
+  .testimonial h4 { color:#b8860b; font-family: 'Playfair Display', serif; font-size:1.2rem; }
 
   .benefits { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; margin-top:50px; }
   .benefit { background:#2e2e2e; padding:25px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; transition:all 0.3s ease; }
   .benefit:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
   .benefit h3 { color:#fff; margin-bottom:10px; font-size:1.4rem; font-family: 'Playfair Display', serif; }
   .benefit p { color:#ddd; font-size:1rem; }
-
-  /* Seção de Testemunhos */
-  .testimonials {
-    margin: 60px 0;
-    text-align: center;
-  }
-  .testimonials h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 40px;
-  }
-  .testimonial-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
-  .testimonial {
-    background: #2e2e2e;
-    padding: 25px 20px;
-    border-radius: 12px;
-    max-width: 350px;
-    position: relative;
-    border: 4px solid;
-    border-image: linear-gradient(145deg, #b8860b, #ffd700, #e6c200) 1;
-    animation: goldShine 3s linear infinite;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .testimonial:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-  }
-  .testimonial p {
-    font-size: 1rem;
-    color: #ddd;
-    margin-bottom: 15px;
-    line-height: 1.5;
-    font-style: italic;
-  }
-  .testimonial h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: #ffd700;
-    margin: 0;
-  }
-  @media(max-width:768px) {
-    .testimonial-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
 
   footer { text-align:center; margin-top:50px; padding:20px 0; color:#aaa; font-size:0.9rem; border-top:1px solid #444; }
 
@@ -189,6 +160,33 @@
     </div>
   </section>
 
+  <!-- Seção de vídeo -->
+  <section class="video-section">
+    <h2>See K&Q in Action</h2>
+    <div class="video-container">
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Seção de testemunhos -->
+  <section class="testimonials">
+    <div class="testimonial">
+      <p>"I’ve never owned anything so elegant. The craftsmanship is impeccable — every detail is perfect." </p>
+      <h4>- Jessica M., New York</h4>
+    </div>
+    <div class="testimonial">
+      <p>"K&Q exceeded all my expectations. Luxury meets functionality in a way I didn’t think was possible." </p>
+      <h4>- Daniel R., Los Angeles</h4>
+    </div>
+    <div class="testimonial">
+      <p>"The attention to detail is phenomenal. I feel like I’m holding a piece of art." </p>
+      <h4>- Sophia L., Miami</h4>
+    </div>
+  </section>
+
   <section class="benefits">
     <div class="benefit">
       <h3>Fast & Secure Delivery</h3>
@@ -207,26 +205,6 @@
       <p>Each K&Q product is designed to impress and crafted for luxury experiences.</p>
     </div>
   </section>
-
-  <!-- Seção de Testemunhos -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-container">
-      <div class="testimonial">
-        <p>"The quality of K&Q exceeded my expectations. Every detail feels luxurious and refined. Truly a premium experience!"</p>
-        <h4>- Nathan R.</h4>
-      </div>
-      <div class="testimonial">
-        <p>"I was amazed by the craftsmanship. The product not only looks stunning but also feels substantial and elegant."</p>
-        <h4>- Isabella M.</h4>
-      </div>
-      <div class="testimonial">
-        <p>"Buying K&Q was the best decision. Customer support was attentive, and the delivery was incredibly fast. Highly recommended!"</p>
-        <h4>- Gabriel T.</h4>
-      </div>
-    </div>
-  </section>
-
 </div>
 
 <footer>
