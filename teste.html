@@ -63,7 +63,7 @@
   }
 
   .product { display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; }
-  .product img { width:400px; height:400px; }
+  .product img { width:400px; height:400px; } 
 
   .details { flex:1; min-width:300px; }
   .details h2 { font-family: 'Playfair Display', serif; font-size:2.2rem; margin-bottom:15px; color:#fff; }
@@ -106,7 +106,11 @@
     overflow:hidden;
     box-shadow: 0 15px 25px rgba(0,0,0,0.35);
   }
-  .video-container video { width:100%; height:auto; display:block; }
+  .video-container video {
+    width:100%;
+    height:auto;
+    display:block;
+  }
 
   /* Seção de testemunhos */
   .testimonials { margin-top:50px; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
@@ -126,20 +130,19 @@
     border-bottom:2px solid #b8860b;
     gap:15px;
     text-align:center;
+    margin-top:70px; /* maior espaçamento acima dos depoimentos */
   }
   .final-strip div { flex:1; min-width:200px; }
   .final-strip h4 { font-family:'Playfair Display', serif; color:#b8860b; margin-bottom:5px; font-size:1rem; }
   .final-strip p { color:#ddd; font-size:0.9rem; }
 
-  footer { text-align:center; margin-top:20px; padding:20px 0; color:#aaa; font-size:0.9rem; border-top:1px solid #444; }
+  footer { text-align:center; margin-top:50px; padding:20px 0; color:#aaa; font-size:0.9rem; border-top:1px solid #444; }
 
   @media(max-width:768px){ 
     .product { flex-direction:column; text-align:center; }
     .details { text-align:center; }
     .btn { width:80%; margin-bottom:10px; }
     .product img { width:100%; height:auto; }
-    .final-strip { flex-direction:column; }
-    .final-strip div { margin-bottom:10px; }
   }
 </style>
 </head>
@@ -215,7 +218,6 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer>
     &copy; 2025 K&Q. All rights reserved.
   </footer>
