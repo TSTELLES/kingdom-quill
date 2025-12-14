@@ -16,7 +16,6 @@
     position: relative;
   }
 
-  /* Luzes de fundo premium */
   body::before {
     content: "";
     position: fixed;
@@ -61,12 +60,13 @@
     100% { border-image-source: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); }
   }
 
-  /* Produto principal + galeria integrada */
-  .product { display:flex; flex-wrap:wrap; gap:30px; justify-content:space-between; align-items:flex-start; }
-  .main-image { flex: 1 1 400px; display:flex; justify-content:center; }
-  .main-image img { width:100%; max-width:400px; height:400px; }
+  .product-section { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:flex-start; margin-bottom:50px; }
+  .main-image { flex:0 0 450px; max-width:100%; }
+  .main-image img { width:100%; border-radius:12px; }
+  .side-images { display:flex; flex-direction:column; gap:15px; justify-content:flex-start; }
+  .side-images img { width:200px; height:130px; border-radius:10px; object-fit:cover; }
 
-  .details { flex: 1 1 400px; min-width:300px; }
+  .details { flex:1; min-width:300px; }
   .details h2 { font-family: 'Playfair Display', serif; font-size:2.2rem; margin-bottom:15px; color:#fff; }
   .details p { margin-bottom:20px; color:#ddd; font-size:1.1rem; }
   .price { font-size:2rem; color:#b8860b; font-weight:700; margin-bottom:25px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
@@ -81,25 +81,19 @@
   .btn-wishlist { background:#2e2e2e; color:#b8860b; border:2px solid #b8860b; }
   .btn-wishlist:hover { background:#b8860b; color:#fff; transform:scale(1.05); }
 
-  /* Galeria integrada abaixo da imagem principal */
-  .gallery { display:flex; justify-content:space-between; gap:15px; margin-top:20px; }
-  .gallery img {
-    flex:1;
-    max-width:32%;
-    height:120px;
-    border-radius:10px;
-    cursor:pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 4px solid;
-    animation: goldShine 3s linear infinite;
-    border-image-slice:1;
-    object-fit:cover;
-  }
-  .gallery img:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
-
   .video-section { margin:50px 0; text-align:center; }
   .video-section h2 { font-family: 'Playfair Display', serif; color:#fff; margin-bottom:20px; font-size:2rem; }
-  .video-container { display:inline-block; border:8px solid; border-radius:12px; border-image-slice:1; animation: goldShine 3s linear infinite; overflow:hidden; box-shadow: 0 15px 25px rgba(0,0,0,0.35); }
+  .video-container {
+    display:inline-block;
+    border:8px solid;
+    border-radius:12px;
+    border-image-slice:1;
+    animation: goldShine 3s linear infinite;
+    overflow:hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
+    width:90%; /* aumentado */
+    max-width:900px; /* limite maior */
+  }
   .video-container video { width:100%; height:auto; display:block; }
 
   .testimonials { margin-top:50px; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
@@ -127,12 +121,10 @@
   footer { text-align:center; margin-top:50px; padding:20px 0; color:#aaa; font-size:0.9rem; border-top:1px solid #444; }
 
   @media(max-width:768px){ 
-    .product { flex-direction:column; text-align:center; }
-    .details { text-align:center; }
-    .btn { width:80%; margin-bottom:10px; }
-    .main-image img { width:100%; height:auto; margin-bottom:15px; }
-    .gallery { flex-direction:row; justify-content:center; }
-    .gallery img { max-width:30%; margin:0 5px; height:auto; }
+    .product-section { flex-direction:column; align-items:center; }
+    .side-images { flex-direction:row; gap:10px; margin-top:15px; }
+    .side-images img { width:30%; height:auto; }
+    .details { text-align:center; margin-top:30px; }
   }
 </style>
 </head>
@@ -144,9 +136,15 @@
     <p>Discover the ultimate in elegance, quality, and style with K&Q.</p>
   </header>
 
-  <section class="product">
-    <div class="main-image">
-      <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Premium Product">
+  <!-- Seção de produtos -->
+  <section class="product-section">
+    <div class="main-image shiny-border">
+      <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Main Product">
+    </div>
+    <div class="side-images">
+      <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Image 1">
+      <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Image 2">
+      <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Image 3">
     </div>
     <div class="details">
       <h2>K&Q Premium Product</h2>
@@ -154,15 +152,10 @@
       <div class="price">$249.99</div>
       <button class="btn btn-buy">Buy Now</button>
       <button class="btn btn-wishlist">Add to Wishlist</button>
-
-      <div class="gallery">
-        <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Image 1">
-        <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Image 2">
-        <img class="shiny-border" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/green.jpg" alt="K&Q Image 3">
-      </div>
     </div>
   </section>
 
+  <!-- Seção de vídeo -->
   <section class="video-section">
     <h2>See K&Q in Action</h2>
     <div class="video-container">
@@ -173,6 +166,7 @@
     </div>
   </section>
 
+  <!-- Seção de testemunhos -->
   <section class="testimonials">
     <div class="testimonial">
       <p>"I’ve never owned anything so elegant. The craftsmanship is impeccable — every detail is perfect." </p>
@@ -188,6 +182,7 @@
     </div>
   </section>
 
+  <!-- Faixa final compacta -->
   <section class="final-strip">
     <div>
       <h4>Fast & Secure Delivery</h4>
