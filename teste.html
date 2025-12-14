@@ -16,7 +16,6 @@
     position: relative;
   }
 
-  /* Luzes de fundo premium */
   body::before {
     content: "";
     position: fixed;
@@ -30,11 +29,7 @@
     animation: moveLights 15s linear infinite;
   }
 
-  @keyframes moveLights {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(-20px, 20px); }
-    100% { transform: translate(0,0); }
-  }
+  @keyframes moveLights { 0% { transform: translate(0,0); } 50% { transform: translate(-20px, 20px); } 100% { transform: translate(0,0); } }
 
   a { text-decoration:none; }
 
@@ -44,39 +39,11 @@
   header h1 { font-family: 'Playfair Display', serif; font-size:3rem; color:#fff; margin-bottom:10px; }
   header p { font-size:1.2rem; color:#ddd; }
 
-  /* Borda dourada reluzente */
-  .shiny-border {
-    border: 8px solid;
-    border-radius:12px;
-    object-fit:cover;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
-    animation: goldShine 3s linear infinite;
-    border-image-slice: 1;
-  }
+  .shiny-border { border: 8px solid; border-radius:12px; object-fit:cover; box-shadow: 0 15px 25px rgba(0,0,0,0.35); animation: goldShine 3s linear infinite; border-image-slice: 1; }
+  @keyframes goldShine { 0% { border-image-source: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); } 25% { border-image-source: linear-gradient(145deg, #ffd700, #e6c200, #b8860b); } 50% { border-image-source: linear-gradient(145deg, #e6c200, #b8860b, #ffd700); } 75% { border-image-source: linear-gradient(145deg, #ffd700, #b8860b, #e6c200); } 100% { border-image-source: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); } }
 
-  @keyframes goldShine {
-    0% { border-image-source: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); }
-    25% { border-image-source: linear-gradient(145deg, #ffd700, #e6c200, #b8860b); }
-    50% { border-image-source: linear-gradient(145deg, #e6c200, #b8860b, #ffd700); }
-    75% { border-image-source: linear-gradient(145deg, #ffd700, #b8860b, #e6c200); }
-    100% { border-image-source: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); }
-  }
-
-  /* Produto principal */
-  .product-wrapper {
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
-  }
-  .main-image {
-    width:400px;
-    height:auto;
-    flex-shrink:0;
-    max-height:100%;
-    align-self: stretch;
-  }
+  .product-wrapper { display: flex; gap: 30px; justify-content: space-between; align-items: stretch; flex-wrap: wrap; }
+  .main-image { width:400px; height:auto; flex-shrink:0; max-height:100%; align-self: stretch; }
 
   .details { flex:1; min-width:300px; }
   .details h2 { font-family: 'Playfair Display', serif; font-size:2.2rem; margin-bottom:15px; color:#fff; }
@@ -84,63 +51,38 @@
   .price { font-size:2rem; color:#b8860b; font-weight:700; margin-bottom:25px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 
   .btn { display:inline-block; padding:15px 35px; font-size:1.2rem; font-weight:bold; border-radius:30px; transition:all 0.3s ease; cursor:pointer; text-transform:uppercase; }
-  .btn-buy { 
-    background: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); 
-    color:#fff; border:none; margin-right:20px; 
-    box-shadow:0 5px 15px rgba(0,0,0,0.35);
-  }
+  .btn-buy { background: linear-gradient(145deg, #b8860b, #ffd700, #e6c200); color:#fff; border:none; margin-right:20px; box-shadow:0 5px 15px rgba(0,0,0,0.35); }
   .btn-buy:hover { transform:scale(1.05); box-shadow:0 8px 25px rgba(0,0,0,0.45); }
   .btn-wishlist { background:#2e2e2e; color:#b8860b; border:2px solid #b8860b; }
   .btn-wishlist:hover { background:#b8860b; color:#fff; transform:scale(1.05); }
 
   .gallery { display:flex; gap:15px; margin-top:20px; flex-wrap:wrap; }
-  .gallery img {
-    width:calc(33.333% - 10px); 
-    border-radius:10px; 
-    cursor:pointer; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    height:150px;
-    border: 4px solid;
-    animation: goldShine 3s linear infinite;
-    border-image-slice:1;
-    object-fit:cover;
-  }
+  .gallery img { width:calc(33.333% - 10px); border-radius:10px; cursor:pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; height:150px; border: 4px solid; animation: goldShine 3s linear infinite; border-image-slice:1; object-fit:cover; }
   .gallery img:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.35); }
 
-  /* Seção de vídeo premium */
   .video-section { margin:50px 0; text-align:center; }
   .video-section h2 { font-family: 'Playfair Display', serif; color:#fff; margin-bottom:20px; font-size:2rem; }
-  .video-container {
-    display:inline-block;
-    border:8px solid;
-    border-radius:12px;
-    border-image-slice:1;
-    animation: goldShine 3s linear infinite;
-    overflow:hidden;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
-    max-width: 600px;
-    width:100%;
-  }
-  .video-container video {
-    width:100%;
-    height:auto;
-    display:block;
-  }
+  .video-container { display:inline-block; border:8px solid; border-radius:12px; border-image-slice:1; animation: goldShine 3s linear infinite; overflow:hidden; box-shadow: 0 15px 25px rgba(0,0,0,0.35); max-width: 600px; width:100%; }
+  .video-container video { width:100%; height:auto; display:block; }
 
-  /* Seção de testemunhos */
   .testimonials { margin-top:50px; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px; }
   .testimonial { background:#2e2e2e; padding:25px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); transition:all 0.3s ease; }
   .testimonial:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
   .testimonial p { color:#ddd; font-size:1rem; margin-bottom:15px; font-style:italic; }
   .testimonial h4 { color:#b8860b; font-family: 'Playfair Display', serif; font-size:1.2rem; }
 
-  .benefits { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; margin-top:50px; }
-  .benefit { background:#2e2e2e; padding:25px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; transition:all 0.3s ease; }
-  .benefit:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
-  .benefit h3 { color:#fff; margin-bottom:10px; font-size:1.4rem; font-family: 'Playfair Display', serif; }
-  .benefit p { color:#ddd; font-size:1rem; }
+  .benefits-policies { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; margin-top:50px; }
+  .benefit, .policy-item { background:#2e2e2e; padding:25px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); text-align:center; transition:all 0.3s ease; }
+  .benefit:hover, .policy-item:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
+  .benefit h3, .policy-item h3 { color:#fff; margin-bottom:10px; font-size:1.4rem; font-family: 'Playfair Display', serif; }
+  .benefit p, .policy-item p { color:#ddd; font-size:1rem; }
 
-  footer { text-align:center; margin-top:50px; padding:20px 0; color:#aaa; font-size:0.9rem; border-top:1px solid #444; }
+  .final-policies { margin-top:50px; text-align:center; display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+  .final-policies div { background:#2e2e2e; padding:20px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+  .final-policies h3 { color:#fff; font-family:'Playfair Display', serif; margin-bottom:10px; }
+  .final-policies p { color:#ddd; font-size:1rem; }
+
+  footer { text-align:center; margin-top:30px; padding:20px 0; color:#aaa; font-size:0.9rem; border-top:1px solid #444; }
 
   @media(max-width:768px){ 
     .product-wrapper { flex-direction:column; text-align:center; align-items:center; }
@@ -179,7 +121,6 @@
     </div>
   </section>
 
-  <!-- Seção de vídeo -->
   <section class="video-section">
     <h2>See K&Q in Action</h2>
     <div class="video-container">
@@ -190,7 +131,6 @@
     </div>
   </section>
 
-  <!-- Seção de testemunhos -->
   <section class="testimonials">
     <div class="testimonial">
       <p>"I’ve never owned anything so elegant. The craftsmanship is impeccable — every detail is perfect." </p>
@@ -206,24 +146,32 @@
     </div>
   </section>
 
-  <section class="benefits">
-    <div class="benefit">
-      <h3>Fast & Secure Delivery</h3>
-      <p>Receive your K&Q product quickly and in perfect condition, with premium packaging.</p>
-    </div>
-    <div class="benefit">
-      <h3>100% Satisfaction Guarantee</h3>
-      <p>If you’re not satisfied, we offer a full refund. K&Q stands by its products.</p>
-    </div>
-    <div class="benefit">
-      <h3>Exclusive Customer Support</h3>
-      <p>Our dedicated K&Q team is ready to assist you with any inquiry or request.</p>
-    </div>
+  <section class="benefits-policies">
     <div class="benefit">
       <h3>Elegant & Exclusive Design</h3>
       <p>Each K&Q product is designed to impress and crafted for luxury experiences.</p>
     </div>
+    <div class="policy-item">
+      <h3>100% Satisfaction Guarantee</h3>
+      <p>If you are not completely satisfied, we offer a full refund within 30 days of purchase. No questions asked.</p>
+    </div>
   </section>
+
+  <section class="final-policies">
+    <div>
+      <h3>Return Policy</h3>
+      <p>Returns are accepted within 30 days. Products must be in original condition and packaging.</p>
+    </div>
+    <div>
+      <h3>Secure Payments</h3>
+      <p>We use encrypted transactions for your safety. Pay securely with major credit cards or PayPal.</p>
+    </div>
+    <div>
+      <h3>Fast Shipping</h3>
+      <p>We ship worldwide with tracking. Receive your order quickly and in perfect condition.</p>
+    </div>
+  </section>
+
 </div>
 
 <footer>
