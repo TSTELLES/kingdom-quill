@@ -11,18 +11,18 @@
 
     <style>
         /* -------------------------------------------------------------------
-        * COLOR VARIABLES (LUXO / DARK GOLD)
+        * COLOR VARIABLES (LUXO / VERMELHO METÁLICO) - CORRIGIDO PARA NITIDEZ
         * ------------------------------------------------------------------- */
         :root {
-            --gold-light: #FFD700;      
-            --gold-dark: #B8860B;       
-            --cta-color: #FFD700;       
-            --bg-dark: #121212;         
-            --bg-card: #202020;         
+            --red-light: #FF3333;         /* Vermelho Forte e Nítido */
+            --red-dark: #A00000;          /* Vermelho Profundo (Bordas e Sombra) */
+            --shine-color: #FFC0CB;       /* Brilho Rosa/Branco (para cintilância) */
+            --cta-color: #FF3333;         
+            --bg-dark: #121212;           /* Fundo Preto Profundo */
+            --bg-card: #202020;           
             --text-light: #f8f9fa;
             --font-main: 'Poppins', sans-serif;
             --border-radius: 12px;
-            --shine-color: #FFFACD; 
         }
 
         /* Basic Reset */
@@ -50,20 +50,20 @@
         }
         
         /* -------------------------------------------------------------------
-        * EFEITO BRILHO DE OURO (TEXT SHADOW) - BRILHO SUAVE
+        * EFEITO BRILHO VERMELHO (TEXT SHADOW) - NITIDEZ MÁXIMA
         * ------------------------------------------------------------------- */
         .text-gold-shine {
             /* Cor base */
-            color: var(--gold-light) !important;
-            /* Efeito de brilho AJUSTADO: Sombra muito sutil para preservar a legibilidade */
+            color: var(--red-light) !important;
+            /* Efeito de brilho AJUSTADO: Redução drástica do blur para nitidez */
             text-shadow: 
-                0 0 2px var(--shine-color),   
-                0 0 5px var(--gold-dark);      
+                0 0 1px var(--shine-color),   /* Brilho de ponto (Cintilância) */
+                0 0 4px var(--red-dark);      /* Sombra controlada */
             transition: text-shadow 0.3s ease-in-out; 
         }
 
         /* -------------------------------------------------------------------
-        * GOLD FALLING ANIMATION (GOLD FLAKES)
+        * CHUVA METÁLICA (VERMELHO)
         * ------------------------------------------------------------------- */
         
         @keyframes fall {
@@ -99,11 +99,11 @@
         .gold-rain-container::before {
             left: 0;
             box-shadow: 
-                10px 0px 5px 0px var(--gold-light),
-                20px 100px 3px 1px var(--gold-dark),
-                30px 250px 4px 0px var(--gold-light),
-                40px 450px 2px 1px var(--gold-dark),
-                50px 600px 5px 0px var(--gold-light);
+                10px 0px 5px 0px var(--red-light),
+                20px 100px 3px 1px var(--red-dark),
+                30px 250px 4px 0px var(--red-light),
+                40px 450px 2px 1px var(--red-dark),
+                50px 600px 5px 0px var(--red-light);
             animation-duration: 15s; 
             animation-delay: 0s;
         }
@@ -112,11 +112,11 @@
         .gold-rain-container::after {
             right: 0;
             box-shadow: 
-                -10px 50px 5px 0px var(--gold-dark),
-                -20px 200px 4px 1px var(--gold-light),
-                -30px 400px 3px 0px var(--gold-dark),
-                -40px 550px 5px 1px var(--gold-light),
-                -50px 700px 2px 0px var(--gold-dark);
+                -10px 50px 5px 0px var(--red-dark),
+                -20px 200px 4px 1px var(--red-light),
+                -30px 400px 3px 0px var(--red-dark),
+                -40px 550px 5px 1px var(--red-light),
+                -50px 700px 2px 0px var(--red-dark);
             animation-duration: 18s;
             animation-delay: -5s;
         }
@@ -136,7 +136,7 @@
             overflow: hidden;
             background-color: var(--bg-card);
             border-radius: var(--border-radius);
-            box-shadow: 0 0 10px 0 var(--gold-dark);
+            box-shadow: 0 0 10px 0 var(--red-dark); 
         }
         .video-container iframe {
             position: absolute;
@@ -148,7 +148,7 @@
         }
         
         /* -------------------------------------------------------------------
-        * TESTIMONIALS STYLE (MOVIDA)
+        * TESTIMONIALS STYLE
         * ------------------------------------------------------------------- */
         .testimonial-card {
             background-color: var(--bg-card);
@@ -156,7 +156,7 @@
             border-radius: var(--border-radius);
             margin-bottom: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            border-left: 5px solid var(--gold-light);
+            border-left: 5px solid var(--red-light); /* Cor Vermelha Metálica */
             text-align: left;
         }
         
@@ -168,12 +168,12 @@
 
         .testimonial-card .author {
             font-weight: 700;
-            color: var(--gold-light);
+            color: var(--red-light); /* Cor Vermelha Metálica */
             display: block;
         }
         
         .stars {
-            color: var(--gold-light);
+            color: var(--red-light); /* Cor Vermelha Metálica */
             font-size: 1.2rem;
             margin-bottom: 10px;
         }
@@ -183,7 +183,7 @@
         * ------------------------------------------------------------------- */
 
         /* Titles */
-        h1 { font-size: 2.8rem; color: var(--gold-light); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        h1 { font-size: 2.8rem; color: var(--red-light); font-weight: 800; line-height: 1.1; margin-bottom: 20px; } 
         h2 { font-size: 2.2rem; color: var(--text-light); font-weight: 700; margin-bottom: 15px; }
         h3 { font-size: 1.8rem; color: var(--text-light); font-weight: 700; margin-bottom: 15px; }
         h4, h5, h6 { font-size: 1.2rem; color: var(--text-light); margin-bottom: 15px; }
@@ -207,7 +207,7 @@
             width: 80%;
             background-color: var(--bg-card);
             border-radius: var(--border-radius);
-            box-shadow: 0 0 0 3px var(--gold-dark);
+            box-shadow: 0 0 0 3px var(--red-dark); 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -226,7 +226,8 @@
         .btn-cta {
             display: block; 
             padding: 18px 40px; 
-            background: linear-gradient(145deg, var(--gold-light), var(--gold-dark), var(--gold-light));
+            /* Gradiente para Vermelho Metálico */
+            background: linear-gradient(145deg, var(--red-light), var(--red-dark), var(--red-light));
             color: #121212 !important; 
             border: none;
             border-radius: 50px;
@@ -235,7 +236,7 @@
             font-weight: 700;
             text-transform: uppercase;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5); 
+            box-shadow: 0 6px 20px rgba(160, 0, 0, 0.5); /* Sombra Vermelha controlada */
             transition: all 0.3s ease;
             width: 100%;
             max-width: 450px;
@@ -245,7 +246,7 @@
 
         .btn-cta:hover {
             transform: scale(1.03);
-            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.7); 
+            box-shadow: 0 8px 30px rgba(255, 51, 51, 0.7); 
         }
 
         /* Lists and Benefits */
@@ -263,7 +264,7 @@
         ul h6::before {
             content: "•";
             /* Aplica brilho nos bullets de lista */
-            color: var(--gold-light);
+            color: var(--red-light); 
             text-shadow: 0 0 3px var(--shine-color);
             font-weight: bold;
             display: inline-block;
@@ -293,17 +294,17 @@
             padding: 35px;
             border-radius: var(--border-radius);
             margin-bottom: 20px;
-            border: 3px solid var(--gold-dark); 
+            border: 3px solid var(--red-dark); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .combo-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 12px 25px rgba(255, 51, 51, 0.3); 
         }
         
         .combo-card h4, .combo-card h2 {
-            color: var(--gold-light);
+            color: var(--red-light); 
         }
         .combo-card h2 {
             font-size: 3.5rem; 
@@ -339,7 +340,7 @@
         /* Aplica brilho aos ícones de pagamento no hover */
         .payment-icons i:hover {
             opacity: 1;
-            text-shadow: 0 0 3px var(--shine-color);
+            text-shadow: 0 0 3px var(--shine-color); 
         }
 
         /* -------------------------------------------------------------------
@@ -363,22 +364,22 @@
             .btn-cta { font-size: 1rem; padding: 15px 25px; }
             .combo-card h2 { font-size: 2.5rem; }
             
-            /* Optimized Gold Rain for Mobile */
+            /* Optimized Red Rain for Mobile */
             .gold-rain-container::before {
                 width: 5px; 
                 box-shadow: 
-                    5px 50px 3px 0px var(--gold-light),
-                    10px 300px 2px 1px var(--gold-dark),
-                    15px 700px 3px 0px var(--gold-light);
+                    5px 50px 3px 0px var(--red-light),
+                    10px 300px 2px 1px var(--red-dark),
+                    15px 700px 3px 0px var(--red-light);
                 animation-duration: 20s;
             }
             
             .gold-rain-container::after {
                 width: 5px;
                 box-shadow: 
-                    -5px 150px 3px 0px var(--gold-dark),
-                    -10px 450px 2px 1px var(--gold-light),
-                    -15px 850px 3px 0px var(--gold-dark);
+                    -5px 150px 3px 0px var(--red-dark),
+                    -10px 450px 2px 1px var(--red-light),
+                    -15px 850px 3px 0px var(--red-dark);
                 animation-duration: 22s; 
             }
         }
@@ -455,7 +456,7 @@
             
             <a class="btn-cta" href="#oferta" target="_blank">ACCESS THE PREMIUM FORMULA NOW</a>
         </section>
-        
+
         <section class="section-dark" id="social-proof" style="padding: 30px 0;">
             <h2 class="text-gold-shine" style="text-align: center; margin-bottom: 30px;">Trusted by Industry Leaders & Verified Users</h2>
             
