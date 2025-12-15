@@ -5,22 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Best Bibles Audiobooks</title>
     
-    <!-- Meta tag for SEO keywords -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-MCMK8L0CNN');
+    </script>
+    
     <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Tagalog, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
     
-    <!-- NOTE: Google Analytics script is commented out as it's environment-specific. -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW455H9ND7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FW455H9ND7');
-    </script>
-    -->
-
-    <!-- Fonts -->
-    <!-- Using Merriweather for the header title -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
 
@@ -394,11 +389,9 @@
 </head>
 <body>
 
-    <!-- Reverting to video background as requested by the user. -->
     <div class="background-animated" aria-hidden="true">
         <video autoplay loop muted playsinline>
             <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
-            <!-- Fallback text if video cannot be loaded -->
             Your browser does not support the video tag.
         </video>
     </div>
@@ -433,7 +426,6 @@
             <h2 class="main-title-neon">📚 Explore by Language</h2>
             <p class="subtitle-strong">Listen and own your Bible in your language.</p>
             <div class="language-grid">
-                <!-- NOTE: Added onerror fallback for image robustness -->
                 <a href="korean.html" aria-label="Korean Bible" onclick="gtag('event', 'click', { 'event_category': 'Language Selection', 'event_label': 'Korean Bible' });">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" alt="Flag of South Korea" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=KR'">
                     <span>한국어 (Korean)</span>
@@ -475,7 +467,6 @@
                     <span>Tagalog Bible </span>
                 </a>
                 
-                <!-- INDIAN BIBLES TRIGGER - Now opens the modal via JS -->
                 <a id="indian-trigger" onclick="openIndianModal()" aria-label="Indian Bibles" style="cursor: pointer;">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=IN'">
                     <span>भारतीय पवित्र बाइबिल<br>(Indian Bibles)</span>
@@ -487,8 +478,8 @@
                 </a>
             </div>
             <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px; margin-top: 2rem;">
-                <li>✔️ Stream parts for free on YouTube.</li>
-                <li>✔️ Get the full version on Spotify, Storytel, Google Play and more.</li>
+                <li>✔️ Stream parts for free on <a href="[YOUTUBE_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">YouTube</a>.</li>
+                <li>✔️ Get the full version on <a href="[SPOTIFY_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">Spotify</a>, <a href="[STORYTEL_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">Storytel</a>, <a href="[GOOGLEPLAY_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">Google Play</a> and more.</li>
                 <li>✔️ Share with family and help reach new languages.</li>
             </ul>
         </section>
@@ -498,7 +489,6 @@
         <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
     </footer>
 
-    <!-- MODAL DE LÍNGUAS INDIANAS -->
     <div id="indianLangModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
             <span class="close-btn" onclick="closeIndianModal()" aria-label="Close Modal">&times;</span>
