@@ -14,11 +14,11 @@
         * COLOR VARIABLES (LUXO / DARK GOLD)
         * ------------------------------------------------------------------- */
         :root {
-            --gold-light: #FFD700;        
-            --gold-dark: #B8860B;         
-            --cta-color: #FFD700;         
-            --bg-dark: #121212;           
-            --bg-card: #202020;           
+            --gold-light: #FFD700;      
+            --gold-dark: #B8860B;       
+            --cta-color: #FFD700;       
+            --bg-dark: #121212;         
+            --bg-card: #202020;         
             --text-light: #f8f9fa;
             --font-main: 'Poppins', sans-serif;
             --border-radius: 12px;
@@ -45,7 +45,7 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 20px 0;
-            position: relative; 
+            position: relative;  
             z-index: 10; 
         }
         
@@ -58,7 +58,7 @@
             /* Efeito de brilho AJUSTADO: Sombra muito sutil para preservar a legibilidade */
             text-shadow: 
                 0 0 2px var(--shine-color),   
-                0 0 5px var(--gold-dark);     
+                0 0 5px var(--gold-dark);      
             transition: text-shadow 0.3s ease-in-out; 
         }
 
@@ -82,7 +82,7 @@
             z-index: 0; 
         }
         
-        /* Gerando as partículas: CSS BASE (Desktop) */
+        /* Generating particles: CSS BASE (Desktop) */
         .gold-rain-container::before,
         .gold-rain-container::after {
             content: '';
@@ -122,7 +122,7 @@
         }
         
         /* -------------------------------------------------------------------
-        * VIDEO PLAYER STYLES (NEW)
+        * VIDEO PLAYER STYLES
         * ------------------------------------------------------------------- */
         .video-wrapper {
             margin: 40px auto;
@@ -147,6 +147,37 @@
             border: none;
         }
         
+        /* -------------------------------------------------------------------
+        * TESTIMONIALS STYLE (MOVIDA)
+        * ------------------------------------------------------------------- */
+        .testimonial-card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--gold-light);
+            text-align: left;
+        }
+        
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--gold-light);
+            display: block;
+        }
+        
+        .stars {
+            color: var(--gold-light);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
         /* -------------------------------------------------------------------
         * GENERAL STYLES (MAINTAINED)
         * ------------------------------------------------------------------- */
@@ -360,33 +391,33 @@
     <div class="container">
 
         <section class="section-dark" id="hero">
-            <h1 class="text-gold-shine" style="text-align: center;">THE MOST ADVANCED FORMULA FOR RAPID BODY TRANSFORMATION</h1>
+            <h1 class="text-gold-shine" style="text-align: center;">THE ADVANCED SOLUTION FOR PEAK PERFORMANCE AND RAPID RESULTS</h1>
             
             <div class="product-image-display">
                 <p class="text-gold-shine" style="font-weight: 700; font-size: 1.5rem;">[PRODUCT IMAGE HERE]</p>
             </div>
             
-            <h5 style="text-align: center;">THE PRODUCT ELEVATES THE BODY TO MAXIMUM PHYSICAL, INTIMATE, AND MUSCLE HYPERTROPHY PERFORMANCE <span class="text-gold-shine" style="font-weight: 700;">ACHIEVING GAINS OF UP TO 10KGS OF MUSCLE MASS AND VISIBLE RESULTS IN JUST 6 WEEKS.</span></h5>
+            <h5 style="text-align: center;">THIS PREMIUM SYSTEM ELEVATES YOUR CURRENT STATE TO MAXIMUM EFFICIENCY, DELIVERING KEY ADVANTAGES AND <span class="text-gold-shine" style="font-weight: 700;">VISUAL RESULTS IN AS LITTLE AS 6 WEEKS, REGARDLESS OF THE INDUSTRY.</span></h5>
             
-            <h5 style="text-align: center;">REDEFINE YOUR LIMITS AND DISCOVER WHY THIS PRODUCT IS DIFFERENT FROM ANY OTHER FORMULA AND WILL DELIVER THESE RESULTS...</h5>
+            <h5 style="text-align: center;">UNLOCK YOUR FULL POTENTIAL AND DISCOVER WHY THIS PRODUCT IS DIFFERENT FROM ANY OTHER FORMULA...</h5>
             
-            <a class="btn-cta" href="#oferta" target="_blank" style="margin-bottom: 0;">I WANT THE PRODUCT NOW</a>
+            <a class="btn-cta" href="#oferta" target="_blank" style="margin-bottom: 0;">ACCESS THE PREMIUM FORMULA NOW</a>
         </section>
         
         <section class="section-dark">
-            <h3 style="text-align: center;">Determining factors for evolution</h3>
+            <h3 style="text-align: center;">Determining factors for your success</h3>
             <div class="grid-3-col">
                 <div class="info-card">
-                    <h4>NEW IN THE COUNTRY</h4>
-                    <p>Ultra-concentrated, clinically proven formula that is dominating the market! Achieve the physique of your dreams now!</p>
+                    <h4>EXCLUSIVE RELEASE</h4>
+                    <p>An ultra-focused, clinically validated solution dominating the market! Achieve your professional or personal goals now!</p>
                 </div>
                 <div class="info-card">
-                    <h4>Visible results in just weeks</h4>
-                    <p>In the first 2 to 3 weeks, you will notice visible results, feeling more strength, heightened libido, and muscle gain.</p>
+                    <h4>Rapidly Visible Results</h4>
+                    <p>Within the first 2 to 3 weeks, you will notice results, gaining more power, stability, and enhanced focus.</p>
                 </div>
                 <div class="info-card">
-                    <h4>Free from side effects and adverse reactions</h4>
-                    <p>Completely safe, with no contraindications or adverse reactions, even for those with comorbidities.</p>
+                    <h4>Zero Risk Assurance</h4>
+                    <p>Completely safe, with no adverse reactions, even for those with sensitive requirements. Focus purely on achievement.</p>
                 </div>
             </div>
             
@@ -396,75 +427,104 @@
                         src="https://www.youtube.com/embed/VIDEO_ID_AQUI?rel=0&showinfo=0&controls=1" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen
-                        title="Video de Demonstração do Produto Premium"
+                        title="Premium Product Demonstration Video"
                     ></iframe>
                 </div>
-                <p style="text-align: center; color: #999; font-size: 0.9rem; margin-top: 10px;">* Submeta a URL do seu vídeo de demonstração no código.</p>
+                <p style="text-align: center; color: #999; font-size: 0.9rem; margin-top: 10px;">* Submit your product demonstration video URL in the code.</p>
             </div>
             
         </section>
         
         <section class="section-dark">
-            <h3 style="text-align: center;">Formula with the <span class="text-gold-shine">most advanced technology</span></h3>
-            <p>After months of intense testing, THE PRODUCT was released, its set of substances accelerates results up to 3x for those seeking muscle mass, body definition, and greater physical and intimate performance, regardless of their metabolism.</p>
+            <h3 style="text-align: center;">System built with the <span class="text-gold-shine">most advanced technology</span></h3>
+            <p>After months of intensive R&D, this PRODUCT was perfected. Its blend of elements accelerates results up to 3x for those seeking maximum efficiency, clarity, and overall high performance, regardless of their operational base.</p>
             
             <div style="margin: 30px 0;">
-                <h4 style="text-align: center;" class="text-gold-shine">How does THE PRODUCT work?</h4>
+                <h4 style="text-align: center;" class="text-gold-shine">How does the PREMIUM SYSTEM work?</h4>
                 <div class="grid-3-col" style="gap: 15px;">
-                    <div class="info-card"><h6>[BENEFIT 1]</h6></div>
-                    <div class="info-card"><h6>[BENEFIT 2]</h6></div>
-                    <div class="info-card"><h6>[BENEFIT 3]</h6></div>
-                    <div class="info-card"><h6>[BENEFIT 4]</h6></div>
-                    <div class="info-card"><h6>[BENEFIT 5]</h6></div>
-                    <div class="info-card"><h6>[BENEFIT 6]</h6></div>
-                    <div class="info-card"><h6>[BENEFIT 7]</h6></div>
-                    <div class="info-card"><h6>[BENEFIT 8]</h6></div>
+                    <div class="info-card"><h6>[MAXIMIZED EFFICIENCY]</h6></div>
+                    <div class="info-card"><h6>[ENHANCED CLARITY]</h6></div>
+                    <div class="info-card"><h6>[POWER OUTPUT INCREASE]</h6></div>
+                    <div class="info-card"><h6>[PERFORMANCE UPLIFT]</h6></div>
+                    <div class="info-card"><h6>[RAPID IMPLEMENTATION]</h6></div>
+                    <div class="info-card"><h6>[SCALABILITY ASSURED]</h6></div>
+                    <div class="info-card"><h6>[SECURE INTEGRATION]</h6></div>
+                    <div class="info-card"><h6>[OPTIMAL LONGEVITY]</h6></div>
                 </div>
             </div>
             
-            <a class="btn-cta" href="#oferta" target="_blank">I WANT THE PRODUCT NOW</a>
+            <a class="btn-cta" href="#oferta" target="_blank">ACCESS THE PREMIUM FORMULA NOW</a>
         </section>
+        
+        <section class="section-dark" id="social-proof" style="padding: 30px 0;">
+            <h2 class="text-gold-shine" style="text-align: center; margin-bottom: 30px;">Trusted by Industry Leaders & Verified Users</h2>
+            
+            <div class="grid-3-col" style="gap: 20px;">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"Unbelievable results. This system delivered clarity and efficiency far beyond my expectations. A game-changer for my operations."</blockquote>
+                    <span class="author">— Alex R., CEO of TechStart</span>
+                </div>
 
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <blockquote>"The integration was seamless, and the performance boost was immediate. My team saw visible results in the first two weeks."</blockquote>
+                    <span class="author">— Samantha K., Lead Consultant</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>"Worth every penny. The level of detail and power packed into this formula is simply unmatched. Highly recommended to peers."</blockquote>
+                    <span class="author">— Michael V., Verified Purchaser</span>
+                </div>
+            </div>
+        </section>
         <section class="section-dark" id="oferta">
-            <h2 style="text-align: center;">Take Advantage of our <span class="text-gold-shine">Promotional Combos</span></h2>
-            <p style="text-align: center; color: #aaa;">Check out the EXCLUSIVE 40% OFF PROMOTION released only through this ad + CHRISTMAS DISCOUNT and while promotional stock lasts!</p>
+            <h2 style="text-align: center;">Secure your <span class="text-gold-shine">Exclusive Promotional Combos</span></h2>
+            <p style="text-align: center; color: #aaa;">View the EXCLUSIVE 40% OFF PROMOTION available only through this page + LIMITED TIME DISCOUNT while supplies last!</p>
 
             <div class="grid-3-col">
                 
                 <div class="combo-card">
-                    <h4>1 Unit</h4>
+                    <h4>1 Unit (Quick Start)</h4>
                     <h6>+ EXCLUSIVE BONUS</h6>
-                    <h6 class="price-old">from R$299,00</h6>
-                    <h2 style="font-size: 1.8rem; margin-top: 5px;">12x R$<span style="font-size: 3rem;">14</span>.85</h2>
-                    <h6>or <b>R$147.90</b> cash</h6>
-                    <a class="btn-cta" href="[LINK 1]" target="_blank" style="max-width: 100%; margin: 15px 0 0;">BUY THIS</a>
+                    <h6 class="price-old">from $299.00</h6>
+                    <h2 style="font-size: 1.8rem; margin-top: 5px;">12x $<span style="font-size: 3rem;">14</span>.85</h2>
+                    <h6>or <b>$147.90</b> cash</h6>
+                    <a class="btn-cta" href="[LINK 1]" target="_blank" style="max-width: 100%; margin: 15px 0 0;">ORDER THIS PACKAGE</a>
                 </div>
                 
                 <div class="combo-card">
-                    <h4>3 Units (BEST SELLER)</h4>
+                    <h4>3 Units (BEST VALUE)</h4>
                     <h6>+ EXCLUSIVE BONUS</h6>
-                    <h6 class="price-old">from R$599,00</h6>
-                    <h2 style="font-size: 1.8rem; margin-top: 5px;">12x R$<span style="font-size: 3rem;">31</span>.92</h2>
-                    <h6>or <b>R$317.90</b> cash</h6>
-                    <a class="btn-cta" href="[LINK 2]" target="_blank" style="max-width: 100%; margin: 15px 0 0;">BUY THIS</a>
+                    <h6 class="price-old">from $599.00</h6>
+                    <h2 style="font-size: 1.8rem; margin-top: 5px;">12x $<span style="font-size: 3rem;">31</span>.92</h2>
+                    <h6>or <b>$317.90</b> cash</h6>
+                    <a class="btn-cta" href="[LINK 2]" target="_blank" style="max-width: 100%; margin: 15px 0 0;">ORDER THIS PACKAGE</a>
                 </div>
 
                 <div class="combo-card">
-                    <h4>5 Units (BEST VALUE)</h4>
+                    <h4>5 Units (MAX PROFIT)</h4>
                     <h6>+ EXCLUSIVE BONUS</h6>
-                    <h6 class="price-old">from R$799,00</h6>
-                    <h2 style="font-size: 1.8rem; margin-top: 5px;">12x R$<span style="font-size: 3rem;">44</span>.97</h2>
-                    <h6>or <b>R$447.90</b> cash</h6>
-                    <a class="btn-cta" href="[LINK 3]" target="_blank" style="max-width: 100%; margin: 15px 0 0;">BUY THIS</a>
+                    <h6 class="price-old">from $799.00</h6>
+                    <h2 style="font-size: 1.8rem; margin-top: 5px;">12x $<span style="font-size: 3rem;">44</span>.97</h2>
+                    <h6>or <b>$447.90</b> cash</h6>
+                    <a class="btn-cta" href="[LINK 3]" target="_blank" style="max-width: 100%; margin: 15px 0 0;">ORDER THIS PACKAGE</a>
                 </div>
             </div>
-            <p style="text-align: center; font-weight: 700;" class="text-gold-shine">FREE SHIPPING TO ALL OF BRAZIL ON ALL COMBOS!</p>
+            <p style="text-align: center; font-weight: 700;" class="text-gold-shine">FREE SHIPPING WORLDWIDE ON ALL COMBOS!</p>
         </section>
 
         <section class="section-dark" style="text-align: center;">
-            <h3 class="text-gold-shine">SATISFACTION GUARANTEED!</h3>
-            <h6>We are so confident in the product and its results that if you don't get the result you expect within this time (60 DAYS), you can ask for your money back. It's that simple! </h6>
-            <a class="btn-cta" href="#oferta" target="_blank">I WANT THE PRODUCT NOW</a>
+            <h3 class="text-gold-shine">FULL GUARANTEE ASSURANCE!</h3>
+            <h6>We are so confident in our solution that if you do not achieve the expected results within this timeframe (60 DAYS), you can request a full refund. Simple and Risk-Free! </h6>
+            <a class="btn-cta" href="#oferta" target="_blank">ACCESS THE PREMIUM FORMULA NOW</a>
         </section>
 
         <footer>
@@ -479,8 +539,8 @@
                 <i class="fas fa-shopping-bag"></i> 
             </div>
             
-            <p>Customer Service Center: Email: [email protected] | Phone (00)00000-0000</p>
-            <p>Copyright 2026 © COMPANY - All rights reserved - EIN XX-XXXXXXX</p>
+            <p>Customer Service Center: Email: [email protected] | Phone +1-000-000 0 0.</p>
+            <p>Copyright 2026 © COMPANY - All rights reserved - EIN 00000000000-00</p>
             <p>Privacy Policy | Terms of Use</p>
         </footer>
 
