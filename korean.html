@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>성경 오디오북</title>
-    <!-- Load Tailwind CSS -->
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MCMK8L0CNN');
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Use Inter font family -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
@@ -19,7 +27,7 @@
         /* --- Custom Neon Effects (Retained from original CSS) --- */
         .neon-text {
             color: #f9f871;
-            text-shadow:
+            text-shadow: 
                 0 0 8px #f9f871,
                 0 0 20px #f9f871,
                 0 0 40px #f9f871,
@@ -72,21 +80,17 @@
 </head>
 <body class="bg-black text-white antialiased">
 
-    <!-- Header fixed with neon yellow text -->
     <header class="fixed top-0 left-0 right-0 h-18 bg-black flex justify-center items-center text-4xl font-extrabold tracking-wider z-50 shadow-md">
         <h1 class="neon-text text-3xl md:text-4xl py-4">성경</h1>
     </header>
 
-    <!-- Flags Section -->
     <section class="flex justify-center items-center gap-4 md:gap-12 w-full pt-6" aria-label="국기">
         <div class="flag south w-28 h-20 sm:w-40 sm:h-28 rounded-xl cursor-default" role="img" aria-label="대한민국 국기"></div>
         <div class="flag north w-28 h-20 sm:w-40 sm:h-28 rounded-xl cursor-default" role="img" aria-label="조선민주주의인민공화국 국기"></div>
     </section>
 
-    <!-- Main Content Container -->
     <main class="flex flex-col items-center w-full max-w-5xl mx-auto p-4 md:p-8 space-y-12">
 
-        <!-- Arguments / Benefits Section -->
         <section class="bg-black/60 p-6 md:p-8 rounded-2xl shadow-neon-lg max-w-xl lg:max-w-3xl text-center" aria-label="오디오북의 혜택">
             <h2 class="neon-text text-xl md:text-3xl font-bold mb-4">성경 오디오북 – 한국어 버전</h2>
             <p class="text-lg md:text-xl font-bold text-yellow-100 mb-6">당신은 언제 어디서나 깨끗한 음질로 성경 말씀을 들을 수 있습니다.</p>
@@ -97,19 +101,16 @@
             </p>
         </section>
 
-        <!-- Sample Player Section -->
         <section class="bg-[#f9f871]/10 p-8 rounded-2xl shadow-neon-lg flex flex-col items-center justify-center gap-6 max-w-xl w-full" aria-label="오디오 샘플">
             <h3 class="text-xl md:text-2xl font-bold text-[#f9f871] text-shadow-md">지금 들어보세요 – 샘플 재생을 클릭하세요</h3>
             
             <button class="play-button bg-[#f9f871] border-none rounded-full w-20 h-20 flex items-center justify-center cursor-pointer shadow-xl shadow-[#f9f871]/60 transition duration-200 hover:scale-110 active:scale-95" 
                 aria-label="샘플 재생/일시정지" id="playPauseBtn" type="button">
                 
-                <!-- Play Icon (Triangle) -->
                 <svg id="playIcon" class="svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                 </svg>
 
-                <!-- Pause Icon (Two Bars) -->
                 <svg id="pauseIcon" class="svg-icon paused-state" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="10" y1="4" x2="10" y2="20"></line>
                     <line x1="18" y1="4" x2="18" y2="20"></line>
@@ -118,31 +119,26 @@
             <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/retail-sample.MP3"></audio>
         </section>
 
-        <!-- Call to Action Section -->
         <section class="bg-black/60 p-6 md:p-8 rounded-2xl shadow-neon-lg max-w-xl lg:max-w-3xl text-center mt-12" aria-label="오디오북 기능 및 구매 안내">
             <p class="text-base md:text-lg mb-4 font-medium">여러분의 지원은 새로운 번역본 제작 및 고품질 녹음 유지에 도움이 됩니다.</p>
             <p class="text-lg md:text-xl font-extrabold text-white">👉 <strong class="neon-text text-xl md:text-2xl">준비되셨나요?</strong> 지금 바로 <strong>한국어 성경 오디오북</strong>을 듣기 시작하세요 – 즐겨찾는 모든 플랫폼에서 이용 가능합니다!</p>
         </section>
 
-        <!-- Store Links Section -->
         <section class="flex flex-col items-center w-full max-w-xl lg:max-w-3xl bg-black/60 p-6 md:p-8 rounded-2xl shadow-neon-lg text-center" aria-label="오디오 구매 옵션">
             <h2 class="neon-text text-2xl md:text-3xl font-bold mb-2">성경</h2>
             <p class="text-base md:text-lg mb-8 text-gray-300">성경의 깊은 지혜와 신성한 가르침을 경험하세요.</p>
             <nav class="buttons flex flex-wrap justify-center gap-6 md:gap-10 w-full" aria-label="오디오 구매 옵션">
                 
-                <!-- Kobo Link -->
                 <a href="https://www.kobo.com/us/en/audiobook/vzPdxaPf-jevZxSsrcWJLg" target="_blank" rel="noopener noreferrer" aria-label="Kobo"
                    class="flex justify-center items-center bg-transparent w-20 h-20 md:w-24 md:h-24 rounded-full transition duration-300 overflow-hidden hover:scale-115 hover:shadow-neon-lg hover:border-2 border-transparent hover:border-[#f9f871] p-1">
                     <img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo" class="w-11/12 h-11/12 object-contain filter brightness-90 hover:brightness-125 transition duration-300">
                 </a>
                 
-                <!-- Google Play Books Link (Tamanho ajustado para w-3/4 h-3/4) -->
                 <a href="https://play.google.com/store/audiobooks/details/%EB%8B%A4%EC%88%98%EC%9D%98_%EC%A0%80%EC%9E%90_%EC%84%B1%EA%B2%BD?id=AQAAAEDKhnzGpM" target="_blank" rel="noopener noreferrer" aria-label="Google Play Books"
                    class="flex justify-center items-center bg-transparent w-20 h-20 md:w-24 md:h-24 rounded-full transition duration-300 overflow-hidden hover:scale-115 hover:shadow-neon-lg hover:border-2 border-transparent hover:border-[#f9f871] p-1">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/512px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books Logo" class="w-3/4 h-3/4 object-contain filter brightness-90 hover:brightness-125 transition duration-300">
                 </a>
                 
-                <!-- Spotify Link -->
                 <a href="https://open.spotify.com/show/5DQTDXSwJqOaZE3USKLZDZ?si=b2565c6c7ba949f0" target="_blank" rel="noopener noreferrer" aria-label="Spotify"
                    class="flex justify-center items-center bg-transparent w-20 h-20 md:w-24 md:h-24 rounded-full transition duration-300 overflow-hidden hover:scale-115 hover:shadow-neon-lg hover:border-2 border-transparent hover:border-[#f9f871] p-1">
                     <img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify Logo" class="w-11/12 h-11/12 object-contain filter brightness-90 hover:brightness-125 transition duration-300">
@@ -152,9 +148,8 @@
 
     </main>
 
-    <!-- Footer fixed -->
     <footer class="fixed bottom-0 left-0 right-0 h-14 bg-black text-gray-400 flex items-center justify-center text-xs md:text-sm z-50 shadow-inner">
-        &copy; 2025 Kingdom&Quill. 모든 권리 보유.
+        © 2025 Kingdom&Quill. 모든 권리 보유.
     </footer>
 
     <script>
