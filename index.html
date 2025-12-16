@@ -32,6 +32,7 @@
 
     body {
       margin: 0;
+      /* Removida a imagem daqui e colocada no ::before para performance e blur */
       background-color: black;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -44,7 +45,7 @@
       position: relative;
     }
 
-    /* Pseudo-elemento para o fundo borrado - Otimizado para GPU */
+    /* Pseudo-elemento para o fundo borrado - Melhor performance em mobile */
     body::before {
       content: "";
       position: fixed;
@@ -52,17 +53,17 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1; 
+      z-index: -1; /* Garante que fique atrás do texto */
       
+      /* Configuração da Imagem */
       background: black url('https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Gemini_Generated_Image_t73udt73udt73udt.png') no-repeat center 9em;
       background-size: cover;
 
+      /* O Efeito de Blur */
       filter: blur(8px); 
 
-      /* Otimização de Performance Mobile: Força aceleração de hardware */
-      transform: scale(1.05) translateZ(0);
-      backface-visibility: hidden;
-      perspective: 1000px;
+      /* Scale aumenta um pouco a imagem para evitar bordas brancas causadas pelo blur */
+      transform: scale(1.05);
       pointer-events: none;
     }
 
@@ -84,7 +85,7 @@
         0 0 20px var(--neon-light-green),
         0 0 40px var(--neon-light-green),
         0 0 80px var(--neon-light-green);
-      /* Animation removida do padrão (mobile) */
+      animation: neonPulseLightGreen 2s infinite alternate;
       user-select: none;
       letter-spacing: 0.05em;
       z-index: 100;
@@ -108,7 +109,7 @@
         0 0 20px var(--neon-yellow),
         0 0 40px var(--neon-yellow),
         0 0 80px var(--neon-yellow);
-       /* Animation removida do padrão (mobile) */
+      animation: neonPulseYellow 2s infinite alternate;
     }
 
     .header-slogan {
@@ -119,7 +120,7 @@
         0 0 5px var(--neon-white),
         0 0 10px var(--neon-white);
       margin-top: 0.2em;
-       /* Animation removida do padrão (mobile) */
+      animation: neonPulseWhite 2s infinite alternate;
     }
 
     .main-nav {
@@ -151,25 +152,6 @@
       transform: scale(1.05);
     }
 
-    /* Animações somente para telas maiores que 768px (Tablets e PCs) */
-    @media (min-width: 768px) {
-      header {
-        animation: neonPulseLightGreen 2s infinite alternate;
-      }
-      .site-title {
-        animation: neonPulseYellow 2s infinite alternate;
-      }
-      .header-slogan {
-        animation: neonPulseWhite 2s infinite alternate;
-      }
-      .main-title-neon {
-        animation: neonPulseYellow 2s infinite alternate;
-      }
-      .language-modal-content {
-        animation: neonPulsePink 2s infinite alternate;
-      }
-    }
-
     @keyframes neonPulseLightGreen {
       0% { text-shadow: 0 0 10px var(--neon-light-green),0 0 30px var(--neon-light-green),0 0 50px var(--neon-light-green),0 0 100px var(--neon-light-green); }
       100% { text-shadow: 0 0 20px var(--neon-light-green),0 0 40px var(--neon-light-green),0 0 70px var(--neon-light-green),0 0 120px var(--neon-light-green); }
@@ -181,10 +163,6 @@
     @keyframes neonPulseYellow {
       0% { text-shadow:0 0 8px var(--neon-yellow),0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow),0 0 80px var(--neon-yellow); }
       100% { text-shadow:0 0 15px var(--neon-yellow),0 0 30px var(--neon-yellow),0 0 50px var(--neon-yellow),0 0 100px var(--neon-yellow); }
-    }
-    @keyframes neonPulsePink { 
-      0% { box-shadow:0 0 15px var(--neon-pink-light),0 0 30px var(--neon-pink-soft),0 0 50px var(--neon-pink-soft),0 0 80px var(--neon-pink-soft); } 
-      100% { box-shadow:0 0 20px var(--neon-pink-light),0 0 40px var(--neon-pink-soft),0 0 70px var(--neon-pink-soft),0 0 100px var(--neon-pink-soft); } 
     }
 
     main {
@@ -225,7 +203,7 @@
       font-size: 1.8rem;
       margin-top: 0;
       text-shadow: 0 0 8px var(--neon-yellow),0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow),0 0 80px var(--neon-yellow);
-      /* Animation removida do padrão (mobile) */
+      animation: neonPulseYellow 2s infinite alternate;
     }
 
     .subtitle-strong { margin-top: 0.4rem; font-size: 1.4rem; font-weight: bold; }
@@ -254,10 +232,8 @@
     /* Pop-up de idioma permanece igual */
     .language-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s ease-in-out; }
     .language-modal-overlay.show { visibility: visible; opacity: 1; }
-    .language-modal-content { background: rgba(0,0,0,0.95); padding: 2.5em 3em; border-radius: 20px; box-shadow: 0 0 15px var(--neon-pink-light),0 0 30px var(--neon-pink-soft),0 0 50px var(--neon-pink-soft),0 0 80px var(--neon-pink-soft); text-align: center; max-width: 90%; width: 400px; position: relative; 
-      /* Animation removida do padrão (mobile) */
-    }
-    
+    .language-modal-content { background: rgba(0,0,0,0.95); padding: 2.5em 3em; border-radius: 20px; box-shadow: 0 0 15px var(--neon-pink-light),0 0 30px var(--neon-pink-soft),0 0 50px var(--neon-pink-soft),0 0 80px var(--neon-pink-soft); text-align: center; max-width: 90%; width: 400px; position: relative; animation: neonPulsePink 2s infinite alternate; }
+    @keyframes neonPulsePink { 0% { box-shadow:0 0 15px var(--neon-pink-light),0 0 30px var(--neon-pink-soft),0 0 50px var(--neon-pink-soft),0 0 80px var(--neon-pink-soft); } 100% { box-shadow:0 0 20px var(--neon-pink-light),0 0 40px var(--neon-pink-soft),0 0 70px var(--neon-pink-soft),0 0 100px var(--neon-pink-soft); } }
     .language-modal-content h3 { color: var(--neon-pink-soft); font-family: 'Merriweather', serif; font-size: 1.8rem; margin-top: 0; margin-bottom: 1.5em; text-shadow:0 0 8px var(--neon-pink-soft),0 0 20px var(--neon-pink-soft);}
     .language-modal-buttons { display: flex; flex-direction: column; gap: 1em; }
     .language-modal-buttons button { background: none; border: 2px solid var(--neon-yellow); color: var(--neon-white); padding: 0.8em 1.5em; font-size: 1.1rem; font-weight: bold; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; text-shadow:0 0 5px var(--neon-white); box-shadow:0 0 10px rgba(249,248,113,0.5);}
