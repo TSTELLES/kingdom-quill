@@ -32,7 +32,8 @@
 
     body {
       margin: 0;
-      background: url('https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Gemini_Generated_Image_t73udt73udt73udt.png') no-repeat center center fixed;
+      /* Ajustado: Subi a imagem para 9em para encostar no cabeçalho */
+      background: black url('https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Gemini_Generated_Image_t73udt73udt73udt.png') no-repeat center 9em fixed;
       background-size: cover;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,7 +41,7 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      padding-top: 15em;
+      padding-top: 11em;
       padding-bottom: 4em;
       position: relative;
     }
@@ -285,8 +286,13 @@
         languageModal.classList.remove('show');
       }
 
-      welcomeToNyLink.addEventListener('click', openModal);
-      closeModalButton.addEventListener('click', closeModal);
+      if (welcomeToNyLink) {
+        welcomeToNyLink.addEventListener('click', openModal);
+      }
+      
+      if (closeModalButton) {
+        closeModalButton.addEventListener('click', closeModal);
+      }
 
       languageModal.addEventListener('click', function(event) {
         if (!languageModalContent.contains(event.target) && event.target === languageModal) {
@@ -294,15 +300,19 @@
         }
       });
 
-      selectEnglishButton.addEventListener('click', function() {
-        window.location.href = './welcome-to-ny.html';
-        gtag('event', 'click', { 'event_category': 'LanguageSelect', 'event_label': 'English' });
-      });
+      if (selectEnglishButton) {
+        selectEnglishButton.addEventListener('click', function() {
+            window.location.href = './welcome-to-ny.html';
+            gtag('event', 'click', { 'event_category': 'LanguageSelect', 'event_label': 'English' });
+        });
+      }
 
-      selectPortugueseButton.addEventListener('click', function() {
-        window.location.href = './bem-vindo-a-nova-york.html';
-        gtag('event', 'click', { 'event_category': 'LanguageSelect', 'event_label': 'Portuguese' });
-      });
+      if (selectPortugueseButton) {
+        selectPortugueseButton.addEventListener('click', function() {
+            window.location.href = './bem-vindo-a-nova-york.html';
+            gtag('event', 'click', { 'event_category': 'LanguageSelect', 'event_label': 'Portuguese' });
+        });
+      }
     };
   </script>
 
