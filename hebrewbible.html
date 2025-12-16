@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>הברית החדשה בעברית - ספר קולי מלא | T. S. Telles</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MCMK8L0CNN');
+  </script>
+
   <meta name="description" content="האזינו לברית החדשה המלאה בעברית. קריינות ברורה, ללא פרסומות וזמינה להאזנה במצב לא מקוון." />
   <meta name="keywords" content="הברית החדשה, תנ״ך, ספר קולי, אודיו, עברית, ישוע, אלוהים, כתבי הקודש" />
   <style>
@@ -147,7 +157,7 @@
         max-width: 700px; /* Ajusta largura máxima para o contêiner de botões */
         margin: 0 auto; /* Centraliza a seção dentro do contêiner */
     }
-
+    
     .testament-section h2 {
         color: #f9f871;
         font-size: 1.8rem;
@@ -200,34 +210,47 @@
         font-size: 1.5rem;
         font-weight: bold;
         text-shadow: 0 0 5px #f9f871;
-        margin-bottom: 0;
+        margin-bottom: 0; /* Zera a margem de baixo do título */
         text-align: center; /* Centraliza o texto dentro do título */
     }
 
     /* Faixa de amostra com player estiloso */
     .sample-section {
       background: rgba(249, 248, 113, 0.1);
-      padding: 2.5rem 2.2rem; /* Aumentado padding top/bottom */
+      padding: 1.8rem 2.2rem;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center; /* CENTRALIZA VERTICALMENTE O CONTEÚDO */
-      gap: 2rem; /* Espaçamento entre os itens */
+      padding-top: 2.5rem; /* Mais padding em cima */
+      padding-bottom: 2.5rem; /* Mais padding embaixo */
       max-width: 700px;
       user-select: none;
       margin: 3rem auto 0 auto; /* Espaço acima desta seção e centraliza */
+      gap: 2rem; /* AJUSTADO O GAP PARA UM POUCO MENOS DE ESPAÇAMENTO */
       width: 100%; /* Garante que ocupe a largura máxima permitida */
       box-sizing: border-box; /* Inclui padding na largura */
     }
 
     /* Zera margens individuais para deixar o gap e padding da sample-section controlarem o espaçamento */
-    .sample-section .player-title,
-    .sample-section .play-button,
-    .sample-section audio {
+    .sample-section .player-title {
         margin-top: 0;
         margin-bottom: 0;
+    }
+    .sample-section .play-button {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .sample-section audio {
+      width: 100%;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(249, 248, 113, 0.7);
+      cursor: pointer;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
 
@@ -414,11 +437,6 @@
       .flags-row {
         padding-top: calc(3.8em + 1.5rem);
         padding-bottom: 1.5rem;
-        gap: 1rem; /* Reduz o gap para caber duas bandeiras em telas muito pequenas */
-      }
-      .flags-row .flag {
-        width: 100px; /* Ajusta ainda mais o tamanho da bandeira */
-        height: 68px;
       }
       .arguments {
         font-size: 1.1rem;
@@ -481,7 +499,7 @@
 
     <section class="call-to-action-section" aria-label="Opciones y llamada a la acción del audiolibro">
         <p>התמיכה שלכם עוזרת לנו ליצור תרגומים חדשים ולשמור על הקלטות באיכות גבוהה.</p>
-        <p>👈 <strong>מוכן/ה?</strong> התחל עכשיו להאזין ל<strong>הברית החדשה המלאה</strong> – זמין בכל הפלטפורמות האהובות עליך!</p>
+        <p>👉 <strong>מוכן/ה?</strong> התחל עכשיו להאזין ל<strong>הברית החדשה המלאה</strong> – זמין בכל הפלטפורמות האהובות עליך!</p>
     </section>
 
     <div class="testament-container">
