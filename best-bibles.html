@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Best Bibles Audiobooks</title>
-    
+     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
+     
       gtag('config', 'G-MCMK8L0CNN');
     </script>
-    
+     
     <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Tagalog, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
-    
+     
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
 
@@ -48,36 +48,28 @@
             /* Ensures scroll is possible if content exceeds screen height */
         }
 
-        /* --- Video Background (Restored) --- */
-        .background-animated {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            /* Filter to darken the video for contrast */
-            filter: brightness(0.3);
-            background: black; /* Default solid background if video fails */
-            animation: none;
-        }
+        /* --- NOVO FUNDO DE IMAGEM COM BLUR (SUBSTITUI O VÍDEO) --- */
+        body::before {
+          content: "";
+          position: fixed;
+          top: 0; 
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1; /* Garante que fique atrás do texto */
+          
+          /* Configuração da Imagem */
+          background: black url('https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Gemini_Generated_Image_t73udt73udt73udt.png') no-repeat center center;
+          background-size: cover;
 
-        /* Estilos para o elemento de vídeo */
-        .background-animated video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 55%; /* Adjust vertical position slightly down */
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
+          /* O Efeito de Blur e escurecimento para contraste */
+          filter: blur(8px) brightness(0.4); 
 
-        /* NOTE: CSS for the simulated animated background has been removed. */
-        /* --- END Animated Background --- */
+          /* Scale aumenta um pouco a imagem para evitar bordas brancas causadas pelo blur */
+          transform: scale(1.05);
+          pointer-events: none;
+        }
+        /* --- FIM DO NOVO FUNDO --- */
 
         /* Cabeçalho fixo */
         header {
@@ -376,11 +368,11 @@
 
             .language-grid a[href="indianbibles.html"] span,
             .language-grid a#indian-trigger span { font-size: 0.6rem; }
-            
+             
             .content-section { font-size: 0.95rem; padding: 1.2rem 1.5rem; max-width: 95%; }
             .main-title-neon { font-size: 1.3rem; }
             .subtitle-strong { font-size: 1.05rem; }
-            
+             
             /* Ajuste do modal no mobile */
             .modal-content { width: 85%; padding: 1.5rem 1rem; }
             .modal-lang-btn { font-size: 0.9rem; padding: 8px 10px; min-width: 80px; }
@@ -388,13 +380,6 @@
     </style>
 </head>
 <body>
-
-    <div class="background-animated" aria-hidden="true">
-        <video autoplay loop muted playsinline>
-            <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/V%C3%ADdeo_%C3%89pico_Protestante_Gerado.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
 
     <header>
         Best Bibles
@@ -466,7 +451,7 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" alt="Flag of Philippines" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=PH'">
                     <span>Tagalog Bible </span>
                 </a>
-                
+                 
                 <a id="indian-trigger" onclick="openIndianModal()" aria-label="Indian Bibles" style="cursor: pointer;">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg" alt="Flag of India" onerror="this.onerror=null; this.src='https://placehold.co/55x55/808080/FFFFFF?text=IN'">
                     <span>भारतीय पवित्र बाइबिल<br>(Indian Bibles)</span>
@@ -479,7 +464,7 @@
             </div>
             <ul style="text-align: left; list-style-type: none; padding-left: 0; width: 100%; max-width: 720px; margin-top: 2rem;">
                 <li>✔️ Stream parts for free on <a href="[YOUTUBE_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">YouTube</a>.</li>
-                <li>✔️ Get the full version on <a href="[SPOTIFY_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">Spotify</a>, <a href="[STORYTEL_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">Storytel</a>, <a href="[GOOGLEPLAY_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">Google Play</a> and more.</li>
+                <li>✔️ Get the full version on <a href="[SPOTIFY_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">Spotify</a>, <a href="[STORYTEL_LINK_HERE]" target="_blank" style="color: var(--neon-yellow); text-decoration: none;">Google Play</a> and more.</li>
                 <li>✔️ Share with family and help reach new languages.</li>
             </ul>
         </section>
