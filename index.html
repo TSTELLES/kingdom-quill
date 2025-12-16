@@ -6,13 +6,12 @@
   <title>Kingdom & Quill</title>
   <meta name="keywords" content="Bible audiobooks, Christian audiobooks, Christian author, T. S. Telles, Christian fiction, epic fantasy, contemporary Christian romance, Christianity, Korean Bible, Russian Bible, Chinese Bible, French Bible, German Bible, English Bible, Spanish Bible, Arabic Bible, Italian Bible, Bibles in Indian languages, 한국어, Русский, 中文, Français, Deutsch, English, Español, العربية, Italiano, हिन्दी, God of Israel, YHWH, bible audio book, buy bible audiobook, free bible audiobook, ad-free bible audio, Spotify Bible, Google Play Bible, Storytel Bible, YouTube Bible">
    
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
+ 
     gtag('config', 'G-MCMK8L0CNN');
   </script>
    
@@ -29,7 +28,7 @@
       --neon-purple-light: #FF00FF;
       --neon-purple-medium: #B400B4;
     }
-
+ 
     body {
       margin: 0;
       /* Removida a imagem daqui e colocada no ::before para performance e blur */
@@ -40,11 +39,14 @@
       flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
-      padding-top: 11em;
+      
+      /* --- ALTERADO AQUI: Aumentado de 11em para 15em --- */
+      padding-top: 15em;
+      
       padding-bottom: 4em;
       position: relative;
     }
-
+ 
     /* Pseudo-elemento para o fundo borrado - Melhor performance em mobile */
     body::before {
       content: "";
@@ -58,15 +60,15 @@
       /* Configuração da Imagem */
       background: black url('https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Gemini_Generated_Image_t73udt73udt73udt.png') no-repeat center 9em;
       background-size: cover;
-
+ 
       /* O Efeito de Blur */
       filter: blur(8px); 
-
+ 
       /* Scale aumenta um pouco a imagem para evitar bordas brancas causadas pelo blur */
       transform: scale(1.05);
       pointer-events: none;
     }
-
+ 
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -91,7 +93,7 @@
       z-index: 100;
       padding: 1em 0.5em;
     }
-
+ 
     .title-slogan-group {
       display: flex;
       flex-direction: column;
@@ -99,7 +101,7 @@
       justify-content: center;
       margin-bottom: 1em;
     }
-
+ 
     .site-title {
       font-size: 2.2rem;
       margin: 0;
@@ -111,7 +113,7 @@
         0 0 80px var(--neon-yellow);
       animation: neonPulseYellow 2s infinite alternate;
     }
-
+ 
     .header-slogan {
       font-size: 1.2rem;
       font-weight: normal;
@@ -122,7 +124,7 @@
       margin-top: 0.2em;
       animation: neonPulseWhite 2s infinite alternate;
     }
-
+ 
     .main-nav {
       display: flex;
       flex-wrap: wrap;
@@ -133,7 +135,7 @@
       font-weight: normal;
       text-shadow: none;
     }
-
+ 
     .main-nav a {
       color: var(--neon-white);
       text-decoration: none;
@@ -142,7 +144,7 @@
       transition: all 0.3s ease;
       text-shadow: 0 0 5px var(--neon-white);
     }
-
+ 
     .main-nav a:hover {
       background: rgba(255, 255, 255, 0.1);
       color: var(--neon-yellow);
@@ -151,7 +153,7 @@
         0 0 20px var(--neon-yellow);
       transform: scale(1.05);
     }
-
+ 
     @keyframes neonPulseLightGreen {
       0% { text-shadow: 0 0 10px var(--neon-light-green),0 0 30px var(--neon-light-green),0 0 50px var(--neon-light-green),0 0 100px var(--neon-light-green); }
       100% { text-shadow: 0 0 20px var(--neon-light-green),0 0 40px var(--neon-light-green),0 0 70px var(--neon-light-green),0 0 120px var(--neon-light-green); }
@@ -164,7 +166,7 @@
       0% { text-shadow:0 0 8px var(--neon-yellow),0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow),0 0 80px var(--neon-yellow); }
       100% { text-shadow:0 0 15px var(--neon-yellow),0 0 30px var(--neon-yellow),0 0 50px var(--neon-yellow),0 0 100px var(--neon-yellow); }
     }
-
+ 
     main {
       flex: 1;
       display: flex;
@@ -180,7 +182,7 @@
       position: relative;
       z-index: 1;
     }
-
+ 
     .content-section {
       background: rgba(0,0,0,0.6);
       padding: 1.5rem 2rem;
@@ -197,7 +199,7 @@
     }
     .content-section p { margin-bottom: 0.8rem; margin-top: 0; }
     .content-section strong { color: var(--neon-yellow); }
-
+ 
     .main-title-neon {
       color: var(--neon-yellow);
       font-size: 1.8rem;
@@ -205,12 +207,12 @@
       text-shadow: 0 0 8px var(--neon-yellow),0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow),0 0 80px var(--neon-yellow);
       animation: neonPulseYellow 2s infinite alternate;
     }
-
+ 
     .subtitle-strong { margin-top: 0.4rem; font-size: 1.4rem; font-weight: bold; }
-
+ 
     .content-section.author-note { text-align: center; }
     .content-section.author-note img { display: block; margin: 1em auto; border-radius: 50%; width: 100px; height: 100px; object-fit: cover; box-shadow: 0 0 10px var(--neon-pink-soft); }
-
+ 
     footer {
       position: fixed;
       bottom: 0;
@@ -226,9 +228,9 @@
       user-select: none;
       z-index: 100;
     }
-
+ 
     footer p { margin: 0; font-size: 0.8rem; line-height: 2em; }
-
+ 
     /* Pop-up de idioma permanece igual */
     .language-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s ease-in-out; }
     .language-modal-overlay.show { visibility: visible; opacity: 1; }
@@ -243,7 +245,7 @@
   </style>
 </head>
 <body>
-
+ 
   <header>
     <div class="title-slogan-group">
       <span class="site-title">Kingdom & Quill</span>
@@ -256,7 +258,7 @@
       <a href="reborn-in-christ.html">Songs</a>
     </nav>
   </header>
-
+ 
   <main>
     <section class="content-section" id="project-mission-section" aria-label="Our Mission">
       <h2 class="main-title-neon">🌟 Inside the Kingdom & Quill Mission 🌟</h2>
@@ -264,7 +266,7 @@
       <p>Kingdom & Quill was born from the vision of a Christian author committed to proclaiming the true Gospel — without prosperity theology, without a false Christ, and without commercial compromise. The content shared through this project — including devotionals, fiction books, and Scripture — is crafted to strengthen hearts and stir souls toward the presence of the Lord.</p>
       <p>There is no room here for profanity, sexual content, or shallow entertainment. Only reverent creativity, sound doctrine, and powerful storytelling anchored in eternal truth.</p>
     </section>
-
+ 
     <section class="content-section author-note" aria-label="About T. S. Telles">
       <h2 class="main-title-neon">About the Creator</h2>
       <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/tstelles-photo.png" alt="Author's Photo" />
@@ -273,11 +275,11 @@
       <p>She is currently working on Axwar: The Power of Four Thrones, an epic fantasy saga distinguished by rich worldbuilding and a dense, compelling storyline. Her upcoming works are in preparation, and readers can follow the latest updates through the project pages on this site.</p>
     </section>
   </main>
-
+ 
   <footer>
     <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
   </footer>
-
+ 
   <div id="languageModal" class="language-modal-overlay">
     <div class="language-modal-content">
       <button class="close-modal">&times;</button>
@@ -288,7 +290,7 @@
       </div>
     </div>
   </div>
-
+ 
   <script>
     window.onload = function() {
       const welcomeToNyLink = document.getElementById('welcomeToNyLink');
@@ -297,16 +299,16 @@
       const selectEnglishButton = document.getElementById('selectEnglish');
       const selectPortugueseButton = document.getElementById('selectPortuguese');
       const languageModalContent = languageModal.querySelector('.language-modal-content');
-
+ 
       function openModal(event) {
         event.preventDefault();
         languageModal.classList.add('show');
       }
-
+ 
       function closeModal() {
         languageModal.classList.remove('show');
       }
-
+ 
       // Note: 'welcomeToNyLink' needs to exist in the HTML for this to work
       if (welcomeToNyLink) {
         welcomeToNyLink.addEventListener('click', openModal);
@@ -315,20 +317,20 @@
       if (closeModalButton) {
         closeModalButton.addEventListener('click', closeModal);
       }
-
+ 
       languageModal.addEventListener('click', function(event) {
         if (!languageModalContent.contains(event.target) && event.target === languageModal) {
           closeModal();
         }
       });
-
+ 
       if (selectEnglishButton) {
         selectEnglishButton.addEventListener('click', function() {
             window.location.href = './welcome-to-ny.html';
             gtag('event', 'click', { 'event_category': 'LanguageSelect', 'event_label': 'English' });
         });
       }
-
+ 
       if (selectPortugueseButton) {
         selectPortugueseButton.addEventListener('click', function() {
             window.location.href = './bem-vindo-a-nova-york.html';
@@ -337,6 +339,6 @@
       }
     };
   </script>
-
+ 
 </body>
 </html>
