@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>La Santa Biblia Audiolibro en Español - Reina Valera 1960 | T. S. Telles</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MCMK8L0CNN');
+  </script>
+
   <meta name="description" content="Escuche La Santa Biblia Audiolibro completa en español, versión Reina Valera 1960. Disfrute de narración clara, sin anuncios y reproducción sin conexión. Disponible en sus plataformas favoritas." />
   <meta name="keywords" content="Santa Biblia, audiolibro, Biblia en audio, español, Reina Valera 1960, RVR1960, escuchar la Biblia, Biblia sin conexión, audiolibro cristiano, Palabra de Dios, Nuevo Testamento, Antiguo Testamento" />
   <style>
@@ -151,7 +161,7 @@
         max-width: 700px; /* Ajusta largura máxima para o contêiner de botões */
         margin: 0 auto; /* Centraliza a seção dentro do contêiner */
     }
-
+    
     .testament-section h2 {
         color: #f9f871;
         font-size: 1.8rem;
@@ -488,7 +498,8 @@
 
     <div class="testament-container">
         <section class="testament-section" aria-label="Opciones de compra de audio">
-            <h2 class="main-title-neon">La Biblia</h2> <p>Descubra la profunda sabiduría y las enseñanzas divinas de la Biblia.</p>
+            <h2 class="main-title-neon">La Biblia</h2>
+            <p>Descubra la profunda sabiduría y las enseñanzas divinas de la Biblia.</p>
             <nav class="buttons" aria-label="Opciones de compra">
                 <a href="https://www.barnesandnoble.com/w/la-santa-biblia-va/1146666915?ean=2940193391517" target="_blank" rel="noopener noreferrer" aria-label="Barnes & Noble"><img src="https://cdn.freebiesupply.com/logos/large/2x/barnes-noble-01-logo-png-transparent.png" alt="Barnes & Noble Logo"></a>
                 <a href="https://www.kobo.com/us/en/audiobook/la-santa-biblia-12" target="_blank" rel="noopener noreferrer" aria-label="Kobo"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo Logo"></a>
@@ -515,14 +526,18 @@
         audio.pause();
         playIcon.style.borderLeft = '18px solid black'; // Play icon
         playIcon.style.borderRight = 'none';
+        playIcon.style.borderTop = '12px solid transparent';
+        playIcon.style.borderBottom = '12px solid transparent';
         playIcon.style.width = '0';
+        playIcon.style.height = '0';
       } else {
         audio.play();
-        playIcon.style.borderLeft = 'none'; // Pause icon
-        playIcon.style.borderRight = 'none';
-        playIcon.style.width = '12px'; // Adjust width for pause bars
-        playIcon.style.borderLeft = '6px solid black';
-        playIcon.style.borderRight = '6px solid black';
+        playIcon.style.borderTop = '0'; // Remove triangle top slope
+        playIcon.style.borderBottom = '0'; // Remove triangle bottom slope
+        playIcon.style.height = '24px'; // Give height for bars
+        playIcon.style.width = '12px'; // Gap between bars
+        playIcon.style.borderLeft = '6px solid black'; // Left bar
+        playIcon.style.borderRight = '6px solid black'; // Right bar
       }
       isPlaying = !isPlaying;
     }
@@ -533,7 +548,10 @@
       isPlaying = false;
       playIcon.style.borderLeft = '18px solid black'; // Reset to play icon
       playIcon.style.borderRight = 'none';
+      playIcon.style.borderTop = '12px solid transparent';
+      playIcon.style.borderBottom = '12px solid transparent';
       playIcon.style.width = '0';
+      playIcon.style.height = '0';
     });
   </script>
 </body>
