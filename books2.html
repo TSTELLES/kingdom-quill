@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&Q Literature</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MCMK8L0CNN');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { font-family: 'Inter', sans-serif; }
+        
+        .series-background {
+            background: #000000;
+        }
+        
+        .text-neon {
+            color: #ffffff;
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #ffde59,
+                0 0 20px #d4af37,
+                0 0 35px #d4af37;
+        }
+
+        .text-metallic-gold {
+            background: linear-gradient(180deg, #fff 0%, #ffde59 20%, #d4af37 40%, #997c27 80%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+            display: inline-block;
+        }
+
+        /* CARROSSEL 3D CIRCULAR COMPACTO */
+        .carousel-container {
+            perspective: 1000px;
+            height: 280px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-stage {
+            width: 150px; 
+            height: 225px; 
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate-carousel 20s linear infinite;
+        }
+
+        .carousel-item {
+            position: absolute;
+            width: 150px; 
+            height: 225px; 
+            left: 0;
+            top: 0;
+            border: 2px solid #d4af37;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            backface-visibility: visible;
+        }
+
+        .item-1 { transform: rotateY(0deg) translateZ(130px); }
+        .item-2 { transform: rotateY(120deg) translateZ(130px); }
+        .item-3 { transform: rotateY(240deg) translateZ(130px); }
+
+        @keyframes rotate-carousel {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        .book-cover-3d {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .carousel-item:hover .book-cover-3d {
+            transform: scale(1.05);
+        }
+
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-gold': '#d4af37',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="series-background text-white min-h-screen">
+
+    <div class="container mx-auto px-4 py-8 md:py-16 max-w-7xl">
+
+        <header class="text-center mb-6 space-y-6">
+            <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight text-neon flex flex-col items-center justify-center gap-2">
+                <span>K&Q</span>
+                <span>Literature</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium">
+                Fiction that resonates.
+            </p>
+        </header>
+
+        <!-- Vitrine 3D Circular -->
+        <section class="carousel-container mb-12">
+            <div class="carousel-stage">
+                <div class="carousel-item item-1">
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.jpg" alt="Welcome to New York" class="book-cover-3d">
+                </div>
+                <div class="carousel-item item-2">
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-O-PODER-DOS-QUATRO-TRONOS4.jpg" alt="O Poder dos Quatro Tronos" class="book-cover-3d">
+                </div>
+                <div class="carousel-item item-3">
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/lost-gospel.jpg" alt="Lost Gospel" class="book-cover-3d">
+                </div>
+            </div>
+        </section>
+        
+        <div class="flex justify-center mb-16">
+            <div class="h-0.5 w-full max-w-xs bg-gradient-to-r from-transparent via-accent-gold to-transparent rounded-full"></div>
+        </div>
+
+        <!-- Seção Sobre -->
+        <section class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto">
+            <div class="bg-black border border-accent-gold/50 p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
+                <div class="flex flex-col items-center text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-metallic-gold">
+                        What You’ll Find Here
+                    </h2>
+                    <p class="text-gray-200 text-lg mb-0 text-left leading-relaxed mt-4">
+                        The fiction titles presented by Kingdom & Quill are written by T. S. Telles and crafted to stand shoulder-to-shoulder with mainstream entertainment in the romance and fantasy genres. Though designed to entertain, these stories carry themes that naturally resonate with the Christian community and, out of respect for the convictions behind this project, they avoid explicit sexual content and any values that clash with a life of faith. You won’t find identity-driven manifestos or crude language here. What you’ll find are deep narratives—plots that balance tension and purpose without losing their edge.
+                        <br><br>
+                        If you came for romance, suspense, or fantasy, you’re in the right place. Check each book’s content rating and its availability in your preferred language.
+                        <br><br>
+                        Sit back. Explore. And let each story speak for itself. God bless you.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Detalhes Livro 1: Welcome to New York -->
+        <section id="destaque-wtny" class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto mt-12">
+            <div class="bg-black border border-accent-gold/50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6"> 
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.jpg" alt="Capa Welcome to New York" class="w-32 md:w-36 h-auto rounded-lg border-2 border-accent-gold flex-shrink-0">
+                    <div class="flex-grow w-full text-center md:text-left">
+                        <h3 class="text-3xl font-bold mb-2 text-metallic-gold">Welcome to New York</h3>
+                        <p class="text-gray-300 text-lg mb-4">Part 1: Born Ricciwood</p>
+                        <p class="text-gray-400 text-sm mb-4">
+                            <span class="font-bold text-accent-gold">Genre:</span> Contemporary Romance, Christian Romance, Urban Romance, Emotional Drama
+                            <br>
+                            <span class="font-bold text-accent-gold">Language:</span> English (US), Portuguese (Brazil)
+                        </p>
+                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2 text-left">
+                            <p>Gabriel Ricciwood has always been a mystery—even to himself. Haunted by tragedy, carrying the legacy of a last name no one dares speak aloud, Gabriel steps into Sant’Hale...</p>
+                        </div>
+                        <!-- Botão com trigger para modal de idiomas -->
+                        <button class="btn-lang-trigger inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm" 
+                                data-book="wtny">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOVAL SEÇÃO: Lost Gospel -->
+        <section id="destaque-lost-gospel" class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto mt-12">
+            <div class="bg-black border border-accent-gold/50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6"> 
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/lost-gospel.jpg" alt="Capa Lost Gospel" class="w-32 md:w-36 h-auto rounded-lg border-2 border-accent-gold flex-shrink-0">
+                    <div class="flex-grow w-full text-center md:text-left">
+                        <h3 class="text-3xl font-bold mb-2 text-metallic-gold">Lost Gospel</h3>
+                        <p class="text-gray-300 text-lg mb-4">When the Church Stands in the Way of Christ</p>
+                        <p class="text-gray-400 text-sm mb-4">
+                            <span class="font-bold text-accent-gold">Genre:</span> Nonfiction / Religious, Christian Criticism, Theological Essay, Religious Commentary
+                            <br>
+                            <span class="font-bold text-accent-gold">Language:</span> English (US), Portuguese (Brazil), Spanish
+                        </p>
+                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2 text-left">
+                            <p>Lost Gospel: When the Church Stands in the Way of Christ is not a comfortable book — and it never intended to be. It gathers real stories and direct reflections on wounds caused not by the world, but from within the church itself.</p>
+                            <p>People sincere in their faith have been silenced, manipulated, or ignored by structures more concerned with appearance, control, and status than with the truth of the gospel. Here, Christ’s name becomes a brand or shield; the Word is replaced by human conventions; grace is reduced to a confrontation-free speech. With solid biblical grounding, the book exposes false gospels and normalized practices that push people away from God. It doesn’t attack Christian faith — it defends it.</p>
+                        </div>
+                        <!-- Botão com trigger para modal de idiomas -->
+                        <button class="btn-lang-trigger inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm"
+                                data-book="lost-gospel">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Detalhes Livro 3: O Poder dos Quatro Tronos -->
+        <section id="destaque-o-poder-dos-quatro-tronos-4" class="grid grid-cols-1 lg:grid-cols-1 gap-12 max-w-3xl mx-auto mt-12">
+            <div class="bg-black border border-accent-gold/50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(212,175,55,0.8)]">
+                 <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6"> 
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Capa-O-PODER-DOS-QUATRO-TRONOS4.jpg" alt="Capa O Poder dos Quatro Tronos" class="w-32 md:w-36 h-auto rounded-lg border-2 border-accent-gold flex-shrink-0">
+                    <div class="flex-grow w-full text-center md:text-left">
+                        <h3 class="text-3xl font-bold mb-2 text-metallic-gold">O Poder dos Quatro Tronos</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            <span class="font-bold text-accent-gold">Genre:</span> Fantasy, Adventure, Fiction
+                            <br>
+                            <span class="font-bold text-accent-gold">Language:</span> Português (BR)
+                        </p>
+                        <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-2 text-left">
+                            <p>Assim como o poder dos deuses, há muito tempo o tecido que unia os bruxos e as criaturas mágicas foi corrompido...</p>
+                        </div>
+                        <a href="Axwar-o-poder-dos-quatro-tronos.html" class="inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="flex justify-center mt-16">
+            <div class="h-0.5 w-full max-w-xs bg-gradient-to-r from-transparent via-accent-gold to-transparent rounded-full"></div>
+        </div>
+
+    </div>
+
+    <!-- Modal de Idioma Dinâmico -->
+    <div id="language-modal" class="fixed inset-0 bg-black bg-opacity-85 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-gray-900 p-8 rounded-xl shadow-2xl max-w-sm w-full border border-accent-gold">
+            <h3 class="text-2xl font-bold mb-6 text-center text-metallic-gold">Select Language</h3>
+            <div id="modal-links" class="space-y-4">
+                <!-- Links inseridos via JavaScript -->
+            </div>
+            <button id="close-modal" class="mt-6 w-full text-center text-gray-400 hover:text-white transition duration-300 text-sm uppercase tracking-widest">Close</button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('language-modal');
+            const modalLinksContainer = document.getElementById('modal-links');
+            const closeModalBtn = document.getElementById('close-modal');
+            const triggers = document.querySelectorAll('.btn-lang-trigger');
+
+            // Configuração dos links por livro
+            const bookConfigs = {
+                'wtny': [
+                    { label: 'English (US)', url: 'welcome-to-ny.html' },
+                    { label: 'Portuguese (Brazil)', url: 'Bem-vindo-a-Nova-Iorque.html' }
+                ],
+                'lost-gospel': [
+                    { label: 'English (US)', url: 'lost-gospel-en.html' },
+                    { label: 'Portuguese (Brazil)', url: 'lost-gospel-pt.html' },
+                    { label: 'Spanish', url: 'lost-gospel-es.html' }
+                ]
+            };
+
+            const openModal = (bookKey) => {
+                const config = bookConfigs[bookKey];
+                if (!config) return;
+
+                // Limpa e reconstrói os links
+                modalLinksContainer.innerHTML = '';
+                config.forEach(lang => {
+                    const link = document.createElement('a');
+                    link.href = lang.url;
+                    link.className = "block w-full text-center bg-gray-700 text-white font-semibold py-3 px-4 rounded-lg hover:bg-accent-gold hover:text-black transition duration-300";
+                    link.textContent = lang.label;
+                    modalLinksContainer.appendChild(link);
+                });
+
+                modal.classList.remove('hidden');
+            };
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const book = trigger.getAttribute('data-book');
+                    openModal(book);
+                });
+            });
+
+            closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+            modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+        });
+    </script>
+
+    <footer class="w-full text-center px-4 py-8 text-gray-400 text-sm border-t border-gray-700 mt-12">
+        <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
