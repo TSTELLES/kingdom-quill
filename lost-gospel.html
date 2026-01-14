@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Cristão que a Igreja Matou - Kingdom & Quill</title>
+    <title>Lost Gospel - Kingdom & Quill</title>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
     <script>
@@ -89,7 +89,6 @@
             opacity: 1;
         }
 
-        /* Removida a alteração de cor amarela para o ícone no estado is-playing */
         .is-playing svg {
             color: #FFFFFF;
             filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
@@ -100,40 +99,39 @@
 
     <header class="bg-primary-bg py-16 md:py-24 border-b border-subtle-gray">
         <div class="container mx-auto px-6 max-w-4xl text-center">
-            <!-- Mudança solicitada: cor amarela removida e alterada para branco (text-white/80) -->
             <span class="text-sm font-semibold uppercase tracking-widest text-white/80 mb-3 block">
-                NÃO-FICÇÃO / TEOLOGIA
+                NON-FICTION / THEOLOGY
             </span>
             
             <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-neon-effect">
-                O Cristão que a Igreja Matou: Quando a Instituição se torna o obstáculo
+                Lost Gospel: When the Church stands in the way of Christ
             </h1>
             
             <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto text-gray-400">
-                Uma compilação de testemunhos de feridas causadas dentro da própria igreja. Um retrato claro de quando a fé vira faca — e um chamado à redescoberta do <span class="text-neon-effect">Verdadeiro Evangelho</span>.
+                A raw compilation of testimonies about wounds inflicted within the church. A clear portrait of when faith becomes a weapon—and a call to rediscover the <span class="text-neon-effect">True Gospel</span>.
             </p>
 
             <div class="flex justify-center mb-10 mt-10">
                 <div class="w-48 md:w-64 shadow-2xl transition duration-300 hover:scale-105">
-                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/lost-gospel.jpg" alt="Capa do Livro Lost Gospel" class="rounded-lg border-4 border-accent-dark shadow-2xl shadow-accent-dark/40" onerror="this.onerror=null; this.src='https://placehold.co/300x450/1F1F1F/FFA000?text=Lost+Gospel';">
+                    <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/lost-gospel.jpg" alt="Lost Gospel Book Cover" class="rounded-lg border-4 border-accent-dark shadow-2xl shadow-accent-dark/40" onerror="this.onerror=null; this.src='https://placehold.co/300x450/1F1F1F/FFA000?text=Lost+Gospel';">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- SEÇÃO DE EXPERIÊNCIA EM ÁUDIO -->
+    <!-- AUDIO EXPERIENCE SECTION -->
     <section class="py-16 md:py-20 audio-section border-b border-subtle-gray">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neon-effect">Experiência em Áudio</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neon-effect">Audio Experience</h2>
                     <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-                        Mais do que uma leitura, este audiolivro é um <strong>registro sonoro de relatos reais</strong>, profundos e muitas vezes dolorosos, de pessoas ao redor do mundo que enfrentaram feridas dentro de instituições religiosas.
+                        More than just a book, this audiobook is a <strong>sonic record of real stories</strong>—deep, often painful accounts from people around the world who have faced betrayal within religious institutions.
                     </p>
                     <div class="bg-card-bg/50 p-6 rounded-lg border-l-4 border-accent-color">
-                        <p class="text-sm text-white font-bold uppercase tracking-widest mb-2">Gratuito via ElevenReader</p>
+                        <p class="text-sm text-white font-bold uppercase tracking-widest mb-2">Free via ElevenReader</p>
                         <p class="text-gray-300 text-sm">
-                            Este material é oferecido gratuitamente como um convite à reflexão e restauração espiritual.
+                            This material is offered free of charge as an invitation to reflection and spiritual restoration.
                         </p>
                     </div>
                 </div>
@@ -141,7 +139,6 @@
                     <div class="relative group cursor-pointer text-center" id="play-button-container">
                         <div class="absolute -inset-8 sample-glow rounded-full"></div>
                         
-                        <!-- Botão de Play que aciona o script de áudio -->
                         <button onclick="toggleAudio()" id="audio-btn" class="relative flex items-center justify-center w-24 h-24 bg-black border-2 border-white/30 group-hover:border-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 mx-auto">
                             <svg id="play-icon" class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path>
@@ -150,9 +147,8 @@
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <p id="audio-status" class="mt-4 text-xs uppercase tracking-widest text-white/60 group-hover:text-white font-bold transition-colors">Ouvir Amostra</p>
+                        <p id="audio-status" class="mt-4 text-xs uppercase tracking-widest text-white/60 group-hover:text-white font-bold transition-colors">Listen to Sample</p>
                         
-                        <!-- Elemento de áudio oculto -->
                         <audio id="sample-audio" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/apresentaç-o-do-livro-sobre-hipocrisia-em-inglês-aprimorado-v2.mp3"></audio>
                     </div>
                 </div>
@@ -160,70 +156,70 @@
         </div>
     </section>
 
-    <!-- COMO OUVIR SEM CUSTO -->
+    <!-- HOW TO LISTEN FOR FREE -->
     <section class="py-16 bg-section-bg border-b border-subtle-gray">
         <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h2 class="text-2xl md:text-3xl font-bold mb-10 text-neon-effect">Como ouvir sem custo?</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-10 text-neon-effect">How to Listen for Free</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="step-card p-6 rounded-xl">
                     <div class="text-3xl font-bold text-accent-color mb-4">1</div>
-                    <h3 class="text-lg font-bold mb-2 text-neon-effect">Crie sua conta</h3>
-                    <p class="text-gray-400 text-sm">Acesse o <strong>ElevenReader</strong> e faça seu cadastro rápido.</p>
+                    <h3 class="text-lg font-bold mb-2 text-neon-effect">Create Your Account</h3>
+                    <p class="text-gray-400 text-sm">Head over to <strong>ElevenReader</strong> and sign up in seconds.</p>
                 </div>
                 <div class="step-card p-6 rounded-xl">
                     <div class="text-3xl font-bold text-accent-color mb-4">2</div>
-                    <h3 class="text-lg font-bold mb-2 text-neon-effect">Adicione o Livro</h3>
-                    <p class="text-gray-400 text-sm">Use o link para importar <strong>O Cristão que a Igreja Matou</strong>.</p>
+                    <h3 class="text-lg font-bold mb-2 text-neon-effect">Add the Book</h3>
+                    <p class="text-gray-400 text-sm">Use the link to import <strong>Lost Gospel</strong> into your library.</p>
                 </div>
                 <div class="step-card p-6 rounded-xl">
                     <div class="text-3xl font-bold text-accent-color mb-4">3</div>
-                    <h3 class="text-lg font-bold mb-2 text-neon-effect">Dê o Play</h3>
-                    <p class="text-gray-400 text-sm">Ouça gratuitamente com vozes de IA de alta fidelidade.</p>
+                    <h3 class="text-lg font-bold mb-2 text-neon-effect">Press Play</h3>
+                    <p class="text-gray-400 text-sm">Enjoy the narration for free with high-fidelity AI voices.</p>
                 </div>
             </div>
             
             <div class="mt-12">
                 <a href="https://elevenreader.io/audiobooks/lost-gospel/7nri1Q7ueFy5yggKLkpQ" target="_blank" class="inline-block px-8 py-4 btn-cta-black rounded-full uppercase text-sm tracking-widest">
-                    Começar Agora no ElevenReader
+                    Start Now on ElevenReader
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ROMPENDO O SILÊNCIO -->
+    <!-- BREAKING THE SILENCE -->
     <section class="py-16 md:py-20 bg-primary-bg">
         <div class="container mx-auto px-6 max-w-5xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-neon-effect">Rompendo o Silêncio</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-neon-effect">Breaking the Silence</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="step-card p-6 rounded-lg border border-subtle-gray bg-card-bg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Clareza Espiritual</h3>
-                    <p class="text-gray-400">Distinguindo entre as tradições religiosas humanas e os ensinamentos de Cristo.</p>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Spiritual Clarity</h3>
+                    <p class="text-gray-400">Distinguishing man-made religious traditions from the original message of Christ.</p>
                 </div>
                 <div class="step-card p-6 rounded-lg border border-subtle-gray bg-card-bg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Cura para os Feridos</h3>
-                    <p class="text-gray-400">Uma voz para aqueles que foram silenciados ou ignorados pelas estruturas eclesiásticas.</p>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Healing for the Wounded</h3>
+                    <p class="text-gray-400">Giving a voice to those who were silenced or ignored by institutional structures.</p>
                 </div>
                 <div class="step-card p-6 rounded-lg border border-subtle-gray bg-card-bg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Embasamento Bíblico</h3>
-                    <p class="text-gray-400">Argumentos teológicos sólidos que defendem a fé de sua própria corrupção interna.</p>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Biblical Foundation</h3>
+                    <p class="text-gray-400">Solid theological arguments defending the faith against its own internal corruption.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA FINAL -->
+    <!-- FINAL CTA -->
     <section class="py-12 bg-accent-dark">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl md:text-3xl font-black mb-4 uppercase text-neon-effect">Recupere sua fé hoje</h2>
-            <p class="text-white font-medium mb-8 max-w-xl mx-auto">Não deixe que estruturas humanas calem a voz de Deus em você.</p>
+            <h2 class="text-2xl md:text-3xl font-black mb-4 uppercase text-neon-effect">Reclaim your faith today</h2>
+            <p class="text-white font-medium mb-8 max-w-xl mx-auto">Don't let human structures drown out the voice of God within you.</p>
             <a href="https://elevenreader.io/audiobooks/lost-gospel/7nri1Q7ueFy5yggKLkpQ" target="_blank" class="btn-secondary-neon px-10 py-4 rounded-full font-bold uppercase text-sm inline-block shadow-xl">
-                Acessar Audiolivro Gratuito
+                Access Free Audiobook
             </a>
         </div>
     </section>
 
     <footer class="bg-primary-bg text-gray-400 py-12 text-center text-sm border-t border-subtle-gray">
-        <p>&copy; 2025 Kingdom&Quill. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
     </footer>
 
     <script>
@@ -238,13 +234,13 @@
                 audio.play();
                 playIcon.classList.add('hidden');
                 pauseIcon.classList.remove('hidden');
-                audioStatus.textContent = 'Tocando Amostra...';
+                audioStatus.textContent = 'Playing Sample...';
                 btnContainer.classList.add('is-playing');
             } else {
                 audio.pause();
                 playIcon.classList.remove('hidden');
                 pauseIcon.classList.add('hidden');
-                audioStatus.textContent = 'Ouvir Amostra';
+                audioStatus.textContent = 'Listen to Sample';
                 btnContainer.classList.remove('is-playing');
             }
         }
@@ -252,7 +248,7 @@
         audio.onended = function() {
             playIcon.classList.remove('hidden');
             pauseIcon.classList.add('hidden');
-            audioStatus.textContent = 'Ouvir Amostra';
+            audioStatus.textContent = 'Listen to Sample';
             btnContainer.classList.remove('is-playing');
         };
     </script>
