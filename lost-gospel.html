@@ -80,7 +80,7 @@
             filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
         }
 
-        /* Platform Links Logic */
+        /* Lógica de Tons de Cinza para as Plataformas */
         .platform-link {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             filter: grayscale(100%) opacity(40%);
@@ -100,7 +100,7 @@
             background-color: #E31B23 !important;
         }
 
-        /* Kindle Device Styling */
+        /* Estilização do Dispositivo Kindle */
         .kindle-device {
             background-color: #1a1a1a;
             border-radius: 1.5rem;
@@ -149,7 +149,7 @@
 </head>
 <body>
 
-    <!-- Main Header -->
+    <!-- Cabeçalho Principal -->
     <header class="bg-primary-bg py-16 md:py-24 border-b border-subtle-gray">
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <span class="text-sm font-semibold uppercase tracking-widest text-white/80 mb-3 block">
@@ -183,7 +183,7 @@
         </div>
     </header>
 
-    <!-- Audio Experience Section -->
+    <!-- Seção de Experiência de Áudio -->
     <section id="audio-section" class="py-16 md:py-24 audio-section">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
@@ -213,14 +213,15 @@
                         </button>
                         <p id="audio-status" class="mt-4 text-xs uppercase tracking-widest text-white/60 group-hover:text-white font-bold transition-colors">Listen to Sample</p>
                         
-                        <audio id="sample-audio" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/apresentaç-o-do-livro-sobre-hipocrisia-em-inglês-aprimorado-v2.mp3"></audio>
+                        <!-- Link da amostra atualizado para Amostra_LG.flac -->
+                        <audio id="sample-audio" src="Amostra_LG.flac"></audio>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kindle Section -->
+    <!-- Seção de E-Book -->
     <section id="reading-section" class="py-16 md:py-24 reading-section">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="flex flex-col md:flex-row-reverse items-center gap-12 text-center md:text-left">
@@ -272,7 +273,7 @@
         </div>
     </section>
 
-    <!-- Don't have a Kindle Reader? Section -->
+    <!-- Seção de Passos -->
     <section class="py-16 bg-section-bg border-b border-subtle-gray">
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-10 text-neon-effect tracking-tight">Don't have a Kindle Reader?</h2>
@@ -300,7 +301,7 @@
         </div>
     </section>
 
-    <!-- What You'll Find Section -->
+    <!-- Conteúdo do Livro -->
     <section class="py-16 md:py-20 bg-primary-bg">
         <div class="container mx-auto px-6 max-w-5xl text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-neon-effect">What's Inside</h2>
@@ -321,7 +322,7 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- CTA Final -->
     <section class="py-12 bg-accent-dark">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-2xl md:text-3xl font-black mb-4 uppercase text-neon-effect">Reclaim your faith today</h2>
@@ -337,7 +338,7 @@
         </div>
     </section>
 
-    <!-- Platform Presence -->
+    <!-- Presença em Plataformas -->
     <section class="py-16 bg-primary-bg border-t border-subtle-gray">
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <h2 class="text-2xl md:text-3xl font-bold mb-12 text-neon-effect tracking-tight">Also Available On</h2>
@@ -375,12 +376,10 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
     <footer class="bg-primary-bg text-gray-400 py-12 text-center text-sm border-t border-subtle-gray">
-        <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
+        <p>© 2025 Kingdom&Quill. All rights reserved.</p>
     </footer>
 
-    <!-- Lógica de Áudio -->
     <script>
         const audio = document.getElementById('sample-audio');
         const playIcon = document.getElementById('play-icon');
