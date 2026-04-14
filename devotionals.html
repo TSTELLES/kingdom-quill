@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kingdom & Quill Devotionals</title>
     
+    <!-- SEO & Keywords (International Focus) -->
+    <meta name="description" content="Explore Kingdom & Quill devotionals: Hear, O Israel and Understanding & Overcoming. Spiritual clarity and practical guidance for your walk with God.">
+    
+    <!-- Keywords: Voice of God (EN/ES), Pornography Overcoming (EN) -->
+    <meta name="keywords" content="30 days devotional, devocional de treinta días, God's voice, voz de Dios, Israel, prayer, oración, Christian devotionals, overcoming pornography, pornography addiction, pornography, marriage restoration, sexuality and faith, Kingdom and Quill, T. S. Telles">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,25 +22,12 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Define a fonte Inter como padrão para uma leitura moderna e clara */
         html { font-family: 'Inter', sans-serif; }
-        
-        /* Estilos personalizados para o degradê e separador visual */
-        .series-background {
-            background: #000000; /* Preto absoluto */
-        }
-        
-        /* Efeito Glow para o Título Principal */
+        .series-background { background: #000000; }
         .text-neon {
             color: #ffffff;
-            text-shadow:
-                0 0 5px #fff,       
-                0 0 10px #ffde59,  
-                0 0 20px #d4af37,  
-                0 0 35px #d4af37; 
+            text-shadow: 0 0 5px #fff, 0 0 10px #ffde59, 0 0 20px #d4af37, 0 0 35px #d4af37; 
         }
-
-        /* Dourado Metálico com mais reflexo */
         .text-metallic-gold {
             background: linear-gradient(180deg, #fff 0%, #ffde59 20%, #d4af37 40%, #997c27 80%, #d4af37 100%);
             -webkit-background-clip: text;
@@ -42,18 +35,15 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             display: inline-block;
         }
-        
         .book-cover {
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); 
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
-            max-width: 100%; /* Garante que a imagem não transborde */
+            max-width: 100%;
         }
         .book-cover:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.6);
         }
-
-        /* Botão estilizado de About */
         .btn-about {
             background: transparent;
             border: 1px solid #d4af37;
@@ -68,14 +58,11 @@
             margin-top: 1.25rem;
             display: inline-block;
         }
-
         .btn-about:hover {
             background: #d4af37;
             color: #000;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
-
-        /* Container da Galeria com Fluidez */
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
@@ -84,32 +71,18 @@
             gap: 2.5rem;
             margin-bottom: 4rem;
         }
-
-        /* Ajustes específicos para Mobile */
         @media (max-width: 640px) {
-            .gallery-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 3.5rem;
-            }
-            .text-neon {
-                font-size: 2.5rem;
-            }
-            .book-cover {
-                width: 160px !important; /* Tamanho uniforme no mobile para melhor grid vertical */
-            }
+            .gallery-container { flex-direction: column; align-items: center; gap: 3.5rem; }
+            .text-neon { font-size: 2.5rem; }
+            .book-cover { width: 160px !important; }
         }
     </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'accent-gold': '#d4af37', 
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+                    colors: { 'accent-gold': '#d4af37' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
             }
         }
@@ -128,6 +101,24 @@
                 A word that builds. A truth that transforms.
             </p>
         </header>
+
+        <!-- Seção Informativa (About the Devotionals) -->
+        <section id="info" class="max-w-3xl mx-auto mb-16">
+            <div class="bg-black border border-accent-gold/30 p-8 rounded-2xl shadow-2xl transition-all duration-500 hover:border-accent-gold/60">
+                <div class="flex flex-col items-center text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-metallic-gold">
+                        What Exactly Is This?
+                    </h2>
+                    <p class="text-gray-300 text-base md:text-lg leading-relaxed text-justify md:text-left">
+                        Kingdom & Quill devotionals are created to offer spiritual clarity and practical guidance amidst everyday chaos. Rooted in Scripture and written with care, they are invitations to pause, reflect, and deepen your walk with God, focusing on truth, sobriety, and balance. We prioritize substance over superficiality, offering mature reflection and encouragement without exaggeration. Every word is chosen to build up, comfort, and guide you toward lasting faith and purpose.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex justify-center mb-16">
+            <div class="h-0.5 w-full max-w-xs bg-gradient-to-r from-transparent via-accent-gold to-transparent rounded-full opacity-50"></div>
+        </div>
 
         <!-- Galeria de Capas Fluida -->
         <section class="gallery-container">
@@ -171,23 +162,6 @@
                 <a href="understanding-and-overcoming.html" class="btn-about">About</a>
             </div>
 
-        </section>
-        
-        <div class="flex justify-center mb-16">
-            <div class="h-0.5 w-full max-w-xs bg-gradient-to-r from-transparent via-accent-gold to-transparent rounded-full opacity-50"></div>
-        </div>
-
-        <section id="info" class="max-w-3xl mx-auto">
-            <div class="bg-black border border-accent-gold/30 p-8 rounded-2xl shadow-2xl transition-all duration-500 hover:border-accent-gold/60">
-                <div class="flex flex-col items-center text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-metallic-gold">
-                        What Exactly Is This?
-                    </h2>
-                    <p class="text-gray-300 text-base md:text-lg leading-relaxed text-justify md:text-left">
-                        Kingdom & Quill devotionals are created to offer spiritual clarity and practical guidance amidst everyday chaos. Rooted in Scripture and written with care, they are invitations to pause, reflect, and deepen your walk with God, focusing on truth, sobriety, and balance. We prioritize substance over superficiality, offering mature reflection and encouragement without exaggeration. Every word is chosen to build up, comfort, and guide you toward lasting faith and purpose.
-                    </p>
-                </div>
-            </div>
         </section>
         
         <div class="flex justify-center mt-16">
