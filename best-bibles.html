@@ -22,11 +22,12 @@
     <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
 
     <style>
-        /* Variáveis Neon Originais */
+        /* Variáveis Neon */
         :root {
             --neon-yellow: #f9f871;
             --footer-text: #E0E0E0;
-            --header-height: 6.5em; /* Aumentado para garantir folga total */
+            /* Aumentado para 10em para garantir que o conteúdo comece bem abaixo da faixa */
+            --header-height: 10em; 
         }
 
         body {
@@ -38,13 +39,13 @@
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
-            /* Padding substancial no topo para compensar o header fixo */
+            /* Padding do corpo usa a variável de altura do header */
             padding-top: var(--header-height);
             padding-bottom: 2em;
             position: relative;
         }
 
-        /* Fundo com Blur Original */
+        /* Fundo com Blur */
         body::before {
           content: "";
           position: fixed;
@@ -58,11 +59,12 @@
           pointer-events: none;
         }
 
-        /* Cabeçalho Fixo Original */
+        /* Cabeçalho Fixo */
         header {
             position: fixed;
             top: 0; left: 0; right: 0;
-            height: 4.5em; /* Altura visual fixa da faixa */
+            /* A faixa preta mantém-se com 5.5em, o resto é margem de segurança */
+            height: 5.5em; 
             background-color: black;
             color: var(--neon-yellow);
             font-family: 'Merriweather', serif;
@@ -91,8 +93,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Padding superior extra para garantir folga visual do primeiro quadro */
-            padding: 2rem 1rem 4rem; 
+            /* Padding superior de 6rem para uma separação clara */
+            padding: 6rem 1rem 4rem; 
             gap: 3rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -100,7 +102,7 @@
             z-index: 1;
         }
 
-        /* Seção de Conteúdo Original */
+        /* Seção de Conteúdo */
         .content-section {
             background: rgba(0,0,0,0.6);
             padding: 1.5rem 2rem;
@@ -128,7 +130,7 @@
             display: block;
         }
 
-        /* Grelha de Idiomas Original */
+        /* Grelha de Idiomas */
         .language-grid {
             display: flex;
             flex-wrap: wrap;
@@ -138,7 +140,7 @@
             width: 100%;
         }
 
-        /* Estilo Exato dos Botões Originais */
+        /* Estilo dos Botões */
         .language-grid a {
             display: flex;
             flex-direction: column;
@@ -167,11 +169,11 @@
             border-color: var(--neon-yellow);
         }
 
-        /* AJUSTE DAS BANDEIRAS - AGORA CORRIGIDAS */
+        /* Ajuste das Bandeiras */
         .language-grid a img {
             width: 80px; 
             height: 55px; 
-            object-fit: cover; /* Garante que a bandeira preencha o espaço sem deformar ou sobrar espaço */
+            object-fit: cover; 
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             margin-bottom: 0.2em;
@@ -187,7 +189,7 @@
             line-height: 1.2;
         }
 
-        /* Modal Original */
+        /* Modal */
         .modal {
             display: none;
             position: fixed; 
@@ -254,9 +256,10 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Ajustes Mobile sem quebrar a Estética */
+        /* Ajustes Mobile */
         @media (max-width: 480px) {
-            :root { --header-height: 5.5em; } /* Ajuste mobile para o topo */
+            :root { --header-height: 12em; } /* Espaço massivo no mobile para evitar qualquer overlap */
+            main { padding-top: 2rem; }
             .language-grid a { width: 95px; height: 115px; font-size: 0.8rem; }
             .language-grid a img { width: 70px; height: 45px; }
             .content-section { padding: 1.2rem; width: 95%; }
@@ -270,7 +273,7 @@
     </header>
 
     <main>
-        <!-- Primeiro quadro com margem superior garantida para não ser escondido pelo header -->
+        <!-- Secção Welcome agora com distanciamento garantido -->
         <section class="content-section">
             <h2 class="main-title-neon">📖 Welcome</h2>
             <p class="subtitle-strong">🔥 Get your Bible — listen anytime, own it forever. 🔥</p>
