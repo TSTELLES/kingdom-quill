@@ -1,1 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- SEO Básico e Meta Tags (日本語検索に最適化) -->
+  <title>聖書 オーディオブック 日本語 - 新改訳 | T. S. Telles</title>
+  <meta name="description" content="日本語の聖書オーディオブックを聴く。新改訳。広告なしのクリアな音声、オフライン再生可能。あなたの好きなプラットフォームで神の言葉を体験してください。" />
+  
+  <!-- 日本のユーザー向けに最適化されたキーワード -->
+  <meta name="keywords" content="聖書, オーディオブック, 日本語の聖書, 新改訳, 神の言葉, キリスト教, 旧約聖書, 新約聖書, 聴く聖書, 聖書朗読, 信仰, イエス・キリスト, 福音, 日本語訳聖書, 聖書アプリ, 祈り, デボーション, 日本語バイブル, Kingdom & Quill" />
+  
+  <meta name="author" content="T. S. Telles / Kingdom & Quill" />
+  <link rel="canonical" href="https://tstelles.github.io/holy-bible-audiobooks/" />
 
+  <!-- Open Graph / SNS (日本語表示) -->
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="聖書 オーディオブック 日本語 - 新改訳 | T. S. Telles">
+  <meta property="og:description" content="いつでもどこでも神の言葉を。クリアな音声で日本語聖書を体験。">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg">
+
+  <!-- 構造化データ (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Audiobook",
+    "name": "聖書 オーディオブック 日本語 - 新改訳",
+    "author": {
+      "@type": "Person",
+      "name": "T. S. Telles"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kingdom & Quill"
+    },
+    "language": "ja",
+    "description": "日本語の聖書オーディオブック - 新改訳。旧約聖書と新約聖書の高品質な朗読。",
+    "genre": "宗教, キリスト教, スピリチュアル",
+    "format": "Audiobook"
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MCMK8L0CNN');
+  </script>
+
+  <style>
+    /* Reset e base */
+    body {
+      margin: 0;
+      background: black;
+      color: #fff;
+      font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-top: 4.5em;
+      padding-bottom: 3.5em;
+    }
+
+    /* ネオンイエローの固定ヘッダー */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4.5em;
+      background-color: black;
+      color: #f9f871;
+      font-weight: bold;
+      font-size: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow: 0 0 8px #f9f871, 0 0 20px #f9f871, 0 0 40px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+      user-select: none;
+      letter-spacing: 0.05em;
+      z-index: 100;
+    }
+
+    @keyframes neonPulseYellow {
+      0% { text-shadow: 0 0 10px #f9f871, 0 0 30px #f9f871, 0 0 50px #f9f871; }
+      100% { text-shadow: 0 0 20px #f9f871, 0 0 40px #f9f871, 0 0 70px #f9f871; }
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 2rem;
+      gap: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      min-height: calc(100vh - 4.5em - 3.5em);
+    }
+
+    /* 日本の国旗 */
+    .flags-row {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+      padding-top: calc(4.5em + 2rem);
+      padding-bottom: 2rem;
+      width: 100%;
+    }
+
+    .flag {
+      width: 160px;
+      height: 110px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      filter: brightness(0.85);
+      animation: fadeOpacity 8s infinite alternate ease-in-out;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      opacity: 0.8;
+    }
+
+    .flag:hover {
+      filter: brightness(1.2);
+      box-shadow: 0 0 30px rgba(249, 248, 113, 0.9);
+      transform: scale(1.05);
+      animation-play-state: paused;
+      opacity: 1;
+    }
+
+    .flag.japan {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg');
+      border: 1px solid #333;
+    }
+
+    @keyframes fadeOpacity {
+      0% {opacity: 0.9;}
+      100% {opacity: 0.6;}
+    }
+
+    /* メインコピー */
+    .arguments {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      text-shadow: 0 0 5px #000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .main-title-neon {
+      color: #f9f871;
+      font-size: 2rem;
+      margin-top: 0;
+      text-shadow: 0 0 8px #f9f871, 0 0 20px #f9f871;
+      animation: neonPulseYellow 2s infinite alternate;
+    }
+    .subtitle-strong {
+        margin-top: 0.5rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    /* オーディオプレーヤー */
+    .player-title {
+        color: #f9f871;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-shadow: 0 0 5px #f9f871;
+        text-align: center;
+    }
+
+    .sample-section {
+      background: rgba(249, 248, 113, 0.1);
+      padding: 2.5rem 2.2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      max-width: 700px;
+      margin: 3rem auto 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .play-button {
+      background: #f9f871;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px #f9f871, 0 0 25px #f9f871;
+      transition: transform 0.2s ease;
+    }
+    .play-button:hover { transform: scale(1.15); }
+
+    .play-icon {
+      width: 0; height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid black;
+      margin-left: 3px;
+    }
+
+    /* ストアボタン */
+    .testament-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .testament-section {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+      font-weight: 600;
+      font-size: 1.4rem;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .testament-section .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .testament-section .buttons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      width: 80px; height: 80px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .testament-section .buttons a:hover {
+      background: rgba(249, 248, 113, 0.1);
+      transform: scale(1.15);
+      box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+      border-color: #f9f871;
+    }
+
+    .testament-section .buttons a img {
+      width: 75%; height: 75%;
+      object-fit: contain;
+    }
+
+    /* 行動喚起 (CTA) */
+    .call-to-action-section {
+        background: rgba(0,0,0,0.6);
+        padding: 2rem 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
+        font-weight: 600;
+        font-size: 1.3rem;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .call-to-action-section strong { color: #f9f871; }
+
+    footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 3.5em;
+      background-color: black;
+      color: #ccc;
+      text-align: center;
+      line-height: 3.5em;
+      font-size: 0.9rem;
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      .flag { width: 120px; height: 82px; }
+      .main-title-neon { font-size: 1.6rem; }
+      .subtitle-strong { font-size: 1.3rem; }
+      .testament-section .buttons a { width: 65px; height: 65px; }
+    }
+  </style>
+</head>
+<body>
+  <header>聖書 オーディオブック</header>
+
+  <section class="flags-row">
+    <div class="flag japan" role="img" aria-label="日本の国旗"></div>
+  </section>
+
+  <main>
+    <section class="arguments">
+      <h2 class="main-title-neon">聖書 オーディオブック – 新改訳</h2>
+      <p class="subtitle-strong">いつでも、どこでも、クリアな音声で神の言葉を聴くことができます。</p>
+      深い恵みと平安を体験し、心の静けさを楽しむことができます。<br />
+      忙しい日常生活の中でも、簡単に神の言葉に触れることができます。<br />
+      ご家族と一緒に信仰生活を豊かにすることができます。
+    </section>
+
+    <section class="sample-section">
+      <h3 class="player-title">試聴する – クリックして再生/一時停止</h3>
+      <button class="play-button" id="playPauseBtn" type="button" aria-label="再生・一時停止">
+        <div class="play-icon" id="playIcon"></div>
+      </button>
+      <!-- japanese-amostra.flac を使用 -->
+      <audio id="audioSample" preload="none" src="https://raw.githubusercontent.com/TSTELLES/holy-bible-audiobooks/main/japanese-amostra.flac"></audio>
+    </section>
+
+    <section class="call-to-action-section">
+        <p>皆様のサポートが、新しい翻訳の制作や高品質な録音の維持に役立ちます。</p>
+        <p>👉 <strong>準備はいいですか？</strong> 今すぐお気に入りのストアで、<strong>日本語の聖書オーディオブック</strong>を聴き始めましょう！</p>
+    </section>
+
+    <div class="testament-container">
+        <section class="testament-section">
+            <h2 class="main-title-neon">聖書 全巻</h2> 
+            <p>聖書の深い知恵と神聖な教えを体験してください。</p>
+            <nav class="buttons" aria-label="購入オプション">
+                <!-- Kobo -->
+                <a href="https://www.kobo.com/us/en/audiobook/umw_CuNbNDymjrsYGpvByQ?sId=c3c7b6ef-225a-4c1c-9d88-e3883cc4d27b&ssId=F0gx5XmxLYF2PG4MlVSz7&cPos=1" target="_blank" aria-label="Koboで聴く"><img src="https://download.logo.wine/logo/Kobo_eReader/Kobo_eReader-Logo.wine.png" alt="Kobo"></a>
+                
+                <!-- Google Play Books -->
+                <a href="https://play.google.com/store/audiobooks/details/VA_%E8%81%96%E6%9B%B8?id=AQAAAEBaAiBCaM" target="_blank" aria-label="Google Playで聴く"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Google_Play_Books_icon_%282023%29.svg/1920px-Google_Play_Books_icon_%282023%29.svg.png" alt="Google Play Books"></a>
+                
+                <!-- Spotify -->
+                <a href="https://open.spotify.com/show/5BUiquRcYO9DYq5U9glPmf" target="_blank" aria-label="Spotifyで聴く"><img src="https://www.logo.wine/a/logo/Spotify/Spotify-Icon-Logo.wine.svg" alt="Spotify"></a>
+            </nav>
+        </section>
+    </div>
+  </main>
+
+  <footer>© 2025 Kingdom&Quill. 無断複写・転殺を禁じます。</footer>
+
+  <script>
+    const audio = document.getElementById('audioSample');
+    const btn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    let isPlaying = false;
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        audio.pause();
+        playIcon.style.borderLeft = '18px solid black';
+        playIcon.style.borderRight = 'none';
+        playIcon.style.width = '0';
+      } else {
+        audio.play();
+        playIcon.style.borderLeft = '6px solid black';
+        playIcon.style.borderRight = '6px solid black';
+        playIcon.style.width = '12px';
+      }
+      isPlaying = !isPlaying;
+    }
+    btn.addEventListener('click', togglePlayPause);
+    audio.addEventListener('ended', () => {
+      isPlaying = false;
+      playIcon.style.borderLeft = '18px solid black';
+      playIcon.style.borderRight = 'none';
+      playIcon.style.width = '0';
+    });
+  </script>
+</body>
+</html>
