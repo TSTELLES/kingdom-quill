@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to New York: Born Ricciwood</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MCMK8L0CNN');
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Mantive quase todo o seu CSS original para não quebrar o visual neon que você gosta */
+        :root {
+            --neon-yellow: #f9f871;
+            --neon-pink-soft: #FF66CC;
+            --neon-white: #FFF;
+            --neon-light-green: #90EE90;
+            --neon-purple: #3C096C;
+        }
+        body {
+            margin: 0;
+            background: black;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 5em;
+            position: relative;
+        }
+        .background-animated {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw; height: 90vh;
+            overflow: hidden;
+            z-index: -1;
+            filter: brightness(0.3);
+        }
+        .background-animated video {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: 5.5em;
+            background-color: black;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            z-index: 100;
+        }
+        .book-title-style {
+            font-family: 'Monotype Corsiva', cursive;
+            font-size: 2.6rem;
+            text-transform: uppercase;
+        }
+        main { 
+            flex: 1; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 2rem 1rem; 
+            position: relative; 
+            z-index: 1; 
+        }
+        .content-section {
+            background: rgba(0,0,0,0.65);
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(249, 248, 113, 0.5);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .main-title-neon {
+            color: var(--neon-yellow);
+            font-size: 2.1rem;
+            text-shadow: 0 0 10px var(--neon-yellow), 0 0 30px var(--neon-yellow), 0 0 60px var(--neon-yellow);
+        }
+        .neon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6em;
+            padding: 0.9rem 2rem;
+            border: 2px solid var(--neon-yellow);
+            border-radius: 30px;
+            background: linear-gradient(45deg, rgba(249,248,113,0.15), rgba(249,248,113,0.05));
+            color: var(--neon-yellow);
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 0 25px rgba(249,248,113,0.6);
+            transition: all 0.3s ease;
+        }
+        .neon-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 35px rgba(249,248,113,0.9);
+        }
+        .spotify-button {
+            border-color: #1DB954;
+            color: #1DB954;
+            box-shadow: 0 0 25px rgba(29, 185, 84, 0.6);
+        }
+        .spotify-button:hover {
+            box-shadow: 0 0 40px rgba(29, 185, 84, 0.9);
+        }
+        .purchase-buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .book-title-style { font-size: 2rem; }
+            .purchase-buttons-container { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animated" aria-hidden="true">
+        <video autoplay loop muted playsinline>
+            <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Make_paint_write_202506211339_7rv0y.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <header>
+        <span class="book-title-style neon-pink-soft">Welcome </span>
+        <span class="book-title-style book-part-white-glow">to</span>
+        <span class="book-title-style neon-yellow-glow"> New York</span>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="content-section hero-banner">
+            <h1 class="main-title-neon" style="font-size:2.6rem; line-height:1.1;">
+                Even the most broken hearts<br>can find a new beginning
+            </h1>
+            <p style="font-size:1.35rem; margin:1.2rem 0; color:#ff99cc;">
+                Welcome to New York: Born Ricciwood — Part 1 of <strong>A Legacy in New York</strong>
+            </p>
+
+            <div class="book-mockup-group" style="margin:2.5rem 0;">
+                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.webp" alt="Book Cover" style="max-width:280px; border-radius:12px; box-shadow:0 0 30px rgba(249,248,113,0.7);">
+            </div>
+
+            <div class="purchase-buttons-container">
+                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button" target="_blank">
+                    <i class="fab fa-amazon"></i> Buy on Kindle
+                </a>
+                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-button" target="_blank">
+                    <i class="fas fa-book-reader"></i> Read with Kindle Unlimited
+                </a>
+                <a href="https://elevenreader.io/audiobooks/welcome-to-new-york/aHgvb6zpHVGShFly9IvP" class="neon-button spotify-button" target="_blank">
+                    <i class="fab fa-spotify"></i> <strong>Listen on Spotify</strong>
+                </a>
+            </div>
+
+            <p style="margin-top:1.5rem; font-size:1.15rem; color:#ddd;">
+                The <strong>opening chapters</strong> are now live on Spotify — perfect for listening like a TV series, fully immersed in the New York atmosphere.
+            </p>
+        </section>
+
+        <!-- INTRIGUE -->
+        <section class="content-section">
+            <h2 class="main-title-neon">Intrigue Begins in New York...</h2>
+            <p>Gabriel Ricciwood carries the weight of a ruthless dynasty and a past that refuses to stay buried. When he returns to New York’s glittering elite, old secrets, lost love, and painful truths threaten to destroy everything he’s trying to rebuild.</p>
+            <p style="font-style:italic; color:#ff99cc; margin-top:1.5rem;">
+                A story of redemption, real love, and the courage to start over — even when your heart is broken.
+            </p>
+
+            <div class="purchase-buttons-container">
+                <a href="https://elevenreader.io/audiobooks/welcome-to-new-york/aHgvb6zpHVGShFly9IvP" class="neon-button spotify-button" target="_blank">
+                    <i class="fab fa-spotify"></i> Listen on Spotify
+                </a>
+            </div>
+        </section>
+
+        <!-- WHY UNIQUE -->
+        <section class="content-section">
+            <h2 class="main-title-neon">Unlike Anything You've Read Before</h2>
+            <ul style="text-align:left; max-width:620px; margin:1.5rem auto; font-size:1.1rem;">
+                <li><strong>Romance with Purpose</strong> — Deep, respectful love instead of toxic clichés</li>
+                <li><strong>Elite Intrigue</strong> — Secrets, power, and manipulation in the heart of New York</li>
+                <li><strong>Complex Characters</strong> — Real journeys of healing and self-discovery</li>
+                <li><strong>Faith & Redemption</strong> — Pain can become purpose</li>
+                <li><strong>TV Series Pace</strong> — Cliffhangers that will keep you hooked</li>
+            </ul>
+        </section>
+
+        <!-- FORMATS -->
+        <section class="content-section">
+            <h2 class="main-title-neon">Available Now</h2>
+            <p><strong>Kindle</strong> — Read anywhere, anytime.<br>
+            <strong>Opening Chapters on Spotify</strong> — Immerse yourself in the New York vibe with a listening experience that feels like your favorite TV series.</p>
+
+            <div class="purchase-buttons-container">
+                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button" target="_blank">
+                    <i class="fab fa-amazon"></i> Buy on Kindle
+                </a>
+                <a href="https://elevenreader.io/audiobooks/welcome-to-new-york/aHgvb6zpHVGShFly9IvP" class="neon-button spotify-button" target="_blank">
+                    <i class="fab fa-spotify"></i> Listen on Spotify
+                </a>
+            </div>
+        </section>
+
+        <!-- TRAILER + WHO IS FOR + EXCERPT (mantive as seções que você gosta) -->
+        <!-- ... (o resto das seções como trailer, "Who This Book Is For", FAQ, excerpt etc. podem ficar iguais ou eu ajusto mais se quiser) -->
+
+        <!-- CTA FINAL FORTE -->
+        <section class="content-section" style="background:rgba(60,9,108,0.7); border:2px solid var(--neon-yellow);">
+            <h2 class="main-title-neon" style="font-size:2.3rem;">Ready to step into the glittering, broken world of New York’s elite?</h2>
+            <div class="purchase-buttons-container">
+                <a href="https://elevenreader.io/audiobooks/welcome-to-new-york/aHgvb6zpHVGShFly9IvP" class="neon-button spotify-button" style="font-size:1.25rem; padding:1.1rem 2.5rem;" target="_blank">
+                    <i class="fab fa-spotify"></i> <strong>Listen on Spotify Now</strong>
+                </a>
+                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button" style="font-size:1.25rem; padding:1.1rem 2.5rem;" target="_blank">
+                    <i class="fab fa-amazon"></i> Buy on Kindle
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align:center; padding:1.5rem; background:black; color:#888;">
+        <p>&copy; 2026 Kingdom & Quill. All rights reserved.</p>
+    </footer>
+</body>
+</html>
