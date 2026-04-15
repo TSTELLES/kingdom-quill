@@ -31,6 +31,7 @@
             padding-top: 5.8em;
             position: relative;
             overflow-x: hidden;
+            line-height: 1.65;
         }
 
         .background-animated {
@@ -69,21 +70,28 @@
         .book-part-white-glow { color: var(--neon-white); text-shadow: 0 0 12px #fff, 0 0 30px #fff; }
         .neon-yellow-glow { color: var(--neon-yellow); text-shadow: 0 0 15px #f9f871, 0 0 40px #f9f871, 0 0 70px #f9f871; }
 
-        main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; position: relative; z-index: 2; }
+        main { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 2rem 1rem; 
+            position: relative; 
+            z-index: 2; 
+        }
 
         .content-section {
-            background: rgba(0,0,0,0.68);
-            padding: 2.3rem 2.8rem;
+            background: rgba(0,0,0,0.72);
+            padding: 2.6rem 2.8rem;
             border-radius: 16px;
-            box-shadow: 0 0 30px rgba(249, 248, 113, 0.55);
-            margin-bottom: 3.2rem;
+            box-shadow: 0 0 35px rgba(249, 248, 113, 0.6);
+            margin-bottom: 3.8rem;
             text-align: center;
         }
 
         .main-title-neon {
             color: var(--neon-yellow);
-            font-size: 2.25rem;
-            text-shadow: 0 0 15px var(--neon-yellow), 0 0 40px var(--neon-yellow);
+            font-size: 2.4rem;
+            text-shadow: 0 0 15px var(--neon-yellow), 0 0 50px var(--neon-yellow);
+            margin-bottom: 1.3rem;
         }
 
         .neon-button {
@@ -91,48 +99,47 @@
             align-items: center;
             justify-content: center;
             gap: 0.8em;
-            padding: 1.15rem 2.4rem;
+            padding: 1.3rem 2.8rem;
             border: 2px solid var(--neon-yellow);
             border-radius: 30px;
             background: linear-gradient(45deg, rgba(249,248,113,0.15), rgba(249,248,113,0.05));
             color: var(--neon-yellow);
             font-weight: bold;
-            font-size: 1.18rem;
+            font-size: 1.25rem;
             text-decoration: none;
-            box-shadow: 0 0 30px rgba(249,248,113,0.75);
+            box-shadow: 0 0 35px rgba(249,248,113,0.9);
             transition: all 0.3s ease;
         }
 
         .neon-button:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 45px rgba(249,248,113,0.95);
+            transform: scale(1.09);
+            box-shadow: 0 0 55px rgba(249,248,113,1);
         }
 
         .spotify-button {
             border-color: #1DB954;
             color: #1DB954;
-            background: linear-gradient(45deg, rgba(29,185,84,0.15), rgba(29,185,84,0.05));
-            box-shadow: 0 0 30px rgba(29, 185, 84, 0.8);
-            font-size: 1.25rem;
-            padding: 1.3rem 2.8rem;
+            background: linear-gradient(45deg, rgba(29,185,84,0.2), rgba(29,185,84,0.05));
+            box-shadow: 0 0 40px rgba(29, 185, 84, 0.95);
+            font-size: 1.32rem;
+            padding: 1.45rem 3.4rem;
         }
 
         .spotify-button:hover {
-            box-shadow: 0 0 50px rgba(29, 185, 84, 1);
-            transform: scale(1.07);
+            box-shadow: 0 0 65px rgba(29, 185, 84, 1);
+            transform: scale(1.08);
         }
 
-        .purchase-buttons-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.4rem;
-            margin: 2.2rem 0;
+        .final-cta {
+            background: rgba(0,0,0,0.45) !important;
+            border: 2px solid var(--neon-yellow);
+            box-shadow: 0 0 45px rgba(249,248,113,0.8);
         }
 
         @media (max-width: 768px) {
             .book-title-style { font-size: 2.1rem; }
-            .spotify-button { font-size: 1.15rem; padding: 1.1rem 2.2rem; }
+            .main-title-neon { font-size: 2.05rem; }
+            .spotify-button { font-size: 1.25rem; padding: 1.3rem 2.9rem; }
         }
     </style>
 </head>
@@ -151,76 +158,129 @@
     </header>
 
     <main>
-        <!-- HERO - MAIS FORTE -->
+
+        <!-- HERO MATADOR -->
         <section class="content-section hero-banner">
-            <h1 class="main-title-neon" style="font-size: 2.75rem; line-height: 1.1;">
-                Even the most broken hearts<br>can find a new beginning
+            <h1 class="main-title-neon" style="font-size: 3rem; line-height: 1.05;">
+                Broken by his family.<br>Haunted by his past.<br><span style="color:#ff99cc;">One city might save him.</span>
             </h1>
             
-            <p style="font-size:1.35rem; margin:1.2rem 0 2rem; color:#ffbbdd;">
-                Part 1 of <strong>A Legacy in New York Series</strong>
+            <p style="font-size:1.55rem; margin:1.6rem 0 2.8rem; color:#ffbbdd;">
+                Welcome to New York: Born Ricciwood — Part 1
             </p>
 
-            <div style="margin: 2.8rem 0 2rem;">
+            <div style="margin: 2.5rem 0 2rem;">
                 <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.webp" 
                      alt="Book Cover" 
-                     style="max-width: 300px; border-radius: 14px; box-shadow: 0 0 40px rgba(249,248,113,0.85);">
+                     style="max-width: 325px; border-radius: 14px; box-shadow: 0 0 55px rgba(249,248,113,0.95);">
             </div>
+
+            <!-- Botão Spotify Principal -->
+            <a href="https://elevenreader.io/audiobooks/welcome-to-new-york/aHgvb6zpHVGShFly9IvP" 
+               class="neon-button spotify-button" target="_blank">
+                <i class="fab fa-spotify fa-2x"></i> 
+                <strong>Listen to the First Chapters FREE on Spotify</strong>
+            </a>
+
+            <p style="font-size: 1.35rem; color: #ffdd99; margin-top: 1.8rem; max-width: 720px; margin-left: auto; margin-right: auto;">
+                Step into the glamorous and dangerous world of New York’s elite.<br>
+                The opening chapters are available now — listen like your favorite TV series.
+            </p>
 
             <div class="purchase-buttons-container">
                 <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button" target="_blank">
-                    <i class="fab fa-amazon"></i> Buy on Kindle
+                    <i class="fab fa-amazon"></i> Buy the Full Book on Kindle
                 </a>
                 <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-button" target="_blank">
                     <i class="fas fa-book-reader"></i> Read with Kindle Unlimited
                 </a>
             </div>
+        </section>
 
-            <!-- BOTÃO PRINCIPAL DO SPOTIFY - BEM DESTAQUE -->
-            <div style="margin: 2.5rem 0 1rem;">
-                <a href="https://elevenreader.io/audiobooks/welcome-to-new-york/aHgvb6zpHVGShFly9IvP" 
-                   class="neon-button spotify-button" target="_blank">
-                    <i class="fab fa-spotify fa-2x"></i> 
-                    <strong>Listen to the First Chapters on Spotify</strong>
-                </a>
-            </div>
-
-            <p style="font-size: 1.25rem; color: #ffdd99; margin-top: 0.8rem;">
-                Free sample • First chapters available now<br>
-                Perfect for listening like a TV series, immersed in the New York atmosphere.
+        <!-- HOOK -->
+        <section class="content-section">
+            <h2 class="main-title-neon">He returned to New York seeking peace.<br>Instead, he found war… and a chance at real love.</h2>
+            <p style="font-size:1.3rem; max-width:780px; margin:0 auto;">
+                Gabriel Ricciwood carries scars no money can hide. When fate drags him back into his ruthless family’s world, 
+                he must face buried secrets, forbidden attraction, and the question that haunts him: 
+                Can a broken man truly start over?
             </p>
         </section>
 
-        <!-- CTA INTERMEDIÁRIO -->
+        <!-- DIFERENCIAL -->
         <section class="content-section">
-            <h2 class="main-title-neon">Start your journey right now</h2>
-            <p style="font-size:1.2rem; margin-bottom:2rem;">
-                The first chapters are waiting for you on Spotify — completely free.
+            <h2 class="main-title-neon">Why Readers Can’t Put This Down</h2>
+            <ul style="text-align:left; max-width:740px; margin:2rem auto; font-size:1.28rem;">
+                <li>❤️ A romance that actually heals — raw, respectful, and deeply emotional</li>
+                <li>🌆 Elite New York intrigue with shocking twists and high stakes</li>
+                <li>📺 Addictive TV-series pacing — each chapter ends with a cliffhanger</li>
+                <li>✨ Powerful redemption arc for broken characters who refuse to stay broken</li>
+                <li>🔥 The perfect mix of Gossip Girl glamour and emotional depth</li>
+            </ul>
+        </section>
+
+        <!-- SAMPLE CTA FORTE -->
+        <section class="content-section">
+            <h2 class="main-title-neon">Try Before You Buy</h2>
+            <p style="font-size:1.38rem; margin-bottom:2.2rem;">
+                The first chapters are <strong>100% free</strong> on Spotify.<br>
+                No signup. No risk. Just pure New York atmosphere and story.
             </p>
             <a href="https://elevenreader.io/audiobooks/welcome-to-new-york/aHgvb6zpHVGShFly9IvP" 
-               class="neon-button spotify-button" target="_blank" style="font-size:1.3rem; padding:1.4rem 3rem;">
-                <i class="fab fa-spotify"></i> <strong>Listen to Sample Chapters on Spotify</strong>
+               class="neon-button spotify-button" target="_blank">
+                <i class="fab fa-spotify"></i> 
+                <strong>Listen to the First Chapters on Spotify Now</strong>
             </a>
         </section>
 
+        <!-- TRAILER -->
+        <section class="content-section">
+            <h2 class="main-title-neon">Watch the Official Trailer</h2>
+            <div style="max-width:820px; margin:2rem auto; border-radius:12px; overflow:hidden; box-shadow:0 0 35px rgba(249,248,113,0.6);">
+                <iframe src="https://player.vimeo.com/video/1120687033" width="100%" height="460" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- WHO IS FOR -->
+        <section class="content-section">
+            <h2 class="main-title-neon">This Book Is For You If...</h2>
+            <ul style="text-align:left; max-width:700px; margin:2rem auto; font-size:1.25rem;">
+                <li>You crave romance that feels real and redemptive</li>
+                <li>You love elite drama mixed with heart and emotional depth</li>
+                <li>You want characters who grow through pain instead of staying toxic</li>
+                <li>You enjoy stories with addictive pacing and unforgettable twists</li>
+            </ul>
+        </section>
+
+        <!-- EXCERPT -->
+        <section class="content-section">
+            <h2 class="main-title-neon">One taste of the story...</h2>
+            <p style="font-style:italic; font-size:1.25rem; max-width:740px; margin:2.2rem auto; color:#ffddaa; line-height:1.7;">
+                “Gabriel’s whole body trembled. His leg didn’t respond — stiff, locked, detached from him. 
+                He could only cry. From the moment he’d stepped into Sant’Hale, he’d known something bad was coming. 
+                He wanted them to burn in hell for what they’d done.”
+            </p>
+        </section>
+
         <!-- FINAL CTA -->
-        <section class="content-section" style="background: rgba(60,9,108,0.8); border: 3px solid var(--neon-yellow);">
-            <h2 class="main-title-neon" style="font-size: 2.4rem;">
-                Ready to feel the New York atmosphere?
+        <section class="content-section final-cta">
+            <h2 class="main-title-neon" style="font-size: 2.6rem;">
+                Ready to enter the glittering, broken world of New York’s elite?
             </h2>
             <div class="purchase-buttons-container">
                 <a href="https://elevenreader.io/audiobooks/welcome-to-new-york/aHgvb6zpHVGShFly9IvP" 
-                   class="neon-button spotify-button" target="_blank" style="padding:1.4rem 3rem;">
-                    <i class="fab fa-spotify"></i> <strong>Listen on Spotify – Free Sample</strong>
+                   class="neon-button spotify-button" target="_blank">
+                    <i class="fab fa-spotify"></i> <strong>Listen Free on Spotify</strong>
                 </a>
                 <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button" target="_blank">
-                    <i class="fab fa-amazon"></i> Buy Full Book on Kindle
+                    <i class="fab fa-amazon"></i> Buy the Full Book on Kindle
                 </a>
             </div>
         </section>
+
     </main>
 
-    <footer style="text-align:center; padding:2rem; background:black; color:#777;">
+    <footer style="text-align:center; padding:2.8rem; background:black; color:#777; font-size:0.95rem;">
         <p>&copy; 2026 Kingdom & Quill. All rights reserved.</p>
     </footer>
 </body>
