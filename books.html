@@ -170,17 +170,14 @@
                         <p class="text-gray-400 text-sm mb-4">
                             <span class="font-bold text-accent-gold">Genre:</span> Contemporary Romance, Christian Romance, Urban Romance, Emotional Drama
                             <br>
-                            <span class="font-bold text-accent-gold">Language:</span> English (US), Portuguese (BR)
+                            <span class="font-bold text-accent-gold">Language:</span> English (US)
                         </p>
                         <div class="text-gray-300 text-sm leading-relaxed mb-6 space-y-4 text-left">
                             <p>Gabriel Ricciwood is haunted by what he’s done—and what he’s lost. Shattered by a broken relationship and consumed by the guilt and rage left in the wake of his mother’s death, he walks the razor’s edge between right and wrong.</p>
                             <p>When he earns a scholarship to an elite school in New York City, Gabriel finds himself pulled into a legacy long buried by the city’s powerful council. There, he meets Eduarda—a girl whose face awakens something buried deep within him, and whose past is more connected to his own than either of them is prepared to face.</p>
                             <p>With the return of the final heir to New York’s forgotten sixth founding family, old secrets rise to the surface, and the past comes calling. But can Gabriel rewrite a fate written in blood—or will he become exactly what he’s been running from?</p>
                         </div>
-                        <button class="btn-lang-trigger inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm" 
-                                data-book="wtny">
-                            Read More
-                        </button>
+                        <a href="welcome-to-ny.html" class="inline-block bg-accent-gold text-black font-semibold py-2 px-4 rounded-full hover:bg-yellow-500 transition duration-300 text-sm">Read More</a>
                     </div>
                 </div>
             </div>
@@ -262,9 +259,9 @@
             const triggers = document.querySelectorAll('.btn-lang-trigger');
 
             const bookConfigs = {
+                // Removido o item de Português aqui
                 'wtny': [
-                    { label: 'English (US)', url: 'welcome-to-ny.html' },
-                    { label: 'Portuguese (Brazil)', url: 'Bem-vindo-a-Nova-Iorque.html' }
+                    { label: 'English (US)', url: 'welcome-to-ny.html' }
                 ],
                 'lost-gospel': [
                     { label: 'English (US)', url: 'lost-gospel.html' },
