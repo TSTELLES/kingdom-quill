@@ -98,6 +98,7 @@
         }
         .platform-link:hover .kobo-box {
             background-color: #E31B23 !important;
+            color: #FFFFFF !important;
         }
 
         /* Estilização do Dispositivo Kindle */
@@ -213,7 +214,6 @@
                         </button>
                         <p id="audio-status" class="mt-4 text-xs uppercase tracking-widest text-white/60 group-hover:text-white font-bold transition-colors">Listen to Sample</p>
                         
-                        <!-- Link da amostra atualizado para Amostra_LG.flac -->
                         <audio id="sample-audio" src="Amostra_LG.flac"></audio>
                     </div>
                 </div>
@@ -343,13 +343,13 @@
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <h2 class="text-2xl md:text-3xl font-bold mb-12 text-neon-effect tracking-tight">Also Available On</h2>
             <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16">
-                <!-- Apple Books -->
-                <div class="platform-link flex flex-col items-center gap-2">
+                <!-- Apple Books (Updated with Link) -->
+                <a href="https://books.apple.com/us/audiobook/lost-gospel-when-the-church-stands-in-the-way-o-christ/id1887427454?uo=4" target="_blank" class="platform-link flex flex-col items-center gap-2 cursor-pointer">
                     <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.1 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                     </svg>
                     <span class="text-xs font-bold uppercase tracking-widest text-white/70">Apple Books</span>
-                </div>
+                </a>
                 <!-- Google Play -->
                 <a href="https://play.google.com/store/audiobooks/details/KQPROJECT_Lost_Gospel?id=AQAAAEBaKFxoFM&hl=pt_BR" target="_blank" class="platform-link flex flex-col items-center gap-2">
                     <svg class="w-10 h-10" viewBox="0 0 24 24">
@@ -367,11 +367,11 @@
                     </svg>
                     <span class="text-xs font-bold uppercase tracking-widest text-white/70">Spotify</span>
                 </a>
-                <!-- Kobo -->
-                <div class="platform-link flex flex-col items-center gap-2">
+                <!-- Kobo (Updated Link) -->
+                <a href="https://www.kobo.com/us/en/audiobook/lost-gospel-1?sId=f45a6e27-d9c5-4c94-a9d1-81c409d984a7&ssId=AJG77Zdf5MUCWoSXN3bOQ&cPos=1" target="_blank" class="platform-link flex flex-col items-center gap-2">
                     <div class="kobo-box w-10 h-10 bg-white rounded-lg flex items-center justify-center text-black font-black text-xl">k</div>
                     <span class="text-xs font-bold uppercase tracking-widest text-white/70">Kobo</span>
-                </div>
+                </a>
             </div>
         </div>
     </section>
