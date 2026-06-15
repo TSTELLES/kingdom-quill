@@ -176,12 +176,12 @@
 
         /* --- 3D BOOK EXCLUSIVE PHYSICS & STYLING --- */
         .book-wrapper {
-            perspective: 1500px;
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
             height: 100%;
+            perspective: 2000px; /* Perspectiva global unificada no contêiner pai para alinhamento perfeito */
         }
         .book {
             position: relative;
@@ -189,6 +189,7 @@
             height: 520px;
             transform-style: preserve-3d;
             transition: transform 0.5s ease;
+            transform-origin: center center;
         }
         .sheet {
             position: absolute;
@@ -199,10 +200,10 @@
             transform-origin: left center;
             transform-style: preserve-3d;
             transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
-            cursor: pointer;
+            transform: rotateY(0deg); /* Sem perspectiva local para evitar distorção vertical */
         }
         .sheet.flipped {
-            transform: rotateY(-180deg);
+            transform: rotateY(-180deg); /* Sem perspectiva local para manter alinhado */
         }
         .page-face {
             position: absolute;
@@ -287,6 +288,7 @@
             height: 100%;
             object-fit: contain; /* Ensures Emily and all illustrations are fully visible and never cropped! */
             transition: transform 0.5s ease;
+            cursor: pointer; /* Substituído por ponteiro de mão premium para evitar a lupa do navegador */
         }
         /* Gradients simulating real physical page shading */
         .page-face.front::after {
@@ -372,23 +374,21 @@
                     </p>
                 </div>
 
-                <!-- Action Button Grouping -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
-                    <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all duration-300" target="_blank">
+                <!-- Action Button Grouping with integrated Spotify Button -->
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start w-full">
+                    <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all duration-300" target="_blank">
                         <i class="fab fa-amazon text-lg"></i>
                         <span>Buy on Kindle</span>
                     </a>
                     
-                    <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all duration-300" target="_blank">
+                    <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all duration-300" target="_blank">
                         <i class="fas fa-book-reader text-lg"></i>
                         <span>Kindle Unlimited</span>
                     </a>
-                </div>
-                
-                <div class="flex justify-center lg:justify-start">
-                    <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-semibold underline underline-offset-4" target="_blank">
-                        <i class="fab fa-spotify text-green-400 text-lg"></i>
-                        <span>Listen to Audiobook Samples on Spotify</span>
+
+                    <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-emerald-500/50 rounded-2xl bg-black text-emerald-400 font-bold tracking-wide shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-all duration-300 hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.4)]" target="_blank">
+                        <i class="fab fa-spotify text-lg"></i>
+                        <span>Sample on Spotify</span>
                     </a>
                 </div>
             </div>
@@ -441,12 +441,15 @@
                         </div>
                     </div>
 
-                    <!-- Volume Controller -->
-                    <div class="flex items-center gap-2">
-                        <button id="volumeToggleBtn" class="text-zinc-400 hover:text-white transition-colors">
-                            <i id="volumeIcon" class="fas fa-volume-up text-lg"></i>
+                    <!-- Premium Custom Volume Slider Platform -->
+                    <div class="flex items-center gap-2.5 bg-zinc-900/60 px-3 py-1.5 rounded-xl border border-zinc-800/80 shadow-inner">
+                        <button id="volumeToggleBtn" class="text-zinc-400 hover:text-white transition-colors cursor-pointer">
+                            <i id="volumeIcon" class="fas fa-volume-up text-sm"></i>
                         </button>
-                        <input id="volumeSlider" type="range" min="0" max="1" step="0.1" value="0.8" class="w-20 accent-neonYellow h-1 bg-zinc-800 rounded-lg cursor-pointer">
+                        <div id="volumeBar" class="w-16 h-1.5 bg-zinc-800 rounded-full cursor-pointer relative group">
+                            <div id="volumeFill" class="h-full bg-gradient-to-r from-neonPink to-neonYellow rounded-full w-[80%] transition-all duration-700"></div>
+                            <div id="volumeThumb" class="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)] left-[80%] -ml-1.5 scale-0 group-hover:scale-100 transition-all pointer-events-none"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -717,7 +720,7 @@
             </div>
         </section>
 
-        <!-- Final Conversion Segment -->
+        <!-- Final Conversion Segment with Spotify Button -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-neonPink/25">
             <div class="absolute inset-0 bg-gradient-to-r from-neonPink/5 via-transparent to-neonYellow/5 pointer-events-none"></div>
             
@@ -732,7 +735,7 @@
                     </p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center pt-4">
                     <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all" target="_blank">
                         <i class="fab fa-amazon text-lg"></i>
                         <span>Buy on Kindle</span>
@@ -741,6 +744,11 @@
                     <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all" target="_blank">
                         <i class="fas fa-book-reader text-lg"></i>
                         <span>Read in Kindle Unlimited</span>
+                    </a>
+
+                    <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-emerald-500/50 rounded-2xl bg-black text-emerald-400 font-bold tracking-wide shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-all duration-300 hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.4)]" target="_blank">
+                        <i class="fab fa-spotify text-lg"></i>
+                        <span>Sample on Spotify</span>
                     </a>
                 </div>
             </div>
@@ -953,11 +961,26 @@
             </div>
             
             <p class="text-[10px] md:text-xs text-zinc-500 tracking-wider flex items-center gap-2">
-                <i class="fas fa-fingerprint text-sm text-neonYellow animate-ping"></i>
-                <span>Click directly on pages or swipe to turn</span>
+                <i class="fas fa-expand text-sm text-neonYellow animate-pulse"></i>
+                <span>Click directly on any page image to Expand & Read</span>
             </p>
         </div>
 
+    </div>
+
+    <!-- Premium Zoom Lightbox Modal Overlay -->
+    <div id="zoomModal" class="fixed inset-0 bg-black/95 z-[300] hidden flex-col items-center justify-center p-4 cursor-zoom-out opacity-0 transition-opacity duration-300">
+        <!-- Close Zoom -->
+        <button id="closeZoomBtn" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-zinc-900/90 border border-neonPink/50 text-neonPink flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer z-[310] shadow-[0_0_15px_rgba(255,102,204,0.3)]">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+        
+        <!-- Zoom Frame Content -->
+        <div class="relative max-w-full max-h-[85vh] flex items-center justify-center select-none" onclick="event.stopPropagation()">
+            <img id="zoomedImage" src="" alt="Zoomed Heirs Guide Page" class="max-w-full max-h-[85vh] object-contain rounded-xl border border-white/10 shadow-[0_0_50px_rgba(249,248,113,0.25)] transform scale-95 transition-transform duration-300">
+        </div>
+        
+        <p class="text-zinc-400 text-xs mt-4 tracking-widest uppercase font-semibold">Click anywhere to close zoom</p>
     </div>
 
     <!-- Beautiful Footer -->
@@ -1004,7 +1027,9 @@
         
         const volumeToggleBtn = document.getElementById('volumeToggleBtn');
         const volumeIcon = document.getElementById('volumeIcon');
-        const volumeSlider = document.getElementById('volumeSlider');
+        const volumeBar = document.getElementById('volumeBar');
+        const volumeFill = document.getElementById('volumeFill');
+        const volumeThumb = document.getElementById('volumeThumb');
 
         function formatTime(secs) {
             if (isNaN(secs)) return '0:00';
@@ -1069,19 +1094,40 @@
             audioProgressThumb.style.left = `${percentage * 100}%`;
         });
 
-        volumeSlider.addEventListener('input', (e) => {
-            const volValue = e.target.value;
-            bookAudio.volume = volValue;
-            updateVolumeVisuals(volValue);
+        // Custom Premium Volume Control Logic
+        function setVolume(pct) {
+            pct = Math.max(0, Math.min(1, pct));
+            bookAudio.volume = pct;
+            volumeFill.style.width = `${pct * 100}%`;
+            volumeThumb.style.left = `${pct * 100}%`;
+            updateVolumeVisuals(pct);
+        }
+
+        volumeBar.addEventListener('click', (e) => {
+            const rect = volumeBar.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const pct = clickX / rect.width;
+            setVolume(pct);
+        });
+
+        let isDraggingVolume = false;
+        volumeBar.addEventListener('mousedown', () => { isDraggingVolume = true; });
+        document.addEventListener('mouseup', () => { isDraggingVolume = false; });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDraggingVolume) return;
+            const rect = volumeBar.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const pct = clickX / rect.width;
+            setVolume(pct);
         });
 
         function updateVolumeVisuals(vol) {
             if (parseFloat(vol) === 0) {
-                volumeIcon.className = "fas fa-volume-mute text-lg text-zinc-500";
+                volumeIcon.className = "fas fa-volume-mute text-sm text-zinc-500 animate-pulse";
             } else if (parseFloat(vol) < 0.5) {
-                volumeIcon.className = "fas fa-volume-down text-lg text-zinc-300";
+                volumeIcon.className = "fas fa-volume-down text-sm text-zinc-300";
             } else {
-                volumeIcon.className = "fas fa-volume-up text-lg text-white";
+                volumeIcon.className = "fas fa-volume-up text-sm text-white";
             }
         }
 
@@ -1089,13 +1135,9 @@
         volumeToggleBtn.addEventListener('click', () => {
             if (bookAudio.volume > 0) {
                 lastVolume = bookAudio.volume;
-                bookAudio.volume = 0;
-                volumeSlider.value = 0;
-                updateVolumeVisuals(0);
+                setVolume(0);
             } else {
-                bookAudio.volume = lastVolume;
-                volumeSlider.value = lastVolume;
-                updateVolumeVisuals(lastVolume);
+                setVolume(lastVolume || 0.8);
             }
         });
 
@@ -1164,7 +1206,7 @@
             document.getElementById('pageCounter').textContent = Math.min(currentSheet + 1, maxSheets);
         }
 
-        // Next Page Turning
+        // Next Page Turning (Strictly via navigation arrow buttons only)
         function nextPage() {
             if (currentSheet < maxSheets) {
                 currentSheet++;
@@ -1172,7 +1214,7 @@
             }
         }
 
-        // Prev Page Turning
+        // Prev Page Turning (Strictly via navigation arrow buttons only)
         function prevPage() {
             if (currentSheet > 0) {
                 currentSheet--;
@@ -1180,19 +1222,45 @@
             }
         }
 
-        // Directly tap/click sheets to flip them instinctively
-        sheets.forEach((sheet, idx) => {
-            sheet.addEventListener('click', (e) => {
-                if (e.target.closest('a') || e.target.closest('button')) return;
+        // ==========================================
+        // --- PREMIUM INTERACTIVE IMAGE ZOOM ---
+        // ==========================================
+        const pageImages = document.querySelectorAll('.page-fg-contain');
+        const zoomModal = document.getElementById('zoomModal');
+        const zoomedImage = document.getElementById('zoomedImage');
+
+        // Ativa o Lightbox ao clicar nas imagens
+        pageImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.stopPropagation(); // Impede qualquer comportamento de virar página ou cliques adicionais
+                zoomedImage.src = img.src;
+                zoomModal.classList.remove('hidden');
+                zoomModal.classList.add('flex');
                 
-                if (sheet.classList.contains('flipped')) {
-                    currentSheet = idx;
-                    updateSheets();
-                } else {
-                    currentSheet = idx + 1;
-                    updateSheets();
-                }
+                // Transição suave de escala e opacidade
+                setTimeout(() => {
+                    zoomModal.classList.add('opacity-100');
+                    zoomedImage.classList.remove('scale-95');
+                    zoomedImage.classList.add('scale-100');
+                }, 10);
             });
+        });
+
+        // Fecha o Lightbox
+        function closeZoom() {
+            zoomModal.classList.remove('opacity-100');
+            zoomedImage.classList.remove('scale-100');
+            zoomedImage.classList.add('scale-95');
+            setTimeout(() => {
+                zoomModal.classList.add('hidden');
+                zoomModal.classList.remove('flex');
+            }, 300);
+        }
+
+        zoomModal.addEventListener('click', closeZoom);
+        document.getElementById('closeZoomBtn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeZoom();
         });
 
         // --- MATHEMATICAL ADAPTIVE RESPONSIVE SCALE ENGINE ---
@@ -1213,7 +1281,6 @@
             }
             
             // 2. Prevent vertical overflow! Calculate maximum height allowed to fit the viewport perfectly.
-            // (Subtracting header space ~60px and nav controls space ~140px, total margin ~40px)
             const maxAllowedHeight = viewportHeight - 240;
             if (originalHeight * scale > maxAllowedHeight) {
                 scale = maxAllowedHeight / originalHeight;
@@ -1227,29 +1294,6 @@
             
             // 4. Update parent container height to MATCH the scaled book size exactly!
             bookContainer.style.height = `${originalHeight * scale}px`;
-        }
-
-        // Touch Swipe Event Listeners
-        let touchStartX = 0;
-        let touchEndX = 0;
-        const bookContainer = document.getElementById('bookContainer');
-        
-        bookContainer.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        bookContainer.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipeGesture();
-        }, { passive: true });
-
-        function handleSwipeGesture() {
-            const deltaX = touchEndX - touchStartX;
-            if (deltaX < -50) {
-                nextPage();
-            } else if (deltaX > 50) {
-                prevPage();
-            }
         }
 
         window.addEventListener('resize', resizeBook);
