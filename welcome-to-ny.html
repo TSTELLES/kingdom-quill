@@ -85,10 +85,6 @@
             text-transform: uppercase;
         }
 
-        /* Language Toggle active state styling control */
-        body.lang-en-active .lang-pt { display: none !important; }
-        body.lang-pt-active .lang-en { display: none !important; }
-
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -311,8 +307,9 @@
         }
     </style>
 </head>
-<body class="lang-pt-active text-white antialiased">
+<body class="text-white antialiased">
 
+    <!-- Ambient background video clip -->
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden z-[-2] pointer-events-none" aria-hidden="true">
         <video class="w-full h-full object-cover opacity-35 filter brightness-[0.25]" autoplay loop muted playsinline preload="metadata">
             <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Make_paint_write_202506211339_7rv0y.mp4" type="video/mp4">
@@ -320,29 +317,20 @@
         <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black pointer-events-none"></div>
     </div>
 
+    <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 h-20 bg-black/95 border-b border-white/5 flex items-center justify-between px-4 md:px-8 z-[90] backdrop-blur-md">
-        <div class="flex items-center space-x-1">
+        <div class="flex items-center space-x-1 mx-auto md:mx-0">
             <span class="book-title-style text-xl md:text-2xl neon-pink-glow text-neonPink">Welcome </span>
             <span class="book-title-style text-xl md:text-2xl neon-white-glow text-white">to</span>
             <span class="book-title-style text-xl md:text-2xl neon-yellow-glow text-neonYellow ml-1">New York</span>
         </div>
-        
-        <!-- Interactive Language Switcher -->
-        <div class="flex items-center space-x-2 bg-zinc-900 border border-zinc-700/60 p-1 rounded-full text-xs">
-            <button id="btnLangPT" onclick="setLanguage('pt')" class="px-3 py-1.5 rounded-full font-bold transition-all duration-300 bg-neonPink text-black shadow-[0_0_10px_rgba(255,102,204,0.4)]">
-                PT
-            </button>
-            <button id="btnLangEN" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-full font-bold transition-all duration-300 text-zinc-400 hover:text-white">
-                EN
-            </button>
-        </div>
     </header>
 
+    <!-- Floating Lateral tab to access the 3D Character Guide -->
     <div class="fixed right-0 top-1/3 -translate-y-1/2 z-[80] flex items-center">
         <button onclick="toggleHeirsBook(true)" class="floating-book-tab flex items-center justify-center gap-3 py-6 px-3 bg-zinc-950/90 border-l border-y border-neonYellow/50 rounded-l-2xl text-neonYellow shadow-[0_0_20px_rgba(249,248,113,0.2)] hover:shadow-[0_0_30px_rgba(249,248,113,0.5)] font-bold tracking-widest text-xs uppercase cursor-pointer">
             <i class="fas fa-book-open text-base animate-pulse"></i>
-            <span class="lang-pt">Guia de Herdeiros</span>
-            <span class="lang-en">Heirs' Guide</span>
+            <span>Heirs' Guide</span>
         </button>
     </div>
 
@@ -374,15 +362,13 @@
                         <span class="neon-yellow-glow text-neonYellow ml-2">New York</span>
                     </h1>
                     <p class="text-sm font-bold tracking-widest text-zinc-400 uppercase">
-                        <span class="lang-en">Part 1 of A Legacy in New York Series</span>
-                        <span class="lang-pt">Parte 1 da Série Um Legado em Nova York</span>
+                        <span>Part 1 of A Legacy in New York Series</span>
                     </p>
                 </div>
 
                 <div class="py-4 border-y border-zinc-800">
                     <p class="text-lg md:text-xl font-medium italic text-neonPink leading-relaxed neon-pink-glow">
-                        <span class="lang-en">"Even the most broken hearts can find a new beginning."</span>
-                        <span class="lang-pt">"Até os corações mais quebrados podem encontrar um recomeço."</span>
+                        <span>"Even the most broken hearts can find a new beginning."</span>
                     </p>
                 </div>
 
@@ -390,39 +376,35 @@
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
                     <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all duration-300" target="_blank">
                         <i class="fab fa-amazon text-lg"></i>
-                        <span class="lang-en">Buy on Kindle</span>
-                        <span class="lang-pt">Comprar no Kindle</span>
+                        <span>Buy on Kindle</span>
                     </a>
                     
                     <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all duration-300" target="_blank">
                         <i class="fas fa-book-reader text-lg"></i>
-                        <span class="lang-en">Read on Kindle Unlimited</span>
-                        <span class="lang-pt">Kindle Unlimited</span>
+                        <span>Kindle Unlimited</span>
                     </a>
                 </div>
                 
                 <div class="flex justify-center lg:justify-start">
                     <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-semibold underline underline-offset-4" target="_blank">
                         <i class="fab fa-spotify text-green-400 text-lg"></i>
-                        <span class="lang-en">Listen to Audiobook Samples on Spotify</span>
-                        <span class="lang-pt">Ouça amostras de Audiobook no Spotify</span>
+                        <span>Listen to Audiobook Samples on Spotify</span>
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- Custom Audio Player Console -->
         <section class="w-full max-w-2xl glass-panel rounded-3xl p-6 md:p-8 mb-12 border border-neonYellow/25 relative overflow-hidden">
             <div class="absolute -top-12 -right-12 w-32 h-32 bg-neonYellow/5 rounded-full blur-2xl pointer-events-none"></div>
             
             <div class="flex flex-col items-center text-center space-y-4">
                 <div class="px-3 py-1 rounded-full bg-neonYellow/10 border border-neonYellow/20 text-xs text-neonYellow font-semibold uppercase tracking-wider">
-                    <span class="lang-en">Audio Commentary</span>
-                    <span class="lang-pt">Comentário em Áudio</span>
+                    <span>Audio Commentary</span>
                 </div>
                 
                 <p class="text-base font-bold text-zinc-100">
-                    <span class="lang-en">Listen to an exclusive presentation about the book</span>
-                    <span class="lang-pt">Ouça uma conversa exclusiva sobre o livro</span>
+                    <span>Listen to an exclusive presentation about the book</span>
                 </p>
 
                 <!-- Audio Controller Center -->
@@ -472,58 +454,50 @@
             <audio id="bookAudio" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/coment%C3%A1rio-para-p%C3%A1gina-de-vendas.mp3" preload="auto"></audio>
         </section>
 
+        <!-- Dynamic Synopsis block -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
             <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-neonPink/5 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="text-center max-w-2xl mx-auto space-y-6">
                 <h2 class="book-title-style text-3xl md:text-4xl neon-yellow-glow text-neonYellow font-normal">
-                    <span class="lang-en">Intrigue Begins in New York...</span>
-                    <span class="lang-pt">A Intriga Começa em Nova York...</span>
+                    <span>Intrigue Begins in New York...</span>
                 </h2>
                 
-                <div class="text-zinc-300 space-y-4 text-base md:text-lg leading-relaxed text-justify md:text-center">
-                    <p class="lang-en">Gabriel Ricciwood, heir to a ruthless dynasty, lives under the weight of a past that doesn't define him. When fate brings him back to New York's elite, he must confront family secrets, lost loves, and the truth about who he truly is.</p>
-                    <p class="lang-pt">Gabriel Ricciwood, herdeiro de uma dinastia implacável, vive sob o peso de um passado que não o define. Quando o destino o traz de volta à elite de Nova York, ele deve confrontar segredos de família, amores perdidos e a verdade sobre quem ele realmente é.</p>
+                <div class="text-zinc-300 space-y-4 text-base md:text-lg leading-relaxed text-center">
+                    <p>Gabriel Ricciwood, heir to a ruthless dynasty, lives under the weight of a past that doesn't define him. When fate brings him back to New York's elite, he must confront family secrets, lost loves, and the truth about who he truly is.</p>
                 </div>
 
                 <div class="pt-6">
                     <p class="text-xl md:text-2xl font-light italic text-neonPink neon-pink-glow">
-                        <span class="lang-en">“For those who believe that even the most broken hearts can find a new beginning.”</span>
-                        <span class="lang-pt">“Para aqueles que acreditam que até os corações mais partidos podem encontrar um novo começo.”</span>
+                        <span>“For those who believe that even the most broken hearts can find a new beginning.”</span>
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- "How WTNY Was Born" Segment -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
             <h2 class="book-title-style text-3xl md:text-4xl text-center mb-8 text-neonYellow neon-yellow-glow">
-                <span class="lang-en">How Welcome to New York Was Born</span>
-                <span class="lang-pt">Como Welcome to New York Nasceu</span>
+                <span>How Welcome to New York Was Born</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-zinc-300 text-sm md:text-base leading-relaxed">
                 <div class="space-y-4">
-                    <p class="lang-en"><strong>Welcome to New York</strong> was born from a desire to blend the best of two unforgettable worlds—<em>Gossip Girl’s</em> glamorous intensity and <em>The Vampire Diaries’</em> complex emotional arcs. But beyond the allure and the drama, this story seeks something deeper: to offer a romance that feels true, not toxic—a love that builds instead of breaks.</p>
-                    <p class="lang-pt"><strong>Welcome to New York</strong> nasceu do desejo de misturar o melhor de dois mundos inesquecíveis — o glamour intenso de <em>Gossip Girl</em> e os complexos arcos emocionais de <em>The Vampire Diaries</em>. Mas, além do brilho e do drama, esta história busca algo mais profundo: oferecer um romance que pareça real e sincero, não tóxico — um amor que constrói em vez de quebrar.</p>
-
-                    <p class="lang-en">Crafted to resonate with today’s readers, it is more than a coming-of-age romance. It explores the raw edges of real life: fractured families, emotional neglect, the weight of unresolved grief, and the subtle poison of emotionally irresponsible relationships.</p>
-                    <p class="lang-pt">Desenvolvido para ressoar com leitores de hoje, é mais do que um romance clássico de amadurecimento. Explora as faces mais cruas da vida real: famílias fragmentadas, abandono emocional, a dor profunda do luto e o perigo sutil de relações emocionalmente irresponsáveis.</p>
+                    <p><strong>Welcome to New York</strong> was born from a desire to blend the best of two unforgettable worlds—<em>Gossip Girl’s</em> glamorous intensity and <em>The Vampire Diaries’</em> complex emotional arcs. But beyond the allure and the drama, this story seeks something deeper: to offer a romance that feels true, not toxic—a love that builds instead of breaks.</p>
+                    <p>Crafted to resonate with today’s readers, it is more than a coming-of-age romance. It explores the raw edges of real life: fractured families, emotional neglect, the weight of unresolved grief, and the subtle poison of emotionally irresponsible relationships. At its heart, it asks what it really means to be loved—and to love in return.</p>
                 </div>
                 
                 <div class="space-y-4">
-                    <p class="lang-en">Influenced by classic literature like <em>The Picture of Dorian Gray</em> and <em>The Phantom of the Opera</em>, the story also acts as a cautionary tale about the dangers of rushing into adulthood, reminding us of the beauty of growing at the right pace.</p>
-                    <p class="lang-pt">Influenciado por grandes clássicos literários como <em>O Retrato de Dorian Gray</em> e <em>O Fantasma da Ópera</em>, a obra funciona também como um conto de advertência sobre os perigos de queimar etapas na juventude, exaltando a beleza de evoluir e amadurecer no tempo certo.</p>
-
-                    <p class="lang-en">This is a novel for readers who crave authenticity. For those who are tired of the same old tropes and are ready for characters who fight for redemption, who learn the hard way, and who still believe that love—real, deep, respectful love—is worth holding onto.</p>
-                    <p class="lang-pt">Este é um livro para leitores que buscam verdade nas páginas. Para quem cansou dos clichês vazios e busca personagens reais que lutam por redenção, cometem erros, aprendem na marra e ainda acreditam que o amor verdadeiro, profundo e respeitoso é o que realmente vale a pena salvar.</p>
+                    <p>Influenced by classic literature like <em>The Picture of Dorian Gray</em> and <em>The Phantom of the Opera</em>, the story also acts as a cautionary tale about the dangers of rushing into adulthood, reminding us of the beauty of growing at the right pace.</p>
+                    <p>This is a novel for readers who crave authenticity. For those who are tired of the same old tropes and are ready for characters who fight for redemption, who learn the hard way, and who still believe that love—real, deep, respectful love—is worth holding onto.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Core Feature Grid and Dynamic Vimeo Embed -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
             <h2 class="book-title-style text-3xl md:text-4xl text-center mb-8 text-neonPink neon-pink-glow">
-                <span class="lang-en">Why it is unlike anything you've read before</span>
-                <span class="lang-pt">Por que é diferente de tudo que você já leu</span>
+                <span>Why it is unlike anything you've read before</span>
             </h2>
 
             <!-- Cards grid -->
@@ -532,12 +506,10 @@
                 <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
                     <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-heart-broken"></i></div>
                     <h3 class="text-lg font-bold mb-2 text-white">
-                        <span class="lang-en">Romance with Purpose</span>
-                        <span class="lang-pt">Romance com Propósito</span>
+                        <span>Romance with Purpose</span>
                     </h3>
                     <p class="text-sm text-zinc-400">
-                        <span class="lang-en">Dive into an inspiring love, completely free from toxic clichés.</span>
-                        <span class="lang-pt">Mergulhe em um amor inspirador, totalmente livre de clichês tóxicos.</span>
+                        <span>Dive into an inspiring love, completely free from toxic clichés.</span>
                     </p>
                 </div>
 
@@ -545,12 +517,10 @@
                 <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
                     <div class="text-neonPink text-2xl mb-3"><i class="fas fa-crown"></i></div>
                     <h3 class="text-lg font-bold mb-2 text-white">
-                        <span class="lang-en">Elite Intrigue</span>
-                        <span class="lang-pt">Intrigas de Elite</span>
+                        <span>Elite Intrigue</span>
                     </h3>
                     <p class="text-sm text-zinc-400">
-                        <span class="lang-en">Uncover secrets and manipulations in a dazzling New York setting.</span>
-                        <span class="lang-pt">Descubra segredos e manipulações nas mais deslumbrantes festas de Nova York.</span>
+                        <span>Uncover secrets and manipulations in a dazzling New York setting.</span>
                     </p>
                 </div>
 
@@ -558,12 +528,10 @@
                 <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
                     <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-user-shield"></i></div>
                     <h3 class="text-lg font-bold mb-2 text-white">
-                        <span class="lang-en">Complex Characters</span>
-                        <span class="lang-pt">Personagens Complexos</span>
+                        <span>Complex Characters</span>
                     </h3>
                     <p class="text-sm text-zinc-400">
-                        <span class="lang-en">Follow Gabriel on a deep journey of redemption and self-discovery.</span>
-                        <span class="lang-pt">Acompanhe Gabriel em uma jornada íntima de autodescoberta e superação.</span>
+                        <span>Follow Gabriel on a deep journey of redemption and self-discovery.</span>
                     </p>
                 </div>
 
@@ -571,12 +539,10 @@
                 <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
                     <div class="text-neonPink text-2xl mb-3"><i class="fas fa-cross"></i></div>
                     <h3 class="text-lg font-bold mb-2 text-white">
-                        <span class="lang-en">Faith & Redemption</span>
-                        <span class="lang-pt">Fé & Redenção</span>
+                        <span>Faith & Redemption</span>
                     </h3>
                     <p class="text-sm text-zinc-400">
-                        <span class="lang-en">A soul-touching story showing how deep emotional wounds can heal.</span>
-                        <span class="lang-pt">Uma história comovente que mostra como feridas profundas encontram cura real.</span>
+                        <span>A soul-touching story showing how deep emotional wounds can heal.</span>
                     </p>
                 </div>
 
@@ -584,12 +550,10 @@
                 <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
                     <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-tv"></i></div>
                     <h3 class="text-lg font-bold mb-2 text-white">
-                        <span class="lang-en">TV Series Pace</span>
-                        <span class="lang-pt">Ritmo de Série de TV</span>
+                        <span>TV Series Pace</span>
                     </h3>
                     <p class="text-sm text-zinc-400">
-                        <span class="lang-en">Fast-paced narration full of twists and cliffhangers at every chapter.</span>
-                        <span class="lang-pt">Com ganchos dramáticos e reviravoltas intensas que impedem você de parar de ler.</span>
+                        <span>Fast-paced narration full of twists and cliffhangers at every chapter.</span>
                     </p>
                 </div>
 
@@ -597,12 +561,10 @@
                 <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
                     <div class="text-neonPink text-2xl mb-3"><i class="fas fa-headphones-alt"></i></div>
                     <h3 class="text-lg font-bold mb-2 text-white">
-                        <span class="lang-en">Multiplatform Experience</span>
-                        <span class="lang-pt">Experiência Multiplataforma</span>
+                        <span>Multiplatform Experience</span>
                     </h3>
                     <p class="text-sm text-zinc-400">
-                        <span class="lang-en">Read on Kindle and sample professional narration directly on Spotify.</span>
-                        <span class="lang-pt">Leia no Kindle e saboreie a narração em áudio profissional via Spotify.</span>
+                        <span>Read on Kindle and sample professional narration directly on Spotify.</span>
                     </p>
                 </div>
             </div>
@@ -613,50 +575,50 @@
             </div>
         </section>
 
+        <!-- Series Map Block -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 flex flex-col md:flex-row items-center gap-8">
             <div class="w-full md:w-2/3 space-y-4">
                 <h2 class="book-title-style text-3xl text-neonYellow neon-yellow-glow">
-                    <span class="lang-en">A Legacy in New York: A Saga in Parts</span>
-                    <span class="lang-pt">Um Legado em Nova York: Uma Saga em Partes</span>
+                    <span>A Legacy in New York: A Saga in Parts</span>
                 </h2>
                 <div class="text-zinc-300 space-y-4 text-base leading-relaxed">
-                    <p class="lang-en"><em>Born Ricciwood</em> is the first gateway into the wider universe. This unfolding story promises to reveal deep secrets and shifting loyalties in Gabriel's life.</p>
-                    <p class="lang-pt"><em>Born Ricciwood</em> é o primeiro capítulo deste universo literário. Esta saga em desenvolvimento promete trazer à tona segredos íntimos e alianças perigosas que definirão a vida de todos os envolvidos.</p>
+                    <p><em>Born Ricciwood</em> is the first gateway into the wider universe. This unfolding story promises to reveal deep secrets and shifting loyalties in Gabriel's life. Prepare for a literary journey that deepens with each book. Each part reveals deeper secrets, until the untold past comes to light, shaping everyone's destiny.</p>
                 </div>
             </div>
             
-            <div class="w-full md:w-1/3 p-6 rounded-2xl bg-zinc-950 border border-neonPink/25 text-center shadow-[0_0_20px_rgba(255,102,204,0.1)]">
-                <div class="text-4xl text-neonPink mb-2"><i class="fas fa-feather-alt animate-bounce"></i></div>
-                <p class="text-xs uppercase tracking-widest text-zinc-500 font-bold mb-1">
-                    <span class="lang-en">Next Volumes</span>
-                    <span class="lang-pt">Próximos Volumes</span>
-                </p>
-                <p class="text-sm font-semibold text-white">
-                    <span class="lang-en">Under Creative Development</span>
-                    <span class="lang-pt">Em Processo de Escrita</span>
-                </p>
+            <div class="w-full md:w-1/3 flex flex-col items-center">
+                <div class="relative group cursor-pointer max-w-[200px]" style="perspective: 1000px;">
+                    <div class="rounded-xl overflow-hidden shadow-[0_0_25px_rgba(255,102,204,0.25)] border border-neonPink/30 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(255,102,204,0.45)]">
+                        <img class="w-full h-auto object-cover" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood-book-two.webp" alt="Welcome to New York Book 2 Cover Mockup" onerror="this.onerror=null; this.src='https://placehold.co/200x300/140520/FF66CC?text=Book+Two';">
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="px-3 py-1 rounded-full bg-zinc-900/95 border border-neonPink/40 text-[10px] font-bold uppercase tracking-widest text-neonPink neon-pink-glow">
+                        Book Two - Next Volume
+                    </span>
+                    <p class="text-xs text-zinc-500 mt-2">Under Creative Development</p>
+                </div>
             </div>
         </section>
 
+        <!-- Cinematic Promo Frame -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 mb-12">
             <h2 class="book-title-style text-3xl text-center text-neonPink neon-pink-glow mb-6">
-                <span class="lang-en">Official Cinematic Trailer</span>
-                <span class="lang-pt">Trailer Cinemático Oficial</span>
+                <span>Official Cinematic Trailer</span>
             </h2>
             <div class="rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(249,248,113,0.15)] aspect-video border border-neonYellow/20 bg-zinc-950">
                 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1120687033" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
+        <!-- Reader Segment Qualification -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="space-y-4">
                 <h2 class="book-title-style text-3xl text-neonYellow neon-yellow-glow">
-                    <span class="lang-en">Who This Book Is For</span>
-                    <span class="lang-pt">Para Quem é Este Livro</span>
+                    <span>Who This Book Is For</span>
                 </h2>
                 <p class="text-zinc-400 text-sm leading-relaxed">
-                    <span class="lang-en">If you appreciate deep themes, complex characters and a story with values, this book belongs on your shelf.</span>
-                    <span class="lang-pt">Se você aprecia dilemas reais, amadurecimento com valores morais fortes e cenários vibrantes, esse livro foi feito sob medida para sua estante.</span>
+                    <span>If you appreciate deep themes, complex characters and a story with values, this book belongs on your shelf.</span>
                 </p>
             </div>
 
@@ -664,41 +626,38 @@
                 <div class="flex items-start gap-3">
                     <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
                     <p class="text-sm text-zinc-200">
-                        <span class="lang-en">Readers seeking clean, genuine, and impactful romance stories.</span>
-                        <span class="lang-pt">Leitores que buscam romances significativos, limpos e sem apelos superficiais.</span>
+                        <span>Readers seeking clean, genuine, and impactful romance stories.</span>
                     </p>
                 </div>
                 <div class="flex items-start gap-3">
                     <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
                     <p class="text-sm text-zinc-200">
-                        <span class="lang-en">Fans of high-society drama tired of standard toxic relationships.</span>
-                        <span class="lang-pt">Fãs de dramas de alta sociedade que buscam heróis inspiradores.</span>
+                        <span>Fans of high-society drama tired of standard toxic relationships.</span>
                     </p>
                 </div>
                 <div class="flex items-start gap-3">
                     <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
                     <p class="text-sm text-zinc-200">
-                        <span class="lang-en">Those who value narratives focusing on forgiveness, redemption and growth.</span>
-                        <span class="lang-pt">Quem valoriza arcos de evolução pessoal e reflexões filosóficas.</span>
+                        <span>Those who value narratives focusing on forgiveness, redemption and growth.</span>
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Secondary NYC Ambient Video block -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 mb-12">
             <h2 class="book-title-style text-3xl text-center text-neonYellow neon-yellow-glow mb-6">
-                <span class="lang-en">Discover the Vibe of the City</span>
-                <span class="lang-pt">Mergulhe no Ritmo da Cidade</span>
+                <span>Discover the Vibe of the City</span>
             </h2>
             <div class="rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(255,102,204,0.15)] aspect-video border border-neonPink/20 bg-zinc-950">
                 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1102801648?h=679f9f08d2" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
+        <!-- Beautiful Interactive Accordion FAQ -->
         <section class="w-full max-w-3xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
             <h2 class="book-title-style text-3xl text-center mb-8 text-neonYellow neon-yellow-glow">
-                <span class="lang-en">Frequently Asked Questions</span>
-                <span class="lang-pt">Perguntas Frequentes</span>
+                <span>Frequently Asked Questions</span>
             </h2>
 
             <div class="space-y-4">
@@ -706,16 +665,12 @@
                 <!-- FAQ Item 1 -->
                 <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
                     <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
-                        <span>
-                            <span class="lang-en">Is this the only book?</span>
-                            <span class="lang-pt">Este é o único livro?</span>
-                        </span>
+                        <span>Is this the only book?</span>
                         <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
                         <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
-                            <span class="lang-en">No! <em>Born Ricciwood</em> is the first exciting step. The broader saga is in fully active development with several sequel titles planned ahead.</span>
-                            <span class="lang-pt">Não! <em>Born Ricciwood</em> é o primeiro passo de uma jornada intrigante. O restante da saga já está em desenvolvimento ativo e novos capítulos serão anunciados.</span>
+                            <span>No! <em>Born Ricciwood</em> is the first exciting step. The broader saga is in fully active development with several sequel titles planned ahead.</span>
                         </p>
                     </div>
                 </div>
@@ -723,16 +678,12 @@
                 <!-- FAQ Item 2 -->
                 <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
                     <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
-                        <span>
-                            <span class="lang-en">What is the age rating?</span>
-                            <span class="lang-pt">Qual é a classificação indicativa?</span>
-                        </span>
+                        <span>What is the age rating?</span>
                         <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
                         <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
-                            <span class="lang-en">Highly recommended for young adults and mature readers. It deals with profound emotional themes without relying on explicit context or unnecessarily graphic violence.</span>
-                            <span class="lang-pt">Recomendado para jovens adultos e adultos. O livro lida com dilemas morais e desenvolvimento interior dos personagens, sem apelos visuais explícitos.</span>
+                            <span>Highly recommended for young adults and mature readers. It deals with profound emotional themes without relying on explicit context or unnecessarily graphic violence.</span>
                         </p>
                     </div>
                 </div>
@@ -740,16 +691,12 @@
                 <!-- FAQ Item 3 -->
                 <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
                     <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
-                        <span>
-                            <span class="lang-en">Where can I purchase or read it?</span>
-                            <span class="lang-pt">Onde posso ler ou comprar?</span>
-                        </span>
+                        <span>Where can I purchase or read it?</span>
                         <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
                         <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
-                            <span class="lang-en">Available immediately as a digital eBook on the global Amazon store. Subscribers of Kindle Unlimited can read the entire work for free.</span>
-                            <span class="lang-pt">A edição digital está disponível diretamente no catálogo da Amazon mundial. Leitores assinantes do serviço Kindle Unlimited podem ler a obra inteiramente sem custos adicionais.</span>
+                            <span>Available immediately as a digital eBook on the global Amazon store. Subscribers of Kindle Unlimited can read the entire work for free.</span>
                         </p>
                     </div>
                 </div>
@@ -757,16 +704,12 @@
                 <!-- FAQ Item 4 -->
                 <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
                     <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
-                        <span>
-                            <span class="lang-en">Do I need to be Christian to enjoy it?</span>
-                            <span class="lang-pt">Preciso ser cristão para gostar?</span>
-                        </span>
+                        <span>Do I need to be Christian to enjoy it?</span>
                         <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
                     </button>
                     <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
                         <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
-                            <span class="lang-en">No! It's a story for everyone who values deep romance, overcoming challenges, and the search for purpose, regardless of their faith.</span>
-                            <span class="lang-pt">Não! É uma história para todos que valorizam um romance profundo, superação de desafios e a busca por um propósito de vida, independentemente de sua fé.</span>
+                            <span>No! It's a story for everyone who values deep romance, overcoming challenges, and the search for purpose, regardless of their faith.</span>
                         </p>
                     </div>
                 </div>
@@ -774,33 +717,30 @@
             </div>
         </section>
 
+        <!-- Final Conversion Segment -->
         <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-neonPink/25">
             <div class="absolute inset-0 bg-gradient-to-r from-neonPink/5 via-transparent to-neonYellow/5 pointer-events-none"></div>
             
             <div class="max-w-2xl mx-auto space-y-6">
                 <h2 class="book-title-style text-3xl md:text-4xl neon-pink-glow text-neonPink">
-                    <span class="lang-en">Don't Miss This Story!</span>
-                    <span class="lang-pt">Não Perca Esta História!</span>
+                    <span>Don't Miss This Story!</span>
                 </h2>
 
                 <div class="bg-black/60 p-6 rounded-2xl border border-zinc-800/80 my-4 shadow-inner">
-                    <p class="text-zinc-200 italic font-serif leading-relaxed text-sm md:text-base">
-                        <span class="lang-en">“Gabriel’s whole body trembled. His leg didn’t respond — stiff, locked, detached from him. He could only cry. From the moment he’d stepped into Sant’Hale, he’d known something bad was coming. He wanted them to burn in hell for what they’d done. He even hated God for not stopping it.”</span>
-                        <span class="lang-pt">“O corpo de Gabriel estremeceu por completo. Sua perna parecia não obedecer — rígida, dormente, desconectada de si. Ele só sabia chorar. Sabia que algo terrível o aguardava desde o primeiro segundo no portal de Sant’Hale. Desejou que queimassem por tudo o que causaram. Chegou a sentir ódio do próprio Deus por cruzar os braços diante daquela injustiça.”</span>
+                    <p class="text-zinc-200 italic font-serif leading-relaxed text-sm md:text-base text-center">
+                        <span>“Gabriel’s whole body trembled. His leg didn’t respond — stiff, locked, detached from him. He could only cry. From the moment he’d stepped into Sant’Hale, he’d known something bad was coming. He wanted them to burn in hell for what they’d done. He even hated God for not stopping it.”</span>
                     </p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                     <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all" target="_blank">
                         <i class="fab fa-amazon text-lg"></i>
-                        <span class="lang-en">Buy on Kindle</span>
-                        <span class="lang-pt">Garantir no Kindle</span>
+                        <span>Buy on Kindle</span>
                     </a>
                     
                     <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all" target="_blank">
                         <i class="fas fa-book-reader text-lg"></i>
-                        <span class="lang-en">Read in Kindle Unlimited</span>
-                        <span class="lang-pt">Ler Grátis com Kindle Unlimited</span>
+                        <span>Read in Kindle Unlimited</span>
                     </a>
                 </div>
             </div>
@@ -808,14 +748,14 @@
 
     </main>
 
-    <div id="heirsBookOverlay" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-[200] hidden flex-col items-center justify-center p-4 overflow-hidden">
+    <!-- 3D Book Interactive Overlay Modal (HEIRS' GUIDE) -->
+    <div id="heirsBookOverlay" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-[200] hidden flex-col items-center justify-between p-4 overflow-y-auto">
         
         <!-- Modal Control Header -->
-        <div class="w-full max-w-5xl flex items-center justify-between mb-4 px-4">
+        <div class="w-full max-w-5xl flex items-center justify-between py-2 px-4 shrink-0">
             <div class="flex items-center gap-2">
                 <span class="book-title-style text-neonYellow text-xl md:text-2xl neon-yellow-glow">
-                    <span class="lang-pt">Guia Oficial de Herdeiros</span>
-                    <span class="lang-en">Official Heirs' Guide</span>
+                    <span>Official Heirs' Guide</span>
                 </span>
                 <span class="text-xs px-2.5 py-0.5 rounded-full bg-neonPink/20 border border-neonPink/40 text-neonPink uppercase tracking-widest font-bold">Interactive 3D</span>
             </div>
@@ -827,7 +767,7 @@
         </div>
 
         <!-- 3D Book Container Frame -->
-        <div id="bookContainer" class="w-full max-w-5xl flex items-center justify-center relative py-6 select-none" style="height: 580px;">
+        <div id="bookContainer" class="w-full max-w-5xl flex items-center justify-center relative py-6 select-none grow" style="height: 520px; min-height: 250px;">
             <div class="book-wrapper">
                 
                 <div class="book-spine"></div>
@@ -836,13 +776,13 @@
                 <div id="book" class="book">
                     
                     <!-- ==========================================
-                         FOLHA 1: CAPA GÓTICA & PÁGINA 1
+                         SHEET 1: GOTHIC COVER & PAGE 1 (VERSO)
                          ========================================== -->
                     <div class="sheet" style="z-index: 50;">
                         
-                        <!-- PÁGINA 1 (Frente - Capa do Guia) -->
+                        <!-- FRONT COVER (Face Front) -->
                         <div class="page-face cover-style p-8 flex flex-col justify-between items-center text-center relative">
-                            <!-- Enfeites de canto -->
+                            <!-- Corner decorations -->
                             <div class="absolute top-4 left-4 text-neonYellow/60 text-lg"><i class="fas fa-crown"></i></div>
                             <div class="absolute top-4 right-4 text-neonYellow/60 text-lg"><i class="fas fa-crown"></i></div>
                             
@@ -852,19 +792,17 @@
                             </div>
 
                             <div class="my-auto flex flex-col items-center">
-                                <!-- Medalhão Pulsante -->
+                                <!-- Pulsing Emblem -->
                                 <div class="w-20 h-20 rounded-full border-2 border-neonYellow flex items-center justify-center text-neonYellow mb-6 shadow-[0_0_15px_rgba(249,248,113,0.3)] bg-black/40">
                                     <i class="fas fa-feather-alt text-3xl animate-pulse"></i>
                                 </div>
                                 
                                 <h3 class="book-title-style text-3xl md:text-4xl text-neonYellow neon-yellow-glow leading-tight tracking-wider">
-                                    <span class="lang-pt">Guia de<br>Herdeiros</span>
-                                    <span class="lang-en">Heirs'<br>Guide</span>
+                                    <span>Heirs'<br>Guide</span>
                                 </h3>
                                 
                                 <p class="text-[10px] tracking-widest text-zinc-400 mt-4 uppercase">
-                                    <span class="lang-pt">Volume Interativo</span>
-                                    <span class="lang-en">Interactive Volume</span>
+                                    <span>Interactive Volume</span>
                                 </p>
                             </div>
 
@@ -873,102 +811,102 @@
                                 <p class="text-[10px] tracking-[0.3em] text-neonYellow/70 uppercase font-bold">Welcome to New York</p>
                             </div>
 
-                            <!-- Enfeites de canto inferiores -->
+                            <!-- Bottom corner decorations -->
                             <div class="absolute bottom-4 left-4 text-neonYellow/60 text-lg"><i class="fas fa-shield-alt"></i></div>
                             <div class="absolute bottom-4 right-4 text-neonYellow/60 text-lg"><i class="fas fa-shield-alt"></i></div>
                         </div>
 
-                        <!-- PÁGINA 2 (Verso - Imagem 1) -->
+                        <!-- PAGE 2 (Verso - Character Illustration 1) -->
                         <div class="page-face back p-0 overflow-hidden">
                             <div class="page-image-container">
                                 <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" alt="Guia de Herdeiros - Página 1" onerror="this.onerror=null; this.src='https://placehold.co/380x520/1b0a2a/f9f871?text=Guia+de+Herdeiros+Capa';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" alt="Heirs' Guide - Character Sheet 1" onerror="this.onerror=null; this.src='https://placehold.co/380x520/1b0a2a/f9f871?text=Heirs+Guide+Page+1';">
                             </div>
                         </div>
                     </div>
 
                     <!-- ==========================================
-                         FOLHA 2: PÁGINAS 2 & 3
+                         SHEET 2: PAGES 3 & 4
                          ========================================== -->
                     <div class="sheet" style="z-index: 40;">
                         
-                        <!-- PÁGINA 3 (Frente - Imagem 2) -->
+                        <!-- PAGE 3 (Frente - Character Illustration 2) -->
                         <div class="page-face front p-0 overflow-hidden">
                             <div class="page-image-container">
                                 <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" alt="Guia de Herdeiros - Página 2" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=P%C3%A1gina+2';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" alt="Heirs' Guide - Character Sheet 2" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Heirs+Guide+Page+2';">
                             </div>
                         </div>
 
-                        <!-- PÁGINA 4 (Verso - Imagem 3) -->
+                        <!-- PAGE 4 (Verso - Character Illustration 3) -->
                         <div class="page-face back p-0 overflow-hidden">
                             <div class="page-image-container">
                                 <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" alt="Guia de Herdeiros - Página 3" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=P%C3%A1gina+3';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" alt="Heirs' Guide - Character Sheet 3" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=Heirs+Guide+Page+3';">
                             </div>
                         </div>
                     </div>
 
                     <!-- ==========================================
-                         FOLHA 3: PÁGINAS 4 & 5
+                         SHEET 3: PAGES 5 & 6
                          ========================================= -->
                     <div class="sheet" style="z-index: 30;">
                         
-                        <!-- PÁGINA 5 (Frente - Imagem 4) -->
+                        <!-- PAGE 5 (Frente - Character Illustration 4) -->
                         <div class="page-face front p-0 overflow-hidden">
                             <div class="page-image-container">
                                 <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" alt="Guia de Herdeiros - Página 4" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=P%C3%A1gina+4';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" alt="Heirs' Guide - Character Sheet 4" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Heirs+Guide+Page+4';">
                             </div>
                         </div>
 
-                        <!-- PÁGINA 6 (Verso - Imagem 5) -->
+                        <!-- PAGE 6 (Verso - Character Illustration 5) -->
                         <div class="page-face back p-0 overflow-hidden">
                             <div class="page-image-container">
                                 <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" alt="Guia de Herdeiros - Página 5" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=P%C3%A1gina+5';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" alt="Heirs' Guide - Character Sheet 5" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=Heirs+Guide+Page+5';">
                             </div>
                         </div>
                     </div>
 
                     <!-- ==========================================
-                         FOLHA 4: PÁGINAS 6 & 7
+                         SHEET 4: PAGES 7 & 8
                          ========================================== -->
                     <div class="sheet" style="z-index: 20;">
                         
-                        <!-- PÁGINA 7 (Frente - Imagem 6) -->
+                        <!-- PAGE 7 (Frente - Character Illustration 6) -->
                         <div class="page-face front p-0 overflow-hidden">
                             <div class="page-image-container">
                                 <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" alt="Guia de Herdeiros - Página 6" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=P%C3%A1gina+6';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" alt="Heirs' Guide - Character Sheet 6" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Heirs+Guide+Page+6';">
                             </div>
                         </div>
 
-                        <!-- PÁGINA 8 (Verso - Imagem 7) -->
+                        <!-- PAGE 8 (Verso - Character Illustration 7) -->
                         <div class="page-face back p-0 overflow-hidden">
                             <div class="page-image-container">
                                 <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" alt="Guia de Herdeiros - Página 7" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=P%C3%A1gina+7';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" alt="Heirs' Guide - Character Sheet 7" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=Heirs+Guide+Page+7';">
                             </div>
                         </div>
                     </div>
 
                     <!-- ==========================================
-                         FOLHA 5: PÁGINA 8 (Nate) & CONTRA-CAPA
+                         SHEET 5: PAGE 9 (NATE REVELATION) & BACK COVER
                          ========================================== -->
                     <div class="sheet" style="z-index: 10;">
                         
-                        <!-- PÁGINA 9 (Frente - Nate) -->
+                        <!-- PAGE 9 (Frente - Character Illustration 8 - Nate) -->
                         <div class="page-face front p-0 overflow-hidden">
                             <div class="page-image-container">
                                 <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" alt="Guia de Herdeiros - Nate" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Nate';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" alt="Heirs' Guide - Nate Revelation" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Nate';">
                             </div>
                         </div>
 
-                        <!-- PÁGINA 10 (Verso - Contra-Capa do Livro) -->
+                        <!-- PAGE 10 (Verso - Book Back Cover) -->
                         <div class="page-face back-cover-style p-8 flex flex-col justify-between items-center text-center relative">
-                            <!-- Enfeites de canto -->
+                            <!-- Corner feathers -->
                             <div class="absolute top-4 left-4 text-neonPink/40 text-sm"><i class="fas fa-feather"></i></div>
                             <div class="absolute top-4 right-4 text-neonPink/40 text-sm"><i class="fas fa-feather"></i></div>
                             
@@ -994,32 +932,29 @@
         </div> <!-- End Book Container -->
 
         <!-- Manual Navigation Controls & Swipe Hints -->
-        <div class="w-full max-w-xl flex flex-col items-center gap-4 mt-6">
+        <div class="w-full max-w-xl flex flex-col items-center gap-3 mt-4 shrink-0 pb-2">
             <div class="flex items-center gap-6">
                 <!-- Previous Button -->
                 <button onclick="prevPage()" class="px-5 py-3 rounded-xl border border-neonYellow/40 bg-zinc-950 text-neonYellow text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(249,248,113,0.15)] hover:bg-neonYellow hover:text-black transition-all cursor-pointer">
                     <i class="fas fa-chevron-left"></i>
-                    <span class="lang-pt">Voltar</span>
-                    <span class="lang-en">Back</span>
+                    <span>Back</span>
                 </button>
                 
                 <!-- Page counter -->
                 <span class="text-zinc-500 text-xs font-semibold tracking-widest uppercase">
-                    <span class="lang-pt">Folhas</span><span class="lang-en">Sheets</span>: <span id="pageCounter" class="text-neonYellow">1</span> / 5
+                    <span>Sheets</span>: <span id="pageCounter" class="text-neonYellow">1</span> / 5
                 </span>
                 
                 <!-- Next Button -->
                 <button onclick="nextPage()" class="px-5 py-3 rounded-xl border border-neonPink/40 bg-zinc-950 text-neonPink text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(255,102,204,0.15)] hover:bg-neonPink hover:text-black transition-all cursor-pointer">
-                    <span class="lang-pt">Avançar</span>
-                    <span class="lang-en">Next</span>
+                    <span>Next</span>
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
             
-            <p class="text-xs text-zinc-500 tracking-wider flex items-center gap-2">
+            <p class="text-[10px] md:text-xs text-zinc-500 tracking-wider flex items-center gap-2">
                 <i class="fas fa-fingerprint text-sm text-neonYellow animate-ping"></i>
-                <span class="lang-pt">Clique direto nas folhas ou arraste para folhear</span>
-                <span class="lang-en">Click directly on pages or swipe to turn</span>
+                <span>Click directly on pages or swipe to turn</span>
             </p>
         </div>
 
@@ -1035,29 +970,6 @@
     </footer>
 
     <script>
-        // --- MULTILINGUAL ENGINE ---
-        function setLanguage(lang) {
-            const body = document.body;
-            const btnPT = document.getElementById('btnLangPT');
-            const btnEN = document.getElementById('btnLangEN');
-            
-            if (lang === 'pt') {
-                body.classList.remove('lang-en-active');
-                body.classList.add('lang-pt-active');
-                
-                // Style switch selectors
-                btnPT.className = "px-3 py-1.5 rounded-full font-bold transition-all duration-300 bg-neonPink text-black shadow-[0_0_10px_rgba(255,102,204,0.4)]";
-                btnEN.className = "px-3 py-1.5 rounded-full font-bold transition-all duration-300 text-zinc-400 hover:text-white";
-            } else {
-                body.classList.remove('lang-pt-active');
-                body.classList.add('lang-en-active');
-                
-                // Style switch selectors
-                btnEN.className = "px-3 py-1.5 rounded-full font-bold transition-all duration-300 bg-neonYellow text-black shadow-[0_0_10px_rgba(249,248,113,0.4)]";
-                btnPT.className = "px-3 py-1.5 rounded-full font-bold transition-all duration-300 text-zinc-400 hover:text-white";
-            }
-        }
-
         // --- INTERACTIVE TILT COVER EFFECT ---
         const bookCover = document.getElementById('bookCover');
         if (bookCover) {
@@ -1290,14 +1202,31 @@
             if (!book || !bookContainer) return;
 
             const containerWidth = bookContainer.clientWidth;
-            const originalWidth = 780; 
+            const viewportHeight = window.innerHeight;
+            const originalWidth = 760; 
+            const originalHeight = 520;
             
+            // 1. Calculate ideal scale based on available container width
+            let scale = 1;
             if (containerWidth < originalWidth) {
-                const scale = (containerWidth / originalWidth) * 0.94; 
-                book.style.transform = `scale(${scale})`;
-            } else {
-                book.style.transform = `scale(1)`;
+                scale = (containerWidth / originalWidth) * 0.95; 
             }
+            
+            // 2. Prevent vertical overflow! Calculate maximum height allowed to fit the viewport perfectly.
+            // (Subtracting header space ~60px and nav controls space ~140px, total margin ~40px)
+            const maxAllowedHeight = viewportHeight - 240;
+            if (originalHeight * scale > maxAllowedHeight) {
+                scale = maxAllowedHeight / originalHeight;
+            }
+
+            // Apply a safe minimum constraint
+            if (scale < 0.25) scale = 0.25;
+
+            // 3. Apply the 3D transform scale
+            book.style.transform = `scale(${scale})`;
+            
+            // 4. Update parent container height to MATCH the scaled book size exactly!
+            bookContainer.style.height = `${originalHeight * scale}px`;
         }
 
         // Touch Swipe Event Listeners
