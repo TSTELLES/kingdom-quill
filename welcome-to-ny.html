@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to New York Part 1: Born Ricciwood - Sales Page</title>
+    
+    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,9 +14,30 @@
       gtag('config', 'G-MCMK8L0CNN');
     </script>
      
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS for premium layouts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neonYellow: '#f9f871',
+                        neonPink: '#FF66CC',
+                        neonPurple: '#3C096C',
+                        neonPurpleLight: '#FF00FF',
+                        neonPurpleMedium: '#B400B4',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         :root {
             --neon-yellow: #f9f871;
@@ -25,432 +48,1285 @@
             --neon-purple-light: #FF00FF;
             --neon-purple-medium: #B400B4;
         }
+
         body {
-            margin: 0;
-            background: black;
-            color: #fff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background: #000;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            padding-top: 4.5em;
-            padding-bottom: 2em;
-            position: relative;
         }
-        .background-animated {
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90vw;
-            height: 90vh;
-            overflow: hidden;
-            z-index: -1;
-            filter: brightness(0.3);
+
+        /* Neon Pulse Animations */
+        @keyframes neonPulseYellow {
+            0% { text-shadow: 0 0 8px var(--neon-yellow), 0 0 20px rgba(249, 248, 113, 0.4); }
+            100% { text-shadow: 0 0 15px var(--neon-yellow), 0 0 35px rgba(249, 248, 113, 0.8); }
         }
-        .background-animated video {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            object-fit: cover;
+        @keyframes neonPulsePink {
+            0% { text-shadow: 0 0 8px var(--neon-pink-soft), 0 0 20px rgba(255, 102, 204, 0.4); }
+            100% { text-shadow: 0 0 15px var(--neon-pink-soft), 0 0 30px rgba(255, 102, 204, 0.8); }
         }
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            height: 6em;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-            user-select: none;
-            letter-spacing: 0.05em;
-            z-index: 100;
+        @keyframes neonPulseWhite {
+            0% { text-shadow: 0 0 5px var(--neon-white), 0 0 15px rgba(255, 255, 255, 0.4); }
+            100% { text-shadow: 0 0 10px var(--neon-white), 0 0 25px rgba(255, 255, 255, 0.8); }
         }
-        @keyframes neonPulseLightGreen {0% {text-shadow:0 0 10px var(--neon-light-green),0 0 30px var(--neon-light-green),0 0 50px var(--neon-light-green),0 0 100px var(--neon-light-green);}100% {text-shadow:0 0 20px var(--neon-light-green),0 0 40px var(--neon-light-green),0 0 70px var(--neon-light-green),0 0 120px var(--neon-light-green);}}
-        @keyframes neonPulsePink {0% {text-shadow:0 0 8px var(--neon-pink-soft),0 0 20px var(--neon-pink-soft),0 0 40px var(--neon-pink-soft);}100% {text-shadow:0 0 15px var(--neon-pink-soft),0 0 30px var(--neon-pink-soft),0 0 50px var(--neon-pink-soft);}}
-        @keyframes neonPulseWhite {0% {text-shadow:0 0 5px var(--neon-white),0 0 15px var(--neon-white),0 0 25px var(--neon-white);}100% {text-shadow:0 0 10px var(--neon-white),0 0 20px var(--neon-white),0 0 35px var(--neon-white);}}
-        @keyframes neonPulseYellow {0% {text-shadow:0 0 8px var(--neon-yellow),0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow),0 0 80px var(--neon-yellow);}100% {text-shadow:0 0 15px var(--neon-yellow),0 0 30px var(--neon-yellow),0 0 50px var(--neon-yellow),0 0 100px var(--neon-yellow);}}
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 11.5em;
-            padding-bottom: 2rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            box-sizing: border-box;
-            min-height: calc(100vh - 6em - 2em);
-            position: relative;
-            z-index: 1;
-        }
-        .content-section {
-            background: rgba(0,0,0,0.6);
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-            font-weight: 600;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            max-width: 500px;
-            text-align: center;
-            user-select: none;
-            text-shadow: 0 0 5px #000;
-            margin: 0 auto 3rem;
-        }
-        .content-section.video-container {max-width: 800px; width: 90%;}
-        .content-section.section-extra-spacing {margin-top: 1rem;}
-        .content-section:last-child {margin-bottom: 0;}
-        .content-section.hero-banner {margin-bottom: 3rem;}
-        .content-section p {margin-bottom: 0.8rem; margin-top: 0;}
-        .content-section strong {color: var(--neon-yellow);}
-        .content-section ul {list-style: none; padding: 0; margin: 1em auto; width: fit-content;}
-        .content-section ul li {margin-bottom: 0.5em; position: relative; padding-left: 1.5em; text-align: left;}
-        .content-section ul li::before {content: '✨'; position: absolute; left: 0; color: var(--neon-yellow);}
-        .content-section.faq ul li::before {content: '💡';}
-        .main-title-neon {
-            color: var(--neon-yellow);
-            font-size: 1.8rem;
-            margin-top: 0;
-            text-shadow: 0 0 8px var(--neon-yellow),0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow),0 0 80px var(--neon-yellow);
+
+        .neon-yellow-glow {
             animation: neonPulseYellow 2s infinite alternate;
         }
-        .subtitle-strong {margin-top: 0.4rem; font-size: 1.4rem; font-weight: bold;}
-        .neon-pink-soft {
-            color: var(--neon-pink-soft);
-            text-shadow: 0 0 8px var(--neon-pink-soft),0 0 20px var(--neon-pink-soft),0 0 40px var(--neon-pink-soft);
+        .neon-pink-glow {
             animation: neonPulsePink 2s infinite alternate;
         }
-        .book-title-style {
-            font-family: 'Monotype Corsiva', cursive;
-            font-weight: normal;
-            text-transform: uppercase;
-            font-size: 2.8rem;
-        }
-        .book-part-white-glow {
-            color: var(--neon-white);
-            text-shadow: 0 0 5px var(--neon-white),0 0 15px var(--neon-white),0 0 25px var(--neon-white);
+        .neon-white-glow {
             animation: neonPulseWhite 2s infinite alternate;
         }
-        .neon-yellow-glow {
-            color: var(--neon-yellow);
-            text-shadow: 0 0 8px var(--neon-yellow),0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow),0 0 80px var(--neon-yellow);
-            animation: neonPulseYellow 2s infinite alternate;
-        }
-        .book-part-block-style {
-            font-size: 1rem;
-            font-weight: bold;
-            display: block;
+
+        .book-title-style {
+            font-family: 'Monotype Corsiva', 'Playfair Display', cursive;
+            font-weight: normal;
             text-transform: uppercase;
-            margin-top: -0.7em;
         }
-        .book-mockup-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1em;
-            margin-top: 4rem;
-            transition: transform 0.3s ease;
+
+        /* Language Toggle active state styling control */
+        body.lang-en-active .lang-pt { display: none !important; }
+        body.lang-pt-active .lang-en { display: none !important; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        .book-mockup-group img {
-            max-width: 250px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+        ::-webkit-scrollbar-track {
+            background: #050505;
         }
-        .audio-player-container {
-            margin: 2.5em auto 0;
-            background: rgba(0,0,0,0.7);
-            border: 2px solid var(--neon-yellow);
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(249, 248, 113, 0.6);
-            padding: 2em;
-            width: 80%;
-            max-width: 450px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5em;
-            box-sizing: border-box;
-            color: var(--neon-white);
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-shadow: 0 0 5px var(--neon-white);
-            cursor: pointer;
-            transition: all 0.3s ease;
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-purple-medium);
+            border-radius: 4px;
         }
-        .audio-player-container:hover {box-shadow: 0 0 30px rgba(249, 248, 113, 0.8); transform: translateY(-3px);}
-        .audio-player-icon {
-            font-size: 0.8em;
-            color: var(--neon-yellow);
-            text-shadow: 0 0 2px var(--neon-yellow),0 0 6px var(--neon-yellow),0 0 10px var(--neon-yellow);
-            transition: all 0.3s ease;
-            padding: 0.6em;
-            border-radius: 50%;
-            box-shadow: 0 0 4px var(--neon-yellow);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 1em;
-            height: 1em;
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-pink-soft);
         }
-        .neon-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.7rem 1.8rem;
-            border: 2px solid var(--neon-yellow);
-            border-radius: 25px;
-            background: linear-gradient(45deg, rgba(249,248,113,0.1), rgba(249,248,113,0.05));
-            color: var(--neon-yellow);
-            font-weight: bold;
-            font-size: 1rem;
-            text-decoration: none;
-            text-shadow: 0 0 10px var(--neon-yellow),0 0 30px var(--neon-yellow),0 0 60px var(--neon-yellow);
-            box-shadow: 0 0 20px rgba(249, 248, 113, 0.5);
-            transition: all 0.3s ease;
-            user-select: none;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            gap: 0.5em;
+
+        /* Interactive 3D Card Hover Perspective setup */
+        #bookCover {
+            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            will-change: transform;
         }
-        .neon-button:hover {
-            background: linear-gradient(45deg, rgba(249,248,113,0.2), rgba(249,248,113,0.1));
-            transform: scale(1.08);
-            box-shadow: 0 0 25px rgba(249, 248, 113, 0.8), inset 0 0 10px rgba(249, 248, 113, 0.4);
+
+        /* Custom Glassmorphism Panels */
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(249, 248, 113, 0.15);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(249, 248, 113, 0.05);
         }
-        .neon-button-text-pink {
-            color: var(--neon-pink-soft);
-            text-shadow: 0 0 8px var(--neon-pink-soft),0 0 20px var(--neon-pink-soft),0 0 40px var(--neon-pink-soft);
+        .glass-panel:hover {
+            border-color: rgba(249, 248, 113, 0.3);
+            box-shadow: 0 0 30px rgba(249, 248, 113, 0.15), inset 0 0 20px rgba(249, 248, 113, 0.08);
         }
-        .purchase-buttons-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5em;
-            width: 100%;
-            max-width: 600px;
+
+        @keyframes bounceBar {
+            0%, 100% { height: 4px; }
+            50% { height: 28px; }
         }
-        .purchase-buttons-container .neon-button {
-            flex-grow: 1;
-            max-width: 250px;
+        .visualizer-bar {
+            width: 3px;
+            background-color: var(--neon-yellow);
+            border-radius: 2px;
+            height: 4px;
+            transition: height 0.15s ease;
         }
-        .book-collage {
+        .audio-playing .visualizer-bar:nth-child(1) { animation: bounceBar 0.8s infinite 0.1s; }
+        .audio-playing .visualizer-bar:nth-child(2) { animation: bounceBar 0.6s infinite 0.3s; }
+        .audio-playing .visualizer-bar:nth-child(3) { animation: bounceBar 0.9s infinite 0.0s; }
+        .audio-playing .visualizer-bar:nth-child(4) { animation: bounceBar 0.7s infinite 0.4s; }
+        .audio-playing .visualizer-bar:nth-child(5) { animation: bounceBar 0.5s infinite 0.2s; }
+        .audio-playing .visualizer-bar:nth-child(6) { animation: bounceBar 0.8s infinite 0.5s; }
+        .audio-playing .visualizer-bar:nth-child(7) { animation: bounceBar 0.6s infinite 0.1s; }
+        .audio-playing .visualizer-bar:nth-child(8) { animation: bounceBar 0.9s infinite 0.3s; }
+
+        /* Custom Neon Pulse Button styling */
+        .neon-glow-btn {
             position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
+            z-index: 1;
             overflow: hidden;
-            max-width: 100%;
-            margin: 1.5em auto;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(249, 248, 113, 0.6);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        .book-collage iframe {
+        .neon-glow-btn::before {
+            content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
-            border-radius: 10px;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, var(--neon-pink-soft), var(--neon-yellow));
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.4s ease;
         }
-        footer {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            height: 2em;
-            background-color: black;
-            color: #ccc;
-            text-align: center;
-            line-height: 2em;
-            font-size: 0.9rem;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
-            user-select: none;
-            z-index: 100;
+        .neon-glow-btn:hover::before {
+            opacity: 0.15;
         }
-        footer p {margin: 0; font-size: 0.8rem; line-height: 2em;}
-        @media (max-width: 768px) {
-            header {height: 5.5em;}
-            main {padding-top: 10em; min-height: calc(100vh - 5.5em - 2em);}
-            .book-title-style {font-size: 2.2rem;}
+        .neon-glow-btn:hover {
+            box-shadow: 0 0 25px rgba(255, 102, 204, 0.6), 0 0 10px rgba(249, 248, 113, 0.4);
+            transform: scale(1.03) translateY(-2px);
         }
-        @media (max-width: 480px) {
-            header {height: 3.8em;}
-            .book-title-style {font-size: 1.8rem;}
-            main {padding-top: 5.5em; min-height: calc(100vh - 3.8em - 2em);}
+
+        /* FAQ Accordion Transitions */
+        .faq-content {
+            max-height: 0;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+        }
+        .faq-item.active .faq-content {
+            max-height: 1000px;
+            transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+        }
+
+        /* --- 3D BOOK EXCLUSIVE PHYSICS & STYLING --- */
+        .book-wrapper {
+            perspective: 1500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        .book {
+            position: relative;
+            width: 760px; /* Double page total width (each page is 380px) */
+            height: 520px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        .sheet {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            transform-origin: left center;
+            transform-style: preserve-3d;
+            transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+            cursor: pointer;
+        }
+        .sheet.flipped {
+            transform: rotateY(-180deg);
+        }
+        .page-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            padding: 32px;
+            box-sizing: border-box;
+            border-radius: 0 16px 16px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            box-shadow: inset -10px 0 20px rgba(0,0,0,0.5), 5px 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        /* Custom curved gradient simulating book binding */
+        .page-face.front {
+            z-index: 2;
+            transform: rotateY(0deg);
+            background: linear-gradient(to right, #0e0e11 0%, #16161c 6%, #121217 95%, #08080a 100%);
+        }
+        .page-face.back {
+            transform: rotateY(180deg);
+            border-radius: 16px 0 0 16px;
+            background: linear-gradient(to left, #0e0e11 0%, #16161c 6%, #121217 95%, #08080a 100%);
+            box-shadow: inset 10px 0 20px rgba(0,0,0,0.5), -5px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Gilded and patterned cover design */
+        .page-face.cover-style {
+            background: radial-gradient(circle at center, #1b0a2a 0%, #090310 100%);
+            border: 5px double var(--neon-yellow);
+            box-shadow: 0 0 30px rgba(249, 248, 113, 0.2), inset 0 0 40px rgba(0,0,0,0.95);
+        }
+        .page-face.back-cover-style {
+            background: radial-gradient(circle at center, #140520 0%, #05010a 100%);
+            border: 5px double var(--neon-pink-soft);
+            box-shadow: 0 0 30px rgba(255, 102, 204, 0.15), inset 0 0 40px rgba(0,0,0,0.95);
+            transform: rotateY(180deg);
+            border-radius: 16px 0 0 16px;
+        }
+
+        /* --- Retractable lateral tab styling --- */
+        .floating-book-tab {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .floating-book-tab:hover {
+            transform: rotate(180deg) translateX(8px);
+        }
+
+        /* --- Premium Styling for Image Pages in the 3D Book --- */
+        .page-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #090310;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-bg-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(15px) brightness(0.25);
+            transform: scale(1.15); /* Prevents blur halo gaps at page boundaries */
+            z-index: 1;
+            pointer-events: none;
+        }
+        .page-fg-contain {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures Emily and all illustrations are fully visible and never cropped! */
+            transition: transform 0.5s ease;
+        }
+        /* Gradients simulating real physical page shading */
+        .page-face.front::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 6%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 95%, rgba(0,0,0,0.35) 100%);
+            pointer-events: none;
+            z-index: 10;
+        }
+        .page-face.back::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 6%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 95%, rgba(0,0,0,0.35) 100%);
+            pointer-events: none;
+            z-index: 10;
         }
     </style>
 </head>
-<body>
-    <div class="background-animated" aria-hidden="true">
-        <video autoplay loop muted playsinline preload="metadata">
+<body class="lang-pt-active text-white antialiased">
+
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden z-[-2] pointer-events-none" aria-hidden="true">
+        <video class="w-full h-full object-cover opacity-35 filter brightness-[0.25]" autoplay loop muted playsinline preload="metadata">
             <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Make_paint_write_202506211339_7rv0y.mp4" type="video/mp4">
         </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black pointer-events-none"></div>
     </div>
 
-    <header>
-        <span class="book-title-style neon-pink-soft">Welcome </span>
-        <span class="book-title-style book-part-white-glow">to</span>
-        <span class="book-title-style neon-yellow-glow"> New York</span>
+    <header class="fixed top-0 left-0 right-0 h-20 bg-black/95 border-b border-white/5 flex items-center justify-between px-4 md:px-8 z-[90] backdrop-blur-md">
+        <div class="flex items-center space-x-1">
+            <span class="book-title-style text-xl md:text-2xl neon-pink-glow text-neonPink">Welcome </span>
+            <span class="book-title-style text-xl md:text-2xl neon-white-glow text-white">to</span>
+            <span class="book-title-style text-xl md:text-2xl neon-yellow-glow text-neonYellow ml-1">New York</span>
+        </div>
+        
+        <!-- Interactive Language Switcher -->
+        <div class="flex items-center space-x-2 bg-zinc-900 border border-zinc-700/60 p-1 rounded-full text-xs">
+            <button id="btnLangPT" onclick="setLanguage('pt')" class="px-3 py-1.5 rounded-full font-bold transition-all duration-300 bg-neonPink text-black shadow-[0_0_10px_rgba(255,102,204,0.4)]">
+                PT
+            </button>
+            <button id="btnLangEN" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-full font-bold transition-all duration-300 text-zinc-400 hover:text-white">
+                EN
+            </button>
+        </div>
     </header>
 
-    <main>
-        <section class="content-section hero-banner">
-            <h1 class="main-title-neon">
-                <span class="book-title-style neon-pink-soft">Welcome </span>
-                <span class="book-title-style book-part-white-glow">to</span>
-                <span class="book-title-style neon-yellow-glow"> New York</span>
-            </h1>
-            <p class="book-part-block-style book-part-white-glow">Part 1 of A Legacy in New York Series</p>
-            <div class="book-mockup-group">
-                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.webp" alt="Welcome to New York Book Cover - 3D Mockup" />
-            </div>
-            <p class="subtitle-strong neon-pink-soft">"Even the most broken hearts can find a new beginning."</p>
+    <div class="fixed right-0 top-1/3 -translate-y-1/2 z-[80] flex items-center">
+        <button onclick="toggleHeirsBook(true)" class="floating-book-tab flex items-center justify-center gap-3 py-6 px-3 bg-zinc-950/90 border-l border-y border-neonYellow/50 rounded-l-2xl text-neonYellow shadow-[0_0_20px_rgba(249,248,113,0.2)] hover:shadow-[0_0_30px_rgba(249,248,113,0.5)] font-bold tracking-widest text-xs uppercase cursor-pointer">
+            <i class="fas fa-book-open text-base animate-pulse"></i>
+            <span class="lang-pt">Guia de Herdeiros</span>
+            <span class="lang-en">Heirs' Guide</span>
+        </button>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 pt-32 pb-24 flex flex-col items-center relative z-10">
+        
+        <!-- Hero Section -->
+        <section class="w-full glass-panel rounded-3xl p-6 md:p-12 mb-12 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             
-            <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button" target="_blank"><i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Buy in Kindle</span></a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-button" target="_blank"><i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Read in Kindle Unlimited</span></a>
-                <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="neon-button" target="_blank"><i class="fab fa-spotify"></i> <span class="neon-button-text-pink">Sample on Spotify</span></a>
+            <!-- Left Side: Cover Display with Hover Interaction -->
+            <div class="w-full lg:w-1/2 flex flex-col items-center justify-center">
+                <div class="relative group cursor-pointer max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]" style="perspective: 1000px;">
+                    <div id="bookCover" class="rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(249,248,113,0.25)] border border-neonYellow/30 relative">
+                        <img class="w-full h-auto object-cover" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.webp" alt="Welcome to New York Book Cover - 3D Mockup" />
+                        <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    </div>
+                </div>
+                <!-- Mini Floating Badge -->
+                <div class="mt-4 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-neonPink/40 text-xs font-semibold uppercase tracking-wider text-neonPink neon-pink-glow">
+                    <span>Volume 1 - Born Ricciwood</span>
+                </div>
+            </div>
+
+            <!-- Right Side: Hook details & Call-to-actions -->
+            <div class="w-full lg:w-1/2 flex flex-col justify-center space-y-6 text-center lg:text-left">
+                <div>
+                    <h1 class="book-title-style text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-2">
+                        <span class="neon-pink-glow text-neonPink">Welcome </span>
+                        <span class="neon-white-glow text-white">to</span>
+                        <span class="neon-yellow-glow text-neonYellow ml-2">New York</span>
+                    </h1>
+                    <p class="text-sm font-bold tracking-widest text-zinc-400 uppercase">
+                        <span class="lang-en">Part 1 of A Legacy in New York Series</span>
+                        <span class="lang-pt">Parte 1 da Série Um Legado em Nova York</span>
+                    </p>
+                </div>
+
+                <div class="py-4 border-y border-zinc-800">
+                    <p class="text-lg md:text-xl font-medium italic text-neonPink leading-relaxed neon-pink-glow">
+                        <span class="lang-en">"Even the most broken hearts can find a new beginning."</span>
+                        <span class="lang-pt">"Até os corações mais quebrados podem encontrar um recomeço."</span>
+                    </p>
+                </div>
+
+                <!-- Action Button Grouping -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
+                    <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all duration-300" target="_blank">
+                        <i class="fab fa-amazon text-lg"></i>
+                        <span class="lang-en">Buy on Kindle</span>
+                        <span class="lang-pt">Comprar no Kindle</span>
+                    </a>
+                    
+                    <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all duration-300" target="_blank">
+                        <i class="fas fa-book-reader text-lg"></i>
+                        <span class="lang-en">Read on Kindle Unlimited</span>
+                        <span class="lang-pt">Kindle Unlimited</span>
+                    </a>
+                </div>
+                
+                <div class="flex justify-center lg:justify-start">
+                    <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-semibold underline underline-offset-4" target="_blank">
+                        <i class="fab fa-spotify text-green-400 text-lg"></i>
+                        <span class="lang-en">Listen to Audiobook Samples on Spotify</span>
+                        <span class="lang-pt">Ouça amostras de Audiobook no Spotify</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full max-w-2xl glass-panel rounded-3xl p-6 md:p-8 mb-12 border border-neonYellow/25 relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-neonYellow/5 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="flex flex-col items-center text-center space-y-4">
+                <div class="px-3 py-1 rounded-full bg-neonYellow/10 border border-neonYellow/20 text-xs text-neonYellow font-semibold uppercase tracking-wider">
+                    <span class="lang-en">Audio Commentary</span>
+                    <span class="lang-pt">Comentário em Áudio</span>
+                </div>
+                
+                <p class="text-base font-bold text-zinc-100">
+                    <span class="lang-en">Listen to an exclusive presentation about the book</span>
+                    <span class="lang-pt">Ouça uma conversa exclusiva sobre o livro</span>
+                </p>
+
+                <!-- Audio Controller Center -->
+                <div class="w-full flex flex-col md:flex-row items-center gap-6 mt-4 pt-4 border-t border-zinc-800">
+                    
+                    <!-- Play/Pause Button -->
+                    <button id="customPlayBtn" class="w-14 h-14 rounded-full bg-neonYellow flex items-center justify-center text-black shadow-[0_0_15px_rgba(249,248,113,0.4)] hover:scale-110 active:scale-95 transition-all duration-300">
+                        <i id="playerPlayIcon" class="fas fa-play text-xl ml-1"></i>
+                    </button>
+
+                    <!-- Waveform Visualizer -->
+                    <div class="flex-1 w-full space-y-2">
+                        <div class="flex items-center justify-between text-xs text-zinc-400 font-mono">
+                            <span id="audioCurrentTime">0:00</span>
+                            
+                            <div id="audioVisualizer" class="flex items-end gap-1 h-8 px-4 opacity-50">
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                                <div class="visualizer-bar"></div>
+                            </div>
+
+                            <span id="audioDuration">0:00</span>
+                        </div>
+                        
+                        <!-- Timeline Slider Track -->
+                        <div id="audioProgressBar" class="h-2 bg-zinc-800 rounded-full cursor-pointer relative group">
+                            <div id="audioProgressFill" class="h-full bg-gradient-to-r from-neonPink to-neonYellow rounded-full w-0 transition-all duration-100"></div>
+                            <div id="audioProgressThumb" class="absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] left-0 -ml-2 scale-0 group-hover:scale-100 transition-all pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Volume Controller -->
+                    <div class="flex items-center gap-2">
+                        <button id="volumeToggleBtn" class="text-zinc-400 hover:text-white transition-colors">
+                            <i id="volumeIcon" class="fas fa-volume-up text-lg"></i>
+                        </button>
+                        <input id="volumeSlider" type="range" min="0" max="1" step="0.1" value="0.8" class="w-20 accent-neonYellow h-1 bg-zinc-800 rounded-lg cursor-pointer">
+                    </div>
+                </div>
             </div>
             
-            <div class="audio-player-container" id="audioPlayerContainer">
-                <p>Listen to a short conversation about the book</p>
-                <i class="fas fa-play audio-player-icon" id="playPauseIcon"></i>
-                <audio id="bookAudio" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/coment%C3%A1rio-para-p%C3%A1gina-de-vendas.mp3" preload="auto"></audio>
+            <audio id="bookAudio" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/coment%C3%A1rio-para-p%C3%A1gina-de-vendas.mp3" preload="auto"></audio>
+        </section>
+
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
+            <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-neonPink/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center max-w-2xl mx-auto space-y-6">
+                <h2 class="book-title-style text-3xl md:text-4xl neon-yellow-glow text-neonYellow font-normal">
+                    <span class="lang-en">Intrigue Begins in New York...</span>
+                    <span class="lang-pt">A Intriga Começa em Nova York...</span>
+                </h2>
+                
+                <div class="text-zinc-300 space-y-4 text-base md:text-lg leading-relaxed text-justify md:text-center">
+                    <p class="lang-en">Gabriel Ricciwood, heir to a ruthless dynasty, lives under the weight of a past that doesn't define him. When fate brings him back to New York's elite, he must confront family secrets, lost loves, and the truth about who he truly is.</p>
+                    <p class="lang-pt">Gabriel Ricciwood, herdeiro de uma dinastia implacável, vive sob o peso de um passado que não o define. Quando o destino o traz de volta à elite de Nova York, ele deve confrontar segredos de família, amores perdidos e a verdade sobre quem ele realmente é.</p>
+                </div>
+
+                <div class="pt-6">
+                    <p class="text-xl md:text-2xl font-light italic text-neonPink neon-pink-glow">
+                        <span class="lang-en">“For those who believe that even the most broken hearts can find a new beginning.”</span>
+                        <span class="lang-pt">“Para aqueles que acreditam que até os corações mais partidos podem encontrar um novo começo.”</span>
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section class="content-section">
-            <h2 class="main-title-neon">Intrigue Begins in New York...</h2>
-            <p>Gabriel Ricciwood, heir to a ruthless dynasty, lives under the weight of a past that doesn't define him. When fate brings him back to New York's elite, he must confront family secrets, lost loves, and the truth about who he truly is.</p>
-            <p class="subtitle-strong" style="font-style: italic;">“For those who believe that even the most broken hearts can find a new beginning.”</p>
-            <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button" target="_blank"><i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Buy in Kindle</span></a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-button" target="_blank"><i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Read in Kindle Unlimited</span></a>
-                <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="neon-button" target="_blank"><i class="fab fa-spotify"></i> <span class="neon-button-text-pink">Sample on Spotify</span></a>
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
+            <h2 class="book-title-style text-3xl md:text-4xl text-center mb-8 text-neonYellow neon-yellow-glow">
+                <span class="lang-en">How Welcome to New York Was Born</span>
+                <span class="lang-pt">Como Welcome to New York Nasceu</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-zinc-300 text-sm md:text-base leading-relaxed">
+                <div class="space-y-4">
+                    <p class="lang-en"><strong>Welcome to New York</strong> was born from a desire to blend the best of two unforgettable worlds—<em>Gossip Girl’s</em> glamorous intensity and <em>The Vampire Diaries’</em> complex emotional arcs. But beyond the allure and the drama, this story seeks something deeper: to offer a romance that feels true, not toxic—a love that builds instead of breaks.</p>
+                    <p class="lang-pt"><strong>Welcome to New York</strong> nasceu do desejo de misturar o melhor de dois mundos inesquecíveis — o glamour intenso de <em>Gossip Girl</em> e os complexos arcos emocionais de <em>The Vampire Diaries</em>. Mas, além do brilho e do drama, esta história busca algo mais profundo: oferecer um romance que pareça real e sincero, não tóxico — um amor que constrói em vez de quebrar.</p>
+
+                    <p class="lang-en">Crafted to resonate with today’s readers, it is more than a coming-of-age romance. It explores the raw edges of real life: fractured families, emotional neglect, the weight of unresolved grief, and the subtle poison of emotionally irresponsible relationships.</p>
+                    <p class="lang-pt">Desenvolvido para ressoar com leitores de hoje, é mais do que um romance clássico de amadurecimento. Explora as faces mais cruas da vida real: famílias fragmentadas, abandono emocional, a dor profunda do luto e o perigo sutil de relações emocionalmente irresponsáveis.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <p class="lang-en">Influenced by classic literature like <em>The Picture of Dorian Gray</em> and <em>The Phantom of the Opera</em>, the story also acts as a cautionary tale about the dangers of rushing into adulthood, reminding us of the beauty of growing at the right pace.</p>
+                    <p class="lang-pt">Influenciado por grandes clássicos literários como <em>O Retrato de Dorian Gray</em> e <em>O Fantasma da Ópera</em>, a obra funciona também como um conto de advertência sobre os perigos de queimar etapas na juventude, exaltando a beleza de evoluir e amadurecer no tempo certo.</p>
+
+                    <p class="lang-en">This is a novel for readers who crave authenticity. For those who are tired of the same old tropes and are ready for characters who fight for redemption, who learn the hard way, and who still believe that love—real, deep, respectful love—is worth holding onto.</p>
+                    <p class="lang-pt">Este é um livro para leitores que buscam verdade nas páginas. Para quem cansou dos clichês vazios e busca personagens reais que lutam por redenção, cometem erros, aprendem na marra e ainda acreditam que o amor verdadeiro, profundo e respeitoso é o que realmente vale a pena salvar.</p>
+                </div>
             </div>
         </section>
 
-        <section class="content-section">
-            <h2 class="main-title-neon">How Welcome to New York Was Born</h2>
-            <p>Welcome to New York was born from a desire to blend the best of two unforgettable worlds—Gossip Girl’s glamorous intensity and The Vampire Diaries’ complex emotional arcs. But beyond the allure and the drama, this story seeks something deeper: to offer a romance that feels true, not toxic—a love that builds instead of breaks.</p>
-            <p>Crafted to resonate with today’s readers, Welcome to New York is more than a coming-of-age romance. It explores the raw edges of real life: fractured families, emotional neglect, the weight of unresolved grief, and the subtle poison of emotionally irresponsible relationships. At its heart, it asks what it really means to be loved—and to love in return.</p>
-            <p>Influenced by classic literature like The Picture of Dorian Gray and The Phantom of the Opera, the story also acts as a cautionary tale about the dangers of rushing into adulthood. It reminds us of the beauty of growing at the right pace, of not trying to skip the seasons of life that shape who we are.</p>
-            <p>This is a novel for readers who crave authenticity. For those who are tired of the same old tropes and are ready for characters who fight for redemption, who learn the hard way, and who still believe that love—real, deep, respectful love—is worth holding onto.</p>
-        </section>
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
+            <h2 class="book-title-style text-3xl md:text-4xl text-center mb-8 text-neonPink neon-pink-glow">
+                <span class="lang-en">Why it is unlike anything you've read before</span>
+                <span class="lang-pt">Por que é diferente de tudo que você já leu</span>
+            </h2>
 
-        <!-- ✅ VÍDEO ALTERADO AQUI -->
-        <section class="content-section video-container">
-            <h2 class="main-title-neon">Why Welcome to New York is Unlike Anything You've Read Before</h2>
-            <ul>
-                <li><strong>Romance with Purpose:</strong> Dive into an inspiring love, free from toxic clichés.</li>
-                <li><strong>Elite Intrigue:</strong> Uncover secrets and manipulations in the dazzling New York setting.</li>
-                <li><strong>Complex Characters:</strong> Follow Gabriel and other characters on their journeys of self-discovery.</li>
-                <li><strong>Faith and Redemption:</strong> A soul-touching story, showing how pain can lead to healing.</li>
-                <li><strong>TV Series Pace:</strong> With twists and cliffhangers, each chapter will leave you wanting more.</li>
-            </ul>
-            <div class="book-collage">
-                <iframe src="https://player.vimeo.com/video/1184611826" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <!-- Cards grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
+                    <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-heart-broken"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">
+                        <span class="lang-en">Romance with Purpose</span>
+                        <span class="lang-pt">Romance com Propósito</span>
+                    </h3>
+                    <p class="text-sm text-zinc-400">
+                        <span class="lang-en">Dive into an inspiring love, completely free from toxic clichés.</span>
+                        <span class="lang-pt">Mergulhe em um amor inspirador, totalmente livre de clichês tóxicos.</span>
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
+                    <div class="text-neonPink text-2xl mb-3"><i class="fas fa-crown"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">
+                        <span class="lang-en">Elite Intrigue</span>
+                        <span class="lang-pt">Intrigas de Elite</span>
+                    </h3>
+                    <p class="text-sm text-zinc-400">
+                        <span class="lang-en">Uncover secrets and manipulations in a dazzling New York setting.</span>
+                        <span class="lang-pt">Descubra segredos e manipulações nas mais deslumbrantes festas de Nova York.</span>
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
+                    <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">
+                        <span class="lang-en">Complex Characters</span>
+                        <span class="lang-pt">Personagens Complexos</span>
+                    </h3>
+                    <p class="text-sm text-zinc-400">
+                        <span class="lang-en">Follow Gabriel on a deep journey of redemption and self-discovery.</span>
+                        <span class="lang-pt">Acompanhe Gabriel em uma jornada íntima de autodescoberta e superação.</span>
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
+                    <div class="text-neonPink text-2xl mb-3"><i class="fas fa-cross"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">
+                        <span class="lang-en">Faith & Redemption</span>
+                        <span class="lang-pt">Fé & Redenção</span>
+                    </h3>
+                    <p class="text-sm text-zinc-400">
+                        <span class="lang-en">A soul-touching story showing how deep emotional wounds can heal.</span>
+                        <span class="lang-pt">Uma história comovente que mostra como feridas profundas encontram cura real.</span>
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
+                    <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-tv"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">
+                        <span class="lang-en">TV Series Pace</span>
+                        <span class="lang-pt">Ritmo de Série de TV</span>
+                    </h3>
+                    <p class="text-sm text-zinc-400">
+                        <span class="lang-en">Fast-paced narration full of twists and cliffhangers at every chapter.</span>
+                        <span class="lang-pt">Com ganchos dramáticos e reviravoltas intensas que impedem você de parar de ler.</span>
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
+                    <div class="text-neonPink text-2xl mb-3"><i class="fas fa-headphones-alt"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">
+                        <span class="lang-en">Multiplatform Experience</span>
+                        <span class="lang-pt">Experiência Multiplataforma</span>
+                    </h3>
+                    <p class="text-sm text-zinc-400">
+                        <span class="lang-en">Read on Kindle and sample professional narration directly on Spotify.</span>
+                        <span class="lang-pt">Leia no Kindle e saboreie a narração em áudio profissional via Spotify.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Embedded Video Dynamic Clip -->
+            <div class="mt-12 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(255,102,204,0.15)] aspect-video border border-neonPink/20 bg-zinc-950">
+                <iframe src="https://player.vimeo.com/video/1184611826" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
-        <!-- O resto do código continua igual -->
-        <section class="content-section section-extra-spacing">
-            <h2 class="main-title-neon">A Legacy in New York: A Saga in Parts</h2>
-            <p><em>Born Ricciwood</em> is just the first volume in the thrilling <strong>A Legacy in New York</strong> series. This developing saga promises to unveil even more secrets, passions, and twists in the lives of Gabriel and those around him.</p>
-            <p>Prepare for a literary journey that deepens with each book. Each part reveals deeper secrets, until the untold past comes to light, shaping everyone's destiny.</p>
-        </section>
-
-        <section class="content-section section-extra-spacing video-container">
-            <h2 class="main-title-neon">Trailer</h2>
-            <div class="book-collage">
-                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1120687033" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 flex flex-col md:flex-row items-center gap-8">
+            <div class="w-full md:w-2/3 space-y-4">
+                <h2 class="book-title-style text-3xl text-neonYellow neon-yellow-glow">
+                    <span class="lang-en">A Legacy in New York: A Saga in Parts</span>
+                    <span class="lang-pt">Um Legado em Nova York: Uma Saga em Partes</span>
+                </h2>
+                <div class="text-zinc-300 space-y-4 text-base leading-relaxed">
+                    <p class="lang-en"><em>Born Ricciwood</em> is the first gateway into the wider universe. This unfolding story promises to reveal deep secrets and shifting loyalties in Gabriel's life.</p>
+                    <p class="lang-pt"><em>Born Ricciwood</em> é o primeiro capítulo deste universo literário. Esta saga em desenvolvimento promete trazer à tona segredos íntimos e alianças perigosas que definirão a vida de todos os envolvidos.</p>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/3 p-6 rounded-2xl bg-zinc-950 border border-neonPink/25 text-center shadow-[0_0_20px_rgba(255,102,204,0.1)]">
+                <div class="text-4xl text-neonPink mb-2"><i class="fas fa-feather-alt animate-bounce"></i></div>
+                <p class="text-xs uppercase tracking-widest text-zinc-500 font-bold mb-1">
+                    <span class="lang-en">Next Volumes</span>
+                    <span class="lang-pt">Próximos Volumes</span>
+                </p>
+                <p class="text-sm font-semibold text-white">
+                    <span class="lang-en">Under Creative Development</span>
+                    <span class="lang-pt">Em Processo de Escrita</span>
+                </p>
             </div>
         </section>
 
-        <section class="content-section section-extra-spacing">
-            <h2 class="main-title-neon">Who This Book Is For</h2>
-            <ul>
-                <li>For those who love purposeful romances and heartwarming stories.</li>
-                <li>For fans of elite intrigue, but tired of toxic and superficial loves.</li>
-                <li>For those seeking complex characters and narratives that explore forgiveness and new beginnings.</li>
-                <li>For those who believe that even pain can turn into redemption and that hope always wins.</li>
-            </ul>
-        </section>
-
-        <section class="content-section section-extra-spacing">
-            <h2 class="main-title-neon">Formats and Extras</h2>
-            <p><em>Welcome to New York: Born Ricciwood</em> is available on <strong>Kindle</strong> for you to read anywhere. The <strong>opening chapters</strong> are now live on Spotify. Perfect for listening like a TV series, fully immersed in the New York vibe.</p>
-        </section>
-
-        <section class="content-section section-extra-spacing video-container">
-            <h2 class="main-title-neon">Discover the City</h2>
-            <div class="book-collage">
-                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1102801648?h=679f9f08d2" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen></iframe>
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 mb-12">
+            <h2 class="book-title-style text-3xl text-center text-neonPink neon-pink-glow mb-6">
+                <span class="lang-en">Official Cinematic Trailer</span>
+                <span class="lang-pt">Trailer Cinemático Oficial</span>
+            </h2>
+            <div class="rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(249,248,113,0.15)] aspect-video border border-neonYellow/20 bg-zinc-950">
+                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1120687033" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
-        <section class="content-section faq section-extra-spacing">
-            <h2 class="main-title-neon">Frequently Asked Questions</h2>
-            <ul>
-                <li><strong>Is this the only book?</strong> — No! <em>Born Ricciwood</em> is the first volume in the <strong>A Legacy in New York</strong> series. The saga is under development, and more books are coming!</li>
-                <li><strong>What is the age rating?</strong> — Recommended for young adults and adults. The story focuses on romance and personal growth, without explicit scenes or inappropriate language.</li>
-                <li><strong>Where can I read or listen?</strong> — The book is available on Kindle and the audiobook version is coming soon on major platforms.</li>
-                <li><strong>Do I need to be Christian to enjoy it?</strong> — No! It's a story for everyone who values deep romance, overcoming challenges, and the search for purpose, regardless of their faith.</li>
-            </ul>
-        </section>
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+                <h2 class="book-title-style text-3xl text-neonYellow neon-yellow-glow">
+                    <span class="lang-en">Who This Book Is For</span>
+                    <span class="lang-pt">Para Quem é Este Livro</span>
+                </h2>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    <span class="lang-en">If you appreciate deep themes, complex characters and a story with values, this book belongs on your shelf.</span>
+                    <span class="lang-pt">Se você aprecia dilemas reais, amadurecimento com valores morais fortes e cenários vibrantes, esse livro foi feito sob medida para sua estante.</span>
+                </p>
+            </div>
 
-        <section class="content-section section-extra-spacing">
-            <h2 class="main-title-neon">Don't Miss This Story!</h2>
-            <p class="subtitle-strong">“Gabriel’s whole body trembled. His leg didn’t respond — stiff, locked, detached from him. He could only cry. From the moment he’d stepped into Sant’Hale, he’d known something bad was coming. He wanted them to burn in hell for what they’d done. He even hated God for not stopping it.”</p>
-            <div class="purchase-buttons-container">
-                <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-button" target="_blank"><i class="fab fa-amazon"></i> <span class="neon-button-text-pink">Buy in Kindle</span></a>
-                <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-button" target="_blank"><i class="fas fa-book-reader"></i> <span class="neon-button-text-pink">Read in Kindle Unlimited</span></a>
-                <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="neon-button" target="_blank"><i class="fab fa-spotify"></i> <span class="neon-button-text-pink">Sample on Spotify</span></a>
+            <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                    <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
+                    <p class="text-sm text-zinc-200">
+                        <span class="lang-en">Readers seeking clean, genuine, and impactful romance stories.</span>
+                        <span class="lang-pt">Leitores que buscam romances significativos, limpos e sem apelos superficiais.</span>
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
+                    <p class="text-sm text-zinc-200">
+                        <span class="lang-en">Fans of high-society drama tired of standard toxic relationships.</span>
+                        <span class="lang-pt">Fãs de dramas de alta sociedade que buscam heróis inspiradores.</span>
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
+                    <p class="text-sm text-zinc-200">
+                        <span class="lang-en">Those who value narratives focusing on forgiveness, redemption and growth.</span>
+                        <span class="lang-pt">Quem valoriza arcos de evolução pessoal e reflexões filosóficas.</span>
+                    </p>
+                </div>
             </div>
         </section>
+
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 mb-12">
+            <h2 class="book-title-style text-3xl text-center text-neonYellow neon-yellow-glow mb-6">
+                <span class="lang-en">Discover the Vibe of the City</span>
+                <span class="lang-pt">Mergulhe no Ritmo da Cidade</span>
+            </h2>
+            <div class="rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(255,102,204,0.15)] aspect-video border border-neonPink/20 bg-zinc-950">
+                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1102801648?h=679f9f08d2" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="w-full max-w-3xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
+            <h2 class="book-title-style text-3xl text-center mb-8 text-neonYellow neon-yellow-glow">
+                <span class="lang-en">Frequently Asked Questions</span>
+                <span class="lang-pt">Perguntas Frequentes</span>
+            </h2>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        <span>
+                            <span class="lang-en">Is this the only book?</span>
+                            <span class="lang-pt">Este é o único livro?</span>
+                        </span>
+                        <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
+                        <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
+                            <span class="lang-en">No! <em>Born Ricciwood</em> is the first exciting step. The broader saga is in fully active development with several sequel titles planned ahead.</span>
+                            <span class="lang-pt">Não! <em>Born Ricciwood</em> é o primeiro passo de uma jornada intrigante. O restante da saga já está em desenvolvimento ativo e novos capítulos serão anunciados.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        <span>
+                            <span class="lang-en">What is the age rating?</span>
+                            <span class="lang-pt">Qual é a classificação indicativa?</span>
+                        </span>
+                        <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
+                        <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
+                            <span class="lang-en">Highly recommended for young adults and mature readers. It deals with profound emotional themes without relying on explicit context or unnecessarily graphic violence.</span>
+                            <span class="lang-pt">Recomendado para jovens adultos e adultos. O livro lida com dilemas morais e desenvolvimento interior dos personagens, sem apelos visuais explícitos.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        <span>
+                            <span class="lang-en">Where can I purchase or read it?</span>
+                            <span class="lang-pt">Onde posso ler ou comprar?</span>
+                        </span>
+                        <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
+                        <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
+                            <span class="lang-en">Available immediately as a digital eBook on the global Amazon store. Subscribers of Kindle Unlimited can read the entire work for free.</span>
+                            <span class="lang-pt">A edição digital está disponível diretamente no catálogo da Amazon mundial. Leitores assinantes do serviço Kindle Unlimited podem ler a obra inteiramente sem custos adicionais.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
+                        <span>
+                            <span class="lang-en">Do I need to be Christian to enjoy it?</span>
+                            <span class="lang-pt">Preciso ser cristão para gostar?</span>
+                        </span>
+                        <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
+                        <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
+                            <span class="lang-en">No! It's a story for everyone who values deep romance, overcoming challenges, and the search for purpose, regardless of their faith.</span>
+                            <span class="lang-pt">Não! É uma história para todos que valorizam um romance profundo, superação de desafios e a busca por um propósito de vida, independentemente de sua fé.</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-neonPink/25">
+            <div class="absolute inset-0 bg-gradient-to-r from-neonPink/5 via-transparent to-neonYellow/5 pointer-events-none"></div>
+            
+            <div class="max-w-2xl mx-auto space-y-6">
+                <h2 class="book-title-style text-3xl md:text-4xl neon-pink-glow text-neonPink">
+                    <span class="lang-en">Don't Miss This Story!</span>
+                    <span class="lang-pt">Não Perca Esta História!</span>
+                </h2>
+
+                <div class="bg-black/60 p-6 rounded-2xl border border-zinc-800/80 my-4 shadow-inner">
+                    <p class="text-zinc-200 italic font-serif leading-relaxed text-sm md:text-base">
+                        <span class="lang-en">“Gabriel’s whole body trembled. His leg didn’t respond — stiff, locked, detached from him. He could only cry. From the moment he’d stepped into Sant’Hale, he’d known something bad was coming. He wanted them to burn in hell for what they’d done. He even hated God for not stopping it.”</span>
+                        <span class="lang-pt">“O corpo de Gabriel estremeceu por completo. Sua perna parecia não obedecer — rígida, dormente, desconectada de si. Ele só sabia chorar. Sabia que algo terrível o aguardava desde o primeiro segundo no portal de Sant’Hale. Desejou que queimassem por tudo o que causaram. Chegou a sentir ódio do próprio Deus por cruzar os braços diante daquela injustiça.”</span>
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                    <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all" target="_blank">
+                        <i class="fab fa-amazon text-lg"></i>
+                        <span class="lang-en">Buy on Kindle</span>
+                        <span class="lang-pt">Garantir no Kindle</span>
+                    </a>
+                    
+                    <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all" target="_blank">
+                        <i class="fas fa-book-reader text-lg"></i>
+                        <span class="lang-en">Read in Kindle Unlimited</span>
+                        <span class="lang-pt">Ler Grátis com Kindle Unlimited</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 Kingdom&Quill. All rights reserved.</p>
+    <div id="heirsBookOverlay" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-[200] hidden flex-col items-center justify-center p-4 overflow-hidden">
+        
+        <!-- Modal Control Header -->
+        <div class="w-full max-w-5xl flex items-center justify-between mb-4 px-4">
+            <div class="flex items-center gap-2">
+                <span class="book-title-style text-neonYellow text-xl md:text-2xl neon-yellow-glow">
+                    <span class="lang-pt">Guia Oficial de Herdeiros</span>
+                    <span class="lang-en">Official Heirs' Guide</span>
+                </span>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-neonPink/20 border border-neonPink/40 text-neonPink uppercase tracking-widest font-bold">Interactive 3D</span>
+            </div>
+            
+            <!-- Close Modal -->
+            <button onclick="toggleHeirsBook(false)" class="w-10 h-10 rounded-full bg-zinc-900 border border-neonPink/50 text-neonPink flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+        </div>
+
+        <!-- 3D Book Container Frame -->
+        <div id="bookContainer" class="w-full max-w-5xl flex items-center justify-center relative py-6 select-none" style="height: 580px;">
+            <div class="book-wrapper">
+                
+                <div class="book-spine"></div>
+                
+                <!-- Main 3D Book Layout -->
+                <div id="book" class="book">
+                    
+                    <!-- ==========================================
+                         FOLHA 1: CAPA GÓTICA & PÁGINA 1
+                         ========================================== -->
+                    <div class="sheet" style="z-index: 50;">
+                        
+                        <!-- PÁGINA 1 (Frente - Capa do Guia) -->
+                        <div class="page-face cover-style p-8 flex flex-col justify-between items-center text-center relative">
+                            <!-- Enfeites de canto -->
+                            <div class="absolute top-4 left-4 text-neonYellow/60 text-lg"><i class="fas fa-crown"></i></div>
+                            <div class="absolute top-4 right-4 text-neonYellow/60 text-lg"><i class="fas fa-crown"></i></div>
+                            
+                            <div class="pt-6">
+                                <span class="text-[10px] uppercase tracking-[0.25em] text-neonPink font-semibold neon-pink-glow">Kingdom & Quill</span>
+                                <div class="h-px w-16 bg-neonPink/30 mx-auto mt-2"></div>
+                            </div>
+
+                            <div class="my-auto flex flex-col items-center">
+                                <!-- Medalhão Pulsante -->
+                                <div class="w-20 h-20 rounded-full border-2 border-neonYellow flex items-center justify-center text-neonYellow mb-6 shadow-[0_0_15px_rgba(249,248,113,0.3)] bg-black/40">
+                                    <i class="fas fa-feather-alt text-3xl animate-pulse"></i>
+                                </div>
+                                
+                                <h3 class="book-title-style text-3xl md:text-4xl text-neonYellow neon-yellow-glow leading-tight tracking-wider">
+                                    <span class="lang-pt">Guia de<br>Herdeiros</span>
+                                    <span class="lang-en">Heirs'<br>Guide</span>
+                                </h3>
+                                
+                                <p class="text-[10px] tracking-widest text-zinc-400 mt-4 uppercase">
+                                    <span class="lang-pt">Volume Interativo</span>
+                                    <span class="lang-en">Interactive Volume</span>
+                                </p>
+                            </div>
+
+                            <div class="pb-6">
+                                <div class="h-px w-24 bg-neonYellow/30 mx-auto mb-2"></div>
+                                <p class="text-[10px] tracking-[0.3em] text-neonYellow/70 uppercase font-bold">Welcome to New York</p>
+                            </div>
+
+                            <!-- Enfeites de canto inferiores -->
+                            <div class="absolute bottom-4 left-4 text-neonYellow/60 text-lg"><i class="fas fa-shield-alt"></i></div>
+                            <div class="absolute bottom-4 right-4 text-neonYellow/60 text-lg"><i class="fas fa-shield-alt"></i></div>
+                        </div>
+
+                        <!-- PÁGINA 2 (Verso - Imagem 1) -->
+                        <div class="page-face back p-0 overflow-hidden">
+                            <div class="page-image-container">
+                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" aria-hidden="true" />
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" alt="Guia de Herdeiros - Página 1" onerror="this.onerror=null; this.src='https://placehold.co/380x520/1b0a2a/f9f871?text=Guia+de+Herdeiros+Capa';">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================
+                         FOLHA 2: PÁGINAS 2 & 3
+                         ========================================== -->
+                    <div class="sheet" style="z-index: 40;">
+                        
+                        <!-- PÁGINA 3 (Frente - Imagem 2) -->
+                        <div class="page-face front p-0 overflow-hidden">
+                            <div class="page-image-container">
+                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" aria-hidden="true" />
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" alt="Guia de Herdeiros - Página 2" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=P%C3%A1gina+2';">
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 4 (Verso - Imagem 3) -->
+                        <div class="page-face back p-0 overflow-hidden">
+                            <div class="page-image-container">
+                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" aria-hidden="true" />
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" alt="Guia de Herdeiros - Página 3" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=P%C3%A1gina+3';">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================
+                         FOLHA 3: PÁGINAS 4 & 5
+                         ========================================= -->
+                    <div class="sheet" style="z-index: 30;">
+                        
+                        <!-- PÁGINA 5 (Frente - Imagem 4) -->
+                        <div class="page-face front p-0 overflow-hidden">
+                            <div class="page-image-container">
+                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" aria-hidden="true" />
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" alt="Guia de Herdeiros - Página 4" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=P%C3%A1gina+4';">
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 6 (Verso - Imagem 5) -->
+                        <div class="page-face back p-0 overflow-hidden">
+                            <div class="page-image-container">
+                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" aria-hidden="true" />
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" alt="Guia de Herdeiros - Página 5" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=P%C3%A1gina+5';">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================
+                         FOLHA 4: PÁGINAS 6 & 7
+                         ========================================== -->
+                    <div class="sheet" style="z-index: 20;">
+                        
+                        <!-- PÁGINA 7 (Frente - Imagem 6) -->
+                        <div class="page-face front p-0 overflow-hidden">
+                            <div class="page-image-container">
+                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" aria-hidden="true" />
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" alt="Guia de Herdeiros - Página 6" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=P%C3%A1gina+6';">
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 8 (Verso - Imagem 7) -->
+                        <div class="page-face back p-0 overflow-hidden">
+                            <div class="page-image-container">
+                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" aria-hidden="true" />
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" alt="Guia de Herdeiros - Página 7" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=P%C3%A1gina+7';">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================
+                         FOLHA 5: PÁGINA 8 (Nate) & CONTRA-CAPA
+                         ========================================== -->
+                    <div class="sheet" style="z-index: 10;">
+                        
+                        <!-- PÁGINA 9 (Frente - Nate) -->
+                        <div class="page-face front p-0 overflow-hidden">
+                            <div class="page-image-container">
+                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" aria-hidden="true" />
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" alt="Guia de Herdeiros - Nate" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Nate';">
+                            </div>
+                        </div>
+
+                        <!-- PÁGINA 10 (Verso - Contra-Capa do Livro) -->
+                        <div class="page-face back-cover-style p-8 flex flex-col justify-between items-center text-center relative">
+                            <!-- Enfeites de canto -->
+                            <div class="absolute top-4 left-4 text-neonPink/40 text-sm"><i class="fas fa-feather"></i></div>
+                            <div class="absolute top-4 right-4 text-neonPink/40 text-sm"><i class="fas fa-feather"></i></div>
+                            
+                            <div class="my-auto flex flex-col items-center">
+                                <div class="w-16 h-16 rounded-full border border-neonPink/40 flex items-center justify-center text-neonPink mb-4 bg-black/40 shadow-[0_0_10px_rgba(255,102,204,0.2)]">
+                                    <i class="fas fa-ribbon text-xl"></i>
+                                </div>
+                                <p class="book-title-style text-lg text-zinc-300">Kingdom & Quill</p>
+                                <p class="text-[9px] uppercase tracking-[0.2em] text-zinc-500 mt-1">New York Series</p>
+                            </div>
+
+                            <div class="pb-6">
+                                <p class="text-[9px] tracking-[0.1em] text-zinc-600">© 2026 ALL RIGHTS RESERVED</p>
+                            </div>
+                            
+                            <div class="absolute bottom-4 left-4 text-neonPink/40 text-sm"><i class="fas fa-leaf"></i></div>
+                            <div class="absolute bottom-4 right-4 text-neonPink/40 text-sm"><i class="fas fa-leaf"></i></div>
+                        </div>
+                    </div>
+
+                </div> <!-- End Book -->
+            </div> <!-- End Wrapper -->
+        </div> <!-- End Book Container -->
+
+        <!-- Manual Navigation Controls & Swipe Hints -->
+        <div class="w-full max-w-xl flex flex-col items-center gap-4 mt-6">
+            <div class="flex items-center gap-6">
+                <!-- Previous Button -->
+                <button onclick="prevPage()" class="px-5 py-3 rounded-xl border border-neonYellow/40 bg-zinc-950 text-neonYellow text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(249,248,113,0.15)] hover:bg-neonYellow hover:text-black transition-all cursor-pointer">
+                    <i class="fas fa-chevron-left"></i>
+                    <span class="lang-pt">Voltar</span>
+                    <span class="lang-en">Back</span>
+                </button>
+                
+                <!-- Page counter -->
+                <span class="text-zinc-500 text-xs font-semibold tracking-widest uppercase">
+                    <span class="lang-pt">Folhas</span><span class="lang-en">Sheets</span>: <span id="pageCounter" class="text-neonYellow">1</span> / 5
+                </span>
+                
+                <!-- Next Button -->
+                <button onclick="nextPage()" class="px-5 py-3 rounded-xl border border-neonPink/40 bg-zinc-950 text-neonPink text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(255,102,204,0.15)] hover:bg-neonPink hover:text-black transition-all cursor-pointer">
+                    <span class="lang-pt">Avançar</span>
+                    <span class="lang-en">Next</span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <p class="text-xs text-zinc-500 tracking-wider flex items-center gap-2">
+                <i class="fas fa-fingerprint text-sm text-neonYellow animate-ping"></i>
+                <span class="lang-pt">Clique direto nas folhas ou arraste para folhear</span>
+                <span class="lang-en">Click directly on pages or swipe to turn</span>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Beautiful Footer -->
+    <footer class="w-full py-8 bg-zinc-950 border-t border-white/5 text-center text-xs text-zinc-500 relative z-10">
+        <p class="mb-2">&copy; 2026 Kingdom & Quill. All rights reserved.</p>
+        <div class="flex justify-center gap-4 text-zinc-400">
+            <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="hover:text-neonPink transition-colors" target="_blank"><i class="fab fa-amazon"></i></a>
+            <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="hover:text-neonPink transition-colors" target="_blank"><i class="fab fa-spotify"></i></a>
+        </div>
     </footer>
 
     <script>
-        const audioPlayerContainer = document.getElementById('audioPlayerContainer');
-        const playPauseIcon = document.getElementById('playPauseIcon');
+        // --- MULTILINGUAL ENGINE ---
+        function setLanguage(lang) {
+            const body = document.body;
+            const btnPT = document.getElementById('btnLangPT');
+            const btnEN = document.getElementById('btnLangEN');
+            
+            if (lang === 'pt') {
+                body.classList.remove('lang-en-active');
+                body.classList.add('lang-pt-active');
+                
+                // Style switch selectors
+                btnPT.className = "px-3 py-1.5 rounded-full font-bold transition-all duration-300 bg-neonPink text-black shadow-[0_0_10px_rgba(255,102,204,0.4)]";
+                btnEN.className = "px-3 py-1.5 rounded-full font-bold transition-all duration-300 text-zinc-400 hover:text-white";
+            } else {
+                body.classList.remove('lang-pt-active');
+                body.classList.add('lang-en-active');
+                
+                // Style switch selectors
+                btnEN.className = "px-3 py-1.5 rounded-full font-bold transition-all duration-300 bg-neonYellow text-black shadow-[0_0_10px_rgba(249,248,113,0.4)]";
+                btnPT.className = "px-3 py-1.5 rounded-full font-bold transition-all duration-300 text-zinc-400 hover:text-white";
+            }
+        }
+
+        // --- INTERACTIVE TILT COVER EFFECT ---
+        const bookCover = document.getElementById('bookCover');
+        if (bookCover) {
+            bookCover.addEventListener('mousemove', (e) => {
+                const rect = bookCover.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const rotateY = ((x / rect.width) - 0.5) * 16; 
+                const rotateX = (((y / rect.height) - 0.5) * -16); 
+                
+                bookCover.style.transform = `perspective(800px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
+            });
+            
+            bookCover.addEventListener('mouseleave', () => {
+                bookCover.style.transform = `perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)`;
+            });
+        }
+
+        // --- CUSTOM AUDIO PLAYER PLATFORM ---
         const bookAudio = document.getElementById('bookAudio');
-        audioPlayerContainer.addEventListener('click', () => {
+        const customPlayBtn = document.getElementById('customPlayBtn');
+        const playerPlayIcon = document.getElementById('playerPlayIcon');
+        const audioVisualizer = document.getElementById('audioVisualizer');
+        
+        const audioProgressBar = document.getElementById('audioProgressBar');
+        const audioProgressFill = document.getElementById('audioProgressFill');
+        const audioProgressThumb = document.getElementById('audioProgressThumb');
+        
+        const audioCurrentTime = document.getElementById('audioCurrentTime');
+        const audioDuration = document.getElementById('audioDuration');
+        
+        const volumeToggleBtn = document.getElementById('volumeToggleBtn');
+        const volumeIcon = document.getElementById('volumeIcon');
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        function formatTime(secs) {
+            if (isNaN(secs)) return '0:00';
+            const m = Math.floor(secs / 60);
+            const s = Math.floor(secs % 60);
+            return `${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        bookAudio.addEventListener('loadedmetadata', () => {
+            audioDuration.textContent = formatTime(bookAudio.duration);
+        });
+
+        setTimeout(() => {
+            if (bookAudio.duration) {
+                audioDuration.textContent = formatTime(bookAudio.duration);
+            }
+        }, 1200);
+
+        function toggleAudioState() {
             if (bookAudio.paused) {
                 bookAudio.play();
-                playPauseIcon.classList.remove('fa-play');
-                playPauseIcon.classList.add('fa-pause');
-                playPauseIcon.classList.add('playing');
             } else {
                 bookAudio.pause();
-                playPauseIcon.classList.remove('fa-pause');
-                playPauseIcon.classList.add('fa-play');
-                playPauseIcon.classList.remove('playing');
             }
-        });
-        bookAudio.addEventListener('ended', () => {
-            playPauseIcon.classList.remove('fa-pause');
-            playPauseIcon.classList.add('fa-play');
-            playPauseIcon.classList.remove('playing');
-            bookAudio.currentTime = 0;
-        });
-        bookAudio.addEventListener('pause', () => {
-            if (!bookAudio.ended) {
-                playPauseIcon.classList.remove('fa-pause');
-                playPauseIcon.classList.add('fa-play');
-                playPauseIcon.classList.remove('playing');
-            }
-        });
+        }
+
+        customPlayBtn.addEventListener('click', toggleAudioState);
+
         bookAudio.addEventListener('play', () => {
-            playPauseIcon.classList.remove('fa-play');
-            playPauseIcon.classList.add('fa-pause');
-            playPauseIcon.classList.add('playing');
+            playerPlayIcon.className = "fas fa-pause text-xl";
+            audioVisualizer.classList.add('audio-playing');
         });
+
+        bookAudio.addEventListener('pause', () => {
+            playerPlayIcon.className = "fas fa-play text-xl ml-1";
+            audioVisualizer.classList.remove('audio-playing');
+        });
+
+        bookAudio.addEventListener('ended', () => {
+            playerPlayIcon.className = "fas fa-play text-xl ml-1";
+            audioVisualizer.classList.remove('audio-playing');
+            bookAudio.currentTime = 0;
+            audioProgressFill.style.width = '0%';
+            audioProgressThumb.style.left = '0%';
+        });
+
+        bookAudio.addEventListener('timeupdate', () => {
+            if (!bookAudio.duration) return;
+            const pct = (bookAudio.currentTime / bookAudio.duration) * 100;
+            audioProgressFill.style.width = `${pct}%`;
+            audioProgressThumb.style.left = `${pct}%`;
+            audioCurrentTime.textContent = formatTime(bookAudio.currentTime);
+        });
+
+        audioProgressBar.addEventListener('click', (e) => {
+            const rect = audioProgressBar.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const percentage = Math.max(0, Math.min(1, clickX / rect.width));
+            
+            bookAudio.currentTime = percentage * bookAudio.duration;
+            audioProgressFill.style.width = `${percentage * 100}%`;
+            audioProgressThumb.style.left = `${percentage * 100}%`;
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            const volValue = e.target.value;
+            bookAudio.volume = volValue;
+            updateVolumeVisuals(volValue);
+        });
+
+        function updateVolumeVisuals(vol) {
+            if (parseFloat(vol) === 0) {
+                volumeIcon.className = "fas fa-volume-mute text-lg text-zinc-500";
+            } else if (parseFloat(vol) < 0.5) {
+                volumeIcon.className = "fas fa-volume-down text-lg text-zinc-300";
+            } else {
+                volumeIcon.className = "fas fa-volume-up text-lg text-white";
+            }
+        }
+
+        let lastVolume = 0.8;
+        volumeToggleBtn.addEventListener('click', () => {
+            if (bookAudio.volume > 0) {
+                lastVolume = bookAudio.volume;
+                bookAudio.volume = 0;
+                volumeSlider.value = 0;
+                updateVolumeVisuals(0);
+            } else {
+                bookAudio.volume = lastVolume;
+                volumeSlider.value = lastVolume;
+                updateVolumeVisuals(lastVolume);
+            }
+        });
+
+        // --- INTERACTIVE ACCORDION FAQ CONTROLS ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const btn = item.querySelector('.faq-btn');
+            const icon = btn.querySelector('.fa-chevron-down');
+            
+            btn.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                faqItems.forEach(inner => {
+                    inner.classList.remove('active');
+                    const innerContent = inner.querySelector('.faq-content');
+                    innerContent.style.maxHeight = '0px';
+                    inner.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    const content = item.querySelector('.faq-content');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // ==========================================
+        // --- 3D BOOK VIRTUAL MECHANICS ---
+        // ==========================================
+        let currentSheet = 0;
+        const sheets = document.querySelectorAll('.sheet');
+        const maxSheets = sheets.length;
+
+        // Toggle Heirs Book Overlay Modal
+        function toggleHeirsBook(open) {
+            const overlay = document.getElementById('heirsBookOverlay');
+            if (open) {
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+                document.body.style.overflow = 'hidden'; // Stop background scrolling
+                
+                // Recalculate aspect scale on load
+                setTimeout(resizeBook, 150);
+            } else {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                document.body.style.overflow = ''; // Re-enable background scrolling
+            }
+        }
+
+        // Core sheet index update engine with dynamic z-indices formula
+        function updateSheets() {
+            sheets.forEach((sheet, idx) => {
+                if (idx < currentSheet) {
+                    sheet.classList.add('flipped');
+                    sheet.style.zIndex = idx + 1;
+                } else {
+                    sheet.classList.remove('flipped');
+                    sheet.style.zIndex = maxSheets - idx;
+                }
+            });
+            
+            // Update UI Counters
+            document.getElementById('pageCounter').textContent = Math.min(currentSheet + 1, maxSheets);
+        }
+
+        // Next Page Turning
+        function nextPage() {
+            if (currentSheet < maxSheets) {
+                currentSheet++;
+                updateSheets();
+            }
+        }
+
+        // Prev Page Turning
+        function prevPage() {
+            if (currentSheet > 0) {
+                currentSheet--;
+                updateSheets();
+            }
+        }
+
+        // Directly tap/click sheets to flip them instinctively
+        sheets.forEach((sheet, idx) => {
+            sheet.addEventListener('click', (e) => {
+                if (e.target.closest('a') || e.target.closest('button')) return;
+                
+                if (sheet.classList.contains('flipped')) {
+                    currentSheet = idx;
+                    updateSheets();
+                } else {
+                    currentSheet = idx + 1;
+                    updateSheets();
+                }
+            });
+        });
+
+        // --- MATHEMATICAL ADAPTIVE RESPONSIVE SCALE ENGINE ---
+        function resizeBook() {
+            const bookContainer = document.getElementById('bookContainer');
+            const book = document.getElementById('book');
+            if (!book || !bookContainer) return;
+
+            const containerWidth = bookContainer.clientWidth;
+            const originalWidth = 780; 
+            
+            if (containerWidth < originalWidth) {
+                const scale = (containerWidth / originalWidth) * 0.94; 
+                book.style.transform = `scale(${scale})`;
+            } else {
+                book.style.transform = `scale(1)`;
+            }
+        }
+
+        // Touch Swipe Event Listeners
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const bookContainer = document.getElementById('bookContainer');
+        
+        bookContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        bookContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipeGesture();
+        }, { passive: true });
+
+        function handleSwipeGesture() {
+            const deltaX = touchEndX - touchStartX;
+            if (deltaX < -50) {
+                nextPage();
+            } else if (deltaX > 50) {
+                prevPage();
+            }
+        }
+
+        window.addEventListener('resize', resizeBook);
+        
+        // Initial setup
+        updateSheets();
     </script>
 </body>
 </html>
