@@ -397,6 +397,132 @@
             }
         }
 
+
+
+        /* PROFILE IMAGE ZOOM MODAL - only enlarges the original card image */
+        .profile-zoom-modal {
+            background: rgba(0, 0, 0, 0.96);
+        }
+        .profile-zoom-toolbar {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 340;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 18px;
+            background: rgba(9, 9, 12, 0.92);
+            border: 1px solid rgba(255, 102, 204, 0.35);
+            box-shadow: 0 0 28px rgba(255, 102, 204, 0.18);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .profile-zoom-btn {
+            min-width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid rgba(249, 248, 113, 0.35);
+            color: var(--neon-yellow);
+            background: rgba(0, 0, 0, 0.75);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .profile-zoom-btn:hover {
+            transform: scale(1.06);
+            border-color: rgba(255, 102, 204, 0.65);
+            box-shadow: 0 0 18px rgba(255, 102, 204, 0.28);
+        }
+        .profile-zoom-value {
+            min-width: 62px;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        #profileZoomViewport {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 86px 18px 36px;
+        }
+        #profileZoomImage {
+            height: 86vh;
+            width: auto;
+            max-width: none;
+            max-height: none;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 1px solid rgba(249, 248, 113, 0.25);
+            box-shadow: 0 0 42px rgba(249, 248, 113, 0.12), 0 0 62px rgba(255, 102, 204, 0.10);
+            transition: height 0.18s ease;
+            user-select: none;
+        }
+        @media (max-width: 640px) {
+            .profile-zoom-toolbar {
+                top: 12px;
+                gap: 6px;
+                padding: 8px;
+                max-width: calc(100vw - 20px);
+            }
+            .profile-zoom-btn {
+                min-width: 34px;
+                height: 34px;
+            }
+            .profile-zoom-value {
+                min-width: 52px;
+                font-size: 11px;
+            }
+            #profileZoomViewport {
+                padding-top: 74px;
+            }
+            #profileZoomImage {
+                height: 82vh;
+            }
+        }
+
+
+
+        /* CLICK HOTSPOTS FOR BOTH SIDES OF THE OPEN 3D BOOK
+           This guarantees the zoom viewer opens on left-side pages too,
+           even when the visible page is a rotated/back face of a sheet. */
+        .book-wrapper {
+            position: relative !important;
+        }
+        .profile-page-hotspot {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            z-index: 9999;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            background: transparent;
+            cursor: zoom-in;
+            outline: none;
+            pointer-events: auto;
+        }
+        .profile-page-hotspot.left-side {
+            left: 0;
+        }
+        .profile-page-hotspot.right-side {
+            right: 0;
+        }
+        .profile-page-hotspot.is-disabled {
+            display: none !important;
+            pointer-events: none !important;
+        }
+
     </style>
 </head>
 <body class="text-white antialiased">
@@ -876,13 +1002,13 @@
                                     <i class="fas fa-feather-alt text-4xl text-neonYellow animate-pulse"></i>
                                 </div>
                                 <h3 class="book-title-style text-4xl text-neonYellow neon-yellow-glow">Heirs' Guide</h3>
-                                <p class="text-xs tracking-widest text-zinc-400 mt-4 uppercase">Click any page to open full character profile</p>
+                                <p class="text-xs tracking-widest text-zinc-400 mt-4 uppercase">Click any page to enlarge and zoom</p>
                             </div>
                             <div class="pb-8 text-[10px] tracking-[0.3em] text-neonYellow/70 uppercase font-bold">Welcome to New York • Volume 1</div>
                         </div>
                         <div class="page-face back p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" onclick="openCharacterProfile(0)" alt="Page 1">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" onclick="openProfileImage(this)" alt="Page 1">
                             </div>
                         </div>
                     </div>
@@ -891,12 +1017,12 @@
                     <div class="sheet" style="z-index: 40;">
                         <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" onclick="openCharacterProfile(1)" alt="Page 2">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" onclick="openProfileImage(this)" alt="Page 2">
                             </div>
                         </div>
                         <div class="page-face back p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" onclick="openCharacterProfile(2)" alt="Page 3">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" onclick="openProfileImage(this)" alt="Page 3">
                             </div>
                         </div>
                     </div>
@@ -905,12 +1031,12 @@
                     <div class="sheet" style="z-index: 30;">
                         <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" onclick="openCharacterProfile(3)" alt="Page 4">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" onclick="openProfileImage(this)" alt="Page 4">
                             </div>
                         </div>
                         <div class="page-face back p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" onclick="openCharacterProfile(4)" alt="Page 5">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" onclick="openProfileImage(this)" alt="Page 5">
                             </div>
                         </div>
                     </div>
@@ -919,12 +1045,12 @@
                     <div class="sheet" style="z-index: 20;">
                         <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" onclick="openCharacterProfile(5)" alt="Page 6">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" onclick="openProfileImage(this)" alt="Page 6">
                             </div>
                         </div>
                         <div class="page-face back p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" onclick="openCharacterProfile(6)" alt="Page 7">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" onclick="openProfileImage(this)" alt="Page 7">
                             </div>
                         </div>
                     </div>
@@ -933,7 +1059,7 @@
                     <div class="sheet" style="z-index: 10;">
                         <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" onclick="openCharacterProfile(7)" alt="Nate Parsons Profile">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" onclick="openProfileImage(this)" alt="Nate Parsons Profile">
                             </div>
                         </div>
                         <div class="page-face back back-cover-style flex flex-col justify-center items-center text-center p-8">
@@ -948,6 +1074,9 @@
                     </div>
 
                 </div>
+
+                <button id="leftProfileHotspot" type="button" class="profile-page-hotspot left-side is-disabled" onclick="openVisibleProfilePage('left')" aria-label="Enlarge left page"></button>
+                <button id="rightProfileHotspot" type="button" class="profile-page-hotspot right-side is-disabled" onclick="openVisibleProfilePage('right')" aria-label="Enlarge right page"></button>
             </div>
         </div>
 
@@ -965,7 +1094,7 @@
             </div>
             <p class="text-[10px] md:text-xs text-zinc-500 tracking-wider flex items-center gap-2">
                 <i class="fas fa-expand text-sm text-neonYellow animate-pulse"></i>
-                <span>Click directly on any character illustration to open full profile</span>
+                <span>Click directly on any character illustration to enlarge and read</span>
             </p>
         </div>
     </div>
@@ -1003,6 +1132,34 @@
                     Next <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
+        </div>
+    </div>
+
+
+
+    <!-- ==========================================
+         PROFILE IMAGE ZOOM MODAL
+         Opens only the original character-card image, with zoom controls.
+         ========================================== -->
+    <div id="profileZoomModal" onclick="if (event.target.id === 'profileZoomModal') closeProfileZoom()" class="profile-zoom-modal fixed inset-0 z-[320] hidden">
+        <div class="profile-zoom-toolbar" onclick="event.stopPropagation()">
+            <button type="button" onclick="zoomProfileImage(-0.25)" class="profile-zoom-btn" aria-label="Zoom out">
+                <i class="fas fa-minus"></i>
+            </button>
+            <span id="profileZoomValue" class="profile-zoom-value">100%</span>
+            <button type="button" onclick="zoomProfileImage(0.25)" class="profile-zoom-btn" aria-label="Zoom in">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button type="button" onclick="resetProfileZoom()" class="profile-zoom-btn" aria-label="Reset zoom">
+                <i class="fas fa-expand-arrows-alt"></i>
+            </button>
+            <button type="button" onclick="closeProfileZoom()" class="profile-zoom-btn" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="profileZoomViewport" onclick="event.stopPropagation()">
+            <img id="profileZoomImage" src="" alt="Expanded character profile">
         </div>
     </div>
 
@@ -1202,6 +1359,7 @@
                 overlay.classList.remove('hidden');
                 overlay.classList.add('flex');
                 document.body.style.overflow = 'hidden';
+                updateProfileHotspots();
             } else {
                 overlay.classList.add('hidden');
                 overlay.classList.remove('flex');
@@ -1217,10 +1375,51 @@
             });
             const counter = document.getElementById('pageCounter');
             if(counter) counter.textContent = Math.min(currentSheet + 1, maxSheets);
+            updateProfileHotspots();
         }
 
         function nextPage() { if (currentSheet < maxSheets - 1) { currentSheet++; updateSheets(); } }
         function prevPage() { if (currentSheet > 0) { currentSheet--; updateSheets(); } }
+
+
+
+        // Makes BOTH visible sides of the book open the image zoom viewer.
+        // Left-side pages are the back faces of flipped sheets, so they get
+        // their own transparent click hotspot over the visible page.
+        function getVisibleProfileImage(side) {
+            if (!sheets || !sheets.length) return null;
+
+            if (side === 'left') {
+                if (currentSheet <= 0) return null;
+                const leftSheet = sheets[currentSheet - 1];
+                return leftSheet ? leftSheet.querySelector('.page-face.back img.page-fg-contain') : null;
+            }
+
+            if (side === 'right') {
+                if (currentSheet >= maxSheets) return null;
+                const rightSheet = sheets[currentSheet];
+                return rightSheet ? rightSheet.querySelector('.page-face.front img.page-fg-contain') : null;
+            }
+
+            return null;
+        }
+
+        function updateProfileHotspots() {
+            const leftHotspot = document.getElementById('leftProfileHotspot');
+            const rightHotspot = document.getElementById('rightProfileHotspot');
+            if (!leftHotspot || !rightHotspot) return;
+
+            const leftImage = getVisibleProfileImage('left');
+            const rightImage = getVisibleProfileImage('right');
+
+            leftHotspot.classList.toggle('is-disabled', !leftImage);
+            rightHotspot.classList.toggle('is-disabled', !rightImage);
+        }
+
+        function openVisibleProfilePage(side) {
+            const img = getVisibleProfileImage(side);
+            if (img) openProfileImage(img);
+        }
 
         // ==========================================
         // CHARACTER PROFILES DATA
@@ -1411,6 +1610,102 @@
                 openCharacterProfile(prevChar.id);
             }, 50);
         }
+
+
+
+        // ==========================================
+        // PROFILE IMAGE ZOOM VIEWER
+        // ==========================================
+        let profileZoomScale = 1;
+        const profileZoomMin = 0.75;
+        const profileZoomMax = 2.75;
+
+        function openProfileImage(imgEl) {
+            const modal = document.getElementById('profileZoomModal');
+            const zoomImage = document.getElementById('profileZoomImage');
+            const viewport = document.getElementById('profileZoomViewport');
+
+            if (!modal || !zoomImage || !imgEl) return;
+
+            profileZoomScale = 1;
+            zoomImage.src = imgEl.src;
+            zoomImage.alt = imgEl.alt || 'Expanded character profile';
+            updateProfileZoomSize();
+
+            modal.classList.remove('hidden');
+            modal.classList.add('block');
+            document.body.style.overflow = 'hidden';
+
+            setTimeout(() => {
+                viewport.scrollTop = 0;
+                viewport.scrollLeft = Math.max(0, (viewport.scrollWidth - viewport.clientWidth) / 2);
+            }, 50);
+        }
+
+        function closeProfileZoom() {
+            const modal = document.getElementById('profileZoomModal');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('block');
+
+            const heirsOverlay = document.getElementById('heirsBookOverlay');
+            const heirsBookIsOpen = heirsOverlay && !heirsOverlay.classList.contains('hidden');
+            document.body.style.overflow = heirsBookIsOpen ? 'hidden' : '';
+        }
+
+        function zoomProfileImage(delta) {
+            profileZoomScale = Math.max(profileZoomMin, Math.min(profileZoomMax, profileZoomScale + delta));
+            updateProfileZoomSize();
+        }
+
+        function resetProfileZoom() {
+            profileZoomScale = 1;
+            updateProfileZoomSize();
+            const viewport = document.getElementById('profileZoomViewport');
+            if (viewport) {
+                viewport.scrollTop = 0;
+                viewport.scrollLeft = Math.max(0, (viewport.scrollWidth - viewport.clientWidth) / 2);
+            }
+        }
+
+        function updateProfileZoomSize() {
+            const zoomImage = document.getElementById('profileZoomImage');
+            const zoomValue = document.getElementById('profileZoomValue');
+            if (!zoomImage) return;
+            zoomImage.style.height = `${86 * profileZoomScale}vh`;
+            if (zoomValue) zoomValue.textContent = `${Math.round(profileZoomScale * 100)}%`;
+        }
+
+        const profileZoomViewport = document.getElementById('profileZoomViewport');
+        if (profileZoomViewport) {
+            profileZoomViewport.addEventListener('wheel', (event) => {
+                if (!event.ctrlKey) return;
+                event.preventDefault();
+                zoomProfileImage(event.deltaY < 0 ? 0.15 : -0.15);
+            }, { passive: false });
+        }
+
+        document.addEventListener('keydown', (event) => {
+            const modal = document.getElementById('profileZoomModal');
+            const isOpen = modal && !modal.classList.contains('hidden');
+            if (!isOpen) return;
+
+            if (event.key === 'Escape') closeProfileZoom();
+            if (event.key === '+' || event.key === '=') zoomProfileImage(0.25);
+            if (event.key === '-' || event.key === '_') zoomProfileImage(-0.25);
+            if (event.key === '0') resetProfileZoom();
+        });
+
+
+        // Fallback: any card image/page face in the guide opens the zoom viewer.
+        document.addEventListener('click', (event) => {
+            const img = event.target.closest && event.target.closest('#heirsBookOverlay img.page-fg-contain');
+            if (!img) return;
+            event.preventDefault();
+            event.stopPropagation();
+            openProfileImage(img);
+        }, true);
+
 
         // Init
         updateSheets();
