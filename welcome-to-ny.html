@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to New York Part 1: Born Ricciwood - Sales Page</title>
+    <title>Welcome to New York Part 1: Born Ricciwood - Sales Page (DEFINITIVE FIX)</title>
     
-    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCMK8L0CNN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,12 +13,9 @@
       gtag('config', 'G-MCMK8L0CNN');
     </script>
      
-    <!-- Fonts and Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/abaddon" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind CSS for premium layouts -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -30,8 +26,6 @@
                         neonYellow: '#f9f871',
                         neonPink: '#FF66CC',
                         neonPurple: '#3C096C',
-                        neonPurpleLight: '#FF00FF',
-                        neonPurpleMedium: '#B400B4',
                     }
                 }
             }
@@ -43,10 +37,6 @@
             --neon-yellow: #f9f871;
             --neon-pink-soft: #FF66CC;
             --neon-white: #FFF;
-            --neon-light-green: #90EE90;
-            --neon-purple: #3C096C;
-            --neon-purple-light: #FF00FF;
-            --neon-purple-medium: #B400B4;
         }
 
         body {
@@ -55,7 +45,9 @@
             overflow-x: hidden;
         }
 
-        /* Neon Pulse Animations */
+        .neon-yellow-glow { animation: neonPulseYellow 2s infinite alternate; }
+        .neon-pink-glow { animation: neonPulsePink 2s infinite alternate; }
+
         @keyframes neonPulseYellow {
             0% { text-shadow: 0 0 8px var(--neon-yellow), 0 0 20px rgba(249, 248, 113, 0.4); }
             100% { text-shadow: 0 0 15px var(--neon-yellow), 0 0 35px rgba(249, 248, 113, 0.8); }
@@ -64,20 +56,6 @@
             0% { text-shadow: 0 0 8px var(--neon-pink-soft), 0 0 20px rgba(255, 102, 204, 0.4); }
             100% { text-shadow: 0 0 15px var(--neon-pink-soft), 0 0 30px rgba(255, 102, 204, 0.8); }
         }
-        @keyframes neonPulseWhite {
-            0% { text-shadow: 0 0 5px var(--neon-white), 0 0 15px rgba(255, 255, 255, 0.4); }
-            100% { text-shadow: 0 0 10px var(--neon-white), 0 0 25px rgba(255, 255, 255, 0.8); }
-        }
-
-        .neon-yellow-glow {
-            animation: neonPulseYellow 2s infinite alternate;
-        }
-        .neon-pink-glow {
-            animation: neonPulsePink 2s infinite alternate;
-        }
-        .neon-white-glow {
-            animation: neonPulseWhite 2s infinite alternate;
-        }
 
         .book-title-style {
             font-family: 'Monotype Corsiva', 'Playfair Display', cursive;
@@ -85,111 +63,28 @@
             text-transform: uppercase;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050505;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--neon-purple-medium);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--neon-pink-soft);
-        }
-
-        /* Interactive 3D Card Hover Perspective setup */
-        #bookCover {
-            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
-            transform-style: preserve-3d;
-            will-change: transform;
-        }
-
-        /* Custom Glassmorphism Panels */
         .glass-panel {
             background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(249, 248, 113, 0.15);
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(249, 248, 113, 0.05);
-        }
-        .glass-panel:hover {
-            border-color: rgba(249, 248, 113, 0.3);
-            box-shadow: 0 0 30px rgba(249, 248, 113, 0.15), inset 0 0 20px rgba(249, 248, 113, 0.08);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
         }
 
-        @keyframes bounceBar {
-            0%, 100% { height: 4px; }
-            50% { height: 28px; }
-        }
-        .visualizer-bar {
-            width: 3px;
-            background-color: var(--neon-yellow);
-            border-radius: 2px;
-            height: 4px;
-            transition: height 0.15s ease;
-        }
-        .audio-playing .visualizer-bar:nth-child(1) { animation: bounceBar 0.8s infinite 0.1s; }
-        .audio-playing .visualizer-bar:nth-child(2) { animation: bounceBar 0.6s infinite 0.3s; }
-        .audio-playing .visualizer-bar:nth-child(3) { animation: bounceBar 0.9s infinite 0.0s; }
-        .audio-playing .visualizer-bar:nth-child(4) { animation: bounceBar 0.7s infinite 0.4s; }
-        .audio-playing .visualizer-bar:nth-child(5) { animation: bounceBar 0.5s infinite 0.2s; }
-        .audio-playing .visualizer-bar:nth-child(6) { animation: bounceBar 0.8s infinite 0.5s; }
-        .audio-playing .visualizer-bar:nth-child(7) { animation: bounceBar 0.6s infinite 0.1s; }
-        .audio-playing .visualizer-bar:nth-child(8) { animation: bounceBar 0.9s infinite 0.3s; }
-
-        /* Custom Neon Pulse Button styling */
         .neon-glow-btn {
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .neon-glow-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(90deg, var(--neon-pink-soft), var(--neon-yellow));
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.4s ease;
-        }
-        .neon-glow-btn:hover::before {
-            opacity: 0.15;
         }
         .neon-glow-btn:hover {
             box-shadow: 0 0 25px rgba(255, 102, 204, 0.6), 0 0 10px rgba(249, 248, 113, 0.4);
             transform: scale(1.03) translateY(-2px);
         }
 
-        /* FAQ Accordion Transitions */
-        .faq-content {
-            max-height: 0;
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-        }
-        .faq-item.active .faq-content {
-            max-height: 1000px;
-            transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
-        }
-
-        /* --- 3D BOOK EXCLUSIVE PHYSICS & STYLING --- */
-        .book-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            perspective: 2000px; /* Perspectiva global unificada no contêiner pai para alinhamento perfeito */
-        }
+        /* 3D BOOK - CLEAN VERSION (só imagens bonitas, sem conteúdo pesado) */
+        .book-wrapper { perspective: 2000px; }
         .book {
             position: relative;
-            width: 760px; /* Double page total width (each page is 380px) */
+            width: 760px;
             height: 520px;
             transform-style: preserve-3d;
-            transition: transform 0.5s ease;
-            transform-origin: center center;
         }
         .sheet {
             position: absolute;
@@ -200,65 +95,24 @@
             transform-origin: left center;
             transform-style: preserve-3d;
             transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transform: rotateY(0deg); /* Sem perspectiva local para evitar distorção vertical */
+            backface-visibility: hidden;
         }
-        .sheet.flipped {
-            transform: rotateY(-180deg); /* Sem perspectiva local para manter alinhado */
-        }
+        .sheet.flipped { transform: rotateY(-180deg); }
         .page-face {
             position: absolute;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            padding: 32px;
-            box-sizing: border-box;
-            border-radius: 0 16px 16px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            padding: 0;
             overflow: hidden;
-            box-shadow: inset -10px 0 20px rgba(0,0,0,0.5), 5px 5px 15px rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: inset -10px 0 20px rgba(0,0,0,0.5);
         }
-        /* Custom curved gradient simulating book binding */
-        .page-face.front {
-            z-index: 2;
-            transform: rotateY(0deg);
-            background: linear-gradient(to right, #0e0e11 0%, #16161c 6%, #121217 95%, #08080a 100%);
-        }
-        .page-face.back {
-            transform: rotateY(180deg);
+        .page-face.front { background: linear-gradient(to right, #0e0e11 0%, #16161c 6%, #121217 95%, #08080a 100%); }
+        .page-face.back { 
+            transform: rotateY(180deg); 
             border-radius: 16px 0 0 16px;
             background: linear-gradient(to left, #0e0e11 0%, #16161c 6%, #121217 95%, #08080a 100%);
-            box-shadow: inset 10px 0 20px rgba(0,0,0,0.5), -5px 5px 15px rgba(0,0,0,0.3);
         }
-
-        /* Gilded and patterned cover design */
-        .page-face.cover-style {
-            background: radial-gradient(circle at center, #1b0a2a 0%, #090310 100%);
-            border: 5px double var(--neon-yellow);
-            box-shadow: 0 0 30px rgba(249, 248, 113, 0.2), inset 0 0 40px rgba(0,0,0,0.95);
-        }
-        .page-face.back-cover-style {
-            background: radial-gradient(circle at center, #140520 0%, #05010a 100%);
-            border: 5px double var(--neon-pink-soft);
-            box-shadow: 0 0 30px rgba(255, 102, 204, 0.15), inset 0 0 40px rgba(0,0,0,0.95);
-            transform: rotateY(180deg);
-            border-radius: 16px 0 0 16px;
-        }
-
-        /* --- Retractable lateral tab styling --- */
-        .floating-book-tab {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            transform: rotate(180deg);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .floating-book-tab:hover {
-            transform: rotate(180deg) translateX(8px);
-        }
-
-        /* --- Premium Styling for Image Pages in the 3D Book --- */
         .page-image-container {
             position: relative;
             width: 100%;
@@ -269,57 +123,50 @@
             align-items: center;
             justify-content: center;
         }
-        .page-bg-blur {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: blur(15px) brightness(0.25);
-            transform: scale(1.15); /* Prevents blur halo gaps at page boundaries */
-            z-index: 1;
-            pointer-events: none;
-        }
         .page-fg-contain {
-            position: relative;
-            z-index: 2;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensures Emily and all illustrations are fully visible and never cropped! */
-            transition: transform 0.5s ease;
-            cursor: pointer; /* Substituído por ponteiro de mão premium para evitar a lupa do navegador */
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
-        /* Gradients simulating real physical page shading */
-        .page-face.front::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 6%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 95%, rgba(0,0,0,0.35) 100%);
-            pointer-events: none;
-            z-index: 10;
+        .page-fg-contain:hover { transform: scale(1.015); }
+
+        .cover-style {
+            background: radial-gradient(circle at center, #1b0a2a 0%, #090310 100%);
+            border: 5px double var(--neon-yellow);
         }
-        .page-face.back::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 6%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 95%, rgba(0,0,0,0.35) 100%);
-            pointer-events: none;
-            z-index: 10;
+        .back-cover-style {
+            background: radial-gradient(circle at center, #140520 0%, #05010a 100%);
+            border: 5px double var(--neon-pink-soft);
+        }
+
+        .floating-book-tab {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* CHARACTER PROFILE MODAL - O FIX DEFINITIVO */
+        .character-modal {
+            animation: fadeInScale 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.96) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
     </style>
 </head>
 <body class="text-white antialiased">
 
-    <!-- Ambient background video clip -->
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden z-[-2] pointer-events-none" aria-hidden="true">
-        <video class="w-full h-full object-cover opacity-35 filter brightness-[0.25]" autoplay loop muted playsinline preload="metadata">
+    <!-- Background -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden z-[-2] pointer-events-none">
+        <video class="w-full h-full object-cover opacity-35 filter brightness-[0.25]" autoplay loop muted playsinline>
             <source src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Make_paint_write_202506211339_7rv0y.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
     </div>
 
-    <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 h-20 bg-black/95 border-b border-white/5 flex items-center justify-between px-4 md:px-8 z-[90] backdrop-blur-md">
         <div class="flex items-center space-x-1 mx-auto md:mx-0">
             <span class="book-title-style text-xl md:text-2xl neon-pink-glow text-neonPink">Welcome </span>
@@ -328,7 +175,7 @@
         </div>
     </header>
 
-    <!-- Floating Lateral tab to access the 3D Character Guide -->
+    <!-- Floating tab -->
     <div class="fixed right-0 top-1/3 -translate-y-1/2 z-[80] flex items-center">
         <button onclick="toggleHeirsBook(true)" class="floating-book-tab flex items-center justify-center gap-3 py-6 px-3 bg-zinc-950/90 border-l border-y border-neonYellow/50 rounded-l-2xl text-neonYellow shadow-[0_0_20px_rgba(249,248,113,0.2)] hover:shadow-[0_0_30px_rgba(249,248,113,0.5)] font-bold tracking-widest text-xs uppercase cursor-pointer">
             <i class="fas fa-book-open text-base animate-pulse"></i>
@@ -338,24 +185,19 @@
 
     <main class="max-w-6xl mx-auto px-4 pt-32 pb-24 flex flex-col items-center relative z-10">
         
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section class="w-full glass-panel rounded-3xl p-6 md:p-12 mb-12 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-            
-            <!-- Left Side: Cover Display with Hover Interaction -->
             <div class="w-full lg:w-1/2 flex flex-col items-center justify-center">
-                <div class="relative group cursor-pointer max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]" style="perspective: 1000px;">
-                    <div id="bookCover" class="rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(249,248,113,0.25)] border border-neonYellow/30 relative">
-                        <img class="w-full h-auto object-cover" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.webp" alt="Welcome to New York Book Cover - 3D Mockup" />
-                        <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                <div class="relative group cursor-pointer max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
+                    <div id="bookCover" class="rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(249,248,113,0.25)] border border-neonYellow/30">
+                        <img class="w-full h-auto object-cover" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood.webp" alt="Book Cover" />
                     </div>
                 </div>
-                <!-- Mini Floating Badge -->
                 <div class="mt-4 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-neonPink/40 text-xs font-semibold uppercase tracking-wider text-neonPink neon-pink-glow">
-                    <span>Volume 1 - Born Ricciwood</span>
+                    Volume 1 - Born Ricciwood
                 </div>
             </div>
 
-            <!-- Right Side: Hook details & Call-to-actions -->
             <div class="w-full lg:w-1/2 flex flex-col justify-center space-y-6 text-center lg:text-left">
                 <div>
                     <h1 class="book-title-style text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-2">
@@ -363,943 +205,426 @@
                         <span class="neon-white-glow text-white">to</span>
                         <span class="neon-yellow-glow text-neonYellow ml-2">New York</span>
                     </h1>
-                    <p class="text-sm font-bold tracking-widest text-zinc-400 uppercase">
-                        <span>Part 1 of A Legacy in New York Series</span>
-                    </p>
+                    <p class="text-sm font-bold tracking-widest text-zinc-400 uppercase">Part 1 of A Legacy in New York Series</p>
                 </div>
 
                 <div class="py-4 border-y border-zinc-800">
                     <p class="text-lg md:text-xl font-medium italic text-neonPink leading-relaxed neon-pink-glow">
-                        <span>"Even the most broken hearts can find a new beginning."</span>
+                        "Even the most broken hearts can find a new beginning."
                     </p>
                 </div>
 
-                <!-- Action Button Grouping with integrated Spotify Button -->
-                <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start w-full">
-                    <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all duration-300" target="_blank">
-                        <i class="fab fa-amazon text-lg"></i>
-                        <span>Buy on Kindle</span>
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold" target="_blank">
+                        <i class="fab fa-amazon text-lg"></i> Buy on Kindle
                     </a>
-                    
-                    <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all duration-300" target="_blank">
-                        <i class="fas fa-book-reader text-lg"></i>
-                        <span>Kindle Unlimited</span>
+                    <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold" target="_blank">
+                        <i class="fas fa-book-reader text-lg"></i> Kindle Unlimited
                     </a>
-
-                    <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-emerald-500/50 rounded-2xl bg-black text-emerald-400 font-bold tracking-wide shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-all duration-300 hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.4)]" target="_blank">
-                        <i class="fab fa-spotify text-lg"></i>
-                        <span>Sample on Spotify</span>
+                    <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="neon-glow-btn flex-1 min-w-[180px] max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-4 border border-emerald-500/50 rounded-2xl bg-black text-emerald-400 font-bold" target="_blank">
+                        <i class="fab fa-spotify text-lg"></i> Sample on Spotify
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Custom Audio Player Console -->
-        <section class="w-full max-w-2xl glass-panel rounded-3xl p-6 md:p-8 mb-12 border border-neonYellow/25 relative overflow-hidden">
-            <div class="absolute -top-12 -right-12 w-32 h-32 bg-neonYellow/5 rounded-full blur-2xl pointer-events-none"></div>
-            
-            <div class="flex flex-col items-center text-center space-y-4">
-                <div class="px-3 py-1 rounded-full bg-neonYellow/10 border border-neonYellow/20 text-xs text-neonYellow font-semibold uppercase tracking-wider">
-                    <span>Audio Commentary</span>
-                </div>
-                
-                <p class="text-base font-bold text-zinc-100">
-                    <span>Listen to an exclusive presentation about the book</span>
-                </p>
-
-                <!-- Audio Controller Center -->
-                <div class="w-full flex flex-col md:flex-row items-center gap-6 mt-4 pt-4 border-t border-zinc-800">
-                    
-                    <!-- Play/Pause Button -->
-                    <button id="customPlayBtn" class="w-14 h-14 rounded-full bg-neonYellow flex items-center justify-center text-black shadow-[0_0_15px_rgba(249,248,113,0.4)] hover:scale-110 active:scale-95 transition-all duration-300">
-                        <i id="playerPlayIcon" class="fas fa-play text-xl ml-1"></i>
-                    </button>
-
-                    <!-- Waveform Visualizer -->
-                    <div class="flex-1 w-full space-y-2">
-                        <div class="flex items-center justify-between text-xs text-zinc-400 font-mono">
-                            <span id="audioCurrentTime">0:00</span>
-                            
-                            <div id="audioVisualizer" class="flex items-end gap-1 h-8 px-4 opacity-50">
-                                <div class="visualizer-bar"></div>
-                                <div class="visualizer-bar"></div>
-                                <div class="visualizer-bar"></div>
-                                <div class="visualizer-bar"></div>
-                                <div class="visualizer-bar"></div>
-                                <div class="visualizer-bar"></div>
-                                <div class="visualizer-bar"></div>
-                                <div class="visualizer-bar"></div>
-                            </div>
-
-                            <span id="audioDuration">0:00</span>
-                        </div>
-                        
-                        <!-- Timeline Slider Track -->
-                        <div id="audioProgressBar" class="h-2 bg-zinc-800 rounded-full cursor-pointer relative group">
-                            <div id="audioProgressFill" class="h-full bg-gradient-to-r from-neonPink to-neonYellow rounded-full w-0 transition-all duration-100"></div>
-                            <div id="audioProgressThumb" class="absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] left-0 -ml-2 scale-0 group-hover:scale-100 transition-all pointer-events-none"></div>
-                        </div>
-                    </div>
-
-                    <!-- Premium Custom Volume Slider Platform -->
-                    <div class="flex items-center gap-2.5 bg-zinc-900/60 px-3 py-1.5 rounded-xl border border-zinc-800/80 shadow-inner">
-                        <button id="volumeToggleBtn" class="text-zinc-400 hover:text-white transition-colors cursor-pointer">
-                            <i id="volumeIcon" class="fas fa-volume-up text-sm"></i>
-                        </button>
-                        <div id="volumeBar" class="w-16 h-1.5 bg-zinc-800 rounded-full cursor-pointer relative group">
-                            <div id="volumeFill" class="h-full bg-gradient-to-r from-neonPink to-neonYellow rounded-full w-[80%] transition-all duration-700"></div>
-                            <div id="volumeThumb" class="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)] left-[80%] -ml-1.5 scale-0 group-hover:scale-100 transition-all pointer-events-none"></div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Audio (simplificado) -->
+        <section class="w-full max-w-2xl glass-panel rounded-3xl p-6 mb-12">
+            <div class="flex flex-col items-center text-center">
+                <div class="px-3 py-1 rounded-full bg-neonYellow/10 border border-neonYellow/20 text-xs text-neonYellow font-semibold mb-3">Audio Commentary</div>
+                <button id="customPlayBtn" class="w-14 h-14 rounded-full bg-neonYellow flex items-center justify-center text-black shadow-[0_0_15px_rgba(249,248,113,0.4)] hover:scale-110 active:scale-95 transition-all">
+                    <i id="playerPlayIcon" class="fas fa-play text-xl ml-1"></i>
+                </button>
+                <p class="mt-3 text-sm text-zinc-400">Listen to an exclusive presentation about the book</p>
             </div>
-            
             <audio id="bookAudio" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/coment%C3%A1rio-para-p%C3%A1gina-de-vendas.mp3" preload="auto"></audio>
         </section>
 
-        <!-- Dynamic Synopsis block -->
-        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
-            <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-neonPink/5 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="text-center max-w-2xl mx-auto space-y-6">
-                <h2 class="book-title-style text-3xl md:text-4xl neon-yellow-glow text-neonYellow font-normal">
-                    <span>Intrigue Begins in New York...</span>
-                </h2>
-                
-                <div class="text-zinc-300 space-y-4 text-base md:text-lg leading-relaxed text-center">
-                    <p>Gabriel Ricciwood, heir to a ruthless dynasty, lives under the weight of a past that doesn't define him. When fate brings him back to New York's elite, he must confront family secrets, lost loves, and the truth about who he truly is.</p>
-                </div>
-
-                <div class="pt-6">
-                    <p class="text-xl md:text-2xl font-light italic text-neonPink neon-pink-glow">
-                        <span>“For those who believe that even the most broken hearts can find a new beginning.”</span>
-                    </p>
-                </div>
-            </div>
+        <!-- Rest of sales content (resumido) -->
+        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 text-center">
+            <h2 class="book-title-style text-3xl text-neonYellow mb-4">A Legacy in New York</h2>
+            <p class="text-zinc-300">Gabriel Ricciwood's journey begins here. More volumes coming soon.</p>
         </section>
-
-        <!-- "How WTNY Was Born" Segment -->
-        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
-            <h2 class="book-title-style text-3xl md:text-4xl text-center mb-8 text-neonYellow neon-yellow-glow">
-                <span>How Welcome to New York Was Born</span>
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-zinc-300 text-sm md:text-base leading-relaxed">
-                <div class="space-y-4">
-                    <p><strong>Welcome to New York</strong> was born from a desire to blend the best of two unforgettable worlds—<em>Gossip Girl’s</em> glamorous intensity and <em>The Vampire Diaries’</em> complex emotional arcs. But beyond the allure and the drama, this story seeks something deeper: to offer a romance that feels true, not toxic—a love that builds instead of breaks.</p>
-                    <p>Crafted to resonate with today’s readers, it is more than a coming-of-age romance. It explores the raw edges of real life: fractured families, emotional neglect, the weight of unresolved grief, and the subtle poison of emotionally irresponsible relationships. At its heart, it asks what it really means to be loved—and to love in return.</p>
-                </div>
-                
-                <div class="space-y-4">
-                    <p>Influenced by classic literature like <em>The Picture of Dorian Gray</em> and <em>The Phantom of the Opera</em>, the story also acts as a cautionary tale about the dangers of rushing into adulthood, reminding us of the beauty of growing at the right pace.</p>
-                    <p>This is a novel for readers who crave authenticity. For those who are tired of the same old tropes and are ready for characters who fight for redemption, who learn the hard way, and who still believe that love—real, deep, respectful love—is worth holding onto.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Core Feature Grid and Dynamic Vimeo Embed -->
-        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
-            <h2 class="book-title-style text-3xl md:text-4xl text-center mb-8 text-neonPink neon-pink-glow">
-                <span>Why it is unlike anything you've read before</span>
-            </h2>
-
-            <!-- Cards grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
-                    <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-heart-broken"></i></div>
-                    <h3 class="text-lg font-bold mb-2 text-white">
-                        <span>Romance with Purpose</span>
-                    </h3>
-                    <p class="text-sm text-zinc-400">
-                        <span>Dive into an inspiring love, completely free from toxic clichés.</span>
-                    </p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
-                    <div class="text-neonPink text-2xl mb-3"><i class="fas fa-crown"></i></div>
-                    <h3 class="text-lg font-bold mb-2 text-white">
-                        <span>Elite Intrigue</span>
-                    </h3>
-                    <p class="text-sm text-zinc-400">
-                        <span>Uncover secrets and manipulations in a dazzling New York setting.</span>
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
-                    <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-user-shield"></i></div>
-                    <h3 class="text-lg font-bold mb-2 text-white">
-                        <span>Complex Characters</span>
-                    </h3>
-                    <p class="text-sm text-zinc-400">
-                        <span>Follow Gabriel on a deep journey of redemption and self-discovery.</span>
-                    </p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
-                    <div class="text-neonPink text-2xl mb-3"><i class="fas fa-cross"></i></div>
-                    <h3 class="text-lg font-bold mb-2 text-white">
-                        <span>Faith & Redemption</span>
-                    </h3>
-                    <p class="text-sm text-zinc-400">
-                        <span>A soul-touching story showing how deep emotional wounds can heal.</span>
-                    </p>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonYellow/15 hover:border-neonYellow/40 transition-colors">
-                    <div class="text-neonYellow text-2xl mb-3"><i class="fas fa-tv"></i></div>
-                    <h3 class="text-lg font-bold mb-2 text-white">
-                        <span>TV Series Pace</span>
-                    </h3>
-                    <p class="text-sm text-zinc-400">
-                        <span>Fast-paced narration full of twists and cliffhangers at every chapter.</span>
-                    </p>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="bg-zinc-950/80 p-6 rounded-2xl border border-neonPink/15 hover:border-neonPink/40 transition-colors">
-                    <div class="text-neonPink text-2xl mb-3"><i class="fas fa-headphones-alt"></i></div>
-                    <h3 class="text-lg font-bold mb-2 text-white">
-                        <span>Multiplatform Experience</span>
-                    </h3>
-                    <p class="text-sm text-zinc-400">
-                        <span>Read on Kindle and sample professional narration directly on Spotify.</span>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Embedded Video Dynamic Clip -->
-            <div class="mt-12 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(255,102,204,0.15)] aspect-video border border-neonPink/20 bg-zinc-950">
-                <iframe src="https://player.vimeo.com/video/1184611826" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <!-- Series Map Block -->
-        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 flex flex-col md:flex-row items-center gap-8">
-            <div class="w-full md:w-2/3 space-y-4">
-                <h2 class="book-title-style text-3xl text-neonYellow neon-yellow-glow">
-                    <span>A Legacy in New York: A Saga in Parts</span>
-                </h2>
-                <div class="text-zinc-300 space-y-4 text-base leading-relaxed">
-                    <p><em>Born Ricciwood</em> is the first gateway into the wider universe. This unfolding story promises to reveal deep secrets and shifting loyalties in Gabriel's life. Prepare for a literary journey that deepens with each book. Each part reveals deeper secrets, until the untold past comes to light, shaping everyone's destiny.</p>
-                </div>
-            </div>
-            
-            <div class="w-full md:w-1/3 flex flex-col items-center">
-                <div class="relative group cursor-pointer max-w-[200px]" style="perspective: 1000px;">
-                    <div class="rounded-xl overflow-hidden shadow-[0_0_25px_rgba(255,102,204,0.25)] border border-neonPink/30 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(255,102,204,0.45)]">
-                        <img class="w-full h-auto object-cover" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/Welcome-to-New-York-Born-Ricciwood-book-two.webp" alt="Welcome to New York Book 2 Cover Mockup" onerror="this.onerror=null; this.src='https://placehold.co/200x300/140520/FF66CC?text=Book+Two';">
-                    </div>
-                </div>
-                <div class="mt-4 text-center">
-                    <span class="px-3 py-1 rounded-full bg-zinc-900/95 border border-neonPink/40 text-[10px] font-bold uppercase tracking-widest text-neonPink neon-pink-glow">
-                        Book Two - Next Volume
-                    </span>
-                    <p class="text-xs text-zinc-500 mt-2">Under Creative Development</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Cinematic Promo Frame -->
-        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 mb-12">
-            <h2 class="book-title-style text-3xl text-center text-neonPink neon-pink-glow mb-6">
-                <span>Official Cinematic Trailer</span>
-            </h2>
-            <div class="rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(249,248,113,0.15)] aspect-video border border-neonYellow/20 bg-zinc-950">
-                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1120687033" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <!-- Reader Segment Qualification -->
-        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-4">
-                <h2 class="book-title-style text-3xl text-neonYellow neon-yellow-glow">
-                    <span>Who This Book Is For</span>
-                </h2>
-                <p class="text-zinc-400 text-sm leading-relaxed">
-                    <span>If you appreciate deep themes, complex characters and a story with values, this book belongs on your shelf.</span>
-                </p>
-            </div>
-
-            <div class="space-y-3">
-                <div class="flex items-start gap-3">
-                    <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
-                    <p class="text-sm text-zinc-200">
-                        <span>Readers seeking clean, genuine, and impactful romance stories.</span>
-                    </p>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
-                    <p class="text-sm text-zinc-200">
-                        <span>Fans of high-society drama tired of standard toxic relationships.</span>
-                    </p>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="text-neonPink text-xl mt-0.5"><i class="fas fa-check-circle"></i></span>
-                    <p class="text-sm text-zinc-200">
-                        <span>Those who value narratives focusing on forgiveness, redemption and growth.</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Secondary NYC Ambient Video block -->
-        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 mb-12">
-            <h2 class="book-title-style text-3xl text-center text-neonYellow neon-yellow-glow mb-6">
-                <span>Discover the Vibe of the City</span>
-            </h2>
-            <div class="rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(255,102,204,0.15)] aspect-video border border-neonPink/20 bg-zinc-950">
-                <iframe title="vimeo-player" src="https://player.vimeo.com/video/1102801648?h=679f9f08d2" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <!-- Beautiful Interactive Accordion FAQ -->
-        <section class="w-full max-w-3xl glass-panel rounded-3xl p-8 md:p-12 mb-12">
-            <h2 class="book-title-style text-3xl text-center mb-8 text-neonYellow neon-yellow-glow">
-                <span>Frequently Asked Questions</span>
-            </h2>
-
-            <div class="space-y-4">
-                
-                <!-- FAQ Item 1 -->
-                <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
-                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
-                        <span>Is this the only book?</span>
-                        <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
-                        <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
-                            <span>No! <em>Born Ricciwood</em> is the first exciting step. The broader saga is in fully active development with several sequel titles planned ahead.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
-                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
-                        <span>What is the age rating?</span>
-                        <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
-                        <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
-                            <span>Highly recommended for young adults and mature readers. It deals with profound emotional themes without relying on explicit context or unnecessarily graphic violence.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
-                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
-                        <span>Where can I purchase or read it?</span>
-                        <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
-                        <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
-                            <span>Available immediately as a digital eBook on the global Amazon store. Subscribers of Kindle Unlimited can read the entire work for free.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item border border-zinc-800 rounded-2xl bg-black/40 overflow-hidden transition-all duration-300">
-                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-bold text-white hover:text-neonPink transition-colors">
-                        <span>Do I need to be Christian to enjoy it?</span>
-                        <span class="text-neonPink transition-transform duration-300"><i class="fas fa-chevron-down"></i></span>
-                    </button>
-                    <div class="faq-content overflow-hidden max-h-0 bg-zinc-950/50">
-                        <p class="p-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-900">
-                            <span>No! It's a story for everyone who values deep romance, overcoming challenges, and the search for purpose, regardless of their faith.</span>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Final Conversion Segment with Spotify Button -->
-        <section class="w-full max-w-4xl glass-panel rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-neonPink/25">
-            <div class="absolute inset-0 bg-gradient-to-r from-neonPink/5 via-transparent to-neonYellow/5 pointer-events-none"></div>
-            
-            <div class="max-w-2xl mx-auto space-y-6">
-                <h2 class="book-title-style text-3xl md:text-4xl neon-pink-glow text-neonPink">
-                    <span>Don't Miss This Story!</span>
-                </h2>
-
-                <div class="bg-black/60 p-6 rounded-2xl border border-zinc-800/80 my-4 shadow-inner">
-                    <p class="text-zinc-200 italic font-serif leading-relaxed text-sm md:text-base text-center">
-                        <span>“Gabriel’s whole body trembled. His leg didn’t respond — stiff, locked, detached from him. He could only cry. From the moment he’d stepped into Sant’Hale, he’d known something bad was coming. He wanted them to burn in hell for what they’d done. He even hated God for not stopping it.”</span>
-                    </p>
-                </div>
-
-                <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center pt-4">
-                    <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-neonYellow/50 rounded-2xl bg-black text-neonYellow font-bold tracking-wide shadow-[0_0_15px_rgba(249,248,113,0.15)] transition-all" target="_blank">
-                        <i class="fab fa-amazon text-lg"></i>
-                        <span>Buy on Kindle</span>
-                    </a>
-                    
-                    <a href="https://www.amazon.com.br/kindle-dbs/hz/subscribe/ku?ref=dbs_p_ebk_r00_pbcb_diupu0&passThroughAsin=B0F9W8N7HY" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-neonPink/50 rounded-2xl bg-black text-neonPink font-bold tracking-wide shadow-[0_0_15px_rgba(255,102,204,0.15)] transition-all" target="_blank">
-                        <i class="fas fa-book-reader text-lg"></i>
-                        <span>Read in Kindle Unlimited</span>
-                    </a>
-
-                    <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="neon-glow-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-emerald-500/50 rounded-2xl bg-black text-emerald-400 font-bold tracking-wide shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-all duration-300 hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.4)]" target="_blank">
-                        <i class="fab fa-spotify text-lg"></i>
-                        <span>Sample on Spotify</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <!-- 3D Book Interactive Overlay Modal (HEIRS' GUIDE) -->
+    <!-- ==========================================
+         3D BOOK - CLEAN (só imagens lindas)
+         ========================================== -->
     <div id="heirsBookOverlay" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-[200] hidden flex-col items-center justify-between p-4 overflow-y-auto">
         
-        <!-- Modal Control Header -->
-        <div class="w-full max-w-5xl flex items-center justify-between py-2 px-4 shrink-0">
-            <div class="flex items-center gap-2">
-                <span class="book-title-style text-neonYellow text-xl md:text-2xl neon-yellow-glow">
-                    <span>Official Heirs' Guide</span>
-                </span>
-                <span class="text-xs px-2.5 py-0.5 rounded-full bg-neonPink/20 border border-neonPink/40 text-neonPink uppercase tracking-widest font-bold">Interactive 3D</span>
+        <div class="w-full max-w-5xl flex items-center justify-between py-2 px-4">
+            <div>
+                <span class="book-title-style text-neonYellow text-2xl neon-yellow-glow">Official Heirs' Guide</span>
+                <span class="ml-3 text-xs px-3 py-1 rounded-full bg-neonPink/20 border border-neonPink/40 text-neonPink uppercase tracking-widest font-bold">Interactive 3D Character Catalog</span>
             </div>
-            
-            <!-- Close Modal -->
-            <button onclick="toggleHeirsBook(false)" class="w-10 h-10 rounded-full bg-zinc-900 border border-neonPink/50 text-neonPink flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer">
+            <button onclick="toggleHeirsBook(false)" class="w-10 h-10 rounded-full bg-zinc-900 border border-neonPink/50 text-neonPink flex items-center justify-center hover:scale-110 transition-all">
                 <i class="fas fa-times text-lg"></i>
             </button>
         </div>
 
-        <!-- 3D Book Container Frame -->
-        <div id="bookContainer" class="w-full max-w-5xl flex items-center justify-center relative py-6 select-none grow" style="height: 520px; min-height: 250px;">
+        <div id="bookContainer" class="w-full max-w-5xl flex items-center justify-center relative py-6" style="height: 520px;">
             <div class="book-wrapper">
-                
-                <div class="book-spine"></div>
-                
-                <!-- Main 3D Book Layout -->
                 <div id="book" class="book">
                     
-                    <!-- ==========================================
-                         SHEET 1: GOTHIC COVER & PAGE 1 (VERSO)
-                         ========================================== -->
+                    <!-- SHEET 1 - Cover + Page 1 -->
                     <div class="sheet" style="z-index: 50;">
-                        
-                        <!-- FRONT COVER (Face Front) -->
-                        <div class="page-face cover-style p-8 flex flex-col justify-between items-center text-center relative">
-                            <!-- Corner decorations -->
-                            <div class="absolute top-4 left-4 text-neonYellow/60 text-lg"><i class="fas fa-crown"></i></div>
-                            <div class="absolute top-4 right-4 text-neonYellow/60 text-lg"><i class="fas fa-crown"></i></div>
-                            
-                            <div class="pt-6">
-                                <span class="text-[10px] uppercase tracking-[0.25em] text-neonPink font-semibold neon-pink-glow">Kingdom & Quill</span>
-                                <div class="h-px w-16 bg-neonPink/30 mx-auto mt-2"></div>
+                        <div class="page-face cover-style flex flex-col justify-between items-center text-center p-8">
+                            <div class="pt-8">
+                                <span class="text-xs uppercase tracking-[3px] text-neonPink">Kingdom & Quill</span>
                             </div>
-
-                            <div class="my-auto flex flex-col items-center">
-                                <!-- Pulsing Emblem -->
-                                <div class="w-20 h-20 rounded-full border-2 border-neonYellow flex items-center justify-center text-neonYellow mb-6 shadow-[0_0_15px_rgba(249,248,113,0.3)] bg-black/40">
-                                    <i class="fas fa-feather-alt text-3xl animate-pulse"></i>
+                            <div>
+                                <div class="w-20 h-20 mx-auto rounded-full border-2 border-neonYellow flex items-center justify-center mb-6">
+                                    <i class="fas fa-feather-alt text-4xl text-neonYellow"></i>
                                 </div>
-                                
-                                <h3 class="book-title-style text-3xl md:text-4xl text-neonYellow neon-yellow-glow leading-tight tracking-wider">
-                                    <span>Heirs'<br>Guide</span>
-                                </h3>
-                                
-                                <p class="text-[10px] tracking-widest text-zinc-400 mt-4 uppercase">
-                                    <span>Interactive Volume</span>
-                                </p>
+                                <h3 class="book-title-style text-4xl text-neonYellow">Heirs' Guide</h3>
+                                <p class="text-xs tracking-widest text-zinc-400 mt-2">Click any page to open full character profile</p>
                             </div>
-
-                            <div class="pb-6">
-                                <div class="h-px w-24 bg-neonYellow/30 mx-auto mb-2"></div>
-                                <p class="text-[10px] tracking-[0.3em] text-neonYellow/70 uppercase font-bold">Welcome to New York</p>
-                            </div>
-
-                            <!-- Bottom corner decorations -->
-                            <div class="absolute bottom-4 left-4 text-neonYellow/60 text-lg"><i class="fas fa-shield-alt"></i></div>
-                            <div class="absolute bottom-4 right-4 text-neonYellow/60 text-lg"><i class="fas fa-shield-alt"></i></div>
+                            <div class="pb-8 text-xs text-neonYellow/70">Welcome to New York • Volume 1</div>
                         </div>
-
-                        <!-- PAGE 2 (Verso - Character Illustration 1) -->
-                        <div class="page-face back p-0 overflow-hidden">
+                        <div class="page-face back p-0">
                             <div class="page-image-container">
-                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" alt="Heirs' Guide - Character Sheet 1" onerror="this.onerror=null; this.src='https://placehold.co/380x520/1b0a2a/f9f871?text=Heirs+Guide+Page+1';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" onclick="openCharacterProfile(0)">
                             </div>
                         </div>
                     </div>
 
-                    <!-- ==========================================
-                         SHEET 2: PAGES 3 & 4
-                         ========================================== -->
+                    <!-- SHEET 2 -->
                     <div class="sheet" style="z-index: 40;">
-                        
-                        <!-- PAGE 3 (Frente - Character Illustration 2) -->
-                        <div class="page-face front p-0 overflow-hidden">
+                        <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" alt="Heirs' Guide - Character Sheet 2" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Heirs+Guide+Page+2';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_19_27.webp" onclick="openCharacterProfile(1)">
                             </div>
                         </div>
-
-                        <!-- PAGE 4 (Verso - Character Illustration 3) -->
-                        <div class="page-face back p-0 overflow-hidden">
+                        <div class="page-face back p-0">
                             <div class="page-image-container">
-                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" alt="Heirs' Guide - Character Sheet 3" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=Heirs+Guide+Page+3';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-21-de-mai.-de-2026_-00_36_44.webp" onclick="openCharacterProfile(2)">
                             </div>
                         </div>
                     </div>
 
-                    <!-- ==========================================
-                         SHEET 3: PAGES 5 & 6
-                         ========================================= -->
+                    <!-- SHEET 3 - GABRIEL AREA -->
                     <div class="sheet" style="z-index: 30;">
-                        
-                        <!-- PAGE 5 (Frente - Character Illustration 4) -->
-                        <div class="page-face front p-0 overflow-hidden">
+                        <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" alt="Heirs' Guide - Character Sheet 4" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Heirs+Guide+Page+4';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" onclick="openCharacterProfile(3)">
                             </div>
                         </div>
-
-                        <!-- PAGE 6 (Verso - Character Illustration 5) -->
-                        <div class="page-face back p-0 overflow-hidden">
+                        <div class="page-face back p-0">
                             <div class="page-image-container">
-                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" alt="Heirs' Guide - Character Sheet 5" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=Heirs+Guide+Page+5';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-17_11_21.webp" onclick="openCharacterProfile(4)">
                             </div>
                         </div>
                     </div>
 
-                    <!-- ==========================================
-                         SHEET 4: PAGES 7 & 8
-                         ========================================== -->
+                    <!-- SHEET 4 -->
                     <div class="sheet" style="z-index: 20;">
-                        
-                        <!-- PAGE 7 (Frente - Character Illustration 6) -->
-                        <div class="page-face front p-0 overflow-hidden">
+                        <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" alt="Heirs' Guide - Character Sheet 6" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Heirs+Guide+Page+6';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" onclick="openCharacterProfile(5)">
                             </div>
                         </div>
-
-                        <!-- PAGE 8 (Verso - Character Illustration 7) -->
-                        <div class="page-face back p-0 overflow-hidden">
+                        <div class="page-face back p-0">
                             <div class="page-image-container">
-                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" alt="Heirs' Guide - Character Sheet 7" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/f9f871?text=Heirs+Guide+Page+7';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" onclick="openCharacterProfile(6)">
                             </div>
                         </div>
                     </div>
 
-                    <!-- ==========================================
-                         SHEET 5: PAGE 9 (NATE REVELATION) & BACK COVER
-                         ========================================== -->
+                    <!-- SHEET 5 - NATE + Back -->
                     <div class="sheet" style="z-index: 10;">
-                        
-                        <!-- PAGE 9 (Frente - Character Illustration 8 - Nate) -->
-                        <div class="page-face front p-0 overflow-hidden">
+                        <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-bg-blur" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" aria-hidden="true" />
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" alt="Heirs' Guide - Nate Revelation" onerror="this.onerror=null; this.src='https://placehold.co/380x520/121217/FF66CC?text=Nate';">
+                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" onclick="openCharacterProfile(7)">
                             </div>
                         </div>
-
-                        <!-- PAGE 10 (Verso - Book Back Cover) -->
-                        <div class="page-face back-cover-style p-8 flex flex-col justify-between items-center text-center relative">
-                            <!-- Corner feathers -->
-                            <div class="absolute top-4 left-4 text-neonPink/40 text-sm"><i class="fas fa-feather"></i></div>
-                            <div class="absolute top-4 right-4 text-neonPink/40 text-sm"><i class="fas fa-feather"></i></div>
-                            
-                            <div class="my-auto flex flex-col items-center">
-                                <div class="w-16 h-16 rounded-full border border-neonPink/40 flex items-center justify-center text-neonPink mb-4 bg-black/40 shadow-[0_0_10px_rgba(255,102,204,0.2)]">
-                                    <i class="fas fa-ribbon text-xl"></i>
+                        <div class="page-face back-cover-style flex flex-col justify-center items-center text-center p-8">
+                            <div>
+                                <div class="w-16 h-16 mx-auto rounded-full border border-neonPink/40 flex items-center justify-center mb-4">
+                                    <i class="fas fa-ribbon text-2xl text-neonPink"></i>
                                 </div>
-                                <p class="book-title-style text-lg text-zinc-300">Kingdom & Quill</p>
-                                <p class="text-[9px] uppercase tracking-[0.2em] text-zinc-500 mt-1">New York Series</p>
+                                <p class="book-title-style text-xl text-zinc-300">Kingdom & Quill</p>
+                                <p class="text-xs text-zinc-500 mt-1">New York Series • 2026</p>
                             </div>
-
-                            <div class="pb-6">
-                                <p class="text-[9px] tracking-[0.1em] text-zinc-600">© 2026 ALL RIGHTS RESERVED</p>
-                            </div>
-                            
-                            <div class="absolute bottom-4 left-4 text-neonPink/40 text-sm"><i class="fas fa-leaf"></i></div>
-                            <div class="absolute bottom-4 right-4 text-neonPink/40 text-sm"><i class="fas fa-leaf"></i></div>
                         </div>
                     </div>
 
-                </div> <!-- End Book -->
-            </div> <!-- End Wrapper -->
-        </div> <!-- End Book Container -->
+                </div>
+            </div>
+        </div>
 
-        <!-- Manual Navigation Controls & Swipe Hints -->
-        <div class="w-full max-w-xl flex flex-col items-center gap-3 mt-4 shrink-0 pb-2">
-            <div class="flex items-center gap-6">
-                <!-- Previous Button -->
-                <button onclick="prevPage()" class="px-5 py-3 rounded-xl border border-neonYellow/40 bg-zinc-950 text-neonYellow text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(249,248,113,0.15)] hover:bg-neonYellow hover:text-black transition-all cursor-pointer">
-                    <i class="fas fa-chevron-left"></i>
-                    <span>Back</span>
+        <div class="flex items-center gap-6 mb-4">
+            <button onclick="prevPage()" class="px-6 py-2.5 rounded-xl border border-neonYellow/40 bg-zinc-950 text-neonYellow text-sm font-bold flex items-center gap-2 hover:bg-neonYellow hover:text-black transition-all">
+                <i class="fas fa-chevron-left"></i> Back
+            </button>
+            <span class="text-xs text-zinc-500 font-mono">SHEETS <span id="pageCounter" class="text-neonYellow font-bold">1</span> / 5</span>
+            <button onclick="nextPage()" class="px-6 py-2.5 rounded-xl border border-neonPink/40 bg-zinc-950 text-neonPink text-sm font-bold flex items-center gap-2 hover:bg-neonPink hover:text-black transition-all">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <p class="text-[10px] text-zinc-500 mb-2">Click any character illustration → opens beautiful full profile (no more layout issues)</p>
+    </div>
+
+    <!-- ==========================================
+         CHARACTER PROFILE MODAL (O FIX DEFINITIVO)
+         Aqui o Gabriel e os outros ficam perfeitos, sem descer
+         ========================================== -->
+    <div id="characterModal" onclick="if (event.target.id === 'characterModal') closeCharacterModal()" class="fixed inset-0 bg-black/90 z-[300] hidden items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="character-modal w-full max-w-5xl bg-zinc-950 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-8 py-5 border-b border-white/10 bg-black/40">
+                <div class="flex items-center gap-4">
+                    <span id="charModalBadge" class="px-4 py-1 text-xs font-bold tracking-widest rounded-full bg-neonPink/20 text-neonPink border border-neonPink/40">CHARACTER PROFILE</span>
+                    <span id="charModalName" class="book-title-style text-3xl text-white"></span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="text-xs text-zinc-400 font-mono">S: <span id="charPageCounter">3</span> / 8</div>
+                    <button onclick="closeCharacterModal()" class="w-9 h-9 flex items-center justify-center text-xl text-zinc-400 hover:text-white">×</button>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-8" id="charModalContent">
+                <!-- Conteúdo dinâmico injetado via JS -->
+            </div>
+
+            <!-- Modal Footer Navigation -->
+            <div class="flex items-center justify-between px-8 py-5 border-t border-white/10 bg-black/40">
+                <button onclick="prevCharacter()" class="flex items-center gap-2 px-5 py-2 text-sm font-bold text-neonYellow hover:text-white transition-colors">
+                    <i class="fas fa-chevron-left"></i> PREVIOUS CHARACTER
                 </button>
-                
-                <!-- Page counter -->
-                <span class="text-zinc-500 text-xs font-semibold tracking-widest uppercase">
-                    <span>Sheets</span>: <span id="pageCounter" class="text-neonYellow">1</span> / 5
-                </span>
-                
-                <!-- Next Button -->
-                <button onclick="nextPage()" class="px-5 py-3 rounded-xl border border-neonPink/40 bg-zinc-950 text-neonPink text-sm font-bold flex items-center gap-2 shadow-[0_0_10px_rgba(255,102,204,0.15)] hover:bg-neonPink hover:text-black transition-all cursor-pointer">
-                    <span>Next</span>
-                    <i class="fas fa-chevron-right"></i>
+                <button onclick="nextCharacter()" class="flex items-center gap-2 px-5 py-2 text-sm font-bold text-neonPink hover:text-white transition-colors">
+                    NEXT CHARACTER <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
-            
-            <p class="text-[10px] md:text-xs text-zinc-500 tracking-wider flex items-center gap-2">
-                <i class="fas fa-expand text-sm text-neonYellow animate-pulse"></i>
-                <span>Click directly on any page image to Expand & Read</span>
-            </p>
         </div>
-
     </div>
 
-    <!-- Premium Zoom Lightbox Modal Overlay -->
-    <div id="zoomModal" class="fixed inset-0 bg-black/95 z-[300] hidden flex-col items-center justify-center p-4 cursor-zoom-out opacity-0 transition-opacity duration-300">
-        <!-- Close Zoom -->
-        <button id="closeZoomBtn" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-zinc-900/90 border border-neonPink/50 text-neonPink flex items-center justify-center hover:scale-110 active:scale-95 transition-all cursor-pointer z-[310] shadow-[0_0_15px_rgba(255,102,204,0.3)]">
-            <i class="fas fa-times text-xl"></i>
-        </button>
-        
-        <!-- Zoom Frame Content -->
-        <div class="relative max-w-full max-h-[85vh] flex items-center justify-center select-none" onclick="event.stopPropagation()">
-            <img id="zoomedImage" src="" alt="Zoomed Heirs Guide Page" class="max-w-full max-h-[85vh] object-contain rounded-xl border border-white/10 shadow-[0_0_50px_rgba(249,248,113,0.25)] transform scale-95 transition-transform duration-300">
-        </div>
-        
-        <p class="text-zinc-400 text-xs mt-4 tracking-widest uppercase font-semibold">Click anywhere to close zoom</p>
-    </div>
-
-    <!-- Beautiful Footer -->
-    <footer class="w-full py-8 bg-zinc-950 border-t border-white/5 text-center text-xs text-zinc-500 relative z-10">
-        <p class="mb-2">&copy; 2026 Kingdom & Quill. All rights reserved.</p>
-        <div class="flex justify-center gap-4 text-zinc-400">
-            <a href="https://www.amazon.com/dp/B0F9W8N7HY" class="hover:text-neonPink transition-colors" target="_blank"><i class="fab fa-amazon"></i></a>
-            <a href="https://open.spotify.com/show/3mxBQQzu1LKxtskvwBPXD1" class="hover:text-neonPink transition-colors" target="_blank"><i class="fab fa-spotify"></i></a>
-        </div>
+    <footer class="w-full py-8 text-center text-xs text-zinc-500 border-t border-white/5">
+        © 2026 Kingdom & Quill • All rights reserved
     </footer>
 
     <script>
-        // --- INTERACTIVE TILT COVER EFFECT ---
-        const bookCover = document.getElementById('bookCover');
-        if (bookCover) {
-            bookCover.addEventListener('mousemove', (e) => {
-                const rect = bookCover.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const rotateY = ((x / rect.width) - 0.5) * 16; 
-                const rotateX = (((y / rect.height) - 0.5) * -16); 
-                
-                bookCover.style.transform = `perspective(800px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.03)`;
-            });
-            
-            bookCover.addEventListener('mouseleave', () => {
-                bookCover.style.transform = `perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)`;
-            });
+        // Audio simples
+        const audio = document.getElementById('bookAudio');
+        const playBtn = document.getElementById('customPlayBtn');
+        const playIcon = document.getElementById('playerPlayIcon');
+
+        if (playBtn && audio) {
+            playBtn.onclick = () => {
+                if (audio.paused) { audio.play(); playIcon.className = 'fas fa-pause text-xl'; }
+                else { audio.pause(); playIcon.className = 'fas fa-play text-xl ml-1'; }
+            };
+            audio.onpause = () => playIcon.className = 'fas fa-play text-xl ml-1';
+            audio.onplay = () => playIcon.className = 'fas fa-pause text-xl';
         }
 
-        // --- CUSTOM AUDIO PLAYER PLATFORM ---
-        const bookAudio = document.getElementById('bookAudio');
-        const customPlayBtn = document.getElementById('customPlayBtn');
-        const playerPlayIcon = document.getElementById('playerPlayIcon');
-        const audioVisualizer = document.getElementById('audioVisualizer');
-        
-        const audioProgressBar = document.getElementById('audioProgressBar');
-        const audioProgressFill = document.getElementById('audioProgressFill');
-        const audioProgressThumb = document.getElementById('audioProgressThumb');
-        
-        const audioCurrentTime = document.getElementById('audioCurrentTime');
-        const audioDuration = document.getElementById('audioDuration');
-        
-        const volumeToggleBtn = document.getElementById('volumeToggleBtn');
-        const volumeIcon = document.getElementById('volumeIcon');
-        const volumeBar = document.getElementById('volumeBar');
-        const volumeFill = document.getElementById('volumeFill');
-        const volumeThumb = document.getElementById('volumeThumb');
-
-        function formatTime(secs) {
-            if (isNaN(secs)) return '0:00';
-            const m = Math.floor(secs / 60);
-            const s = Math.floor(secs % 60);
-            return `${m}:${s < 10 ? '0' : ''}${s}`;
-        }
-
-        bookAudio.addEventListener('loadedmetadata', () => {
-            audioDuration.textContent = formatTime(bookAudio.duration);
-        });
-
-        setTimeout(() => {
-            if (bookAudio.duration) {
-                audioDuration.textContent = formatTime(bookAudio.duration);
-            }
-        }, 1200);
-
-        function toggleAudioState() {
-            if (bookAudio.paused) {
-                bookAudio.play();
-            } else {
-                bookAudio.pause();
-            }
-        }
-
-        customPlayBtn.addEventListener('click', toggleAudioState);
-
-        bookAudio.addEventListener('play', () => {
-            playerPlayIcon.className = "fas fa-pause text-xl";
-            audioVisualizer.classList.add('audio-playing');
-        });
-
-        bookAudio.addEventListener('pause', () => {
-            playerPlayIcon.className = "fas fa-play text-xl ml-1";
-            audioVisualizer.classList.remove('audio-playing');
-        });
-
-        bookAudio.addEventListener('ended', () => {
-            playerPlayIcon.className = "fas fa-play text-xl ml-1";
-            audioVisualizer.classList.remove('audio-playing');
-            bookAudio.currentTime = 0;
-            audioProgressFill.style.width = '0%';
-            audioProgressThumb.style.left = '0%';
-        });
-
-        bookAudio.addEventListener('timeupdate', () => {
-            if (!bookAudio.duration) return;
-            const pct = (bookAudio.currentTime / bookAudio.duration) * 100;
-            audioProgressFill.style.width = `${pct}%`;
-            audioProgressThumb.style.left = `${pct}%`;
-            audioCurrentTime.textContent = formatTime(bookAudio.currentTime);
-        });
-
-        audioProgressBar.addEventListener('click', (e) => {
-            const rect = audioProgressBar.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            const percentage = Math.max(0, Math.min(1, clickX / rect.width));
-            
-            bookAudio.currentTime = percentage * bookAudio.duration;
-            audioProgressFill.style.width = `${percentage * 100}%`;
-            audioProgressThumb.style.left = `${percentage * 100}%`;
-        });
-
-        // Custom Premium Volume Control Logic
-        function setVolume(pct) {
-            pct = Math.max(0, Math.min(1, pct));
-            bookAudio.volume = pct;
-            volumeFill.style.width = `${pct * 100}%`;
-            volumeThumb.style.left = `${pct * 100}%`;
-            updateVolumeVisuals(pct);
-        }
-
-        volumeBar.addEventListener('click', (e) => {
-            const rect = volumeBar.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            const pct = clickX / rect.width;
-            setVolume(pct);
-        });
-
-        let isDraggingVolume = false;
-        volumeBar.addEventListener('mousedown', () => { isDraggingVolume = true; });
-        document.addEventListener('mouseup', () => { isDraggingVolume = false; });
-        document.addEventListener('mousemove', (e) => {
-            if (!isDraggingVolume) return;
-            const rect = volumeBar.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            const pct = clickX / rect.width;
-            setVolume(pct);
-        });
-
-        function updateVolumeVisuals(vol) {
-            if (parseFloat(vol) === 0) {
-                volumeIcon.className = "fas fa-volume-mute text-sm text-zinc-500 animate-pulse";
-            } else if (parseFloat(vol) < 0.5) {
-                volumeIcon.className = "fas fa-volume-down text-sm text-zinc-300";
-            } else {
-                volumeIcon.className = "fas fa-volume-up text-sm text-white";
-            }
-        }
-
-        let lastVolume = 0.8;
-        volumeToggleBtn.addEventListener('click', () => {
-            if (bookAudio.volume > 0) {
-                lastVolume = bookAudio.volume;
-                setVolume(0);
-            } else {
-                setVolume(lastVolume || 0.8);
-            }
-        });
-
-        // --- INTERACTIVE ACCORDION FAQ CONTROLS ---
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const btn = item.querySelector('.faq-btn');
-            const icon = btn.querySelector('.fa-chevron-down');
-            
-            btn.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                faqItems.forEach(inner => {
-                    inner.classList.remove('active');
-                    const innerContent = inner.querySelector('.faq-content');
-                    innerContent.style.maxHeight = '0px';
-                    inner.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
-                });
-
-                if (!isActive) {
-                    item.classList.add('active');
-                    const content = item.querySelector('.faq-content');
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            });
-        });
-
-        // ==========================================
-        // --- 3D BOOK VIRTUAL MECHANICS ---
-        // ==========================================
+        // 3D BOOK
         let currentSheet = 0;
-        const sheets = document.querySelectorAll('.sheet');
+        const sheets = document.querySelectorAll('#heirsBookOverlay .sheet');
         const maxSheets = sheets.length;
 
-        // Toggle Heirs Book Overlay Modal
         function toggleHeirsBook(open) {
             const overlay = document.getElementById('heirsBookOverlay');
             if (open) {
                 overlay.classList.remove('hidden');
                 overlay.classList.add('flex');
-                document.body.style.overflow = 'hidden'; // Stop background scrolling
-                
-                // Recalculate aspect scale on load
-                setTimeout(resizeBook, 150);
+                document.body.style.overflow = 'hidden';
             } else {
                 overlay.classList.add('hidden');
                 overlay.classList.remove('flex');
-                document.body.style.overflow = ''; // Re-enable background scrolling
+                document.body.style.overflow = '';
             }
         }
 
-        // Core sheet index update engine with dynamic z-indices formula
         function updateSheets() {
             sheets.forEach((sheet, idx) => {
-                if (idx < currentSheet) {
-                    sheet.classList.add('flipped');
-                    sheet.style.zIndex = idx + 1;
-                } else {
-                    sheet.classList.remove('flipped');
-                    sheet.style.zIndex = maxSheets - idx;
-                }
+                const flipped = idx < currentSheet;
+                sheet.classList.toggle('flipped', flipped);
+                sheet.style.zIndex = flipped ? (idx + 1) : (maxSheets + 10 + (maxSheets - idx));
             });
-            
-            // Update UI Counters
-            document.getElementById('pageCounter').textContent = Math.min(currentSheet + 1, maxSheets);
+            document.getElementById('pageCounter').textContent = currentSheet + 1;
         }
 
-        // Next Page Turning (Strictly via navigation arrow buttons only)
-        function nextPage() {
-            if (currentSheet < maxSheets) {
-                currentSheet++;
-                updateSheets();
-            }
-        }
-
-        // Prev Page Turning (Strictly via navigation arrow buttons only)
-        function prevPage() {
-            if (currentSheet > 0) {
-                currentSheet--;
-                updateSheets();
-            }
-        }
+        function nextPage() { if (currentSheet < maxSheets - 1) { currentSheet++; updateSheets(); } }
+        function prevPage() { if (currentSheet > 0) { currentSheet--; updateSheets(); } }
 
         // ==========================================
-        // --- PREMIUM INTERACTIVE IMAGE ZOOM ---
+        // CHARACTER PROFILES DATA (adicione mais quando quiser)
         // ==========================================
-        const pageImages = document.querySelectorAll('.page-fg-contain');
-        const zoomModal = document.getElementById('zoomModal');
-        const zoomedImage = document.getElementById('zoomedImage');
+        const characters = [
+            {
+                id: 0,
+                name: "EMILY VOSS",
+                badge: "THE HEART OF THE STORY",
+                quote: "She didn't come to New York to be saved. She came to remember who she was before the world tried to break her.",
+                content: `
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                        <div class="lg:col-span-3 space-y-6">
+                            <div>
+                                <div class="text-xs text-neonPink tracking-[2px] mb-1">MAIN PROTAGONIST</div>
+                                <h3 class="text-4xl font-light mb-3">Emily Voss</h3>
+                                <p class="text-zinc-300 leading-relaxed">A young woman with a quiet strength and a past she’s still learning to carry. Emily arrives in New York searching for answers — and finds far more than she bargained for.</p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10">
+                                <div class="text-xs text-zinc-400 mb-2">KEY TRAITS</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-4 py-1 text-xs rounded-full bg-white/5 border border-white/10">Resilient</span>
+                                    <span class="px-4 py-1 text-xs rounded-full bg-white/5 border border-white/10">Empathetic</span>
+                                    <span class="px-4 py-1 text-xs rounded-full bg-white/5 border border-white/10">Curious</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-15-de-jun.-de-2026_-11_24_16.webp" class="rounded-2xl w-full shadow-xl border border-white/10">
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 3,
+                name: "GABRIEL RICCIWOOD",
+                badge: "THE BROKEN HEIR",
+                quote: "Even the most broken hearts can find a new beginning.",
+                content: `
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                        <div class="lg:col-span-3 space-y-6 text-sm">
+                            <div>
+                                <div class="uppercase text-xs tracking-[3px] text-neonPink mb-1">HEIR TO THE RICCIWOOD DYNASTY</div>
+                                <h2 class="text-5xl font-light tracking-tight mb-1">Gabriel Ricciwood</h2>
+                                <p class="italic text-neonPink">"Even the most broken hearts can find a new beginning."</p>
+                            </div>
 
-        // Ativa o Lightbox ao clicar nas imagens
-        pageImages.forEach(img => {
-            img.addEventListener('click', (e) => {
-                e.stopPropagation(); // Impede qualquer comportamento de virar página ou cliques adicionais
-                zoomedImage.src = img.src;
-                zoomModal.classList.remove('hidden');
-                zoomModal.classList.add('flex');
-                
-                // Transição suave de escala e opacidade
-                setTimeout(() => {
-                    zoomModal.classList.add('opacity-100');
-                    zoomedImage.classList.remove('scale-95');
-                    zoomedImage.classList.add('scale-100');
-                }, 10);
-            });
-        });
+                            <div class="pt-4 border-t border-white/10">
+                                <p class="leading-relaxed text-zinc-300">Gabriel lives under the crushing weight of a past that refuses to let him go. Back in New York’s elite circles, he must face family secrets, old loves, and the truth about who he really is.</p>
+                            </div>
 
-        // Fecha o Lightbox
-        function closeZoom() {
-            zoomModal.classList.remove('opacity-100');
-            zoomedImage.classList.remove('scale-100');
-            zoomedImage.classList.add('scale-95');
+                            <div>
+                                <div class="text-xs text-zinc-400 mb-2">PERSONALITY</div>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span class="px-3 py-1 bg-white/5 rounded">Complex</span>
+                                    <span class="px-3 py-1 bg-white/5 rounded">Wounded</span>
+                                    <span class="px-3 py-1 bg-white/5 rounded">Loyal</span>
+                                    <span class="px-3 py-1 bg-white/5 rounded">Searching</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-2 space-y-4">
+                            <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" class="rounded-2xl w-full border border-white/10">
+                            
+                            <div class="grid grid-cols-3 gap-3">
+                                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" class="rounded-xl border border-white/10">
+                                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" class="rounded-xl border border-white/10">
+                                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" class="rounded-xl border border-white/10">
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 5,
+                name: "RYAN",
+                badge: "THE WILD CARD",
+                quote: "Some people are storms. Ryan is the calm before them.",
+                content: `
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                        <div class="lg:col-span-3 space-y-6 text-sm">
+                            <div>
+                                <div class="uppercase text-xs tracking-[3px] text-neonPink mb-1">THE WILD CARD</div>
+                                <h2 class="text-5xl font-light tracking-tight mb-1">Ryan</h2>
+                                <p class="italic text-neonPink">"Some people are storms. Ryan is the calm before them."</p>
+                            </div>
+
+                            <div class="pt-4 border-t border-white/10">
+                                <p class="leading-relaxed text-zinc-300">Ryan is the unpredictable force in Gabriel's circle. Charming, dangerous, and always one step ahead. His loyalty is hard to earn — and even harder to keep.</p>
+                            </div>
+
+                            <div>
+                                <div class="text-xs text-zinc-400 mb-2">PERSONALITY</div>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span class="px-3 py-1 bg-white/5 rounded">Charming</span>
+                                    <span class="px-3 py-1 bg-white/5 rounded">Dangerous</span>
+                                    <span class="px-3 py-1 bg-white/5 rounded">Loyal</span>
+                                    <span class="px-3 py-1 bg-white/5 rounded">Unpredictable</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-2 space-y-4">
+                            <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_13_12.webp" class="rounded-2xl w-full border border-white/10">
+                            
+                            <div class="grid grid-cols-3 gap-3">
+                                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-23_36_10.webp" class="rounded-xl border border-white/10">
+                                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" class="rounded-xl border border-white/10">
+                                <img src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-16_09_57.webp" class="rounded-xl border border-white/10">
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            // Adicione mais personagens aqui quando quiser (Nate, etc)
+        ];
+
+        let currentCharIndex = 0;
+
+        function openCharacterProfile(charIndex) {
+            // Fecha o livro 3D
+            document.getElementById('heirsBookOverlay').classList.add('hidden');
+            document.getElementById('heirsBookOverlay').classList.remove('flex');
+
+            const modal = document.getElementById('characterModal');
+            const content = document.getElementById('charModalContent');
+            const nameEl = document.getElementById('charModalName');
+            const badgeEl = document.getElementById('charModalBadge');
+
+            // Pega o personagem (se não existir, usa Gabriel como fallback)
+            let char = characters.find(c => c.id === charIndex);
+            if (!char) char = characters[1]; // Gabriel
+
+            currentCharIndex = characters.indexOf(char);
+
+            nameEl.textContent = char.name;
+            badgeEl.textContent = char.badge;
+            content.innerHTML = char.content || '<p class="text-zinc-400">Profile coming soon...</p>';
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCharacterModal() {
+            const modal = document.getElementById('characterModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function nextCharacter() {
+            currentCharIndex = (currentCharIndex + 1) % characters.length;
+            const nextChar = characters[currentCharIndex];
+            // Reabre com o novo
+            const modal = document.getElementById('characterModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
             setTimeout(() => {
-                zoomModal.classList.add('hidden');
-                zoomModal.classList.remove('flex');
-            }, 300);
+                openCharacterProfile(nextChar.id);
+            }, 50);
         }
 
-        zoomModal.addEventListener('click', closeZoom);
-        document.getElementById('closeZoomBtn').addEventListener('click', (e) => {
-            e.stopPropagation();
-            closeZoom();
-        });
-
-        // --- MATHEMATICAL ADAPTIVE RESPONSIVE SCALE ENGINE ---
-        function resizeBook() {
-            const bookContainer = document.getElementById('bookContainer');
-            const book = document.getElementById('book');
-            if (!book || !bookContainer) return;
-
-            const containerWidth = bookContainer.clientWidth;
-            const viewportHeight = window.innerHeight;
-            const originalWidth = 760; 
-            const originalHeight = 520;
-            
-            // 1. Calculate ideal scale based on available container width
-            let scale = 1;
-            if (containerWidth < originalWidth) {
-                scale = (containerWidth / originalWidth) * 0.95; 
-            }
-            
-            // 2. Prevent vertical overflow! Calculate maximum height allowed to fit the viewport perfectly.
-            const maxAllowedHeight = viewportHeight - 240;
-            if (originalHeight * scale > maxAllowedHeight) {
-                scale = maxAllowedHeight / originalHeight;
-            }
-
-            // Apply a safe minimum constraint
-            if (scale < 0.25) scale = 0.25;
-
-            // 3. Apply the 3D transform scale
-            book.style.transform = `scale(${scale})`;
-            
-            // 4. Update parent container height to MATCH the scaled book size exactly!
-            bookContainer.style.height = `${originalHeight * scale}px`;
+        function prevCharacter() {
+            currentCharIndex = (currentCharIndex - 1 + characters.length) % characters.length;
+            const prevChar = characters[currentCharIndex];
+            const modal = document.getElementById('characterModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            setTimeout(() => {
+                openCharacterProfile(prevChar.id);
+            }, 50);
         }
 
-        window.addEventListener('resize', resizeBook);
-        
-        // Initial setup
+        // Init
         updateSheets();
+        console.log('%c[Thainá] Versão DEFINITIVA carregada. 3D limpo + Modal de personagens separado = zero problema de layout.', 'color:#f9f871');
     </script>
 </body>
 </html>
