@@ -788,11 +788,16 @@
                         </div>
                     </div>
 
-                    <!-- SHEET 5 - NATE + Back -->
+                    <!-- SHEET 5 - ÚLTIMA PÁGINA (CORRIGIDA) -->
                     <div class="sheet" style="z-index: 10;">
                         <div class="page-face front p-0">
                             <div class="page-image-container">
-                                <img class="page-fg-contain" src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" onclick="openCharacterProfile(7)" alt="Page 8">
+                                <img class="page-fg-contain" 
+                                     src="https://raw.githubusercontent.com/TSTELLES/kingdom-quill/main/ChatGPT-Image-14-de-jun.-de-2026_-22_40_42.webp" 
+                                     onclick="openCharacterProfile(7)" 
+                                     alt="Última página - Nate"
+                                     style="object-fit: cover; object-position: 52% 32%;"
+                                     onerror="this.style.background='#1a1425'; this.alt='Imagem não carregou';">
                             </div>
                         </div>
                         <div class="page-face back-cover-style flex flex-col justify-center items-center text-center p-8">
@@ -1212,7 +1217,6 @@
         let currentCharIndex = 0;
 
         function openCharacterProfile(charIndex) {
-            // Esconde o livro
             document.getElementById('heirsBookOverlay').classList.add('hidden');
             document.getElementById('heirsBookOverlay').classList.remove('flex');
 
@@ -1221,9 +1225,7 @@
             const nameEl = document.getElementById('charModalName');
             const badgeEl = document.getElementById('charModalBadge');
 
-            // Fallback caso clique em alguma imagem sem id no array
             let char = characters.find(c => c.id === charIndex) || characters[1];
-
             currentCharIndex = characters.indexOf(char);
 
             nameEl.textContent = char.name;
@@ -1238,7 +1240,6 @@
             const modal = document.getElementById('characterModal');
             modal.classList.remove('flex');
             modal.classList.add('hidden');
-            // Reabre o livro 3D
             document.getElementById('heirsBookOverlay').classList.remove('hidden');
             document.getElementById('heirsBookOverlay').classList.add('flex');
         }
