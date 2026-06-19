@@ -255,6 +255,74 @@
             transform: rotate(180deg) translateX(8px);
         }
 
+
+
+        /* FIX: keep the 3D catalog from overlapping the navigation buttons */
+        #heirsBookOverlay.hidden {
+            display: none !important;
+        }
+
+        #heirsBookOverlay.flex {
+            display: grid !important;
+            grid-template-rows: auto minmax(0, 1fr) auto;
+            align-items: stretch;
+            overflow: hidden;
+            row-gap: 10px;
+        }
+
+        #bookContainer {
+            height: auto !important;
+            min-height: 0 !important;
+            padding-top: 8px !important;
+            padding-bottom: 22px !important;
+            overflow: visible;
+        }
+
+        .book-wrapper {
+            perspective: 2000px;
+            width: min(760px, 92vw, calc((100dvh - 220px) * 1.461538));
+        }
+
+        .book {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 760 / 520;
+            max-height: calc(100dvh - 220px);
+        }
+
+        #heirsBookOverlay > div:last-child {
+            margin-top: 0 !important;
+            padding-bottom: 8px !important;
+            position: relative;
+            z-index: 20;
+        }
+
+        @media (max-height: 720px) {
+            #heirsBookOverlay.flex {
+                row-gap: 6px;
+            }
+
+            #bookContainer {
+                padding-top: 4px !important;
+                padding-bottom: 16px !important;
+            }
+
+            .book-wrapper {
+                width: min(720px, 88vw, calc((100dvh - 235px) * 1.461538));
+            }
+        }
+
+        @media (max-width: 820px) {
+            #bookContainer {
+                height: auto !important;
+                min-height: 0 !important;
+            }
+
+            .book-wrapper {
+                width: min(92vw, calc((100dvh - 245px) * 1.461538));
+            }
+        }
+
         /* CHARACTER PROFILE MODAL - O FIX DEFINITIVO */
         .character-modal {
             animation: fadeInScale 0.3s cubic-bezier(0.23, 1, 0.32, 1);
@@ -263,6 +331,72 @@
             from { opacity: 0; transform: scale(0.96) translateY(20px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
+    
+
+        /* FINAL BOOK FIX: keep the catalog centered and above the buttons */
+        #heirsBookOverlay.flex {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            overflow: hidden !important;
+            row-gap: 0 !important;
+        }
+
+        #heirsBookOverlay > div:first-child,
+        #bookContainer,
+        #heirsBookOverlay > div:last-child {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        #bookContainer {
+            width: 100% !important;
+            max-width: 1100px !important;
+            flex: 1 1 auto !important;
+            min-height: 0 !important;
+            height: auto !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 8px 0 12px !important;
+            overflow: visible !important;
+        }
+
+        .book-wrapper {
+            perspective: 2000px;
+            width: min(760px, 92vw, calc((100dvh - 240px) * 1.461538)) !important;
+            max-width: 760px !important;
+            margin: 0 auto !important;
+        }
+
+        .book {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 760 / 520 !important;
+            max-height: calc(100dvh - 240px) !important;
+            transform-style: preserve-3d;
+        }
+
+        #heirsBookOverlay > div:last-child {
+            flex: 0 0 auto !important;
+            margin-top: 0 !important;
+            padding-bottom: 4px !important;
+            position: relative !important;
+            z-index: 30 !important;
+        }
+
+        @media (max-height: 720px) {
+            #bookContainer {
+                padding-top: 4px !important;
+                padding-bottom: 8px !important;
+            }
+
+            .book-wrapper {
+                width: min(700px, 90vw, calc((100dvh - 230px) * 1.461538)) !important;
+            }
+        }
+
     </style>
 </head>
 <body class="text-white antialiased">
